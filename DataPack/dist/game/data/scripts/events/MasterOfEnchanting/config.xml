@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event name="Master of Enchanting" active="27 02 2010-28 02 2024" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/eventConfig.xsd">
+	<droplist>
+		<add item="13540" min="1" max="1" chance="1%" /> <!-- Master Yogi's Scroll: Enchant Weapon -->
+	</droplist>
+	<spawnlist>
+		<add npc="32599" x="17275" y="145000" z="-3037" heading="25000" />
+		<add npc="32599" x="82145" y="148609" z="-3468" heading="0" />
+		<add npc="32599" x="-83156" y="150994" z="-3130" heading="0" />
+		<add npc="32599" x="-13727" y="122117" z="-2990" heading="16384" />
+		<add npc="32599" x="-84023" y="243051" z="-3730" heading="4096" />
+		<add npc="32599" x="45523" y="48371" z="-3060" heading="18000" />
+		<add npc="32599" x="11546" y="17599" z="-4586" heading="46900" />
+		<add npc="32599" x="81987" y="53723" z="-1497" heading="0" />
+		<add npc="32599" x="148557" y="26806" z="-2206" heading="32768" />
+		<add npc="32599" x="117356" y="76708" z="-2695" heading="49151" />
+		<add npc="32599" x="115887" y="76382" z="-2714" heading="0" />
+		<add npc="32599" x="-117239" y="46842" z="367" heading="49151" />
+		<add npc="32599" x="111004" y="218928" z="-3544" heading="16384" />
+		<add npc="32599" x="108426" y="221876" z="-3600" heading="49151" />
+		<add npc="32599" x="-45278" y="-112766" z="-241" heading="0" />
+		<add npc="32599" x="115096" y="-178370" z="-891" heading="0" />
+		<add npc="32599" x="86865" y="-142915" z="-1341" heading="26000" />
+		<add npc="32599" x="148206" y="-55786" z="-2782" heading="61439" />
+		<add npc="32599" x="43165" y="-48461" z="-797" heading="17000" />
+	</spawnlist>
+	<messages>
+		<add type="onEnd" text="Master of Enchantig: event end!" />
+		<add type="onEnter" text="Master of enchanting: Event ongoing! Visit Master Yogi!" />
+	</messages>
+</event>
