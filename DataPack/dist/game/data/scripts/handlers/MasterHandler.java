@@ -334,6 +334,7 @@ import handlers.voicedcommandhandlers.TvTVoiced;
 import handlers.voicedcommandhandlers.VoiceExperience;
 import handlers.voicedcommandhandlers.VoiceInfo;
 import handlers.voicedcommandhandlers.Pmoff;
+import handlers.voicedcommandhandlers.Cl;
 import handlers.voicedcommandhandlers.Wedding;
 
 public class MasterHandler
@@ -649,6 +650,7 @@ public class MasterHandler
 			Siege.class,
 			Teleport.class,
 			VoiceInfo.class,
+			(Config.CL ? Cl.class : null),
 			(Config.PM_OFF ? Pmoff.class : null),
 			(Config.CMD_TRADE ? TradeCommands.class : null),
 			(Config.CMD_ONLINE ? Online.class : null),

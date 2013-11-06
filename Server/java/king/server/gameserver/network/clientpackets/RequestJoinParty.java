@@ -199,7 +199,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 			requestor.sendPacket(SystemMessageId.ONLY_LEADER_CAN_INVITE);
 			return;
 		}
-		if (party.getMemberCount() >= 9)
+		if (party.getMemberCount() >= Config.MAX_PARTY_MEMBERS+1)
 		{
 			requestor.sendPacket(SystemMessageId.PARTY_FULL);
 			return;

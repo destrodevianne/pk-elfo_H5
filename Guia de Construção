@@ -1,3 +1,5 @@
+***significa que deve ser testado
+
 Adicionado Configurador KingServer para GameServer e LoginServer
 
 ###############################################
@@ -128,6 +130,7 @@ Evento Last Hero
 .shieldon
 .shieldoff
 .openatod (Serve para abrir todos os Ancient Tome of the Demon que o player tiver na bag, ao invez de ficar clicando eternamente)
+***.cl (comando teleporta para o lider do clan)
 ###############################################
 ##################### MOD #####################
 Rewards for kill on TvT
@@ -157,6 +160,7 @@ Mod aviso quando um Raid Boss renascer
 Mod Evento de dança
 Clan halls conquistáveis
 comando /unstuck com skill configuravel
+***Número Máximo de membros na party
 
 ###############################################
 ################## PROTECOES ##################

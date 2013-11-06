@@ -107,7 +107,8 @@ public final class Config
 	public static FastMap<Integer, Integer> PKS_COLORS_LIST;
 	public static boolean ANNOUNCE_CASTLE_LORDS;
 	public static boolean SHOW_ONLINE_PLAYERS_ON_LOGIN;
-	
+	public static int MAX_PARTY_MEMBERS;
+
 	//Shots Infinitos: SS, BSS e flechas 
 	public static boolean INFINITE_SOUL_SHOT; 
 	public static boolean INFINITE_SPIRIT_SHOT; 
@@ -1285,6 +1286,7 @@ public final class Config
 	
 	//.pmon/.pmoff
     public static boolean PM_OFF;
+    public static boolean CL;
 	// GrandBoss Settings	
 	public static int Antharas_Wait_Time;
 	public static int Valakas_Wait_Time;
@@ -1734,6 +1736,8 @@ public final class Config
 				CLAN_LEADER_COLOR_CLAN_LEVEL = Integer.parseInt(KingSettings.getProperty("ClanLeaderColorAtClanLevel", "1"));
 				ANNOUNCE_CASTLE_LORDS = Boolean.parseBoolean(KingSettings.getProperty("AnnounceCastleLords", "True"));
 				SHOW_ONLINE_PLAYERS_ON_LOGIN = Boolean.parseBoolean(KingSettings.getProperty("ShowOnlinePlayersOnLogin", "True"));
+				MAX_PARTY_MEMBERS = Integer.parseInt(KingSettings.getProperty("MaxPartyMembers", "12"));
+
 				// Clan Full 
 				ENABLE_CLAN_SYSTEM = Boolean.parseBoolean(KingSettings.getProperty("EnableClanSystem", "True")); 
 				if(ENABLE_CLAN_SYSTEM) 
@@ -2635,6 +2639,7 @@ public final class Config
 			ENCHANT_PROTECT_PUNISH = Integer.parseInt(KingSettings.getProperty("EnchantProtectPunish", "60"));
 			CLAN_NAME_AS_TITLE = Boolean.parseBoolean(Character.getProperty("ClanTitle", "True"));
 			PM_OFF = Boolean.parseBoolean(KingSettings.getProperty("CommandPmOff", "True"));
+			CL = Boolean.parseBoolean(KingSettings.getProperty("CommandCl", "True"));
 			// MMO
 			L2Properties mmoSettings = new L2Properties();
 			final File mmo = new File(MMO_CONFIG_FILE);
