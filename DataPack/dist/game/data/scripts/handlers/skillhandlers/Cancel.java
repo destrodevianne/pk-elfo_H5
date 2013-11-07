@@ -18,8 +18,6 @@
  */
 package handlers.skillhandlers;
 
-import java.util.List;
-
 import king.server.Config;
 import king.server.gameserver.handler.ISkillHandler;
 import king.server.gameserver.model.L2Object;
@@ -46,6 +44,7 @@ public class Cancel implements ISkillHandler
 	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
+		L2Character target;
 		L2Effect effect;
 		final int cancelLvl, minRate, maxRate;
 		
@@ -59,7 +58,7 @@ public class Cancel implements ISkillHandler
 			{
 				continue;
 			}
-			final L2Character target = (L2Character) obj;
+			target = (L2Character) obj;
 			
 			if (target.isDead())
 			{
@@ -73,7 +72,6 @@ public class Cancel implements ISkillHandler
 			final double profModifier = activeChar.calcStat(Stats.CANCEL_PROF, 0, target, null);
 			double res = vulnModifier + profModifier;
 			double resMod = 1;
-			
 			if (res != 0)
 			{
 				if (res < 0)
@@ -87,12 +85,6 @@ public class Cancel implements ISkillHandler
 				}
 				
 				rate *= resMod;
-			}
-			
-			List<L2Effect> canceled = Formulas.calcCancel(activeChar, target, skill, skill.getPower());
-			for (L2Effect eff : canceled)
-			{
-				eff.exit();
 			}
 			
 			if (activeChar.isDebug())
@@ -231,7 +223,6 @@ public class Cancel implements ISkillHandler
 			}
 			skill.getEffectsSelf(activeChar);
 		}
-		
 		
 		activeChar.setChargedShot(activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS) ? ShotType.BLESSED_SPIRITSHOTS : ShotType.SPIRITSHOTS, false);
 	}
