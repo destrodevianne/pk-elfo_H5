@@ -58,6 +58,7 @@ public final class Config
 	// --------------------------------------------------
 	// L2J Property File Definitions
 	// --------------------------------------------------
+	public static final String AIO_CONFIG_FILE = "./config/Aio.properties";
 	public static final String CHARACTER_CONFIG_FILE = "./config/Character.properties";
 	public static final String FEATURE_CONFIG_FILE = "./config/Feature.properties";
 	public static final String FORTSIEGE_CONFIGURATION_FILE = "./config/FortSiege.properties";
@@ -89,6 +90,19 @@ public final class Config
 	public static final String KINGSERVER_FILE = "./config/Kingserver.properties";
 	public static final String EVENT_FILE = "./config/Event.properties";
 	public static final String SERVICES_CONFIG_FILE = "./config/Services.properties";
+	
+	// AIOx Config
+	
+	// Sistema de AIO Bufer	
+	public static boolean ENABLE_AIO_SYSTEM;
+	public static Map<Integer, Integer> AIO_SKILLS;
+	public static boolean ALLOW_AIO_NCOLOR;
+	public static int AIO_NCOLOR;
+	public static boolean ALLOW_AIO_TCOLOR;
+	public static int AIO_TCOLOR;
+	public static boolean ALLOW_AIO_ITEM;
+	public static int AIO_ITEMID;
+	public static boolean ENABLE_AIO_CHAT;
 	
 	// KingServer Custom Config
 	public static boolean FENCE_MOVIE_BUILDER;
@@ -1271,16 +1285,6 @@ public final class Config
 	public static int FAST_CONNECTION_TIME;
 	public static int MAX_CONNECTION_PER_IP;
 
-	// Sistema de AIO Bufer	
-	public static boolean ENABLE_AIO_SYSTEM;
-	public static Map<Integer, Integer> AIO_SKILLS;
-	public static boolean ALLOW_AIO_NCOLOR;
-	public static int AIO_NCOLOR;
-	public static boolean ALLOW_AIO_TCOLOR;
-	public static int AIO_TCOLOR;
-	public static boolean ALLOW_AIO_ITEM;
-	public static int AIO_ITEMID;
-	public static boolean ENABLE_AIO_CHAT;
 	// Vip System
 	public static boolean ALLOW_VIP_NCOLOR;
 	public static int VIP_NCOLOR;
@@ -2237,6 +2241,56 @@ public final class Config
 			{
 				_log.log(Level.SEVERE, "Error while loading Event settings!", e);
 			}
+			
+			// AIOx
+			L2Properties AioSettings = new L2Properties();
+			final File aio = new File(AIO_CONFIG_FILE);
+			try (InputStream is = new FileInputStream(aio))
+			{
+				AioSettings.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Error while loading AIO settings!", e);
+			}
+			
+			// sistema de AIO bufer
+						ENABLE_AIO_SYSTEM = Boolean.parseBoolean(AioSettings.getProperty("EnableAioSystem", "true"));
+						ALLOW_AIO_NCOLOR = Boolean.parseBoolean(AioSettings.getProperty("AllowAioNameColor", "true"));
+						AIO_NCOLOR = Integer.decode("0x" + AioSettings.getProperty("AioNameColor", "000000"));
+						ALLOW_AIO_TCOLOR = Boolean.parseBoolean(AioSettings.getProperty("AllowAioTitleColor", "true"));
+						AIO_TCOLOR = Integer.decode("0x" + AioSettings.getProperty("AioTitleColor", "000000"));
+						AIO_ITEMID = Integer.parseInt(AioSettings.getProperty("ItemIdAio", "2523"));
+						ALLOW_AIO_ITEM = Boolean.parseBoolean(AioSettings.getProperty("AllowAIOItem", "True"));
+						if (ENABLE_AIO_SYSTEM) // create map if system is enabled
+							{
+							String[] AioSkillsSplit = AioSettings.getProperty("AioSkills", "").split(";");
+							AIO_SKILLS = new FastMap<>(AioSkillsSplit.length);
+							for (String skill : AioSkillsSplit)
+							{
+								String[] skillSplit = skill.split(",");
+								if (skillSplit.length != 2)
+								{
+									System.out.println("[Aio System]: invalida a propriedade da config Aio.properties -> AioSkills \"" + skill + "\"");
+								}
+								else
+								{
+									try
+									{
+										AIO_SKILLS.put(Integer.parseInt(skillSplit[0]), Integer.parseInt(skillSplit[1]));
+									}
+									catch (NumberFormatException nfe)
+									{
+										if (!skill.equals(""))
+										{
+											System.out.println("[Aio System]: invalida a propriedade da config Aio.properties -> AioSkills \"" + skillSplit[0] + "\"" + skillSplit[1]);
+										}
+									}
+								}
+							}
+						}
+						ENABLE_AIO_CHAT = Boolean.parseBoolean(AioSettings.getProperty("EnableAIOChat", "True"));
+						
 			// Load Character L2Properties file (if exists)
 			L2Properties Character = new L2Properties();
 			final File chars = new File(CHARACTER_CONFIG_FILE);
@@ -2593,42 +2647,6 @@ public final class Config
 			
 			IS_TELNET_ENABLED = Boolean.parseBoolean(telnetSettings.getProperty("EnableTelnet", "false"));
 
-			// sistema de AIO bufer
-			ENABLE_AIO_SYSTEM = Boolean.parseBoolean(KingSettings.getProperty("EnableAioSystem", "true"));
-			ALLOW_AIO_NCOLOR = Boolean.parseBoolean(KingSettings.getProperty("AllowAioNameColor", "true"));
-			AIO_NCOLOR = Integer.decode("0x" + KingSettings.getProperty("AioNameColor", "000000"));
-			ALLOW_AIO_TCOLOR = Boolean.parseBoolean(KingSettings.getProperty("AllowAioTitleColor", "true"));
-			AIO_TCOLOR = Integer.decode("0x" + KingSettings.getProperty("AioTitleColor", "000000"));
-			AIO_ITEMID = Integer.parseInt(KingSettings.getProperty("ItemIdAio", "2523"));
-			ALLOW_AIO_ITEM = Boolean.parseBoolean(KingSettings.getProperty("AllowAIOItem", "True"));
-			if (ENABLE_AIO_SYSTEM) // create map if system is enabled
-				{
-				String[] AioSkillsSplit = KingSettings.getProperty("AioSkills", "").split(";");
-				AIO_SKILLS = new FastMap<>(AioSkillsSplit.length);
-				for (String skill : AioSkillsSplit)
-				{
-					String[] skillSplit = skill.split(",");
-					if (skillSplit.length != 2)
-					{
-						System.out.println("[Aio System]: invalida a propriedade da config KingServer.properties -> AioSkills \"" + skill + "\"");
-					}
-					else
-					{
-						try
-						{
-							AIO_SKILLS.put(Integer.parseInt(skillSplit[0]), Integer.parseInt(skillSplit[1]));
-						}
-						catch (NumberFormatException nfe)
-						{
-							if (!skill.equals(""))
-							{
-								System.out.println("[Aio System]: invalida a propriedade da config KingServer.properties -> AioSkills \"" + skillSplit[0] + "\"" + skillSplit[1]);
-							}
-						}
-					}
-				}
-			}
-			ENABLE_AIO_CHAT = Boolean.parseBoolean(KingSettings.getProperty("EnableAIOChat", "False"));
 			ALLOW_VIP_NCOLOR = Boolean.parseBoolean(KingSettings.getProperty("AllowVipNameColor", "True"));
 			VIP_NCOLOR = Integer.decode("0x" + KingSettings.getProperty("VipNameColor", "0088FF"));
 			ALLOW_VIP_TCOLOR = Boolean.parseBoolean(KingSettings.getProperty("AllowVipTitleColor", "True"));

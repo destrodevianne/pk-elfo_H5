@@ -73,6 +73,7 @@ import king.server.gameserver.model.items.instance.L2ItemInstance;
 import king.server.gameserver.model.quest.Quest;
 import king.server.gameserver.model.quest.QuestState;
 import king.server.gameserver.model.zone.ZoneId;
+import king.server.gameserver.model.base.Race;
 import king.server.gameserver.network.SystemMessageId;
 import king.server.gameserver.network.communityserver.CommunityServerThread;
 import king.server.gameserver.network.communityserver.writepackets.WorldInfo;
