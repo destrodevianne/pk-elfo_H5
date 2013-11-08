@@ -104,7 +104,7 @@ public abstract class AbstractNpcInfo extends L2GameServerPacket
 			
 			if (cha.isChampion() && !ChampionData.getInstance().getTitle(cha.getChampionType()).isEmpty())
 			{
-				_title = ChampionData.getInstance().getTitle(cha.getChampionType()); // On every subclass
+				_title = (Config.L2JMOD_CHAMP_TITLE); // On every subclass
 			}
 			else if (cha.getTemplate().isServerSideTitle())
 			{
