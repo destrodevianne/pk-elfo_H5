@@ -99,7 +99,7 @@ public class Scheduler
 		}
 		catch (IOException e)
 		{
-			System.out.println("Error on reading the scheduler file!");
+			System.out.println("Erro na leitura do arquivo programador!");
 			return "";
 		}
 		return beolvasott;

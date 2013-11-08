@@ -25,9 +25,9 @@ public class ManagerNpcHtml
 		{
 			buttons.add("<button value=\"Scheduler\" action=\"bypass -h eventmanager scheduler\" width=90 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 		}
-		buttons.add("<button value=\"Running\" action=\"bypass -h eventmanager running\" width=90 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
+		buttons.add("<button value=\"Corrente\" action=\"bypass -h eventmanager running\" width=90 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 		
-		sb.append("<html><title>Event Manager - Main Events</title><body>");
+		sb.append("<html><title>Event Manager - Principais eventos</title><body>");
 		
 		sb.append("<table width=270 border=0 bgcolor=666666><tr>");
 		

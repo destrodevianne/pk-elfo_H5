@@ -34,14 +34,14 @@ public class ManagerNpc
 		if (EventContainer.getInstance().getEventMap().size() > 1)
 		{
 			int count = 0;
-			builder.append("<center><table width=270 bgcolor=4f4f4f><tr><td width=70><font color=ac9775>Registering</font></td><td width=130><center><font color=9f9f9f>Time left:</font> <font color=ac9775>" + "</font></td><td width=70><font color=9f9f9f>Votes:</font> <font color=ac9775>" + "</font></td></tr></table><br>");
+			builder.append("<center><table width=270 bgcolor=4f4f4f><tr><td width=70><font color=ac9775>Registrando</font></td><td width=130><center><font color=9f9f9f>Tempo restante:</font> <font color=ac9775>" + "</font></td><td width=70><font color=9f9f9f>Votos:</font> <font color=ac9775>" + "</font></td></tr></table><br>");
 			
 			for (Map.Entry<Integer, AbstractEvent> event : EventContainer.getInstance().getEventMap().entrySet())
 			{
 				count++;
 				builder.append("<center><table width=270 " + ((count % 2) == 1 ? "" : "bgcolor=4f4f4f") + "><tr><td width=180><font color=ac9775>" + Config.getInstance().getString(event.getValue().getId(), "eventName") + "</font></td><td width=30><font color=9f9f9f>Info</font></td><td width=30>");
 				
-				builder.append("<a action=\"bypass -h eventmanager showreg " + event.getKey() + " 0\">Show</a>");
+				builder.append("<a action=\"bypass -h eventmanager showreg " + event.getKey() + " 0\">Mostrar</a>");
 				
 				builder.append("</td><td width=30><center><font color=9f9f9f>" + "1" + "</font></td></tr></table>");
 			}
@@ -60,7 +60,7 @@ public class ManagerNpc
 			}
 			else
 			{
-				Out.html(player, new ManagerNpcHtml("Theres no active event.").string());
+				Out.html(player, new ManagerNpcHtml("Nao ha nenhum evento ativo.").string());
 			}
 		}
 	}
@@ -72,11 +72,11 @@ public class ManagerNpc
 		builder.append("<center><table width=270 bgcolor=4f4f4f><tr><td width=70>");
 		if ((PlayerContainer.getInstance().getPlayer(player) != null) && EventContainer.getInstance().getEvent(event).getPlayerList().contains(PlayerContainer.getInstance().getPlayer(player)))
 		{
-			builder.append("<a action=\"bypass -h eventmanager unregister " + event + "\"><font color=9f9f9f>Unregister</font></a>");
+			builder.append("<a action=\"bypass -h eventmanager unregister " + event + "\"><font color=9f9f9f>Cancelar o registro</font></a>");
 		}
 		else
 		{
-			builder.append("<a action=\"bypass -h eventmanager register " + event + "\"><font color=9f9f9f>Register</font></a></a>");
+			builder.append("<a action=\"bypass -h eventmanager register " + event + "\"><font color=9f9f9f>Registrar</font></a></a>");
 		}
 		builder.append("</td><td width=130><center><font color=ac9775>" + Config.getInstance().getString(EventContainer.getInstance().getEvent(event).getId(), "eventName") + "</font></td><td width=70><font color=9f9f9f>Time: " + EventContainer.getInstance().getEvent(event).getRegisterTimeLeft() + "</font></td></tr></table><br>");
 		
@@ -107,12 +107,12 @@ public class ManagerNpc
 		
 		if (beginIndex > 0)
 		{
-			builder.append("<a action=\"bypass -h eventmanager showreg " + event + " " + (beginIndex - 1) + "\">Previous</a>");
+			builder.append("<a action=\"bypass -h eventmanager showreg " + event + " " + (beginIndex - 1) + "\">Anterior</a>");
 		}
 		
 		if (list.size() > ((beginIndex * 20) + 20))
 		{
-			builder.append(" <a action=\"bypass -h eventmanager showreg " + event + " " + (beginIndex + 1) + "\">Next</a>");
+			builder.append(" <a action=\"bypass -h eventmanager showreg " + event + " " + (beginIndex + 1) + "\">Proximo</a>");
 		}
 		
 		Out.html(player, new ManagerNpcHtml(builder.toString()).string());
@@ -123,7 +123,7 @@ public class ManagerNpc
 		TextBuilder builder = new TextBuilder();
 		int count = 0;
 		
-		builder.append("<center><table width=270 bgcolor=4f4f4f><tr><td width=70><font color=ac9775>Voting</font></td><td width=130><center><font color=9f9f9f>Time left:</font> <font color=ac9775>" + Vote.getInstance().getVoteTimeLeft() + "</font></td><td width=70><font color=9f9f9f>Votes:</font> <font color=ac9775>" + Vote.getInstance().getVoteCount() + "</font></td></tr></table><br>");
+		builder.append("<center><table width=270 bgcolor=4f4f4f><tr><td width=70><font color=ac9775>Votacao</font></td><td width=130><center><font color=9f9f9f>Tempo restante:</font> <font color=ac9775>" + Vote.getInstance().getVoteTimeLeft() + "</font></td><td width=70><font color=9f9f9f>Votos:</font> <font color=ac9775>" + Vote.getInstance().getVoteCount() + "</font></td></tr></table><br>");
 		
 		for (Integer event : EventContainer.getInstance().eventIds)
 		{
@@ -132,15 +132,15 @@ public class ManagerNpc
 			
 			if (Vote.getInstance().getBannedEvents().contains(event))
 			{
-				builder.append("<font color=ff0000>Vote</font>");
+				builder.append("<font color=ff0000>Voto</font>");
 			}
 			else if (!Vote.getInstance().getVotes().containsKey(player))
 			{
-				builder.append("<a action=\"bypass -h eventmanager vote " + event + "\"><font color=ac9775>Vote</font></a>");
+				builder.append("<a action=\"bypass -h eventmanager vote " + event + "\"><font color=ac9775>Voto</font></a>");
 			}
 			else
 			{
-				builder.append("<font color=ac9775>Vote</font>");
+				builder.append("<font color=ac9775>Voto</font>");
 			}
 			
 			builder.append("</td><td width=30><center><font color=9f9f9f>" + Vote.getInstance().getVoteCount(event) + "</font></td></tr></table>");
@@ -154,7 +154,7 @@ public class ManagerNpc
 	{
 		TextBuilder builder = new TextBuilder();
 		
-		builder.append("<center><table width=270 bgcolor=4f4f4f><tr><td><font color=ac9775>Running events</font></td></tr></table><br>");
+		builder.append("<center><table width=270 bgcolor=4f4f4f><tr><td><font color=ac9775>Eventos correntes</font></td></tr></table><br>");
 		
 		builder.append("<table width=270>");
 		

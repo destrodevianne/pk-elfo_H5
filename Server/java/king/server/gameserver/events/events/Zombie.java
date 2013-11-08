@@ -48,14 +48,14 @@ public class Zombie extends AbstractEvent
 						if (getPlayersWithStatus(0).size() != 1)
 						{
 							msgToAll("Tie!");
-							announce("The match has ended as a tie!");
+							announce("A partida terminou em um empate!");
 						}
 						
 						else
 						{
 							EventPlayer winner = getWinner();
 							giveReward(winner);
-							announce("Congratulation! " + winner.getName() + " won the event!");
+							announce("Parabens! O " + winner.getName() + " venceu o evento!");
 						}
 						eventEnded();
 						break;
@@ -64,7 +64,7 @@ public class Zombie extends AbstractEvent
 			catch (Throwable e)
 			{
 				e.printStackTrace();
-				announce("Error! Event ended.");
+				announce("Erro! O Evento terminou.");
 				eventEnded();
 			}
 		}
@@ -113,7 +113,7 @@ public class Zombie extends AbstractEvent
 	@Override
 	protected String getScorebar()
 	{
-		return "Humans: " + getPlayersWithStatus(0).size() + "  Time: " + clock.getTimeInString();
+		return "Humans: " + getPlayersWithStatus(0).size() + "  Tempo: " + clock.getTimeInString();
 	}
 	
 	EventPlayer getWinner()

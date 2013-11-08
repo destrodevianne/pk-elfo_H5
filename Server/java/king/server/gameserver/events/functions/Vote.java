@@ -45,7 +45,7 @@ public class Vote
 			switch (phase)
 			{
 				case VOTE:
-					announce("Vote phase started! You have " + (Config.getInstance().getInt(0, "voteTime") / 60) + " mins to vote!");
+					announce("A fase de votacao comecou! voce tem " + (Config.getInstance().getInt(0, "voteTime") / 60) + " minutos para votar!");
 					voteCountdown = new VoteCountdown(Config.getInstance().getInt(0, "voteTime"));
 					voteCountdown.start();
 					break;
@@ -94,12 +94,12 @@ public class Vote
 				case 600:
 				case 300:
 				case 60:
-					announce("" + (counter / 60) + " minutes left to vote.");
+					announce("" + (counter / 60) + " minutos restantes para votar.");
 					break;
 				case 30:
 				case 10:
 				case 5:
-					announce("" + counter + " seconds left to vote.");
+					announce("" + counter + " segundos restantes para votar.");
 					break;
 			}
 		}
@@ -153,10 +153,10 @@ public class Vote
 	{
 		if (votes.containsKey(player))
 		{
-			Out.sendMessage(player, "[Event Manager]: You already voted for an event!");
+			Out.sendMessage(player, "[Event Manager]: Voce ja votou em um evento!");
 			return false;
 		}
-		Out.sendMessage(player, "[Event Manager]: You succesfully voted for the event");
+		Out.sendMessage(player, "[Event Manager]: Voce votou com sucesso para o evento");
 		votes.put(player, eventId);
 		return true;
 	}
@@ -170,7 +170,7 @@ public class Vote
 	{
 		if (getCurrentEvent() == event)
 		{
-			announce("Next event in " + (Config.getInstance().getInt(0, "voteTime") / 60) + "mins!");
+			announce("Proximo evento em " + (Config.getInstance().getInt(0, "voteTime") / 60) + "minutos!");
 			setVotePhase(VotePhase.VOTE);
 			voteSchedule(1);
 		}

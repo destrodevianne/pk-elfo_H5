@@ -133,7 +133,7 @@ public class Config extends DocumentParser
 	{
 		if (!(config.containsKey(event)))
 		{
-			_log.warning("[Event Manager]: Try to get a property of a non existing event: ID: " + event);
+			_log.warning("[Event Manager]: Tentar obter uma propriedade de um evento nao existente: ID: " + event);
 			return false;
 		}
 		
@@ -141,7 +141,7 @@ public class Config extends DocumentParser
 		{
 			return Boolean.parseBoolean(config.get(event).get(propName));
 		}
-		_log.warning("[Event Manager]: Try to get a non existing property: " + propName);
+		_log.warning("[Event Manager]: Tentar obter uma propriedade nao existente: " + propName);
 		return false;
 		
 	}
@@ -150,7 +150,7 @@ public class Config extends DocumentParser
 	{
 		if (!(colors.containsKey(event)))
 		{
-			_log.warning("[Event Manager]: Try to get a color of a non existing event: ID: " + event);
+			_log.warning("[Event Manager]: Tentar obter uma cor de um evento nao existente: ID: " + event);
 			return new int[]
 			{
 				255,
@@ -163,7 +163,7 @@ public class Config extends DocumentParser
 		{
 			return colors.get(event).get(owner);
 		}
-		_log.warning("[Event Manager]: Try to get a non existing color: " + owner);
+		_log.warning("[Event Manager]: Tentar obter uma cor nao existente: " + owner);
 		return new int[]
 		{
 			255,
@@ -176,7 +176,7 @@ public class Config extends DocumentParser
 	{
 		if (!(config.containsKey(event)))
 		{
-			_log.warning("[Event Manager]: Try to get a property of a non existing event: ID: " + event);
+			_log.warning("[Event Manager]: Tentar obter uma propriedade de um evento nao existente: ID: " + event);
 			return -1;
 		}
 		
@@ -184,7 +184,7 @@ public class Config extends DocumentParser
 		{
 			return Integer.parseInt(config.get(event).get(propName));
 		}
-		_log.warning("[Event Manager]: Try to get a non existing property: " + propName);
+		_log.warning("[Event Manager]: Tentar obter uma propriedade nao existente: " + propName);
 		return -1;
 	}
 	
@@ -192,7 +192,7 @@ public class Config extends DocumentParser
 	{
 		if (!(messages.containsKey(event)))
 		{
-			_log.warning("[Event Manager]: Try to get a message of a non existing event: ID: " + event);
+			_log.warning("[Event Manager]: Tente receber uma mensagem de um evento nao existente: ID: " + event);
 			return null;
 		}
 		
@@ -200,7 +200,7 @@ public class Config extends DocumentParser
 		{
 			return messages.get(event).get(name);
 		}
-		_log.warning("[Event Manager]: Try to get a non existing message: " + name);
+		_log.warning("[Event Manager]: Tente receber uma mensagem nao existente: " + name);
 		return null;
 		
 	}
@@ -209,17 +209,17 @@ public class Config extends DocumentParser
 	{
 		if (!positions.containsKey(event))
 		{
-			_log.warning("[Event Manager]: Try to get a position of a non existing event: ID: " + event);
+			_log.warning("[Event Manager]: Tente conseguir uma posicao de um evento nao existente: ID: " + event);
 			return new int[] {};
 		}
 		if (!positions.get(event).containsKey(owner))
 		{
-			_log.warning("[Event Manager]: Try to get a position of a non existing owner: " + owner);
+			_log.warning("[Event Manager]: Tentar obter uma posicao de um proprietario nao existente: " + owner);
 			return new int[] {};
 		}
 		if (!positions.get(event).get(owner).containsKey(num) && (num != 0))
 		{
-			_log.warning("[Event Manager]: Try to get a non existing position: " + num);
+			_log.warning("[Event Manager]: Tentar obter uma posicao nao existente: " + num);
 			return new int[] {};
 		}
 		
@@ -234,14 +234,14 @@ public class Config extends DocumentParser
 	{
 		if (!(restrictions.containsKey(event)))
 		{
-			_log.warning("[Event Manager]: Try to get a restriction of a non existing event: ID: " + event);
+			_log.warning("[Event Manager]: Tente conseguir uma restricao de um evento nao existente: ID: " + event);
 			return null;
 		}
 		if (restrictions.get(event).containsKey(type))
 		{
 			return restrictions.get(event).get(type);
 		}
-		_log.warning("[Event Manager]: Try to get a non existing restriction: " + type);
+		_log.warning("[Event Manager]: Tente conseguir uma restricao nao existente: " + type);
 		return null;
 	}
 	
@@ -249,13 +249,13 @@ public class Config extends DocumentParser
 	{
 		if (!(rewards.containsKey(event)))
 		{
-			_log.warning("[Event Manager]: Try to get the rewards of a non existing event: ID: " + event);
+			_log.warning("[Event Manager]: Tentar obter as recompensas de um evento nao existente: ID: " + event);
 			return null;
 		}
 		
 		if (!(rewards.get(event).containsKey(owner)))
 		{
-			_log.warning("[Event Manager]: Failed to get the rewards of " + event + " event: " + owner);
+			_log.warning("[Event Manager]: Falha ao obter as recompensas do " + event + " evento: " + owner);
 			return null;
 		}
 		
@@ -266,7 +266,7 @@ public class Config extends DocumentParser
 	{
 		if (!(config.containsKey(event)))
 		{
-			_log.warning("[Event Manager]: Try to get a property of a non existing event: ID: " + event);
+			_log.warning("[Event Manager]: Tentar obter uma propriedade de um evento nao existente: ID: " + event);
 			return null;
 		}
 		
@@ -274,7 +274,7 @@ public class Config extends DocumentParser
 		{
 			return config.get(event).get(propName);
 		}
-		_log.warning("Event: Try to get a non existing property: " + propName);
+		_log.warning("Event: Tentar obter uma propriedade nao existente: " + propName);
 		return null;
 	}
 	
@@ -288,7 +288,7 @@ public class Config extends DocumentParser
 		messages.clear();
 		rewards.clear();
 		parseDirectory(new File("./config/Events"));
-		_log.info("Phoenix Engine 2.0: Sistema de eventos iniciado.");
+		_log.info("PHOENIX Engine 2.0: Sistema de eventos iniciado.");
 	}
 	
 	@Override

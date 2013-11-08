@@ -45,7 +45,7 @@ public class EventNpc
 		}
 		catch (Exception e)
 		{
-			System.out.println("Error on spawn NPC: " + npcId);
+			System.out.println("Erro ao nascer o NPC: " + npcId);
 		}
 	}
 	

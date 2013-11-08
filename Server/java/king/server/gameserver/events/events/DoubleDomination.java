@@ -50,7 +50,7 @@ public class DoubleDomination extends AbstractEvent
 						giveReward(getPlayersOfTeam(winnerTeam));
 						unSpawnZones();
 						setStatus(EventState.INACTIVE);
-						announce("Congratulation! The " + teams.get(winnerTeam).getName() + " team won the event with " + teams.get(winnerTeam).getScore() + " points!");
+						announce("Parabens! O " + teams.get(winnerTeam).getName() + " equipe venceu o evento com " + teams.get(winnerTeam).getScore() + " pontos!");
 						eventEnded();
 						break;
 				}
@@ -58,7 +58,7 @@ public class DoubleDomination extends AbstractEvent
 			catch (Throwable e)
 			{
 				e.printStackTrace();
-				announce("Error! Event ended.");
+				announce("Erro! O Evento terminou.");
 				eventEnded();
 			}
 		}
@@ -148,7 +148,7 @@ public class DoubleDomination extends AbstractEvent
 		{
 			if (holder != 1)
 			{
-				announce(getPlayerList(), "The " + teams.get(1).getName() + " team captured both zones. Score in 10sec!");
+				announce(getPlayerList(), "A Equipe " + teams.get(1).getName() + " capturou ambas as zonas. Pontuacao em 10 segundos!");
 				holder = 1;
 				time = 0;
 			}
@@ -162,7 +162,7 @@ public class DoubleDomination extends AbstractEvent
 				teams.get(1).increaseScore();
 				teleportToTeamPos();
 				time = 0;
-				announce(getPlayerList(), "The " + teams.get(1).getName() + " team scored!");
+				announce(getPlayerList(), "A Equipe " + teams.get(1).getName() + " marcou!");
 				holder = 0;
 			}
 			else
@@ -175,7 +175,7 @@ public class DoubleDomination extends AbstractEvent
 		{
 			if (holder != 2)
 			{
-				announce(getPlayerList(), "The " + teams.get(2).getName() + " team captured both zones. Score in 10sec!");
+				announce(getPlayerList(), "A Equipe " + teams.get(2).getName() + " capturou ambas as zonas. Pontuacao em 10 segundos!");
 				holder = 1;
 				time = 0;
 			}
@@ -189,7 +189,7 @@ public class DoubleDomination extends AbstractEvent
 				teams.get(2).increaseScore();
 				teleportToTeamPos();
 				time = 0;
-				announce(getPlayerList(), "The " + teams.get(2).getName() + " team scored!");
+				announce(getPlayerList(), "A Equipe " + teams.get(2).getName() + " marcou!");
 				holder = 0;
 			}
 			else
@@ -201,7 +201,7 @@ public class DoubleDomination extends AbstractEvent
 		{
 			if (holder != 0)
 			{
-				announce(getPlayerList(), "Canceled!");
+				announce(getPlayerList(), "Cancelado!");
 			}
 			
 			holder = 0;
@@ -220,7 +220,7 @@ public class DoubleDomination extends AbstractEvent
 	@Override
 	protected String getScorebar()
 	{
-		return "" + teams.get(1).getName() + ": " + teams.get(1).getScore() + "  " + teams.get(2).getName() + ": " + teams.get(2).getScore() + "  Time: " + clock.getTimeInString();
+		return "" + teams.get(1).getName() + ": " + teams.get(1).getScore() + "  " + teams.get(2).getName() + ": " + teams.get(2).getScore() + "  Tempo: " + clock.getTimeInString();
 	}
 	
 	@Override

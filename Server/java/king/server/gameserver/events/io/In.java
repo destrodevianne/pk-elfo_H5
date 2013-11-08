@@ -372,7 +372,7 @@ public class In
 	{
 		if (isParticipating(player) && !getBoolean("restartAllowed", 0))
 		{
-			PlayerContainer.getInstance().getPlayer(player).sendMessage("[Event Manager]: You cannot logout while you are a participant in an event.");
+			PlayerContainer.getInstance().getPlayer(player).sendMessage("[Event Manager]: Voce nao pode sair enquanto estiver participando de um evento.");
 			return true;
 		}
 		return false;

@@ -49,7 +49,7 @@ public class Domination extends AbstractEvent
 						giveReward(getPlayersOfTeam(winnerTeam));
 						unSpawnZones();
 						setStatus(EventState.INACTIVE);
-						announce("Congratulation! The " + teams.get(winnerTeam).getName() + " team won the event with " + teams.get(winnerTeam).getScore() + " points!");
+						announce("Parabens! O " + teams.get(winnerTeam).getName() + " equipe venceu o evento com " + teams.get(winnerTeam).getScore() + " pontos!");
 						eventEnded();
 						break;
 				}
@@ -57,7 +57,7 @@ public class Domination extends AbstractEvent
 			catch (Throwable e)
 			{
 				e.printStackTrace();
-				announce("Error! Event ended.");
+				announce("Erro! O Evento terminou.");
 				eventEnded();
 			}
 		}
@@ -147,7 +147,7 @@ public class Domination extends AbstractEvent
 	@Override
 	protected String getScorebar()
 	{
-		return "" + teams.get(1).getName() + ": " + teams.get(1).getScore() + "  " + teams.get(2).getName() + ": " + teams.get(2).getScore() + "  Time: " + clock.getTimeInString();
+		return "" + teams.get(1).getName() + ": " + teams.get(1).getScore() + "  " + teams.get(2).getName() + ": " + teams.get(2).getScore() + "  Tempo: " + clock.getTimeInString();
 	}
 	
 	@Override

@@ -41,7 +41,7 @@ public class Mutant extends AbstractEvent
 						EventPlayer winner = getPlayerWithMaxScore();
 						giveReward(winner);
 						setStatus(EventState.INACTIVE);
-						announce("Congratulation! " + winner.getName() + " won the event with " + winner.getScore() + " kills!");
+						announce("Parabens! O " + winner.getName() + " venceu o evento com " + winner.getScore() + " mortes!");
 						eventEnded();
 						break;
 				}
@@ -49,7 +49,7 @@ public class Mutant extends AbstractEvent
 			catch (Throwable e)
 			{
 				e.printStackTrace();
-				announce("Error! Event ended.");
+				announce("Erro! O Evento terminou.");
 				eventEnded();
 			}
 		}
@@ -89,7 +89,7 @@ public class Mutant extends AbstractEvent
 	@Override
 	protected String getScorebar()
 	{
-		return "Max: " + getPlayerWithMaxScore().getScore() + "  Time: " + clock.getTimeInString() + "";
+		return "Max: " + getPlayerWithMaxScore().getScore() + "  Tempo: " + clock.getTimeInString() + "";
 	}
 	
 	/*

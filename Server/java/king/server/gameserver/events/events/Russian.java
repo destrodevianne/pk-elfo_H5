@@ -43,7 +43,7 @@ public class Russian extends AbstractEvent
 						}
 						
 						round++;
-						announce("Choose a russian!");
+						announce("Escolha uma russian!");
 						setStatus(EventState.CHECK);
 						schedule(Config.getInstance().getInt(getId(), "roundTime") * 1000);
 						break;
@@ -80,7 +80,7 @@ public class Russian extends AbstractEvent
 								}
 								
 								unspawnRussians();
-								announce("Congratulation! " + countOfPositiveStatus() + " player survived the event!");
+								announce("Parabens! " + countOfPositiveStatus() + " jogadores sobreviveram ao evento!");
 								eventEnded();
 							}
 							
@@ -88,7 +88,7 @@ public class Russian extends AbstractEvent
 						else
 						{
 							unspawnRussians();
-							announce("Unfortunatly noone survived the event!");
+							announce("Infelizmente ninguem sobreviveu ao evento!");
 							eventEnded();
 						}
 						break;
@@ -97,7 +97,7 @@ public class Russian extends AbstractEvent
 			catch (Throwable e)
 			{
 				e.printStackTrace();
-				announce("Error! Event ended.");
+				announce("Erro! O Evento terminou.");
 				eventEnded();
 			}
 			
@@ -147,7 +147,7 @@ public class Russian extends AbstractEvent
 		giveReward(winner);
 		
 		unspawnRussians();
-		announce("Congratulation! 1 player survived the event!");
+		announce("Parabens! 1 jogador sobreviveu ao evento!");
 		eventEnded();
 		
 	}
@@ -168,13 +168,13 @@ public class Russian extends AbstractEvent
 		int russnum = ids.get(rnd.nextInt(ids.size()));
 		EventNpc russian = russians.get(russnum);
 		russian.unspawn();
-		announce(getPlayerList(), "The #" + russnum + " russian died.");
+		announce(getPlayerList(), "O #" + russnum + " russian morreu.");
 		
 		for (EventPlayer victim : choses.get(russnum))
 		{
 			victim.setStatus(-1);
 			victim.doDieNpc(russian.getId());
-			victim.sendMessage("Your russian died!");
+			victim.sendMessage("Seu russian morreu!");
 			victim.setNameColor(255, 255, 255);
 		}
 		russians.remove(russnum);
@@ -241,7 +241,7 @@ public class Russian extends AbstractEvent
 		{
 			if (player.getStatus() == 0)
 			{
-				player.sendMessage("Timeout!");
+				player.sendMessage("Tempo esgotado!");
 				player.doDie();
 				player.setStatus(-1);
 			}

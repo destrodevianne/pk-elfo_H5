@@ -30,7 +30,7 @@ public class SingleEventStatus extends EventStatus
 		Collections.sort(team);
 		Collections.reverse(team);
 		
-		sb.append("<center><table width=270 bgcolor=5A5A5A><tr><td width=70>Running</td><td width=130><center>" + Config.getInstance().getString(event.getId(), "eventName") + "</td><td width=70>Time: " + event.getClock().getTimeInString() + "</td></tr></table>");
+		sb.append("<center><table width=270 bgcolor=5A5A5A><tr><td width=70>Corrente</td><td width=130><center>" + Config.getInstance().getString(event.getId(), "eventName") + "</td><td width=70>Tempo: " + event.getClock().getTimeInString() + "</td></tr></table>");
 		sb.append("<br><table width=270>");
 		
 		for (EventPlayer p : team.subList(0, (team.size() < 10 ? team.size() : 10)))

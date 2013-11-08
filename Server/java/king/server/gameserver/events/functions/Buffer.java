@@ -241,7 +241,7 @@ public class Buffer
 			
 			sb.append("</table><br>");
 			
-			sb.append("<br><br><center><table width=270 bgcolor=5A5A5A><tr><td><font color=ac9775>Available buffs:</font></td></tr></table><br>");
+			sb.append("<br><br><center><table width=270 bgcolor=5A5A5A><tr><td><font color=ac9775>Buffs disponiveis:</font></td></tr></table><br>");
 			sb.append("<center><table width=270>");
 			
 			c = 0;

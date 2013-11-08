@@ -53,7 +53,7 @@ public class Battlefield extends AbstractEvent
 						unspawnBases();
 						removeSkill();
 						setStatus(EventState.INACTIVE);
-						announce("Parabens! O " + teams.get(winnerTeam).getName() + " equipe venceu o evento com " + teams.get(winnerTeam).getScore() + " pontos!");
+						announce("Parabens! A Equipe " + teams.get(winnerTeam).getName() + " venceu o evento com " + teams.get(winnerTeam).getScore() + " pontos!");
 						eventEnded();
 						break;
 				}
@@ -123,7 +123,7 @@ public class Battlefield extends AbstractEvent
 	@Override
 	protected String getScorebar()
 	{
-		return "" + teams.get(1).getName() + ": " + teams.get(1).getScore() + "  " + teams.get(2).getName() + ": " + teams.get(2).getScore() + "  Time: " + clock.getTimeInString();
+		return "" + teams.get(1).getName() + ": " + teams.get(1).getScore() + "  " + teams.get(2).getName() + ": " + teams.get(2).getScore() + "  Tempo: " + clock.getTimeInString();
 	}
 	
 	@Override

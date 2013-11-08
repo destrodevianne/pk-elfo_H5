@@ -32,7 +32,7 @@ public abstract class AbstractEvent
 			switch (phase)
 			{
 				case REGISTER:
-					announce("The next event will be: " + Config.getInstance().getString(c.getId(), "eventName"));
+					announce("O proximo evento sera: " + Config.getInstance().getString(c.getId(), "eventName"));
 					registerCountdown = new RegisterCountdown(Config.getInstance().getInt(0, "registerTime"));
 					registerCountdown.start();
 					break;
@@ -40,7 +40,7 @@ public abstract class AbstractEvent
 				case CHECK:
 					if (players.size() < Config.getInstance().getInt(getId(), "minPlayers"))
 					{
-						announce("Theres not enough participant!");
+						announce("Nao ha participantes suficientes!");
 						
 						reset();
 						
@@ -54,8 +54,8 @@ public abstract class AbstractEvent
 					}
 					else
 					{
-						announce("Event started!");
-						msgToAll("[Event Manager]: You'll be teleported to the event in 10 seconds.");
+						announce("Evento iniciado!");
+						msgToAll("[Event Manager]: Voce sera teletransportado para o evento em 10 segundos.");
 						if (Config.getInstance().getBoolean(0, "showEscapeEffect"))
 						{
 							showEscapeEffectOnAll();
@@ -135,12 +135,12 @@ public abstract class AbstractEvent
 				case 600:
 				case 300:
 				case 60:
-					announce("" + (counter / 60) + " minutes left to register.");
+					announce("" + (counter / 60) + " minutos para registar.");
 					break;
 				case 30:
 				case 10:
 				case 5:
-					announce("" + counter + " seconds left to register.");
+					announce("" + counter + " segundos para registar.");
 					break;
 			}
 		}
@@ -262,47 +262,47 @@ public abstract class AbstractEvent
 	{
 		if (player.isInJail())
 		{
-			player.sendMessage("[Event Manager]: You cant register from jail.");
+			player.sendMessage("[Event Manager]: Voce nao pode se registrar estando PRESO.");
 			return false;
 		}
 		
 		if (player.isInSiege())
 		{
-			player.sendMessage("[Event Manager]: You cant register while a siege.");
+			player.sendMessage("[Event Manager]: Voce nao pode se registrar estando em SIEGE.");
 			return false;
 		}
 		
 		if (player.isInDuel())
 		{
-			player.sendMessage("[Event Manager]: You cant register while you're dueling.");
+			player.sendMessage("[Event Manager]: Voce nao pode se registrar estando em DUELO.");
 			return false;
 		}
 		
 		if (player.isInOlympiadMode())
 		{
-			player.sendMessage("[Event Manager]: You cant register while you're in the olympiad games.");
+			player.sendMessage("[Event Manager]: Voce nao pode se registrar estando em uma OLIMPIADA.");
 			return false;
 		}
 		
 		if (player.getKarma() > 0)
 		{
-			player.sendMessage("[Event Manager]: You cant register if you have karma.");
+			player.sendMessage("[Event Manager]: Voce nao pode se registrar estando PK.");
 			return false;
 		}
 		
 		if (player.isCursedWeaponEquipped())
 		{
-			player.sendMessage("[Event Manager]: You cant register with a cursed weapon.");
+			player.sendMessage("[Event Manager]: Voce nao pode se registrar estando com as ESPADAS DEMONIACAS.");
 			return false;
 		}
 		if (player.getLevel() > Config.getInstance().getInt(getId(), "maxLvl"))
 		{
-			player.sendMessage("[Event Manager]: You're higher than the max level allowed.");
+			player.sendMessage("[Event Manager]: Voce esta acima do nivel maximo permitido.");
 			return false;
 		}
 		if (player.getLevel() < Config.getInstance().getInt(getId(), "minLvl"))
 		{
-			player.sendMessage("[Event Manager]: You're lower than the min level allowed.");
+			player.sendMessage("[Event Manager]: Voce esta abaixo do nivel minimo permitido.");
 			return false;
 		}
 		
@@ -396,7 +396,7 @@ public abstract class AbstractEvent
 	
 	public void eventEnded()
 	{
-		msgToAll("[Event Manager]: You will be teleported back in 10 seconds.");
+		msgToAll("[Event Manager]: Voce sera teletransportado de volta em 10 segundos.");
 		
 		for (EventPlayer player : players)
 		{
@@ -416,7 +416,7 @@ public abstract class AbstractEvent
 				player.abortCast();
 			}
 			player.setIsParalyzed(true);
-			player.sendPacket(new ExShowScreenMessage("Wait until the event starts...", 10000));
+			player.sendPacket(new ExShowScreenMessage("Aguarde ate o inicio do evento...", 10000));
 		}
 	}
 	
@@ -425,7 +425,7 @@ public abstract class AbstractEvent
 		for (EventPlayer player : players)
 		{
 			player.setIsParalyzed(false);
-			player.sendPacket(new ExShowScreenMessage("You can sart now!", 2000));
+			player.sendPacket(new ExShowScreenMessage("Voce pode comecar agora!", 2000));
 			player.setTitle("Score: 0");
 		}
 	}
@@ -832,7 +832,7 @@ public abstract class AbstractEvent
 		EventPlayer pi = PlayerContainer.getInstance().getPlayer(player);
 		if (pi != null)
 		{
-			pi.sendMessage("[Event Manager]: You are already registered on the event!");
+			pi.sendMessage("[Event Manager]: Voce ja esta registrado no evento!");
 			PlayerContainer.getInstance().deleteInfo(pi.getPlayersId());
 			return false;
 		}
@@ -845,7 +845,7 @@ public abstract class AbstractEvent
 			{
 				if (p.getInetAddress().equals(pi.getInetAddress()) && (p.getOwner().getObjectId() == pi.getOwner().getObjectId()))
 				{
-					pi.sendMessage("[Event Manager]: This IP address is already registered on an event");
+					pi.sendMessage("[Event Manager]: Este endereco IP ja esta registrado em um evento");
 					return false;
 				}
 			}
@@ -853,7 +853,7 @@ public abstract class AbstractEvent
 		
 		if (getAbstractPhase() != AbstractPhase.REGISTER)
 		{
-			pi.sendMessage("[Event Manager]: You can't register now!");
+			pi.sendMessage("[Event Manager]: Voce nao pode se registrar agora!");
 			PlayerContainer.getInstance().deleteInfo(pi.getPlayersId());
 			return false;
 		}
@@ -862,7 +862,7 @@ public abstract class AbstractEvent
 		{
 			if (!Buffer.getInstance().playerHaveTemplate(player))
 			{
-				pi.sendMessage("[Event Manager]: You have to set a buff template first!");
+				pi.sendMessage("[Event Manager]: Voce deve definir um modelo de Buff primeiro!");
 				Buffer.getInstance().showHtml(player);
 				PlayerContainer.getInstance().deleteInfo(pi.getPlayersId());
 				return false;
@@ -870,13 +870,13 @@ public abstract class AbstractEvent
 		}
 		if (canRegister(pi))
 		{
-			pi.sendMessage("[Event Manager]: You succesfully registered to the event!");
+			pi.sendMessage("[Event Manager]: Voce se registrou com sucesso no evento!");
 			pi.setEvent(this);
 			pi.initOrigInfo();
 			players.add(pi);
 			return true;
 		}
-		pi.sendMessage("[Event Manager]: You failed on the registering to the event!");
+		pi.sendMessage("[Event Manager]: Voce falhou em se registrar para o evento!");
 		PlayerContainer.getInstance().deleteInfo(pi.getPlayersId());
 		return false;
 	}
@@ -960,10 +960,10 @@ public abstract class AbstractEvent
 	{
 		if (getAbstractPhase() != AbstractPhase.REGISTER)
 		{
-			pi.sendMessage("[Event Manager]: You can't unregister now!");
+			pi.sendMessage("[Event Manager]: Voce nao pode cancelar o registro agora!");
 			return false;
 		}
-		pi.sendMessage("[Event Manager]: You have been succesfully unregistered from the event.");
+		pi.sendMessage("[Event Manager]: Voce nao teve sucesso ao se registrar para os eventos.");
 		PlayerContainer.getInstance().deleteInfo(pi.getPlayersId());
 		players.remove(pi);
 		return true;
@@ -974,7 +974,7 @@ public abstract class AbstractEvent
 		EventPlayer pi = PlayerContainer.getInstance().getPlayer(player);
 		if (pi == null)
 		{
-			Out.sendMessage(player, "[Event Manager]: You're not registered on the event!");
+			Out.sendMessage(player, "[Event Manager]: Voce nao esta registrado no evento!");
 			return false;
 		}
 		

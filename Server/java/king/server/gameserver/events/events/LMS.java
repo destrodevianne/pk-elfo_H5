@@ -47,7 +47,7 @@ public class LMS extends AbstractEvent
 						
 						giveReward(winner);
 						setStatus(EventState.INACTIVE);
-						announce("Congratulation! " + winner.getName() + " won the event!");
+						announce("Parabens! O " + winner.getName() + " venceu o evento!");
 						eventEnded();
 						break;
 				}
@@ -55,7 +55,7 @@ public class LMS extends AbstractEvent
 			catch (Throwable e)
 			{
 				e.printStackTrace();
-				announce("Error! Event ended.");
+				announce("Erro! O Evento terminou.");
 				eventEnded();
 			}
 		}
@@ -93,7 +93,7 @@ public class LMS extends AbstractEvent
 	@Override
 	protected String getScorebar()
 	{
-		return "Players: " + getPlayersWithStatus(0).size() + "  Time: " + clock.getTimeInString();
+		return "Jogadores: " + getPlayersWithStatus(0).size() + "  Tempo: " + clock.getTimeInString();
 	}
 	
 	@Override

@@ -55,12 +55,12 @@ public class Simon extends AbstractEvent
 						if (winner != null)
 						{
 							giveReward(winner);
-							announce("Congratulation! " + winner.getName() + " won the event!");
+							announce("Parabens! O " + winner.getName() + " venceu o evento!");
 							eventEnded();
 						}
 						else
 						{
-							announce("The mathc ended as a tie!");
+							announce("A partida terminou em um empate!");
 						}
 						eventEnded();
 						break;
@@ -69,7 +69,7 @@ public class Simon extends AbstractEvent
 			catch (Throwable e)
 			{
 				e.printStackTrace();
-				announce("Error! Event ended.");
+				announce("Erro! O Eventto terminou.");
 				eventEnded();
 			}
 		}
@@ -151,7 +151,7 @@ public class Simon extends AbstractEvent
 			if (text.equalsIgnoreCase(say))
 			{
 				player.setStatus(1);
-				player.sendMessage("Correct!");
+				player.sendMessage("Correto!");
 				player.increaseScore();
 				player.setNameColor(0, 255, 0);
 				player.broadcastUserInfo();
@@ -160,7 +160,7 @@ public class Simon extends AbstractEvent
 			else
 			{
 				player.setStatus(-1);
-				player.sendMessage("Wrong!");
+				player.sendMessage("Errado!");
 				player.setNameColor(255, 0, 0);
 				player.broadcastUserInfo();
 			}
@@ -189,7 +189,7 @@ public class Simon extends AbstractEvent
 				
 				if (count >= 1)
 				{
-					falsed.sendMessage("Last one!");
+					falsed.sendMessage("Ultima!");
 					falsed.setNameColor(255, 0, 0);
 					falsed.broadcastUserInfo();
 					falsed.setStatus(-1);
@@ -220,7 +220,7 @@ public class Simon extends AbstractEvent
 			if (player.getStatus() == 0)
 			{
 				
-				player.sendMessage("Timeout!");
+				player.sendMessage("Tempo esgotado!");
 				player.setNameColor(255, 0, 0);
 				player.broadcastUserInfo();
 				player.setStatus(-1);

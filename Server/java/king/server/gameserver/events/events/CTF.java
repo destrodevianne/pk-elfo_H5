@@ -57,7 +57,7 @@ public class CTF extends AbstractEvent
 						}
 						giveReward(getPlayersOfTeam(winnerTeam));
 						setStatus(EventState.INACTIVE);
-						announce("Parabens! O " + teams.get(winnerTeam).getName() + " equipe venceu o evento com " + teams.get(winnerTeam).getScore() + " mortes!");
+						announce("Parabens! A Equipe " + teams.get(winnerTeam).getName() + "venceu o evento com " + teams.get(winnerTeam).getScore() + " mortes!");
 						eventEnded();
 						break;
 				}
@@ -145,7 +145,7 @@ public class CTF extends AbstractEvent
 	@Override
 	protected String getScorebar()
 	{
-		return "" + teams.get(1).getName() + ": " + teams.get(1).getScore() + "  " + teams.get(2).getName() + ": " + teams.get(2).getScore() + "  Time: " + clock.getTimeInString();
+		return "" + teams.get(1).getName() + ": " + teams.get(1).getScore() + "  " + teams.get(2).getName() + ": " + teams.get(2).getScore() + "  Tempo: " + clock.getTimeInString();
 	}
 	
 	@Override
