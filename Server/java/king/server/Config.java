@@ -137,6 +137,19 @@ public final class Config
 	public static float POLE_VS_HEAVY;
 	public static float POLE_VS_LIGHT;
 	public static float POLE_VS_ROBE;
+	
+	// --------------------------------------------------
+	//  CONFIGURACOES ESPECIAIS RELACIONADAS AS RACAS  //
+	// --------------------------------------------------
+	//Cor para cada raca
+    public static boolean RACES_COLOR_ENABLE;
+    public static int HUMAN_COLOR;
+    public static int ELF_COLOR;
+    public static int DARKELF_COLOR;
+    public static int ORC_COLOR;
+    public static int DWARF_COLOR;
+    public static int KAMAEL_COLOR;
+    
 	// PC bang points
 	public static boolean PC_BANG_ENABLED;
 	public static int MAX_PC_BANG_POINTS;
@@ -1798,7 +1811,17 @@ public final class Config
 				POLE_VS_HEAVY = Float.parseFloat(KingSettings.getProperty("PoleVsHeavy", "1.00"));
 				POLE_VS_LIGHT = Float.parseFloat(KingSettings.getProperty("PoleVsLight", "1.00"));
 				POLE_VS_ROBE = Float.parseFloat(KingSettings.getProperty("PoleVsRobe", "1.00"));
-				PC_BANG_ENABLED = Boolean.parseBoolean(KingSettings.getProperty("Enabled", "false"));
+				//############################  CONFIGURACOES ESPECIAIS RELACIONADAS AS RACAS  ############################//
+				//cor para cada raca
+                RACES_COLOR_ENABLE = Boolean.parseBoolean(KingSettings.getProperty("RacesColorEnable", "False"));
+                HUMAN_COLOR = Integer.decode("0x" + KingSettings.getProperty("HumanNameColor", "FFFFFF"));
+                ELF_COLOR = Integer.decode("0x" + KingSettings.getProperty("ElfNameColor", "FFFFFF"));
+                DARKELF_COLOR = Integer.decode("0x" + KingSettings.getProperty("DarkElfNameColor", "FFFFFF"));
+                ORC_COLOR = Integer.decode("0x" + KingSettings.getProperty("OrcNameColor", "FFFFFF"));
+                DWARF_COLOR = Integer.decode("0x" + KingSettings.getProperty("DwarfNameColor", "FFFFFF"));
+                KAMAEL_COLOR = Integer.decode("0x" + KingSettings.getProperty("KamaelNameColor", "FFFFFF"));
+                //#########################################################################################################//
+                PC_BANG_ENABLED = Boolean.parseBoolean(KingSettings.getProperty("Enabled", "false"));
 				ALT_ALLOW_REFINE_PVP_ITEM = Boolean.parseBoolean(KingSettings.getProperty("AltAllowRefinePVPItem", "False"));
 				ENABLE_UNSTUCK_PVP = Boolean.parseBoolean(KingSettings.getProperty("EnableUnstuckPvP", "True"));
 				USE_CR_ITEM = Boolean.parseBoolean(KingSettings.getProperty("EnableTheClanRepPointsItem", "False"));

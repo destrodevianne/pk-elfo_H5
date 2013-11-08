@@ -177,7 +177,29 @@ public class EnterWorld extends L2GameClientPacket
 		LoginServerThread.getInstance().sendClientTracert(activeChar.getAccountName(), adress);
 		
 		getClient().setClientTracert(tracert);
-		
+
+		//cor para cada raca
+        if (Config.RACES_COLOR_ENABLE)
+        {
+            if (activeChar.getRace() == Race.Human)
+                activeChar.getAppearance().setNameColor(Config.HUMAN_COLOR);
+
+            else if (activeChar.getRace() == Race.Elf)
+                activeChar.getAppearance().setNameColor(Config.ELF_COLOR);
+
+            else if (activeChar.getRace() == Race.DarkElf)
+                activeChar.getAppearance().setNameColor(Config.DARKELF_COLOR);
+
+            else if (activeChar.getRace() == Race.Orc)
+                activeChar.getAppearance().setNameColor(Config.ORC_COLOR);
+
+            else if (activeChar.getRace() == Race.Dwarf)
+                activeChar.getAppearance().setNameColor(Config.DWARF_COLOR);
+
+            else if (activeChar.getRace() == Race.Kamael)
+                activeChar.getAppearance().setNameColor(Config.KAMAEL_COLOR);
+
+        }
 		// Restore to instanced area if enabled
 		if (Config.RESTORE_PLAYER_INSTANCE)
 		{
