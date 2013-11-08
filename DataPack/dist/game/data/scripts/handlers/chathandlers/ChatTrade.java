@@ -46,9 +46,16 @@ public class ChatTrade implements IChatHandler
 	@Override
 	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
 	{
+
 		if (activeChar.isChatBanned() && Util.contains(Config.BAN_CHAT_CHANNELS, type))
 		{
 			activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
+			return;
+		}
+		
+		if (activeChar.isAio() && (Config.ENABLE_AIO_CHAT))
+		{
+			activeChar.sendMessage("Voce presisar ser AIO para falar aqui.");
 			return;
 		}
 		

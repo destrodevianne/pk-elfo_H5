@@ -1280,6 +1280,7 @@ public final class Config
 	public static int AIO_TCOLOR;
 	public static boolean ALLOW_AIO_ITEM;
 	public static int AIO_ITEMID;
+	public static boolean ENABLE_AIO_CHAT;
 	// Vip System
 	public static boolean ALLOW_VIP_NCOLOR;
 	public static int VIP_NCOLOR;
@@ -2627,6 +2628,7 @@ public final class Config
 					}
 				}
 			}
+			ENABLE_AIO_CHAT = Boolean.parseBoolean(KingSettings.getProperty("EnableAIOChat", "False"));
 			ALLOW_VIP_NCOLOR = Boolean.parseBoolean(KingSettings.getProperty("AllowVipNameColor", "True"));
 			VIP_NCOLOR = Integer.decode("0x" + KingSettings.getProperty("VipNameColor", "0088FF"));
 			ALLOW_VIP_TCOLOR = Boolean.parseBoolean(KingSettings.getProperty("AllowVipTitleColor", "True"));
