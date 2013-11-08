@@ -206,47 +206,47 @@ public final class L2ClassMasterInstance extends L2MerchantInstance
 				case 0:
 					if (Config.CLASS_MASTER_SETTINGS.isAllowed(1))
 					{
-						sb.append("Come back here when you reached level 20 to change your class.<br>");
+						sb.append("Volte aqui quando atingir o nivel 20 para mudar a sua classe.<br>");
 					}
 					else if (Config.CLASS_MASTER_SETTINGS.isAllowed(2))
 					{
-						sb.append("Come back after your first occupation change.<br>");
+						sb.append("Volte depois da sua primeira mudanca de classe.<br>");
 					}
 					else if (Config.CLASS_MASTER_SETTINGS.isAllowed(3))
 					{
-						sb.append("Come back after your second occupation change.<br>");
+						sb.append("Volte depois da sua segunda mudancxa de classe.<br>");
 					}
 					else
 					{
-						sb.append("I can't change your occupation.<br>");
+						sb.append("Eu nao posso mudar a sua classe.<br>");
 					}
 					break;
 				case 1:
 					if (Config.CLASS_MASTER_SETTINGS.isAllowed(2))
 					{
-						sb.append("Come back here when you reached level 40 to change your class.<br>");
+						sb.append("Volte aqui quando atingir o nivel 40 para mudar a sua classe.<br>");
 					}
 					else if (Config.CLASS_MASTER_SETTINGS.isAllowed(3))
 					{
-						sb.append("Come back after your second occupation change.<br>");
+						sb.append("Volte depois da sua segunda mudancxa de classe.<br>");
 					}
 					else
 					{
-						sb.append("I can't change your occupation.<br>");
+						sb.append("Eu nao posso mudar a sua classe.<br>");
 					}
 					break;
 				case 2:
 					if (Config.CLASS_MASTER_SETTINGS.isAllowed(3))
 					{
-						sb.append("Come back here when you reached level 76 to change your class.<br>");
+						sb.append("Volte aqui quando atingir o nivel 76 para mudar a sua classe.<br>");
 					}
 					else
 					{
-						sb.append("I can't change your occupation.<br>");
+						sb.append("Eu nao posso mudar a sua classe.<br>");
 					}
 					break;
 				case 3:
-					sb.append("There is no class change available for you anymore.<br>");
+					sb.append("Nao ha mais mudanca de classe disponivel para vocxe.<br>");
 					break;
 			}
 			sb.append("</body></html>");

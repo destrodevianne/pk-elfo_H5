@@ -424,6 +424,10 @@ public final class Config
 	public static int STARTING_SP;
 	public static boolean CHAR_TITLE;
 	public static String ADD_CHAR_TITLE;
+	//Novos chars Hero
+    public static boolean ADD_HERO;
+    //Novos chars Nobre
+    public static boolean ADD_NOBLESSE;
 	public static long MAX_ADENA;
 	public static boolean AUTO_LOOT;
 	public static boolean AUTO_LOOT_RAIDS;
@@ -2443,6 +2447,10 @@ public final class Config
 			STARTING_SP = Integer.parseInt(Character.getProperty("StartingSP", "0"));
 			CHAR_TITLE = Boolean.parseBoolean(Character.getProperty("CharTitle", "true"));
 			ADD_CHAR_TITLE = Character.getProperty("CharAddTitle", "KingServer");
+			//Novos chars Hero
+            ADD_HERO = Boolean.parseBoolean(Character.getProperty("NewHeroesCharacter", "False"));
+            //Novos chars Nobre
+            ADD_NOBLESSE = Boolean.parseBoolean(Character.getProperty("NoblesseAtNewChars", "False"));
 			MAX_ADENA = Long.parseLong(Character.getProperty("MaxAdena", "99900000000"));
 			if (MAX_ADENA < 0)
 			{

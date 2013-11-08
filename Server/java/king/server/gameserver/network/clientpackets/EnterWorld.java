@@ -200,6 +200,20 @@ public class EnterWorld extends L2GameClientPacket
 			}
 		}
 		
+		if (Config.ADD_NOBLESSE)
+			{
+			if (activeChar.getLevel() <= 2)
+			activeChar.setNoble(true);
+			activeChar.sendMessage("Parabens Agora Voce e Nobre!");
+			}
+
+		if (Config.ADD_HERO)
+			{
+			if (activeChar.getLevel() <= 2)
+			activeChar.setHero(true);
+			activeChar.sendMessage("Parabens Agora Voce e Hero!");
+			}
+
 		if (Config.PROTECT_ENCHANT_ENABLE)
 		{
 			for (L2ItemInstance i : activeChar.getInventory().getItems())

@@ -65,7 +65,7 @@ public final class RequestHennaEquip extends L2GameClientPacket
 		final L2Henna henna = HennaData.getInstance().getHenna(_symbolId);
 		if (henna == null)
 		{
-			_log.warning(getClass().getName() + ": Invalid Henna Id: " + _symbolId + " from player " + activeChar);
+			_log.warning(getClass().getName() + ": Henna invalida Id: " + _symbolId + " do jogador " + activeChar);
 			sendActionFailed();
 			return;
 		}
@@ -85,7 +85,7 @@ public final class RequestHennaEquip extends L2GameClientPacket
 			activeChar.sendPacket(SystemMessageId.CANT_DRAW_SYMBOL);
 			if (!activeChar.canOverrideCond(PcCondOverride.ITEM_CONDITIONS) && !henna.isAllowedClass(activeChar.getClassId()))
 			{
-				Util.handleIllegalPlayerAction(activeChar, "Exploit attempt: Character " + activeChar.getName() + " of account " + activeChar.getAccountName() + " tryed to add a forbidden henna.", Config.DEFAULT_PUNISH);
+				Util.handleIllegalPlayerAction(activeChar, "Exploit attempt: O jogador " + activeChar.getName() + " da cxonta " + activeChar.getAccountName() + " tentou adicionar uma henna proibida.", Config.DEFAULT_PUNISH);
 			}
 			sendActionFailed();
 		}
