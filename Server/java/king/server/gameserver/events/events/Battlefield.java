@@ -53,7 +53,7 @@ public class Battlefield extends AbstractEvent
 						unspawnBases();
 						removeSkill();
 						setStatus(EventState.INACTIVE);
-						announce("Congratulation! The " + teams.get(winnerTeam).getName() + " team won the event with " + teams.get(winnerTeam).getScore() + " points!");
+						announce("Parabens! O " + teams.get(winnerTeam).getName() + " equipe venceu o evento com " + teams.get(winnerTeam).getScore() + " pontos!");
 						eventEnded();
 						break;
 				}
@@ -61,7 +61,7 @@ public class Battlefield extends AbstractEvent
 			catch (Throwable e)
 			{
 				e.printStackTrace();
-				announce("Error! Event ended.");
+				announce("Erro! O Evento terminou.");
 				eventEnded();
 			}
 		}
@@ -254,7 +254,7 @@ public class Battlefield extends AbstractEvent
 					p.sendAbstractNpcInfo(b);
 				}
 				
-				announce(getPlayerList(), "The " + teams.get(player.getMainTeam()).getName() + " team captured a base!");
+				announce(getPlayerList(), "O " + teams.get(player.getMainTeam()).getName() + " equipe capturou uma base!");
 				player.increaseScore();
 				break;
 			}

@@ -108,7 +108,7 @@ public class Bomb extends AbstractEvent
 						removeSkill();
 						giveReward(getPlayersOfTeam(winnerTeam));
 						setStatus(EventState.INACTIVE);
-						announce("Congratulation! The " + teams.get(winnerTeam).getName() + " team won the event with " + teams.get(winnerTeam).getScore() + " kills!");
+						announce("Parabens! O " + teams.get(winnerTeam).getName() + " equipe venceu o evento com " + teams.get(winnerTeam).getScore() + " mortes!");
 						eventEnded();
 						break;
 				}
@@ -116,7 +116,7 @@ public class Bomb extends AbstractEvent
 			catch (Throwable e)
 			{
 				e.printStackTrace();
-				announce("Error! Event ended.");
+				announce("Erro! O Evento terminou.");
 				eventEnded();
 			}
 		}

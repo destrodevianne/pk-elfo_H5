@@ -57,7 +57,7 @@ public class CTF extends AbstractEvent
 						}
 						giveReward(getPlayersOfTeam(winnerTeam));
 						setStatus(EventState.INACTIVE);
-						announce("Congratulation! The " + teams.get(winnerTeam).getName() + " team won the event with " + teams.get(winnerTeam).getScore() + " kills!");
+						announce("Parabens! O " + teams.get(winnerTeam).getName() + " equipe venceu o evento com " + teams.get(winnerTeam).getScore() + " mortes!");
 						eventEnded();
 						break;
 				}
@@ -65,7 +65,7 @@ public class CTF extends AbstractEvent
 			catch (Throwable e)
 			{
 				e.printStackTrace();
-				announce("Error! Event ended.");
+				announce("Erro! O Evento terminou.");
 				eventEnded();
 			}
 		}
@@ -128,12 +128,12 @@ public class CTF extends AbstractEvent
 		{
 			case 1:
 				playerWithBlueFlag = player;
-				announce(getPlayerList(), player.getName() + " took the Blue flag!");
+				announce(getPlayerList(), player.getName() + " pegou a bandeira azul!");
 				blueFlagNpc.unspawn();
 				break;
 			case 2:
 				playerWithRedFlag = player;
-				announce(getPlayerList(), player.getName() + " took the Red flag!");
+				announce(getPlayerList(), player.getName() + " pegou a bandeira vermelha!");
 				redFlagNpc.unspawn();
 				break;
 			default:
@@ -161,14 +161,14 @@ public class CTF extends AbstractEvent
 		super.onDie(victim, killer);
 		if ((playerWithRedFlag != null) && playerWithRedFlag.equals(victim))
 		{
-			announce(getPlayerList(), victim.getName() + " dropped the Red flag!");
+			announce(getPlayerList(), victim.getName() + " caiu a bandeira vermelha!");
 			redFlagStatus = 2;
 			unequipFlag(victim);
 			redFlagNpc = NpcContainer.getInstance().createNpc(victim.getOwnerLoc().getX(), victim.getOwnerLoc().getY(), victim.getOwnerLoc().getZ(), Config.getInstance().getInt(getId(), "redFlagId"), instanceId);
 		}
 		if ((playerWithBlueFlag != null) && playerWithBlueFlag.equals(victim))
 		{
-			announce(getPlayerList(), victim.getName() + " dropped the Blue flag!");
+			announce(getPlayerList(), victim.getName() + " caiu a bandeira azul!");
 			blueFlagStatus = 2;
 			unequipFlag(victim);
 			blueFlagNpc = NpcContainer.getInstance().createNpc(victim.getOwnerLoc().getX(), victim.getOwnerLoc().getY(), victim.getOwnerLoc().getZ(), Config.getInstance().getInt(getId(), "blueFlagId"), instanceId);
@@ -191,14 +191,14 @@ public class CTF extends AbstractEvent
 		
 		if (playerWithRedFlag.equals(player))
 		{
-			announce(getPlayerList(), player.getName() + " dropped the Red flag!");
+			announce(getPlayerList(), player.getName() + " caiu a bandeira vermelha!");
 			redFlagStatus = 2;
 			unequipFlag(player);
 			redFlagNpc = NpcContainer.getInstance().createNpc(player.getOwnerLoc().getX(), player.getOwnerLoc().getY(), player.getOwnerLoc().getZ(), Config.getInstance().getInt(getId(), "redFlagId"), instanceId);
 		}
 		if (playerWithBlueFlag.equals(player))
 		{
-			announce(getPlayerList(), player.getName() + " dropped the Blue flag!");
+			announce(getPlayerList(), player.getName() + " caiu a bandeira azul!");
 			blueFlagStatus = 2;
 			unequipFlag(player);
 			blueFlagNpc = NpcContainer.getInstance().createNpc(player.getOwnerLoc().getX(), player.getOwnerLoc().getY(), player.getOwnerLoc().getZ(), Config.getInstance().getInt(getId(), "blueFlagId"), instanceId);
@@ -224,7 +224,7 @@ public class CTF extends AbstractEvent
 		{
 			if (player.equals(playerWithRedFlag) && (blueFlagStatus == 0))
 			{
-				announce(getPlayerList(), "The Blue team scored!");
+				announce(getPlayerList(), "O time azul marcou!");
 				teams.get(player.getMainTeam()).increaseScore();
 				player.increaseScore();
 				returnFlag(2);
@@ -234,7 +234,7 @@ public class CTF extends AbstractEvent
 		{
 			if (player.equals(playerWithBlueFlag) && (redFlagStatus == 0))
 			{
-				announce(getPlayerList(), "The Red team scored!");
+				announce(getPlayerList(), "O time vermelho marcou!");
 				teams.get(player.getMainTeam()).increaseScore();
 				player.increaseScore();
 				returnFlag(1);
@@ -321,7 +321,7 @@ public class CTF extends AbstractEvent
 				pos = Config.getInstance().getPosition(getId(), "BlueFlag", 1);
 				blueFlagNpc = NpcContainer.getInstance().createNpc(pos[0], pos[1], pos[2], Config.getInstance().getInt(getId(), "blueFlagId"), instanceId);
 				blueFlagStatus = 0;
-				announce(getPlayerList(), "The Blue flag returned!");
+				announce(getPlayerList(), "A bandeira azul voltou!");
 				break;
 			
 			case 2:
@@ -337,7 +337,7 @@ public class CTF extends AbstractEvent
 				pos = Config.getInstance().getPosition(getId(), "RedFlag", 1);
 				redFlagNpc = NpcContainer.getInstance().createNpc(pos[0], pos[1], pos[2], Config.getInstance().getInt(getId(), "redFlagId"), instanceId);
 				redFlagStatus = 0;
-				announce(getPlayerList(), "The Red flag returned!");
+				announce(getPlayerList(), "A bandeira vermelha voltou!");
 				break;
 		}
 	}
