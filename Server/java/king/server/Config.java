@@ -58,6 +58,7 @@ public final class Config
 	// --------------------------------------------------
 	// L2J Property File Definitions
 	// --------------------------------------------------
+	public static final String USER_CONFIG_FILE = "./config/User.properties";
 	public static final String AIO_CONFIG_FILE = "./config/Aio.properties";
 	public static final String CHARACTER_CONFIG_FILE = "./config/Character.properties";
 	public static final String FEATURE_CONFIG_FILE = "./config/Feature.properties";
@@ -1020,6 +1021,15 @@ public final class Config
 	public static int L2JMOD_DUALBOX_CHECK_MAX_L2EVENT_PARTICIPANTS_PER_IP;
 	public static Map<Integer, Integer> L2JMOD_DUALBOX_CHECK_WHITELIST;
 	public static boolean L2JMOD_ALLOW_CHANGE_PASSWORD;
+	
+	// --------------------------------------------------
+	// USERS Settings
+	// --------------------------------------------------
+	public static boolean ENABLE_TRADE_REFUSAL;
+	public static boolean ENABLE_PM_REFUSAL;
+	public static boolean SHOW_USER;
+	public static boolean ENABLE_SPECIAL_EFFECT;
+	public static boolean ENABLE_EXP_REFUSAL;
 	
 	// --------------------------------------------------
 	// NPC Settings
@@ -2241,6 +2251,24 @@ public final class Config
 			{
 				_log.log(Level.SEVERE, "Error while loading Event settings!", e);
 			}
+
+			// User Painel
+			L2Properties UserSettings = new L2Properties();
+			final File user = new File(USER_CONFIG_FILE);
+			try (InputStream is = new FileInputStream(user))
+			{
+				UserSettings.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Error while loading USER settings!", e);
+			}
+			
+			ENABLE_PM_REFUSAL = Boolean.parseBoolean(UserSettings.getProperty("AllowPmCommand","False"));
+			ENABLE_TRADE_REFUSAL = Boolean.parseBoolean(UserSettings.getProperty("AllowTradeCommand","False"));
+			SHOW_USER = Boolean.parseBoolean(UserSettings.getProperty("AllowUserCommand","False"));
+			ENABLE_SPECIAL_EFFECT = Boolean.parseBoolean(UserSettings.getProperty("AllowSpecialEffect","False"));
+			ENABLE_EXP_REFUSAL = Boolean.parseBoolean(UserSettings.getProperty("AllowExpRefusal", "true"));
 			
 			// AIOx
 			L2Properties AioSettings = new L2Properties();

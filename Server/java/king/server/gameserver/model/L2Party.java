@@ -822,7 +822,7 @@ public class L2Party extends AbstractPlayerGroup
 		{
 			for (L2Character member : rewardedMembers)
 			{
-				if (member.isDead())
+				if (member.isDead() || ((L2PcInstance) member)._isexpsprefusal)
 				{
 					continue;
 				}

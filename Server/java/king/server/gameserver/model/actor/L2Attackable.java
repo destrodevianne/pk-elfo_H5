@@ -784,6 +784,14 @@ public class L2Attackable extends L2Npc
 								sp *= ChampionData.getInstance().getMultiplier(getChampionType(), Stats.BONUS_SP);
 							}
 							
+							if (attacker instanceof L2PcInstance)
+							{
+								if (((L2PcInstance) attacker)._isexpsprefusal == true)
+								{
+									exp = 0;
+									sp = 0;
+								}
+							}
 							// Check for an over-hit enabled strike
 							if (attacker instanceof L2PcInstance)
 							{

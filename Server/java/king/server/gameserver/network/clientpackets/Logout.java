@@ -59,6 +59,26 @@ public final class Logout extends L2GameClientPacket
 			return;
 		}
 		
+		if (L2PcInstance._isoneffect == true)
+		{
+			L2PcInstance._isoneffect = false;
+		}
+		      
+		if (L2PcInstance._istraderefusal == true)
+		{
+			L2PcInstance._istraderefusal = false;
+		}
+			             
+		if (L2PcInstance._ispmrefusal == true)
+		{
+			L2PcInstance._ispmrefusal = false;
+		}
+			              
+		if (L2PcInstance._isexpsprefusal == true)
+		{
+			L2PcInstance._isexpsprefusal = false;
+		}
+		
 		if ((player.getActiveEnchantItem() != null) || (player.getActiveEnchantAttrItem() != null))
 		{
 			player.sendPacket(ActionFailed.STATIC_PACKET);

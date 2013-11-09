@@ -325,6 +325,11 @@ import king.server.util.TimeConstant;
  */
 public final class L2PcInstance extends L2Playable
 {
+	// User panel
+	public static boolean _isoneffect = false;
+	public static boolean _ispmrefusal = false;
+	public static boolean _istraderefusal = false;
+	public static boolean _isexpsprefusal = false;
 	// Character Skill SQL String Definitions:
 	private static final String RESTORE_SKILLS_FOR_CHAR = "SELECT skill_id,skill_level FROM character_skills WHERE charId=? AND class_index=?";
 	private static final String ADD_NEW_SKILL = "INSERT INTO character_skills (charId,skill_id,skill_level,class_index) VALUES (?,?,?,?)";
