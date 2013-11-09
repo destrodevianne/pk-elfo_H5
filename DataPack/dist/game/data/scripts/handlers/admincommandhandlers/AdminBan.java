@@ -249,6 +249,7 @@ public class AdminBan implements IAdminCommandHandler
 				targetPlayer.setPunishLevel(L2PcInstance.PunishLevel.JAIL, duration);
 				activeChar.sendMessage("Character " + targetPlayer.getName() + " jailed for " + (duration > 0 ? duration + " minutes." : "ever!"));
 				auditAction(command, activeChar, targetPlayer.getName());
+				Announcements.getInstance().announceToAll("Character "+player+" jailed for "+(delay>0 ? delay+" minutes." : "ever!"));
 			}
 			else
 			{
@@ -416,6 +417,7 @@ public class AdminBan implements IAdminCommandHandler
 			targetPlayer.logout();
 			RegionBBSManager.getInstance().changeCommunityBoard();
 			activeChar.sendMessage("The character " + targetPlayer.getName() + " has now been banned.");
+			Announcements.getInstance().announceToAll("Account "+account_name+" banned");
 		}
 		else
 		{

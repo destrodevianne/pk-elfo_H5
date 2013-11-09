@@ -28,7 +28,7 @@ import king.server.gameserver.events.EventsInterface;
 import king.server.gameserver.model.L2Party;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.model.entity.L2Event;
-import king.server.gameserver.model.entity.Announcements;
+import king.server.gameserver.Announcements;
 import king.server.gameserver.network.SystemMessageId;
 import king.server.gameserver.network.serverpackets.ActionFailed;
 import king.server.gameserver.network.serverpackets.SystemMessage;

@@ -582,25 +582,25 @@ public class EnterWorld extends L2GameClientPacket
         
 		if (Config.ANNOUNCE_AIOX_CONECT)
 		{
-			if (player.isAio())
+			if (activeChar.isAio())
 			{
-				Announcements.getInstance().announceToAll("O AIOx "+player.getName()+" acabou de logar.");
+				Announcements.getInstance().announceToAll("O AIOx "+activeChar.getName()+" acabou de logar.");
 			}
 		}
 
 		if (Config.ANNOUNCE_VIP_CONECT)
 		{
-			if (player.isVip())
+			if (activeChar.isVip())
 			{
-				Announcements.getInstance().announceToAll("O jogador VIP "+player.getName()+" acabou de logar.");
+				Announcements.getInstance().announceToAll("O jogador VIP "+activeChar.getName()+" acabou de logar.");
 			}
 		}
 		
 		if (Config.ANNOUNCE_HERO_CONECT)
 		{
-			if (player.isHero())
+			if (activeChar.isHero())
 			{
-				Announcements.getInstance().announceToAll("O Heroi "+player.getName()+" acabou de logar.");
+				Announcements.getInstance().announceToAll("O Heroi "+activeChar.getName()+" acabou de logar.");
 			}
 		}
 		
