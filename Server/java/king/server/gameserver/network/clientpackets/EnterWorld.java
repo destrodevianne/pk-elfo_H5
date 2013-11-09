@@ -236,6 +236,23 @@ public class EnterWorld extends L2GameClientPacket
 			activeChar.setHero(true);
 			activeChar.sendMessage("Parabens Agora Voce e Hero!");
 			}
+		
+		if (Config.ADD_VIP)
+			{
+			if (activeChar.getLevel() <= 1)			            
+			activeChar.setVip(true);
+			activeChar.setVipEndTime(Config.ADD_VIP_DAYS);
+			activeChar.sendMessage("Voce ganhou VIP por 7 dias!");
+			}
+		
+		if (Config.ADD_AIO)
+			{
+			if (activeChar.getLevel() <= 1)
+			activeChar.isNewbie();
+			activeChar.setAio(true);
+			activeChar.setAioEndTime(Config.ADD_AIO_DAYS);
+			activeChar.sendMessage("Voce ganhou status de AIOx por 7 dias "+activeChar.getName()+" ");
+			}
 
 		if (Config.PROTECT_ENCHANT_ENABLE)
 		{
@@ -601,6 +618,14 @@ public class EnterWorld extends L2GameClientPacket
 			if (activeChar.isHero())
 			{
 				Announcements.getInstance().announceToAll("O Heroi "+activeChar.getName()+" acabou de logar.");
+			}
+		}
+		
+		if(Config.ALT_AIO_EFFECT_ESPECIAL)
+		{
+			if (activeChar.isAio())
+			{
+				activeChar.stopAbnormalEffect(0x400000);
 			}
 		}
 		

@@ -199,6 +199,9 @@ public class AdminAio implements IAdminCommandHandler
 				statement.close();
 				connection.close();
 				
+				if(Config.ALT_AIO_EFFECT_ESPECIAL)
+				activeChar.startAbnormalEffect(0x400000);
+				
 				if (Config.ALLOW_AIO_NCOLOR && activeChar.isAio())
 				{
 					_player.getAppearance().setNameColor(Config.AIO_NCOLOR);

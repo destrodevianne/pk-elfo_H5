@@ -94,6 +94,7 @@ public final class Config
 	
 	// AIOx Config
 	
+	public static boolean ALT_AIO_EFFECT_ESPECIAL;
 	public static boolean ANNOUNCE_AIOX_DESCONECT;
 	public static boolean ANNOUNCE_AIOX_CONECT;
 	// Sistema de AIO Bufer	
@@ -110,6 +111,11 @@ public final class Config
 	public static boolean ANNOUNCE_VIP_DESCONECT;
 	public static boolean ANNOUNCE_HERO_CONECT;
 	public static boolean ANNOUNCE_HERO_DESCONECT;
+	public static boolean ADD_VIP;
+	public static int ADD_VIP_DAYS;
+	public static boolean ADD_AIO;
+	public static int ADD_AIO_DAYS;
+	
 	// KingServer Custom Config
 	public static boolean FENCE_MOVIE_BUILDER;
 	public static boolean CLAN_LEADER_COLOR_ENABLED;
@@ -457,6 +463,7 @@ public final class Config
 	public static int STARTING_SP;
 	public static boolean CHAR_TITLE;
 	public static String ADD_CHAR_TITLE;
+	public static int TITLE_COLOR;
 	//Novos chars Hero
     public static boolean ADD_HERO;
     //Novos chars Nobre
@@ -2287,12 +2294,18 @@ public final class Config
 				_log.log(Level.SEVERE, "Error while loading AIO settings!", e);
 			}
 			
+			ALT_AIO_EFFECT_ESPECIAL = Boolean.parseBoolean(AioSettings.getProperty("AllowAioEffectEspecial", "True"));
 			ANNOUNCE_AIOX_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxDesconect", "False"));
 			ANNOUNCE_AIOX_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxConect", "False"));
 			ANNOUNCE_VIP_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceVipDesconect", "False"));
 			ANNOUNCE_VIP_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceVipConect", "False"));
 			ANNOUNCE_HERO_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroDesconect", "False"));
 			ANNOUNCE_HERO_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroConect", "False"));
+			ADD_VIP = Boolean.parseBoolean(AioSettings.getProperty("NewCharacterIsVip", "False"));
+			ADD_VIP_DAYS = Integer.parseInt(AioSettings.getProperty("VipEnterDays", "3"));
+			ADD_AIO = Boolean.parseBoolean(AioSettings.getProperty("NewCharacterIsAio", "False"));
+			ADD_AIO_DAYS = Integer.parseInt(AioSettings.getProperty("AIOEnterDays", "3"));
+
 			// sistema de AIO bufer
 						ENABLE_AIO_SYSTEM = Boolean.parseBoolean(AioSettings.getProperty("EnableAioSystem", "true"));
 						ALLOW_AIO_NCOLOR = Boolean.parseBoolean(AioSettings.getProperty("AllowAioNameColor", "true"));
@@ -2565,6 +2578,8 @@ public final class Config
 			STARTING_SP = Integer.parseInt(Character.getProperty("StartingSP", "0"));
 			CHAR_TITLE = Boolean.parseBoolean(Character.getProperty("CharTitle", "true"));
 			ADD_CHAR_TITLE = Character.getProperty("CharAddTitle", "KingServer");
+			TITLE_COLOR = Integer.decode("0x" + Character.getProperty("TitleColor", "00FF00"));
+
 			//Novos chars Hero
             ADD_HERO = Boolean.parseBoolean(Character.getProperty("NewHeroesCharacter", "False"));
             //Novos chars Nobre
