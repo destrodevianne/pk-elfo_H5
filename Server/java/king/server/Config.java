@@ -94,6 +94,8 @@ public final class Config
 	
 	// AIOx Config
 	
+	public static boolean ANNOUNCE_AIOX_DESCONECT;
+	public static boolean ANNOUNCE_AIOX_CONECT;
 	// Sistema de AIO Bufer	
 	public static boolean ENABLE_AIO_SYSTEM;
 	public static Map<Integer, Integer> AIO_SKILLS;
@@ -104,7 +106,10 @@ public final class Config
 	public static boolean ALLOW_AIO_ITEM;
 	public static int AIO_ITEMID;
 	public static boolean ENABLE_AIO_CHAT;
-	
+	public static boolean ANNOUNCE_VIP_CONECT;
+	public static boolean ANNOUNCE_VIP_DESCONECT;
+	public static boolean ANNOUNCE_HERO_CONECT;
+	public static boolean ANNOUNCE_HERO_DESCONECT;
 	// KingServer Custom Config
 	public static boolean FENCE_MOVIE_BUILDER;
 	public static boolean CLAN_LEADER_COLOR_ENABLED;
@@ -2282,6 +2287,12 @@ public final class Config
 				_log.log(Level.SEVERE, "Error while loading AIO settings!", e);
 			}
 			
+			ANNOUNCE_AIOX_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxDesconect", "False"));
+			ANNOUNCE_AIOX_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxConect", "False"));
+			ANNOUNCE_VIP_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceVipDesconect", "False"));
+			ANNOUNCE_VIP_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceVipConect", "False"));
+			ANNOUNCE_HERO_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroDesconect", "False"));
+			ANNOUNCE_HERO_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroConect", "False"));
 			// sistema de AIO bufer
 						ENABLE_AIO_SYSTEM = Boolean.parseBoolean(AioSettings.getProperty("EnableAioSystem", "true"));
 						ALLOW_AIO_NCOLOR = Boolean.parseBoolean(AioSettings.getProperty("AllowAioNameColor", "true"));

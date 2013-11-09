@@ -28,6 +28,7 @@ import king.server.gameserver.events.EventsInterface;
 import king.server.gameserver.model.L2Party;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.model.entity.L2Event;
+import king.server.gameserver.model.entity.Announcements;
 import king.server.gameserver.network.SystemMessageId;
 import king.server.gameserver.network.serverpackets.ActionFailed;
 import king.server.gameserver.network.serverpackets.SystemMessage;
@@ -120,6 +121,30 @@ public final class Logout extends L2GameClientPacket
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
+		}
+		
+		if (Config.ANNOUNCE_AIOX_DESCONECT)
+		{
+			if (player.isAio())
+			{
+				Announcements.getInstance().announceToAll("O AIO "+player.getName()+" acabou de deslogar.");
+			}
+		}
+
+		if (Config.ANNOUNCE_VIP_DESCONECT)
+		{
+			if (player.isVip())
+			{
+				Announcements.getInstance().announceToAll("O AIO "+player.getName()+" acabou de deslogar.");
+			}
+		}
+		
+		if (Config.ANNOUNCE_HERO_DESCONECT)
+		{
+			if (player.isHero())
+			{
+				Announcements.getInstance().announceToAll("Hero: "+player.getName()+" acabou de deslogar.");
+			}
 		}
 		
 		// Prevent player from logging out if they are a festival participant
