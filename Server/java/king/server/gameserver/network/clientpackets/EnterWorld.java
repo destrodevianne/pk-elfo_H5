@@ -248,7 +248,6 @@ public class EnterWorld extends L2GameClientPacket
 		if (Config.ADD_AIO)
 			{
 			if (activeChar.getLevel() <= 1)
-			activeChar.isNewbie();
 			activeChar.setAio(true);
 			activeChar.setAioEndTime(Config.ADD_AIO_DAYS);
 			activeChar.sendMessage("Voce ganhou status de AIOx por 7 dias "+activeChar.getName()+" ");
