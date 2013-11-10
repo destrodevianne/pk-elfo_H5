@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package king.server.gameserver.communitybbs.BB;
 
 import java.sql.Connection;
@@ -28,7 +10,6 @@ import java.util.logging.Logger;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
-
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.communitybbs.Manager.ForumsBBSManager;
 import king.server.gameserver.communitybbs.Manager.TopicBBSManager;
@@ -59,11 +40,6 @@ public class Forum
 	private int _ownerID;
 	private boolean _loaded = false;
 	
-	/**
-	 * Creates new instance of Forum. When you create new forum, use {@link king.server.gameserver.communitybbs.Manager.ForumsBBSManager# addForum(king.server.gameserver.communitybbs.BB.Forum)} to add forum to the forums manager.
-	 * @param Forumid
-	 * @param FParent
-	 */
 	public Forum(int Forumid, Forum FParent)
 	{
 		_forumId = Forumid;
@@ -72,13 +48,6 @@ public class Forum
 		_topic = new FastMap<>();
 	}
 	
-	/**
-	 * @param name
-	 * @param parent
-	 * @param type
-	 * @param perm
-	 * @param OwnerID
-	 */
 	public Forum(String name, Forum parent, int type, int perm, int OwnerID)
 	{
 		_forumName = name;
@@ -181,9 +150,6 @@ public class Forum
 		_topic.put(t.getID(), t);
 	}
 	
-	/**
-	 * @return the forum Id
-	 */
 	public int getID()
 	{
 		return _forumId;
@@ -201,10 +167,6 @@ public class Forum
 		return _forumType;
 	}
 	
-	/**
-	 * @param name the forum name
-	 * @return the forum for the given name
-	 */
 	public Forum getChildByName(String name)
 	{
 		vload();
@@ -218,9 +180,6 @@ public class Forum
 		return null;
 	}
 	
-	/**
-	 * @param id
-	 */
 	public void rmTopicByID(int id)
 	{
 		_topic.remove(id);

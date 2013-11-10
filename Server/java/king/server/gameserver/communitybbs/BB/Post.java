@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package king.server.gameserver.communitybbs.BB;
 
 import java.sql.Connection;
@@ -26,13 +8,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
-
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.communitybbs.Manager.PostBBSManager;
 
-/**
- * @author Maktakien
- */
 public class Post
 {
 	private static Logger _log = Logger.getLogger(Post.class.getName());
@@ -50,14 +28,6 @@ public class Post
 	
 	private final List<CPost> _post;
 	
-	/**
-	 * @param _PostOwner
-	 * @param _PostOwnerID
-	 * @param date
-	 * @param tid
-	 * @param _PostForumID
-	 * @param txt
-	 */
 	public Post(String _PostOwner, int _PostOwnerID, long date, int tid, int _PostForumID, String txt)
 	{
 		_post = new FastList<>();
@@ -129,9 +99,6 @@ public class Post
 		}
 	}
 	
-	/**
-	 * @param t
-	 */
 	private void load(Topic t)
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
@@ -161,9 +128,6 @@ public class Post
 		}
 	}
 	
-	/**
-	 * @param i
-	 */
 	public void updatetxt(int i)
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();

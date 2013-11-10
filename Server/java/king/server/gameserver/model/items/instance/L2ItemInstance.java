@@ -2370,4 +2370,9 @@ public final class L2ItemInstance extends L2Object
 	{
 		dropListeners.remove(listener);
 	}
+	
+	public boolean isWear()
+	{
+		return _wear;
+	}	
 }

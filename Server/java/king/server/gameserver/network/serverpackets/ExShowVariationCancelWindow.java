@@ -25,7 +25,7 @@ public class ExShowVariationCancelWindow extends L2GameServerPacket
 {
 	public static final ExShowVariationCancelWindow STATIC_PACKET = new ExShowVariationCancelWindow();
 	
-	private ExShowVariationCancelWindow()
+	public ExShowVariationCancelWindow()
 	{
 		
 	}

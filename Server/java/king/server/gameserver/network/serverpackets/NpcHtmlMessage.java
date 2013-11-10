@@ -274,7 +274,12 @@ public final class NpcHtmlMessage extends L2GameServerPacket
 			writeD(_itemId);
 		}
 	}
-		
+	
+	public String getHtm()
+	{
+		return _html;
+	}
+			
 	public void replace(String pattern, long value)
 	{
 		replace(pattern, String.valueOf(value));

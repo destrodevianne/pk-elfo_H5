@@ -82,6 +82,7 @@ public final class Config
 	public static final String MMO_CONFIG_FILE = "./config/MMO.properties";
 	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olympiad.properties";
 	public static final String COMMUNITY_CONFIGURATION_FILE = "./config/CommunityServer.properties";
+	public static final String COMMUNITY_PVP = "./config/CommunityPvP.properties";
 	public static final String GRANDBOSS_CONFIG_FILE = "./config/GrandBoss.properties";
 	public static final String GRACIASEEDS_CONFIG_FILE = "./config/GraciaSeeds.properties";
 	public static final String CHAT_FILTER_FILE = "./config/chatfilter.txt";
@@ -971,6 +972,35 @@ public final class Config
 	public static boolean TVT_ALLOW_VOICED_COMMAND;
 	public static boolean TVT_ALLOW_REGISTER_VOICED_COMMAND;
 	public static boolean L2JMOD_ALLOW_WEDDING;
+	public static boolean ALLOW_COMMUNITY_MULTISELL;
+	public static boolean ALLOW_COMMUNITY_CLASS;
+	public static boolean ALLOW_COMMUNITY_ENCHANT;
+	public static boolean ALLOW_COMMUNITY_BUFF;
+	public static boolean ALLOW_COMMUNITY_TELEPORT;
+	public static boolean ALLOW_COMMUNITY_STATS;
+	public static String ALLOW_CLASS_MASTERSCB;
+	public static String CLASS_MASTERS_PRICECB;
+	public static int[] CLASS_MASTERS_PRICE_LISTCB = new int[4];
+	public static int CLASS_MASTERS_PRICE_ITEMCB;
+	public static ArrayList<Integer> ALLOW_CLASS_MASTERS_LISTCB = new ArrayList<>();
+	public static int ENCHANT_ITEM;
+	public static boolean BUFF_PEACE_ZONE;
+	public static boolean BUFF_COST;
+	public static boolean ALLOW_COMMUNITY_SERVICES;
+	public static int DelevelItemId;
+	public static int DelevelItemCount;
+	public static int NoblItemId;
+	public static int NoblItemCount;
+	public static int GenderItemId;
+	public static int GenderItemCount;
+	public static int HeroItemId;
+	public static int HeroItemCount;
+	public static int RecoveryPKItemId;
+	public static int RecoveryPKItemCount;
+	public static int RecoveryVitalityItemId;
+	public static int RecoveryVitalityItemCount;
+	public static int SPItemId;
+	public static int SPItemCount;	
 	public static int L2JMOD_WEDDING_PRICE;
 	public static boolean L2JMOD_WEDDING_PUNISH_INFIDELITY;
 	public static boolean L2JMOD_WEDDING_TELEPORT;
@@ -1967,6 +1997,62 @@ public final class Config
 				_log.log(Level.SEVERE, "Error while loading KingServers settings!", e);
 			}
 			
+			// Load PVP Community L2Properties file (if exists)
+			final File pvpcom = new File(COMMUNITY_PVP);
+			try (InputStream is = new FileInputStream(pvpcom))
+			{
+				L2Properties pvp_com = new L2Properties();
+				pvp_com.load(is);
+				ALLOW_CLASS_MASTERSCB = pvp_com.getProperty("AllowClassMastersCB", "0");
+				if ((ALLOW_CLASS_MASTERSCB.length() != 0) && !ALLOW_CLASS_MASTERSCB.equals("0"))
+				{
+					for (final String id : ALLOW_CLASS_MASTERSCB.split(","))
+					{
+						ALLOW_CLASS_MASTERS_LISTCB.add(Integer.parseInt(id));
+					}
+				}
+				CLASS_MASTERS_PRICECB = pvp_com.getProperty("ClassMastersPriceCB", "0,0,0");
+				if (CLASS_MASTERS_PRICECB.length() >= 5)
+				{
+					int level = 0;
+					for (final String id : CLASS_MASTERS_PRICECB.split(","))
+					{
+						CLASS_MASTERS_PRICE_LISTCB[level] = Integer.parseInt(id);
+						level++;
+					}
+				}
+				CLASS_MASTERS_PRICE_ITEMCB = Integer.parseInt(pvp_com.getProperty("ClassMastersPriceItemCB", "57"));
+				
+				ALLOW_COMMUNITY_MULTISELL = Boolean.parseBoolean(pvp_com.getProperty("AllowCommunityMultisell", "false"));
+				ALLOW_COMMUNITY_STATS = Boolean.parseBoolean(pvp_com.getProperty("AllowCommunityStats", "false"));
+				ALLOW_COMMUNITY_TELEPORT = Boolean.parseBoolean(pvp_com.getProperty("AllowCommunityTeleport", "false"));
+				ALLOW_COMMUNITY_BUFF = Boolean.parseBoolean(pvp_com.getProperty("AllowCommunityBuff", "false"));
+				ALLOW_COMMUNITY_ENCHANT = Boolean.parseBoolean(pvp_com.getProperty("AllowCommunityEnchant", "false"));
+				ALLOW_COMMUNITY_CLASS = Boolean.parseBoolean(pvp_com.getProperty("AllowCommunityClass", "false"));
+				ENCHANT_ITEM = Integer.parseInt(pvp_com.getProperty("EnchantItem", "4037"));
+				BUFF_COST = Boolean.parseBoolean(pvp_com.getProperty("BuffCost", "true"));
+				ALLOW_COMMUNITY_SERVICES = Boolean.parseBoolean(pvp_com.getProperty("AllowCommunityServices", "false"));
+				DelevelItemId = Integer.parseInt(pvp_com.getProperty("DelevelItemId", "4037"));
+				DelevelItemCount = Integer.parseInt(pvp_com.getProperty("DelevelItemCount", "10"));
+				NoblItemId = Integer.parseInt(pvp_com.getProperty("NoblItemId", "4037"));
+				NoblItemCount = Integer.parseInt(pvp_com.getProperty("NoblItemCount", "50"));
+				GenderItemId = Integer.parseInt(pvp_com.getProperty("GenderItemId", "4037"));
+				GenderItemCount = Integer.parseInt(pvp_com.getProperty("GenderItemCount", "30"));
+				HeroItemId = Integer.parseInt(pvp_com.getProperty("HeroItemId", "4037"));
+				HeroItemCount = Integer.parseInt(pvp_com.getProperty("HeroItemCount", "100"));
+				RecoveryPKItemId = Integer.parseInt(pvp_com.getProperty("RecoveryPKItemId", "4037"));
+				RecoveryPKItemCount = Integer.parseInt(pvp_com.getProperty("RecoveryPKItemCount", "10"));
+				RecoveryVitalityItemId = Integer.parseInt(pvp_com.getProperty("RecoveryVitalityItemId", "4037"));
+				RecoveryVitalityItemCount = Integer.parseInt(pvp_com.getProperty("RecoveryVitalityItemCount", "10"));
+				SPItemId = Integer.parseInt(pvp_com.getProperty("SPItemId", "4037"));
+				SPItemCount = Integer.parseInt(pvp_com.getProperty("SPItemCount", "10"));
+			}
+			catch (Exception e)
+			{
+				_log.warning("Config: " + e.getMessage());
+				throw new Error("Failed to Load " + COMMUNITY_PVP + " File.");
+			}
+						
 			// Event Custom Config
 			L2Properties Event = new L2Properties();
 			final File Events = new File(EVENT_FILE);
