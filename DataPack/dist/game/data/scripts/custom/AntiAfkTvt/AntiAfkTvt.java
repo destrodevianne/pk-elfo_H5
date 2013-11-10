@@ -13,7 +13,7 @@ public class AntiAfkTvt
     // Delay between location checks , Default 60000 ms (1 minute)
     private final int CheckDelay = 60000;
 
-    private static ArrayList<String> TvTPlayerList = new ArrayList<String>();
+    private static ArrayList<String> TvTPlayerList = new ArrayList<>();
     private static String[] Splitter;
     private static int xx,yy,zz,SameLoc;
     private static L2PcInstance _player;

@@ -46,6 +46,7 @@ public class BossRespawn extends Quest
         addFirstTalkId(NPC_ID);
     }
 
+    @Override
     public String onFirstTalk(L2Npc npc, L2PcInstance pc)
     {
         if((npc == null) || (pc == null))

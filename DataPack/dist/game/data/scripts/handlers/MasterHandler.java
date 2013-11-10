@@ -120,6 +120,7 @@ import handlers.admincommandhandlers.AdminTvTRoundEvent;
 import handlers.admincommandhandlers.AdminUnblockIp;
 import handlers.admincommandhandlers.AdminVip;
 import handlers.admincommandhandlers.AdminVitality;
+import handlers.admincommandhandlers.AdminZone;
 import handlers.bypasshandlers.ArenaBuff;
 import handlers.bypasshandlers.Augment;
 import handlers.bypasshandlers.BloodAlliance;
@@ -458,6 +459,7 @@ public class MasterHandler
 			AdminTvTEvent.class,
 			AdminUnblockIp.class,
 			AdminVitality.class,
+			AdminZone.class,
 			AdminMassHero.class,
 			AdminClanSkills.class,
 			AdminReuse.class,
