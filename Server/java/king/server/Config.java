@@ -1042,10 +1042,6 @@ public final class Config
 	public static boolean SHOW_USER;
 	public static boolean ENABLE_SPECIAL_EFFECT;
 	public static boolean ENABLE_EXP_REFUSAL;
-	public static boolean SPAWN_CHAR;
-	public static int SPAWN_X;
-	public static int SPAWN_Y;
-	public static int SPAWN_Z;
 	// --------------------------------------------------
 	// NPC Settings
 	// --------------------------------------------------
@@ -1334,7 +1330,6 @@ public final class Config
 	
 	//.pmon/.pmoff
     public static boolean PM_OFF;
-    public static boolean CL;
 	// GrandBoss Settings	
 	public static int Antharas_Wait_Time;
 	public static int Valakas_Wait_Time;
@@ -2284,11 +2279,6 @@ public final class Config
 			SHOW_USER = Boolean.parseBoolean(UserSettings.getProperty("AllowUserCommand","False"));
 			ENABLE_SPECIAL_EFFECT = Boolean.parseBoolean(UserSettings.getProperty("AllowSpecialEffect","False"));
 			ENABLE_EXP_REFUSAL = Boolean.parseBoolean(UserSettings.getProperty("AllowExpRefusal", "true"));
-			SPAWN_CHAR = Boolean.parseBoolean(UserSettings.getProperty("CustomSpawn", "false"));
-			SPAWN_X = Integer.parseInt(UserSettings.getProperty("SpawnX", ""));
-			SPAWN_Y = Integer.parseInt(UserSettings.getProperty("SpawnY", ""));
-			SPAWN_Z = Integer.parseInt(UserSettings.getProperty("SpawnZ", ""));
-
 			// AIOx
 			L2Properties AioSettings = new L2Properties();
 			final File aio = new File(AIO_CONFIG_FILE);
@@ -2752,7 +2742,6 @@ public final class Config
 			ENCHANT_PROTECT_PUNISH = Integer.parseInt(KingSettings.getProperty("EnchantProtectPunish", "60"));
 			CLAN_NAME_AS_TITLE = Boolean.parseBoolean(Character.getProperty("ClanTitle", "True"));
 			PM_OFF = Boolean.parseBoolean(KingSettings.getProperty("CommandPmOff", "True"));
-			CL = Boolean.parseBoolean(KingSettings.getProperty("CommandCl", "True"));
 			// MMO
 			L2Properties mmoSettings = new L2Properties();
 			final File mmo = new File(MMO_CONFIG_FILE);

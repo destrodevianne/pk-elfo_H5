@@ -334,10 +334,9 @@ import handlers.voicedcommandhandlers.TvTVoiced;
 import handlers.voicedcommandhandlers.VoiceExperience;
 import handlers.voicedcommandhandlers.VoiceInfo;
 import handlers.voicedcommandhandlers.Pmoff;
-import handlers.voicedcommandhandlers.Cl;
 import handlers.voicedcommandhandlers.Wedding;
-import handlers.voicedcommandhandlers.UserActions
-import handlers.voicedcommandhandlers.User
+import handlers.voicedcommandhandlers.UserActions;
+import handlers.voicedcommandhandlers.User;
 
 public class MasterHandler
 {
@@ -654,7 +653,6 @@ public class MasterHandler
 			VoiceInfo.class,
 			User.class,
 			UserActions.class,
-			(Config.CL ? Cl.class : null),
 			(Config.PM_OFF ? Pmoff.class : null),
 			(Config.CMD_TRADE ? TradeCommands.class : null),
 			(Config.CMD_ONLINE ? Online.class : null),

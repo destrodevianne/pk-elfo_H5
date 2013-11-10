@@ -131,7 +131,6 @@ Evento Last Hero
 .shieldon
 .shieldoff
 .openatod (Serve para abrir todos os Ancient Tome of the Demon que o player tiver na bag, ao invez de ficar clicando eternamente)
-***.cl (comando teleporta para o lider do clan)
 ###############################################
 ##################### MOD #####################
 Rewards for kill on TvT
@@ -167,14 +166,13 @@ comando /unstuck com skill configuravel
 ***Muda o nome dos Champions
 ***Cor do nome diferente para cada raca
 ***Chat exclusivo para char AIOx
-***Painel de usuário cxom cxomandos
+***Painel de usuário cxom comandos
 Anuncio de deslogamento de AIOx 
 Anuncio de logamento de AIOx
 Anuncio de deslogamento de VIP 
 Anuncio de logamento de VIP
 Anuncio de deslogamento de Hero
 Anuncio de logamento de Hero
-Anuncio de Ban para todos
 Mod Efeito para AIOx
 ***ao criar novo char ganha VIP por 7 dias
 ***ao criar novo char ganha AIOx por 7 dias
