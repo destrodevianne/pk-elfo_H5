@@ -338,6 +338,7 @@ import handlers.voicedcommandhandlers.Wedding;
 import handlers.voicedcommandhandlers.UserActions;
 import handlers.voicedcommandhandlers.User;
 import handlers.voicedcommandhandlers.Lider;
+import handlers.voicedcommandhandlers.Logout;
 
 public class MasterHandler
 {
@@ -655,6 +656,7 @@ public class MasterHandler
 			User.class,
 			UserActions.class,
 			Lider.class,
+			(Config.LOGOUT ? Logout.class : null),			
 			(Config.PM_OFF ? Pmoff.class : null),
 			(Config.CMD_TRADE ? TradeCommands.class : null),
 			(Config.CMD_ONLINE ? Online.class : null),

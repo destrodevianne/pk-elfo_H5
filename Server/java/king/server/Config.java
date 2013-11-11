@@ -98,6 +98,7 @@ public final class Config
 	public static boolean ALT_AIO_EFFECT_ESPECIAL;
 	public static boolean ANNOUNCE_AIOX_DESCONECT;
 	public static boolean ANNOUNCE_AIOX_CONECT;
+	public static boolean ENABLE_AIOX_MESSAGE;
 	// Sistema de AIO Bufer	
 	public static boolean ENABLE_AIO_SYSTEM;
 	public static Map<Integer, Integer> AIO_SKILLS;
@@ -176,6 +177,7 @@ public final class Config
     public static int ORC_COLOR;
     public static int DWARF_COLOR;
     public static int KAMAEL_COLOR;
+    public static boolean ENABLE_RACE_MESSAGE;
     
 	// PC bang points
 	public static boolean PC_BANG_ENABLED;
@@ -1073,6 +1075,7 @@ public final class Config
 	public static boolean ENABLE_SPECIAL_EFFECT;
 	public static boolean ENABLE_EXP_REFUSAL;
 	public static boolean COMMAND_LIDER;
+	public static boolean COMMAND_LOGOUT;
 	// --------------------------------------------------
 	// NPC Settings
 	// --------------------------------------------------
@@ -1361,6 +1364,7 @@ public final class Config
 	
 	//.pmon/.pmoff
     public static boolean PM_OFF;
+    
 	// GrandBoss Settings	
 	public static int Antharas_Wait_Time;
 	public static int Valakas_Wait_Time;
@@ -2366,9 +2370,11 @@ public final class Config
             ORC_COLOR = Integer.decode("0x" + UserSettings.getProperty("OrcNameColor", "FFFFFF"));
             DWARF_COLOR = Integer.decode("0x" + UserSettings.getProperty("DwarfNameColor", "FFFFFF"));
             KAMAEL_COLOR = Integer.decode("0x" + UserSettings.getProperty("KamaelNameColor", "FFFFFF"));
-            //#########################################################################################################//
+            ENABLE_RACE_MESSAGE = Boolean.parseBoolean(UserSettings.getProperty("EnableRaceMessage", "False"));
             
+            //###########################  Comandos  ##################################################################//
             COMMAND_LIDER = Boolean.parseBoolean(UserSettings.getProperty("CommandLider", "False"));
+            COMMAND_LOGOUT = Boolean.parseBoolean(UserSettings.getProperty("CommandLogout", "False"));
             
 			//############################  AIO PROPERTIES  ###########################################################//
 			L2Properties AioSettings = new L2Properties();
@@ -2386,6 +2392,7 @@ public final class Config
 			ALT_AIO_EFFECT_ESPECIAL = Boolean.parseBoolean(AioSettings.getProperty("AllowAioEffectEspecial", "True"));
 			ANNOUNCE_AIOX_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxDesconect", "False"));
 			ANNOUNCE_AIOX_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxConect", "False"));
+			ENABLE_AIOX_MESSAGE = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxLogon", "False"));
 			ANNOUNCE_VIP_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceVipDesconect", "False"));
 			ANNOUNCE_VIP_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceVipConect", "False"));
 			ANNOUNCE_HERO_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroDesconect", "False"));

@@ -69,7 +69,7 @@
 		<cond msgId="113" addName="1">
 			<and>
 				<player flyMounted="False" />
-				<target npcId="12774,12775,12777,12778,13271,13273,,13275,13277" />
+				<target npcId="12774,12775,12777,12778,13271,13273,13275,13277" />
 			</and>
 		</cond>
 	</skill>

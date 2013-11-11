@@ -580,8 +580,6 @@ public class EnterWorld extends L2GameClientPacket
 		activeChar.sendPacket(SystemMessageId.WELCOME_TO_LINEAGE);
 		SevenSigns.getInstance().sendCurrentPeriodMsg(activeChar);
 		Announcements.getInstance().showAnnouncements(activeChar);
-		activeChar.sendMessage("Este servidor usa o projeto KingServer");
-		activeChar.sendMessage("Desenvolvedor: KingHanker");
 		 //Information when character is logged
         activeChar.sendMessage("Seja Bem vindo: " + activeChar.getName());
         activeChar.sendMessage("Sua classe: " + activeChar.getClassId());
@@ -595,7 +593,45 @@ public class EnterWorld extends L2GameClientPacket
 			activeChar.sendMessage("Temos em todo o mundo: "  + L2World.getInstance().getAllPlayers().size()+" Jogadores(s) OnLine") ;
 			activeChar.sendMessage("==================================");
 		}
-        
+
+		if (Config.ENABLE_AIOX_MESSAGE);
+		{
+			if (activeChar.isAio)
+			{
+				activeChar.sendPacket(new ExShowScreenMessage("Voce possui Status de AIOx ", 10000));
+			}
+		}
+		
+		if (Config.ENABLE_RACE_MESSAGE);
+		{
+			if (activeChar.getLevel() == 1)
+			{
+				activeChar.sendPacket(new ExShowScreenMessage("Bem vindo jovem iniciante!", 10000));
+			}
+			else
+				switch(activeChar.getRace())
+				{
+					case Human:
+						activeChar.sendPacket(new ExShowScreenMessage("Bem vindo ao Servidor PkElfo guerreiro de Einhasad!", 10000));            
+					break;
+					case Elf:
+						activeChar.sendPacket(new ExShowScreenMessage("Bem vindo ao Servidor PkElfo guerreiro de Eva!", 10000));            
+					break;
+					case DarkElf:
+						activeChar.sendPacket(new ExShowScreenMessage("Bem vindo ao Servidor PkElfo guerreiro de Shilen!", 10000));            
+					break;
+					case Orc:
+						activeChar.sendPacket(new ExShowScreenMessage("Bem vindo ao Servidor PkElfo guerreiro de Paagrio!", 10000));            
+					break;
+					case Dwarf:
+						activeChar.sendPacket(new ExShowScreenMessage("Bem vindo ao Servidor PkElfo guerreiro de Maphr!", 10000));
+					break;
+					case Kamael:
+						activeChar.sendPacket(new ExShowScreenMessage("Bem vindo ao Servidor PkElfo guerreiro de Narnil!", 10000));
+					break;
+				}
+		}
+
 		if (Config.ANNOUNCE_AIOX_CONECT)
 		{
 			if (activeChar.isAio())

@@ -14,7 +14,7 @@ public class ChristmasIsHere extends Quest
 	/**
 	 * List of Event Npc
 	 */
-	private static final int SANTA_CLAUS = 13285;
+	private static final int SANTA_CLAUS = 4307;
 	/**
 	 * List of Event Monsters
 	 */
