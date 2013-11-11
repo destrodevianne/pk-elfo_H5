@@ -28,7 +28,9 @@ import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
 public class VoiceInfo implements IVoicedCommandHandler
 {
 	private static String[]	VOICED_COMMANDS	=
-											{ "info" };
+		{ 
+		"info"
+		};
 
 
 	@Override

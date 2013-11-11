@@ -133,6 +133,7 @@ Evento Last Hero
 .openatod (Serve para abrir todos os Ancient Tome of the Demon que o player tiver na bag, ao invez de ficar clicando eternamente)
 .lider (teleporta para o lider do seu clan)
 .logout (desloga imediatamente)
+.user (abre painel de usuario que contem, informacoes e comandos de habilitar/desabilitar pm, trade e ganho de xp/sp)
 ###############################################
 ##################### MOD #####################
 Rewards for kill on TvT
@@ -153,8 +154,6 @@ Prime Shop
 PvP Color System
 Sistema de consumiveis infinitosSS, BSS e Arrows
 Fake online players
-Aiox por dias
-Vip por dias
 Clan Full
 Mod quando morrer o céu fica vermelho e da um som de Game Over
 Mod ao entrar em um clan o titulo muda altomaticamente para o do clan
@@ -162,20 +161,20 @@ Mod aviso quando um Raid Boss renascer
 Mod Evento de dança
 Clan halls conquistáveis
 comando /unstuck com skill configuravel
-***Número Máximo de membros na party
-***Novos char nobres
-***Novos char herois
+***Número Máximo de membros na party (nao ultrapassar 12, porque buga o servidor)
+Novos char nobres
+Novos char herois
 ***Muda o nome dos Champions
-***Cor do nome diferente para cada raca
+Cor do nome diferente para cada raca
 ***Mensagem diferente para cada raca
 ***Chat exclusivo para char AIOx
-***Painel de usuário com comandos
-Anuncio de deslogamento de AIOx 
-Anuncio de logamento de AIOx
-Anuncio de deslogamento de VIP 
-Anuncio de logamento de VIP
-Anuncio de deslogamento de Hero
-Anuncio de logamento de Hero
+Painel de usuário com comandos
+***Anuncio de deslogamento de AIOx 
+***Anuncio de logamento de AIOx
+***Anuncio de deslogamento de VIP 
+***Anuncio de logamento de VIP
+***Anuncio de deslogamento de Hero
+***Anuncio de logamento de Hero
 Mod Efeito para AIOx
 # ao criar novo char ganha VIP por 7 dias (tem que arrumar)
 # ao criar novo char ganha AIOx por 7 dias (tem que arrumar)
