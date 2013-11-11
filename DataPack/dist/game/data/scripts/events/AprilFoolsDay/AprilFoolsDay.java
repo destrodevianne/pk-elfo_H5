@@ -241,6 +241,6 @@ public class AprilFoolsDay extends Quest
 	{
 		new AprilFoolsDay(-1,qn,"events");
 		if (EventsConfig.AP_STARTED)
-			_log.warning("Event System: April Fools Day Event loaded ...");
+			_log.warning("Event System: April Fools Day Evento LIDO ...");
 	}
 }
