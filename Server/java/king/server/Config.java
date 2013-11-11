@@ -1072,6 +1072,7 @@ public final class Config
 	public static boolean SHOW_USER;
 	public static boolean ENABLE_SPECIAL_EFFECT;
 	public static boolean ENABLE_EXP_REFUSAL;
+	public static boolean COMMAND_LIDER;
 	// --------------------------------------------------
 	// NPC Settings
 	// --------------------------------------------------
@@ -1866,17 +1867,7 @@ public final class Config
 				POLE_VS_HEAVY = Float.parseFloat(KingSettings.getProperty("PoleVsHeavy", "1.00"));
 				POLE_VS_LIGHT = Float.parseFloat(KingSettings.getProperty("PoleVsLight", "1.00"));
 				POLE_VS_ROBE = Float.parseFloat(KingSettings.getProperty("PoleVsRobe", "1.00"));
-				//############################  CONFIGURACOES ESPECIAIS RELACIONADAS AS RACAS  ############################//
-				//cor para cada raca
-                RACES_COLOR_ENABLE = Boolean.parseBoolean(KingSettings.getProperty("RacesColorEnable", "False"));
-                HUMAN_COLOR = Integer.decode("0x" + KingSettings.getProperty("HumanNameColor", "FFFFFF"));
-                ELF_COLOR = Integer.decode("0x" + KingSettings.getProperty("ElfNameColor", "FFFFFF"));
-                DARKELF_COLOR = Integer.decode("0x" + KingSettings.getProperty("DarkElfNameColor", "FFFFFF"));
-                ORC_COLOR = Integer.decode("0x" + KingSettings.getProperty("OrcNameColor", "FFFFFF"));
-                DWARF_COLOR = Integer.decode("0x" + KingSettings.getProperty("DwarfNameColor", "FFFFFF"));
-                KAMAEL_COLOR = Integer.decode("0x" + KingSettings.getProperty("KamaelNameColor", "FFFFFF"));
-                //#########################################################################################################//
-                PC_BANG_ENABLED = Boolean.parseBoolean(KingSettings.getProperty("Enabled", "false"));
+				PC_BANG_ENABLED = Boolean.parseBoolean(KingSettings.getProperty("Enabled", "false"));
 				ALT_ALLOW_REFINE_PVP_ITEM = Boolean.parseBoolean(KingSettings.getProperty("AltAllowRefinePVPItem", "False"));
 				ENABLE_UNSTUCK_PVP = Boolean.parseBoolean(KingSettings.getProperty("EnableUnstuckPvP", "True"));
 				USE_CR_ITEM = Boolean.parseBoolean(KingSettings.getProperty("EnableTheClanRepPointsItem", "False"));
@@ -2348,7 +2339,8 @@ public final class Config
 				_log.log(Level.SEVERE, "Error while loading Event settings!", e);
 			}
 
-			// User Painel
+			//############################  USER PROPERTIES  ##########################################################//
+
 			L2Properties UserSettings = new L2Properties();
 			final File user = new File(USER_CONFIG_FILE);
 			try (InputStream is = new FileInputStream(user))
@@ -2359,13 +2351,26 @@ public final class Config
 			{
 				_log.log(Level.SEVERE, "Error while loading USER settings!", e);
 			}
-			
+			//############################  PAINEL DE USUARIOS  #######################################################//			
 			ENABLE_PM_REFUSAL = Boolean.parseBoolean(UserSettings.getProperty("AllowPmCommand","False"));
 			ENABLE_TRADE_REFUSAL = Boolean.parseBoolean(UserSettings.getProperty("AllowTradeCommand","False"));
 			SHOW_USER = Boolean.parseBoolean(UserSettings.getProperty("AllowUserCommand","False"));
 			ENABLE_SPECIAL_EFFECT = Boolean.parseBoolean(UserSettings.getProperty("AllowSpecialEffect","False"));
 			ENABLE_EXP_REFUSAL = Boolean.parseBoolean(UserSettings.getProperty("AllowExpRefusal", "true"));
-			// AIOx
+			
+			//############################  CONFIGURACOES ESPECIAIS RELACIONADAS AS RACAS  ############################//
+            RACES_COLOR_ENABLE = Boolean.parseBoolean(UserSettings.getProperty("RacesColorEnable", "False"));
+            HUMAN_COLOR = Integer.decode("0x" + UserSettings.getProperty("HumanNameColor", "FFFFFF"));
+            ELF_COLOR = Integer.decode("0x" + UserSettings.getProperty("ElfNameColor", "FFFFFF"));
+            DARKELF_COLOR = Integer.decode("0x" + UserSettings.getProperty("DarkElfNameColor", "FFFFFF"));
+            ORC_COLOR = Integer.decode("0x" + UserSettings.getProperty("OrcNameColor", "FFFFFF"));
+            DWARF_COLOR = Integer.decode("0x" + UserSettings.getProperty("DwarfNameColor", "FFFFFF"));
+            KAMAEL_COLOR = Integer.decode("0x" + UserSettings.getProperty("KamaelNameColor", "FFFFFF"));
+            //#########################################################################################################//
+            
+            COMMAND_LIDER = Boolean.parseBoolean(UserSettings.getProperty("CommandLider", "False"));
+            
+			//############################  AIO PROPERTIES  ###########################################################//
 			L2Properties AioSettings = new L2Properties();
 			final File aio = new File(AIO_CONFIG_FILE);
 			try (InputStream is = new FileInputStream(aio))
@@ -2376,7 +2381,8 @@ public final class Config
 			{
 				_log.log(Level.SEVERE, "Error while loading AIO settings!", e);
 			}
-			
+
+			//############################  ANUNCIO DE LOGE E DESLOGE DE AIOX VIP E HERO ############################//
 			ALT_AIO_EFFECT_ESPECIAL = Boolean.parseBoolean(AioSettings.getProperty("AllowAioEffectEspecial", "True"));
 			ANNOUNCE_AIOX_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxDesconect", "False"));
 			ANNOUNCE_AIOX_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxConect", "False"));
@@ -2384,49 +2390,54 @@ public final class Config
 			ANNOUNCE_VIP_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceVipConect", "False"));
 			ANNOUNCE_HERO_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroDesconect", "False"));
 			ANNOUNCE_HERO_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroConect", "False"));
+			
+			//############################  SISTEMA DE AIOX E VIP POR DIAS ##########################################//
 			ADD_VIP = Boolean.parseBoolean(AioSettings.getProperty("NewCharacterIsVip", "False"));
 			ADD_VIP_DAYS = Integer.parseInt(AioSettings.getProperty("VipEnterDays", "3"));
 			ADD_AIO = Boolean.parseBoolean(AioSettings.getProperty("NewCharacterIsAio", "False"));
 			ADD_AIO_DAYS = Integer.parseInt(AioSettings.getProperty("AIOEnterDays", "3"));
-
-			// sistema de AIO bufer
-						ENABLE_AIO_SYSTEM = Boolean.parseBoolean(AioSettings.getProperty("EnableAioSystem", "true"));
-						ALLOW_AIO_NCOLOR = Boolean.parseBoolean(AioSettings.getProperty("AllowAioNameColor", "true"));
-						AIO_NCOLOR = Integer.decode("0x" + AioSettings.getProperty("AioNameColor", "000000"));
-						ALLOW_AIO_TCOLOR = Boolean.parseBoolean(AioSettings.getProperty("AllowAioTitleColor", "true"));
-						AIO_TCOLOR = Integer.decode("0x" + AioSettings.getProperty("AioTitleColor", "000000"));
-						AIO_ITEMID = Integer.parseInt(AioSettings.getProperty("ItemIdAio", "2523"));
-						ALLOW_AIO_ITEM = Boolean.parseBoolean(AioSettings.getProperty("AllowAIOItem", "True"));
-						if (ENABLE_AIO_SYSTEM) // create map if system is enabled
+			
+			//############################  SISTEMA DE AIOX BUFFER ##################################################//
+			ENABLE_AIO_SYSTEM = Boolean.parseBoolean(AioSettings.getProperty("EnableAioSystem", "true"));
+			ALLOW_AIO_NCOLOR = Boolean.parseBoolean(AioSettings.getProperty("AllowAioNameColor", "true"));
+			AIO_NCOLOR = Integer.decode("0x" + AioSettings.getProperty("AioNameColor", "000000"));
+			ALLOW_AIO_TCOLOR = Boolean.parseBoolean(AioSettings.getProperty("AllowAioTitleColor", "true"));
+			AIO_TCOLOR = Integer.decode("0x" + AioSettings.getProperty("AioTitleColor", "000000"));
+			AIO_ITEMID = Integer.parseInt(AioSettings.getProperty("ItemIdAio", "2523"));
+			ALLOW_AIO_ITEM = Boolean.parseBoolean(AioSettings.getProperty("AllowAIOItem", "True"));
+			if (ENABLE_AIO_SYSTEM) // create map if system is enabled
+				{
+					String[] AioSkillsSplit = AioSettings.getProperty("AioSkills", "").split(";");
+					AIO_SKILLS = new FastMap<>(AioSkillsSplit.length);
+					for (String skill : AioSkillsSplit)
+					{
+						String[] skillSplit = skill.split(",");
+						if (skillSplit.length != 2)
 							{
-							String[] AioSkillsSplit = AioSettings.getProperty("AioSkills", "").split(";");
-							AIO_SKILLS = new FastMap<>(AioSkillsSplit.length);
-							for (String skill : AioSkillsSplit)
+								System.out.println("[Aio System]: invalida a propriedade da config Aio.properties -> AioSkills \"" + skill + "\"");
+							}
+							else
 							{
-								String[] skillSplit = skill.split(",");
-								if (skillSplit.length != 2)
+								try
 								{
-									System.out.println("[Aio System]: invalida a propriedade da config Aio.properties -> AioSkills \"" + skill + "\"");
+									AIO_SKILLS.put(Integer.parseInt(skillSplit[0]), Integer.parseInt(skillSplit[1]));
 								}
-								else
+								catch (NumberFormatException nfe)
 								{
-									try
+									if (!skill.equals(""))
 									{
-										AIO_SKILLS.put(Integer.parseInt(skillSplit[0]), Integer.parseInt(skillSplit[1]));
-									}
-									catch (NumberFormatException nfe)
-									{
-										if (!skill.equals(""))
-										{
-											System.out.println("[Aio System]: invalida a propriedade da config Aio.properties -> AioSkills \"" + skillSplit[0] + "\"" + skillSplit[1]);
-										}
+										System.out.println("[Aio System]: invalida a propriedade da config Aio.properties -> AioSkills \"" + skillSplit[0] + "\"" + skillSplit[1]);
 									}
 								}
 							}
-						}
-						ENABLE_AIO_CHAT = Boolean.parseBoolean(AioSettings.getProperty("EnableAIOChat", "True"));
-						
-			// Load Character L2Properties file (if exists)
+					}
+				}
+
+			//############################  CHAT ESPECIAL PARA AIOX  #################################################//
+			ENABLE_AIO_CHAT = Boolean.parseBoolean(AioSettings.getProperty("EnableAIOChat", "True"));
+            //########################################################################################################//
+			
+			// Character L2Properties
 			L2Properties Character = new L2Properties();
 			final File chars = new File(CHARACTER_CONFIG_FILE);
 			try (InputStream is = new FileInputStream(chars))
@@ -2659,14 +2670,19 @@ public final class Config
 			STARTING_ADENA = Long.parseLong(Character.getProperty("StartingAdena", "0"));
 			STARTING_LEVEL = Byte.parseByte(Character.getProperty("StartingLevel", "1"));
 			STARTING_SP = Integer.parseInt(Character.getProperty("StartingSP", "0"));
+			
+			//####################  TITULO PARA NOVOS CHAR  ##########################################################//
 			CHAR_TITLE = Boolean.parseBoolean(Character.getProperty("CharTitle", "true"));
 			ADD_CHAR_TITLE = Character.getProperty("CharAddTitle", "KingServer");
 			TITLE_COLOR = Integer.decode("0x" + Character.getProperty("TitleColor", "00FF00"));
 
-			//Novos chars Hero
+			//####################  NOVOS CHAR HERO  #################################################################//
             ADD_HERO = Boolean.parseBoolean(Character.getProperty("NewHeroesCharacter", "False"));
-            //Novos chars Nobre
+            
+            //####################  NOVOS CHAR NOBRE #################################################################//
             ADD_NOBLESSE = Boolean.parseBoolean(Character.getProperty("NoblesseAtNewChars", "False"));
+            //########################################################################################################//
+            
 			MAX_ADENA = Long.parseLong(Character.getProperty("MaxAdena", "99900000000"));
 			if (MAX_ADENA < 0)
 			{
