@@ -596,7 +596,7 @@ public class EnterWorld extends L2GameClientPacket
 
 		if (Config.ENABLE_AIOX_MESSAGE);
 		{
-			if (activeChar.isAio)
+			if (activeChar.isAio())
 			{
 				activeChar.sendPacket(new ExShowScreenMessage("Voce possui Status de AIOx ", 10000));
 			}
