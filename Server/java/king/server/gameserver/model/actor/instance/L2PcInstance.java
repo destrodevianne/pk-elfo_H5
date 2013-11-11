@@ -107,6 +107,7 @@ import king.server.gameserver.instancemanager.ItemsOnGroundManager;
 import king.server.gameserver.instancemanager.MapRegionManager;
 import king.server.gameserver.instancemanager.QuestManager;
 import king.server.gameserver.instancemanager.SiegeManager;
+import king.server.gameserver.instancemanager.SoundManager.Versus;
 import king.server.gameserver.instancemanager.TerritoryWarManager;
 import king.server.gameserver.instancemanager.ZoneManager;
 import king.server.gameserver.instancemanager.leaderboards.ArenaLeaderboard;
@@ -6342,6 +6343,8 @@ public final class L2PcInstance extends L2Playable
 			}
 		}
 	}
+
+    Versus vs;
 	
 	/**
 	 * Increase the pvp kills count and send the info to the player
@@ -6349,6 +6352,12 @@ public final class L2PcInstance extends L2Playable
 	 */
 	public void increasePvpKills(L2Character target)
 	{
+		
+	if (vs == null)
+	vs = new Versus(this);
+	else
+	vs.increaseKills();	
+	
 		if ((target instanceof L2PcInstance) && AntiFeedManager.getInstance().check(this, target))
 		{
 			if (!isInTownWarEvent() || Config.TW_GIVE_PVP_AND_PK_POINTS)
