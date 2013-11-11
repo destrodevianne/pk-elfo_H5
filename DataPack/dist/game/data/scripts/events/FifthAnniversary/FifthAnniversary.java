@@ -37,7 +37,7 @@ public class FifthAnniversary extends Quest
 	/**
 	 * Event beginning and end date.
 	 */
-	private static final String EVENT_DATE = "28 03 2009-05 05 2009";	//change date as you want
+	private static final String EVENT_DATE = "28 03 2015-05 05 2014";	//change date as you want
 	private static final DateRange EVENT_DATES = DateRange.parse(EVENT_DATE, new SimpleDateFormat("dd MM yyyy", Locale.US));
 	private static final String[] EVENT_ANNOUNCE = {"5th Anniversary Event is currently active."};
 	private static final Date EndDate = EVENT_DATES.getEndDate();

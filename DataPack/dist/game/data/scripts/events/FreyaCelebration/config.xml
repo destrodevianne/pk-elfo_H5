@@ -19,7 +19,7 @@
 		<add npc="13296" x="43245" y="-48454" z="-797" heading="17000" />
 	</spawnlist>
 	<messages>
-		<add type="onEnd" text="Freya Celebration: Event end!" />
-		<add type="onEnter" text="Freya Celebration: Event ongoing!" />
+		<add type="onEnd" text="Freya Celebration: Final do Evento!" />
+		<add type="onEnter" text="Freya Celebration: Evento em Andamento!" />
 	</messages>
 </event>

@@ -19,7 +19,7 @@
 		<add npc="4306" x="12079" y="16548" z="-4584" heading="62597" />
 	</spawnlist>
 	<messages>
-		<add type="onEnd" text="Gift of Vitality: Event end!" />
-		<add type="onEnter" text="Gift of Vitality: Event ongoing!" />
+		<add type="onEnd" text="Gift of Vitality: Final do Evento!" />
+		<add type="onEnter" text="Gift of Vitality: Evento em andamento!" />
 	</messages>
 </event>

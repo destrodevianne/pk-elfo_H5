@@ -41,8 +41,8 @@
 	</Spawnlist>
 	<Messages>
 		<lang code="en">
-			<add type="onEnd" text="Catch a Tiger event end!" />
-			<add type="onEnter" text="Catch a Tiger: Event ongoing!" />
+			<add type="onEnd" text="Catch a Tiger: Final do evento!" />
+			<add type="onEnter" text="Catch a Tiger: Evento em andamento!" />
 		</lang>
 		<lang code="ru">
 			<add type="onEnd" text="Π­Π²ΠµΠ½Ρ‚ Catch a Tiger Π·Π°ΠΊΠΎΠ½Ρ‡ΠµΠ½!" />

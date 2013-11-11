@@ -14,7 +14,7 @@ public class ChristmasIsHere extends Quest
 	/**
 	 * List of Event Npc
 	 */
-	private static final int SANTA_CLAUS = 7106;
+	private static final int SANTA_CLAUS = 13285;
 	/**
 	 * List of Event Monsters
 	 */
@@ -60,9 +60,9 @@ public class ChristmasIsHere extends Quest
 		String htmltext = "";
 		if (EventsConfig.CH_STARTED)
 		{
-			htmltext = "<html><body>Santa:<br>Ho ho ho !! Merry Christmas! You are have bad or good things?<br>You must see what i can give you.<br>";
-			htmltext += "<a action=\"bypass -h Quest ChristmasIsHere getprizes\">Search for Gift To Me</a><br>";
-			htmltext += "<a action=\"bypass -h Quest ChristmasIsHere info\">How i can get prizes.</a><br></body></html>";
+			htmltext = "<html><body>Santa:<br>Ho ho ho !! Feliz Natal! Voce quer ter coisas boas ou mas?<br>Voce deve ver o que eu posso te dar.<br>";
+			htmltext += "<a action=\"bypass -h Quest ChristmasIsHere getprizes\">Procurar presente para mim</a><br>";
+			htmltext += "<a action=\"bypass -h Quest ChristmasIsHere info\">Como posso obter premios.</a><br></body></html>";
 		}
 		else
 		{
@@ -89,7 +89,7 @@ public class ChristmasIsHere extends Quest
 		}
 		else if (event.equalsIgnoreCase("info"))
 		{
-			htmltext = "<html><body>Santa:<br>Oh no i don't have my socks. You must go to dark dungeon (Mission Master) and get my socks, then you can get one of my prizes.<br>";
+			htmltext = "<html><body>Santa:<br>Oh nao, eu nao tenho as minhas meias. Voce deve ir para o calaboucxo escuro (Mission Master) e obter as minhas meias, entao voce pode obter um dos meus premios.<br>";
 			htmltext += "<br></body></html>";
 		}
 		return htmltext;
@@ -137,7 +137,7 @@ public class ChristmasIsHere extends Quest
 		new ChristmasIsHere(-1, qn, "events");
 		if (EventsConfig.CH_STARTED)
 		{
-			_log.warning("Event System: Christmas Event loaded ...");
+			_log.warning("Event System: Christmas Evento LIDO ...");
 		}
 	}
 }
