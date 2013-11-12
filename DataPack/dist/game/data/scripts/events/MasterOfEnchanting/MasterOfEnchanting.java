@@ -42,10 +42,10 @@ public class MasterOfEnchanting extends LongTimeEvent
 	private static final int MASTER_YOGI_SCROLL = 13540;
 	// Misc
 	private static final int STAFF_PRICE = 1000000;
-	private static final int SCROLL_24_PRICE = 5000000;
+	private static final int SCROLL_24_PRICE = 96000000;
 	private static final int SCROLL_24_TIME = 6;
-	private static final int SCROLL_1_PRICE = 500000;
-	private static final int SCROLL_10_PRICE = 5000000;
+	private static final int SCROLL_1_PRICE = 4000000;
+	private static final int SCROLL_10_PRICE = 40000000;
 	
 	private static final int[] HAT_SHADOW_REWARD =
 	{
@@ -67,7 +67,7 @@ public class MasterOfEnchanting extends LongTimeEvent
 	};
 	
 	@SuppressWarnings("deprecation")
-	private static final Date _eventStart = new Date(2011, 7, 1);
+	private static final Date _eventStart = new Date(2013, 1, 1);
 	
 	public MasterOfEnchanting(String name, String descr)
 	{
@@ -190,74 +190,170 @@ public class MasterOfEnchanting extends LongTimeEvent
 				switch (st.getEnchantLevel(MASTER_YOGI_STAFF))
 				{
 					case 4:
-						st.giveItems(6406, 1); // Firework
+						st.giveItems(HAT_SHADOW_REWARD[getRandom(3)], 1);
 						break;
 					case 5:
-						st.giveItems(6406, 2); // Firework
-						st.giveItems(6407, 1); // Large Firework
+						st.giveItems(HAT_EVENT_REWARD[getRandom(3)], 1);
 						break;
 					case 6:
 						st.giveItems(6406, 3); // Firework
 						st.giveItems(6407, 2); // Large Firework
 						break;
 					case 7:
+						st.giveItems(HAT_EVENT_REWARD[getRandom(3)], 1);
+						st.giveItems(956, 1); // Scroll: Enchant Armor (D)
+						st.giveItems(6406, 3); // Firework
+						st.giveItems(6407, 2); // Large Firework
+						st.giveItems(955, 1); // Scroll: Enchant Weapon (D)
 						st.giveItems(HAT_SHADOW_REWARD[getRandom(3)], 1);
 						break;
 					case 8:
+						st.giveItems(HAT_EVENT_REWARD[getRandom(3)], 1);
+						st.giveItems(956, 1); // Scroll: Enchant Armor (D)
+						st.giveItems(6406, 3); // Firework
+						st.giveItems(6407, 2); // Large Firework
 						st.giveItems(955, 1); // Scroll: Enchant Weapon (D)
+						st.giveItems(HAT_SHADOW_REWARD[getRandom(3)], 1);
 						break;
 					case 9:
-						st.giveItems(955, 1); // Scroll: Enchant Weapon (D)
-						st.giveItems(956, 1); // Scroll: Enchant Armor (D)
+						st.giveItems(HAT_EVENT_REWARD[getRandom(3)], 1);
+						st.giveItems(951, 1); // Scroll: Enchant Weapon (C)
+						st.giveItems(6406, 3); // Firework
+						st.giveItems(6407, 2); // Large Firework
+						st.giveItems(952, 1); // Scroll: Enchant Armor (C)
+						st.giveItems(HAT_SHADOW_REWARD[getRandom(3)], 1);
 						break;
 					case 10:
+						st.giveItems(HAT_EVENT_REWARD[getRandom(3)], 1);
 						st.giveItems(951, 1); // Scroll: Enchant Weapon (C)
+						st.giveItems(6406, 3); // Firework
+						st.giveItems(6407, 2); // Large Firework
+						st.giveItems(952, 1); // Scroll: Enchant Armor (C)
+						st.giveItems(HAT_SHADOW_REWARD[getRandom(3)], 1); 
 						break;
 					case 11:
-						st.giveItems(951, 1); // Scroll: Enchant Weapon (C)
-						st.giveItems(952, 1); // Scroll: Enchant Armor (C)
+						st.giveItems(HAT_EVENT_REWARD[getRandom(3)], 1);
+						st.giveItems(948, 1); // Scroll: Enchant Armor (B)
+						st.giveItems(6406, 3); // Firework
+						st.giveItems(6407, 2); // Large Firework
+						st.giveItems(947, 1); // Scroll: Enchant Weapon (B)
+						st.giveItems(HAT_SHADOW_REWARD[getRandom(3)], 1);					
 						break;
 					case 12:
+						st.giveItems(HAT_EVENT_REWARD[getRandom(3)], 1);
 						st.giveItems(948, 1); // Scroll: Enchant Armor (B)
+						st.giveItems(6406, 3); // Firework
+						st.giveItems(6407, 2); // Large Firework
+						st.giveItems(947, 1); // Scroll: Enchant Weapon (B)
+						st.giveItems(HAT_SHADOW_REWARD[getRandom(3)], 1);
 						break;
 					case 13:
+						st.giveItems(HAT_EVENT_REWARD[getRandom(3)], 1);
 						st.giveItems(729, 1); // Scroll: Enchant Weapon (A)
+						st.giveItems(6406, 3); // Firework
+						st.giveItems(6407, 2); // Large Firework
+						st.giveItems(730, 1); // Scroll: Enchant Armor (A)
+						st.giveItems(HAT_SHADOW_REWARD[getRandom(3)], 1);
 						break;
 					case 14:
+						st.giveItems(13992, 1); // Grade S Accessory Chest (Event)
+						st.giveItems(13991, 1); // Grade S Armor Chest (Event)
+						st.giveItems(13990, 1); // Grade S Weapon Chest (Event)
+						st.giveItems(8762, 1); // Top-Grade Life Stone: level 76
 						st.giveItems(HAT_EVENT_REWARD[getRandom(3)], 1);
+						st.giveItems(729, 1); // Scroll: Enchant Weapon (A)
+						st.giveItems(6406, 3); // Firework
+						st.giveItems(6407, 2); // Large Firework
+						st.giveItems(730, 1); // Scroll: Enchant Armor (A)
+						st.giveItems(HAT_SHADOW_REWARD[getRandom(3)], 1);
 						break;
 					case 15:
+						st.giveItems(HAT_EVENT_REWARD[getRandom(3)], 1);
+						st.giveItems(948, 1); // Scroll: Enchant Armor (B)
+						st.giveItems(729, 1); // Scroll: Enchant Weapon (A)
+						st.giveItems(947, 1); // Scroll: Enchant Weapon (B)
+						st.giveItems(730, 1); // Scroll: Enchant Armor (A)
+						st.giveItems(HAT_SHADOW_REWARD[getRandom(3)], 1);
 						st.giveItems(13992, 1); // Grade S Accessory Chest (Event)
+						st.giveItems(13992, 1); // Grade S Accessory Chest (Event)
+						st.giveItems(13991, 1); // Grade S Armor Chest (Event)
+						st.giveItems(13990, 1); // Grade S Weapon Chest (Event)
+						st.giveItems(8762, 1); // Top-Grade Life Stone: level 76
 						break;
 					case 16:
+						st.giveItems(HAT_EVENT_REWARD[getRandom(3)], 1);
+						st.giveItems(948, 1); // Scroll: Enchant Armor (B)
+						st.giveItems(729, 1); // Scroll: Enchant Weapon (A)
+						st.giveItems(947, 1); // Scroll: Enchant Weapon (B)
+						st.giveItems(730, 1); // Scroll: Enchant Armor (A)
+						st.giveItems(HAT_SHADOW_REWARD[getRandom(3)], 1);
+						st.giveItems(13992, 1); // Grade S Accessory Chest (Event)
+						st.giveItems(13991, 1); // Grade S Armor Chest (Event)
+						st.giveItems(13990, 1); // Grade S Weapon Chest (Event)
 						st.giveItems(8762, 1); // Top-Grade Life Stone: level 76
 						break;
 					case 17:
+						st.giveItems(13992, 1); // Grade S Accessory Chest (Event)
+						st.giveItems(13991, 1); // Grade S Armor Chest (Event)
+						st.giveItems(13990, 1); // Grade S Weapon Chest (Event)
+						st.giveItems(960, 1); // Scroll: Enchant Armor (S)
+						st.giveItems(8762, 1); // Top-Grade Life Stone: level 76
+						st.giveItems(CRYSTAL_REWARD[getRandom(3)], 1); // Red/Blue/Green Soul Crystal - Stage 14
+						st.giveItems(9576, 1); // Top-Grade Life Stone: level 80
+						st.giveItems(14169, 1); // Top-Grade Life Stone: level 84
+						st.giveItems(16167, 1); // Top-Grade Life Stone: level 86
 						st.giveItems(959, 1); // Scroll: Enchant Weapon (S)
 						break;
 					case 18:
+						st.giveItems(13992, 1); // Grade S Accessory Chest (Event)
 						st.giveItems(13991, 1); // Grade S Armor Chest (Event)
+						st.giveItems(13990, 1); // Grade S Weapon Chest (Event)
+						st.giveItems(960, 1); // Scroll: Enchant Armor (S)
+						st.giveItems(8762, 1); // Top-Grade Life Stone: level 76
+						st.giveItems(CRYSTAL_REWARD[getRandom(3)], 1); // Red/Blue/Green Soul Crystal - Stage 14
+						st.giveItems(9576, 1); // Top-Grade Life Stone: level 80
+						st.giveItems(14169, 1); // Top-Grade Life Stone: level 84
+						st.giveItems(16167, 1); // Top-Grade Life Stone: level 86
+						st.giveItems(959, 1); // Scroll: Enchant Weapon (S)
 						break;
 					case 19:
+						st.giveItems(13992, 1); // Grade S Accessory Chest (Event)
+						st.giveItems(13991, 1); // Grade S Armor Chest (Event)
 						st.giveItems(13990, 1); // Grade S Weapon Chest (Event)
+						st.giveItems(960, 1); // Scroll: Enchant Armor (S)
+						st.giveItems(8762, 1); // Top-Grade Life Stone: level 76
+						st.giveItems(9576, 1); // Top-Grade Life Stone: level 80
+						st.giveItems(CRYSTAL_REWARD[getRandom(3)], 1); // Red/Blue/Green Soul Crystal - Stage 14
+						st.giveItems(14169, 1); // Top-Grade Life Stone: level 84
+						st.giveItems(16167, 1); // Top-Grade Life Stone: level 86
+						st.giveItems(959, 1); // Scroll: Enchant Weapon (S)
 						break;
 					case 20:
 						st.giveItems(CRYSTAL_REWARD[getRandom(3)], 1); // Red/Blue/Green Soul Crystal - Stage 14
+						st.giveItems(9575, 1); // High-Grade Life Stone: level 80
+						st.giveItems(8752, 1); // High-Grade Life Stone: level 76
+						st.giveItems(14168, 1); // High-Grade Life Stone: level 84
+						st.giveItems(16166, 1); // High-Grade Life Stone: level 86
 						break;
 					case 21:
-						st.giveItems(8762, 1); // Top-Grade Life Stone: level 76
+						st.giveItems(9575, 1); // High-Grade Life Stone: level 80
 						st.giveItems(8752, 1); // High-Grade Life Stone: level 76
+						st.giveItems(14168, 1); // High-Grade Life Stone: level 84
+						st.giveItems(16166, 1); // High-Grade Life Stone: level 86
 						st.giveItems(CRYSTAL_REWARD[getRandom(3)], 1); // Red/Blue/Green Soul Crystal - Stage 14
 						break;
 					case 22:
-						st.giveItems(13989, 1); // S80 Grade Armor Chest (Event)
+						st.giveItems(13989, 3); // S80 Grade Armor Chest (Event)
+						st.giveItems(13988, 3); // S80 Grade Weapon Chest (Event)
 						break;
 					case 23:
-						st.giveItems(13988, 1); // S80 Grade Weapon Chest (Event)
+						st.giveItems(13989, 5); // S80 Grade Armor Chest (Event)
+						st.giveItems(13988, 5); // S80 Grade Weapon Chest (Event)
 					default:
 						if (st.getEnchantLevel(MASTER_YOGI_STAFF) > 23)
 						{
-							st.giveItems(13988, 1); // S80 Grade Weapon Chest (Event)
+							st.giveItems(13989, 10); // S80 Grade Armor Chest (Event)
+							st.giveItems(13988, 10); // S80 Grade Weapon Chest (Event)
 						}
 						break;
 				}

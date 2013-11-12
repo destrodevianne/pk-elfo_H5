@@ -41,8 +41,8 @@ public class User implements IVoicedCommandHandler
          }
                   else
                   {
-                                       activeChar.sendMessage("This command is disabled");
-                                       ExShowScreenMessage message1 = new ExShowScreenMessage("This command is disabled by admin!", 4000);
+                                       activeChar.sendMessage("Este comando esta desativado");
+                                       ExShowScreenMessage message1 = new ExShowScreenMessage("Este comando foi desabiltado pelo ADM!", 4000);
                                        activeChar.sendPacket(message1);
                                        return false;
                   }    

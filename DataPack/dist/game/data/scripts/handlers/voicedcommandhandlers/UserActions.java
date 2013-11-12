@@ -39,23 +39,23 @@ public class UserActions implements IVoicedCommandHandler
                                        if (L2PcInstance._isoneffect == false)
                                        {
                                                        activeChar.startAbnormalEffect(AbnormalEffect.VITALITY);
-                                                       activeChar.sendMessage("Your custom effect enabled!");
-                                                       ExShowScreenMessage message1 = new ExShowScreenMessage("Your custom effect is now enabled!", 4000);
+                                                       activeChar.sendMessage("Seu efeito personalizado esta habilitado!");
+                                                       ExShowScreenMessage message1 = new ExShowScreenMessage("Seu efeito personalizado agora esta ativado!", 4000);
                                                        activeChar.sendPacket(message1);
                                                        L2PcInstance._isoneffect = true;
                                        }
                                        else
                                        {
-                                               activeChar.sendMessage("Your effect is already enabled!");
-                                               ExShowScreenMessage message1 = new ExShowScreenMessage("Your effect is already enabled!", 4000);
+                                               activeChar.sendMessage("Seu efeito ja esta ativado!");
+                                               ExShowScreenMessage message1 = new ExShowScreenMessage("Seu efeito ja esta ativado!", 4000);
                                                activeChar.sendPacket(message1);       
                                                return false;          
                                        }
                                }
                                else
                                {
-                                       activeChar.sendMessage("This command is disabled");
-                                       ExShowScreenMessage message1 = new ExShowScreenMessage("This command is disabled by admin!", 4000);
+                                       activeChar.sendMessage("Este comando esta desativado");
+                                       ExShowScreenMessage message1 = new ExShowScreenMessage("Este comando foi desativado pelo ADM!", 4000);
                                        activeChar.sendPacket(message1);
                                }
                        }
