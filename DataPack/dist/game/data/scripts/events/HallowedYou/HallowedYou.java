@@ -7,13 +7,15 @@ import king.server.gameserver.model.quest.QuestState;
 import king.server.gameserver.model.quest.State;
 import events.EventsConfig;
 
+/**
+ * PkElfo
+ *
+ */
 
 public class HallowedYou extends Quest
 {
 	private static final String qn = "HallowedYou";
-
 	private static final int HALLOWEN_NPC = 7104;
-	
 	private static final int[] ForestOfDeadNight = 
 	{
 		18119,21547,21553,21557,21559,21561,21563,21565,21567,21570,
@@ -107,7 +109,6 @@ public class HallowedYou extends Quest
 		}
 		return super.onKill(npc, player, isPet);
 	}
-
 	public HallowedYou(int questId, String name, String descr)
 	{
 		super(questId, name, descr);

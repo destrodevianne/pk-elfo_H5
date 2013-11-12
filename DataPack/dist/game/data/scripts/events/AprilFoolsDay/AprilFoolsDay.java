@@ -8,6 +8,10 @@ import king.server.gameserver.model.quest.QuestState;
 import king.server.util.Rnd;
 import events.EventsConfig;
 
+/**
+ * PkElfo
+ *
+ */
 
 public class AprilFoolsDay extends Quest
 {
@@ -241,6 +245,6 @@ public class AprilFoolsDay extends Quest
 	{
 		new AprilFoolsDay(-1,qn,"events");
 		if (EventsConfig.AP_STARTED)
-			_log.warning("Event System: April Fools Day Evento LIDO ...");
+			_log.warning("Evento: April Fools Day LIDO ...");
 	}
 }

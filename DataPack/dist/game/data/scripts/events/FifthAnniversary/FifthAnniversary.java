@@ -30,6 +30,11 @@ import king.server.gameserver.model.quest.QuestState;
 import king.server.gameserver.script.DateRange;
 import king.server.util.Rnd;
 
+/**
+ * PkElfo
+ *
+ */
+
 public class FifthAnniversary extends Quest
 {
 	private final static String qn = "FifthAnniversary";
@@ -37,12 +42,11 @@ public class FifthAnniversary extends Quest
 	/**
 	 * Event beginning and end date.
 	 */
-	private static final String EVENT_DATE = "28 03 2015-05 05 2014";	//change date as you want
+	private static final String EVENT_DATE = "28 03 2013-05 05 2014";	//change date as you want
 	private static final DateRange EVENT_DATES = DateRange.parse(EVENT_DATE, new SimpleDateFormat("dd MM yyyy", Locale.US));
-	private static final String[] EVENT_ANNOUNCE = {"5th Anniversary Event is currently active."};
+	private static final String[] EVENT_ANNOUNCE = {"13th Aniversaro Evento esta ativo."};
 	private static final Date EndDate = EVENT_DATES.getEndDate();
 	private static final Date currentDate = new Date();
-	
 	//Items
 	private final static int letterL = 3882;
 	private final static int letterI = 3881;
@@ -59,25 +63,18 @@ public class FifthAnniversary extends Quest
 	private final static int[] dropList = { letterL, letterI, letterN, letterE, letterA, letterG, letterII, letter5, letterY, letterR, letterS, letterC };
 	private int[] dropCount = {1,1};
 	private final static int dropChance = 25000;	// actually 2.5%
-                                                 // Goddard,Aden,Giran, Oren,Dion,Heine,Gludio,Schuttgart,Gludin,Hunters,Rune,SoDA,Dark Elf,TI,Dwarf,Orc,Kamael
+    // Goddard,Aden,Giran, Oren,Dion,Heine,Gludio,Schuttgart,Gludin,Hunters,Rune,SoDA,Dark Elf,TI,Dwarf,Orc,Kamael
 	private final static int[] EventSpawnX = { 147698,147443,82227,82754,15064,111067,-12965,87362,  -81037,117412,43983,-45907,12153,-84458,114750,-45656,-117195 };
 	private final static int[] EventSpawnY = { -56025,26942,148609,53573,143254,218933,122914,143166,150092,76642,-47758,49387,16753,244761,-178692,-113119,46837 };
 	private final static int[] EventSpawnZ = { -2775,-2205,-3472,-1496,-2668,-3543,-3117,-1293,      -3044,-2695,-797,-3060,-4584,-3730,-820,-240,367 };
-
 	private final static int EventNPC = 31854;
-	
 	private static List<L2Npc> eventManagers = new ArrayList<>();
-
 	private static boolean FifthAnniversaryEvent = false;
-	
 	public FifthAnniversary(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-
         EventDroplist.getInstance().addGlobalDrop(dropList, dropCount, dropChance, EVENT_DATES);
-        
         Announcements.getInstance().addEventAnnouncement(EVENT_DATES,EVENT_ANNOUNCE); 
-
         addStartNpc(EventNPC);
 		addFirstTalkId(EventNPC);
 		addTalkId(EventNPC);
@@ -87,11 +84,9 @@ public class FifthAnniversary extends Quest
 		{
 			FifthAnniversaryEvent = true;
 		}
-
 		if (FifthAnniversaryEvent)
 		{
 			System.out.println("5th Anniversary Event - ON");
-
 			for (int i = 0; i < EventSpawnX.length; i++)
 			{
 				L2Npc eventManager = addSpawn(EventNPC,EventSpawnX[i],EventSpawnY[i],EventSpawnZ[i],0,false,0);
@@ -101,7 +96,6 @@ public class FifthAnniversary extends Quest
 		else
 		{
 			System.out.println("5th Anniversary Event - OFF");
-
 			Calendar endWeek = Calendar.getInstance();
 			endWeek.setTime(EndDate);
 			endWeek.add(Calendar.DATE, 7);
@@ -123,7 +117,6 @@ public class FifthAnniversary extends Quest
 		String htmltext = "";
 		QuestState st;
 		int prize;
-
 		if (npc == null)
 		{
 			if (event.equalsIgnoreCase("EventCheck"))
@@ -135,13 +128,11 @@ public class FifthAnniversary extends Quest
 				{
 					Event1 = true;
 				}
-
 				if (!FifthAnniversaryEvent && Event1)
 				{
 					FifthAnniversaryEvent = true;
 					System.out.println("5th Anniversary Event - ON");
 					Announcements.getInstance().announceToAll("5th Anniversary Event is currently active. See the Event NPCs to participate!");
-
 					for (int i = 0; i < EventSpawnX.length; i++)
 					{
 						L2Npc eventManager = addSpawn(EventNPC,EventSpawnX[i],EventSpawnY[i],EventSpawnZ[i],0,false,0);
@@ -162,7 +153,6 @@ public class FifthAnniversary extends Quest
 		else if (player != null && event.equalsIgnoreCase("LINEAGEII"))
 		{
 		    st = player.getQuestState(qn);
-
 			if ( st.getQuestItemsCount(letterL) >= 1
 				&& st.getQuestItemsCount(letterI) >= 1
 				&& st.getQuestItemsCount(letterN) >= 1
@@ -178,9 +168,8 @@ public class FifthAnniversary extends Quest
 	            st.takeItems(letterA,1);
 	            st.takeItems(letterG,1);
 	            st.takeItems(letterII,1);
-	            
 	            prize = Rnd.get(1000);
-	            
+
 	            if (prize <= 5)
 	                st.giveItems(6662,1); // 1 - Ring of Core
 	            else if (prize <= 10)
@@ -210,7 +199,6 @@ public class FifthAnniversary extends Quest
 		else if (player != null && event.equalsIgnoreCase("5YEARS"))
 		{
 		    st = player.getQuestState(qn);
-
 			if (st.getQuestItemsCount(letter5) >= 1
 	        	&& st.getQuestItemsCount(letterY) >= 1
 	        	&& st.getQuestItemsCount(letterE) >= 1
@@ -224,7 +212,6 @@ public class FifthAnniversary extends Quest
 	            st.takeItems(letterA,1);
 	            st.takeItems(letterR,1);
 	            st.takeItems(letterS,1);
-	            
 	            prize = Rnd.get(1000);
 	            
 	            if (prize <= 5)
@@ -256,7 +243,6 @@ public class FifthAnniversary extends Quest
 		else if (player != null && event.equalsIgnoreCase("GRACIA"))
 		{
 		    st = player.getQuestState(qn);
-
 		    if (st.getQuestItemsCount(letterG) >= 1
 	        	&& st.getQuestItemsCount(letterR) >= 1
 	        	&& st.getQuestItemsCount(letterA) >= 2
@@ -268,7 +254,6 @@ public class FifthAnniversary extends Quest
 	            st.takeItems(letterA,2);
 	            st.takeItems(letterC,1);
 	            st.takeItems(letterI,1);
-	            
 	            prize = Rnd.get(1000);
 	            
 	            if (prize <= 5)
@@ -301,7 +286,6 @@ public class FifthAnniversary extends Quest
 			htmltext =  "31854.htm";
 		else if (event.equalsIgnoreCase("chat1"))
 			htmltext =  "31854-02.htm";
-		
 		return htmltext;
 	}	
 
@@ -311,7 +295,6 @@ public class FifthAnniversary extends Quest
 		QuestState st = player.getQuestState(getName());
 		if (st == null)
 			st = this.newQuestState(player);
-
 		return "31854.htm";
 	}
 
@@ -319,5 +302,4 @@ public class FifthAnniversary extends Quest
 	{
 		new FifthAnniversary(-1, qn, "events");
 	}
-
 }

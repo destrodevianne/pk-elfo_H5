@@ -35,9 +35,8 @@ import king.server.gameserver.util.Util;
 import king.server.util.Rnd;
 
 /**
- ** @author GKR
- **
- ** Retail Event : 'Catch a Tiger'
+ * PkElfo
+ *
  */
  
 public class CatchATiger extends LongTimeEvent
@@ -50,10 +49,8 @@ public class CatchATiger extends LongTimeEvent
 	private static final int GLOOMY_TIGER_CAPTAIN = 13289;
 	private static final int WHITE_TIGER = 13290;
 	private static final int WHITE_TIGER_CAPTAIN = 13291;
-	
 	private static final int SUMMONER = 13293;
 	private static final int BOSS_SUMMONER = 13294;
-
 	private static final int[] SKILLS_DMG_TO_ME = { 9088, 9089 };
 	private static final SkillHolder[] SKILLS_DMG_BY_ME = { new SkillHolder(6133, 1), new SkillHolder(6135, 1) }; 
 	private static final int PAYMENT = 2010;
@@ -116,19 +113,16 @@ public class CatchATiger extends LongTimeEvent
 		NpcStringId.MY_ENERGY_IS_OVERFLOWING_I_DONT_NEED_ANY_FATIGUE_RECOVERY_POTION,
 		NpcStringId.WHATS_THE_MATTER_THATS_AN_AMATEUR_MOVE
 	};
-	
 	private static final NpcStringId[] PIG_ON_SPAWN_TEXT =
 	{
 		NpcStringId.ROAR_NO_OINK_OINK_SEE_IM_A_PIG_OINK_OINK,
 		NpcStringId.WHO_AM_I_WHERE_AM_I_OINK_OINK
 	};
-	
 	private static final NpcStringId[] NO_SKILL_ATTACK_TEXT =
 	{
 		NpcStringId.HEY_ARE_YOU_PLANNING_ON_EATING_ME_USE_A_CUPIDS_FATIGUE_RECOVERY_POTION_ALREADY,
 		NpcStringId.ILL_PASS_ON_AN_AMATEURS_MERIDIAN_MASSAGE_USE_A_CUPIDS_FATIGUE_RECOVERY_POTION_ALREADY
 	};
-
 	private static final String[] SKILL_ATTACK_TEXT = 
 	{
 		"*Roar* *Grunt Grunt* I don't feel like doing anything right now.",
@@ -137,25 +131,21 @@ public class CatchATiger extends LongTimeEvent
 		"Wow I feel really tired today... I wonder why?",
 		"*Roar* My body feels as light as a feather."
 	};
-
 	private static final String[] DEATH_TEXT =
 	{
 		"*Roar* I feel like I could use a nap...!",
 		"*Meow* I'm sleepy. Think I'll go take a nap.",
 		"I can't feel my legs anymore... ZzzZzz"
 	};
-
 	private static final String[] FORTUNE_DEATH_TEXT =
 	{
 		"*Roar* I think I'll go to sleep.",
 		"So sleepy. You wouldn't happen to be the sandman, %name%, would you?",
 		"Incredible. From now on, I'll compare all massages to this one with %name%!"
 	};
-
 	public CatchATiger(String name, String descr)
 	{
 		super(name, descr);
-
 		addFirstTalkId(MANAGER);
 		addStartNpc(MANAGER);
 		addTalkId(MANAGER);
@@ -180,7 +170,6 @@ public class CatchATiger extends LongTimeEvent
 		{
 			st = newQuestState(player);
 		}
-
 		return isDropPeriod() ? "13292-01.htm" : "13292-11.htm";  
 	}
 
@@ -207,7 +196,6 @@ public class CatchATiger extends LongTimeEvent
 
 			return null;
 		}
-
 		QuestState st = player.getQuestState(getName());
 		String htmltext = event.endsWith(".htm") ? event : "";
 
@@ -215,7 +203,6 @@ public class CatchATiger extends LongTimeEvent
 		{
 			return null;
 		}
-
 		if (event.equalsIgnoreCase("give_package"))
 		{
 			if (isDropPeriod())
@@ -255,7 +242,6 @@ public class CatchATiger extends LongTimeEvent
 				htmltext = "13292-12.htm";
 			}
 		}
-
 		else if (event.equalsIgnoreCase("give_potions"))
 		{
 			if (st.getQuestItemsCount(PcInventory.ADENA_ID) >= PAYMENT)
@@ -268,7 +254,6 @@ public class CatchATiger extends LongTimeEvent
 				htmltext = "13292-03.htm";
 			}
 		}
-
 		else if (event.equalsIgnoreCase("give_reward"))
 		{
 			if (st.getQuestItemsCount(APIGA) >= 20)
@@ -290,7 +275,6 @@ public class CatchATiger extends LongTimeEvent
 				htmltext = "13292-04.htm";
 			}
 		}
-		
 		else if (event.equalsIgnoreCase("give_adv_reward"))
 		{
 			if (st.getQuestItemsCount(GOLDEN_APIGA) >= 20)
@@ -304,7 +288,6 @@ public class CatchATiger extends LongTimeEvent
 				htmltext = "13292-05.htm";
 			}
 		}
-
 		else if (event.equalsIgnoreCase("success"))
 		{
 			ExShowScreenMessage sm = new ExShowScreenMessage(2, 0, 2, 0, 1, 0, 0, true, 1000, false, null, NpcStringId.MISSION_SUCCESS, null);
@@ -330,7 +313,6 @@ public class CatchATiger extends LongTimeEvent
 				npc.doCast(SKILLS_DMG_BY_ME[0].getSkill());
 				npc.doCast(SKILLS_DMG_BY_ME[1].getSkill());
 			}
-
 			if ((skill != null) && Util.contains(SKILLS_DMG_TO_ME, skill.getId()))
 			{
 				if (!npc.isBusy() && (npcId >= BABY_TIGER) && (npcId <= WHITE_TIGER_CAPTAIN))
@@ -346,7 +328,7 @@ public class CatchATiger extends LongTimeEvent
 						String snd = ((npcId == BABY_TIGER) || (npcId == GLOOMY_TIGER) || (npcId == WHITE_TIGER)) ? "EV_04" : "EV_03";
 						NpcStringId fstringId = ((npcId == BABY_TIGER) || (npcId == GLOOMY_TIGER) || (npcId == WHITE_TIGER)) ? NpcStringId.FORTUNE_TIMER_REWARD_INCREASES_2_TIMES_IF_COMPLETED_WITHIN_10_SECONDS : NpcStringId.FORTUNE_TIMER_REWARD_INCREASES_2_TIMES_IF_COMPLETED_WITHIN_40_SECONDS;
 						PlaySound ps = new PlaySound(1, snd, 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ());
-            ExShowScreenMessage sm = new ExShowScreenMessage(2, 0, 2, 0, 1, 0, 0, true, 1000, false, null, fstringId, null);
+						ExShowScreenMessage sm = new ExShowScreenMessage(2, 0, 2, 0, 1, 0, 0, true, 1000, false, null, fstringId, null);
 
 						if ((npc.getNpcId() == BABY_TIGER) || (npc.getNpcId() == GLOOMY_TIGER))
 						{
@@ -361,12 +343,10 @@ public class CatchATiger extends LongTimeEvent
 						ThreadPoolManager.getInstance().scheduleGeneral(new CountdownTask(npc, counter), 1000);
 					}
 				}
-
 				else if (npcId == PIG)
 				{
 					npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.ALL, npc.getNpcId(), PIG_SKILL_ATTACK_TEXT[Rnd.get(3)]));
 				}
-
 				else
 				{
 					if (npc.getSummoner().getObjectId() == attacker.getObjectId())
@@ -389,7 +369,6 @@ public class CatchATiger extends LongTimeEvent
 				npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.ALL, npc.getNpcId(), NO_SKILL_ATTACK_TEXT[Rnd.get(2)]));
 			}
 		}
-
 		return super.onAttack(npc, attacker, damage, isPet, skill);
 	}
 
@@ -403,7 +382,6 @@ public class CatchATiger extends LongTimeEvent
 			{
 				st = newQuestState(killer);
 			}
-
 			long owner_count = Rnd.get(2) + 1;
 			if ((npc.getNpcId() == BABY_TIGER) || (npc.getNpcId() == GLOOMY_TIGER) || (npc.getNpcId() == WHITE_TIGER))
 			{
@@ -422,8 +400,7 @@ public class CatchATiger extends LongTimeEvent
 						st.giveItems(APIGA, owner_count * 2);
 						ExShowScreenMessage sm = new ExShowScreenMessage(2, 0, 2, 0, 1, 0, 0, true, 5000, false, null, NpcStringId.MISSION_SUCCESS, null);						
 						killer.sendPacket(sm);
-					}
-						
+					}		
 					//NpcSay ns = new NpcSay(npc.getObjectId(), Say2.ALL, npc.getNpcId(), 1801183 + Rnd.get(3));
 					//ns.addStringParameter(killer.getName());
 					NpcSay ns = new NpcSay(npc.getObjectId(), Say2.ALL, npc.getNpcId(), FORTUNE_DEATH_TEXT[Rnd.get(3)].replaceFirst("%.*?%", killer.getName()));
@@ -447,15 +424,13 @@ public class CatchATiger extends LongTimeEvent
 					//I have client crash on fstringId, so String constructor is used here
 					npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.ALL, npc.getNpcId(), DEATH_TEXT[Rnd.get(3)]));
 				}
-
 				if ((npc.getNpcId() == GLOOMY_TIGER) && (Rnd.get(100) < 30))
 				{
 					npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.ALL, npc.getNpcId(), NpcStringId.SORRY_BUT_ILL_LEAVE_MY_FRIEND_IN_YOUR_CARE_AS_WELL_THANKS)); // Sorry, but let me ask my friend too~ Thanks.
 					L2Npc monster =	addSpawn(WHITE_TIGER, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 360000);
 					monster.setSummoner(npc.getSummoner());
 				}
-			}
-			
+			}	
 			else if ((npc.getNpcId() == BABY_TIGER_CAPTAIN) || (npc.getNpcId() == GLOOMY_TIGER_CAPTAIN) || (npc.getNpcId() == WHITE_TIGER_CAPTAIN))
 			{
 				if ((!killer.isInParty()) || killer.getParty().getMembers().isEmpty())
@@ -479,8 +454,7 @@ public class CatchATiger extends LongTimeEvent
 							}
 
 							st.giveItems(APIGA, (long) (owner_count * party.getMemberCount() * 0.2 * 2));
-						}
-							
+						}				
 						//NpcSay ns = new NpcSay(npc.getObjectId(), Say2.ALL, npc.getNpcId(), 1801183 + Rnd.get(3));
 						//ns.addStringParameter(killer.getName());
 						NpcSay ns = new NpcSay(npc.getObjectId(), Say2.ALL, npc.getNpcId(), FORTUNE_DEATH_TEXT[Rnd.get(3)].replaceFirst("%.*?%", killer.getName()));
@@ -495,18 +469,15 @@ public class CatchATiger extends LongTimeEvent
 								if (st2 == null)
 								{
 									st2 = newQuestState(killer);
-								}
-								
+								}							
 								if (npc.getNpcId() == WHITE_TIGER_CAPTAIN)
 								{
 									st2.giveItems(GOLDEN_APIGA, owner_count * 2);
 								}
-
 								st2.giveItems(APIGA, owner_count * 2);
 								partyMember.sendPacket(sm);
 							} 
-						}
-						
+						}						
 					}
 					else
 					{
@@ -519,8 +490,7 @@ public class CatchATiger extends LongTimeEvent
 							}
 							
 							st.giveItems(APIGA, (long) (owner_count * party.getMemberCount() * 0.2));
-						}
-						
+						}						
 						for (L2PcInstance partyMember : party.getMembers())
 						{
 							if (partyMember != null && !partyMember.isDead() && npc.isInsideRadius(partyMember, 1500, true, false))
@@ -530,7 +500,6 @@ public class CatchATiger extends LongTimeEvent
 								{
 									st2 = newQuestState(killer);
 								}
-
 								st2.giveItems(APIGA, owner_count);
 							} 
 						}
@@ -557,17 +526,14 @@ public class CatchATiger extends LongTimeEvent
 			npc.setBusyMessage("");
 			npc.setBusy(false);
 		}
-
 		else if ((npcId == SUMMONER) || (npcId == BOSS_SUMMONER))
 		{
 			startQuestTimer("spawn_summon", 1000, npc, null); // TODO: Temp hack, summoner sets AFTER spawn, so it needs to make delay.
 		}
-
 		else if (npcId == PIG)
 		{
 			npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.ALL, npc.getNpcId(), PIG_ON_SPAWN_TEXT[Rnd.get(2)]));
 		}
-
 		return super.onSpawn(npc);
 	}
 
@@ -575,7 +541,6 @@ public class CatchATiger extends LongTimeEvent
 	{
 		private final L2Npc _npc;
 		private int _counter;
-
 		public CountdownTask(L2Npc npc, int counter)
 		{
 			_npc = npc;
@@ -592,17 +557,14 @@ public class CatchATiger extends LongTimeEvent
 				{
 					_npc.deleteMe();
 				}
-
 				else if ((_npc.getNpcId() == BABY_TIGER_CAPTAIN) && ((!_npc.getSummoner().isInParty()) || _npc.getSummoner().getParty().getMembers().isEmpty()))
 				{
 					_npc.setBusyMessage("");
-				} 
-				
+				}
 				else if (_npc.isDead())
 				{
 					startQuestTimer("success", 4000, _npc, _npc.getSummoner().getActingPlayer());
 				}
-
 				else if (_counter == 0)
 				{
 					_npc.setBusyMessage("");
@@ -630,11 +592,8 @@ public class CatchATiger extends LongTimeEvent
 			}
 		}
 	}
-
 	public static void main(String[] args)
 	{
 		new CatchATiger(CatchATiger.class.getSimpleName(), "events");
 	}
 }
-
-

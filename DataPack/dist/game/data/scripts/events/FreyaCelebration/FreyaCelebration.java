@@ -34,9 +34,10 @@ import king.server.gameserver.network.serverpackets.SystemMessage;
 import king.server.gameserver.util.Util;
 
 /**
- * Freya Celebration event AI.
- * @author Gnacik
+ * PkElfo
+ *
  */
+
 public class FreyaCelebration extends LongTimeEvent
 {
 	// NPC
@@ -46,7 +47,6 @@ public class FreyaCelebration extends LongTimeEvent
 	private static final int FREYA_GIFT = 17138;
 	// Misc
 	private static final int HOURS = 20;
-	
 	private static final int[] SKILLS =
 	{
 		9150,
@@ -75,7 +75,6 @@ public class FreyaCelebration extends LongTimeEvent
 		{
 			return null;
 		}
-		
 		if (event.equalsIgnoreCase("give_potion"))
 		{
 			if (st.getQuestItemsCount(PcInventory.ADENA_ID) > 1)
@@ -83,7 +82,6 @@ public class FreyaCelebration extends LongTimeEvent
 				long _curr_time = System.currentTimeMillis();
 				String value = loadGlobalQuestVar(player.getAccountName());
 				long _reuse_time = value == "" ? 0 : Long.parseLong(value);
-				
 				if (_curr_time > _reuse_time)
 				{
 					st.setState(State.STARTED);
@@ -121,16 +119,13 @@ public class FreyaCelebration extends LongTimeEvent
 		{
 			return null;
 		}
-		
 		if ((npc.getNpcId() == FREYA) && Util.contains(targets, npc) && Util.contains(SKILLS, skill.getId()))
 		{
 			if (getRandom(100) < 5)
 			{
 				CreatureSay cs = new CreatureSay(npc.getObjectId(), Say2.NPC_ALL, npc.getName(), NpcStringId.DEAR_S1_THINK_OF_THIS_AS_MY_APPRECIATION_FOR_THE_GIFT_TAKE_THIS_WITH_YOU_THERES_NOTHING_STRANGE_ABOUT_IT_ITS_JUST_A_BIT_OF_MY_CAPRICIOUSNESS);
 				cs.addStringParameter(caster.getName());
-				
 				npc.broadcastPacket(cs);
-				
 				caster.addItem("FreyaCelebration", FREYA_GIFT, 1, npc, true);
 			}
 			else

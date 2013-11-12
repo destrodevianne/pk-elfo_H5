@@ -21,7 +21,7 @@ import king.server.gameserver.model.quest.Quest;
 import king.server.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * @author UnAfraid
+ * PkElfo
  *
  */
 public class AngelCat extends Quest

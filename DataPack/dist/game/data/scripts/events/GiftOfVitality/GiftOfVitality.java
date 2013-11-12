@@ -28,16 +28,16 @@ import king.server.gameserver.network.SystemMessageId;
 import king.server.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * Gift of Vitality event AI.
- * @author Gnacik
+ * PkElfo
+ *
  */
+
 public class GiftOfVitality extends LongTimeEvent
 {
 	// Reuse between buffs
 	private static final int HOURS = 5;
 	// NPC
 	private static final int JACK = 4306;
-	
 	public GiftOfVitality(String name, String descr)
 	{
 		super(name, descr);
@@ -51,7 +51,6 @@ public class GiftOfVitality extends LongTimeEvent
 	{
 		String htmltext = event;
 		QuestState st = player.getQuestState(getName());
-		
 		if (event.equalsIgnoreCase("vitality"))
 		{
 			long _reuse = 0;
@@ -150,7 +149,6 @@ public class GiftOfVitality extends LongTimeEvent
 		}
 		return "4306.htm";
 	}
-	
 	public static void main(String[] args)
 	{
 		new GiftOfVitality(GiftOfVitality.class.getSimpleName(), "events");

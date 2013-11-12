@@ -7,6 +7,11 @@ import king.server.gameserver.model.quest.QuestState;
 
 import events.EventsConfig;
 
+/**
+ * PkElfo
+ *
+ */
+
 public class ChristmasIsHere extends Quest
 {
 	private static final String qn = "ChristmasIsHere";
@@ -47,7 +52,7 @@ public class ChristmasIsHere extends Quest
 	};
 	
 	/**
-	 * On First Talk Script
+	 * Na primeira conversa Script
 	 */
 	@Override
 	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
@@ -69,10 +74,9 @@ public class ChristmasIsHere extends Quest
 			htmltext = EventsConfig.EVENT_DISABLED;
 		}
 		return htmltext;
-	}
-	
+	}	
 	/**
-	 * On Advanced Event Script
+	 * No evento avancado Script
 	 */
 	@Override
 	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
@@ -93,10 +97,9 @@ public class ChristmasIsHere extends Quest
 			htmltext += "<br></body></html>";
 		}
 		return htmltext;
-	}
-	
+	}	
 	/**
-	 * On Kill Monster Script
+	 * Em morte dos monstros Script
 	 */
 	@Override
 	public final String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
@@ -118,8 +121,7 @@ public class ChristmasIsHere extends Quest
 			}
 		}
 		return super.onKill(npc, player, isPet);
-	}
-	
+	}	
 	public ChristmasIsHere(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
@@ -130,14 +132,13 @@ public class ChristmasIsHere extends Quest
 		{
 			addKillId(MONSTER);
 		}
-	}
-	
+	}	
 	public static void main(String[] args)
 	{
 		new ChristmasIsHere(-1, qn, "events");
 		if (EventsConfig.CH_STARTED)
 		{
-			_log.warning("Event System: Christmas Evento LIDO ...");
+			_log.warning("Evento: Natal LIDO ...");
 		}
 	}
 }

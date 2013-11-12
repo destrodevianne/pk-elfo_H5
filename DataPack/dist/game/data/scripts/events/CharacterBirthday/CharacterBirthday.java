@@ -26,15 +26,14 @@ import king.server.gameserver.model.quest.State;
 import king.server.gameserver.util.Util;
 
 /**
- * Character Birthday event AI.<br>
- * Updated to H5 by Nyaran.
- * @author Gnacik
+ * PkElfo
+ *
  */
+
 public class CharacterBirthday extends Quest
 {
 	private static final int ALEGRIA = 32600;
 	private static int SPAWNS = 0;
-	
 	private final static int[] GK =
 	{
 		30006,
@@ -72,12 +71,10 @@ public class CharacterBirthday extends Quest
 	{
 		String htmltext = event;
 		QuestState st = player.getQuestState(getName());
-		
 		if (event.equalsIgnoreCase("despawn_npc"))
 		{
 			npc.doDie(player);
 			SPAWNS--;
-			
 			htmltext = null;
 		}
 		else if (event.equalsIgnoreCase("change"))
@@ -106,14 +103,12 @@ public class CharacterBirthday extends Quest
 		if (SPAWNS >= 3)
 		{
 			return "busy.htm";
-		}
-		
+		}		
 		QuestState st = player.getQuestState(getName());
 		if (st == null)
 		{
 			st = newQuestState(player);
-		}
-		
+		}		
 		if (!Util.checkIfInRange(10, npc, player, true))
 		{
 			L2Npc spawned = st.addSpawn(32600, player.getX() + 10, player.getY() + 10, player.getZ() + 10, 0, false, 0, true);
@@ -126,8 +121,7 @@ public class CharacterBirthday extends Quest
 			return "tooclose.htm";
 		}
 		return null;
-	}
-	
+	}	
 	public static void main(String[] args)
 	{
 		new CharacterBirthday(-1, CharacterBirthday.class.getSimpleName(), "events");

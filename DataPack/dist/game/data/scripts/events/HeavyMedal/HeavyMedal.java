@@ -24,17 +24,16 @@ import king.server.gameserver.model.event.LongTimeEvent;
 import king.server.gameserver.model.quest.QuestState;
 
 /**
- * Heavy Medals event AI.
- * @author Gnacik
+ * PkElfo
+ *
  */
+
 public class HeavyMedal extends LongTimeEvent
 {
 	private final static int CAT_ROY = 31228;
 	private final static int CAT_WINNIE = 31229;
 	private final static int GLITTERING_MEDAL = 6393;
-	
 	private final static int WIN_CHANCE = 50;
-	
 	private final static int[] MEDALS =
 	{
 		5,
@@ -49,7 +48,6 @@ public class HeavyMedal extends LongTimeEvent
 		6401,
 		6402
 	};
-	
 	public HeavyMedal(String name, String descr)
 	{
 		super(name, descr);
@@ -69,10 +67,8 @@ public class HeavyMedal extends LongTimeEvent
 		{
 			return getNoQuestMsg(player);
 		}
-		
 		String htmltext = event;
 		int level = checkLevel(st);
-		
 		if (event.equalsIgnoreCase("game"))
 		{
 			htmltext = st.getQuestItemsCount(GLITTERING_MEDAL) < MEDALS[level] ? "31229-no.htm" : "31229-game.htm";
@@ -120,7 +116,6 @@ public class HeavyMedal extends LongTimeEvent
 		}
 		return npc.getNpcId() + ".htm";
 	}
-	
 	public int checkLevel(QuestState st)
 	{
 		int _lev = 0;
@@ -142,7 +137,6 @@ public class HeavyMedal extends LongTimeEvent
 		}
 		return _lev;
 	}
-	
 	public static void main(String[] args)
 	{
 		new HeavyMedal(HeavyMedal.class.getSimpleName(), "events");
