@@ -1,6 +1,5 @@
 ***significa que deve ser testado
-
-Adicionado Configurador KingServer para GameServer e LoginServer
+# significa que foi retrado do antigo guia de construção, portanto tem que verfcar se anda existe nesta rev
 
 ###############################################
 #################### FIX ######################
@@ -143,10 +142,10 @@ Evento Last Hero
 
 ###############################################
 ##################### MOD #####################
-Rewards for kill on TvT
-PvP/PK Rewards
+# Rewards for kill on TvT
+# PvP/PK Rewards
 ao dar Shift+Click em algum char ou npc ou monstro, mostrará todos items e status dele.
-Bandeiras de clan nos Npcs sem quest
+# Bandeiras de clan nos Npcs sem quest
 Efeito de enchant rondom em todos os mobs e Npcs
 Efeito para char em modo de shop offline
 Balance Classe
@@ -158,7 +157,7 @@ Craft Leaderboard
 Fisherman Leaderboard
 PC Bang Points
 Prime Shop
-PvP Color System
+# PvP Color System
 Sistema de consumiveis infinitosSS, BSS e Arrows
 Fake online players
 Clan Full
@@ -171,9 +170,9 @@ comando /unstuck com skill configuravel
 ***Número Máximo de membros na party (nao ultrapassar 12, porque buga o servidor)
 Novos char nobres
 Novos char herois
-***Muda o nome dos Champions
+Muda o nome dos Champions
 Cor do nome diferente para cada raca
-***Mensagem diferente para cada raca
+Mensagem diferente para cada raca
 ***Chat exclusivo para char AIOx
 Painel de usuário com comandos
 ***Anuncio de deslogamento de AIOx 
@@ -216,5 +215,5 @@ Fix Nome da skill "Stripe" para "Striped"
 Adicionado nomes de novos terrirorios H5
 Fix formato/idioma para adicionar acentos
 Fix Efeitos H5
-
+Alguns arquivos traduzidos
 -----------------------------------------------
