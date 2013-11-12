@@ -456,6 +456,16 @@ public class GameServer
 			_deadDetectThread = null;
 		}
 		System.gc();
+		
+		if (Config.AUTO_RESTART_ENABLE)
+        {
+            GameServerRestart.getInstance().StartCalculationOfNextRestartTime();
+        }
+        else
+        {
+            _log.info("[Auto Restart]: O Sistema esta desativado.");
+        }
+		
 		// maxMemory is the upper limit the jvm can use, totalMemory the size of
 		// the current allocation pool, freeMemory the unused memory in the
 		// allocation pool

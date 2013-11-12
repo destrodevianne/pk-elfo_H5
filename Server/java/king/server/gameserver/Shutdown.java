@@ -677,4 +677,11 @@ public class Shutdown extends Thread
 	{
 		protected static final Shutdown _instance = new Shutdown();
 	}
+    public void autoRestart(int time)
+    {
+        _secondsShut = time;
+            countdown();
+           _shutdownMode = GM_RESTART;
+               System.exit(2);
+    }
 }

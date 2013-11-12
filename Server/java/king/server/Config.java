@@ -60,6 +60,7 @@ public final class Config
 	// --------------------------------------------------
 	public static final String USER_CONFIG_FILE = "./config/User.properties";
 	public static final String AIO_CONFIG_FILE = "./config/Aio.properties";
+	public static final String AUTO_RESTART = "./config/AutoRestart.properties";
 	public static final String CHARACTER_CONFIG_FILE = "./config/Character.properties";
 	public static final String FEATURE_CONFIG_FILE = "./config/Feature.properties";
 	public static final String FORTSIEGE_CONFIGURATION_FILE = "./config/FortSiege.properties";
@@ -93,7 +94,7 @@ public final class Config
 	public static final String EVENT_FILE = "./config/Event.properties";
 	public static final String SERVICES_CONFIG_FILE = "./config/Services.properties";
 	
-	// AIOx Config
+	// AIOx Properties
 	
 	public static boolean ALT_AIO_EFFECT_ESPECIAL;
 	public static boolean ANNOUNCE_AIOX_DESCONECT;
@@ -117,6 +118,11 @@ public final class Config
 	public static int ADD_VIP_DAYS;
 	public static boolean ADD_AIO;
 	public static int ADD_AIO_DAYS;
+	
+	// AutoRestart Properties
+	public static boolean AUTO_RESTART_ENABLE;
+	public static int AUTO_RESTART_TIME;
+	public static String[] AUTO_RESTART_INTERVAL;
 	
 	// KingServer Custom Config
 	public static boolean FENCE_MOVIE_BUILDER;
@@ -1067,7 +1073,7 @@ public final class Config
 	public static boolean L2JMOD_ALLOW_CHANGE_PASSWORD;
 	
 	// --------------------------------------------------
-	// USERS Settings
+	// USERS Properties
 	// --------------------------------------------------
 	public static boolean ENABLE_TRADE_REFUSAL;
 	public static boolean ENABLE_PM_REFUSAL;
@@ -2376,7 +2382,7 @@ public final class Config
             COMMAND_LIDER = Boolean.parseBoolean(UserSettings.getProperty("CommandLider", "False"));
             COMMAND_LOGOUT = Boolean.parseBoolean(UserSettings.getProperty("CommandLogout", "False"));
             
-			//############################  AIO PROPERTIES  ###########################################################//
+			//############################  AIOX PROPERTIES  ##########################################################//
 			L2Properties AioSettings = new L2Properties();
 			final File aio = new File(AIO_CONFIG_FILE);
 			try (InputStream is = new FileInputStream(aio))
@@ -2442,8 +2448,25 @@ public final class Config
 
 			//############################  CHAT ESPECIAL PARA AIOX  #################################################//
 			ENABLE_AIO_CHAT = Boolean.parseBoolean(AioSettings.getProperty("EnableAIOChat", "True"));
-            //########################################################################################################//
 			
+			//############################  AUTO RESTART PROPERTIES  #################################################//
+			// Load Auto restart L2Properties file (if exists)
+            final File auto_restart = new File(AUTO_RESTART);
+            try (InputStream is = new FileInputStream(auto_restart))
+            {
+                L2Properties autores = new L2Properties();
+                autores.load(is);
+                AUTO_RESTART_ENABLE = Boolean.parseBoolean(autores.getProperty("EnableAutoRestart", "false"));
+                AUTO_RESTART_TIME = Integer.parseInt(autores.getProperty("RestartInSeconds", "360"));
+                AUTO_RESTART_INTERVAL = autores.getProperty("Intervalo", "00:00").split(",");
+            }
+            catch (Exception e)
+            {
+                _log.warning("Config: " + e.getMessage());
+                throw new Error("Falha ao carregar o arquivo " + AUTO_RESTART + " .");
+            }
+            //########################################################################################################//
+            
 			// Character L2Properties
 			L2Properties Character = new L2Properties();
 			final File chars = new File(CHARACTER_CONFIG_FILE);
