@@ -656,7 +656,7 @@ public class MasterHandler
 			User.class,
 			UserActions.class,
 			Lider.class,
-			(Config.LOGOUT ? Logout.class : null),			
+			Logout.class,
 			(Config.PM_OFF ? Pmoff.class : null),
 			(Config.CMD_TRADE ? TradeCommands.class : null),
 			(Config.CMD_ONLINE ? Online.class : null),

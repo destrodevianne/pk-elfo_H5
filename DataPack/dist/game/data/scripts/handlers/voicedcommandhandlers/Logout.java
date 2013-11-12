@@ -1,11 +1,11 @@
-package handler.voicedcommandhandlers;
+package handlers.voicedcommandhandlers;
 
 import king.server.gameserver.handler.IVoicedCommandHandler;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 
 public class Logout implements IVoicedCommandHandler
 {
-	private static String[]	VOICED_COMMANDS	=
+	private static final String[] _voicedCommands =
         	{ 
         		"logout"
         	};
