@@ -239,7 +239,7 @@ public class EnterWorld extends L2GameClientPacket
 		
 		if (Config.ADD_VIP)
 			{
-			if (activeChar.getLevel() <= 1)			            
+			if (activeChar.getLevel() <= 2)			            
 			activeChar.setVip(true);
 			activeChar.setVipEndTime(Config.ADD_VIP_DAYS);
 			activeChar.sendMessage("Voce ganhou VIP por 7 dias!");
@@ -247,7 +247,7 @@ public class EnterWorld extends L2GameClientPacket
 		
 		if (Config.ADD_AIO)
 			{
-			if (activeChar.getLevel() <= 1)
+			if (activeChar.getLevel() <= 2)
 			activeChar.setAio(true);
 			activeChar.setAioEndTime(Config.ADD_AIO_DAYS);
 			activeChar.sendMessage("Voce ganhou status de AIOx por 7 dias "+activeChar.getName()+" ");
