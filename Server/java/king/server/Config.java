@@ -58,41 +58,41 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	// Lineage II PkElfo arquivos de definicoes de propriedades											   //
 	// ----------------------------------------------------------------------------------------------------//
-	public static final String USER_CONFIG_FILE = "./config/User.properties";
 	public static final String AIO_CONFIG_FILE = "./config/Aio.properties";
 	public static final String AUTO_RESTART = "./config/AutoRestart.properties";
 	public static final String CHARACTER_CONFIG_FILE = "./config/Character.properties";
+	public static final String CHAT_FILTER_FILE = "./config/chatfilter.txt";
+	public static final String COMMUNITY_PVP = "./config/CommunityPvP.properties";
+	public static final String COMMUNITY_CONFIGURATION_FILE = "./config/CommunityServer.properties";
+	public static final String CH_SIEGE_FILE = "./config/ConquerableHallSiege.properties";
+	public static final String EMAIL_CONFIG_FILE = "./config/Email.properties";
+	public static final String EVENT_FILE = "./config/Event.properties";
 	public static final String FEATURE_CONFIG_FILE = "./config/Feature.properties";
+	public static final String FLOOD_PROTECTOR_FILE = "./config/FloodProtector.properties";
 	public static final String FORTSIEGE_CONFIGURATION_FILE = "./config/FortSiege.properties";
 	public static final String GENERAL_CONFIG_FILE = "./config/General.properties";
-	public static final String HEXID_FILE = "./config/hexid.txt";
+	public static final String GRACIASEEDS_CONFIG_FILE = "./config/GraciaSeeds.properties";	
+	public static final String GRANDBOSS_CONFIG_FILE = "./config/GrandBoss.properties";
+	public static final String HEXID_FILE = "./config/hexid.txt";	
 	public static final String ID_CONFIG_FILE = "./config/IdFactory.properties";
+	public static final String IP_CONFIG_FILE = "./config/ipconfig.xml";
+	public static final String LOGIN_CONFIGURATION_FILE = "./config/LoginServer.properties";
 	public static final String SERVER_VERSION_FILE = "./config/l2j-version.properties";
 	public static final String DATAPACK_VERSION_FILE = "./config/l2jdp-version.properties";
 	public static final String L2JMOD_CONFIG_FILE = "./config/L2JMods.properties";
-	public static final String LOGIN_CONFIGURATION_FILE = "./config/LoginServer.properties";
-	public static final String NPC_CONFIG_FILE = "./config/NPC.properties";
-	public static final String PVP_CONFIG_FILE = "./config/PVP.properties";
-	public static final String RATES_CONFIG_FILE = "./config/Rates.properties";
-	public static final String CONFIGURATION_FILE = "./config/Server.properties";
-	public static final String IP_CONFIG_FILE = "./config/ipconfig.xml";
-	public static final String SIEGE_CONFIGURATION_FILE = "./config/Siege.properties";
-	public static final String TW_CONFIGURATION_FILE = "./config/TerritoryWar.properties";
-	public static final String TELNET_FILE = "./config/Telnet.properties";
-	public static final String FLOOD_PROTECTOR_FILE = "./config/FloodProtector.properties";
 	public static final String MMO_CONFIG_FILE = "./config/MMO.properties";
-	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olympiad.properties";
-	public static final String COMMUNITY_CONFIGURATION_FILE = "./config/CommunityServer.properties";
-	public static final String COMMUNITY_PVP = "./config/CommunityPvP.properties";
-	public static final String GRANDBOSS_CONFIG_FILE = "./config/GrandBoss.properties";
-	public static final String GRACIASEEDS_CONFIG_FILE = "./config/GraciaSeeds.properties";
-	public static final String CHAT_FILTER_FILE = "./config/chatfilter.txt";
-	public static final String SECURITY_CONFIG_FILE = "./config/Security.properties";
-	public static final String EMAIL_CONFIG_FILE = "./config/Email.properties";
-	public static final String CH_SIEGE_FILE = "./config/ConquerableHallSiege.properties";
+	public static final String NPC_CONFIG_FILE = "./config/NPC.properties";
+	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olympiad.properties";	
 	public static final String PKELFO_FILE = "./config/Pkelfo.properties";
-	public static final String EVENT_FILE = "./config/Event.properties";
 	public static final String PREMIUM_CONFIG_FILE = "./config/Premium.properties";
+	public static final String PVP_CONFIG_FILE = "./config/PVP.properties";	
+	public static final String RATES_CONFIG_FILE = "./config/Rates.properties";
+	public static final String SECURITY_CONFIG_FILE = "./config/Security.properties";
+	public static final String CONFIGURATION_FILE = "./config/Server.properties";	
+	public static final String SIEGE_CONFIGURATION_FILE = "./config/Siege.properties";
+	public static final String TELNET_FILE = "./config/Telnet.properties";
+	public static final String TW_CONFIGURATION_FILE = "./config/TerritoryWar.properties";	
+	public static final String USER_CONFIG_FILE = "./config/User.properties";
 	
 	// AIOx Properties
 	
@@ -2406,9 +2406,9 @@ public final class Config
 			
 			//############################  SISTEMA DE AIOX E VIP POR DIAS ##########################################//
 			ADD_VIP = Boolean.parseBoolean(AioSettings.getProperty("NewCharacterIsVip", "False"));
-			ADD_VIP_DAYS = Integer.parseInt(AioSettings.getProperty("VipEnterDays", "3"));
+			ADD_VIP_DAYS = Integer.parseInt(AioSettings.getProperty("VipEnterDays", "7"));
 			ADD_AIO = Boolean.parseBoolean(AioSettings.getProperty("NewCharacterIsAio", "False"));
-			ADD_AIO_DAYS = Integer.parseInt(AioSettings.getProperty("AIOEnterDays", "3"));
+			ADD_AIO_DAYS = Integer.parseInt(AioSettings.getProperty("AIOEnterDays", "7"));
 			
 			//############################  SISTEMA DE AIOX BUFFER ##################################################//
 			ENABLE_AIO_SYSTEM = Boolean.parseBoolean(AioSettings.getProperty("EnableAioSystem", "true"));
