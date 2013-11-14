@@ -93,14 +93,16 @@ public final class Config
 	public static final String TELNET_FILE = "./config/Telnet.properties";
 	public static final String TW_CONFIGURATION_FILE = "./config/TerritoryWar.properties";	
 	public static final String USER_CONFIG_FILE = "./config/User.properties";
-	
-	// AIOx Properties
-	
+	//########################################################################################################//
+	//						AIOx PROPERTIES
+	//########################################################################################################//
 	public static boolean ALT_AIO_EFFECT_ESPECIAL;
 	public static boolean ANNOUNCE_AIOX_DESCONECT;
 	public static boolean ANNOUNCE_AIOX_CONECT;
 	public static boolean ENABLE_AIOX_MESSAGE;
+	// ----------------------------------------------------------------------------------------------------//
 	// Sistema de AIO Bufer	
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ENABLE_AIO_SYSTEM;
 	public static Map<Integer, Integer> AIO_SKILLS;
 	public static boolean ALLOW_AIO_NCOLOR;
@@ -118,19 +120,22 @@ public final class Config
 	public static int ADD_VIP_DAYS;
 	public static boolean ADD_AIO;
 	public static int ADD_AIO_DAYS;
-	
-	// AutoRestart Properties
+	//########################################################################################################//
+	//						AUTORESTART PROPERTIES
+	//########################################################################################################//
 	public static boolean AUTO_RESTART_ENABLE;
 	public static int AUTO_RESTART_TIME;
 	public static String[] AUTO_RESTART_INTERVAL;
-	
-	// PkElfo Custom Config
+	//########################################################################################################//
+	//						PKELFO PROPERTIES
+	//########################################################################################################//
 	public static boolean FENCE_MOVIE_BUILDER;
 	public static boolean CLAN_LEADER_COLOR_ENABLED;
 	public static int CLAN_LEADER_COLOR;
 	public static int CLAN_LEADER_COLOR_CLAN_LEVEL;
-
+	// ----------------------------------------------------------------------------------------------------//
 	// Clan Full 
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ENABLE_CLAN_SYSTEM; 
 	public static Map<Integer, Integer> CLAN_SKILLS; 
 	public static byte CLAN_LEVEL; 
@@ -142,14 +147,16 @@ public final class Config
 	public static boolean ANNOUNCE_CASTLE_LORDS;
 	public static boolean SHOW_ONLINE_PLAYERS_ON_LOGIN;
 	public static int MAX_PARTY_MEMBERS;
-
+	// ----------------------------------------------------------------------------------------------------//
 	//Shots Infinitos: SS, BSS e flechas 
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean INFINITE_SOUL_SHOT; 
 	public static boolean INFINITE_SPIRIT_SHOT; 
 	public static boolean INFINITE_BLESSED_SPIRIT_SHOT; 
 	public static boolean INFINITE_ARROWS;
-	
+	// ----------------------------------------------------------------------------------------------------//
 	// balance
+	// ----------------------------------------------------------------------------------------------------//
 	public static float DAGGER_VS_HEAVY;
 	public static float DAGGER_VS_LIGHT;
 	public static float DAGGER_VS_ROBE;
@@ -172,10 +179,11 @@ public final class Config
 	public static float POLE_VS_LIGHT;
 	public static float POLE_VS_ROBE;
 	
-	// --------------------------------------------------
+	// ----------------------------------------------------------------------------------------------------//
 	//  CONFIGURACOES ESPECIAIS RELACIONADAS AS RACAS  //
-	// --------------------------------------------------
-	//Cor para cada raca
+	// ----------------------------------------------------------------------------------------------------//
+	//  Cor para cada raca
+	// ----------------------------------------------------------------------------------------------------//
     public static boolean RACES_COLOR_ENABLE;
     public static int HUMAN_COLOR;
     public static int ELF_COLOR;
@@ -184,8 +192,9 @@ public final class Config
     public static int DWARF_COLOR;
     public static int KAMAEL_COLOR;
     public static boolean ENABLE_RACE_MESSAGE;
-    
+    // ----------------------------------------------------------------------------------------------------//
 	// PC bang points
+    // ----------------------------------------------------------------------------------------------------//
 	public static boolean PC_BANG_ENABLED;
 	public static int MAX_PC_BANG_POINTS;
 	public static boolean ENABLE_DOUBLE_PC_BANG_POINTS;
@@ -207,7 +216,9 @@ public final class Config
 	public static boolean NOBLE_CUSTOM_ITEMS;
 	public static int NOOBLE_CUSTOM_ITEM_ID;
 	public static int GAME_POINT_ITEM_ID;
+	// ----------------------------------------------------------------------------------------------------//
 	// Npc Buffer
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean NpcBuffer_Reload;
 	public static boolean NpcBuffer_SmartWindow;
 	public static boolean NpcBuffer_VIP;
@@ -254,9 +265,9 @@ public final class Config
 	public static String VOTE_SYSTEM_ITEM_ID;
 	public static String VOTE_SYSTEM_ITEM_COUNT;
 	public static boolean ALLOW_REFUSE_BUFF;
-	// ---------------------------------------------------
-	// Event Custom Config
-	// ----------------------------------------------------
+	//########################################################################################################//
+	//						Event Custom Config
+	//########################################################################################################//
 	public static int TW_TOWN_ID;
 	public static String TW_TOWN_NAME;
 	public static boolean TW_ALL_TOWNS;
@@ -275,7 +286,9 @@ public final class Config
 	public static boolean ENABLE_CUSTOM_PERIOD;
 	public static int[] ALT_OLY_END_DATE;
 	public static int[] ALT_OLY_END_HOUR = new int[3];
+	// ----------------------------------------------------------------------------------------------------//
 	// Tvt Round
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean TVT_ROUND_EVENT_ENABLED;
 	public static boolean TVT_ROUND_EVENT_IN_INSTANCE;
 	public static String TVT_ROUND_EVENT_INSTANCE_FILE;
@@ -319,7 +332,9 @@ public final class Config
 	public static boolean TVT_ROUND_ALLOW_VOICED_COMMAND;
 	public static boolean ALLOW_HITMAN_GDE;
 	public static boolean HITMAN_GDE_TAKE_KARMA;
+	// ----------------------------------------------------------------------------------------------------//
 	// Hide and Seek
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ALT_HAS_ENABLE;
 	public static int ALT_HAS_TIME_REG;
 	public static int ALT_HAS_TIME_EVENT;
@@ -347,13 +362,15 @@ public final class Config
 	public static int RANK_TVT_INTERVAL;
 	public static int RANK_TVT_REWARD_ID;
 	public static int RANK_TVT_REWARD_COUNT;
-	//Crazy Event
+	// ----------------------------------------------------------------------------------------------------//
+	// Crazy Event
+	// ----------------------------------------------------------------------------------------------------//
 	public static float RateMultipler;
 	public static int time_crazyrate;
     
-	// --------------------------------------------------
-	// L2J Variable Definitions
-	// --------------------------------------------------
+	//########################################################################################################//
+	//						CHARACTER PROPERTIES
+	//########################################################################################################//
 	public static boolean ALT_GAME_DELEVEL;
 	public static boolean DECREASE_SKILL_LEVEL;
 	public static double ALT_WEIGHT_LIMIT;
@@ -473,9 +490,13 @@ public final class Config
 	public static boolean CHAR_TITLE;
 	public static String ADD_CHAR_TITLE;
 	public static int TITLE_COLOR;
+	// ----------------------------------------------------------------------------------------------------//
 	//Novos chars Hero
+	// ----------------------------------------------------------------------------------------------------//
     public static boolean ADD_HERO;
+    // ----------------------------------------------------------------------------------------------------//
     //Novos chars Nobre
+    // ----------------------------------------------------------------------------------------------------//
     public static boolean ADD_NOBLESSE;
 	public static long MAX_ADENA;
 	public static boolean AUTO_LOOT;
@@ -512,10 +533,12 @@ public final class Config
 	public static boolean STORE_UI_SETTINGS;
 	public static String[] FORBIDDEN_NAMES;
 	public static boolean SILENCE_MODE_EXCLUDE;
-	
-	// --------------------------------------------------
-	// ClanHall Settings
-	// --------------------------------------------------
+	//########################################################################################################//
+	//						FREATURE PROPERTIES
+	//########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
+	// ClanHall 
+	// ----------------------------------------------------------------------------------------------------//
 	public static long CH_TELE_FEE_RATIO;
 	public static int CH_TELE1_FEE;
 	public static int CH_TELE2_FEE;
@@ -567,10 +590,9 @@ public final class Config
 	public static int CH_FRONT1_FEE;
 	public static int CH_FRONT2_FEE;
 	public static boolean CH_BUFF_FREE;
-	
-	// --------------------------------------------------
-	// Castle Settings
-	// --------------------------------------------------
+	// ----------------------------------------------------------------------------------------------------//
+	// Castle 
+	// ----------------------------------------------------------------------------------------------------//
 	public static long CS_TELE_FEE_RATIO;
 	public static int CS_TELE1_FEE;
 	public static int CS_TELE2_FEE;
@@ -598,10 +620,9 @@ public final class Config
 	public static List<String> CL_SET_SIEGE_TIME_LIST;
 	public static List<Integer> SIEGE_HOUR_LIST_MORNING;
 	public static List<Integer> SIEGE_HOUR_LIST_AFTERNOON;
-	
-	// --------------------------------------------------
-	// Fortress Settings
-	// --------------------------------------------------
+	// ----------------------------------------------------------------------------------------------------//
+	// Fortress 
+	// ----------------------------------------------------------------------------------------------------//
 	public static long FS_TELE_FEE_RATIO;
 	public static int FS_TELE1_FEE;
 	public static int FS_TELE2_FEE;
@@ -622,10 +643,6 @@ public final class Config
 	public static int FS_MAX_SUPPLY_LEVEL;
 	public static int FS_FEE_FOR_CASTLE;
 	public static int FS_MAX_OWN_TIME;
-	
-	// --------------------------------------------------
-	// Feature Settings
-	// --------------------------------------------------
 	public static int TAKE_FORT_POINTS;
 	public static int LOOSE_FORT_POINTS;
 	public static int TAKE_CASTLE_POINTS;
@@ -668,10 +685,9 @@ public final class Config
 	public static int CLAN_LEVEL_10_REQUIREMENT;
 	public static int CLAN_LEVEL_11_REQUIREMENT;
 	public static boolean ALLOW_WYVERN_DURING_SIEGE;
-	
-	// --------------------------------------------------
-	// General Settings
-	// --------------------------------------------------
+	//########################################################################################################//
+	//						GENERAL PROPERTIES
+	//########################################################################################################//
 	public static boolean EVERYBODY_HAS_ADMIN_RIGHTS;
 	public static boolean DISPLAY_SERVER_VERSION;
 	public static boolean SERVER_LIST_BRACKET;
@@ -915,10 +931,9 @@ public final class Config
 	public static int NORMAL_ENCHANT_COST_MULTIPLIER;
 	public static int SAFE_ENCHANT_COST_MULTIPLIER;
 	public static long EXPIRATION_CHECK_INTERVAL;
-	
-	// --------------------------------------------------
+	// ----------------------------------------------------------------------------------------------------//
 	// FloodProtector Settings
-	// --------------------------------------------------
+	// ----------------------------------------------------------------------------------------------------//
 	public static FloodProtectorConfig FLOOD_PROTECTOR_USE_ITEM;
 	public static FloodProtectorConfig FLOOD_PROTECTOR_ROLL_DICE;
 	public static FloodProtectorConfig FLOOD_PROTECTOR_FIREWORK;
@@ -935,10 +950,9 @@ public final class Config
 	public static FloodProtectorConfig FLOOD_PROTECTOR_SENDMAIL;
 	public static FloodProtectorConfig FLOOD_PROTECTOR_CHARACTER_SELECT;
 	public static FloodProtectorConfig FLOOD_PROTECTOR_ITEM_AUCTION;
-	
-	// --------------------------------------------------
-	// L2JMods Settings
-	// --------------------------------------------------
+	//########################################################################################################//
+	//						L2JMODS PROPERTIES
+	//########################################################################################################//
 	public static boolean L2JMOD_CHAMPION_ENABLE;
 	public static boolean L2JMOD_CHAMPION_PASSIVE;
 	public static int L2JMOD_CHAMPION_REWARD_LOWER_LVL_ITEM_CHANCE;
@@ -1034,10 +1048,14 @@ public final class Config
 	public static boolean OFFLINE_SET_NAME_COLOR;
 	public static int OFFLINE_NAME_COLOR;
 	public static boolean OFFLINE_FAME;
+	// ----------------------------------------------------------------------------------------------------//
 	//Offline Effect
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean OFFLINE_TRADE_EFFECT;
 	public static int OFFLINE_EFFECT_ID;
+	// ----------------------------------------------------------------------------------------------------//
 	//Custom Unstuck Animation Skill ID
+	// ----------------------------------------------------------------------------------------------------//
 	public static int UNSTUCK_ANIMATION_ID;
 	public static boolean L2JMOD_ENABLE_MANA_POTIONS_SUPPORT;
 	public static boolean PVP_MANAPOTION;
@@ -1071,10 +1089,9 @@ public final class Config
 	public static int L2JMOD_DUALBOX_CHECK_MAX_L2EVENT_PARTICIPANTS_PER_IP;
 	public static Map<Integer, Integer> L2JMOD_DUALBOX_CHECK_WHITELIST;
 	public static boolean L2JMOD_ALLOW_CHANGE_PASSWORD;
-	
-	// --------------------------------------------------
-	// USERS Properties
-	// --------------------------------------------------
+	//########################################################################################################//
+	//						USERS PROPERTIES
+	//########################################################################################################//
 	public static boolean ENABLE_TRADE_REFUSAL;
 	public static boolean ENABLE_PM_REFUSAL;
 	public static boolean SHOW_USER;
@@ -1082,9 +1099,9 @@ public final class Config
 	public static boolean ENABLE_EXP_REFUSAL;
 	public static boolean COMMAND_LIDER;
 	public static boolean COMMAND_LOGOUT;
-	// --------------------------------------------------
-	// NPC Settings
-	// --------------------------------------------------
+	//########################################################################################################//
+	//						NPC PROPERTIES
+	//########################################################################################################//
 	public static boolean ANNOUNCE_MAMMON_SPAWN;
 	public static boolean ALT_MOB_AGRO_IN_PEACEZONE;
 	public static boolean ALT_ATTACKABLE_NPCS;
@@ -1129,10 +1146,9 @@ public final class Config
 	public static double PET_HP_REGEN_MULTIPLIER;
 	public static double PET_MP_REGEN_MULTIPLIER;
 	public static List<Integer> NON_TALKING_NPCS;
-	
-	// --------------------------------------------------
-	// PvP Settings
-	// --------------------------------------------------
+	//########################################################################################################//
+	//						PvP PROPERTIES
+	//########################################################################################################//
 	public static int KARMA_MIN_KARMA;
 	public static int KARMA_MAX_KARMA;
 	public static int KARMA_XP_DIVIDER;
@@ -1144,10 +1160,9 @@ public final class Config
 	public static String KARMA_NONDROPPABLE_ITEMS;
 	public static int[] KARMA_LIST_NONDROPPABLE_PET_ITEMS;
 	public static int[] KARMA_LIST_NONDROPPABLE_ITEMS;
-	
-	// --------------------------------------------------
-	// Rate Settings
-	// --------------------------------------------------
+	//########################################################################################################//
+	//						RATES PROPERTIES
+	//########################################################################################################//
 	public static float RATE_XP;
 	public static float RATE_SP;
 	public static float RATE_PARTY_XP;
@@ -1191,10 +1206,9 @@ public final class Config
 	public static int KARMA_RATE_DROP_EQUIP;
 	public static int KARMA_RATE_DROP_EQUIP_WEAPON;
 	public static double[] PLAYER_XP_PERCENT_LOST;
-	
-	// --------------------------------------------------
+	// ----------------------------------------------------------------------------------------------------//
 	// Seven Signs Settings
-	// --------------------------------------------------
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ALT_GAME_CASTLE_DAWN;
 	public static boolean ALT_GAME_CASTLE_DUSK;
 	public static boolean ALT_GAME_REQUIRE_CLAN_CASTLE;
@@ -1219,10 +1233,9 @@ public final class Config
 	public static int SSQ_DAWN_TICKET_BUNDLE;
 	public static int SSQ_MANORS_AGREEMENT_ID;
 	public static int SSQ_JOIN_DAWN_ADENA_FEE;
-	
-	// --------------------------------------------------
-	// Server Settings
-	// --------------------------------------------------
+	//########################################################################################################//
+	//						SERVER PROPERTIES
+	//########################################################################################################//
 	public static int PORT_GAME;
 	public static int PORT_LOGIN;
 	public static String LOGIN_BIND_ADDRESS;
@@ -1248,28 +1261,25 @@ public final class Config
 	public static boolean LOG_LOGIN_CONTROLLER;
 	public static boolean LOGIN_SERVER_SCHEDULE_RESTART;
 	public static long LOGIN_SERVER_SCHEDULE_RESTART_TIME;
-	
-	// --------------------------------------------------
-	// CommunityServer Settings
-	// --------------------------------------------------
+	//########################################################################################################//
+	//						COMMUNITYSERVER PROPERTIES
+	//########################################################################################################//
 	public static boolean ENABLE_COMMUNITY_BOARD;
 	public static String COMMUNITY_SERVER_ADDRESS;
 	public static int COMMUNITY_SERVER_PORT;
 	public static byte[] COMMUNITY_SERVER_HEX_ID;
 	public static int COMMUNITY_SERVER_SQL_DP_ID;
-	
-	// --------------------------------------------------
-	// MMO Settings
-	// --------------------------------------------------
+	//########################################################################################################//
+	//						MMO PROPERTIES
+	//########################################################################################################//
 	public static int MMO_SELECTOR_SLEEP_TIME;
 	public static int MMO_MAX_SEND_PER_PASS;
 	public static int MMO_MAX_READ_PER_PASS;
 	public static int MMO_HELPER_BUFFER_COUNT;
 	public static boolean MMO_TCP_NODELAY;
-	
-	// --------------------------------------------------
+	// ----------------------------------------------------------------------------------------------------//
 	// Vitality Settings
-	// --------------------------------------------------
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ENABLE_VITALITY;
 	public static boolean RECOVER_VITALITY_ON_RECONNECT;
 	public static boolean ENABLE_DROP_VITALITY_HERBS;
@@ -1285,10 +1295,9 @@ public final class Config
 	public static int STARTING_VITALITY_POINTS;
 	public static int POINT_FOR_LV_HUNB;
 	public static boolean ENABLE_BONUS_MANAGER;
-	
-	// --------------------------------------------------
+	// ----------------------------------------------------------------------------------------------------//
 	// No classification assigned to the following yet
-	// --------------------------------------------------
+	// ----------------------------------------------------------------------------------------------------//
 	public static int MAX_ITEM_IN_PACKET;
 	public static boolean CHECK_KNOWN;
 	public static int GAME_SERVER_LOGIN_PORT;
@@ -1300,17 +1309,14 @@ public final class Config
 	public static String DATAPACK_VERSION;
 	public static int PVP_NORMAL_TIME;
 	public static int PVP_PVP_TIME;
-	
 	public static enum IdFactoryType
 	{
 		Compaction,
 		BitSet,
 		Stack
 	}
-	
 	public static IdFactoryType IDFACTORY_TYPE;
 	public static boolean BAD_ID_CHECKING;
-	
 	public static double ENCHANT_CHANCE;
 	public static int MAX_ENCHANT_LEVEL;
 	public static double ENCHANT_CHANCE_ELEMENT_STONE;
@@ -1345,8 +1351,9 @@ public final class Config
 	public static int NORMAL_CONNECTION_TIME;
 	public static int FAST_CONNECTION_TIME;
 	public static int MAX_CONNECTION_PER_IP;
-
+	// ----------------------------------------------------------------------------------------------------//
 	// Vip System
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ALLOW_VIP_NCOLOR;
 	public static int VIP_NCOLOR;
 	public static boolean ALLOW_VIP_TCOLOR;
@@ -1356,22 +1363,27 @@ public final class Config
 	public static int VIP_SP;
 	public static boolean ENABLE_VIP_SYSTEM;
 	public static Map<Integer, Integer> VIP_SKILLS;
-
+	// ----------------------------------------------------------------------------------------------------//
 	// Comando de Teleporte para areas de UpLevel
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ALLOW_TELEPORT_VOICECOMMAND;
-
+	// ----------------------------------------------------------------------------------------------------//
 	//Protect Enchant
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean PROTECT_ENCHANT_ENABLE;
 	public static int MAX_ENCHANT_LEVEL_PROTECT;
 	public static int ENCHANT_PROTECT_PUNISH;
-	
+	// ----------------------------------------------------------------------------------------------------//
 	// titulo muda ao entrar em um clan
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean CLAN_NAME_AS_TITLE;
-	
+	// ----------------------------------------------------------------------------------------------------//
 	//.pmon/.pmoff
+	// ----------------------------------------------------------------------------------------------------//
     public static boolean PM_OFF;
-    
-	// GrandBoss Settings	
+    //########################################################################################################//
+	//						GRANSDBOSS PROPERTIES
+    //########################################################################################################//
 	public static int Antharas_Wait_Time;
 	public static int Valakas_Wait_Time;
 	public static int Interval_Of_Antharas_Spawn;
@@ -1391,7 +1403,6 @@ public final class Config
 	public static int RANDOM_OF_BELETH_SPAWN;
 	public static int Interval_Of_Sailren_Spawn;
 	public static int Random_Of_Sailren_Spawn;
-	
 	public static int ZAKEN_MINLEVEL_DAYTIME;
 	public static int ZAKEN_MINLEVEL_DAYTIME83;
 	public static int FRINTEZZA_MINLEVEL;
@@ -1416,22 +1427,26 @@ public final class Config
 	public static int HEART_ATTACK_MAX_PLAYERS;
 	public static int HEART_DEFENCE_MIN_PLAYERS;
 	public static int HEART_DEFENCE_MAX_PLAYERS;
+	// ----------------------------------------------------------------------------------------------------//
 	// Gracia Seeds Settings
-	
+	// ----------------------------------------------------------------------------------------------------//
 	public static int SOD_TIAT_KILL_COUNT;
 	public static long SOD_STAGE_2_LENGTH;
-	
+	// ----------------------------------------------------------------------------------------------------//
 	// chatfilter
+	// ----------------------------------------------------------------------------------------------------//
 	public static ArrayList<String> FILTER_LIST;
-	
-	// Security
+	//########################################################################################################//
+	//						SEXCURITY PROPERTIES
+	//########################################################################################################//
 	public static boolean SECOND_AUTH_ENABLED;
 	public static int SECOND_AUTH_MAX_ATTEMPTS;
 	public static long SECOND_AUTH_BAN_TIME;
 	public static String SECOND_AUTH_REC_LINK;
 	public static boolean ENABLE_BOTREPORT;
-	
-	// Email
+	//########################################################################################################//
+	//						EMAIl PROPERTIES
+	//########################################################################################################//
 	public static String EMAIL_SERVERINFO_NAME;
 	public static String EMAIL_SERVERINFO_ADDRESS;
 	public static boolean EMAIL_SYS_ENABLED;
@@ -1445,16 +1460,18 @@ public final class Config
 	public static String EMAIL_SYS_ADDRESS;
 	public static String EMAIL_SYS_SELECTQUERY;
 	public static String EMAIL_SYS_DBFIELD;
-	
-	// Conquerable Halls Settings
+	//########################################################################################################//
+	//						CONQUERABLE HALLS PROPERTIES
+	//########################################################################################################//
 	public static int CHS_CLAN_MINLEVEL;
 	public static int CHS_MAX_ATTACKERS;
 	public static int CHS_MAX_FLAGS_PER_CLAN;
 	public static boolean CHS_ENABLE_FAME;
 	public static int CHS_FAME_AMOUNT;
 	public static int CHS_FAME_FREQUENCY;
-	
-	/** Services Settings **/
+	//########################################################################################################//
+	//						PREMIUM PORPERTIES
+	//########################################################################################################//
 	public static boolean PREMIUM_SERVICE_ENABLED;
 	public static boolean PREMIUM_ALLOW_VOICED;
 	public static boolean PREMIUM_PARTY_DROPSPOIL;
@@ -1463,14 +1480,12 @@ public final class Config
 	public static boolean SHOW_PREMIUM_STATUS;
 	public static int NEWBIES_PREMIUM_PERIOD;
 	public static boolean NOTIFY_PREMIUM_EXPIRATION;
-	
 	public static float PREMIUM_RATE_XP;
 	public static float PREMIUM_RATE_SP;
 	public static float PREMIUM_RATE_SPOIL;
 	public static float PREMIUM_RATE_DROP_ITEMS;
 	public static float PREMIUM_RATE_DROP_ITEMS_BY_RAID;
 	public static Map<Integer, Float> PREMIUM_RATE_DROP_ITEMS_ID;
-	
 	/**
 	 * This class initializes all global variables for configuration.<br>
 	 * If the key doesn't appear in properties file, a default value is set by this class. {@link #CONFIGURATION_FILE} (properties file) for configuring your server.
@@ -1559,7 +1574,9 @@ public final class Config
 			GAME_SERVER_SUBNETS = ipcd.getSubnets();
 			GAME_SERVER_HOSTS = ipcd.getHosts();
 			
-			// Load Community Properties file (if exists)
+			//########################################################################################################//
+			//						Load Community Properties														  //
+			//########################################################################################################//
 			L2Properties communityServerSettings = new L2Properties();
 			final File community = new File(COMMUNITY_CONFIGURATION_FILE);
 			try (InputStream is = new FileInputStream(community))
@@ -1577,7 +1594,9 @@ public final class Config
 			COMMUNITY_SERVER_HEX_ID = new BigInteger(communityServerSettings.getProperty("CommunityServerHexId", "0"), 16).toByteArray();
 			COMMUNITY_SERVER_SQL_DP_ID = Integer.parseInt(communityServerSettings.getProperty("CommunityServerSqlDpId", "200"));
 			
-			// Load Feature L2Properties file (if exists)
+			//########################################################################################################//
+			//						Load Feature L2Properties file (if exists)										  //
+			//########################################################################################################//
 			L2Properties Feature = new L2Properties();
 			final File feature = new File(FEATURE_CONFIG_FILE);
 			try (InputStream is = new FileInputStream(feature))
@@ -1808,7 +1827,9 @@ public final class Config
 			CLAN_LEVEL_11_REQUIREMENT = Integer.parseInt(Feature.getProperty("ClanLevel11Requirement", "170"));
 			ALLOW_WYVERN_DURING_SIEGE = Boolean.parseBoolean(Feature.getProperty("AllowRideWyvernDuringSiege", "True"));
 			
-			// PkElfo Custom Config
+			//########################################################################################################//
+			//						PkElfo Properties 																  //
+			//########################################################################################################//
 			L2Properties PkelfoSettings = new L2Properties();
 			final File PkElfo = new File(PKELFO_FILE);
 			try (InputStream is = new FileInputStream(PkElfo))
