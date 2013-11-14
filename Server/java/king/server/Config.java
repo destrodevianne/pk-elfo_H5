@@ -50,14 +50,14 @@ public final class Config
 {
 	private static final Logger _log = Logger.getLogger(Config.class.getName());
 	
-	// --------------------------------------------------
-	// Constants
-	// --------------------------------------------------
+	// ----------------------------------------------------------------------------------------------------//
+	// constantes																						   //
+	// ----------------------------------------------------------------------------------------------------//
 	public static final String EOL = System.getProperty("line.separator");
 	
-	// --------------------------------------------------
-	// L2J Property File Definitions
-	// --------------------------------------------------
+	// ----------------------------------------------------------------------------------------------------//
+	// Lineage II PkElfo arquivos de definicoes de propriedades											   //
+	// ----------------------------------------------------------------------------------------------------//
 	public static final String USER_CONFIG_FILE = "./config/User.properties";
 	public static final String AIO_CONFIG_FILE = "./config/Aio.properties";
 	public static final String AUTO_RESTART = "./config/AutoRestart.properties";
@@ -90,9 +90,9 @@ public final class Config
 	public static final String SECURITY_CONFIG_FILE = "./config/Security.properties";
 	public static final String EMAIL_CONFIG_FILE = "./config/Email.properties";
 	public static final String CH_SIEGE_FILE = "./config/ConquerableHallSiege.properties";
-	public static final String KINGSERVER_FILE = "./config/Kingserver.properties";
+	public static final String PKELFO_FILE = "./config/Pkelfo.properties";
 	public static final String EVENT_FILE = "./config/Event.properties";
-	public static final String SERVICES_CONFIG_FILE = "./config/Services.properties";
+	public static final String PREMIUM_CONFIG_FILE = "./config/Premium.properties";
 	
 	// AIOx Properties
 	
@@ -124,7 +124,7 @@ public final class Config
 	public static int AUTO_RESTART_TIME;
 	public static String[] AUTO_RESTART_INTERVAL;
 	
-	// KingServer Custom Config
+	// PkElfo Custom Config
 	public static boolean FENCE_MOVIE_BUILDER;
 	public static boolean CLAN_LEADER_COLOR_ENABLED;
 	public static int CLAN_LEADER_COLOR;
@@ -1808,25 +1808,25 @@ public final class Config
 			CLAN_LEVEL_11_REQUIREMENT = Integer.parseInt(Feature.getProperty("ClanLevel11Requirement", "170"));
 			ALLOW_WYVERN_DURING_SIEGE = Boolean.parseBoolean(Feature.getProperty("AllowRideWyvernDuringSiege", "True"));
 			
-			// KingServer Custom Config
-			L2Properties KingSettings = new L2Properties();
-			final File KingServer = new File(KINGSERVER_FILE);
-			try (InputStream is = new FileInputStream(KingServer))
+			// PkElfo Custom Config
+			L2Properties PkelfoSettings = new L2Properties();
+			final File PkElfo = new File(PKELFO_FILE);
+			try (InputStream is = new FileInputStream(PkElfo))
 			{
-				KingSettings.load(is);
-				FENCE_MOVIE_BUILDER = Boolean.parseBoolean(KingSettings.getProperty("AllowFenceBuild", "false"));
-				CLAN_LEADER_COLOR_ENABLED = Boolean.parseBoolean(KingSettings.getProperty("ClanLeaderNameColorEnabled", "True"));
-				CLAN_LEADER_COLOR = Integer.decode((new StringBuilder()).append("0x").append(KingSettings.getProperty("ClanLeaderColor", "00FFFF")).toString()).intValue();
-				CLAN_LEADER_COLOR_CLAN_LEVEL = Integer.parseInt(KingSettings.getProperty("ClanLeaderColorAtClanLevel", "1"));
-				ANNOUNCE_CASTLE_LORDS = Boolean.parseBoolean(KingSettings.getProperty("AnnounceCastleLords", "True"));
-				SHOW_ONLINE_PLAYERS_ON_LOGIN = Boolean.parseBoolean(KingSettings.getProperty("ShowOnlinePlayersOnLogin", "True"));
-				MAX_PARTY_MEMBERS = Integer.parseInt(KingSettings.getProperty("MaxPartyMembers", "12"));
+				PkelfoSettings.load(is);
+				FENCE_MOVIE_BUILDER = Boolean.parseBoolean(PkelfoSettings.getProperty("AllowFenceBuild", "false"));
+				CLAN_LEADER_COLOR_ENABLED = Boolean.parseBoolean(PkelfoSettings.getProperty("ClanLeaderNameColorEnabled", "True"));
+				CLAN_LEADER_COLOR = Integer.decode((new StringBuilder()).append("0x").append(PkelfoSettings.getProperty("ClanLeaderColor", "00FFFF")).toString()).intValue();
+				CLAN_LEADER_COLOR_CLAN_LEVEL = Integer.parseInt(PkelfoSettings.getProperty("ClanLeaderColorAtClanLevel", "1"));
+				ANNOUNCE_CASTLE_LORDS = Boolean.parseBoolean(PkelfoSettings.getProperty("AnnounceCastleLords", "True"));
+				SHOW_ONLINE_PLAYERS_ON_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("ShowOnlinePlayersOnLogin", "True"));
+				MAX_PARTY_MEMBERS = Integer.parseInt(PkelfoSettings.getProperty("MaxPartyMembers", "12"));
 
 				// Clan Full 
-				ENABLE_CLAN_SYSTEM = Boolean.parseBoolean(KingSettings.getProperty("EnableClanSystem", "True")); 
+				ENABLE_CLAN_SYSTEM = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableClanSystem", "True")); 
 				if(ENABLE_CLAN_SYSTEM) 
 				{ 
-				String AioSkillsSplit[] = KingSettings.getProperty("ClanSkills", "").split(";"); 
+				String AioSkillsSplit[] = PkelfoSettings.getProperty("ClanSkills", "").split(";"); 
 				CLAN_SKILLS = new FastMap<>(AioSkillsSplit.length); 
 				String arr[] = AioSkillsSplit; 
 				int len = arr.length; 
@@ -1849,116 +1849,116 @@ public final class Config
 								System.out.println((new StringBuilder()).append("[Clan System]: invalid config property in custom/custom.properties -> ClanSkills \"").append(skillSplit[0]).append("\"").append(skillSplit[1]).toString()); 
 						} 
 				} 
-				CLAN_LEVEL = Byte.parseByte(KingSettings.getProperty("ClanSetLevel", "8")); 
-				REPUTATION_QUANTITY = Integer.parseInt(KingSettings.getProperty("ReputationScore", "10000"));
+				CLAN_LEVEL = Byte.parseByte(PkelfoSettings.getProperty("ClanSetLevel", "8")); 
+				REPUTATION_QUANTITY = Integer.parseInt(PkelfoSettings.getProperty("ReputationScore", "10000"));
 				//Shots Infinitos: SS, BSS e flechas 
-				INFINITE_SOUL_SHOT = Boolean.parseBoolean(KingSettings.getProperty("InfiniteSoulShot", "False")); 
-				INFINITE_SPIRIT_SHOT = Boolean.parseBoolean(KingSettings.getProperty("InfiniteSpiritShot", "False")); 
-				INFINITE_BLESSED_SPIRIT_SHOT = Boolean.parseBoolean(KingSettings.getProperty("InfiniteBlessedSpiritShot", "False")); 
-				INFINITE_ARROWS = Boolean.parseBoolean(KingSettings.getProperty("InfiniteArrows", "false"));
-				DAGGER_VS_HEAVY = Float.parseFloat(KingSettings.getProperty("DaggerVsHeavy", "1.00"));
-				DAGGER_VS_LIGHT = Float.parseFloat(KingSettings.getProperty("DaggerVsLight", "1.00"));
-				DAGGER_VS_ROBE = Float.parseFloat(KingSettings.getProperty("DaggerVsRobe", "1.00"));
-				ARCHER_VS_HEAVY = Float.parseFloat(KingSettings.getProperty("ArcherVsHeavy", "1.00"));
-				ARCHER_VS_LIGHT = Float.parseFloat(KingSettings.getProperty("ArcherVsLight", "1.00"));
-				ARCHER_VS_ROBE = Float.parseFloat(KingSettings.getProperty("ArcherVsRobe", "1.00"));
-				BLUNT_VS_HEAVY = Float.parseFloat(KingSettings.getProperty("BluntVsHeavy", "1.00"));
-				BLUNT_VS_LIGHT = Float.parseFloat(KingSettings.getProperty("BluntVsLight", "1.00"));
-				BLUNT_VS_ROBE = Float.parseFloat(KingSettings.getProperty("BluntVsRobe", "1.00"));
-				FIST_VS_HEAVY = Float.parseFloat(KingSettings.getProperty("FistVsHeavy", "1.00"));
-				FIST_VS_LIGHT = Float.parseFloat(KingSettings.getProperty("FistVsLight", "1.00"));
-				FIST_VS_ROBE = Float.parseFloat(KingSettings.getProperty("FistVsRobe", "1.00"));
-				DUAL_VS_HEAVY = Float.parseFloat(KingSettings.getProperty("DualVsHeavy", "1.00"));
-				DUAL_VS_LIGHT = Float.parseFloat(KingSettings.getProperty("DualVsLight", "1.00"));
-				DUAL_VS_ROBE = Float.parseFloat(KingSettings.getProperty("DualVsRobe", "1.00"));
-				SWORD_VS_HEAVY = Float.parseFloat(KingSettings.getProperty("SwordVsHeavy", "1.00"));
-				SWORD_VS_LIGHT = Float.parseFloat(KingSettings.getProperty("SwordVsLight", "1.00"));
-				SWORD_VS_ROBE = Float.parseFloat(KingSettings.getProperty("SwordVsRobe", "1.00"));
-				POLE_VS_HEAVY = Float.parseFloat(KingSettings.getProperty("PoleVsHeavy", "1.00"));
-				POLE_VS_LIGHT = Float.parseFloat(KingSettings.getProperty("PoleVsLight", "1.00"));
-				POLE_VS_ROBE = Float.parseFloat(KingSettings.getProperty("PoleVsRobe", "1.00"));
-				PC_BANG_ENABLED = Boolean.parseBoolean(KingSettings.getProperty("Enabled", "false"));
-				ALT_ALLOW_REFINE_PVP_ITEM = Boolean.parseBoolean(KingSettings.getProperty("AltAllowRefinePVPItem", "False"));
-				ENABLE_UNSTUCK_PVP = Boolean.parseBoolean(KingSettings.getProperty("EnableUnstuckPvP", "True"));
-				USE_CR_ITEM = Boolean.parseBoolean(KingSettings.getProperty("EnableTheClanRepPointsItem", "False"));
-				CR_ITEM_MIN_CLAN_LVL = Integer.parseInt(KingSettings.getProperty("MinClanLevelNeededForCR", "7"));
-				CR_ITEM_REPS_TO_BE_AWARDED = Integer.parseInt(KingSettings.getProperty("HowManyClanRepsToGive", "500"));
-				CR_ITEM_REPS_ITEM_ID = Integer.parseInt(KingSettings.getProperty("CRItemID", "6673"));
-				NOBLE_CUSTOM_ITEMS = Boolean.parseBoolean(KingSettings.getProperty("EnableNobleCustomItem", "true"));
-				NOOBLE_CUSTOM_ITEM_ID = Integer.parseInt(KingSettings.getProperty("NoobleCustomItemId", "6673"));
-				GAME_POINT_ITEM_ID = Integer.parseInt(KingSettings.getProperty("GamePointItemId", "-300"));
-				NpcBuffer_Reload = Boolean.parseBoolean(KingSettings.getProperty("EnableReloadScript", "False"));
-				NpcBuffer_SmartWindow = Boolean.parseBoolean(KingSettings.getProperty("EnableSmartWindow", "True"));
-				NpcBuffer_VIP = Boolean.parseBoolean(KingSettings.getProperty("EnableVIP", "False"));
-				NpcBuffer_VIP_ALV = Integer.parseInt(KingSettings.getProperty("VipAccesLevel", "1"));
-				NpcBuffer_EnableBuff = Boolean.parseBoolean(KingSettings.getProperty("EnableBuffSection", "True"));
-				NpcBuffer_EnableScheme = Boolean.parseBoolean(KingSettings.getProperty("EnableScheme", "True"));
-				NpcBuffer_EnableHeal = Boolean.parseBoolean(KingSettings.getProperty("EnableHeal", "True"));
-				NpcBuffer_EnableBuffs = Boolean.parseBoolean(KingSettings.getProperty("EnableBuffs", "True"));
-				NpcBuffer_EnableResist = Boolean.parseBoolean(KingSettings.getProperty("EnableResist", "True"));
-				NpcBuffer_EnableSong = Boolean.parseBoolean(KingSettings.getProperty("EnableSongs", "True"));
-				NpcBuffer_EnableDance = Boolean.parseBoolean(KingSettings.getProperty("EnableDances", "True"));
-				NpcBuffer_EnableChant = Boolean.parseBoolean(KingSettings.getProperty("EnableChants", "True"));
-				NpcBuffer_EnableOther = Boolean.parseBoolean(KingSettings.getProperty("EnableOther", "True"));
-				NpcBuffer_EnableSpecial = Boolean.parseBoolean(KingSettings.getProperty("EnableSpecial", "True"));
-				NpcBuffer_EnableCubic = Boolean.parseBoolean(KingSettings.getProperty("EnableCubic", "True"));
-				NpcBuffer_EnableCancel = Boolean.parseBoolean(KingSettings.getProperty("EnableRemoveBuffs", "True"));
-				NpcBuffer_EnableBuffSet = Boolean.parseBoolean(KingSettings.getProperty("EnableBuffSet", "True"));
-				NpcBuffer_EnableBuffPK = Boolean.parseBoolean(KingSettings.getProperty("EnableBuffForPK", "False"));
-				NpcBuffer_EnableFreeBuffs = Boolean.parseBoolean(KingSettings.getProperty("EnableFreeBuffs", "True"));
-				NpcBuffer_EnableTimeOut = Boolean.parseBoolean(KingSettings.getProperty("EnableTimeOut", "True"));
-				NpcBuffer_TimeOutTime = Integer.parseInt(KingSettings.getProperty("TimeoutTime", "10"));
-				NpcBuffer_MinLevel = Integer.parseInt(KingSettings.getProperty("MinimumLevel", "20"));
-				NpcBuffer_PriceCancel = Integer.parseInt(KingSettings.getProperty("RemoveBuffsPrice", "100000"));
-				NpcBuffer_PriceHeal = Integer.parseInt(KingSettings.getProperty("HealPrice", "100000"));
-				NpcBuffer_PriceBuffs = Integer.parseInt(KingSettings.getProperty("BuffsPrice", "100000"));
-				NpcBuffer_PriceResist = Integer.parseInt(KingSettings.getProperty("ResistPrice", "100000"));
-				NpcBuffer_PriceSong = Integer.parseInt(KingSettings.getProperty("SongPrice", "100000"));
-				NpcBuffer_PriceDance = Integer.parseInt(KingSettings.getProperty("DancePrice", "100000"));
-				NpcBuffer_PriceChant = Integer.parseInt(KingSettings.getProperty("ChantsPrice", "100000"));
-				NpcBuffer_PriceOther = Integer.parseInt(KingSettings.getProperty("OtherPrice", "100000"));
-				NpcBuffer_PriceSpecial = Integer.parseInt(KingSettings.getProperty("SpecialPrice", "100000"));
-				NpcBuffer_PriceCubic = Integer.parseInt(KingSettings.getProperty("CubicPrice", "100000"));
-				NpcBuffer_PriceSet = Integer.parseInt(KingSettings.getProperty("SetPrice", "10000000"));
-				NpcBuffer_PriceScheme = Integer.parseInt(KingSettings.getProperty("SchemePrice", "10000000"));
-				NpcBuffer_MaxScheme = Integer.parseInt(KingSettings.getProperty("MaxScheme", "4"));
-				NpcBuffer_consumableID = Integer.parseInt(KingSettings.getProperty("ConsumableID", "57"));
+				INFINITE_SOUL_SHOT = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteSoulShot", "False")); 
+				INFINITE_SPIRIT_SHOT = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteSpiritShot", "False")); 
+				INFINITE_BLESSED_SPIRIT_SHOT = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteBlessedSpiritShot", "False")); 
+				INFINITE_ARROWS = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteArrows", "false"));
+				DAGGER_VS_HEAVY = Float.parseFloat(PkelfoSettings.getProperty("DaggerVsHeavy", "1.00"));
+				DAGGER_VS_LIGHT = Float.parseFloat(PkelfoSettings.getProperty("DaggerVsLight", "1.00"));
+				DAGGER_VS_ROBE = Float.parseFloat(PkelfoSettings.getProperty("DaggerVsRobe", "1.00"));
+				ARCHER_VS_HEAVY = Float.parseFloat(PkelfoSettings.getProperty("ArcherVsHeavy", "1.00"));
+				ARCHER_VS_LIGHT = Float.parseFloat(PkelfoSettings.getProperty("ArcherVsLight", "1.00"));
+				ARCHER_VS_ROBE = Float.parseFloat(PkelfoSettings.getProperty("ArcherVsRobe", "1.00"));
+				BLUNT_VS_HEAVY = Float.parseFloat(PkelfoSettings.getProperty("BluntVsHeavy", "1.00"));
+				BLUNT_VS_LIGHT = Float.parseFloat(PkelfoSettings.getProperty("BluntVsLight", "1.00"));
+				BLUNT_VS_ROBE = Float.parseFloat(PkelfoSettings.getProperty("BluntVsRobe", "1.00"));
+				FIST_VS_HEAVY = Float.parseFloat(PkelfoSettings.getProperty("FistVsHeavy", "1.00"));
+				FIST_VS_LIGHT = Float.parseFloat(PkelfoSettings.getProperty("FistVsLight", "1.00"));
+				FIST_VS_ROBE = Float.parseFloat(PkelfoSettings.getProperty("FistVsRobe", "1.00"));
+				DUAL_VS_HEAVY = Float.parseFloat(PkelfoSettings.getProperty("DualVsHeavy", "1.00"));
+				DUAL_VS_LIGHT = Float.parseFloat(PkelfoSettings.getProperty("DualVsLight", "1.00"));
+				DUAL_VS_ROBE = Float.parseFloat(PkelfoSettings.getProperty("DualVsRobe", "1.00"));
+				SWORD_VS_HEAVY = Float.parseFloat(PkelfoSettings.getProperty("SwordVsHeavy", "1.00"));
+				SWORD_VS_LIGHT = Float.parseFloat(PkelfoSettings.getProperty("SwordVsLight", "1.00"));
+				SWORD_VS_ROBE = Float.parseFloat(PkelfoSettings.getProperty("SwordVsRobe", "1.00"));
+				POLE_VS_HEAVY = Float.parseFloat(PkelfoSettings.getProperty("PoleVsHeavy", "1.00"));
+				POLE_VS_LIGHT = Float.parseFloat(PkelfoSettings.getProperty("PoleVsLight", "1.00"));
+				POLE_VS_ROBE = Float.parseFloat(PkelfoSettings.getProperty("PoleVsRobe", "1.00"));
+				PC_BANG_ENABLED = Boolean.parseBoolean(PkelfoSettings.getProperty("Enabled", "false"));
+				ALT_ALLOW_REFINE_PVP_ITEM = Boolean.parseBoolean(PkelfoSettings.getProperty("AltAllowRefinePVPItem", "False"));
+				ENABLE_UNSTUCK_PVP = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableUnstuckPvP", "True"));
+				USE_CR_ITEM = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableTheClanRepPointsItem", "False"));
+				CR_ITEM_MIN_CLAN_LVL = Integer.parseInt(PkelfoSettings.getProperty("MinClanLevelNeededForCR", "7"));
+				CR_ITEM_REPS_TO_BE_AWARDED = Integer.parseInt(PkelfoSettings.getProperty("HowManyClanRepsToGive", "500"));
+				CR_ITEM_REPS_ITEM_ID = Integer.parseInt(PkelfoSettings.getProperty("CRItemID", "6673"));
+				NOBLE_CUSTOM_ITEMS = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableNobleCustomItem", "true"));
+				NOOBLE_CUSTOM_ITEM_ID = Integer.parseInt(PkelfoSettings.getProperty("NoobleCustomItemId", "6673"));
+				GAME_POINT_ITEM_ID = Integer.parseInt(PkelfoSettings.getProperty("GamePointItemId", "-300"));
+				NpcBuffer_Reload = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableReloadScript", "False"));
+				NpcBuffer_SmartWindow = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableSmartWindow", "True"));
+				NpcBuffer_VIP = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableVIP", "False"));
+				NpcBuffer_VIP_ALV = Integer.parseInt(PkelfoSettings.getProperty("VipAccesLevel", "1"));
+				NpcBuffer_EnableBuff = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableBuffSection", "True"));
+				NpcBuffer_EnableScheme = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableScheme", "True"));
+				NpcBuffer_EnableHeal = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableHeal", "True"));
+				NpcBuffer_EnableBuffs = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableBuffs", "True"));
+				NpcBuffer_EnableResist = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableResist", "True"));
+				NpcBuffer_EnableSong = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableSongs", "True"));
+				NpcBuffer_EnableDance = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableDances", "True"));
+				NpcBuffer_EnableChant = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableChants", "True"));
+				NpcBuffer_EnableOther = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableOther", "True"));
+				NpcBuffer_EnableSpecial = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableSpecial", "True"));
+				NpcBuffer_EnableCubic = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableCubic", "True"));
+				NpcBuffer_EnableCancel = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableRemoveBuffs", "True"));
+				NpcBuffer_EnableBuffSet = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableBuffSet", "True"));
+				NpcBuffer_EnableBuffPK = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableBuffForPK", "False"));
+				NpcBuffer_EnableFreeBuffs = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableFreeBuffs", "True"));
+				NpcBuffer_EnableTimeOut = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableTimeOut", "True"));
+				NpcBuffer_TimeOutTime = Integer.parseInt(PkelfoSettings.getProperty("TimeoutTime", "10"));
+				NpcBuffer_MinLevel = Integer.parseInt(PkelfoSettings.getProperty("MinimumLevel", "20"));
+				NpcBuffer_PriceCancel = Integer.parseInt(PkelfoSettings.getProperty("RemoveBuffsPrice", "100000"));
+				NpcBuffer_PriceHeal = Integer.parseInt(PkelfoSettings.getProperty("HealPrice", "100000"));
+				NpcBuffer_PriceBuffs = Integer.parseInt(PkelfoSettings.getProperty("BuffsPrice", "100000"));
+				NpcBuffer_PriceResist = Integer.parseInt(PkelfoSettings.getProperty("ResistPrice", "100000"));
+				NpcBuffer_PriceSong = Integer.parseInt(PkelfoSettings.getProperty("SongPrice", "100000"));
+				NpcBuffer_PriceDance = Integer.parseInt(PkelfoSettings.getProperty("DancePrice", "100000"));
+				NpcBuffer_PriceChant = Integer.parseInt(PkelfoSettings.getProperty("ChantsPrice", "100000"));
+				NpcBuffer_PriceOther = Integer.parseInt(PkelfoSettings.getProperty("OtherPrice", "100000"));
+				NpcBuffer_PriceSpecial = Integer.parseInt(PkelfoSettings.getProperty("SpecialPrice", "100000"));
+				NpcBuffer_PriceCubic = Integer.parseInt(PkelfoSettings.getProperty("CubicPrice", "100000"));
+				NpcBuffer_PriceSet = Integer.parseInt(PkelfoSettings.getProperty("SetPrice", "10000000"));
+				NpcBuffer_PriceScheme = Integer.parseInt(PkelfoSettings.getProperty("SchemePrice", "10000000"));
+				NpcBuffer_MaxScheme = Integer.parseInt(PkelfoSettings.getProperty("MaxScheme", "4"));
+				NpcBuffer_consumableID = Integer.parseInt(PkelfoSettings.getProperty("ConsumableID", "57"));
 				
-				VOTE_SYSTEM_ENABLE = Boolean.parseBoolean(KingSettings.getProperty("EnableVoteSystem", "False"));
-				VOTE_SYSTEM_HOPZONE = Boolean.parseBoolean(KingSettings.getProperty("VoteSystemHopzone", "true"));
-				VOTE_SYSTEM_DATABASE_SAVE = Boolean.parseBoolean(KingSettings.getProperty("SaveVotesIntoDataBase", "true"));
-				VOTE_SYSTEM_PAGE = KingSettings.getProperty("VoteSystemPage", "");
-				VOTE_SYSTEM_COUNT = Integer.parseInt(KingSettings.getProperty("VoteSystemVotes", "10"));
-				VOTE_SYSTEM_START_TIME = Integer.parseInt(KingSettings.getProperty("VoteSystemStartCheckTime", "60"));
-				VOTE_SYSTEM_CHECK_TIME = Integer.parseInt(KingSettings.getProperty("VoteSystemRunCheckTime", "120"));
-				VOTE_SYSTEM_ITEM_ID = KingSettings.getProperty("VoteSystemItemID", "57, 1000");
-				VOTE_SYSTEM_ITEM_COUNT = KingSettings.getProperty("VoteSystemItemCount", "1000, 1");
-				ALLOW_REFUSE_BUFF = Boolean.parseBoolean(KingSettings.getProperty("AllowRefuseBuff", "True"));
-				MAX_PC_BANG_POINTS = Integer.parseInt(KingSettings.getProperty("MaxPcBangPoints", "1000000000"));
+				VOTE_SYSTEM_ENABLE = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableVoteSystem", "False"));
+				VOTE_SYSTEM_HOPZONE = Boolean.parseBoolean(PkelfoSettings.getProperty("VoteSystemHopzone", "true"));
+				VOTE_SYSTEM_DATABASE_SAVE = Boolean.parseBoolean(PkelfoSettings.getProperty("SaveVotesIntoDataBase", "true"));
+				VOTE_SYSTEM_PAGE = PkelfoSettings.getProperty("VoteSystemPage", "");
+				VOTE_SYSTEM_COUNT = Integer.parseInt(PkelfoSettings.getProperty("VoteSystemVotes", "10"));
+				VOTE_SYSTEM_START_TIME = Integer.parseInt(PkelfoSettings.getProperty("VoteSystemStartCheckTime", "60"));
+				VOTE_SYSTEM_CHECK_TIME = Integer.parseInt(PkelfoSettings.getProperty("VoteSystemRunCheckTime", "120"));
+				VOTE_SYSTEM_ITEM_ID = PkelfoSettings.getProperty("VoteSystemItemID", "57, 1000");
+				VOTE_SYSTEM_ITEM_COUNT = PkelfoSettings.getProperty("VoteSystemItemCount", "1000, 1");
+				ALLOW_REFUSE_BUFF = Boolean.parseBoolean(PkelfoSettings.getProperty("AllowRefuseBuff", "True"));
+				MAX_PC_BANG_POINTS = Integer.parseInt(PkelfoSettings.getProperty("MaxPcBangPoints", "1000000000"));
 				if (MAX_PC_BANG_POINTS < 0)
 				{
 					MAX_PC_BANG_POINTS = 0;
 				}
-				ENABLE_DOUBLE_PC_BANG_POINTS = Boolean.parseBoolean(KingSettings.getProperty("DoublingAcquisitionPoints", "false"));
-				DOUBLE_PC_BANG_POINTS_CHANCE = Integer.parseInt(KingSettings.getProperty("DoublingAcquisitionPointsChance", "1"));
+				ENABLE_DOUBLE_PC_BANG_POINTS = Boolean.parseBoolean(PkelfoSettings.getProperty("DoublingAcquisitionPoints", "false"));
+				DOUBLE_PC_BANG_POINTS_CHANCE = Integer.parseInt(PkelfoSettings.getProperty("DoublingAcquisitionPointsChance", "1"));
 				if ((DOUBLE_PC_BANG_POINTS_CHANCE < 0) || (DOUBLE_PC_BANG_POINTS_CHANCE > 100))
 				{
 					DOUBLE_PC_BANG_POINTS_CHANCE = 1;
 				}
-				PC_BANG_POINT_RATE = Double.parseDouble(KingSettings.getProperty("AcquisitionPointsRate", "1.0"));
+				PC_BANG_POINT_RATE = Double.parseDouble(PkelfoSettings.getProperty("AcquisitionPointsRate", "1.0"));
 				if (PC_BANG_POINT_RATE < 0)
 				{
 					PC_BANG_POINT_RATE = 1;
 				}
-				RANDOM_PC_BANG_POINT = Boolean.parseBoolean(KingSettings.getProperty("AcquisitionPointsRandom", "false"));
-				Boost_EXP_COMMAND = Boolean.parseBoolean(KingSettings.getProperty("SpExpCommand", "True"));
-				CMD_TRADE = Boolean.parseBoolean(KingSettings.getProperty("CommandTrade", "True"));
-				CMD_ONLINE = Boolean.parseBoolean(KingSettings.getProperty("CommandOnline", "True"));
-				CMD_FAKE = Boolean.parseBoolean(KingSettings.getProperty("CommandFakePlayer", "True"));
-				FAKE_PLAYERS = Integer.parseInt(KingSettings.getProperty("NumberOfFakes", "1"));
-				BOSS_STATS = Boolean.parseBoolean(KingSettings.getProperty("GrandBossStats", "True"));
+				RANDOM_PC_BANG_POINT = Boolean.parseBoolean(PkelfoSettings.getProperty("AcquisitionPointsRandom", "false"));
+				Boost_EXP_COMMAND = Boolean.parseBoolean(PkelfoSettings.getProperty("SpExpCommand", "True"));
+				CMD_TRADE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandTrade", "True"));
+				CMD_ONLINE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandOnline", "True"));
+				CMD_FAKE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandFakePlayer", "True"));
+				FAKE_PLAYERS = Integer.parseInt(PkelfoSettings.getProperty("NumberOfFakes", "1"));
+				BOSS_STATS = Boolean.parseBoolean(PkelfoSettings.getProperty("GrandBossStats", "True"));
 
-				PVPS_COLORS = KingSettings.getProperty("PvpsColors", "");
+				PVPS_COLORS = PkelfoSettings.getProperty("PvpsColors", "");
 				PVPS_COLORS_LIST = new FastMap<>();
 				
 				String[] splitted_pvps_colors = PVPS_COLORS.split(";");
@@ -1975,7 +1975,7 @@ public final class Config
 						PVPS_COLORS_LIST.put(Integer.parseInt(pvps_colors[0]), Integer.decode("0x" + pvps_colors[1]));
 					}
 				}
-				PKS_COLORS = KingSettings.getProperty("PksColors", "");
+				PKS_COLORS = PkelfoSettings.getProperty("PksColors", "");
 				PKS_COLORS_LIST = new FastMap<>();
 				String[] splitted_pks_colors = PKS_COLORS.split(";");
 				
@@ -1995,7 +1995,7 @@ public final class Config
 			
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "Error while loading KingServers settings!", e);
+				_log.log(Level.SEVERE, "Error while loading PkElfo settings!", e);
 			}
 			
 			// Load PVP Community L2Properties file (if exists)
@@ -2702,8 +2702,8 @@ public final class Config
 			STARTING_SP = Integer.parseInt(Character.getProperty("StartingSP", "0"));
 			
 			//####################  TITULO PARA NOVOS CHAR  ##########################################################//
-			CHAR_TITLE = Boolean.parseBoolean(Character.getProperty("CharTitle", "true"));
-			ADD_CHAR_TITLE = Character.getProperty("CharAddTitle", "KingServer");
+			CHAR_TITLE = Boolean.parseBoolean(Character.getProperty("CharTitle", "False"));
+			ADD_CHAR_TITLE = Character.getProperty("CharAddTitle", "PkElfo");
 			TITLE_COLOR = Integer.decode("0x" + Character.getProperty("TitleColor", "00FF00"));
 
 			//####################  NOVOS CHAR HERO  #################################################################//
@@ -2830,17 +2830,17 @@ public final class Config
 			
 			IS_TELNET_ENABLED = Boolean.parseBoolean(telnetSettings.getProperty("EnableTelnet", "false"));
 
-			ALLOW_VIP_NCOLOR = Boolean.parseBoolean(KingSettings.getProperty("AllowVipNameColor", "True"));
-			VIP_NCOLOR = Integer.decode("0x" + KingSettings.getProperty("VipNameColor", "0088FF"));
-			ALLOW_VIP_TCOLOR = Boolean.parseBoolean(KingSettings.getProperty("AllowVipTitleColor", "True"));
-			VIP_TCOLOR = Integer.decode("0x" + KingSettings.getProperty("VipTitleColor", "0088FF"));
-			ALLOW_VIP_XPSP = Boolean.parseBoolean(KingSettings.getProperty("AllowVipMulXpSp", "True"));
-			VIP_XP = Integer.parseInt(KingSettings.getProperty("VipMulXp", "2"));
-			VIP_SP = Integer.parseInt(KingSettings.getProperty("VipMulSp", "2"));
-			ENABLE_VIP_SYSTEM = Boolean.parseBoolean(KingSettings.getProperty("EnableVipSystem", "True"));
+			ALLOW_VIP_NCOLOR = Boolean.parseBoolean(PkelfoSettings.getProperty("AllowVipNameColor", "True"));
+			VIP_NCOLOR = Integer.decode("0x" + PkelfoSettings.getProperty("VipNameColor", "0088FF"));
+			ALLOW_VIP_TCOLOR = Boolean.parseBoolean(PkelfoSettings.getProperty("AllowVipTitleColor", "True"));
+			VIP_TCOLOR = Integer.decode("0x" + PkelfoSettings.getProperty("VipTitleColor", "0088FF"));
+			ALLOW_VIP_XPSP = Boolean.parseBoolean(PkelfoSettings.getProperty("AllowVipMulXpSp", "True"));
+			VIP_XP = Integer.parseInt(PkelfoSettings.getProperty("VipMulXp", "2"));
+			VIP_SP = Integer.parseInt(PkelfoSettings.getProperty("VipMulSp", "2"));
+			ENABLE_VIP_SYSTEM = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableVipSystem", "True"));
 			if(ENABLE_VIP_SYSTEM) //create map if system is enabled
 			{
-				String[] VipSkillsSplit = KingSettings.getProperty("VipSkills", "").split(";");
+				String[] VipSkillsSplit = PkelfoSettings.getProperty("VipSkills", "").split(";");
 				VIP_SKILLS = new FastMap<>(VipSkillsSplit.length);
 				for (String skill : VipSkillsSplit)
 				{
@@ -2867,13 +2867,13 @@ public final class Config
 			}
 				
 			// Comando de Teleporte para areas de UpLevel
-			ALLOW_TELEPORT_VOICECOMMAND = Boolean.parseBoolean(KingSettings.getProperty("UpLevel", "True"));
+			ALLOW_TELEPORT_VOICECOMMAND = Boolean.parseBoolean(PkelfoSettings.getProperty("UpLevel", "True"));
 			//Enchant protect
-			PROTECT_ENCHANT_ENABLE = Boolean.parseBoolean(KingSettings.getProperty("EnchantProtectEnable", "true"));
-			MAX_ENCHANT_LEVEL_PROTECT = Integer.parseInt(KingSettings.getProperty("MaxEnchantLevelProtect", "30"));
-			ENCHANT_PROTECT_PUNISH = Integer.parseInt(KingSettings.getProperty("EnchantProtectPunish", "60"));
+			PROTECT_ENCHANT_ENABLE = Boolean.parseBoolean(PkelfoSettings.getProperty("EnchantProtectEnable", "true"));
+			MAX_ENCHANT_LEVEL_PROTECT = Integer.parseInt(PkelfoSettings.getProperty("MaxEnchantLevelProtect", "30"));
+			ENCHANT_PROTECT_PUNISH = Integer.parseInt(PkelfoSettings.getProperty("EnchantProtectPunish", "60"));
 			CLAN_NAME_AS_TITLE = Boolean.parseBoolean(Character.getProperty("ClanTitle", "True"));
-			PM_OFF = Boolean.parseBoolean(KingSettings.getProperty("CommandPmOff", "True"));
+			PM_OFF = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandPmOff", "True"));
 			// MMO
 			L2Properties mmoSettings = new L2Properties();
 			final File mmo = new File(MMO_CONFIG_FILE);
@@ -4180,33 +4180,33 @@ public final class Config
 			CHS_FAME_AMOUNT = Integer.parseInt(ClanHallSiege.getProperty("FameAmount", "0"));
 			CHS_FAME_FREQUENCY = Integer.parseInt(ClanHallSiege.getProperty("FameFrequency", "0"));
 			
-			// Services properties
-			L2Properties ServicesProperties = new L2Properties();
-			final File services = new File(SERVICES_CONFIG_FILE);
-			try (InputStream is = new FileInputStream(services))
+			//############################  PREMIUM PROPERTIES  #####################################################//
+			L2Properties PremiumProperties = new L2Properties();
+			final File premium = new File(PREMIUM_CONFIG_FILE);
+			try (InputStream is = new FileInputStream(premium))
 			{
-				ServicesProperties.load(is);
+				PremiumProperties.load(is);
 			}
 			catch (Exception e)
 			{
 				_log.log(Level.SEVERE, "Error while loading Services settings!", e);
 			}
 			
-			PREMIUM_SERVICE_ENABLED = Boolean.parseBoolean(ServicesProperties.getProperty("PremiumServiceEnabled", "false"));
-			PREMIUM_ALLOW_VOICED = Boolean.parseBoolean(ServicesProperties.getProperty("PremiumAllowVoiced", "false"));
-			PREMIUM_PARTY_DROPSPOIL = Boolean.parseBoolean(ServicesProperties.getProperty("PremiumPartyDropSpoil", "false"));
-			PREMIUM_SMART_PRICING = Boolean.parseBoolean(ServicesProperties.getProperty("AllowPremiumSmartPricing", "true"));
-			SHOW_PREMIUM_STATUS = Boolean.parseBoolean(ServicesProperties.getProperty("ShowPremiumStatus", "true"));
-			NEWBIES_PREMIUM_PERIOD = Integer.parseInt(ServicesProperties.getProperty("NewbiesPremiumPeriod", "0"));
-			NOTIFY_PREMIUM_EXPIRATION = Boolean.parseBoolean(ServicesProperties.getProperty("NotifyPremiumExpiration", "True"));
+			PREMIUM_SERVICE_ENABLED = Boolean.parseBoolean(PremiumProperties.getProperty("PremiumServiceEnabled", "false"));
+			PREMIUM_ALLOW_VOICED = Boolean.parseBoolean(PremiumProperties.getProperty("PremiumAllowVoiced", "false"));
+			PREMIUM_PARTY_DROPSPOIL = Boolean.parseBoolean(PremiumProperties.getProperty("PremiumPartyDropSpoil", "false"));
+			PREMIUM_SMART_PRICING = Boolean.parseBoolean(PremiumProperties.getProperty("AllowPremiumSmartPricing", "true"));
+			SHOW_PREMIUM_STATUS = Boolean.parseBoolean(PremiumProperties.getProperty("ShowPremiumStatus", "true"));
+			NEWBIES_PREMIUM_PERIOD = Integer.parseInt(PremiumProperties.getProperty("NewbiesPremiumPeriod", "0"));
+			NOTIFY_PREMIUM_EXPIRATION = Boolean.parseBoolean(PremiumProperties.getProperty("NotifyPremiumExpiration", "True"));
 			
-			PREMIUM_RATE_XP = Float.parseFloat(ServicesProperties.getProperty("PremiumRateXp", "1."));
-			PREMIUM_RATE_SP = Float.parseFloat(ServicesProperties.getProperty("PremiumRateSp", "1."));
-			PREMIUM_RATE_DROP_ITEMS = Float.parseFloat(ServicesProperties.getProperty("PremiumRateDropItems", "1."));
-			PREMIUM_RATE_DROP_ITEMS_BY_RAID = Float.parseFloat(ServicesProperties.getProperty("PremiumRateRaidDropItems", "1."));
-			PREMIUM_RATE_SPOIL = Float.parseFloat(ServicesProperties.getProperty("PremiumRateSpoil", "1."));
+			PREMIUM_RATE_XP = Float.parseFloat(PremiumProperties.getProperty("PremiumRateXp", "1."));
+			PREMIUM_RATE_SP = Float.parseFloat(PremiumProperties.getProperty("PremiumRateSp", "1."));
+			PREMIUM_RATE_DROP_ITEMS = Float.parseFloat(PremiumProperties.getProperty("PremiumRateDropItems", "1."));
+			PREMIUM_RATE_DROP_ITEMS_BY_RAID = Float.parseFloat(PremiumProperties.getProperty("PremiumRateRaidDropItems", "1."));
+			PREMIUM_RATE_SPOIL = Float.parseFloat(PremiumProperties.getProperty("PremiumRateSpoil", "1."));
 			
-			propertySplit = ServicesProperties.getProperty("PremiumRateDropItemsById", "").split(";");
+			propertySplit = PremiumProperties.getProperty("PremiumRateDropItemsById", "").split(";");
 			PREMIUM_RATE_DROP_ITEMS_ID = new HashMap<>(propertySplit.length);
 			if (!propertySplit[0].isEmpty())
 			{
@@ -4238,7 +4238,7 @@ public final class Config
 				PREMIUM_RATE_DROP_ITEMS_ID.put(PcInventory.ADENA_ID, PREMIUM_RATE_DROP_ITEMS); // for Adena rate if not defined
 			}
 			
-			propertySplit = ServicesProperties.getProperty("PremiumPrice", "").split(";");
+			propertySplit = PremiumProperties.getProperty("PremiumPrice", "").split(";");
 			if (!propertySplit[0].isEmpty())
 			{
 				PREMIUM_PRICE = new HashMap<>();
@@ -4281,6 +4281,7 @@ public final class Config
 				}
 			}
 		}
+		//#######################################################################################################//
 		else if (Server.serverMode == Server.MODE_LOGINSERVER)
 		{
 			L2Properties ServerSettings = new L2Properties();
