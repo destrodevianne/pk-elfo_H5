@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<project name="KingServer_DataPack" default="build" basedir=".">
+<project name="PkElfo_DataPack" default="build" basedir=".">
 	<description>
 		This script will build the KingServer DataPack.
 
@@ -40,7 +40,7 @@
 	</target>
 
 	<target name="build" depends="dist">
-		<zip destfile="${build}/KingServer_DataPack.zip" basedir="${build.dist}" level="9" />
+		<zip destfile="${build}/PkElfo_DataPack.zip" basedir="${build.dist}" level="9" />
 	</target>
 
 	<target name="checkRequirements" description="Check Requirements.">
