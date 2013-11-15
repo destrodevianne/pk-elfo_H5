@@ -58,8 +58,23 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	// Lineage II PkElfo arquivos de definicoes de propriedades											   //
 	// ----------------------------------------------------------------------------------------------------//
-	public static final String AIO_CONFIG_FILE = "./config/Aio.properties";
-	public static final String AUTO_RESTART = "./config/AutoRestart.properties";
+	//						Big Bosses																	   //
+    public static final String ANTHARAS_CONFIG = "./config/BigBosses/Antharas.properties";
+    public static final String BAIUM_CONFIG = "./config/BigBosses/Baium.properties";
+    public static final String BELETH_CONFIG = "./config/BigBosses/Beleth.properties";
+    public static final String CORE_CONFIG = "./config/BigBosses/Core.properties";
+    public static final String FREYA_EASY_CONFIG = "./config/BigBosses/FreyaEasy.properties";
+    public static final String FREYA_HARDCORE_CONFIG = "./config/BigBosses/FreyaHardCore.properties";
+	public static final String FRINTEZZA_CONFIG = "./config/BigBosses/Frintezza.properties";
+    public static final String ORFEN_CONFIG = "./config/BigBosses/Orfen.properties";
+    public static final String QUEEN_ANT_CONFIG = "./config/BigBosses/QueenAnt.properties";
+    public static final String SAILREN_CONFIG = "./config/BigBosses/Sailren.properties";
+	public static final String TIAT_CONFIG = "./config/BigBosses/Tiat.properties";
+	public static final String VALAKAS_CONFIG = "./config/BigBosses/Valakas.properties";
+    public static final String ZAKEN_CONFIG = "./config/BigBosses/Zaken.properties";
+    // ----------------------------------------------------------------------------------------------------//
+	public static final String AIO_CONFIG_FILE = "./config/AIOx/Aio.properties";
+	public static final String AUTO_RESTART = "./config/Restart/AutoRestart.properties";
 	public static final String CHARACTER_CONFIG_FILE = "./config/Character.properties";
 	public static final String CHAT_FILTER_FILE = "./config/chatfilter.txt";
 	public static final String COMMUNITY_PVP = "./config/CommunityPvP.properties";
