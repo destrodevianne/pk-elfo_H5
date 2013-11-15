@@ -58,8 +58,9 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	// Lineage II PkElfo arquivos de definicoes de propriedades											   //
 	// ----------------------------------------------------------------------------------------------------//
-	//						Big Bosses																	   //
-    public static final String ANTHARAS_CONFIG = "./config/BigBosses/Antharas.properties";
+	//						BIG BOSSES																	   //
+	// ----------------------------------------------------------------------------------------------------//
+	public static final String ANTHARAS_CONFIG = "./config/BigBosses/Antharas.properties";
     public static final String BAIUM_CONFIG = "./config/BigBosses/Baium.properties";
     public static final String BELETH_CONFIG = "./config/BigBosses/Beleth.properties";
     public static final String CORE_CONFIG = "./config/BigBosses/Core.properties";
@@ -69,7 +70,7 @@ public final class Config
     public static final String ORFEN_CONFIG = "./config/BigBosses/Orfen.properties";
     public static final String QUEEN_ANT_CONFIG = "./config/BigBosses/QueenAnt.properties";
     public static final String SAILREN_CONFIG = "./config/BigBosses/Sailren.properties";
-	public static final String SEE_OF_INFINITY_CONFIG = "./config/BigBosses/SeedOfInfinity";
+	public static final String SEE_OF_INFINITY_CONFIG = "./config/BigBosses/SeedOfInfinity.properties"; 
 	public static final String VALAKAS_CONFIG = "./config/BigBosses/Valakas.properties";
     public static final String ZAKEN_CONFIG = "./config/BigBosses/Zaken.properties";
     // ----------------------------------------------------------------------------------------------------//
@@ -1608,6 +1609,355 @@ public final class Config
 			COMMUNITY_SERVER_PORT = Integer.parseInt(communityServerSettings.getProperty("CommunityServerPort", "9013"));
 			COMMUNITY_SERVER_HEX_ID = new BigInteger(communityServerSettings.getProperty("CommunityServerHexId", "0"), 16).toByteArray();
 			COMMUNITY_SERVER_SQL_DP_ID = Integer.parseInt(communityServerSettings.getProperty("CommunityServerSqlDpId", "200"));
+			
+			//########################################################################################################//
+			//						ANTHARAS PROPERTIES
+			//########################################################################################################//
+
+			L2Properties AntharasSettings = new L2Properties();
+			final File antharas = new File(ANTHARAS_CONFIG);
+			try (InputStream is = new FileInputStream(antharas))
+			{
+				AntharasSettings.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Erro ao ler o arquivo Antharas Properties!", e);
+			}
+			
+			Antharas_Wait_Time = Integer.parseInt(AntharasSettings.getProperty("AntharasWaitTime", "30"));
+			if ((Antharas_Wait_Time < 3) || (Antharas_Wait_Time > 60))
+			{
+				Antharas_Wait_Time = 30;
+			}
+			Antharas_Wait_Time = Antharas_Wait_Time * 60000;
+			
+			Interval_Of_Antharas_Spawn = Integer.parseInt(AntharasSettings.getProperty("IntervalOfAntharasSpawn", "264"));
+			if ((Interval_Of_Antharas_Spawn < 1) || (Interval_Of_Antharas_Spawn > 480))
+			{
+				Interval_Of_Antharas_Spawn = 264;
+			}
+			Interval_Of_Antharas_Spawn = Interval_Of_Antharas_Spawn * 3600000;
+			
+			Random_Of_Antharas_Spawn = Integer.parseInt(AntharasSettings.getProperty("RandomOfAntharasSpawn", "72"));
+			if ((Random_Of_Antharas_Spawn < 1) || (Random_Of_Antharas_Spawn > 192))
+			{
+				Random_Of_Antharas_Spawn = 72;
+			}
+			Random_Of_Antharas_Spawn = Random_Of_Antharas_Spawn * 3600000;
+			
+			//########################################################################################################//
+			//						BAIUM PROPERTIES
+			//########################################################################################################//
+
+			L2Properties BaiumSettings = new L2Properties();
+			final File baium = new File(BAIUM_CONFIG);
+			try (InputStream is = new FileInputStream(baium))
+			{
+				BaiumSettings.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Erro ao ler o arquivo Baium Properties!", e);
+			}
+			
+			Interval_Of_Baium_Spawn = Integer.parseInt(BaiumSettings.getProperty("IntervalOfBaiumSpawn", "168"));
+			if ((Interval_Of_Baium_Spawn < 1) || (Interval_Of_Baium_Spawn > 480))
+			{
+				Interval_Of_Baium_Spawn = 168;
+			}
+			Interval_Of_Baium_Spawn = Interval_Of_Baium_Spawn * 3600000;
+			
+			Random_Of_Baium_Spawn = Integer.parseInt(BaiumSettings.getProperty("RandomOfBaiumSpawn", "48"));
+			if ((Random_Of_Baium_Spawn < 1) || (Random_Of_Baium_Spawn > 192))
+			{
+				Random_Of_Baium_Spawn = 48;
+			}
+			Random_Of_Baium_Spawn = Random_Of_Baium_Spawn * 3600000;
+			
+			//########################################################################################################//
+			//						BELETH PROPERTIES
+			//########################################################################################################//
+
+			L2Properties BelethSettings = new L2Properties();
+			final File beleth = new File(BELETH_CONFIG);
+			try (InputStream is = new FileInputStream(beleth))
+			{
+				BelethSettings.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Erro ao ler o arquivo Beleth Properties!", e);
+			}
+						
+			INTERVAL_OF_BELETH_SPAWN = Integer.parseInt(BelethSettings.getProperty("IntervalOfBelethSpawn", "192"));
+			if ((INTERVAL_OF_BELETH_SPAWN < 1) || (INTERVAL_OF_BELETH_SPAWN > 480))
+			{
+				INTERVAL_OF_BELETH_SPAWN = 192;
+			}
+			INTERVAL_OF_BELETH_SPAWN *= 3600000;
+			
+			RANDOM_OF_BELETH_SPAWN = Integer.parseInt(BelethSettings.getProperty("RandomOfBelethSpawn", "148"));
+			if ((RANDOM_OF_BELETH_SPAWN < 1) || (RANDOM_OF_BELETH_SPAWN > 192))
+			{
+				RANDOM_OF_BELETH_SPAWN = 148;
+			}
+			RANDOM_OF_BELETH_SPAWN *= 3600000;
+			
+			BELETH_MIN_PLAYERS = Integer.parseInt(BelethSettings.getProperty("BelethMinPlayers", "36"));
+			
+			//########################################################################################################//
+			//						CORE PROPERTIES
+			//########################################################################################################//
+
+			L2Properties CoreSettings = new L2Properties();
+			final File core = new File(CORE_CONFIG);
+			try (InputStream is = new FileInputStream(core))
+			{
+				CoreSettings.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Erro ao ler o arquivo Core Properties!", e);
+			}
+			
+			Interval_Of_Core_Spawn = Integer.parseInt(CoreSettings.getProperty("IntervalOfCoreSpawn", "60"));
+			if ((Interval_Of_Core_Spawn < 1) || (Interval_Of_Core_Spawn > 480))
+			{
+				Interval_Of_Core_Spawn = 60;
+			}
+			Interval_Of_Core_Spawn = Interval_Of_Core_Spawn * 3600000;
+			
+			Random_Of_Core_Spawn = Integer.parseInt(CoreSettings.getProperty("RandomOfCoreSpawn", "24"));
+			if ((Random_Of_Core_Spawn < 1) || (Random_Of_Core_Spawn > 192))
+			{
+				Random_Of_Core_Spawn = 24;
+			}
+			Random_Of_Core_Spawn = Random_Of_Core_Spawn * 3600000;
+			
+			//########################################################################################################//
+			//						FREYA EASY PROPERTIES
+			//########################################################################################################//
+
+			L2Properties FreyaEasySettings = new L2Properties();
+			final File freyaeasy = new File(FREYA_EASY_CONFIG);
+			try (InputStream is = new FileInputStream(freyaeasy))
+			{
+				FreyaEasySettings.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Erro ao ler o arquivo Freya Easy Properties!", e);
+			}
+			MIN_FREYA_PLAYERS = Integer.parseInt(FreyaEasySettings.getProperty("MinFreyaPlayers", "18"));
+			MAX_FREYA_PLAYERS = Integer.parseInt(FreyaEasySettings.getProperty("MaxFreyaPlayers", "27"));
+			MIN_LEVEL_PLAYERS = Integer.parseInt(FreyaEasySettings.getProperty("MinLevelPlayers", "82"));
+			
+			//########################################################################################################//
+			//						FREYA HARD CORE PROPERTIES
+			//########################################################################################################//
+
+			L2Properties FreyaHardCoreSettings = new L2Properties();
+			final File freyahardcore = new File(FREYA_HARDCORE_CONFIG);
+			try (InputStream is = new FileInputStream(freyahardcore))
+			{
+				FreyaHardCoreSettings.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Erro ao ler o arquivo Freya Hard Core Properties!", e);
+			}
+			
+			MIN_FREYA_HC_PLAYERS = Integer.parseInt(FreyaHardCoreSettings.getProperty("MinFreyaHcPlayers", "36"));
+			MAX_FREYA_HC_PLAYERS = Integer.parseInt(FreyaHardCoreSettings.getProperty("MaxFreyaHcPlayers", "45"));
+			MIN_LEVEL_HC_PLAYERS = Integer.parseInt(FreyaHardCoreSettings.getProperty("MinLevelHcPlayers", "82"));
+			
+			//########################################################################################################//
+			//						FRINTEZZA PROPERTIES
+			//########################################################################################################//
+
+			L2Properties FrintezzaSettings = new L2Properties();
+			final File frintezza = new File(FRINTEZZA_CONFIG);
+			try (InputStream is = new FileInputStream(frintezza))
+			{
+				FrintezzaSettings.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Erro ao ler o arquivo Frintezza Properties!", e);
+			}
+			FRINTEZZA_MINLEVEL = Integer.parseInt(FrintezzaSettings.getProperty("FrintezzaMinLevel", "80"));
+			FRINTEZZA_MINPLAYERS = Integer.parseInt(FrintezzaSettings.getProperty("FrintezzaMinPlayers", "36"));
+			FRINTEZZA_MAXPLAYERS = Integer.parseInt(FrintezzaSettings.getProperty("FrintezzaMaxPlayers", "45"));
+			
+			//########################################################################################################//
+			//						ORFEM PROPERTIES
+			//########################################################################################################//
+
+			L2Properties OrfenSettings = new L2Properties();
+			final File orfen = new File(ORFEN_CONFIG);
+			try (InputStream is = new FileInputStream(orfen))
+			{
+				OrfenSettings.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Erro ao ler o arquivo Orfen Properties!", e);
+			}
+						
+			Interval_Of_Orfen_Spawn = Integer.parseInt(OrfenSettings.getProperty("IntervalOfOrfenSpawn", "48"));
+			if ((Interval_Of_Orfen_Spawn < 1) || (Interval_Of_Orfen_Spawn > 480))
+			{
+				Interval_Of_Orfen_Spawn = 48;
+			}
+			Interval_Of_Orfen_Spawn = Interval_Of_Orfen_Spawn * 3600000;
+			
+			Random_Of_Orfen_Spawn = Integer.parseInt(OrfenSettings.getProperty("RandomOfOrfenSpawn", "20"));
+			if ((Random_Of_Orfen_Spawn < 1) || (Random_Of_Orfen_Spawn > 192))
+			{
+				Random_Of_Orfen_Spawn = 20;
+			}
+			Random_Of_Orfen_Spawn = Random_Of_Orfen_Spawn * 3600000;
+			
+			//########################################################################################################//
+			//						QUEEN ANT PROPERTIES
+			//########################################################################################################//
+
+			L2Properties QueenSettings = new L2Properties();
+			final File queen = new File(QUEEN_ANT_CONFIG);
+			try (InputStream is = new FileInputStream(queen))
+			{
+				QueenSettings.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Erro ao ler o arquivo Queen Ant Properties!", e);
+			}
+						
+			Interval_Of_QueenAnt_Spawn = Integer.parseInt(QueenSettings.getProperty("IntervalOfQueenAntSpawn", "36"));
+			if ((Interval_Of_QueenAnt_Spawn < 1) || (Interval_Of_QueenAnt_Spawn > 480))
+			{
+				Interval_Of_QueenAnt_Spawn = 36;
+			}
+			Interval_Of_QueenAnt_Spawn = Interval_Of_QueenAnt_Spawn * 3600000;
+			
+			Random_Of_QueenAnt_Spawn = Integer.parseInt(QueenSettings.getProperty("RandomOfQueenAntSpawn", "17"));
+			if ((Random_Of_QueenAnt_Spawn < 1) || (Random_Of_QueenAnt_Spawn > 192))
+			{
+				Random_Of_QueenAnt_Spawn = 17;
+			}
+			Random_Of_QueenAnt_Spawn = Random_Of_QueenAnt_Spawn * 3600000;
+			
+			//########################################################################################################//
+			//						SAILREN PROPERTIES
+			//########################################################################################################//
+
+			L2Properties SailrenSettings = new L2Properties();
+			final File sailren = new File(SAILREN_CONFIG);
+			try (InputStream is = new FileInputStream(sailren))
+			{
+				SailrenSettings.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Erro ao ler o arquivo Sailren Properties!", e);
+			}
+						
+			Interval_Of_Sailren_Spawn = Integer.parseInt(SailrenSettings.getProperty("IntervalOfSailrenSpawn", "12"));
+			if ((Interval_Of_Sailren_Spawn < 1) || (Interval_Of_Sailren_Spawn > 192))
+			{
+				Interval_Of_Sailren_Spawn = 12;
+			}
+			Interval_Of_Sailren_Spawn = Interval_Of_Sailren_Spawn * 3600000;
+			
+			Random_Of_Sailren_Spawn = Integer.parseInt(SailrenSettings.getProperty("RandomOfSailrenSpawn", "24"));
+			if ((Random_Of_Sailren_Spawn < 1) || (Random_Of_Sailren_Spawn > 192))
+			{
+				Random_Of_Sailren_Spawn = 24;
+			}
+			Random_Of_Sailren_Spawn = Random_Of_Sailren_Spawn * 3600000;
+			
+			//########################################################################################################//
+			//						SEE OF INFINITY PROPERTIES
+			//########################################################################################################//
+
+			L2Properties SeeOfInfinitySettings = new L2Properties();
+			final File seeofinfinity = new File(SEE_OF_INFINITY_CONFIG);
+			try (InputStream is = new FileInputStream(seeofinfinity))
+			{
+				SeeOfInfinitySettings.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Erro ao ler o arquivo See Of Infinity Properties!", e);
+			}
+			SOI_EKIMUS_KILL_COUNT = Integer.parseInt(SeeOfInfinitySettings.getProperty("EkimusKillCount", "5"));
+			EROSION_ATTACK_MIN_PLAYERS = Integer.parseInt(SeeOfInfinitySettings.getProperty("MinEroAttPlayers", "18"));
+			EROSION_ATTACK_MAX_PLAYERS = Integer.parseInt(SeeOfInfinitySettings.getProperty("MaxEroAttPlayers", "27"));
+			EROSION_DEFENCE_MIN_PLAYERS = Integer.parseInt(SeeOfInfinitySettings.getProperty("MinEroDefPlayers", "18"));
+			EROSION_DEFENCE_MAX_PLAYERS = Integer.parseInt(SeeOfInfinitySettings.getProperty("MaxEroDefPlayers", "27"));
+			HEART_ATTACK_MIN_PLAYERS = Integer.parseInt(SeeOfInfinitySettings.getProperty("MinHeaAttPlayers", "18"));
+			HEART_ATTACK_MAX_PLAYERS = Integer.parseInt(SeeOfInfinitySettings.getProperty("MaxHeaAttPlayers", "27"));
+			HEART_DEFENCE_MIN_PLAYERS = Integer.parseInt(SeeOfInfinitySettings.getProperty("MinHeaDefPlayers", "18"));
+			HEART_DEFENCE_MAX_PLAYERS = Integer.parseInt(SeeOfInfinitySettings.getProperty("MaxHeaDefPlayers", "27"));
+			
+			//########################################################################################################//
+			//						VALAKAS PROPERTIES
+			//########################################################################################################//
+			
+			L2Properties ValakasSettings = new L2Properties();
+			final File valakas = new File(VALAKAS_CONFIG);
+			try (InputStream is = new FileInputStream(valakas))
+			{
+				ValakasSettings.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Erro ao ler o arquivo Valakas Properties!", e);
+			}
+			
+			Valakas_Wait_Time = Integer.parseInt(ValakasSettings.getProperty("ValakasWaitTime", "30"));
+			if ((Valakas_Wait_Time < 3) || (Valakas_Wait_Time > 60))
+			{
+				Valakas_Wait_Time = 30;
+			}
+			Valakas_Wait_Time = Valakas_Wait_Time * 60000;
+						
+			Interval_Of_Valakas_Spawn = Integer.parseInt(ValakasSettings.getProperty("IntervalOfValakasSpawn", "264"));
+			if ((Interval_Of_Valakas_Spawn < 1) || (Interval_Of_Valakas_Spawn > 480))
+			{
+				Interval_Of_Valakas_Spawn = 264;
+			}
+			Interval_Of_Valakas_Spawn = Interval_Of_Valakas_Spawn * 3600000;
+			
+			Random_Of_Valakas_Spawn = Integer.parseInt(ValakasSettings.getProperty("RandomOfValakasSpawn", "72"));
+			if ((Random_Of_Valakas_Spawn < 1) || (Random_Of_Valakas_Spawn > 192))
+			{
+				Random_Of_Valakas_Spawn = 72;
+			}
+			Random_Of_Valakas_Spawn = Random_Of_Valakas_Spawn * 3600000;
+			
+			//########################################################################################################//
+			//						ZAKEN PROPERTIES
+			//########################################################################################################//
+
+			L2Properties ZakenSettings = new L2Properties();
+			final File zaken = new File(ZAKEN_CONFIG);
+			try (InputStream is = new FileInputStream(zaken))
+			{
+				ZakenSettings.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Erro ao ler o arquivo Zaken Properties!", e);
+			}
+						
+			ZAKEN_MINLEVEL_DAYTIME = Integer.parseInt(ZakenSettings.getProperty("ZakenMinLevelDaytime", "55"));
+			ZAKEN_MINLEVEL_DAYTIME83 = Integer.parseInt(ZakenSettings.getProperty("ZakenMinLevelDaytime83", "78"));
+			ZAKEN_MINMEMBERS_DAYTIME = Integer.parseInt(ZakenSettings.getProperty("ZakenMinMembersDaytime", "9"));
+			ZAKEN_MINMEMBERS_NIGHTTIME = Integer.parseInt(ZakenSettings.getProperty("ZakenMinMembersNighttime", "72"));
+			ZAKEN_MAXMEMBERS_DAYTIME = Integer.parseInt(ZakenSettings.getProperty("ZakenMaxMembersDaytime", "27"));
+			ZAKEN_MAXMEMBERS_NIGHTTIME = Integer.parseInt(ZakenSettings.getProperty("ZakenMaxMembersNighttime", "450"));
 			
 			//########################################################################################################//
 			//						Load Feature L2Properties file (if exists)										  //
