@@ -70,7 +70,7 @@ public class User implements IVoicedCommandHandler
                           counter++;
                   }
           }
-          String realOnline = "<tr><td fixwidth=11></td><td FIXWIDTH=280>Players Active</td><td FIXWIDTH=470><font color=FF6600>" + counter + "</font></td></tr>" + "<tr><td fixwidth=11></td><td FIXWIDTH=280>Players Shops</td><td FIXWIDTH=470><font color=FF6600>" + (L2World.getInstance().getAllPlayersCount() - counter) + "</font></td></tr>";
+          String realOnline = "<tr><td fixwidth=11></td><td FIXWIDTH=280>Players Ativos</td><td FIXWIDTH=470><font color=FF6600>" + counter + "</font></td></tr>" + "<tr><td fixwidth=11></td><td FIXWIDTH=280>Players com Shops</td><td FIXWIDTH=470><font color=FF6600>" + (L2World.getInstance().getAllPlayersCount() - counter) + "</font></td></tr>";
           return realOnline;
        }
       

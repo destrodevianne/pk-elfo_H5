@@ -27,7 +27,17 @@ import king.server.gameserver.network.serverpackets.ExShowScreenMessage;
 
 public class UserActions implements IVoicedCommandHandler
 {
-    public static final String[] VOICED_COMMANDS = { "effecton" , "effectoff", "tradeoff", "tradeon" ,"expoff" , "expon", "pmoff", "pmon" };
+    public static final String[] VOICED_COMMANDS = 
+    	{ 
+    	"effecton" , 
+    	"effectoff", 
+    	"tradeoff", 
+    	"tradeon" ,
+    	"expoff" , 
+    	"expon", 
+    	"pmoff", 
+    	"pmon" 
+    	};
       
        @Override
        public boolean useVoicedCommand(String command, L2PcInstance activeChar, String target)

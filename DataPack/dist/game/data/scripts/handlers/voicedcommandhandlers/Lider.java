@@ -8,7 +8,10 @@ import king.server.gameserver.model.actor.instance.L2PcInstance;
 
 public class Lider implements IVoicedCommandHandler
 {
-        private static final String[] VOICED_COMMANDS = { "lider"};
+        private static final String[] VOICED_COMMANDS = 
+        	{ 
+        	"lider"
+        	};
         
         @Override
         public boolean useVoicedCommand(String command, L2PcInstance activeChar, String target)

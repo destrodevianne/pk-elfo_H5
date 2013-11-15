@@ -217,8 +217,6 @@ public final class Config
 	public static int DOUBLE_PC_BANG_POINTS_CHANCE;
 	public static double PC_BANG_POINT_RATE;
 	public static boolean RANDOM_PC_BANG_POINT;
-	public static boolean Boost_EXP_COMMAND;
-	public static boolean CMD_TRADE;
 	public static boolean CMD_ONLINE;
 	public static boolean CMD_FAKE;
 	public static int FAKE_PLAYERS;
@@ -1393,11 +1391,7 @@ public final class Config
 	// titulo muda ao entrar em um clan
 	// ----------------------------------------------------------------------------------------------------//
 	public static boolean CLAN_NAME_AS_TITLE;
-	// ----------------------------------------------------------------------------------------------------//
-	//.pmon/.pmoff
-	// ----------------------------------------------------------------------------------------------------//
-    public static boolean PM_OFF;
-    //########################################################################################################//
+	//########################################################################################################//
 	//						GRANSDBOSS PROPERTIES
     //########################################################################################################//
 	public static int Antharas_Wait_Time;
@@ -2337,7 +2331,6 @@ public final class Config
 					PC_BANG_POINT_RATE = 1;
 				}
 				RANDOM_PC_BANG_POINT = Boolean.parseBoolean(PkelfoSettings.getProperty("AcquisitionPointsRandom", "false"));
-				Boost_EXP_COMMAND = Boolean.parseBoolean(PkelfoSettings.getProperty("SpExpCommand", "True"));
 				CMD_TRADE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandTrade", "True"));
 				CMD_ONLINE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandOnline", "True"));
 				CMD_FAKE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandFakePlayer", "True"));
@@ -3259,7 +3252,6 @@ public final class Config
 			MAX_ENCHANT_LEVEL_PROTECT = Integer.parseInt(PkelfoSettings.getProperty("MaxEnchantLevelProtect", "30"));
 			ENCHANT_PROTECT_PUNISH = Integer.parseInt(PkelfoSettings.getProperty("EnchantProtectPunish", "60"));
 			CLAN_NAME_AS_TITLE = Boolean.parseBoolean(Character.getProperty("ClanTitle", "True"));
-			PM_OFF = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandPmOff", "True"));
 			// MMO
 			L2Properties mmoSettings = new L2Properties();
 			final File mmo = new File(MMO_CONFIG_FILE);

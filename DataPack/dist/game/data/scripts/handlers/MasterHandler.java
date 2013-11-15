@@ -327,13 +327,10 @@ import handlers.voicedcommandhandlers.Repair;
 import handlers.voicedcommandhandlers.Siege;
 import handlers.voicedcommandhandlers.Teleport;
 import handlers.voicedcommandhandlers.StatsVCmd;
-import handlers.voicedcommandhandlers.TradeCommands;
 import handlers.voicedcommandhandlers.TWGm;
 import handlers.voicedcommandhandlers.TvTRoundVoicedInfo;
 import handlers.voicedcommandhandlers.TvTVoiced;
-import handlers.voicedcommandhandlers.VoiceExperience;
 import handlers.voicedcommandhandlers.VoiceInfo;
-import handlers.voicedcommandhandlers.Pmoff;
 import handlers.voicedcommandhandlers.Wedding;
 import handlers.voicedcommandhandlers.UserActions;
 import handlers.voicedcommandhandlers.User;
@@ -648,7 +645,6 @@ public class MasterHandler
 			OpenAtod.class,
 			TWGm.class,
 			Repair.class,
-			VoiceExperience.class,
 			BadBuffShield.class,
 			Siege.class,
 			Teleport.class,
@@ -657,8 +653,6 @@ public class MasterHandler
 			UserActions.class,
 			Lider.class,
 			Logout.class,
-			(Config.PM_OFF ? Pmoff.class : null),
-			(Config.CMD_TRADE ? TradeCommands.class : null),
 			(Config.CMD_ONLINE ? Online.class : null),
 			(Config.BOSS_STATS ? RaidBoosStatus.class : null),
 			(Config.ALLOW_REFUSE_BUFF ? RefuseBuff.class : null),
