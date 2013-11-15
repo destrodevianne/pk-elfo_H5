@@ -24,9 +24,11 @@ Adicionado Walkers em DV
 Ai's para áreas, mobs, bosses e Npcs
 cancel.java
 FIX nos itens: Jet Bike Mount Bracelet Pack e Jet Bike Mount Bracelet Pack - Event
-FX dos itens: Jet Bike Mount Bracelet 7-Day Pack e Jet Bike Mount Bracelet 7-Day Pack - Event
+FIX dos itens: Jet Bike Mount Bracelet 7-Day Pack e Jet Bike Mount Bracelet 7-Day Pack - Event
 FIX nos itens: Jet Bike Mount Bracelet 30-Day Pack e Jet Bike Mount Bracelet 30-Day Pack - Event
 FIX nos itens: Color Name Pack e Color Name Pack - Event
+FIX Skill 22276
+FIX Seed of Destruction doors
 
 ###############################################
 ################### EVENTOS ###################
@@ -82,8 +84,8 @@ Evento Last Hero
 //removevip <char_name> (retira vip do jogador)
 //banchat <nome do char> <tempo em minutos>
 //unbanchat <nome do char> <tempo em minutos>
-.tw_goto_ward
 //mass hero (da hero para todos online)
+.tw_goto_ward
 
 ###############################################
 ######## COMANDOS DE DONO DE CASTELO ##########
@@ -108,11 +110,8 @@ Evento Last Hero
 .lang (alterna entre os idiomas Inglês e Português)
 .online (mostra quantidade de jogadores online)
 .openatod
-.pmoff (desabilita o recebmento de PM) se habilitar o .user pode desabilitar este
-.pmon (habilita o recebmento de PM) se habilitar o .user pode desabilitar este
 .mypremium ( mostra data de términio do serviço de premium)
-.addpremium_1d (adquire premium por 1 dia)
-.addpremium_1w (adquire premium por 1 mês)
+.addpremium <dias>
 .grandboss (mostra se os Big Bosses estão vivos ou mortos)
 .refusebuff (bloqueia o recebimento de buff)
 .allowbuff (desbloqueia o recebimento de buff)
@@ -126,13 +125,9 @@ Evento Last Hero
 .up60 (Up do level 60 ao 70 em Wall of Argos)
 .up70 (Up do level 70 ao 80 em Ketra Orc Outpost)
 .up80 (Up acima do level 80 em Antharas' Lair)
-.tradeoff (desativa o recebimento de trade) se habilitar o .user pode desabilitar este
-.tradeon (ativa o recebimento de trade) se habilitar o .user pode desabilitar este
 .tvtjoin (registra no evento tvt)
 .tvtleave (retira registro do evento tvt)
 .tvt (mostra estatisticas do evento tvt)
-.expoff (desativa o ganho de XP e SP) se habilitar o .user pode desabilitar este
-.expon (ativa o ganho de XP e SP) se habilitar o .user pode desabilitar este
 .info (abre uma janela dentro do jogo mostrando informações do servidor)
 .engage (pede em casamento)
 .divorce (divorcia)
@@ -143,13 +138,30 @@ Evento Last Hero
 .lider (teleporta para o lider do seu clan)
 .logout (desloga imediatamente)
 .user (abre painel de usuario que contem, informacoes do servidor, rates e comandos de habilitar/desabilitar pm, trade e ganho de xp/sp)
+-----------------------------------------------------------------------------------------------------------
+# Os seguintes comandos foram transferidos para o painel do usuário acessivel atraves do comando .user :  #
+# 																										  #
+# comando .pmon/ .pmoff para habilitar/desabilitar PM 													  #
+# Comando .tradeon/.tradeoff para bloquear/desbloquear o envio de trade para o char 					  #
+# Comando .expon/.expoff para bloquear/desbloquear a xp													  #
+-----------------------------------------------------------------------------------------------------------
 
 ###############################################
 ##################### MOD #####################
 # Rewards for kill on TvT
 # PvP/PK Rewards
-ao dar Shift+Click em algum char ou npc ou monstro, mostrará todos items e status dele.
+# PvP Color System
 # Bandeiras de clan nos Npcs sem quest
+***Número Máximo de membros na party (nao ultrapassar 12, porque buga o servidor)
+***Community Board
+***Anuncio de deslogamento de AIOx 
+***Anuncio de logamento de AIOx
+***Anuncio de deslogamento de VIP 
+***Anuncio de logamento de VIP
+***Anuncio de deslogamento de Hero
+***Anuncio de logamento de Hero
+***Chat exclusivo para char AIOx
+ao dar Shift+Click em algum char ou npc ou monstro, mostrará todos items e status dele.
 Efeito de enchant rondom em todos os mobs e Npcs
 Efeito para char em modo de shop offline
 Balance Classe
@@ -161,7 +173,6 @@ Craft Leaderboard
 Fisherman Leaderboard
 PC Bang Points
 Prime Shop
-# PvP Color System
 Sistema de consumiveis infinitosSS, BSS e Arrows
 Fake online players
 Clan Full
@@ -171,24 +182,15 @@ Mod aviso quando um Raid Boss renascer
 Mod Evento de dança
 Clan halls conquistáveis
 comando /unstuck com skill configuravel
-***Número Máximo de membros na party (nao ultrapassar 12, porque buga o servidor)
 Novos char nobres
 Novos char herois
 Muda o nome dos Champions
 Cor do nome diferente para cada raca
 Mensagem diferente para cada raca
-***Chat exclusivo para char AIOx
 Painel de usuário com comandos
-***Anuncio de deslogamento de AIOx 
-***Anuncio de logamento de AIOx
-***Anuncio de deslogamento de VIP 
-***Anuncio de logamento de VIP
-***Anuncio de deslogamento de Hero
-***Anuncio de logamento de Hero
 Mod Efeito para AIOx
-# ao criar novo char ganha VIP por 7 dias (tem que arrumar)
-# ao criar novo char ganha AIOx por 7 dias (tem que arrumar)
-***Community Board
+Ao criar novo char ganha VIP por dias (configuravel)
+Ao criar novo char ganha AIOx por dias (configuravel)
 Adicionado Mod de Restart
 
 ###############################################
