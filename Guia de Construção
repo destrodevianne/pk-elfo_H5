@@ -102,6 +102,7 @@ Evento Last Hero
 
 ###############################################
 ################## COMANDOS ###################
+.event (serve para se registrar nos eventos do Phoenix engine)
 .deposit (troca 1kkk de adena por 1 God Bar)
 .withdraw (troca 1 God Bar por 1kkk de adena)
 .changepassword (troca senha da conta dentro do jogo)
@@ -160,6 +161,7 @@ Evento Last Hero
 ***Anuncio de logamento de VIP
 ***Anuncio de deslogamento de Hero
 ***Anuncio de logamento de Hero
+***Mensagem de boas vindas na tela para aio, vip e hero.
 ***Chat exclusivo para char AIOx
 ao dar Shift+Click em algum char ou npc ou monstro, mostrará todos items e status dele.
 Efeito de enchant rondom em todos os mobs e Npcs

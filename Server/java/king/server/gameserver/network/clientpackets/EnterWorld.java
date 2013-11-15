@@ -227,14 +227,14 @@ public class EnterWorld extends L2GameClientPacket
 			{
 			if (activeChar.getLevel() <= 2)
 			activeChar.setNoble(true);
-			activeChar.sendMessage("Parabens Agora Voce e Nobre!");
+			activeChar.sendMessage("Parabens Agora Voce e Nobre! "+activeChar.getName()+" ");
 			}
 
 		if (Config.ADD_HERO)
 			{
 			if (activeChar.getLevel() <= 2)
 			activeChar.setHero(true);
-			activeChar.sendMessage("Parabens Agora Voce e Hero!");
+			activeChar.sendMessage("Parabens Agora Voce e Hero! "+activeChar.getName()+" ");
 			}
 		
 		if (Config.ADD_VIP)
@@ -242,7 +242,7 @@ public class EnterWorld extends L2GameClientPacket
 			if (activeChar.getLevel() <= 2)			            
 			activeChar.setVip(true);
 			activeChar.setVipEndTime(Config.ADD_VIP_DAYS);
-			activeChar.sendMessage("Voce ganhou VIP por 7 dias!");
+			activeChar.sendMessage("Voce ganhou VIP! "+activeChar.getName()+" ");
 			}
 		
 		if (Config.ADD_AIO)
@@ -250,9 +250,9 @@ public class EnterWorld extends L2GameClientPacket
 			if (activeChar.getLevel() <= 2)
 			activeChar.setAio(true);
 			activeChar.setAioEndTime(Config.ADD_AIO_DAYS);
-			activeChar.sendMessage("Voce ganhou status de AIOx por 7 dias "+activeChar.getName()+" ");
+			activeChar.sendMessage("Voce ganhou status de AIOx "+activeChar.getName()+" ");
 			}
-
+		
 		if (Config.PROTECT_ENCHANT_ENABLE)
 		{
 			for (L2ItemInstance i : activeChar.getInventory().getItems())
@@ -599,6 +599,22 @@ public class EnterWorld extends L2GameClientPacket
 			if (activeChar.isAio())
 			{
 				activeChar.sendPacket(new ExShowScreenMessage("Voce possui Status de AIOx ", 10000));
+			}
+		}
+		
+		if (Config.ENABLE_VIP_MESSAGE);
+		{
+			if (activeChar.isVip())
+			{
+				activeChar.sendPacket(new ExShowScreenMessage("Seja bem vindo e obrigado por ajudar o Servidor PkElfo a crescer ", 10000));
+			}
+		}
+		
+		if (Config.ENABLE_HERO_MESSAGE);
+		{
+			if (activeChar.isHero())
+			{
+				activeChar.sendPacket(new ExShowScreenMessage("Seja bem vindo Heroi ", 10000));
 			}
 		}
 		

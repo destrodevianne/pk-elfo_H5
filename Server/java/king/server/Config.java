@@ -130,12 +130,15 @@ public final class Config
 	public static boolean ENABLE_AIO_CHAT;
 	public static boolean ANNOUNCE_VIP_CONECT;
 	public static boolean ANNOUNCE_VIP_DESCONECT;
+	public static boolean ENABLE_VIP_MESSAGE;
 	public static boolean ANNOUNCE_HERO_CONECT;
 	public static boolean ANNOUNCE_HERO_DESCONECT;
+	public static boolean ENABLE_HERO_MESSAGE;
 	public static boolean ADD_VIP;
 	public static int ADD_VIP_DAYS;
 	public static boolean ADD_AIO;
 	public static int ADD_AIO_DAYS;
+
 	//########################################################################################################//
 	//						AUTORESTART PROPERTIES
 	//########################################################################################################//
@@ -217,6 +220,7 @@ public final class Config
 	public static int DOUBLE_PC_BANG_POINTS_CHANCE;
 	public static double PC_BANG_POINT_RATE;
 	public static boolean RANDOM_PC_BANG_POINT;
+	public static boolean Boost_EXP_COMMAND;
 	public static boolean CMD_ONLINE;
 	public static boolean CMD_FAKE;
 	public static int FAKE_PLAYERS;
@@ -2331,7 +2335,7 @@ public final class Config
 					PC_BANG_POINT_RATE = 1;
 				}
 				RANDOM_PC_BANG_POINT = Boolean.parseBoolean(PkelfoSettings.getProperty("AcquisitionPointsRandom", "false"));
-				CMD_TRADE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandTrade", "True"));
+				Boost_EXP_COMMAND = Boolean.parseBoolean(PkelfoSettings.getProperty("SpExpCommand", "True"));
 				CMD_ONLINE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandOnline", "True"));
 				CMD_FAKE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandFakePlayer", "True"));
 				FAKE_PLAYERS = Integer.parseInt(PkelfoSettings.getProperty("NumberOfFakes", "1"));
@@ -2777,11 +2781,13 @@ public final class Config
 			ALT_AIO_EFFECT_ESPECIAL = Boolean.parseBoolean(AioSettings.getProperty("AllowAioEffectEspecial", "True"));
 			ANNOUNCE_AIOX_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxDesconect", "False"));
 			ANNOUNCE_AIOX_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxConect", "False"));
-			ENABLE_AIOX_MESSAGE = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxLogon", "False"));
+			ENABLE_AIOX_MESSAGE = Boolean.parseBoolean(AioSettings.getProperty("AioMensagem", "False"));
 			ANNOUNCE_VIP_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceVipDesconect", "False"));
 			ANNOUNCE_VIP_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceVipConect", "False"));
+			ENABLE_VIP_MESSAGE = Boolean.parseBoolean(AioSettings.getProperty("VipMensagem", "False"));
 			ANNOUNCE_HERO_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroDesconect", "False"));
 			ANNOUNCE_HERO_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroConect", "False"));
+			ENABLE_HERO_MESSAGE = Boolean.parseBoolean(AioSettings.getProperty("HeroMensagem", "False"));
 			
 			//############################  SISTEMA DE AIOX E VIP POR DIAS ##########################################//
 			ADD_VIP = Boolean.parseBoolean(AioSettings.getProperty("NewCharacterIsVip", "False"));
