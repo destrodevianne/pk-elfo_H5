@@ -69,7 +69,7 @@ public final class Config
     public static final String ORFEN_CONFIG = "./config/BigBosses/Orfen.properties";
     public static final String QUEEN_ANT_CONFIG = "./config/BigBosses/QueenAnt.properties";
     public static final String SAILREN_CONFIG = "./config/BigBosses/Sailren.properties";
-	public static final String TIAT_CONFIG = "./config/BigBosses/SeedOfInfinity";
+	public static final String SEE_OF_INFINITY_CONFIG = "./config/BigBosses/SeedOfInfinity";
 	public static final String VALAKAS_CONFIG = "./config/BigBosses/Valakas.properties";
     public static final String ZAKEN_CONFIG = "./config/BigBosses/Zaken.properties";
     // ----------------------------------------------------------------------------------------------------//
