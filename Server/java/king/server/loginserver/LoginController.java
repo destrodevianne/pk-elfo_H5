@@ -52,8 +52,7 @@ import king.server.util.crypt.ScrambledKeyPair;
 import king.server.util.lib.Log;
 
 /**
- * This class ...
- * @version $Revision: 1.7.4.3 $ $Date: 2005/03/27 15:30:09 $
+ * PkElfo
  */
 public class LoginController
 {

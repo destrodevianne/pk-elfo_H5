@@ -19,8 +19,7 @@
 package king.server.loginserver;
 
 /**
- * This class ...
- * @version $Revision: 1.2.4.2 $ $Date: 2005/03/27 15:30:09 $
+ * PkElfo
  */
 
 public class HackingException extends Exception

@@ -34,7 +34,7 @@ import king.server.loginserver.network.serverpackets.Init;
 import king.server.util.IPv4Filter;
 
 /**
- * @author KenM
+ * PkElfo
  */
 public class SelectorHelper implements IMMOExecutor<L2LoginClient>, IClientFactory<L2LoginClient>, IAcceptFilter
 {

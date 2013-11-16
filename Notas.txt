@@ -1,0 +1,2 @@
+Parei de traduzir em Server/java/king/server/loginserver/FloodProtectedListerner.java
+

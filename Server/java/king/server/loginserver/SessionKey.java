@@ -27,7 +27,7 @@ import king.server.Config;
  * <p>
  * A SessionKey is made up of two 8 bytes keys. One is send in the {@link king.server.loginserver.network.serverpackets.LoginOk#LoginOk} packet and the other is sent in {@link king.server.loginserver.network.serverpackets.PlayOk#PlayOk}
  * </p>
- * @author -Wooden-
+ * PkElfo
  */
 public class SessionKey
 {

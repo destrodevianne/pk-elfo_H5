@@ -49,7 +49,7 @@ import king.server.util.Rnd;
 
 /**
  * The Class GameServerTable loads the game server names and initialize the game server tables.
- * @author KenM, Zoey76
+ * PkElfo
  */
 public final class GameServerTable
 {

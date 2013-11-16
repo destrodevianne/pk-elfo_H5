@@ -31,7 +31,7 @@ import javolution.util.FastMap;
 import king.server.Config;
 
 /**
- * @author -Wooden-
+ * PkElfo
  */
 public abstract class FloodProtectedListener extends Thread
 {
@@ -152,7 +152,7 @@ public abstract class FloodProtectedListener extends Thread
 		}
 		else
 		{
-			_log.warning("Removing a flood protection for a GameServer that was not in the connection map??? :" + ip);
+			_log.warning("Remocao de uma protecao contra inundacoes para um GameServer que nao estava na conexao map??? :" + ip);
 		}
 	}
 	

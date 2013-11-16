@@ -45,8 +45,7 @@ import king.server.util.crypt.NewCrypt;
 import king.server.util.network.BaseSendablePacket;
 
 /**
- * @author -Wooden-
- * @author KenM
+ * PkElfo
  */
 public class GameServerThread extends Thread
 {
@@ -97,7 +96,7 @@ public class GameServerThread extends Thread
 				
 				if ((lengthHi < 0) || _connection.isClosed())
 				{
-					_log.finer("LoginServerThread: Login terminated the connection.");
+					_log.finer("LoginServerThread: Login terminada a conexao.");
 					break;
 				}
 				

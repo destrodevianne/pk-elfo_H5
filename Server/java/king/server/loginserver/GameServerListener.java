@@ -28,7 +28,7 @@ import javolution.util.FastList;
 import king.server.Config;
 
 /**
- * @author KenM
+ * PkElfo
  */
 public class GameServerListener extends FloodProtectedListener
 {

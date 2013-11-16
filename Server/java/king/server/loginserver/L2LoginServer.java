@@ -44,7 +44,7 @@ import king.server.loginserver.network.L2LoginPacketHandler;
 import king.server.status.Status;
 
 /**
- * @author KenM
+ * PkElfo
  */
 public final class L2LoginServer
 {

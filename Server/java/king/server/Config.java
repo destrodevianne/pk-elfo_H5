@@ -108,6 +108,7 @@ public final class Config
 	public static final String TELNET_FILE = "./config/Telnet.properties";
 	public static final String TW_CONFIGURATION_FILE = "./config/TerritoryWar.properties";	
 	public static final String USER_CONFIG_FILE = "./config/User.properties";
+	public static final String VIP_CONFIG_FILE = "./config/VIP/Vip.properties";
 	//########################################################################################################//
 	//						AIOx PROPERTIES
 	//########################################################################################################//
@@ -127,14 +128,9 @@ public final class Config
 	public static boolean ALLOW_AIO_ITEM;
 	public static int AIO_ITEMID;
 	public static boolean ENABLE_AIO_CHAT;
-	public static boolean ANNOUNCE_VIP_CONECT;
-	public static boolean ANNOUNCE_VIP_DESCONECT;
-	public static boolean ENABLE_VIP_MESSAGE;
 	public static boolean ANNOUNCE_HERO_CONECT;
 	public static boolean ANNOUNCE_HERO_DESCONECT;
 	public static boolean ENABLE_HERO_MESSAGE;
-	public static boolean ADD_VIP;
-	public static int ADD_VIP_DAYS;
 	public static boolean ADD_AIO;
 	public static int ADD_AIO_DAYS;
 
@@ -1117,6 +1113,26 @@ public final class Config
 	public static boolean COMMAND_LIDER;
 	public static boolean COMMAND_LOGOUT;
 	//########################################################################################################//
+	//						VIP PROPERTIES
+	//########################################################################################################//
+	public static boolean ADD_VIP;
+	public static int ADD_VIP_DAYS;
+	public static boolean ENABLE_VIP_MESSAGE;
+	public static boolean ANNOUNCE_VIP_CONECT;
+	public static boolean ANNOUNCE_VIP_DESCONECT;
+	// ----------------------------------------------------------------------------------------------------//
+	// Vip System
+	// ----------------------------------------------------------------------------------------------------//
+	public static boolean ALLOW_VIP_NCOLOR;
+	public static int VIP_NCOLOR;
+	public static boolean ALLOW_VIP_TCOLOR;
+	public static int VIP_TCOLOR;
+	public static boolean ALLOW_VIP_XPSP;
+	public static int VIP_XP;
+	public static int VIP_SP;
+	public static boolean ENABLE_VIP_SYSTEM;
+	public static Map<Integer, Integer> VIP_SKILLS;
+	//########################################################################################################//
 	//						NPC PROPERTIES
 	//########################################################################################################//
 	public static boolean ANNOUNCE_MAMMON_SPAWN;
@@ -1368,18 +1384,6 @@ public final class Config
 	public static int NORMAL_CONNECTION_TIME;
 	public static int FAST_CONNECTION_TIME;
 	public static int MAX_CONNECTION_PER_IP;
-	// ----------------------------------------------------------------------------------------------------//
-	// Vip System
-	// ----------------------------------------------------------------------------------------------------//
-	public static boolean ALLOW_VIP_NCOLOR;
-	public static int VIP_NCOLOR;
-	public static boolean ALLOW_VIP_TCOLOR;
-	public static int VIP_TCOLOR;
-	public static boolean ALLOW_VIP_XPSP;
-	public static int VIP_XP;
-	public static int VIP_SP;
-	public static boolean ENABLE_VIP_SYSTEM;
-	public static Map<Integer, Integer> VIP_SKILLS;
 	// ----------------------------------------------------------------------------------------------------//
 	// Comando de Teleporte para areas de UpLevel
 	// ----------------------------------------------------------------------------------------------------//
@@ -2764,6 +2768,65 @@ public final class Config
             COMMAND_LIDER = Boolean.parseBoolean(UserSettings.getProperty("CommandLider", "False"));
             COMMAND_LOGOUT = Boolean.parseBoolean(UserSettings.getProperty("CommandLogout", "False"));
             
+			//############################  VIP PROPERTIES  ###########################################################//
+
+			L2Properties VipSettings = new L2Properties();
+			final File vip = new File(VIP_CONFIG_FILE);
+			try (InputStream is = new FileInputStream(vip))
+			{
+				VipSettings.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Erro ao ler o arquivo VIP Properties!", e);
+			}
+				
+			//############################  SISTEMA DE VIP ############################################################//
+			ALLOW_VIP_NCOLOR = Boolean.parseBoolean(VipSettings.getProperty("AllowVipNameColor", "True"));
+			VIP_NCOLOR = Integer.decode("0x" + VipSettings.getProperty("VipNameColor", "0088FF"));
+			ALLOW_VIP_TCOLOR = Boolean.parseBoolean(VipSettings.getProperty("AllowVipTitleColor", "True"));
+			VIP_TCOLOR = Integer.decode("0x" + VipSettings.getProperty("VipTitleColor", "0088FF"));
+			ALLOW_VIP_XPSP = Boolean.parseBoolean(VipSettings.getProperty("AllowVipMulXpSp", "True"));
+			VIP_XP = Integer.parseInt(VipSettings.getProperty("VipMulXp", "2"));
+			VIP_SP = Integer.parseInt(VipSettings.getProperty("VipMulSp", "2"));
+			ENABLE_VIP_SYSTEM = Boolean.parseBoolean(VipSettings.getProperty("EnableVipSystem", "True"));
+			if(ENABLE_VIP_SYSTEM) //create map if system is enabled
+			{
+				String[] VipSkillsSplit = VipSettings.getProperty("VipSkills", "").split(";");
+				VIP_SKILLS = new FastMap<>(VipSkillsSplit.length);
+				for (String skill : VipSkillsSplit)
+				{
+					String[] skillSplit = skill.split(",");
+					if (skillSplit.length != 2)
+					{
+						System.out.println("[Vip System]: cxonfiguracao invalida do Vip.properties -> VipSkills \"" + skill + "\"");
+                                                       }
+					else
+					{
+						try
+						{
+							VIP_SKILLS.put(Integer.parseInt(skillSplit[0]), Integer.parseInt(skillSplit[1]));
+						}
+						catch (NumberFormatException nfe)
+						{
+							if (!skill.equals(""))
+							{
+								System.out.println("[Vip System]: invalid config property in L2JWarsCustom.properties -> VipSkills \"" + skillSplit[0] + "\"" + skillSplit[1]);
+							}
+						}
+					}
+				}
+			}
+			
+			//############################  Anuncio de VIP  ###########################################################//
+			ANNOUNCE_VIP_DESCONECT = Boolean.parseBoolean(VipSettings.getProperty("AnnounceVipDesconect", "False"));
+			ANNOUNCE_VIP_CONECT = Boolean.parseBoolean(VipSettings.getProperty("AnnounceVipConect", "False"));
+			ENABLE_VIP_MESSAGE = Boolean.parseBoolean(VipSettings.getProperty("VipMensagem", "False"));
+			
+			//############################  Sistema de vip por dias ###################################################//
+			ADD_VIP = Boolean.parseBoolean(VipSettings.getProperty("NewCharacterIsVip", "False"));
+			ADD_VIP_DAYS = Integer.parseInt(VipSettings.getProperty("VipEnterDays", "7"));
+			
 			//############################  AIOX PROPERTIES  ##########################################################//
 			L2Properties AioSettings = new L2Properties();
 			final File aio = new File(AIO_CONFIG_FILE);
@@ -2776,25 +2839,20 @@ public final class Config
 				_log.log(Level.SEVERE, "Error while loading AIO settings!", e);
 			}
 
-			//############################  ANUNCIO DE LOGE E DESLOGE DE AIOX VIP E HERO ############################//
+			//############################  ANUNCIO DE LOGE E DESLOGE DE AIOX E HERO ############################//
 			ALT_AIO_EFFECT_ESPECIAL = Boolean.parseBoolean(AioSettings.getProperty("AllowAioEffectEspecial", "True"));
 			ANNOUNCE_AIOX_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxDesconect", "False"));
 			ANNOUNCE_AIOX_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxConect", "False"));
 			ENABLE_AIOX_MESSAGE = Boolean.parseBoolean(AioSettings.getProperty("AioMensagem", "False"));
-			ANNOUNCE_VIP_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceVipDesconect", "False"));
-			ANNOUNCE_VIP_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceVipConect", "False"));
-			ENABLE_VIP_MESSAGE = Boolean.parseBoolean(AioSettings.getProperty("VipMensagem", "False"));
 			ANNOUNCE_HERO_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroDesconect", "False"));
 			ANNOUNCE_HERO_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroConect", "False"));
 			ENABLE_HERO_MESSAGE = Boolean.parseBoolean(AioSettings.getProperty("HeroMensagem", "False"));
 			
-			//############################  SISTEMA DE AIOX E VIP POR DIAS ##########################################//
-			ADD_VIP = Boolean.parseBoolean(AioSettings.getProperty("NewCharacterIsVip", "False"));
-			ADD_VIP_DAYS = Integer.parseInt(AioSettings.getProperty("VipEnterDays", "7"));
+			//############################  SISTEMA DE AIOX POR DIAS ############################################//
 			ADD_AIO = Boolean.parseBoolean(AioSettings.getProperty("NewCharacterIsAio", "False"));
 			ADD_AIO_DAYS = Integer.parseInt(AioSettings.getProperty("AIOEnterDays", "7"));
 			
-			//############################  SISTEMA DE AIOX BUFFER ##################################################//
+			//############################  SISTEMA DE AIOX BUFFER ##############################################//
 			ENABLE_AIO_SYSTEM = Boolean.parseBoolean(AioSettings.getProperty("EnableAioSystem", "true"));
 			ALLOW_AIO_NCOLOR = Boolean.parseBoolean(AioSettings.getProperty("AllowAioNameColor", "true"));
 			AIO_NCOLOR = Integer.decode("0x" + AioSettings.getProperty("AioNameColor", "000000"));
@@ -3214,42 +3272,6 @@ public final class Config
 			
 			IS_TELNET_ENABLED = Boolean.parseBoolean(telnetSettings.getProperty("EnableTelnet", "false"));
 
-			ALLOW_VIP_NCOLOR = Boolean.parseBoolean(PkelfoSettings.getProperty("AllowVipNameColor", "True"));
-			VIP_NCOLOR = Integer.decode("0x" + PkelfoSettings.getProperty("VipNameColor", "0088FF"));
-			ALLOW_VIP_TCOLOR = Boolean.parseBoolean(PkelfoSettings.getProperty("AllowVipTitleColor", "True"));
-			VIP_TCOLOR = Integer.decode("0x" + PkelfoSettings.getProperty("VipTitleColor", "0088FF"));
-			ALLOW_VIP_XPSP = Boolean.parseBoolean(PkelfoSettings.getProperty("AllowVipMulXpSp", "True"));
-			VIP_XP = Integer.parseInt(PkelfoSettings.getProperty("VipMulXp", "2"));
-			VIP_SP = Integer.parseInt(PkelfoSettings.getProperty("VipMulSp", "2"));
-			ENABLE_VIP_SYSTEM = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableVipSystem", "True"));
-			if(ENABLE_VIP_SYSTEM) //create map if system is enabled
-			{
-				String[] VipSkillsSplit = PkelfoSettings.getProperty("VipSkills", "").split(";");
-				VIP_SKILLS = new FastMap<>(VipSkillsSplit.length);
-				for (String skill : VipSkillsSplit)
-				{
-					String[] skillSplit = skill.split(",");
-					if (skillSplit.length != 2)
-					{
-						System.out.println("[Vip System]: invalid config property in L2JWarsCustom.properties -> VipSkills \"" + skill + "\"");
-                                                       }
-					else
-					{
-						try
-						{
-							VIP_SKILLS.put(Integer.parseInt(skillSplit[0]), Integer.parseInt(skillSplit[1]));
-						}
-						catch (NumberFormatException nfe)
-						{
-							if (!skill.equals(""))
-							{
-								System.out.println("[Vip System]: invalid config property in L2JWarsCustom.properties -> VipSkills \"" + skillSplit[0] + "\"" + skillSplit[1]);
-							}
-						}
-					}
-				}
-			}
-				
 			// Comando de Teleporte para areas de UpLevel
 			ALLOW_TELEPORT_VOICECOMMAND = Boolean.parseBoolean(PkelfoSettings.getProperty("UpLevel", "True"));
 			//Enchant protect
