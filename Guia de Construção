@@ -194,6 +194,7 @@ Mod Efeito para AIOx
 Ao criar novo char ganha VIP por dias (configuravel)
 Ao criar novo char ganha AIOx por dias (configuravel)
 Adicionado Mod de Restart
+Adicionado Multikill Announcer With Sounds
 
 ###############################################
 ################## PROTECOES ##################
@@ -215,6 +216,7 @@ Npc Delevar (diminuir level do char) - ID 36601
 Npc NoblesseManager - ID 49296
 Npc Comprar Bracelete - ID 30098
 Npc Top PvpPk - ID 36602
+Npc Safe Enchant +30 - ID 36609
 
 ###############################################
 ############## SYSTEM EXCLUSIVA ###############
