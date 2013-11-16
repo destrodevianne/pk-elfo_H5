@@ -155,15 +155,15 @@ public class GameStatusThread extends Thread
 		if (isValidIP(client))
 		{
 			telnetOutput(1, client.getInetAddress().getHostAddress() + " accepted.");
-			_print.println("Welcome To The L2J Telnet Session.");
-			_print.println("Please Insert Your Password!");
-			_print.print("Password: ");
+			_print.println("Bem Vindo a sessao do L2PkElfo Telnet.");
+			_print.println("Por favor insira a senha!");
+			_print.print("Senha: ");
 			_print.flush();
 			String tmpLine = _read.readLine();
 			if (tmpLine == null)
 			{
-				_print.println("Error.");
-				_print.println("Disconnected...");
+				_print.println("Erro.");
+				_print.println("Desconectado...");
 				_print.flush();
 				_cSocket.close();
 			}
@@ -171,15 +171,15 @@ public class GameStatusThread extends Thread
 			{
 				if (!tmpLine.equals(StatusPW))
 				{
-					_print.println("Incorrect Password!");
-					_print.println("Disconnected...");
+					_print.println("Senha incorreta!");
+					_print.println("Desconectado...");
 					_print.flush();
 					_cSocket.close();
 				}
 				else
 				{
-					_print.println("Password Correct!");
-					_print.println("[L2J Game Server]");
+					_print.println("Senha correta!");
+					_print.println("[L2PkElfo Game Server]");
 					_print.print("");
 					_print.flush();
 					start();
@@ -219,7 +219,7 @@ public class GameStatusThread extends Thread
 				}
 				else
 				{
-					_print.print("Command: " + _usrCommand + " was not found!");
+					_print.print("Command: " + _usrCommand + " nao foi encontrado!");
 				}
 				
 				_print.print("");

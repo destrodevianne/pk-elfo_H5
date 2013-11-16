@@ -143,15 +143,15 @@ public class LoginStatusThread extends Thread
 		if (isValidIP(client))
 		{
 			telnetOutput(1, client.getInetAddress().getHostAddress() + " accepted.");
-			_print.println("Welcome To The L2J Telnet Session.");
-			_print.println("Please Insert Your Password!");
-			_print.print("Password: ");
+			_print.println("Bem Vindo a sessao do L2PkElfo Telnet.");
+			_print.println("Por favor insira a senha!");
+			_print.print("Senha: ");
 			_print.flush();
 			String tmpLine = _read.readLine();
 			if (tmpLine == null)
 			{
-				_print.println("Error.");
-				_print.println("Disconnected...");
+				_print.println("Erro.");
+				_print.println("Desconectado...");
 				_print.flush();
 				_cSocket.close();
 			}
@@ -159,15 +159,15 @@ public class LoginStatusThread extends Thread
 			{
 				if (!tmpLine.equals(StatusPW))
 				{
-					_print.println("Incorrect Password!");
-					_print.println("Disconnected...");
+					_print.println("Senha incorreta!");
+					_print.println("Desconectado...");
 					_print.flush();
 					_cSocket.close();
 				}
 				else
 				{
-					_print.println("Password Correct!");
-					_print.println("[L2J Login Server]");
+					_print.println("Senha Correta!");
+					_print.println("[L2PkElfo Login Server]");
 					_print.print("");
 					_print.flush();
 					start();
@@ -197,20 +197,20 @@ public class LoginStatusThread extends Thread
 				}
 				if (_usrCommand.equals("help"))
 				{
-					_print.println("The following is a list of all available commands: ");
-					_print.println("help                - shows this help.");
-					_print.println("status              - displays basic server statistics.");
-					_print.println("unblock <ip>        - removes <ip> from banlist.");
-					_print.println("shutdown			- shuts down server.");
-					_print.println("restart				- restarts the server.");
-					_print.println("RedirectLogger		- Telnet will give you some info about server in real time.");
-					_print.println("quit                - closes telnet session.");
+					_print.println("O que se segue e uma lista de todos os comandos disponiveis: ");
+					_print.println("help                - mostra esta ajuda.");
+					_print.println("status              - exibe estatisticas basicas do servidor.");
+					_print.println("unblock <ip>        - remove <ip> da banlist.");
+					_print.println("shutdown			- desliga servidor.");
+					_print.println("restart				- reinicia o servidor.");
+					_print.println("RedirectLogger		- Telnet vai lhe dar algumas informacoes sobre o servidor em tempo real.");
+					_print.println("quit                - fecha sessao telnet.");
 					_print.println("");
 				}
 				else if (_usrCommand.equals("status"))
 				{
 					// TODO enhance the output
-					_print.println("Registered Server Count: " + GameServerTable.getInstance().getRegisteredGameServers().size());
+					_print.println("Servdor registrado: " + GameServerTable.getInstance().getRegisteredGameServers().size());
 				}
 				else if (_usrCommand.startsWith("unblock"))
 				{
@@ -220,16 +220,16 @@ public class LoginStatusThread extends Thread
 						if (LoginController.getInstance().removeBanForAddress(_usrCommand))
 						{
 							_log.warning("IP removed via TELNET by host: " + _cSocket.getInetAddress().getHostAddress());
-							_print.println("The IP " + _usrCommand + " has been removed from the hack protection list!");
+							_print.println("O IP " + _usrCommand + " foi removido da lista de protecao!");
 						}
 						else
 						{
-							_print.println("IP not found in hack protection list...");
+							_print.println("IP nao foi encontrado na lista de protecao...");
 						}
 					}
 					catch (StringIndexOutOfBoundsException e)
 					{
-						_print.println("Please Enter the IP to Unblock!");
+						_print.println("Digite o IP para Desbloquear!");
 					}
 				}
 				else if (_usrCommand.startsWith("shutdown"))
@@ -258,7 +258,7 @@ public class LoginStatusThread extends Thread
 				}
 				else
 				{
-					_print.println("Invalid Command");
+					_print.println("Comando invalido");
 				}
 				_print.print("");
 				_print.flush();

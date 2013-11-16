@@ -115,12 +115,12 @@ public class Status extends Thread
 		{
 			if (_statusPw == null)
 			{
-				_log.info("Server's Telnet Function Has No Password Defined!");
-				_log.info("A Password Has Been Automaticly Created!");
+				_log.info("Telnet funcao do servidor nao tem senha definida!");
+				_log.info("A senha foi criada automaticamente!");
 				_statusPw = rndPW(10);
-				_log.info("Password Has Been Set To: " + _statusPw);
+				_log.info("Senha foi definida para: " + _statusPw);
 			}
-			_log.info("Telnet StatusServer started successfully, listening on Port: " + _statusPort);
+			_log.info("Telnet StatusServer iniciado com exito, executado na Porta: " + _statusPort);
 		}
 		statusServerSocket = new ServerSocket(_statusPort);
 		_uptime = (int) System.currentTimeMillis();
