@@ -217,6 +217,7 @@ Npc NoblesseManager - ID 49296
 Npc Comprar Bracelete - ID 30098
 Npc Top PvpPk - ID 36602
 Npc Safe Enchant +30 - ID 36609
+Npc AIOx (mostra os Aio do server) - ID 80001
 
 ###############################################
 ############## SYSTEM EXCLUSIVA ###############
