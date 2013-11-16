@@ -23,7 +23,8 @@ import java.util.Locale;
 import java.util.Map;
 
 /**
- * @author mrTJO
+ * PkElfo
+ * 
  */
 public class LocaleCodes
 {

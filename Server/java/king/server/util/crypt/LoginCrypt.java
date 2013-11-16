@@ -23,7 +23,8 @@ import java.io.IOException;
 import king.server.util.Rnd;
 
 /**
- * @author KenM
+ * PkElfo
+ * 
  */
 public class LoginCrypt
 {

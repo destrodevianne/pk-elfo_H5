@@ -41,7 +41,7 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
 
 /**
- * @author KenM
+ * PkElfo
  */
 public class JIPTextField extends JPanel implements FocusListener
 {

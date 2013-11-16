@@ -34,7 +34,7 @@ import king.server.tools.dbinstaller.DBOutputInterface;
 import king.server.tools.dbinstaller.util.FileWriterStdout;
 
 /**
- * @author mrTJO
+ * PkElfo
  */
 public class DBDumper
 {

@@ -33,7 +33,7 @@ import king.server.tools.dbinstaller.DBOutputInterface;
 import king.server.util.file.filter.SQLFilter;
 
 /**
- * @author mrTJO
+ * PkElfo
  */
 public class ScriptExecutor
 {
@@ -103,7 +103,7 @@ public class ScriptExecutor
 		}
 		catch (FileNotFoundException e)
 		{
-			JOptionPane.showMessageDialog(null, "File Not Found!: " + e.getMessage(), "Installer Error", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Arquivo nao encontrado!: " + e.getMessage(), "Installer Error", JOptionPane.ERROR_MESSAGE);
 		}
 		catch (SQLException e)
 		{

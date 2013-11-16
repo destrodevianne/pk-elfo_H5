@@ -22,7 +22,8 @@ import java.io.File;
 import java.io.FileFilter;
 
 /**
- * @author lasarus
+ * PkElfo
+ * 
  */
 public class ExtFilter implements FileFilter
 {

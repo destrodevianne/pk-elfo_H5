@@ -38,8 +38,7 @@ import king.server.util.Base64;
 
 /**
  * This class SQL Account Manager
- * @author netimperia
- * @version $Revision: 2.3.2.1.2.3 $ $Date: 2005/08/08 22:47:12 $
+ * PkElfo
  */
 public class SQLAccountManager
 {

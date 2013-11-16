@@ -32,7 +32,8 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
 /**
- * @author mrTJO
+ * PkElfo
+ * 
  */
 public class LocalizationParser
 {
@@ -97,7 +98,7 @@ public class LocalizationParser
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "Could not load localization file");
+				_log.log(Level.WARNING, "Nao foi possivel ler a localizacao do arquivo");
 				return;
 			}
 			

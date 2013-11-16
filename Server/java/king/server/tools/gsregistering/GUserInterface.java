@@ -51,7 +51,7 @@ import king.server.loginserver.GameServerTable;
 import king.server.tools.images.ImagesTable;
 
 /**
- * @author KenM
+ * PkElfo
  */
 public class GUserInterface extends BaseGameServerRegister implements ActionListener
 {
@@ -286,7 +286,7 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 		}
 		else if (cmd.equals("about"))
 		{
-			JOptionPane.showMessageDialog(getFrame(), getBundle().getString("credits") + Config.EOL + "http://www.l2jserver.com" + Config.EOL + Config.EOL + getBundle().getString("icons") + Config.EOL + Config.EOL + getBundle().getString("langText") + Config.EOL + getBundle().getString("translation"), getBundle().getString("aboutItem"), JOptionPane.INFORMATION_MESSAGE, ImagesTable.getImage("l2jserverlogo.png"));
+			JOptionPane.showMessageDialog(getFrame(), getBundle().getString("credits") + Config.EOL + "http://www.pkelfo.com" + Config.EOL + Config.EOL + getBundle().getString("icons") + Config.EOL + Config.EOL + getBundle().getString("langText") + Config.EOL + getBundle().getString("translation"), getBundle().getString("aboutItem"), JOptionPane.INFORMATION_MESSAGE, ImagesTable.getImage("l2jserverlogo.png"));
 		}
 		else if (cmd.equals("removeAll"))
 		{

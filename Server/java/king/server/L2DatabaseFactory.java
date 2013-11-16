@@ -62,7 +62,7 @@ public class L2DatabaseFactory
 			if (Config.DATABASE_MAX_CONNECTIONS < 2)
 			{
 				Config.DATABASE_MAX_CONNECTIONS = 2;
-				_log.warning("A minimum of " + Config.DATABASE_MAX_CONNECTIONS + " db connections are required.");
+				_log.warning("Um minimo de " + Config.DATABASE_MAX_CONNECTIONS + " db de conexoes sao necessarios.");
 			}
 			
 			_source = new ComboPooledDataSource();

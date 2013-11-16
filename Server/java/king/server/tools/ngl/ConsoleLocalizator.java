@@ -31,7 +31,8 @@ import com.sun.jna.Pointer;
 import com.sun.jna.ptr.IntByReference;
 
 /**
- * @author mrTJO
+ * PkElfo
+ * 
  */
 public class ConsoleLocalizator extends LocalizationParser
 {
@@ -121,7 +122,7 @@ public class ConsoleLocalizator extends LocalizationParser
 			{
 				// UTF-8 Not Supported
 				_out = new PrintStream(System.out, true);
-				directPrint("Your system doesn't support UTF-8 encoding" + EOL);
+				directPrint("Seu sistema nao suporta o UTF-8 encoding" + EOL);
 			}
 		}
 	}

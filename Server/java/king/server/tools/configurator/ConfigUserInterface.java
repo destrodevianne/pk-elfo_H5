@@ -70,7 +70,7 @@ import king.server.tools.i18n.LanguageControl;
 import king.server.tools.images.ImagesTable;
 
 /**
- * @author KenM
+ * PkElfo
  */
 public class ConfigUserInterface extends JFrame implements ActionListener
 {
@@ -701,7 +701,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		}
 		else if (cmd.equals("about"))
 		{
-			JOptionPane.showMessageDialog(ConfigUserInterface.this, getBundle().getString("credits") + EOL + "http://www.l2jserver.com" + EOL + EOL + getBundle().getString("icons") + EOL + EOL + getBundle().getString("langText") + EOL + getBundle().getString("translation"), getBundle().getString("aboutItem"), JOptionPane.INFORMATION_MESSAGE, ImagesTable.getImage("l2jserverlogo.png"));
+			JOptionPane.showMessageDialog(ConfigUserInterface.this, getBundle().getString("credits") + EOL + "http://www.pkelfo.com" + EOL + EOL + getBundle().getString("icons") + EOL + EOL + getBundle().getString("langText") + EOL + getBundle().getString("translation"), getBundle().getString("aboutItem"), JOptionPane.INFORMATION_MESSAGE, ImagesTable.getImage("l2jserverlogo.png"));
 		}
 	}
 	

@@ -24,7 +24,8 @@ import java.security.interfaces.RSAPublicKey;
 import java.util.logging.Logger;
 
 /**
- *
+ * PkElfo
+ * 
  */
 public class ScrambledKeyPair
 {

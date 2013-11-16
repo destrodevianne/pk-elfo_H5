@@ -24,7 +24,7 @@ import java.io.FileFilter;
 /**
  * Specialized {@link FileFilter} class.<br>
  * Accepts files ending with ".xml" only.
- * @author mrTJO
+ * PkElfo
  */
 public class XMLFilter implements FileFilter
 {

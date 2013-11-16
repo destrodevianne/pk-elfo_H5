@@ -39,7 +39,7 @@ import javax.swing.filechooser.FileFilter;
 import king.server.loginserver.GameServerTable;
 
 /**
- * @author KenM
+ * PkElfo
  */
 public class RegisterDialog extends JDialog implements ActionListener
 {

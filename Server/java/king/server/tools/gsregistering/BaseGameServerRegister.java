@@ -45,7 +45,7 @@ import king.server.util.Util;
 
 /**
  * The Class BaseGameServerRegister.
- * @author KenM
+ * PkElfo
  */
 public abstract class BaseGameServerRegister
 {
@@ -73,7 +73,7 @@ public abstract class BaseGameServerRegister
 		}
 		catch (Throwable t)
 		{
-			System.out.println("FATAL: Failed to load default translation.");
+			System.out.println("FATAL: Falha ao carregar a traducao padrao.");
 			System.exit(666);
 		}
 		
@@ -151,7 +151,7 @@ public abstract class BaseGameServerRegister
 				}
 				if (locale == null)
 				{
-					System.out.println("Specified locale '" + loc + "' was not found, using default behaviour.");
+					System.out.println("O local especifico '" + loc + "' nao foi encontrado, usando o comportamento padrao.");
 				}
 				else
 				{
@@ -161,7 +161,7 @@ public abstract class BaseGameServerRegister
 					}
 					catch (Throwable t)
 					{
-						System.out.println("Failed to load translation ''");
+						System.out.println("Falha ao carregar a traducao ''");
 					}
 				}
 			}
@@ -227,7 +227,7 @@ public abstract class BaseGameServerRegister
 			"-u, --unregister <id>|all\t\t" + bundle.getString("unregisterOpt"),
 			"",
 			bundle.getString("credits"),
-			bundle.getString("bugReports") + " http://www.l2jserver.com"
+			bundle.getString("bugReports") + " http://www.pkelfo.com"
 		
 		/*
 		 * "-b, --fallback\t\t\t\tIf an register operation fails due to ID already being in use it will then try to register first available ID", "-c, --cmd\t\t\t\tForces application to run in command-line mode even if the GUI is supported.",

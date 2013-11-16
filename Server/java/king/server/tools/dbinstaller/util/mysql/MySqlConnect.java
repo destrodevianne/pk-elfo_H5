@@ -27,7 +27,7 @@ import java.util.Formatter;
 import javax.swing.JOptionPane;
 
 /**
- * @author mrTJO
+ * PkElfo
  */
 public class MySqlConnect
 {
@@ -55,7 +55,7 @@ public class MySqlConnect
 			}
 			else
 			{
-				JOptionPane.showMessageDialog(null, "MySQL Error: " + e.getMessage(), "Connection Error", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "MySQL erro: " + e.getMessage(), "erro na conexao", JOptionPane.ERROR_MESSAGE);
 			}
 		}
 		catch (InstantiationException e)
@@ -66,7 +66,7 @@ public class MySqlConnect
 			}
 			else
 			{
-				JOptionPane.showMessageDialog(null, "Instantiation Exception: " + e.getMessage(), "Connection Error", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Excecao instanciacao: " + e.getMessage(), "erro na conexao", JOptionPane.ERROR_MESSAGE);
 			}
 		}
 		catch (IllegalAccessException e)
@@ -77,7 +77,7 @@ public class MySqlConnect
 			}
 			else
 			{
-				JOptionPane.showMessageDialog(null, "Illegal Access: " + e.getMessage(), "Connection Error", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Acesso ilegal: " + e.getMessage(), "erro na conexao", JOptionPane.ERROR_MESSAGE);
 			}
 		}
 		catch (ClassNotFoundException e)
@@ -88,7 +88,7 @@ public class MySqlConnect
 			}
 			else
 			{
-				JOptionPane.showMessageDialog(null, "Cannot find MySQL Connector: " + e.getMessage(), "Connection Error", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Nao foi possivel encontrar MySQL Connector: " + e.getMessage(), "erro na conexao", JOptionPane.ERROR_MESSAGE);
 			}
 		}
 	}

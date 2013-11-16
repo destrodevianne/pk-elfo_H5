@@ -29,7 +29,7 @@ import king.server.tools.dbinstaller.util.mysql.ScriptExecutor;
 import king.server.util.file.filter.SQLFilter;
 
 /**
- * @author mrTJO
+ * PkElfo
  */
 public class RunTasks extends Thread
 {
@@ -64,13 +64,13 @@ public class RunTasks extends Thread
 		{
 			if (clnFile.exists())
 			{
-				_frame.appendToProgressArea("Cleaning Database...");
+				_frame.appendToProgressArea("Limpeza da DataBase...");
 				exec.execSqlFile(clnFile);
-				_frame.appendToProgressArea("Database Cleaned!");
+				_frame.appendToProgressArea("Database Limpa!");
 			}
 			else
 			{
-				_frame.appendToProgressArea("Database Cleaning Script Not Found!");
+				_frame.appendToProgressArea("Limpeza do script da DataBase nao efetuado!");
 			}
 			
 			if (updDir.exists())
@@ -87,7 +87,7 @@ public class RunTasks extends Thread
 		{
 			if (!_cleanInstall && updDir.exists())
 			{
-				_frame.appendToProgressArea("Installing Updates...");
+				_frame.appendToProgressArea("Instalando Atualizacoes...");
 				
 				for (File cf : files)
 				{
@@ -97,35 +97,35 @@ public class RunTasks extends Thread
 						prefs.put(_db + "_upd", prefs.get(_db + "_upd", "") + cf.getName() + ";");
 					}
 				}
-				_frame.appendToProgressArea("Database Updates Installed!");
+				_frame.appendToProgressArea("Instalacao da atualizacao da Database!");
 			}
 		}
 		
-		_frame.appendToProgressArea("Installing Database Content...");
+		_frame.appendToProgressArea("Instalando conteudo da Database...");
 		exec.execSqlBatch(new File(_sqlDir));
-		_frame.appendToProgressArea("Database Installation Complete!");
+		_frame.appendToProgressArea("Database Instalacao completa!");
 		
 		File cusDir = new File(_sqlDir, "custom");
 		if (cusDir.exists())
 		{
-			int ch = _frame.requestConfirm("Install Custom", "Do you want to install custom tables?", JOptionPane.YES_NO_OPTION);
+			int ch = _frame.requestConfirm("Install Custom", "Voce quer instalar as tabelas personalizadas?", JOptionPane.YES_NO_OPTION);
 			if (ch == 0)
 			{
-				_frame.appendToProgressArea("Installing Custom Tables...");
+				_frame.appendToProgressArea("Instalando Tabelas personalizadas...");
 				exec.execSqlBatch(cusDir);
-				_frame.appendToProgressArea("Custom Tables Installed!");
+				_frame.appendToProgressArea("Tabelas personalizadas instaladas!");
 			}
 		}
 		
 		File modDir = new File(_sqlDir, "mods");
 		if (modDir.exists())
 		{
-			int ch = _frame.requestConfirm("Install Mods", "Do you want to install mod tables?", JOptionPane.YES_NO_OPTION);
+			int ch = _frame.requestConfirm("Install Mods", "Voce quer instalar a tabela mod?", JOptionPane.YES_NO_OPTION);
 			if (ch == 0)
 			{
-				_frame.appendToProgressArea("Installing Mods Tables...");
+				_frame.appendToProgressArea("Instalando Tabela Mods...");
 				exec.execSqlBatch(modDir);
-				_frame.appendToProgressArea("Mods Tables Installed!");
+				_frame.appendToProgressArea("Tabela Mods instalada");
 			}
 		}
 		
@@ -139,7 +139,7 @@ public class RunTasks extends Thread
 		}
 		
 		_frame.setFrameVisible(false);
-		_frame.showMessage("Done!", "Database Installation Complete!", JOptionPane.INFORMATION_MESSAGE);
+		_frame.showMessage("Feito!", "Database Instalacao Completa!", JOptionPane.INFORMATION_MESSAGE);
 		System.exit(0);
 		
 	}

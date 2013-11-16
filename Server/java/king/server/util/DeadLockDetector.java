@@ -31,8 +31,8 @@ import king.server.gameserver.Announcements;
 import king.server.gameserver.Shutdown;
 
 /**
- * Thread to check for deadlocked threads.
- * @author -Nemesiss- L2M
+ * PkElfo
+ * 
  */
 public class DeadLockDetector extends Thread
 {
@@ -109,7 +109,7 @@ public class DeadLockDetector extends Thread
 					if (Config.RESTART_ON_DEADLOCK)
 					{
 						Announcements an = Announcements.getInstance();
-						an.announceToAll("Server has stability issues - restarting now.");
+						an.announceToAll("Servidor esta com problemas de estabilidade - reiniciar agora.");
 						Shutdown.getInstance().startTelnetShutdown("DeadLockDetector - Auto Restart", 60, true);
 					}
 					

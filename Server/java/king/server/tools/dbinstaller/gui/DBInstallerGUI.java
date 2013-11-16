@@ -33,7 +33,7 @@ import king.server.tools.dbinstaller.DBOutputInterface;
 import king.server.tools.images.ImagesTable;
 
 /**
- * @author mrTJO
+ * PkElfo
  */
 public class DBInstallerGUI extends JFrame implements DBOutputInterface
 {

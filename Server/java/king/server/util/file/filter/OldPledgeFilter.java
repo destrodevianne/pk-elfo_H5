@@ -24,7 +24,7 @@ import java.io.FileFilter;
 /**
  * Specialized {@link FileFilter} class.<br>
  * Accepts <b>files</b> starting with "Pledge_" only.
- * @author Zoey76
+ * PkElfo
  */
 public class OldPledgeFilter implements FileFilter
 {

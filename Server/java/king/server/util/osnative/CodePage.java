@@ -19,8 +19,8 @@
 package king.server.util.osnative;
 
 /**
- * This class contains console code pages
- * @author mrTJO
+ * PkElfo
+ * 
  */
 public final class CodePage
 {

@@ -57,7 +57,7 @@ public class SqlUtils
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Error in query '" + query + "':", e);
+			_log.log(Level.WARNING, "erro na consulta '" + query + "':", e);
 		}
 		return res;
 	}
@@ -101,7 +101,7 @@ public class SqlUtils
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "mSGI: Error in query '" + query + "':", e);
+			_log.log(Level.WARNING, "mSGI: Erro na consulta '" + query + "':", e);
 		}
 		return res;
 	}
@@ -141,9 +141,9 @@ public class SqlUtils
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Error in query '" + query + "':", e);
+			_log.log(Level.WARNING, "Erro na consulta '" + query + "':", e);
 		}
-		_log.fine("Get all rows in query '" + query + "' in " + (System.currentTimeMillis() - start) + "ms");
+		_log.fine("Obter todas as linhas da consulta '" + query + "' em " + (System.currentTimeMillis() - start) + "ms");
 		return res;
 	}
 	

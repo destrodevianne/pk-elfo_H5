@@ -72,7 +72,7 @@ public class SpringUtilities
 		}
 		catch (ClassCastException exc)
 		{
-			System.err.println("The first argument to makeGrid must use SpringLayout.");
+			System.err.println("O primeiro argumento para makeGrid deve usar SpringLayout.");
 			return;
 		}
 		
@@ -178,7 +178,7 @@ public class SpringUtilities
 		}
 		catch (ClassCastException exc)
 		{
-			System.err.println("The first argument to makeCompactGrid must use SpringLayout.");
+			System.err.println("O primeiro argumento para makeGrid deve usar SpringLayout.");
 			return;
 		}
 		

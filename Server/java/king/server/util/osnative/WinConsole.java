@@ -25,7 +25,8 @@ import com.sun.jna.win32.StdCallLibrary;
 import com.sun.jna.win32.W32APIOptions;
 
 /**
- * @author mrTJO
+ * PkElfo
+ * 
  */
 public interface WinConsole extends StdCallLibrary
 {

@@ -27,7 +27,7 @@ import king.server.tools.dbinstaller.gui.DBConfigGUI;
 
 /**
  * Contains main class for Database Installer If system doesn't support the graphical UI, start the installer in console mode.
- * @author mrTJO
+ * PkElfo
  */
 public class LauncherCS
 {

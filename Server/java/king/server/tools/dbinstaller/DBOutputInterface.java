@@ -21,7 +21,7 @@ package king.server.tools.dbinstaller;
 import java.sql.Connection;
 
 /**
- * @author mrTJO
+ * PkElfo
  */
 public interface DBOutputInterface
 {

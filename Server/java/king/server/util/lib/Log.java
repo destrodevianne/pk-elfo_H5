@@ -29,8 +29,7 @@ import java.util.logging.Logger;
 import king.server.Config;
 
 /**
- * @version 0.1, 2005-06-06
- * @author Balancer
+ * PkElfo
  */
 public class Log
 {
@@ -49,7 +48,7 @@ public class Log
 		}
 		catch (IOException e)
 		{
-			_log.log(Level.WARNING, "Error saving logfile: ", e);
+			_log.log(Level.WARNING, "Erro ao salvar o arquivo de log: ", e);
 		}
 	}
 }

@@ -23,7 +23,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * @author mrTJO
+ * PkElfo
  */
 public class FileWriterStdout extends BufferedWriter
 {

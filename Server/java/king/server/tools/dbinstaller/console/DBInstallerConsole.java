@@ -28,7 +28,7 @@ import king.server.tools.dbinstaller.util.mysql.MySqlConnect;
 import king.server.util.CloseShieldedInputStream;
 
 /**
- * @author mrTJO
+ * PkElfo
  */
 public class DBInstallerConsole implements DBOutputInterface
 {
@@ -36,7 +36,7 @@ public class DBInstallerConsole implements DBOutputInterface
 	
 	public DBInstallerConsole(String db, String dir, String cleanUp)
 	{
-		System.out.println("Welcome to L2J DataBase installer");
+		System.out.println("Bem Vindo ao instalador L2J DataBase");
 		Preferences prop = Preferences.userRoot();
 		RunTasks rt = null;
 		try (Scanner scn = new Scanner(new CloseShieldedInputStream(System.in)))
@@ -68,7 +68,7 @@ public class DBInstallerConsole implements DBOutputInterface
 			String resp = scn.next();
 			if (resp.equalsIgnoreCase("c"))
 			{
-				System.out.print("Do you really want to destroy your db (Y/N)?");
+				System.out.print("Voce realmente quer deletar a sua db (Y/N)?");
 				if (scn.next().equalsIgnoreCase("y"))
 				{
 					rt = new RunTasks(this, db, dir, cleanUp, true);

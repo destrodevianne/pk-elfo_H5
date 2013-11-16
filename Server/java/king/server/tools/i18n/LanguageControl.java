@@ -27,7 +27,8 @@ import java.util.ResourceBundle;
 import java.util.ResourceBundle.Control;
 
 /**
- * @author KenM
+ * PkElfo
+ * 
  */
 public class LanguageControl extends Control
 {

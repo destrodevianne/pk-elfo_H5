@@ -24,7 +24,7 @@ import java.io.FileFilter;
 /**
  * Specialized {@link FileFilter} class.<br>
  * Accepts <b>files</b> ending with ".sql" only.
- * @author Zoey76
+ * PkElfo
  */
 public class SQLFilter implements FileFilter
 {

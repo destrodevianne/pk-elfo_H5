@@ -39,7 +39,7 @@ import king.server.tools.dbinstaller.util.swing.SpringUtilities;
 import king.server.tools.images.ImagesTable;
 
 /**
- * @author mrTJO
+ * PkElfo
  */
 public class DBConfigGUI extends JFrame
 {
