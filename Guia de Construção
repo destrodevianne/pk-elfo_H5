@@ -1,5 +1,5 @@
 ***significa que deve ser testado
-# significa que foi retirado do antigo guia de construção, portanto tem que verificar se anida existe nesta rev
+# significa que foi retirado do antigo guia de construcao, portanto tem que verificar se anida existe nesta rev
 
 ###############################################
 #################### FIX ######################
@@ -91,14 +91,14 @@ Evento Last Hero
 ######## COMANDOS DE DONO DE CASTELO ##########
 .opendoors (abre portas do castelo)
 .closedoors (fecha portas do castelo)
-.ridewyvern (monta no dragão voador)
+.ridewyvern (monta no dragao voador)
 
 ###############################################
 ########## COMANDOS DE LIDER DE CLAN ##########
 .set name
 .set home
 .set group
-.siege ( mostra estatsticas dos castelos e também permite o lider do clan registrar para siege)
+.siege ( mostra estatsticas dos castelos e tambem permite o lider do clan registrar para siege)
 
 ###############################################
 ################## COMANDOS ###################
@@ -108,12 +108,12 @@ Evento Last Hero
 .changepassword (troca senha da conta dentro do jogo)
 .debug
 .hellbound (mostra status de hellbound)
-.lang (alterna entre os idiomas Inglês e Português)
+.lang (alterna entre os idiomas Ingles e Portugues)
 .online (mostra quantidade de jogadores online)
 .openatod
-.mypremium ( mostra data de términio do serviço de premium)
+.mypremium ( mostra data de terminio do servico de premium)
 .addpremium <dias>
-.grandboss (mostra se os Big Bosses estão vivos ou mortos)
+.grandboss (mostra se os Big Bosses estao vivos ou mortos)
 .refusebuff (bloqueia o recebimento de buff)
 .allowbuff (desbloqueia o recebimento de buff)
 .repair (repara um char)
@@ -129,10 +129,10 @@ Evento Last Hero
 .tvtjoin (registra no evento tvt)
 .tvtleave (retira registro do evento tvt)
 .tvt (mostra estatisticas do evento tvt)
-.info (abre uma janela dentro do jogo mostrando informações do servidor)
+.info (abre uma janela dentro do jogo mostrando informacoes do servidor)
 .engage (pede em casamento)
 .divorce (divorcia)
-.gotolove (teleporta até seu marido/esposa)
+.gotolove (teleporta ate seu marido/esposa)
 .shieldon
 .shieldoff
 .openatod (Serve para abrir todos os Ancient Tome of the Demon que o player tiver na bag, ao invez de ficar clicando eternamente)
@@ -140,7 +140,7 @@ Evento Last Hero
 .logout (desloga imediatamente)
 .user (abre painel de usuario que contem, informacoes do servidor, rates e comandos de habilitar/desabilitar pm, trade e ganho de xp/sp)
 -----------------------------------------------------------------------------------------------------------
-# Os seguintes comandos foram transferidos para o painel do usuário acessivel atraves do comando .user :  #
+# Os seguintes comandos foram transferidos para o painel do usuario acessivel atraves do comando .user :  #
 # 																										  #
 # comando .pmon/ .pmoff para habilitar/desabilitar PM 													  #
 # Comando .tradeon/.tradeoff para bloquear/desbloquear o envio de trade para o char 					  #
@@ -150,11 +150,9 @@ Evento Last Hero
 ###############################################
 ##################### MOD #####################
 # Rewards for kill on TvT
-# PvP/PK Rewards
-# PvP Color System
 # Bandeiras de clan nos Npcs sem quest
-***Número Máximo de membros na party (nao ultrapassar 12, porque buga o servidor)
-***Community Board
+***Numero Maximo de membros na party (nao ultrapassar 12, porque buga o servidor)
+Community Board
 ***Anuncio de deslogamento de AIOx 
 ***Anuncio de logamento de AIOx
 ***Anuncio de deslogamento de VIP 
@@ -163,7 +161,7 @@ Evento Last Hero
 ***Anuncio de logamento de Hero
 ***Mensagem de boas vindas na tela para aio, vip e hero.
 ***Chat exclusivo para char AIOx
-ao dar Shift+Click em algum char ou npc ou monstro, mostrará todos items e status dele.
+Ao dar Shift+Click em algum char ou npc ou monstro, mostrara todos items e status dele.
 Efeito de enchant rondom em todos os mobs e Npcs
 Efeito para char em modo de shop offline
 Balance Classe
@@ -178,7 +176,7 @@ Prime Shop
 Sistema de consumiveis infinitosSS, BSS e Arrows
 Fake online players
 Clan Full
-Mod quando morrer o céu fica vermelho e da um som de Game Over
+Mod quando morrer o ceu fica vermelho e da um som de Game Over
 Mod ao entrar em um clan o titulo muda altomaticamente para o do clan
 Mod aviso quando um Raid Boss renascer
 Mod Evento de dança
@@ -189,7 +187,7 @@ Novos char herois
 Muda o nome dos Champions
 Cor do nome diferente para cada raca
 Mensagem diferente para cada raca
-Painel de usuário com comandos
+Painel de usuario com comandos
 Mod Efeito para AIOx
 Ao criar novo char ganha VIP por dias (configuravel)
 Ao criar novo char ganha AIOx por dias (configuravel)
@@ -197,6 +195,7 @@ Adicionado Mod de Restart
 Adicionado Multikill Announcer With Sounds
 Ao matar um jogador com PK ganha-se 1 ponto de PvP
 Recompensa personalizada para o PvP
+PvP/PK Color System
 
 ###############################################
 ################## PROTECOES ##################
