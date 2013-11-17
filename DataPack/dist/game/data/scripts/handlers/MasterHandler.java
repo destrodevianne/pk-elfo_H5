@@ -336,6 +336,7 @@ import handlers.voicedcommandhandlers.UserActions;
 import handlers.voicedcommandhandlers.User;
 import handlers.voicedcommandhandlers.Lider;
 import handlers.voicedcommandhandlers.Logout;
+import handlers.voicedcommandhandlers.Cancel;
 
 public class MasterHandler
 {
@@ -653,6 +654,7 @@ public class MasterHandler
 			UserActions.class,
 			Lider.class,
 			Logout.class,
+			(Config.CANCEL_ONLINE ? Cancel.class : null),
 			(Config.CMD_ONLINE ? Online.class : null),
 			(Config.BOSS_STATS ? RaidBoosStatus.class : null),
 			(Config.ALLOW_REFUSE_BUFF ? RefuseBuff.class : null),

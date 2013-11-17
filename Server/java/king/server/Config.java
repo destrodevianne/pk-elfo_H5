@@ -225,6 +225,7 @@ public final class Config
 	public static boolean RANDOM_PC_BANG_POINT;
 	public static boolean Boost_EXP_COMMAND;
 	public static boolean CMD_ONLINE;
+	public static boolean CANCEL_ONLINE;
 	public static boolean CMD_FAKE;
 	public static int FAKE_PLAYERS;
 	public static boolean BOSS_STATS;
@@ -2346,11 +2347,12 @@ public final class Config
 					PC_BANG_POINT_RATE = 1;
 				}
 				RANDOM_PC_BANG_POINT = Boolean.parseBoolean(PkelfoSettings.getProperty("AcquisitionPointsRandom", "false"));
-				Boost_EXP_COMMAND = Boolean.parseBoolean(PkelfoSettings.getProperty("SpExpCommand", "True"));
-				CMD_ONLINE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandOnline", "True"));
-				CMD_FAKE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandFakePlayer", "True"));
+				Boost_EXP_COMMAND = Boolean.parseBoolean(PkelfoSettings.getProperty("SpExpCommand", "false"));
+				CMD_ONLINE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandOnline", "false"));
+				CANCEL_ONLINE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandCancel", "false"));
+				CMD_FAKE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandFakePlayer", "false"));
 				FAKE_PLAYERS = Integer.parseInt(PkelfoSettings.getProperty("NumberOfFakes", "1"));
-				BOSS_STATS = Boolean.parseBoolean(PkelfoSettings.getProperty("GrandBossStats", "True"));
+				BOSS_STATS = Boolean.parseBoolean(PkelfoSettings.getProperty("GrandBossStats", "false"));
 
 			}
 			

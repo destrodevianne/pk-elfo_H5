@@ -139,6 +139,8 @@ Evento Last Hero
 .lider (teleporta para o lider do seu clan)
 .logout (desloga imediatamente)
 .user (abre painel de usuario que contem, informacoes do servidor, rates e comandos de habilitar/desabilitar pm, trade e ganho de xp/sp)
+.cancel (cancela todos os buffs das barras de buff)
+
 -----------------------------------------------------------------------------------------------------------
 # Os seguintes comandos foram transferidos para o painel do usuario acessivel atraves do comando .user :  #
 # 																										  #
