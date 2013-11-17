@@ -208,6 +208,13 @@ public final class Config
     public static int KAMAEL_COLOR;
     public static boolean ENABLE_RACE_MESSAGE;
     // ----------------------------------------------------------------------------------------------------//
+ 	// CONFIGURACOES DE PVP E PK
+    // ----------------------------------------------------------------------------------------------------//
+    public static boolean ENABLE_PVP_REWARD;
+    public static int PVP_REWARD_ITEM;
+    public static int AMOUNT_PVP_REWARD;
+
+    // ----------------------------------------------------------------------------------------------------//
 	// PC bang points
     // ----------------------------------------------------------------------------------------------------//
 	public static boolean PC_BANG_ENABLED;
@@ -4272,6 +4279,12 @@ public final class Config
 			
 			PVP_NORMAL_TIME = Integer.parseInt(PvPpKSettings.getProperty("PvPVsNormalTime", "120000"));
 			PVP_PVP_TIME = Integer.parseInt(PvPpKSettings.getProperty("PvPVsPvPTime", "60000"));
+			
+			//--------------------------- Ganho de item (configuravel) ao ganhar um PvP -------------------------------//
+			ENABLE_PVP_REWARD = Boolean.parseBoolean(PvPpKSettings.getProperty("EnablePvPReward", "False"));
+			PVP_REWARD_ITEM = Integer.parseInt(PvPpKSettings.getProperty("PvPRewardItem", "6673"));
+			AMOUNT_PVP_REWARD = Integer.parseInt(PvPpKSettings.getProperty("AmountPvPReward", "1"));
+			
 			//#########################################################################################################//
 			
 			// Load Olympiad L2Properties file (if exists)
