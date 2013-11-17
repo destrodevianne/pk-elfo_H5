@@ -75,7 +75,7 @@ public final class Config
     public static final String ZAKEN_CONFIG = "./config/BigBosses/Zaken.properties";
     // ----------------------------------------------------------------------------------------------------//
 	public static final String AIO_CONFIG_FILE = "./config/AIOx/Aio.properties";
-	public static final String AUTO_RESTART = "./config/Restart/AutoRestart.properties";
+	public static final String AUTO_RESTART = "./config/AutoRestart/AutoRestart.properties";
 	public static final String CHARACTER_CONFIG_FILE = "./config/Character.properties";
 	public static final String CHAT_FILTER_FILE = "./config/chatfilter.txt";
 	public static final String COMMUNITY_PVP = "./config/CommunityPvP.properties";
@@ -100,7 +100,8 @@ public final class Config
 	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olympiad.properties";	
 	public static final String PKELFO_FILE = "./config/Pkelfo.properties";
 	public static final String PREMIUM_CONFIG_FILE = "./config/Premium.properties";
-	public static final String PVP_CONFIG_FILE = "./config/PVP.properties";	
+	public static final String PVP_CONFIG_FILE = "./config/PVP.properties";
+	public static final String PVPPK_CONFIG_FILE = "./config/PvPpK/PvpPk.properties";
 	public static final String RATES_CONFIG_FILE = "./config/Rates.properties";
 	public static final String SECURITY_CONFIG_FILE = "./config/Security.properties";
 	public static final String CONFIGURATION_FILE = "./config/Server.properties";	
@@ -2344,39 +2345,6 @@ public final class Config
 				FAKE_PLAYERS = Integer.parseInt(PkelfoSettings.getProperty("NumberOfFakes", "1"));
 				BOSS_STATS = Boolean.parseBoolean(PkelfoSettings.getProperty("GrandBossStats", "True"));
 
-				PVPS_COLORS = PkelfoSettings.getProperty("PvpsColors", "");
-				PVPS_COLORS_LIST = new FastMap<>();
-				
-				String[] splitted_pvps_colors = PVPS_COLORS.split(";");
-				
-				for (String iii : splitted_pvps_colors)
-				{
-					String[] pvps_colors = iii.split(",");
-					if (pvps_colors.length != 2)
-					{
-						System.out.println("Invalid properties.");
-					}
-					else
-					{
-						PVPS_COLORS_LIST.put(Integer.parseInt(pvps_colors[0]), Integer.decode("0x" + pvps_colors[1]));
-					}
-				}
-				PKS_COLORS = PkelfoSettings.getProperty("PksColors", "");
-				PKS_COLORS_LIST = new FastMap<>();
-				String[] splitted_pks_colors = PKS_COLORS.split(";");
-				
-				for (String iii : splitted_pks_colors)
-				{
-					String[] pks_colors = iii.split(",");
-					if (pks_colors.length != 2)
-					{
-						System.out.println("Invalid properties.");
-					}
-					else
-					{
-						PKS_COLORS_LIST.put(Integer.parseInt(pks_colors[0]), Integer.decode("0x" + pks_colors[1]));
-					}
-				}
 			}
 			
 			catch (Exception e)
@@ -3102,12 +3070,6 @@ public final class Config
 			
 			Arrays.sort(AUGMENTATION_BLACKLIST);
 			
-			ALT_GAME_KARMA_PLAYER_CAN_BE_KILLED_IN_PEACEZONE = Boolean.parseBoolean(Character.getProperty("AltKarmaPlayerCanBeKilledInPeaceZone", "false"));
-			ALT_GAME_KARMA_PLAYER_CAN_SHOP = Boolean.parseBoolean(Character.getProperty("AltKarmaPlayerCanShop", "true"));
-			ALT_GAME_KARMA_PLAYER_CAN_TELEPORT = Boolean.parseBoolean(Character.getProperty("AltKarmaPlayerCanTeleport", "true"));
-			ALT_GAME_KARMA_PLAYER_CAN_USE_GK = Boolean.parseBoolean(Character.getProperty("AltKarmaPlayerCanUseGK", "false"));
-			ALT_GAME_KARMA_PLAYER_CAN_TRADE = Boolean.parseBoolean(Character.getProperty("AltKarmaPlayerCanTrade", "true"));
-			ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE = Boolean.parseBoolean(Character.getProperty("AltKarmaPlayerCanUseWareHouse", "true"));
 			MAX_PERSONAL_FAME_POINTS = Integer.parseInt(Character.getProperty("MaxPersonalFamePoints", "100000"));
 			FORTRESS_ZONE_FAME_TASK_FREQUENCY = Integer.parseInt(Character.getProperty("FortressZoneFameTaskFrequency", "300"));
 			FORTRESS_ZONE_FAME_AQUIRE_POINTS = Integer.parseInt(Character.getProperty("FortressZoneFameAquirePoints", "31"));
@@ -3570,7 +3532,6 @@ public final class Config
 			DEFAULT_PUNISH = Integer.parseInt(General.getProperty("DefaultPunish", "2"));
 			DEFAULT_PUNISH_PARAM = Integer.parseInt(General.getProperty("DefaultPunishParam", "0"));
 			ONLY_GM_ITEMS_FREE = Boolean.parseBoolean(General.getProperty("OnlyGMItemsFree", "True"));
-			JAIL_IS_PVP = Boolean.parseBoolean(General.getProperty("JailIsPvp", "False"));
 			JAIL_DISABLE_CHAT = Boolean.parseBoolean(General.getProperty("JailDisableChat", "True"));
 			JAIL_DISABLE_TRANSACTION = Boolean.parseBoolean(General.getProperty("JailDisableTransaction", "False"));
 			CUSTOM_SPAWNLIST_TABLE = Boolean.parseBoolean(General.getProperty("CustomSpawnlistTable", "false"));
@@ -4112,8 +4073,7 @@ public final class Config
 			OFFLINE_EFFECT_ID = Integer.parseInt(L2JModSettings.getProperty("OfflineEffectId", "7"));
 			UNSTUCK_ANIMATION_ID = Integer.parseInt(L2JModSettings.getProperty("UnstuckSkillID", "1050"));
 			L2JMOD_ENABLE_MANA_POTIONS_SUPPORT = Boolean.parseBoolean(L2JModSettings.getProperty("EnableManaPotionSupport", "True"));
-			PVP_MANAPOTION = Boolean.parseBoolean(L2JModSettings.getProperty("PvPManaPotion", "True"));
-			
+						
 			L2JMOD_DISPLAY_SERVER_TIME = Boolean.parseBoolean(L2JModSettings.getProperty("DisplayServerTime", "false"));
 			
 			WELCOME_MESSAGE_ENABLED = Boolean.parseBoolean(L2JModSettings.getProperty("ScreenWelcomeMessageEnable", "True"));
@@ -4125,10 +4085,7 @@ public final class Config
 			L2JMOD_ANTIFEED_DISCONNECTED_AS_DUALBOX = Boolean.parseBoolean(L2JModSettings.getProperty("AntiFeedDisconnectedAsDualbox", "true"));
 			L2JMOD_ANTIFEED_INTERVAL = 1000 * Integer.parseInt(L2JModSettings.getProperty("AntiFeedInterval", "120"));
 			ANNOUNCE_PK_PVP = Boolean.parseBoolean(L2JModSettings.getProperty("AnnouncePkPvP", "True"));
-			ANNOUNCE_PK_PVP_NORMAL_MESSAGE = Boolean.parseBoolean(L2JModSettings.getProperty("AnnouncePkPvPNormalMessage", "True"));
-			ANNOUNCE_PK_MSG = L2JModSettings.getProperty("AnnouncePkMsg", "$killer has matou $target");
-			ANNOUNCE_PVP_MSG = L2JModSettings.getProperty("AnnouncePvpMsg", "$killer derrotou $target");
-			
+						
 			L2JMOD_CHAT_ADMIN = Boolean.parseBoolean(L2JModSettings.getProperty("ChatAdmin", "false"));
 			
 			L2JMOD_MULTILANG_DEFAULT = L2JModSettings.getProperty("MultiLangDefault", "en");
@@ -4215,27 +4172,83 @@ public final class Config
 			}
 			L2JMOD_ALLOW_CHANGE_PASSWORD = Boolean.parseBoolean(L2JModSettings.getProperty("AllowChangePassword", "False"));
 			
-			// Load PvP L2Properties file (if exists)
-			final File pvp = new File(PVP_CONFIG_FILE);
-			L2Properties PVPSettings = new L2Properties();
-			try (InputStream is = new FileInputStream(pvp))
+			//############################  PVPPK PROPERTIES  #########################################################//
+						
+			final File pvppk = new File(PVPPK_CONFIG_FILE);
+			L2Properties PvPpKSettings = new L2Properties();
+			try (InputStream is = new FileInputStream(pvppk))
 			{
-				PVPSettings.load(is);
+				PvPpKSettings.load(is);
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "Error while loading PVP settings!", e);
+				_log.log(Level.SEVERE, "Erro ao ler o arquivo PvPpK Properties!", e);
+			}
+			//--------------------------- usar mana potion no PvP ----------------------------------------------------//
+			PVP_MANAPOTION = Boolean.parseBoolean(PvPpKSettings.getProperty("PvPManaPotion", "True"));
+			
+			//--------------------------- anuncio global de PvP e Pk -------------------------------------------------//
+			ANNOUNCE_PK_PVP_NORMAL_MESSAGE = Boolean.parseBoolean(PvPpKSettings.getProperty("AnnouncePkPvPNormalMessage", "True"));
+			ANNOUNCE_PK_MSG = PvPpKSettings.getProperty("AnnouncePkMsg", "$killer has matou $target");
+			ANNOUNCE_PVP_MSG = PvPpKSettings.getProperty("AnnouncePvpMsg", "$killer derrotou $target");
+			
+			//--------------------------- a cada quantidade de pvp ou pk pontos muda a cor no nome -------------------//
+			PVPS_COLORS = PvPpKSettings.getProperty("PvpsColors", "");
+			PVPS_COLORS_LIST = new FastMap<>();
+			
+			String[] splitted_pvps_colors = PVPS_COLORS.split(";");
+			
+			for (String iii : splitted_pvps_colors)
+			{
+				String[] pvps_colors = iii.split(",");
+				if (pvps_colors.length != 2)
+				{
+					System.out.println("propriedades invalidas.");
+				}
+				else
+				{
+					PVPS_COLORS_LIST.put(Integer.parseInt(pvps_colors[0]), Integer.decode("0x" + pvps_colors[1]));
+				}
+			}
+			PKS_COLORS = PvPpKSettings.getProperty("PksColors", "");
+			PKS_COLORS_LIST = new FastMap<>();
+			String[] splitted_pks_colors = PKS_COLORS.split(";");
+			
+			for (String iii : splitted_pks_colors)
+			{
+				String[] pks_colors = iii.split(",");
+				if (pks_colors.length != 2)
+				{
+					System.out.println("propriedades invalidas.");
+				}
+				else
+				{
+					PKS_COLORS_LIST.put(Integer.parseInt(pks_colors[0]), Integer.decode("0x" + pks_colors[1]));
+				}
 			}
 			
-			KARMA_MIN_KARMA = Integer.parseInt(PVPSettings.getProperty("MinKarma", "240"));
-			KARMA_MAX_KARMA = Integer.parseInt(PVPSettings.getProperty("MaxKarma", "10000"));
-			KARMA_XP_DIVIDER = Integer.parseInt(PVPSettings.getProperty("XPDivider", "260"));
-			KARMA_LOST_BASE = Integer.parseInt(PVPSettings.getProperty("BaseKarmaLost", "0"));
-			KARMA_DROP_GM = Boolean.parseBoolean(PVPSettings.getProperty("CanGMDropEquipment", "false"));
-			KARMA_AWARD_PK_KILL = Boolean.parseBoolean(PVPSettings.getProperty("AwardPKKillPVPPoint", "true"));
-			KARMA_PK_LIMIT = Integer.parseInt(PVPSettings.getProperty("MinimumPKRequiredToDrop", "5"));
-			KARMA_NONDROPPABLE_PET_ITEMS = PVPSettings.getProperty("ListOfPetItems", "2375,3500,3501,3502,4422,4423,4424,4425,6648,6649,6650,9882");
-			KARMA_NONDROPPABLE_ITEMS = PVPSettings.getProperty("ListOfNonDroppableItems", "57,1147,425,1146,461,10,2368,7,6,2370,2369,6842,6611,6612,6613,6614,6615,6616,6617,6618,6619,6620,6621,7694,8181,5575,7694,9388,9389,9390");
+			//--------------------------- Colocar a cadeia em modo de zona de PvP ------------------------------------//
+			JAIL_IS_PVP = Boolean.parseBoolean(PvPpKSettings.getProperty("JailIsPvp", "False"));
+			
+			//--------------------------- configuracoes para Jogadores PK --------------------------------------------//
+			ALT_GAME_KARMA_PLAYER_CAN_BE_KILLED_IN_PEACEZONE = Boolean.parseBoolean(PvPpKSettings.getProperty("AltKarmaPlayerCanBeKilledInPeaceZone", "false"));
+			ALT_GAME_KARMA_PLAYER_CAN_SHOP = Boolean.parseBoolean(PvPpKSettings.getProperty("AltKarmaPlayerCanShop", "true"));
+			ALT_GAME_KARMA_PLAYER_CAN_TELEPORT = Boolean.parseBoolean(PvPpKSettings.getProperty("AltKarmaPlayerCanTeleport", "true"));
+			ALT_GAME_KARMA_PLAYER_CAN_USE_GK = Boolean.parseBoolean(PvPpKSettings.getProperty("AltKarmaPlayerCanUseGK", "false"));
+			ALT_GAME_KARMA_PLAYER_CAN_TRADE = Boolean.parseBoolean(PvPpKSettings.getProperty("AltKarmaPlayerCanTrade", "true"));
+			ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE = Boolean.parseBoolean(PvPpKSettings.getProperty("AltKarmaPlayerCanUseWareHouse", "true"));
+			
+			//--------------------------------------------------------------------------------------------------------//
+			
+			KARMA_MIN_KARMA = Integer.parseInt(PvPpKSettings.getProperty("MinKarma", "240"));
+			KARMA_MAX_KARMA = Integer.parseInt(PvPpKSettings.getProperty("MaxKarma", "10000"));
+			KARMA_XP_DIVIDER = Integer.parseInt(PvPpKSettings.getProperty("XPDivider", "260"));
+			KARMA_LOST_BASE = Integer.parseInt(PvPpKSettings.getProperty("BaseKarmaLost", "0"));
+			KARMA_DROP_GM = Boolean.parseBoolean(PvPpKSettings.getProperty("CanGMDropEquipment", "false"));
+			KARMA_AWARD_PK_KILL = Boolean.parseBoolean(PvPpKSettings.getProperty("AwardPKKillPVPPoint", "true"));
+			KARMA_PK_LIMIT = Integer.parseInt(PvPpKSettings.getProperty("MinimumPKRequiredToDrop", "5"));
+			KARMA_NONDROPPABLE_PET_ITEMS = PvPpKSettings.getProperty("ListOfPetItems", "2375,3500,3501,3502,4422,4423,4424,4425,6648,6649,6650,9882");
+			KARMA_NONDROPPABLE_ITEMS = PvPpKSettings.getProperty("ListOfNonDroppableItems", "57,1147,425,1146,461,10,2368,7,6,2370,2369,6842,6611,6612,6613,6614,6615,6616,6617,6618,6619,6620,6621,7694,8181,5575,7694,9388,9389,9390");
 			
 			String[] karma = KARMA_NONDROPPABLE_PET_ITEMS.split(",");
 			KARMA_LIST_NONDROPPABLE_PET_ITEMS = new int[karma.length];
@@ -4257,8 +4270,9 @@ public final class Config
 			Arrays.sort(KARMA_LIST_NONDROPPABLE_PET_ITEMS);
 			Arrays.sort(KARMA_LIST_NONDROPPABLE_ITEMS);
 			
-			PVP_NORMAL_TIME = Integer.parseInt(PVPSettings.getProperty("PvPVsNormalTime", "120000"));
-			PVP_PVP_TIME = Integer.parseInt(PVPSettings.getProperty("PvPVsPvPTime", "60000"));
+			PVP_NORMAL_TIME = Integer.parseInt(PvPpKSettings.getProperty("PvPVsNormalTime", "120000"));
+			PVP_PVP_TIME = Integer.parseInt(PvPpKSettings.getProperty("PvPVsPvPTime", "60000"));
+			//#########################################################################################################//
 			
 			// Load Olympiad L2Properties file (if exists)
 			final File oly = new File(OLYMPIAD_CONFIG_FILE);
