@@ -17,65 +17,48 @@ public class VIPTeleport implements IVoicedCommandHandler
         {
                 if (command.equalsIgnoreCase("teleport")&& activeChar.isVip())
                 {
-                        if (activeChar == null)
-                        {
-                                return false;
-                        }
-                        else if(activeChar.isInDuel())
-                        {
-                                activeChar.sendMessage("You are on Duel.");
-                                return false;
-                        }
-                        else if(activeChar.isInOlympiadMode())
-                        {
-                                activeChar.sendMessage("You are in Olympiad.");
-                                return false;
-                        }
-                        else if(activeChar.isInCombat())
-                        {
-                                activeChar.sendMessage("You can't teleport in Combat Mod.");
-                                return false;
-                        }
-                        else if (activeChar.isFestivalParticipant())
-                        {
-                                activeChar.sendMessage("You are in a festival.");
-                                return false;
-                        }
-                        else if (activeChar.isInJail())
-                        {
-                                activeChar.sendMessage("You are in Jail.");
-                                return false;
-                        }
-                        else if (activeChar.inObserverMode())
-                        {
-                                activeChar.sendMessage("You are in Observ Mode.");
-                                return false;
-                        }
-                        else if (activeChar.isDead())
-                        {
-                                activeChar.sendMessage("You Dead. Can't Teleport.");
-                                return false;
-                        }
-                        else if (activeChar.isFakeDeath())
-                        {
-                                activeChar.sendMessage("You are Dead? week up :D");
-                                return false;
-                        }
-                        else if (activeChar.getKarma() > 0)
-                        {
-                                activeChar.sendMessage("You can't use teleport command when you have karma.");
-                                return false;
-                        }
-                        if(tlp != null)
-                        {
-                                teleportTo(activeChar, tlp);
-                        }
-                        else
-                        {
-                                activeChar.sendMessage("Wrong or no Coordinates given. Usage: /loc to display the coordinates.");
-                                activeChar.sendMessage("Ex: .teleport <x> <y> <z>");
-                                return false;
-                        }
+                    
+                    if (activeChar.isFestivalParticipant())
+                    {
+                    activeChar.sendMessage("Comando bloqueado voce esta em um Evento!");
+                    return false;
+                    }
+                    else if(activeChar.isInJail())
+                    {
+                    activeChar.sendMessage("Comando bloqueado, voce esta na Jaula");
+                    return false;
+                    }
+                    else if(activeChar.isDead())
+                    {
+                    activeChar.sendMessage("Comando bloqueado porque voce esta Morto.");
+                    return false;
+                    }
+                    else if(activeChar.isInCombat())
+                    {
+                    activeChar.sendMessage("Comando bloqueado em pvp ou em modo de Combat.");
+                    return false;
+                    }
+                    else if (activeChar.isInDuel())
+                    {
+                    activeChar.sendMessage("Comando bloqueado voce esta em um Duelo.");
+                    return false;
+                    }
+                    else if (activeChar.isInOlympiadMode())
+                    {
+                    activeChar.sendMessage("Comando bloqueado em olympiada.");
+                    return false;
+                    }
+                    else if (activeChar.getKarma() > 0)
+                    {
+                    activeChar.sendMessage("Ha.. ha.. ha, voce nao pode teleportar com Karma");
+                    return false;
+                    }
+                    else if (activeChar.inObserverMode())
+                    {
+                    activeChar.sendMessage("Comando Bloqueado quando porque voce esta no modo de observador.");
+                    return false;
+                    }
+                    else if (!activeChar.inObserverMode() && !activeChar.isInOlympiadMode() && !activeChar.isInDuel() && !activeChar.isInCombat() && !activeChar.isDead() && !activeChar.isInJail())
                 }
                 return true;
         }

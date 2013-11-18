@@ -118,7 +118,7 @@ public boolean useVoicedCommand(String command, L2PcInstance activeChar, String 
                         return false;
                         }
                         }
-        }
+        		}
         }
         return true;
  }
