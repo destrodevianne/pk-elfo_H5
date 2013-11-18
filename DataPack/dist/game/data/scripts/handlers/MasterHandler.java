@@ -327,7 +327,7 @@ import handlers.voicedcommandhandlers.Repair;
 import handlers.voicedcommandhandlers.Siege;
 import handlers.voicedcommandhandlers.Teleport;
 import handlers.voicedcommandhandlers.StatsVCmd;
-import handlers.voicedcommandhandlers.VIPTeleport
+import handlers.voicedcommandhandlers.VIPTeleport;
 import handlers.voicedcommandhandlers.TWGm;
 import handlers.voicedcommandhandlers.TvTRoundVoicedInfo;
 import handlers.voicedcommandhandlers.TvTVoiced;

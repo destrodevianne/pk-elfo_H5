@@ -5,7 +5,7 @@ color 02
 echo Iniciando KingServer Game Server.
 echo.
 
-java -server -Xmx2048m -Xms2048m -Xmn512m -XX:PermSize=256m -XX:SurvivorRatio=8 -Xnoclassgc -XX:+AggressiveOpts -cp ./../libs/*;KingServer.jar king.server.gameserver.GameServer
+java -server -Xmx1024m -Xms1024m -Xmn512m -XX:PermSize=256m -XX:SurvivorRatio=8 -Xnoclassgc -XX:+AggressiveOpts -cp ./../libs/*;KingServer.jar king.server.gameserver.GameServer
 
 REM NOTE: If you have a powerful machine, you could modify/add some extra parameters for performance, like:
 REM -Xms1536m
