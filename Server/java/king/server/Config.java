@@ -1121,6 +1121,7 @@ public final class Config
 	public static boolean ENABLE_EXP_REFUSAL;
 	public static boolean COMMAND_LIDER;
 	public static boolean COMMAND_LOGOUT;
+	public static boolean ALLOW_KEYBOARD_MOVEMENT;
 	//########################################################################################################//
 	//						VIP PROPERTIES
 	//########################################################################################################//
@@ -1141,6 +1142,7 @@ public final class Config
 	public static int VIP_SP;
 	public static boolean ENABLE_VIP_SYSTEM;
 	public static Map<Integer, Integer> VIP_SKILLS;
+	public static boolean VIP_TELEPORT;
 	//########################################################################################################//
 	//						NPC PROPERTIES
 	//########################################################################################################//
@@ -2745,6 +2747,9 @@ public final class Config
             COMMAND_LIDER = Boolean.parseBoolean(UserSettings.getProperty("CommandLider", "False"));
             COMMAND_LOGOUT = Boolean.parseBoolean(UserSettings.getProperty("CommandLogout", "False"));
             
+            //###########################  Movimento pelas teclas do teclado ##########################################//
+            ALLOW_KEYBOARD_MOVEMENT = Boolean.parseBoolean(UserSettings.getProperty("AllowKeyboardMovement", "false"));
+            
 			//############################  VIP PROPERTIES  ###########################################################//
 
 			L2Properties VipSettings = new L2Properties();
@@ -2803,6 +2808,9 @@ public final class Config
 			//############################  Sistema de vip por dias ###################################################//
 			ADD_VIP = Boolean.parseBoolean(VipSettings.getProperty("NewCharacterIsVip", "False"));
 			ADD_VIP_DAYS = Integer.parseInt(VipSettings.getProperty("VipEnterDays", "7"));
+			
+			//############################  Comando de teleporte para VIP #############################################//
+			VIP_TELEPORT = Boolean.parseBoolean(VipSettings.getProperty("VipTeleport", "False"));
 			
 			//############################  AIOX PROPERTIES  ##########################################################//
 			L2Properties AioSettings = new L2Properties();

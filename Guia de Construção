@@ -140,6 +140,7 @@ Evento Last Hero
 .logout (desloga imediatamente)
 .user (abre painel de usuario que contem, informacoes do servidor, rates e comandos de habilitar/desabilitar pm, trade e ganho de xp/sp)
 .cancel (cancela todos os buffs das barras de buff)
+.teleport <x> <y> <z> (jogador VIP digite o comando seguido das coordenadas x y z)
 
 -----------------------------------------------------------------------------------------------------------
 # Os seguintes comandos foram transferidos para o painel do usuario acessivel atraves do comando .user :  #
@@ -198,6 +199,7 @@ Adicionado Multikill Announcer With Sounds
 Ao matar um jogador com PK ganha-se 1 ponto de PvP
 Recompensa personalizada para o PvP
 PvP/PK Color System
+Adicionado MOD movimento pelo teclado pelas setinhas
 
 ###############################################
 ################## PROTECOES ##################
