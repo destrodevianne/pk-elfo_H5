@@ -806,6 +806,16 @@ public class L2Attackable extends L2Npc
 									exp *= Config.VIP_XP;
 									sp *= Config.VIP_SP;
 								}
+								if (player.getLevel() <= Config.LOWLEVEL_LVL && Config.ENABLE_LOWLEVEL_XPSP) // by BrunoBR
+								{
+									exp *= Config.LOWLEVEL_XP;
+									sp *= Config.LOWLEVEL_SP;
+								}
+								if (player.getLevel() >= Config.HIGHLEVEL_LVL && Config.ENABLE_HIGHLEVEL_XPSP) // by BrunoBR
+								{
+									exp *= Config.HIGHLEVEL_XP;
+									sp *= Config.HIGHLEVEL_SP;
+								}
 							}
 							
 							// Distribute the Exp and SP between the L2PcInstance and its L2Summon

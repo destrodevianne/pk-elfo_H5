@@ -200,6 +200,7 @@ Ao matar um jogador com PK ganha-se 1 ponto de PvP
 Recompensa personalizada para o PvP
 PvP/PK Color System
 Adicionado MOD movimento pelo teclado pelas setinhas
+Mod para evento de rates funciona assim: ao ser habilitado multiplica-se as rates de XP e SP diferentes para jogadores que estão abaixo do level 40 e acima do level 41
 
 ###############################################
 ################## PROTECOES ##################

@@ -1122,6 +1122,14 @@ public final class Config
 	public static boolean COMMAND_LIDER;
 	public static boolean COMMAND_LOGOUT;
 	public static boolean ALLOW_KEYBOARD_MOVEMENT;
+	public static boolean ENABLE_LOWLEVEL_XPSP;
+	public static int LOWLEVEL_LVL;
+	public static int LOWLEVEL_XP;
+	public static int LOWLEVEL_SP;
+	public static boolean ENABLE_HIGHLEVEL_XPSP;
+	public static int HIGHLEVEL_LVL;
+	public static int HIGHLEVEL_XP;
+	public static int HIGHLEVEL_SP;
 	//########################################################################################################//
 	//						VIP PROPERTIES
 	//########################################################################################################//
@@ -2749,6 +2757,16 @@ public final class Config
             
             //###########################  Movimento pelas teclas do teclado ##########################################//
             ALLOW_KEYBOARD_MOVEMENT = Boolean.parseBoolean(UserSettings.getProperty("AllowKeyboardMovement", "false"));
+            
+            //###########################  XP e SP diferenciado para char abaixo do lv40 e acima do lv41 ##############//
+            ENABLE_LOWLEVEL_XPSP = Boolean.parseBoolean(UserSettings.getProperty("EnableLowLevelXpSp", "True"));
+            LOWLEVEL_LVL = Integer.parseInt(UserSettings.getProperty("LowLevelLvl", "40"));
+            LOWLEVEL_XP = Integer.parseInt(UserSettings.getProperty("LowLevelXp", "2"));
+            LOWLEVEL_SP = Integer.parseInt(UserSettings.getProperty("LowLevelSp", "2"));
+            ENABLE_HIGHLEVEL_XPSP = Boolean.parseBoolean(UserSettings.getProperty("EnableHighLevelXpSp", "True"));
+            HIGHLEVEL_LVL = Integer.parseInt(UserSettings.getProperty("HighLevelLvl", "41"));
+            HIGHLEVEL_XP = Integer.parseInt(UserSettings.getProperty("HighLevelXp", "2"));
+            HIGHLEVEL_SP = Integer.parseInt(UserSettings.getProperty("HighLevelSp", "2"));
             
 			//############################  VIP PROPERTIES  ###########################################################//
 
