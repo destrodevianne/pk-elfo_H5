@@ -140,7 +140,6 @@ Evento Last Hero
 .logout (desloga imediatamente)
 .user (abre painel de usuario que contem, informacoes do servidor, rates e comandos de habilitar/desabilitar pm, trade e ganho de xp/sp)
 .cancel (cancela todos os buffs das barras de buff)
-.teleport <x> <y> <z> (jogador VIP digite o comando seguido das coordenadas x y z)
 
 -----------------------------------------------------------------------------------------------------------
 # Os seguintes comandos foram transferidos para o painel do usuario acessivel atraves do comando .user :  #

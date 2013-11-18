@@ -327,7 +327,6 @@ import handlers.voicedcommandhandlers.Repair;
 import handlers.voicedcommandhandlers.Siege;
 import handlers.voicedcommandhandlers.Teleport;
 import handlers.voicedcommandhandlers.StatsVCmd;
-import handlers.voicedcommandhandlers.VIPTeleport;
 import handlers.voicedcommandhandlers.TWGm;
 import handlers.voicedcommandhandlers.TvTRoundVoicedInfo;
 import handlers.voicedcommandhandlers.TvTVoiced;
@@ -641,7 +640,6 @@ public class MasterHandler
 		{
 			// Voiced Command Handlers
 			StatsVCmd.class,
-			(Config.VIP_TELEPORT ? VIPTeleport.class : null),
 			// TODO: Add configuration options for this voiced commands:
 			// CastleVCmd.class,
 			// SetVCmd.class,

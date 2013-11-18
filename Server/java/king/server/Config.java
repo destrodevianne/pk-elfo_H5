@@ -1153,7 +1153,6 @@ public final class Config
 	public static int VIP_SP;
 	public static boolean ENABLE_VIP_SYSTEM;
 	public static Map<Integer, Integer> VIP_SKILLS;
-	public static boolean VIP_TELEPORT;
 	//########################################################################################################//
 	//						NPC PROPERTIES
 	//########################################################################################################//
@@ -2828,9 +2827,6 @@ public final class Config
 			//############################  Sistema de vip por dias ###################################################//
 			ADD_VIP = Boolean.parseBoolean(VipSettings.getProperty("NewCharacterIsVip", "False"));
 			ADD_VIP_DAYS = Integer.parseInt(VipSettings.getProperty("VipEnterDays", "7"));
-			
-			//############################  Comando de teleporte para VIP #############################################//
-			VIP_TELEPORT = Boolean.parseBoolean(VipSettings.getProperty("VipTeleport", "False"));
 			
 			//############################  AIOX PROPERTIES  ##########################################################//
 			L2Properties AioSettings = new L2Properties();
