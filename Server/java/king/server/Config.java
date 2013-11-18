@@ -100,7 +100,6 @@ public final class Config
 	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olympiad.properties";	
 	public static final String PKELFO_FILE = "./config/Pkelfo.properties";
 	public static final String PREMIUM_CONFIG_FILE = "./config/Premium.properties";
-	public static final String PVP_CONFIG_FILE = "./config/PVP.properties";
 	public static final String PVPPK_CONFIG_FILE = "./config/PvPpK/PvpPk.properties";
 	public static final String RATES_CONFIG_FILE = "./config/Rates.properties";
 	public static final String SECURITY_CONFIG_FILE = "./config/Security.properties";
@@ -213,6 +212,10 @@ public final class Config
     public static boolean ENABLE_PVP_REWARD;
     public static int PVP_REWARD_ITEM;
     public static int AMOUNT_PVP_REWARD;
+    public static String PK_MESSAGE;
+    public static String PVP_MESSAGE;
+    public static String VICTIM_PK_MESSAGE;
+    public static String VICTIM_PVP_MESSAGE;
 
     // ----------------------------------------------------------------------------------------------------//
 	// PC bang points
@@ -4312,6 +4315,12 @@ public final class Config
 			ENABLE_PVP_REWARD = Boolean.parseBoolean(PvPpKSettings.getProperty("EnablePvPReward", "False"));
 			PVP_REWARD_ITEM = Integer.parseInt(PvPpKSettings.getProperty("PvPRewardItem", "6673"));
 			AMOUNT_PVP_REWARD = Integer.parseInt(PvPpKSettings.getProperty("AmountPvPReward", "1"));
+			
+			//--------------------------- mensagem para vitimas de pk e pvp e para quem deu pk e pvp ------------------//
+			PK_MESSAGE = PvPpKSettings.getProperty("PkMessage", "Voce acabou de matar um inocente!");
+			PVP_MESSAGE = PvPpKSettings.getProperty("PvpMessage", "Boa luta, voce destruiu seu inimigo!");
+			VICTIM_PK_MESSAGE = PvPpKSettings.getProperty("VictimPkMessage", "LOL? Ele te matou e você nao faz nada???");
+			VICTIM_PVP_MESSAGE = PvPpKSettings.getProperty("VictimPvpMessage", "Noob. Vai ficar mais forte antes de ir a um PvP.");
 			
 			//#########################################################################################################//
 			
