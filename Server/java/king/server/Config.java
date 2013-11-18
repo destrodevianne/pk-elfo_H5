@@ -228,7 +228,7 @@ public final class Config
 	public static boolean RANDOM_PC_BANG_POINT;
 	public static boolean Boost_EXP_COMMAND;
 	public static boolean CMD_ONLINE;
-	public static boolean CANCEL_ONLINE;
+	public static boolean CANCELAR_ONLINE;
 	public static boolean CMD_FAKE;
 	public static int FAKE_PLAYERS;
 	public static boolean BOSS_STATS;
@@ -2287,7 +2287,6 @@ public final class Config
 				POLE_VS_LIGHT = Float.parseFloat(PkelfoSettings.getProperty("PoleVsLight", "1.00"));
 				POLE_VS_ROBE = Float.parseFloat(PkelfoSettings.getProperty("PoleVsRobe", "1.00"));
 				PC_BANG_ENABLED = Boolean.parseBoolean(PkelfoSettings.getProperty("Enabled", "false"));
-				ALT_ALLOW_REFINE_PVP_ITEM = Boolean.parseBoolean(PkelfoSettings.getProperty("AltAllowRefinePVPItem", "False"));
 				ENABLE_UNSTUCK_PVP = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableUnstuckPvP", "True"));
 				USE_CR_ITEM = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableTheClanRepPointsItem", "False"));
 				CR_ITEM_MIN_CLAN_LVL = Integer.parseInt(PkelfoSettings.getProperty("MinClanLevelNeededForCR", "7"));
@@ -2362,7 +2361,7 @@ public final class Config
 				RANDOM_PC_BANG_POINT = Boolean.parseBoolean(PkelfoSettings.getProperty("AcquisitionPointsRandom", "false"));
 				Boost_EXP_COMMAND = Boolean.parseBoolean(PkelfoSettings.getProperty("SpExpCommand", "false"));
 				CMD_ONLINE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandOnline", "false"));
-				CANCEL_ONLINE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandCancel", "false"));
+				CANCELAR_ONLINE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandCancel", "false"));
 				CMD_FAKE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandFakePlayer", "false"));
 				FAKE_PLAYERS = Integer.parseInt(PkelfoSettings.getProperty("NumberOfFakes", "1"));
 				BOSS_STATS = Boolean.parseBoolean(PkelfoSettings.getProperty("GrandBossStats", "false"));
@@ -4122,8 +4121,7 @@ public final class Config
 			L2JMOD_ANTIFEED_DUALBOX = Boolean.parseBoolean(L2JModSettings.getProperty("AntiFeedDualbox", "true"));
 			L2JMOD_ANTIFEED_DISCONNECTED_AS_DUALBOX = Boolean.parseBoolean(L2JModSettings.getProperty("AntiFeedDisconnectedAsDualbox", "true"));
 			L2JMOD_ANTIFEED_INTERVAL = 1000 * Integer.parseInt(L2JModSettings.getProperty("AntiFeedInterval", "120"));
-			ANNOUNCE_PK_PVP = Boolean.parseBoolean(L2JModSettings.getProperty("AnnouncePkPvP", "True"));
-						
+									
 			L2JMOD_CHAT_ADMIN = Boolean.parseBoolean(L2JModSettings.getProperty("ChatAdmin", "false"));
 			
 			L2JMOD_MULTILANG_DEFAULT = L2JModSettings.getProperty("MultiLangDefault", "en");
@@ -4226,6 +4224,7 @@ public final class Config
 			PVP_MANAPOTION = Boolean.parseBoolean(PvPpKSettings.getProperty("PvPManaPotion", "True"));
 			
 			//--------------------------- anuncio global de PvP e Pk -------------------------------------------------//
+			ANNOUNCE_PK_PVP = Boolean.parseBoolean(PvPpKSettings.getProperty("AnnouncePkPvP", "True"));
 			ANNOUNCE_PK_PVP_NORMAL_MESSAGE = Boolean.parseBoolean(PvPpKSettings.getProperty("AnnouncePkPvPNormalMessage", "True"));
 			ANNOUNCE_PK_MSG = PvPpKSettings.getProperty("AnnouncePkMsg", "$killer has matou $target");
 			ANNOUNCE_PVP_MSG = PvPpKSettings.getProperty("AnnouncePvpMsg", "$killer derrotou $target");
@@ -4277,7 +4276,7 @@ public final class Config
 			ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE = Boolean.parseBoolean(PvPpKSettings.getProperty("AltKarmaPlayerCanUseWareHouse", "true"));
 			
 			//--------------------------------------------------------------------------------------------------------//
-			
+			ALT_ALLOW_REFINE_PVP_ITEM = Boolean.parseBoolean(PvPpKSettings.getProperty("AltAllowRefinePVPItem", "False"));
 			KARMA_MIN_KARMA = Integer.parseInt(PvPpKSettings.getProperty("MinKarma", "240"));
 			KARMA_MAX_KARMA = Integer.parseInt(PvPpKSettings.getProperty("MaxKarma", "10000"));
 			KARMA_XP_DIVIDER = Integer.parseInt(PvPpKSettings.getProperty("XPDivider", "260"));
