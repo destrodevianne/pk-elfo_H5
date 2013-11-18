@@ -656,7 +656,7 @@ public class MasterHandler
 			UserActions.class,
 			Lider.class,
 			Logout.class,
-			(Config.CANCELAR_ONLINE ? Cancel.class : null),
+			(Config.CANCELAR_ONLINE ? Cancelar.class : null),
 			(Config.CMD_ONLINE ? Online.class : null),
 			(Config.BOSS_STATS ? RaidBoosStatus.class : null),
 			(Config.ALLOW_REFUSE_BUFF ? RefuseBuff.class : null),

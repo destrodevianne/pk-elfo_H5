@@ -14,7 +14,7 @@ public class Cancel implements IVoicedCommandHandler
         @Override
         public boolean useVoicedCommand(String command, L2PcInstance activeChar, String target)
         {
-                if (command.equalsIgnoreCase("cancel") && (activeChar.isInsideZone(L2Character.ZONE_PEACE)));
+                if (command.equalsIgnoreCase("cancel"));
                 {
                         activeChar.stopAllEffects();
                 }

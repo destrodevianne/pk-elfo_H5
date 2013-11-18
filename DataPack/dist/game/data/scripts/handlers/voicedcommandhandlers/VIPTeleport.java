@@ -21,11 +21,6 @@ public class VIPTeleport implements IVoicedCommandHandler
                         {
                                 return false;
                         }
-                        else if(activeChar.atEvent)
-                        {
-                                activeChar.sendMessage("You are an Event.");
-                                return false;
-                        }
                         else if(activeChar.isInDuel())
                         {
                                 activeChar.sendMessage("You are on Duel.");
