@@ -6303,14 +6303,11 @@ public final class L2PcInstance extends L2Playable
 		}
 		
 		// Check if it's pvp
-		if ((checkIfPvP(target) && // Can pvp and
-		(targetPlayer.getPvpFlag() != 0 // Target player has pvp flag set
-		)) || // or
-		(isInsideZone(ZoneId.PVP) && // Player is inside pvp zone and
-		targetPlayer.isInsideZone(ZoneId.PVP) // Target player is inside pvp zone
-		))
+		if ((checkIfPvP(target) && (targetPlayer.getPvpFlag() != 0 )) || (isInsideZone(ZoneId.PVP) && targetPlayer.isInsideZone(ZoneId.PVP) ))
 		{
 			increasePvpKills(target);
+			sendMessage(Config.PVP_MESSAGE);
+			targetPlayer.sendMessage(Config.VICTIM_PVP_MESSAGE);
 		}
 		else
 		// Target player doesn't have pvp flag set
@@ -6320,7 +6317,11 @@ public final class L2PcInstance extends L2Playable
 			{
 				// 'Both way war' -> 'PvP Kill'
 				increasePvpKills(target);
+				sendMessage(Config.PVP_MESSAGE);
+				targetPlayer.sendMessage(Config.VICTIM_PVP_MESSAGE);
+				{
 				return;
+				}
 			}
 			
 			// 'No war' or 'One way war' -> 'Normal PK'
@@ -6329,6 +6330,9 @@ public final class L2PcInstance extends L2Playable
 				if (Config.KARMA_AWARD_PK_KILL)
 				{
 					increasePvpKills(target);
+					sendMessage(Config.PVP_MESSAGE);
+					targetPlayer.sendMessage(Config.VICTIM_PVP_MESSAGE);
+
 				}
 			}
 			else if (targetPlayer.getPvpFlag() == 0) // Target player doesn't have karma
@@ -6340,6 +6344,9 @@ public final class L2PcInstance extends L2Playable
 				increasePkKillsAndKarma(target);
 				// Unequip adventurer items
 				checkItemRestriction();
+				sendMessage(Config.PK_MESSAGE);
+				targetPlayer.sendMessage(Config.VICTIM_PK_MESSAGE);
+
 			}
 		}
 	}
