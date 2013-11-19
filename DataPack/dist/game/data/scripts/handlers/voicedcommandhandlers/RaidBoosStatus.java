@@ -3,7 +3,8 @@ package handlers.voicedcommandhandlers;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Logger;
-  
+
+import king.server.Config;
 import king.server.gameserver.datatables.NpcTable;
 import king.server.gameserver.handler.IVoicedCommandHandler;
 import king.server.gameserver.instancemanager.GrandBossManager;

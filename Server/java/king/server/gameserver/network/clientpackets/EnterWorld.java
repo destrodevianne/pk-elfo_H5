@@ -232,27 +232,11 @@ public class EnterWorld extends L2GameClientPacket
 
 		if (Config.ADD_HERO)
 			{
-			if (activeChar.getLevel() <= 2)
+			if (activeChar.getLevel() <= 0)
 			activeChar.setHero(true);
 			activeChar.sendMessage("Parabens Agora Voce e Hero! "+activeChar.getName()+" ");
 			}
-		
-		if (Config.ADD_VIP)
-			{
-			if (activeChar.getLevel() <= 2)			            
-			activeChar.setVip(true);
-			activeChar.setVipEndTime(Config.ADD_VIP_DAYS);
-			activeChar.sendMessage("Voce ganhou VIP! "+activeChar.getName()+" ");
-			}
-		
-		if (Config.ADD_AIO)
-			{
-			if (activeChar.getLevel() <= 2)
-			activeChar.setAio(true);
-			activeChar.setAioEndTime(Config.ADD_AIO_DAYS);
-			activeChar.sendMessage("Voce ganhou status de AIOx "+activeChar.getName()+" ");
-			}
-		
+	
 		if (Config.PROTECT_ENCHANT_ENABLE)
 		{
 			for (L2ItemInstance i : activeChar.getInventory().getItems())
@@ -826,16 +810,17 @@ public class EnterWorld extends L2GameClientPacket
 		}
 		
 		if(activeChar.isVip())
-		{
-			onEnterVip(activeChar);
+		{	
+			if(Config.ALLOW_VIP_NCOLOR && activeChar.isVip())
+				activeChar.getAppearance().setNameColor(Config.VIP_NCOLOR);
+			               
+			if(Config.ALLOW_VIP_TCOLOR && activeChar.isVip())
+				activeChar.getAppearance().setTitleColor(Config.VIP_TCOLOR);
+			{
+				activeChar.sendMessage("Final do periodo de Vip em " + _daysleft + " dias.");
+			}
 		}
 		
-		if(Config.ALLOW_VIP_NCOLOR && activeChar.isVip())
-			activeChar.getAppearance().setNameColor(Config.VIP_NCOLOR);
-			               
-		if(Config.ALLOW_VIP_TCOLOR && activeChar.isVip())
-			activeChar.getAppearance().setTitleColor(Config.VIP_TCOLOR);
-
 		TvTEvent.onLogin(activeChar);
 		TvTRoundEvent.onLogin(activeChar);
 		

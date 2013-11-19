@@ -261,19 +261,17 @@ public final class CharacterCreate extends L2GameClientPacket
 		 * PkElfo
 		 *
 		 */
-
-		if (Config.ADD_VIP)
-		{                     
+		if (Config.ALLOW_CUSTOM_CHAR_VIP)
+		{	            
 		newChar.setVip(true);
-		newChar.setVipEndTime(Config.ADD_VIP_DAYS);           
+		newChar.setVipEndTime(Config.CUSTOM_DAY_VIP);
 		}
-
+	
 		if (Config.ADD_AIO)
 		{
 		newChar.setAio(true);
-		newChar.setAioEndTime(Config.ADD_AIO_DAYS);                       
+		newChar.setAioEndTime(Config.ADD_AIO_DAYS);
 		}
-		
 		// TODO: Make it random.
 		final L2PcTemplate template = newChar.getTemplate();
 		newChar.setXYZInvisible(template.getSpawnX(), template.getSpawnY(), template.getSpawnZ());

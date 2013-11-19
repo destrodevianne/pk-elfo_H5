@@ -1136,8 +1136,8 @@ public final class Config
 	//########################################################################################################//
 	//						VIP PROPERTIES
 	//########################################################################################################//
-	public static boolean ADD_VIP;
-	public static int ADD_VIP_DAYS;
+	public static boolean ALLOW_CUSTOM_CHAR_VIP;
+	public static int CUSTOM_DAY_VIP;
 	public static boolean ENABLE_VIP_MESSAGE;
 	public static boolean ANNOUNCE_VIP_CONECT;
 	public static boolean ANNOUNCE_VIP_DESCONECT;
@@ -2825,8 +2825,8 @@ public final class Config
 			ENABLE_VIP_MESSAGE = Boolean.parseBoolean(VipSettings.getProperty("VipMensagem", "False"));
 			
 			//############################  Sistema de vip por dias ###################################################//
-			ADD_VIP = Boolean.parseBoolean(VipSettings.getProperty("NewCharacterIsVip", "False"));
-			ADD_VIP_DAYS = Integer.parseInt(VipSettings.getProperty("VipEnterDays", "7"));
+			ALLOW_CUSTOM_CHAR_VIP = Boolean.parseBoolean(VipSettings.getProperty("NewCharacterIsVip", "False"));
+			CUSTOM_DAY_VIP = Integer.parseInt(VipSettings.getProperty("VipEnterDays", "7"));
 			
 			//############################  AIOX PROPERTIES  ##########################################################//
 			L2Properties AioSettings = new L2Properties();
