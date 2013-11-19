@@ -1,7 +1,6 @@
 package handlers.voicedcommandhandlers;
 
 import king.server.gameserver.handler.IVoicedCommandHandler;
-import king.server.gameserver.model.actor.L2Character;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 
 public class Cancelar implements IVoicedCommandHandler
