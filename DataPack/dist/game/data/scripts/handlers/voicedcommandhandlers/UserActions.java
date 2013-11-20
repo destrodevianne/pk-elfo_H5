@@ -76,23 +76,23 @@ public class UserActions implements IVoicedCommandHandler
                                        if (L2PcInstance._isoneffect == true)
                                        {
                                                        activeChar.stopAbnormalEffect(AbnormalEffect.VITALITY);
-                                                       activeChar.sendMessage("Your custom effect is now disabled!");
-                                                       ExShowScreenMessage message1 = new ExShowScreenMessage("Your custom effect is now disabled!",4000);
+                                                       activeChar.sendMessage("Seu efeito personalizado agora esta desativado!");
+                                                       ExShowScreenMessage message1 = new ExShowScreenMessage("Seu efeito personalizado agora esta desativado!",4000);
                                                        activeChar.sendPacket(message1);
                                                        L2PcInstance._isoneffect = false;
                                        }
                                        else
                                        {
-                                               activeChar.sendMessage("You dont have effect enabled");
-                                               ExShowScreenMessage message1 = new ExShowScreenMessage("You dont have effect enabled", 4000);
+                                               activeChar.sendMessage("Seu efeito personalizado agora esta ativado");
+                                               ExShowScreenMessage message1 = new ExShowScreenMessage("Seu efeito personalizado agora esta ativado", 4000);
                                                activeChar.sendPacket(message1);       
                                                return false;          
                                        }
                                }
                                else
                                {
-                                       activeChar.sendMessage("This command is disabled");
-                                       ExShowScreenMessage message1 = new ExShowScreenMessage("This command is disabled by admin!", 4000);
+                                       activeChar.sendMessage("Este comando esta desativado");
+                                       ExShowScreenMessage message1 = new ExShowScreenMessage("Este comando foi desativado pelo ADM!", 4000);
                                        activeChar.sendPacket(message1);
                                }
                        }
@@ -103,23 +103,23 @@ public class UserActions implements IVoicedCommandHandler
                                        if (L2PcInstance._istraderefusal == false)
                                        {
                                                activeChar.setTradeRefusal(true);
-                                               activeChar.sendMessage("Trade refusal enabled");
-                                               ExShowScreenMessage message1 = new ExShowScreenMessage("Trade refusal mode is now enabled!", 4000);
+                                               activeChar.sendMessage("Recusa de Trade habilitado");
+                                               ExShowScreenMessage message1 = new ExShowScreenMessage("Recusa de Trade agora esta ativado!", 4000);
                                                activeChar.sendPacket(message1);
                                                L2PcInstance._istraderefusal = true;
                                        }
                                        else
                                        {
-                                               activeChar.sendMessage("You are already in trade refusal mode!");
-                                               ExShowScreenMessage message1 = new ExShowScreenMessage("You are already in trade refusal mode!", 4000);
+                                               activeChar.sendMessage("Voce ja esta com o comando ativado!");
+                                               ExShowScreenMessage message1 = new ExShowScreenMessage("Voce ja esta com o comando ativado!", 4000);
                                                activeChar.sendPacket(message1);       
                                                return false;          
                                        }
                                }
                                else
                                {
-                                       activeChar.sendMessage("This command is disabled");
-                                       ExShowScreenMessage message1 = new ExShowScreenMessage("This command is disabled by admin!", 4000);
+                                       activeChar.sendMessage("Este comando esta desativado");
+                                       ExShowScreenMessage message1 = new ExShowScreenMessage("Este comando foi desativado pelo ADM!", 4000);
                                        activeChar.sendPacket(message1);
                                }
                        }
@@ -130,23 +130,23 @@ public class UserActions implements IVoicedCommandHandler
                                        if (L2PcInstance._istraderefusal == true)
                                        {
                                                activeChar.setTradeRefusal(false);
-                                               activeChar.sendMessage("Trade refusal disabled");
-                                               ExShowScreenMessage message1 = new ExShowScreenMessage("Trade refusal mode is now disabled!", 4000);
+                                               activeChar.sendMessage("Recusa de Trade desabilitado");
+                                               ExShowScreenMessage message1 = new ExShowScreenMessage("Recusa de Trade agora esta desativado!", 4000);
                                                activeChar.sendPacket(message1);
                                        L2PcInstance._istraderefusal = false;
                                }
                                        else
                                        {
-                                               activeChar.sendMessage("You are not in trade refusal mode!");
-                                               ExShowScreenMessage message1 = new ExShowScreenMessage("You are not in trade refusal mode!", 4000);
+                                               activeChar.sendMessage("Voce nao esta com o comando ativado!");
+                                               ExShowScreenMessage message1 = new ExShowScreenMessage("Voce nao esta com o comando ativado!", 4000);
                                                activeChar.sendPacket(message1);       
                                                return false;          
                                        }
                                }
                                else
                                {
-                                       activeChar.sendMessage("This command is disabled");
-                                       ExShowScreenMessage message1 = new ExShowScreenMessage("This command is disabled by admin!", 4000);
+                                       activeChar.sendMessage("O comando foi desativado");
+                                       ExShowScreenMessage message1 = new ExShowScreenMessage("O comando foi desativado pelo ADM!", 4000);
                                        activeChar.sendPacket(message1);
                                }
                        }
@@ -156,23 +156,23 @@ public class UserActions implements IVoicedCommandHandler
                                {
                                        if (L2PcInstance._isexpsprefusal == false)
                                        {
-                                               activeChar.sendMessage("Exp/sp refusal enabled");
-                                               ExShowScreenMessage message1 = new ExShowScreenMessage("Exp/sp refusal mode is now enabled!", 4000);
+                                               activeChar.sendMessage("Comando de desabilitar ganho de Exp/sp esta ativado");
+                                               ExShowScreenMessage message1 = new ExShowScreenMessage("Comando de desabilitar ganho de Exp/sp esta ativado!", 4000);
                                                activeChar.sendPacket(message1);
                                                L2PcInstance._isexpsprefusal = true;
                                        }
                                        else
                                        {
-                                               activeChar.sendMessage("You are already in exp/sp refusal mode!");
-                                               ExShowScreenMessage message1 = new ExShowScreenMessage("You are already in exp/sp refusal mode!", 4000);
+                                               activeChar.sendMessage("Voce ja esta com o comando ativado!");
+                                               ExShowScreenMessage message1 = new ExShowScreenMessage("Voce ja esta com o comando ativado!", 4000);
                                                activeChar.sendPacket(message1);       
                                                return false;          
                                        }
                                }
                                else
                                {
-                                       activeChar.sendMessage("This command is disabled");
-                                       ExShowScreenMessage message1 = new ExShowScreenMessage("This command is disabled by admin!", 4000);
+                                       activeChar.sendMessage("O comando foi desativado");
+                                       ExShowScreenMessage message1 = new ExShowScreenMessage("O comando foi desativado pelo ADM!", 4000);
                                        activeChar.sendPacket(message1);
                                }
                        }
@@ -182,23 +182,23 @@ public class UserActions implements IVoicedCommandHandler
                                {
                                        if (L2PcInstance._isexpsprefusal == true)
                                        {
-                                               activeChar.sendMessage("Exp/sp refusal disabled");
-                                              ExShowScreenMessage message1 = new ExShowScreenMessage("Exp/sp refusal mode is now disabled!", 4000);
+                                               activeChar.sendMessage("Comando de desabilitar ganho de Exp/sp esta desativado");
+                                              ExShowScreenMessage message1 = new ExShowScreenMessage("Comando de desabilitar ganho de Exp/sp esta desativado!", 4000);
                                                activeChar.sendPacket(message1);
                                                L2PcInstance._isexpsprefusal = false;
                                        }
                                       else
                                        {
-                                               activeChar.sendMessage("You are not in exp/sp refusal mode!");
-                                               ExShowScreenMessage message1 = new ExShowScreenMessage("You are not in exp/sp refusal mode!", 4000);
+                                               activeChar.sendMessage("Voce ja esta com o comando desativado!");
+                                               ExShowScreenMessage message1 = new ExShowScreenMessage("Voce ja esta com o comando desativado!", 4000);
                                                activeChar.sendPacket(message1);       
                                                return false;          
                                        }
                                }
                                else
                                {
-                                       activeChar.sendMessage("This command is disabled");
-                                       ExShowScreenMessage message1 = new ExShowScreenMessage("This command is disabled by admin!", 4000);
+                                       activeChar.sendMessage("O comando foi desativado");
+                                       ExShowScreenMessage message1 = new ExShowScreenMessage("O comando foi desativado pelo ADM!", 4000);
                                        activeChar.sendPacket(message1);
                                }
                        }      
@@ -209,23 +209,23 @@ public class UserActions implements IVoicedCommandHandler
                                        if (L2PcInstance._ispmrefusal == true)
                                        {
                                               activeChar.setMessageRefusal(false);
-                                               activeChar.sendMessage("Pm refusal mode disabled");
-                                               ExShowScreenMessage message1 = new ExShowScreenMessage("Pm refusal mode is now disabled!", 4000);
+                                               activeChar.sendMessage("O comando de desabilitar o Pm esta desativado");
+                                               ExShowScreenMessage message1 = new ExShowScreenMessage("O comando de desabilitar o Pm esta desativado!", 4000);
                                                activeChar.sendPacket(message1);
                                               L2PcInstance._ispmrefusal = false;
                                        }
                                        else
                                        {
-                                               activeChar.sendMessage("You are not in pm refusal mode!");
-                                               ExShowScreenMessage message1 = new ExShowScreenMessage("You are not in pm refusal mode!", 4000);
+                                               activeChar.sendMessage("Voce ja esta com o comando ativado!");
+                                               ExShowScreenMessage message1 = new ExShowScreenMessage("Voce ja esta com o comando ativado!", 4000);
                                                activeChar.sendPacket(message1);       
                                                return false;          
                                        }
                                }
                                else
                                {
-                                       activeChar.sendMessage("This command is disabled");
-                                       ExShowScreenMessage message1 = new ExShowScreenMessage("This command is disabled by admin!", 4000);
+                                       activeChar.sendMessage("O comando foi desativado");
+                                       ExShowScreenMessage message1 = new ExShowScreenMessage("O comando foi desativado pelo ADM!", 4000);
                                       activeChar.sendPacket(message1);
                                        return false;                                          
                                }
@@ -238,23 +238,23 @@ public class UserActions implements IVoicedCommandHandler
                                        if (L2PcInstance._ispmrefusal == false)
                                        {
                                                activeChar.setMessageRefusal(true);
-                                               activeChar.sendMessage("Pm refusal mode enabled");
-                                               ExShowScreenMessage message1 = new ExShowScreenMessage("Pm refusal mode is now enabled!", 4000);
+                                               activeChar.sendMessage("O comando de desabilitar o Pm esta ativado");
+                                               ExShowScreenMessage message1 = new ExShowScreenMessage("O comando de desabilitar o Pm esta ativado!", 4000);
                                               activeChar.sendPacket(message1);
                                                L2PcInstance._ispmrefusal = true;
                                        }
                                        else
                                        {
-                                               activeChar.sendMessage("You are already in pm refusal mode!");
-                                               ExShowScreenMessage message1 = new ExShowScreenMessage("You are already in pm refusal mode!", 4000);
+                                               activeChar.sendMessage("Voce ja esta com o comando ativado!");
+                                               ExShowScreenMessage message1 = new ExShowScreenMessage("Voce ja esta com o comando ativado!", 4000);
                                                activeChar.sendPacket(message1);       
                                                return false;  
                                        }
                                }
                                else
                                {
-                                       activeChar.sendMessage("This command is disabled");
-                                       ExShowScreenMessage message1 = new ExShowScreenMessage("This command is disabled by admin!", 4000);
+                                       activeChar.sendMessage("O comando foi desativado");
+                                       ExShowScreenMessage message1 = new ExShowScreenMessage("O comando foi desativado pelo ADM!", 4000);
                                        activeChar.sendPacket(message1);
                                        return false;  
                                       

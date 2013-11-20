@@ -14593,10 +14593,12 @@ public final class L2PcInstance extends L2Playable
 			{
 				_aio_endTime = 0;
 			}
+			
 			else if(process.equals("vip"))
 			{
 				_vip_endTime = 0;
 			}
+			
 			else
 			{
 				System.out.println("processo " + process + "no Known while try set end date");

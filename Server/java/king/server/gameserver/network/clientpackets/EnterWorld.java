@@ -966,11 +966,11 @@ public class EnterWorld extends L2GameClientPacket
                        if(_daysleft > 30)
                                activeChar.sendMessage("[Vip System]: Periodo termina em " + df.format(dt) + ". aproveite o jogo");
                        else if(_daysleft > 0)
-                               activeChar.sendMessage("deixou " + (int)_daysleft + " para o perido de Vip terminar");
+                               activeChar.sendMessage("falta " + (int)_daysleft + " para o perido de Vip terminar");
                        else if(_daysleft < 1)
                        {
                                long hour = (endDay - now)/3600000;
-                               activeChar.sendMessage("deixou " + (int)hour + " horas para o periodo de Vip terminar");
+                               activeChar.sendMessage("falta " + (int)hour + " horas para o periodo de Vip terminar");
                        }
                }
        }

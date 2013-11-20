@@ -131,8 +131,6 @@ public final class Config
 	public static boolean ANNOUNCE_HERO_CONECT;
 	public static boolean ANNOUNCE_HERO_DESCONECT;
 	public static boolean ENABLE_HERO_MESSAGE;
-	public static boolean ADD_AIO;
-	public static int ADD_AIO_DAYS;
 
 	//########################################################################################################//
 	//						AUTORESTART PROPERTIES
@@ -1136,8 +1134,6 @@ public final class Config
 	//########################################################################################################//
 	//						VIP PROPERTIES
 	//########################################################################################################//
-	public static boolean ALLOW_CUSTOM_CHAR_VIP;
-	public static int CUSTOM_DAY_VIP;
 	public static boolean ENABLE_VIP_MESSAGE;
 	public static boolean ANNOUNCE_VIP_CONECT;
 	public static boolean ANNOUNCE_VIP_DESCONECT;
@@ -2824,10 +2820,6 @@ public final class Config
 			ANNOUNCE_VIP_CONECT = Boolean.parseBoolean(VipSettings.getProperty("AnnounceVipConect", "False"));
 			ENABLE_VIP_MESSAGE = Boolean.parseBoolean(VipSettings.getProperty("VipMensagem", "False"));
 			
-			//############################  Sistema de vip por dias ###################################################//
-			ALLOW_CUSTOM_CHAR_VIP = Boolean.parseBoolean(VipSettings.getProperty("NewCharacterIsVip", "False"));
-			CUSTOM_DAY_VIP = Integer.parseInt(VipSettings.getProperty("VipEnterDays", "7"));
-			
 			//############################  AIOX PROPERTIES  ##########################################################//
 			L2Properties AioSettings = new L2Properties();
 			final File aio = new File(AIO_CONFIG_FILE);
@@ -2848,10 +2840,6 @@ public final class Config
 			ANNOUNCE_HERO_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroDesconect", "False"));
 			ANNOUNCE_HERO_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroConect", "False"));
 			ENABLE_HERO_MESSAGE = Boolean.parseBoolean(AioSettings.getProperty("HeroMensagem", "False"));
-			
-			//############################  SISTEMA DE AIOX POR DIAS ############################################//
-			ADD_AIO = Boolean.parseBoolean(AioSettings.getProperty("NewCharacterIsAio", "False"));
-			ADD_AIO_DAYS = Integer.parseInt(AioSettings.getProperty("AIOEnterDays", "7"));
 			
 			//############################  SISTEMA DE AIOX BUFFER ##############################################//
 			ENABLE_AIO_SYSTEM = Boolean.parseBoolean(AioSettings.getProperty("EnableAioSystem", "true"));
