@@ -34,8 +34,7 @@ public class Premium implements IVoicedCommandHandler
 	private static final String[] VOICED_COMMANDS =
 	{
 		"mypremium",
-		"addpremium_1d",
-		"addpremium_1w"
+		"addpremium"
 	};
 	
 	/**
