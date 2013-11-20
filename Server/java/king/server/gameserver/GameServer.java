@@ -18,6 +18,7 @@ import org.mmocore.network.SelectorThread;
 import king.server.Config;
 import king.server.L2DatabaseFactory;
 import king.server.Server;
+import king.server.gameserver.PkElfo;
 import king.server.gameserver.cache.CrestCache;
 import king.server.gameserver.cache.HtmCache;
 import king.server.gameserver.custom.AutoVoteRewardManager;
@@ -181,11 +182,11 @@ public class GameServer
 		
 		if (Config.SERVER_VERSION != null)
 		{
-			_log.info(getClass().getSimpleName() + ": KingServer Server Version:    " + Config.SERVER_VERSION);
+			_log.info(getClass().getSimpleName() + ": PkElfo Server Versao:    " + Config.SERVER_VERSION);
 		}
 		if (Config.DATAPACK_VERSION != null)
 		{
-			_log.info(getClass().getSimpleName() + ": KingServer Datapack Version:  " + Config.DATAPACK_VERSION);
+			_log.info(getClass().getSimpleName() + ": PkElfo Datapack Versao:  " + Config.DATAPACK_VERSION);
 		}
 		
 		_idFactory = IdFactory.getInstance();
@@ -202,10 +203,11 @@ public class GameServer
 		new File("log/game").mkdirs();
 		
 		// load script engines
-		printSection("Engines");
+		printSection("Mecanismos");
 		L2ScriptEngineManager.getInstance();
 		
 		printSection("Mundo");
+		
 		// start game time control early
 		GameTimeController.getInstance();
 		InstanceManager.getInstance();
@@ -238,7 +240,7 @@ public class GameServer
 		FishingRodsData.getInstance();
 		HennaData.getInstance();
 		
-		printSection("Characters");
+		printSection("Personagens");
 		ClassListData.getInstance();
 		InitialEquipmentData.getInstance();
 		ExperienceTable.getInstance();
@@ -359,7 +361,7 @@ public class GameServer
 		}
 		catch (IOException ioe)
 		{
-			_log.severe(getClass().getSimpleName() + ": Failed loading scripts.cfg, no script going to be loaded");
+			_log.severe(getClass().getSimpleName() + ": falha ao ler scripts.cfg, nenhum script vai ser carregado");
 		}
 		
 		QuestManager.getInstance().report();
@@ -432,7 +434,7 @@ public class GameServer
 		
 		KnownListUpdateTaskManager.getInstance();
 
-		printSection("Events Manager");
+		printSection("Eventos do Server");
 		Main.main();
 		EventsInterface.start();
 		TvTManager.getInstance();
@@ -498,7 +500,7 @@ public class GameServer
 			}
 			catch (UnknownHostException e1)
 			{
-				_log.log(Level.SEVERE, getClass().getSimpleName() + ": WARNING: The GameServer bind address is invalid, using all avaliable IPs. Reason: " + e1.getMessage(), e1);
+				_log.log(Level.SEVERE, getClass().getSimpleName() + ": AVISO: O endereco bind do GameServer e invalido, usando todos os IPs disponiveis. Razao: " + e1.getMessage(), e1);
 			}
 		}
 		
@@ -508,11 +510,11 @@ public class GameServer
 		}
 		catch (IOException e)
 		{
-			_log.log(Level.SEVERE, getClass().getSimpleName() + ": FATAL: Failed to open server socket. Reason: " + e.getMessage(), e);
+			_log.log(Level.SEVERE, getClass().getSimpleName() + ": FATAL: Falha ao abrir o socket do servidor. Razao: " + e.getMessage(), e);
 			System.exit(1);
 		}
 		_selectorThread.start();
-		_log.info("Numero maximo de players conectados: " + Config.MAXIMUM_ONLINE_USERS);
+		_log.info("Numero maximo de jogadores conectados: " + Config.MAXIMUM_ONLINE_USERS);
 		long serverLoadEnd = System.currentTimeMillis();
 		_log.info("Servidor carregado em " + ((serverLoadEnd - serverLoadStart) / 1000) + " segundos");
 		
@@ -539,6 +541,10 @@ public class GameServer
 		
 		// Initialize config
 		Config.load();
+		
+		// L2 PkElfo Team
+		PkElfo.PkElfoInfo();
+		
 		printSection("Database");
 		L2DatabaseFactory.getInstance();
 		gameServer = new GameServer();

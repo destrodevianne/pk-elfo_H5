@@ -89,7 +89,6 @@ public final class L2LoginServer
 		{
 			_log.warning(getClass().getSimpleName() + ": " + e.getMessage());
 		}
-		
 		// Load Config
 		Config.load();
 		

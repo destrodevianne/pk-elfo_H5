@@ -257,21 +257,6 @@ public final class CharacterCreate extends L2GameClientPacket
 			newChar.addAdena("Init", Config.STARTING_ADENA, null, false);
 		}
 		
-		/**
-		 * PkElfo
-		 *
-		 */
-		if (Config.ALLOW_CUSTOM_CHAR_VIP)
-		{	            
-		newChar.setVip(true);
-		newChar.setVipEndTime(Config.CUSTOM_DAY_VIP);
-		}
-	
-		if (Config.ADD_AIO)
-		{
-		newChar.setAio(true);
-		newChar.setAioEndTime(Config.ADD_AIO_DAYS);
-		}
 		// TODO: Make it random.
 		final L2PcTemplate template = newChar.getTemplate();
 		newChar.setXYZInvisible(template.getSpawnX(), template.getSpawnY(), template.getSpawnZ());
