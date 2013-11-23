@@ -216,11 +216,11 @@ public class Enchant extends Quest
                         if ( newEnchantLevel > 0 )
                         {
                             st.takeItems(itemRequired, itemRequiredCount);
-                            player.sendMessage("Voce encantou com sucesso o seu " + item.getItem().getName() +" dse +" + currentEnchant + " para +" + newEnchantLevel + "!");
+                            player.sendMessage("Voce encantou com sucesso o seu " + item.getItem().getName() +" de +" + currentEnchant + " para +" + newEnchantLevel + "!");
 
                             String htmlContent = "<center>Voce encantou com sucesso o seu:<br>"+
                                                     "<font color=\"FF7200\">" + item.getItem().getName() + "</font><br>"+
-                                                    "De: <font color=\"AEFF00\">+" + currentEnchant + "</font> para <font color=\"AEFF00\">+" + newEnchantLevel + "</font>"+
+                                                    "de: <font color=\"AEFF00\">+" + currentEnchant + "</font> para: <font color=\"AEFF00\">+" + newEnchantLevel + "</font>"+
                                                 "</center>";
 
                             return drawHtml("Congratulations!", htmlContent, enchantType);
@@ -251,16 +251,16 @@ public class Enchant extends Quest
         else
         {
             String content = "<center>"+
-                                "Voce nao tem <font color=\"FF7200\">Event - Glitering Medals</font> suficiente!<br>";
+                                "Voce nao tem <font color=\"FF7200\">Moeda DONATOR</font> suficiente!<br>";
 
                     if ( st.getQuestItemsCount(itemRequired) > 0 )
                     {
-                        content += "Voce tem " + st.getQuestItemsCount(itemRequired) + " Glittering Medals,<br1>"+
-                                    "necessario " + (itemRequiredCount - st.getQuestItemsCount(itemRequired)) + " mais.";
+                        content += "Voce tem " + st.getQuestItemsCount(itemRequired) + "Moeda DONATOR, porem<br1>"+
+                                    "se faz necessario necessario " + (itemRequiredCount - st.getQuestItemsCount(itemRequired)) + " a mais.";
                     }
                     else
                     {
-                        content += "Voce precisa de <font color=\"FF7200\">" + itemRequiredCount + " Event - Glitering Medals</font>!";
+                        content += "Voce precisa de <font color=\"FF7200\">" + itemRequiredCount + "Moeda DONATOR</font>!";
                     }
 
                     content += "</center>";
@@ -313,7 +313,7 @@ public class Enchant extends Quest
     public String drawHtml(String title, String content, String enchantType)
     {
         String html = "<html>"+
-                        "<title>L2 PkElfo - Encantamento</title>"+
+                        "<title>Lineage II - PkElfo - Encantamento</title>"+
                         "<body>"+
                             "<center><img src=\"L2UI_CH3.herotower_deco\" width=256 height=32><br>"+
                             "<font color=\"FF9900\">" + title + "</font></center><br>"+
