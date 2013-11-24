@@ -45,6 +45,7 @@ public class PcCafePointsManager
 		if (Config.RANDOM_PC_BANG_POINT)
 			_points = Rnd.get(_points / 2, _points);
 		
+		@SuppressWarnings("unused")
 		boolean doublepoint = false;
 		SystemMessage sm = null;
 		if (_points > 0)

@@ -115,6 +115,7 @@ public class RaidBossSpawnManager
 			bossId = npcId;
 		}
 		
+		@SuppressWarnings("null")
 		@Override
 		public void run()
 		{

@@ -18,10 +18,9 @@
  */
 package king.server.gameserver.model;
 
+import gnu.trove.map.hash.TIntIntHashMap;
 import king.server.gameserver.datatables.EnchantGroupsData;
 import king.server.gameserver.model.L2EnchantSkillGroup.EnchantSkillHolder;
-
-import gnu.trove.map.hash.TIntIntHashMap;
 
 /**
  * This class ...

@@ -21,68 +21,59 @@ package king.server.gameserver.model;
  */
 
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javolution.util.FastMap;
-
-import king.server.gameserver.datatables.MultilangMsgData;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.clientpackets.Say2;
-import king.server.gameserver.network.serverpackets.CreatureSay;
 import king.server.gameserver.network.serverpackets.L2GameServerPacket;
 
 public class MultilingualBroadcast
 {
-	private final Logger _log = Logger.getLogger(getClass().getName());
-
-	private Map<String, String> _messages;
-
+	private final Map<String, String> _messages;
+	
 	private boolean _compiled;
-
+	
 	/**
-	 * Class constructor with empty message map	
+	 * Class constructor with empty message map
 	 */
 	public MultilingualBroadcast()
 	{
-		_messages = new FastMap<String, String>();
+		_messages = new FastMap<>();
 	}
-
+	
 	/**
-	 * Class constructor with given message map	
+	 * Class constructor with given message map
 	 * @param msgMap text messages on different languages
 	 */
 	public MultilingualBroadcast(Map<String, String> msgMap)
 	{
 		_messages = msgMap;
 	}
-
+	
 	/**
 	 * Adds message on given languauge to text map
 	 * @param lang message languauge
 	 * @param text message text
-	 */	 	
+	 */
 	public void addEntry(String lang, String text)
 	{
 		if (_compiled)
 		{
 			return;
 		}
-
+		
 		_messages.put(lang, text);
 	}
-
+	
 	/**
 	 * Replaces first found substitute fragment (for all languages) with given text
 	 * @param text replacement text
-	 */	 	
+	 */
 	public void addCommonStringParameter(String text)
 	{
 		if (_compiled)
 		{
 			return;
 		}
-
+		
 		for (String key : _messages.keySet())
 		{
 			String val = _messages.get(key).replaceFirst("%.*?%", text);
@@ -93,18 +84,18 @@ public class MultilingualBroadcast
 	/**
 	 * Replaces first found substitute fragment with given text on appropriate language
 	 * @param textMap message text map with replacement text on available languages
-	 */	 	
+	 */
 	public void addUniqueStringParameter(Map<String, String> textMap)
 	{
-		if (_compiled || textMap == null)
+		if (_compiled || (textMap == null))
 		{
 			return;
 		}
-
+		
 		for (String key : _messages.keySet())
 		{
 			String val;
-
+			
 			if (textMap.containsKey(key))
 			{
 				val = _messages.get(key).replaceFirst("%.*?%", textMap.get(key));
@@ -117,72 +108,72 @@ public class MultilingualBroadcast
 			{
 				val = _messages.get(key).replaceFirst("%.*?%", "");
 			}
-
+			
 			_messages.put(key, val);
 		}
 	}
-
+	
 	/**
 	 * "Compiles" objects: creates map of packets for all languages
-	 */	 	
+	 */
 	public void compile()
 	{
 		// No default implementation, overrides in children
 	}
-
+	
 	/**
 	 * @return true if object is "compiled": map of packets for all languages is created
-	 */	 	
+	 */
 	protected final boolean isCompiled()
 	{
 		return _compiled;
 	}
-
+	
 	/**
-	 * Sets compiled state to object	
-	 */	 	
+	 * Sets compiled state to object
+	 */
 	protected final void setCompiled()
 	{
 		_compiled = true;
 	}
-
+	
 	/**
 	 * @return true if object contains not text strings
-	 */	 	
+	 */
 	public boolean isEmpty()
 	{
 		return _messages.isEmpty();
 	}
-
+	
 	/**
-	 * @param lang language to check	
+	 * @param lang language to check
 	 * @return true if object contains string on given language
-	 */	 	
+	 */
 	public boolean hasLang(String lang)
 	{
 		return _messages.containsKey(lang);
 	}
-
+	
 	/**
-	 * Clears message map	
-	 */	 	
+	 * Clears message map
+	 */
 	protected void clearMessages()
 	{
 		_messages.clear();
 	}
-
+	
 	/**
 	 * @return message map
-	 */	 	
+	 */
 	protected final Map<String, String> getMessages()
 	{
 		return _messages;
 	}
-
+	
 	/**
-	 * @param player player to determine language	
+	 * @param player player to determine language
 	 * @return CreatureSay packet for given player language
-	 */	 	
+	 */
 	public L2GameServerPacket getPacket(L2PcInstance player)
 	{
 		return null; // No default implementation, overrides in children

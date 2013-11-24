@@ -30,7 +30,6 @@ import java.util.logging.Logger;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
-
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.Announcements;
 import king.server.gameserver.ThreadPoolManager;

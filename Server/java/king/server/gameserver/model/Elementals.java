@@ -18,12 +18,11 @@
  */
 package king.server.gameserver.model;
 
+import gnu.trove.map.hash.TIntObjectHashMap;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.model.skills.funcs.FuncAdd;
 import king.server.gameserver.model.skills.funcs.LambdaConst;
 import king.server.gameserver.model.stats.Stats;
-
-import gnu.trove.map.hash.TIntObjectHashMap;
 
 public final class Elementals
 {

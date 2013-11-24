@@ -5,8 +5,6 @@ import gnu.trove.map.hash.TIntLongHashMap;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Future;
-
 import king.server.Config;
 import king.server.gameserver.ThreadPoolManager;
 import king.server.gameserver.model.L2World;
@@ -17,9 +15,7 @@ public class ExpirableServicesManager
 {
 	public Map<ServiceType, TIntLongHashMap> _holder; // store service maps
 	
-	private Future<?> _task; // expiration checkup task
-
-/**
+	/**
  * Contains possible service types
  */
 	public enum ServiceType
@@ -35,7 +31,7 @@ public class ExpirableServicesManager
 			_holder.put(type, new TIntLongHashMap());
 		}
 
-		_task = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new CheckExpirationTask(), 1000, Config.EXPIRATION_CHECK_INTERVAL);
+		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new CheckExpirationTask(), 1000, Config.EXPIRATION_CHECK_INTERVAL);
 	}
 
 	/** 

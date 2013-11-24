@@ -18,6 +18,8 @@
  */
 package king.server.gameserver.model;
 
+import gnu.trove.procedure.TObjectProcedure;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -34,8 +36,6 @@ import king.server.gameserver.model.actor.instance.L2PetInstance;
 import king.server.gameserver.util.L2TIntObjectHashMap;
 import king.server.gameserver.util.Point3D;
 import king.server.util.StringUtil;
-
-import gnu.trove.procedure.TObjectProcedure;
 
 /**
  * This class ...

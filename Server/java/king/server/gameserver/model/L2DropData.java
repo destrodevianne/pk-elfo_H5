@@ -34,7 +34,7 @@ public class L2DropData
 	private double _chance;
 	private String _questID = null;
 	private String[] _stateID = null;
-
+	
 	public L2DropData()
 	{
 	}
@@ -46,7 +46,7 @@ public class L2DropData
 		_maxDrop = max;
 		_chance = chance;
 	}
-
+	
 	/**
 	 * Returns the ID of the item dropped
 	 * @return int

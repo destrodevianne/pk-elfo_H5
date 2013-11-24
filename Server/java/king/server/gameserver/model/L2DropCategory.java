@@ -19,7 +19,6 @@
 package king.server.gameserver.model;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.SevenSigns;
 import king.server.gameserver.model.itemcontainer.PcInventory;

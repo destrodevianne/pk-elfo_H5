@@ -25,7 +25,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.GameTimeController;
 import king.server.gameserver.SevenSignsFestival;
@@ -84,7 +83,7 @@ public class L2Party extends AbstractPlayerGroup
 		2.10,
 		2.20
 	};
-	// TODO: JIV - unhardcode to some SysString enum (sysstring-e.dat)
+	
 	private static final int[] LOOT_SYSSTRINGS =
 	{
 		487,
@@ -788,8 +787,6 @@ public class L2Party extends AbstractPlayerGroup
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T GIVE rewards to L2PetInstance</B></FONT><BR>
 	 * <BR>
 	 * Exception are L2PetInstances that leech from the owner's XP; they get the exp indirectly, via the owner's exp gain<BR>
-	 * @param xpReward_pr
-	 * @param spReward_pr
 	 * @param xpReward The Experience reward to distribute
 	 * @param spReward The SP reward to distribute
 	 * @param rewardedMembers The list of L2PcInstance to reward
@@ -822,7 +819,7 @@ public class L2Party extends AbstractPlayerGroup
 		{
 			for (L2Character member : rewardedMembers)
 			{
-				if (member.isDead() || ((L2PcInstance) member)._isexpsprefusal)
+				if (member.isDead() || L2PcInstance._isexpsprefusal)
 				{
 					continue;
 				}
@@ -841,7 +838,6 @@ public class L2Party extends AbstractPlayerGroup
 					{
 						continue;
 					}
-					// TODO: This is a temporary fix while correct pet xp in party is figured out
 					penalty = (float) 0.85;
 				}
 				
@@ -863,7 +859,7 @@ public class L2Party extends AbstractPlayerGroup
 							final L2Skill skill = SkillTable.getInstance().getInfo(467, skillLvl);
 							if (skill.getExpNeeded() <= addexp)
 							{
-                                member.getActingPlayer().absorbSoul(skill, target);
+								member.getActingPlayer().absorbSoul(skill, target);
 							}
 						}
 						if (addexp > 0)

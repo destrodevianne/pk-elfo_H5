@@ -219,7 +219,7 @@ public class L2MapRegion
 	{
 		return _bannedRace;
 	}
-
+	
 	/**
 	 * @return
 	 */

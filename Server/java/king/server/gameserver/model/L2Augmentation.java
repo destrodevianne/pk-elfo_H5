@@ -20,7 +20,6 @@
 package king.server.gameserver.model;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.datatables.AugmentationData;
 import king.server.gameserver.datatables.SkillTable;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
@@ -32,7 +31,6 @@ import king.server.gameserver.network.serverpackets.SkillCoolTime;
 
 /**
  * Used to store an augmentation and its boni
- *
  * @author durgus
  */
 public final class L2Augmentation
@@ -165,7 +163,7 @@ public final class L2Augmentation
 		// remove the skill if any
 		if (_skill != null)
 		{
-		    player.removeSkill(_skill);
+			player.removeSkill(_skill);
 			if (_skill.isPassive())
 			{
 				player.removeSkill(_skill, false, true);

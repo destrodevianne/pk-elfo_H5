@@ -23,63 +23,61 @@ package king.server.gameserver.model;
 import java.util.Map;
 
 import javolution.util.FastMap;
-
 import king.server.gameserver.datatables.MultilangMsgData;
-import king.server.gameserver.model.MultilingualBroadcast;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.network.serverpackets.ExShowScreenMessage;
 
 public class MultilingualScreenMsg extends MultilingualBroadcast
 {
 	private Map<String, ExShowScreenMessage> _packets;
-	private int _showTime;
-
+	private final int _showTime;
+	
 	/**
 	 * Class constructor with empty message map and given show time
-	 * @param showTime time to show messages, ms	 	
+	 * @param showTime time to show messages, ms
 	 */
 	public MultilingualScreenMsg(int showTime)
 	{
 		super();
 		_showTime = showTime;
 	}
-
+	
 	/**
-	 * Class constructor with given message map and given show time	
+	 * Class constructor with given message map and given show time
 	 * @param msgMap text messages on different languages
-	 * @param showTime time to show messages, ms	 
+	 * @param showTime time to show messages, ms
 	 */
 	public MultilingualScreenMsg(Map<String, String> msgMap, int showTime)
 	{
 		super(msgMap);
 		_showTime = showTime;
 	}
-
+	
 	/**
 	 * @param msgName message name to create announce
-	 * @param showTime time to show messages, ms	 	
+	 * @param showTime time to show messages, ms
 	 * @return Multilingual Announce for given message name
-	 */	 	
+	 */
 	public static MultilingualScreenMsg getScreenMsg(String msgName, int showTime)
 	{
 		Map<String, String> msgMap = MultilangMsgData.getInstance().getMessageMap(msgName);
-
-		return (msgMap == null || msgMap.isEmpty()) ? null : new MultilingualScreenMsg(msgMap, showTime);  
+		
+		return ((msgMap == null) || msgMap.isEmpty()) ? null : new MultilingualScreenMsg(msgMap, showTime);
 	}
-
+	
 	/**
-	 * Just short wrapper for default time	
-	 * @param msgName message name to create announce	
+	 * Just short wrapper for default time
+	 * @param msgName message name to create announce
 	 * @return Multilingual Announce for given message name
-	 */	 	
+	 */
 	public static MultilingualScreenMsg getScreenMsg(String msgName)
 	{
 		return getScreenMsg(msgName, 5000);
 	}
-
+	
 	/**
 	 * "Compiles" objects: creates map of packets for all languages
-	 */	 	
+	 */
 	@Override
 	public void compile()
 	{
@@ -87,35 +85,35 @@ public class MultilingualScreenMsg extends MultilingualBroadcast
 		{
 			return;
 		}
-
+		
 		setCompiled();
 		_packets = new FastMap<>();
 		for (String lang : getMessages().keySet())
 		{
 			_packets.put(lang, new ExShowScreenMessage(getMessages().get(lang), _showTime));
 		}
-
+		
 		clearMessages();
 	}
-
+	
 	/**
-	 * @param player player to determine language	
+	 * @param player player to determine language
 	 * @return ExShowScreenMessage packet for given player language
-	 */	 	
+	 */
 	@Override
 	public ExShowScreenMessage getPacket(L2PcInstance player)
 	{
 		String lang = player.getLang() == null ? "en" : player.getLang();
-
+		
 		if (_packets.containsKey(lang))
 		{
 			return _packets.get(lang);
-		} 
+		}
 		else if (_packets.containsKey("en"))
 		{
 			return _packets.get("en");
 		}
-
+		
 		return new ExShowScreenMessage("", 0);
 	}
 }

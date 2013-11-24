@@ -24,7 +24,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.GeoData;
 import king.server.gameserver.ThreadPoolManager;
@@ -90,8 +89,6 @@ public class L2Spawn
 	
 	private int _instanceId = 0;
 	
-	private int _onKillDelay = 5000;
-	
 	/** The generic constructor of L2NpcInstance managed by this L2Spawn */
 	private Constructor<?> _constructor;
 	
@@ -103,7 +100,7 @@ public class L2Spawn
 	
 	private L2Npc _lastSpawn;
 	private static List<SpawnListener> _spawnListeners = new FastList<>();
- 	
+	
 	private boolean _isNoRndWalk = false; // Is no random walk
 	
 	/** The task launching the function doSpawn() */
@@ -711,7 +708,6 @@ public class L2Spawn
 	
 	public void setOnKillDelay(int delay)
 	{
-		this._onKillDelay = delay;
 	}
 	
 	@Override
