@@ -39,7 +39,6 @@ import king.server.util.Rnd;
 public class L2MonsterInstance extends L2Attackable
 {
 	protected boolean _enableMinions = true;
-	private int _aggroRangeOverride = 0;
 	private boolean _canAgroWhileMoving = false;
 	private L2MonsterInstance _master = null;
 	private MinionList _minionList = null;
@@ -271,7 +270,6 @@ public class L2MonsterInstance extends L2Attackable
 	
 	public void setIsAggresiveOverride(int aggroR)
 	{
-		_aggroRangeOverride = aggroR;
 	}
 	
 	public void setClanOverride(String newClan)

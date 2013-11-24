@@ -61,7 +61,8 @@ public class LanguageControl extends Control
 			}
 			finally
 			{
-				bis.close();
+				BufferedInputStream bis2 = bis;
+				bis2.close();
 			}
 		}
 		return bundle;

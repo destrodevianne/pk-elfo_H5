@@ -161,17 +161,6 @@ public final class SystemMessage extends L2GameServerPacket
 		_params = paramCount != 0 ? new SMParam[paramCount] : EMPTY_PARAM_ARRAY;
 	}
 	
-	/**
-	 * Use SystemMessage.getSystemMessage(SystemMessageId smId) where possible instead
-	 * @param id
-	 * @deprecated
-	 */
-	@Deprecated
-	private SystemMessage(final int id)
-	{
-		this(SystemMessageId.getSystemMessageId(id));
-	}
-	
 	private final void append(final SMParam param)
 	{
 		if (_paramIndex >= _params.length)

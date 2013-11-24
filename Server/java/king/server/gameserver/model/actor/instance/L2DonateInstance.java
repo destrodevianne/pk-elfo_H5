@@ -103,7 +103,8 @@ public class L2DonateInstance extends L2NpcInstance
 				{
 					try
 					{
-						save.close();
+						FileWriter save2 = save;
+						save2.close();
 					}
 					catch (Exception e)
 					{

@@ -498,7 +498,7 @@ public class L2Attackable extends L2Npc
 							_commandChannelTimer = new CommandChannelTimer(this);
 							_commandChannelLastAttack = System.currentTimeMillis();
 							ThreadPoolManager.getInstance().scheduleGeneral(_commandChannelTimer, 10000); // check for last attack
-							_firstCommandChannelAttacked.broadcastPacket(new CreatureSay(0, Say2.PARTYROOM_ALL, "", "You have looting rights!")); // TODO: retail msg
+							_firstCommandChannelAttacked.broadcastPacket(new CreatureSay(0, Say2.PARTYROOM_ALL, "", "You have looting rights!"));
 						}
 					}
 				}
@@ -627,6 +627,7 @@ public class L2Attackable extends L2Npc
 	 * Caution : This method DOESN'T GIVE rewards to L2PetInstance.
 	 * @param lastAttacker The L2Character that has killed the L2Attackable
 	 */
+	@SuppressWarnings("static-access")
 	@Override
 	protected void calculateRewards(L2Character lastAttacker)
 	{
@@ -1118,7 +1119,7 @@ public class L2Attackable extends L2Npc
 	{
 		if ((getAI() instanceof L2SiegeGuardAI) || (getAI() instanceof L2FortSiegeGuardAI))
 		{
-			// TODO: this just prevents error until siege guards are handled properly
+
 			stopHating(target);
 			setTarget(null);
 			getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
@@ -1813,6 +1814,7 @@ public class L2Attackable extends L2Npc
 	 * @param npcTemplate
 	 * @param mainDamageDealer
 	 */
+	@SuppressWarnings("null")
 	public void doItemDrop(L2NpcTemplate npcTemplate, L2Character mainDamageDealer)
 	{
 		if (mainDamageDealer == null)
@@ -2028,7 +2030,7 @@ public class L2Attackable extends L2Npc
 			// Randomize drop position
 			int newX = (getX() + Rnd.get((randDropLim * 2) + 1)) - randDropLim;
 			int newY = (getY() + Rnd.get((randDropLim * 2) + 1)) - randDropLim;
-			int newZ = Math.max(getZ(), mainDamageDealer.getZ()) + 20; // TODO: temp hack, do something nicer when we have geodatas
+			int newZ = Math.max(getZ(), mainDamageDealer.getZ()) + 20;
 			
 			if (ItemTable.getInstance().getTemplate(item.getItemId()) != null)
 			{
