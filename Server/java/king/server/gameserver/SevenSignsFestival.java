@@ -1,5 +1,7 @@
 package king.server.gameserver;
 
+import gnu.trove.procedure.TObjectProcedure;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,7 +16,6 @@ import java.util.logging.Logger;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
-
 import king.server.Config;
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.ai.CtrlIntention;
@@ -45,8 +46,6 @@ import king.server.gameserver.network.serverpackets.MagicSkillUse;
 import king.server.gameserver.network.serverpackets.SystemMessage;
 import king.server.gameserver.util.Util;
 import king.server.util.Rnd;
-
-import gnu.trove.procedure.TObjectProcedure;
 
 /**
  * Seven Signs Festival of Darkness Engine.<br>

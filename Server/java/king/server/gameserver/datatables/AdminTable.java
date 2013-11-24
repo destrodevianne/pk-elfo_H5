@@ -8,10 +8,6 @@ import java.util.Map.Entry;
 import java.util.logging.Level;
 
 import javolution.util.FastMap;
-
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.Config;
 import king.server.gameserver.engines.DocumentParser;
 import king.server.gameserver.model.L2AccessLevel;
@@ -21,6 +17,9 @@ import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.network.SystemMessageId;
 import king.server.gameserver.network.serverpackets.L2GameServerPacket;
 import king.server.gameserver.network.serverpackets.SystemMessage;
+
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 public class AdminTable extends DocumentParser
 {

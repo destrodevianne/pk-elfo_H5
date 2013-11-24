@@ -9,6 +9,8 @@ import king.server.gameserver.model.actor.instance.L2PcInstance;
 public interface IActionHandler
 {
 	public static Logger _log = Logger.getLogger(IActionHandler.class.getName());
+	
 	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact);
+	
 	public InstanceType getInstanceType();
 }

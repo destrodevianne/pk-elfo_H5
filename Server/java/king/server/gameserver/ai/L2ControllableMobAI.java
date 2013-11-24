@@ -7,7 +7,6 @@ import java.util.Collection;
 import java.util.List;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.model.L2Object;
 import king.server.gameserver.model.MobGroup;
 import king.server.gameserver.model.MobGroupTable;

@@ -7,5 +7,6 @@ public abstract class EventStatus
 {
 	protected AbstractEvent event;
 	protected TextBuilder sb = new TextBuilder();
+	
 	public abstract String generateList();
 }

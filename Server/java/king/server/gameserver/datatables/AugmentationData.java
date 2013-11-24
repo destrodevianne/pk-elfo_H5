@@ -12,11 +12,6 @@ import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import javolution.util.FastList;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.Config;
 import king.server.gameserver.model.L2Augmentation;
 import king.server.gameserver.model.holders.SkillHolder;
@@ -25,6 +20,10 @@ import king.server.gameserver.model.skills.L2Skill;
 import king.server.gameserver.model.stats.Stats;
 import king.server.gameserver.network.clientpackets.AbstractRefinePacket;
 import king.server.util.Rnd;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 public class AugmentationData
 {

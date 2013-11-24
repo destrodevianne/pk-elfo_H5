@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import javolution.util.FastMap;
-
 import king.server.Config;
 import king.server.gameserver.datatables.ItemTable;
 import king.server.gameserver.datatables.RecipeData;
@@ -396,8 +395,10 @@ public class RecipeController
 				rewardPlayer(); // and immediately puts created item in its place
 				updateMakeInfo(true);
 				
-				if (Config.RANK_CRAFT_ENABLED && _target != _player && _recipeList.getSuccessRate() < 100)
+				if (Config.RANK_CRAFT_ENABLED && (_target != _player) && (_recipeList.getSuccessRate() < 100))
+				{
 					CraftLeaderboard.getInstance().onSucess(_target.getObjectId(), _target.getName());
+				}
 			}
 			else
 			{
@@ -419,8 +420,10 @@ public class RecipeController
 				{
 					_target.sendPacket(SystemMessageId.ITEM_MIXING_FAILED);
 					
-					if (Config.RANK_CRAFT_ENABLED && _target != _player && _recipeList.getSuccessRate() < 100)
+					if (Config.RANK_CRAFT_ENABLED && (_target != _player) && (_recipeList.getSuccessRate() < 100))
+					{
 						CraftLeaderboard.getInstance().onFail(_target.getObjectId(), _target.getName());
+					}
 				}
 				updateMakeInfo(false);
 			}

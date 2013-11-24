@@ -30,7 +30,6 @@ import java.util.Set;
 import java.util.logging.Logger;
 
 import javolution.util.FastSet;
-
 import king.server.Config;
 import king.server.loginserver.GameServerTable.GameServerInfo;
 import king.server.loginserver.network.L2JGameServerPacketHandler;

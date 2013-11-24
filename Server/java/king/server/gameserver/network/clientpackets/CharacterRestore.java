@@ -21,7 +21,6 @@ package king.server.gameserver.network.clientpackets;
 import java.util.List;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.network.serverpackets.CharSelectionInfo;
 import king.server.gameserver.scripting.scriptengine.events.PlayerEvent;
 import king.server.gameserver.scripting.scriptengine.listeners.player.PlayerListener;

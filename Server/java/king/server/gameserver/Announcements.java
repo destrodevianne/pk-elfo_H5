@@ -12,7 +12,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.cache.HtmCache;
 import king.server.gameserver.datatables.MultilangMsgData;

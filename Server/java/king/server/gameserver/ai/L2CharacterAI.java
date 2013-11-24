@@ -13,7 +13,6 @@ import static king.server.gameserver.ai.CtrlIntention.AI_INTENTION_REST;
 import java.util.List;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.GameTimeController;
 import king.server.gameserver.GeoData;
@@ -745,17 +744,17 @@ public class L2CharacterAI extends AbstractAI
 		
 		if (_actor instanceof L2Npc)
 		{
-              L2Npc npc = (L2Npc) _actor;
-              WalkingManager.getInstance().onArrived(npc); // Walking Manager support
-
-                        // Notify quest
-              if (npc.getTemplate().getEventQuests(Quest.QuestEventType.ON_MOVE_FINISHED) != null)
-              {
-              for (Quest quest : npc.getTemplate().getEventQuests(Quest.QuestEventType.ON_MOVE_FINISHED))
-              {
-                   quest.notifyMoveFinished(npc);
-               }
-            }
+			L2Npc npc = (L2Npc) _actor;
+			WalkingManager.getInstance().onArrived(npc); // Walking Manager support
+			
+			// Notify quest
+			if (npc.getTemplate().getEventQuests(Quest.QuestEventType.ON_MOVE_FINISHED) != null)
+			{
+				for (Quest quest : npc.getTemplate().getEventQuests(Quest.QuestEventType.ON_MOVE_FINISHED))
+				{
+					quest.notifyMoveFinished(npc);
+				}
+			}
 		}
 		
 		// If the Intention was AI_INTENTION_MOVE_TO, set the Intention to AI_INTENTION_ACTIVE

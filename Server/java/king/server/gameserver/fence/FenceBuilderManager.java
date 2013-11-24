@@ -4,7 +4,6 @@ import java.util.Map;
 
 import javolution.text.TextBuilder;
 import javolution.util.FastMap;
-
 import king.server.gameserver.idfactory.IdFactory;
 import king.server.gameserver.model.L2World;
 import king.server.gameserver.model.L2WorldRegion;

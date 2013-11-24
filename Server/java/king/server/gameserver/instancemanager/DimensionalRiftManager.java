@@ -1,5 +1,7 @@
 package king.server.gameserver.instancemanager;
 
+import gnu.trove.map.hash.TByteObjectHashMap;
+
 import java.awt.Polygon;
 import java.awt.Shape;
 import java.io.File;
@@ -12,11 +14,6 @@ import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import javolution.util.FastList;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.Config;
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.datatables.NpcTable;
@@ -32,7 +29,9 @@ import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
 import king.server.gameserver.util.Util;
 import king.server.util.Rnd;
 
-import gnu.trove.map.hash.TByteObjectHashMap;
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 public class DimensionalRiftManager
 {

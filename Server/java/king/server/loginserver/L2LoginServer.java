@@ -32,9 +32,6 @@ import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
-import org.mmocore.network.SelectorConfig;
-import org.mmocore.network.SelectorThread;
-
 import king.server.Config;
 import king.server.L2DatabaseFactory;
 import king.server.Server;
@@ -42,6 +39,9 @@ import king.server.loginserver.mail.MailSystem;
 import king.server.loginserver.network.L2LoginClient;
 import king.server.loginserver.network.L2LoginPacketHandler;
 import king.server.status.Status;
+
+import org.mmocore.network.SelectorConfig;
+import org.mmocore.network.SelectorThread;
 
 /**
  * PkElfo

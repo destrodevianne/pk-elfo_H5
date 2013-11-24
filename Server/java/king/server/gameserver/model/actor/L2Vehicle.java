@@ -24,7 +24,6 @@ import java.util.List;
 import java.util.logging.Level;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.GameTimeController;
 import king.server.gameserver.ThreadPoolManager;

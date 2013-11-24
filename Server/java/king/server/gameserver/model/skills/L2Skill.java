@@ -26,7 +26,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastMap;
-
 import king.server.Config;
 import king.server.gameserver.GeoData;
 import king.server.gameserver.datatables.ItemTable;
@@ -720,7 +719,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	
 	/**
 	 * Return true if skill should ignore all defences (damage always equals skill power)
-	 * @return 
+	 * @return
 	 */
 	public final boolean ignoreDefence()
 	{

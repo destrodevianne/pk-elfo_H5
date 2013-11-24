@@ -21,7 +21,6 @@ package king.server.gameserver.network.serverpackets;
 import java.util.List;
 
 import javolution.util.FastMap;
-
 import king.server.gameserver.datatables.ManorData;
 import king.server.gameserver.instancemanager.CastleManorManager.CropProcure;
 import king.server.gameserver.model.actor.instance.L2PcInstance;

@@ -8,7 +8,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastMap;
-
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.model.actor.FakePc;
 
@@ -16,7 +15,7 @@ public class FakePcsTable
 {
 	private static Logger _LOGGER = Logger.getLogger(FakePcsTable.class.getName());
 	
-	private FastMap<Integer, FakePc> _fakePcs = new FastMap<>();
+	private final FastMap<Integer, FakePc> _fakePcs = new FastMap<>();
 	
 	private FakePcsTable()
 	{
@@ -46,12 +45,12 @@ public class FakePcsTable
 				fpc = new FakePc();
 				
 				int npcId = rset.getInt("npc_id");
-
+				
 				fpc.name = rset.getString("name");
 				fpc.race = rset.getInt("race");
 				fpc.sex = rset.getInt("sex");
 				fpc.clazz = rset.getInt("class");
-
+				
 				fpc.pdUnder = rset.getInt("pd_under");
 				fpc.pdHead = rset.getInt("pd_head");
 				fpc.pdRHand = rset.getInt("pd_rhand");
@@ -100,20 +99,20 @@ public class FakePcsTable
 				fpc.hairStyle = rset.getInt("hair_style");
 				fpc.hairColor = rset.getInt("hair_color");
 				fpc.face = rset.getInt("face");
-
+				
 				fpc.title = rset.getString("title");
 				
 				fpc.clanId = rset.getInt("clan_id");
 				fpc.clanCrestId = rset.getInt("clan_crest_id");
 				fpc.allyId = rset.getInt("ally_id");
 				fpc.allyCrestId = rset.getInt("ally_crest_id");
-
+				
 				fpc.sitWhileIdle = rset.getBoolean("sit_while_idle");
 				
 				fpc.invisible = rset.getBoolean("invisible");
 				
 				fpc.mount = rset.getByte("mount");
-
+				
 				fpc.recomHave = rset.getShort("recom_have");
 				
 				fpc.mountNpcId = rset.getInt("mount_npc_id");
@@ -133,15 +132,15 @@ public class FakePcsTable
 				
 				fpc.pledgeClass = rset.getInt("pledge_class");
 				fpc.pledgeType = rset.getInt("pledge_type");
-
+				
 				fpc.titleColor = Integer.decode("0x" + rset.getString("title_color"));
-
+				
 				fpc.reputationScore = rset.getInt("reputation_score");
 				
 				fpc.transformId = rset.getInt("transform_id");
 				
 				fpc.agathionId = rset.getInt("agathion_id");
-
+				
 				_fakePcs.put(npcId, fpc);
 			}
 			

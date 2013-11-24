@@ -7,7 +7,6 @@ import static king.server.gameserver.ai.CtrlIntention.AI_INTENTION_INTERACT;
 import static king.server.gameserver.ai.CtrlIntention.AI_INTENTION_MOVE_TO;
 import static king.server.gameserver.ai.CtrlIntention.AI_INTENTION_PICK_UP;
 import static king.server.gameserver.ai.CtrlIntention.AI_INTENTION_REST;
-
 import king.server.gameserver.model.L2CharPosition;
 import king.server.gameserver.model.L2Object;
 import king.server.gameserver.model.actor.L2Character;

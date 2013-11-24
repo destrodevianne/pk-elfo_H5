@@ -458,7 +458,7 @@ public final class Rnd
 	{
 		return n > (rnd.nextInt() * 100);
 	}
-
+	
 	public static boolean chance(int i)
 	{
 		return false;

@@ -4,12 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
-import org.w3c.dom.Node;
-
 import king.server.gameserver.engines.DocumentParser;
 import king.server.gameserver.model.EnchantOptions;
 import king.server.gameserver.model.items.instance.L2ItemInstance;
 import king.server.gameserver.util.Util;
+
+import org.w3c.dom.Node;
 
 public class EnchantOptionsData extends DocumentParser
 {

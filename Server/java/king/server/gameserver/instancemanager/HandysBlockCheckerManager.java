@@ -25,7 +25,7 @@ import king.server.gameserver.network.serverpackets.SystemMessage;
  * This class manage the player add/remove, team change and event arena status,<br>
  * as the clearance of the participants list or liberate the arena.
  */
-public final class HandysBlockCheckerManager 
+public final class HandysBlockCheckerManager
 {
 	// All the participants and their team classified by arena
 	private static final ArenaParticipantsHolder[] _arenaPlayers = new ArenaParticipantsHolder[4];
@@ -85,7 +85,7 @@ public final class HandysBlockCheckerManager
 	{
 		_arenaVotes.put(arena, 0);
 	}
-
+	
 	protected HandysBlockCheckerManager()
 	{
 		// Initialize arena status
@@ -104,7 +104,7 @@ public final class HandysBlockCheckerManager
 	{
 		return _arenaPlayers[arena];
 	}
-		
+	
 	/**
 	 * Initializes the participants holder
 	 */
@@ -120,7 +120,7 @@ public final class HandysBlockCheckerManager
 	 * Add the player to the specified arena (through the specified arena manager) and send the needed server -> client packets
 	 * @param player
 	 * @param arenaId
-	 * @return 
+	 * @return
 	 */
 	public boolean addPlayerToArena(L2PcInstance player, int arenaId)
 	{
@@ -140,7 +140,7 @@ public final class HandysBlockCheckerManager
 					return false;
 				}
 			}
-				
+			
 			if (player.isCursedWeaponEquipped())
 			{
 				player.sendPacket(SystemMessageId.CANNOT_REGISTER_PROCESSING_CURSED_WEAPON);
@@ -152,11 +152,11 @@ public final class HandysBlockCheckerManager
 				player.sendMessage("Couldnt register you due other event participation");
 				return false;
 			}
-
+			
 			if (OlympiadManager.getInstance().isRegistered(player))
 			{
 				OlympiadManager.getInstance().unRegisterNoble(player);
-				player.sendPacket(SystemMessageId.COLISEUM_OLYMPIAD_KRATEIS_APPLICANTS_CANNOT_PARTICIPATE);				
+				player.sendPacket(SystemMessageId.COLISEUM_OLYMPIAD_KRATEIS_APPLICANTS_CANNOT_PARTICIPATE);
 			}
 			
 			// if(UnderGroundColiseum.getInstance().isRegisteredPlayer(player))
@@ -195,7 +195,7 @@ public final class HandysBlockCheckerManager
 	 * Will remove the specified player from the specified team and arena and will send the needed packet to all his team mates / enemy team mates
 	 * @param player
 	 * @param arenaId
-	 * @param team 
+	 * @param team
 	 */
 	public void removePlayer(L2PcInstance player, int arenaId, int team)
 	{
@@ -280,7 +280,7 @@ public final class HandysBlockCheckerManager
 	public boolean arenaIsBeingUsed(int arenaId)
 	{
 		if ((arenaId < 0) || (arenaId > 3))
-		{ 
+		{
 			return false;
 		}
 		return _arenaStatus.get(arenaId);
@@ -492,6 +492,7 @@ public final class HandysBlockCheckerManager
 	private class PenaltyRemove implements Runnable
 	{
 		private final Integer objectId;
+		
 		public PenaltyRemove(Integer id)
 		{
 			objectId = id;

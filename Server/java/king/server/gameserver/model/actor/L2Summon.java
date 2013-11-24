@@ -79,7 +79,7 @@ public abstract class L2Summon extends L2Playable
 	// TODO: Unhardcode
 	// We don't have walk speed in pet data so for now use run speed / 3
 	public static final int WALK_SPEED_MULTIPLIER = 3;
-
+	
 	// @formatter:off
 	private static final int[] PASSIVE_SUMMONS =
 	{
@@ -729,7 +729,7 @@ public abstract class L2Summon extends L2Playable
 			}
 			else
 			{
-		     	// Summons can cast skills on NPCs inside peace zones.
+				// Summons can cast skills on NPCs inside peace zones.
 				if (!target.isAttackable() && !getOwner().allowPeaceAttack())
 				{
 					return false;

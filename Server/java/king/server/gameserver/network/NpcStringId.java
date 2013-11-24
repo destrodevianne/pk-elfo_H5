@@ -29,13 +29,13 @@ import java.util.logging.Logger;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.Config;
 import king.server.gameserver.model.clientstrings.Builder;
 import king.server.gameserver.network.serverpackets.ExShowScreenMessage;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 /**
  * NpcStringId implementation, based on SystemMessageId class
@@ -21624,7 +21624,7 @@ public final class NpcStringId
 	
 	static
 	{
-	    THE_SOUL_COFFIN_HAS_AWAKENED_EKIMUS = new NpcStringId(1800232);
+		THE_SOUL_COFFIN_HAS_AWAKENED_EKIMUS = new NpcStringId(1800232);
 		NONE = new NpcStringId(65535);
 		HELLO_I_AM_S1_YOU_ARE_S2_RIGHT_HEHEHE = new NpcStringId(1);
 		S1_S2_S3_S4_S5_HEHEHE = new NpcStringId(2);

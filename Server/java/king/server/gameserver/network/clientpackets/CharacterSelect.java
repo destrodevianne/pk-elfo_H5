@@ -24,7 +24,6 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.datatables.CharNameTable;
 import king.server.gameserver.instancemanager.AntiFeedManager;

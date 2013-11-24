@@ -27,10 +27,11 @@ import king.server.gameserver.util.BotPunish;
 public final class MoveToLocation extends L2GameServerPacket
 {
 	private final int _charObjId, _x, _y, _z, _xDst, _yDst, _zDst;
-	private L2Character _cha;
+	private final L2Character _cha;
+	
 	public MoveToLocation(L2Character cha)
 	{
-	    _cha = cha;
+		_cha = cha;
 		_charObjId = cha.getObjectId();
 		_x = cha.getX();
 		_y = cha.getY();
@@ -44,12 +45,12 @@ public final class MoveToLocation extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		// Bot punishment restriction
-	if(_cha instanceof L2PcInstance && Config.ENABLE_BOTREPORT)
+		if ((_cha instanceof L2PcInstance) && Config.ENABLE_BOTREPORT)
 		{
 			L2PcInstance actor = (L2PcInstance) _cha;
-			if(actor.isBeingPunished())
+			if (actor.isBeingPunished())
 			{
-				if(actor.getPlayerPunish().canWalk() && actor.getPlayerPunish().getBotPunishType() == BotPunish.Punish.MOVEBAN)
+				if (actor.getPlayerPunish().canWalk() && (actor.getPlayerPunish().getBotPunishType() == BotPunish.Punish.MOVEBAN))
 				{
 					actor.endPunishment();
 				}

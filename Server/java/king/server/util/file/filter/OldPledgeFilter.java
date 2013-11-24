@@ -23,8 +23,7 @@ import java.io.FileFilter;
 
 /**
  * Specialized {@link FileFilter} class.<br>
- * Accepts <b>files</b> starting with "Pledge_" only.
- * PkElfo
+ * Accepts <b>files</b> starting with "Pledge_" only. PkElfo
  */
 public class OldPledgeFilter implements FileFilter
 {

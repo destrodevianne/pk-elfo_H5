@@ -27,7 +27,6 @@ public class ConditionPlayerTvTRoundEvent extends Condition
 	
 	/**
 	 * Instantiates a new condition player tvt round event.
-	 *
 	 * @param val the val
 	 */
 	public ConditionPlayerTvTRoundEvent(boolean val)
@@ -39,8 +38,10 @@ public class ConditionPlayerTvTRoundEvent extends Condition
 	public boolean testImpl(Env env)
 	{
 		final L2PcInstance player = env.getPlayer();
-		if (player == null || !TvTRoundEvent.isStarted())
+		if ((player == null) || !TvTRoundEvent.isStarted())
+		{
 			return !_val;
+		}
 		
 		return (TvTRoundEvent.isPlayerParticipant(player.getObjectId()) == _val);
 	}

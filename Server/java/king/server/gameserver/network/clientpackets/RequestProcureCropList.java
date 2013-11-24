@@ -20,7 +20,6 @@ package king.server.gameserver.network.clientpackets;
 
 import static king.server.gameserver.model.actor.L2Npc.INTERACTION_DISTANCE;
 import static king.server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
-
 import king.server.Config;
 import king.server.gameserver.datatables.ItemTable;
 import king.server.gameserver.datatables.ManorData;

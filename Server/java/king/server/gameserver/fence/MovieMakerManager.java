@@ -5,7 +5,6 @@ import java.util.Map;
 
 import javolution.text.TextBuilder;
 import javolution.util.FastMap;
-
 import king.server.gameserver.ThreadPoolManager;
 import king.server.gameserver.model.L2Object;
 import king.server.gameserver.model.actor.instance.L2PcInstance;

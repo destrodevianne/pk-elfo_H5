@@ -9,9 +9,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.gameserver.engines.DocumentParser;
 import king.server.gameserver.model.L2Object;
 import king.server.gameserver.model.L2World;
@@ -27,6 +24,9 @@ import king.server.gameserver.model.zone.form.ZoneNPoly;
 import king.server.gameserver.model.zone.type.L2ArenaZone;
 import king.server.gameserver.model.zone.type.L2OlympiadStadiumZone;
 import king.server.gameserver.model.zone.type.L2RespawnZone;
+
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 public class ZoneManager extends DocumentParser
 {

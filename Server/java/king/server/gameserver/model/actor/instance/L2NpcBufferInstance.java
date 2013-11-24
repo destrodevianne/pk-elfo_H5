@@ -18,6 +18,8 @@
  */
 package king.server.gameserver.model.actor.instance;
 
+import gnu.trove.map.hash.TIntIntHashMap;
+
 import java.util.logging.Logger;
 
 import king.server.gameserver.cache.HtmCache;
@@ -33,8 +35,6 @@ import king.server.gameserver.network.serverpackets.ActionFailed;
 import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
 import king.server.gameserver.network.serverpackets.SystemMessage;
 import king.server.gameserver.taskmanager.AttackStanceTaskManager;
-
-import gnu.trove.map.hash.TIntIntHashMap;
 
 /**
  * The Class L2NpcBufferInstance.

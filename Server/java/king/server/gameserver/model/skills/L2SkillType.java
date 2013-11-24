@@ -56,8 +56,8 @@ public enum L2SkillType
 	DEATHLINK,
 	FATAL,
 	BLOW,
-    BOMB,
-    CAPTURE,
+	BOMB,
+	CAPTURE,
 	SIGNET(L2SkillSignet.class),
 	SIGNET_CASTTIME(L2SkillSignetCasttime.class),
 	// Disablers

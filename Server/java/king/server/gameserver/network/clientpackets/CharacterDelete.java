@@ -22,7 +22,6 @@ import java.util.List;
 import java.util.logging.Level;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.network.serverpackets.CharDeleteFail;
 import king.server.gameserver.network.serverpackets.CharDeleteSuccess;

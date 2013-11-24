@@ -49,13 +49,13 @@ public class OnEventTrigger extends L2GameServerPacket
 			_opened = opened;
 		}
 	}
-		
-    public OnEventTrigger(int id, boolean opened)
-    {
-        _emitterId = id;
-        _opened = opened;
-    }
-
+	
+	public OnEventTrigger(int id, boolean opened)
+	{
+		_emitterId = id;
+		_opened = opened;
+	}
+	
 	@Override
 	protected final void writeImpl()
 	{

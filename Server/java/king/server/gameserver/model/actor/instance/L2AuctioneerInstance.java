@@ -27,7 +27,6 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 import javolution.util.FastMap;
-
 import king.server.Config;
 import king.server.gameserver.instancemanager.AuctionManager;
 import king.server.gameserver.instancemanager.ClanHallManager;

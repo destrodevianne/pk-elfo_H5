@@ -6,9 +6,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledFuture;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.gameserver.ThreadPoolManager;
 import king.server.gameserver.ai.CtrlIntention;
 import king.server.gameserver.engines.DocumentParser;
@@ -21,6 +18,9 @@ import king.server.gameserver.model.actor.instance.L2MonsterInstance;
 import king.server.gameserver.model.quest.Quest;
 import king.server.gameserver.network.NpcStringId;
 import king.server.util.Rnd;
+
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 public class WalkingManager extends DocumentParser
 {

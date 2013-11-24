@@ -25,7 +25,7 @@ public class TownWarManager
 		if (Config.TW_AUTO_EVENT)
 		{
 			isInactive = true;
-			this.scheduleEventStart();
+			scheduleEventStart();
 			_log.info("TownWar Engine: Iniciado.");
 		}
 		else
@@ -57,7 +57,7 @@ public class TownWarManager
 				{
 					testStartTime.add(Calendar.DAY_OF_MONTH, 1);
 				}
-				if (nextStartTime == null || testStartTime.getTimeInMillis() < nextStartTime.getTimeInMillis())
+				if ((nextStartTime == null) || (testStartTime.getTimeInMillis() < nextStartTime.getTimeInMillis()))
 				{
 					nextStartTime = testStartTime;
 				}
@@ -75,7 +75,7 @@ public class TownWarManager
 	{
 		isInactive = false;
 		isStarting = true;
-		_task.setStartTime(System.currentTimeMillis() + 60000L * Config.TW_TIME_BEFORE_START);
+		_task.setStartTime(System.currentTimeMillis() + (60000L * Config.TW_TIME_BEFORE_START));
 		ThreadPoolManager.getInstance().executeTask(_task);
 	}
 	
@@ -101,7 +101,7 @@ public class TownWarManager
 			Announcements.getInstance().announceToAll("Town War: " + Config.TW_TOWN_NAME + " is a war zone.");
 		}
 		
-		_task.setStartTime(System.currentTimeMillis() + 60000L * Config.TW_RUNNING_TIME);
+		_task.setStartTime(System.currentTimeMillis() + (60000L * Config.TW_RUNNING_TIME));
 		ThreadPoolManager.getInstance().executeTask(_task);
 	}
 	
@@ -127,7 +127,7 @@ public class TownWarManager
 			Announcements.getInstance().announceToAll("Town War: " + Config.TW_TOWN_NAME + " is returned normal.");
 		}
 		
-		this.scheduleEventStart();
+		scheduleEventStart();
 	}
 	
 	class TownWarStartTask implements Runnable
@@ -155,7 +155,7 @@ public class TownWarManager
 			
 			if (delay > 0)
 			{
-				this.announce(delay);
+				announce(delay);
 			}
 			
 			int nextMsg = 0;
@@ -193,17 +193,17 @@ public class TownWarManager
 			}
 			else
 			{
-				if (TownWarManager.this.isInactive)
+				if (isInactive)
 				{
-					TownWarManager.this.starting();
+					starting();
 				}
-				else if (TownWarManager.this.isStarting)
+				else if (isStarting)
 				{
-					TownWarManager.this.startEvent();
+					startEvent();
 				}
 				else
 				{
-					TownWarManager.this.endEvent();
+					endEvent();
 				}
 			}
 			
@@ -215,48 +215,54 @@ public class TownWarManager
 		
 		private void announce(long time)
 		{
-			if (time >= 3600 && time % 3600 == 0)
+			if ((time >= 3600) && ((time % 3600) == 0))
 			{
-				if (TownWarManager.this.isStarting)
+				if (isStarting)
 				{
 					Announcements.getInstance().announceToAll("Town War Event: " + (time / 60 / 60) + " hour(s) until event starts!");
 				}
-				else if (TownWarManager.this.isStarted)
+				else if (isStarted)
 				{
-					 for (L2PcInstance onlinePlayer : L2World.getInstance().getAllPlayersArray())
+					for (L2PcInstance onlinePlayer : L2World.getInstance().getAllPlayersArray())
 					{
-						if (onlinePlayer != null && onlinePlayer.isOnline())
+						if ((onlinePlayer != null) && onlinePlayer.isOnline())
+						{
 							onlinePlayer.sendMessage("Town War Event: " + (time / 60 / 60) + " hour(s) until event is finished!");
+						}
 					}
 				}
 			}
 			else if (time >= 60)
 			{
-				if (TownWarManager.this.isStarting)
+				if (isStarting)
 				{
 					Announcements.getInstance().announceToAll("Town War Event: " + (time / 60) + " minute(s) until event starts!");
 				}
-				else if (TownWarManager.this.isStarted)
+				else if (isStarted)
 				{
-					 for (L2PcInstance onlinePlayer : L2World.getInstance().getAllPlayersArray())
+					for (L2PcInstance onlinePlayer : L2World.getInstance().getAllPlayersArray())
 					{
-						if (onlinePlayer != null && onlinePlayer.isOnline())
+						if ((onlinePlayer != null) && onlinePlayer.isOnline())
+						{
 							onlinePlayer.sendMessage("Town War Event: " + (time / 60) + " minute(s) until the event is finished!");
+						}
 					}
 				}
 			}
 			else
 			{
-				if (TownWarManager.this.isStarting)
+				if (isStarting)
 				{
 					Announcements.getInstance().announceToAll("Town War Event: " + time + " second(s) until event starts!");
 				}
-				else if (TownWarManager.this.isStarted)
+				else if (isStarted)
 				{
-					 for (L2PcInstance onlinePlayer : L2World.getInstance().getAllPlayersArray())
+					for (L2PcInstance onlinePlayer : L2World.getInstance().getAllPlayersArray())
 					{
-						if (onlinePlayer != null && onlinePlayer.isOnline())
+						if ((onlinePlayer != null) && onlinePlayer.isOnline())
+						{
 							onlinePlayer.sendMessage("Town War Event: " + time + " second(s) until the event is finished!");
+						}
 					}
 				}
 			}

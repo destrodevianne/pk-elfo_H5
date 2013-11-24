@@ -25,12 +25,12 @@ import java.util.logging.Logger;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import king.server.Config;
+import king.server.gameserver.model.actor.L2Character;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
-
-import king.server.Config;
-import king.server.gameserver.model.actor.L2Character;
 
 /**
  * @author DS

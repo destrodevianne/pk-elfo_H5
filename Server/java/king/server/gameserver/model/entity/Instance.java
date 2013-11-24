@@ -14,11 +14,6 @@ import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import javolution.util.FastMap;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.Config;
 import king.server.gameserver.Announcements;
 import king.server.gameserver.ThreadPoolManager;
@@ -48,6 +43,10 @@ import king.server.gameserver.network.serverpackets.L2GameServerPacket;
 import king.server.gameserver.network.serverpackets.SystemMessage;
 import king.server.util.L2FastList;
 import king.server.util.L2FastMap;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 public final class Instance
 {
@@ -304,7 +303,7 @@ public final class Instance
 	{
 		return _spawnLoc;
 	}
-
+	
 	/**
 	 * Sets the spawn location for this instance to be used when leaving the instance
 	 * @param loc
@@ -313,7 +312,6 @@ public final class Instance
 	{
 		_spawnLoc = loc;
 	}
-
 	
 	public void removePlayers()
 	{

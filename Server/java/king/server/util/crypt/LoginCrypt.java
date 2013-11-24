@@ -24,7 +24,6 @@ import king.server.util.Rnd;
 
 /**
  * PkElfo
- * 
  */
 public class LoginCrypt
 {

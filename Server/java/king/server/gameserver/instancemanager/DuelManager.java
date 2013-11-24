@@ -1,7 +1,6 @@
 package king.server.gameserver.instancemanager;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.model.effects.L2Effect;
 import king.server.gameserver.model.entity.Duel;

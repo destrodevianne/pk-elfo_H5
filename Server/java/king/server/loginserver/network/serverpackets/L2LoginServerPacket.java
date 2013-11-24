@@ -18,9 +18,9 @@
  */
 package king.server.loginserver.network.serverpackets;
 
-import org.mmocore.network.SendablePacket;
-
 import king.server.loginserver.network.L2LoginClient;
+
+import org.mmocore.network.SendablePacket;
 
 /**
  * @author KenM

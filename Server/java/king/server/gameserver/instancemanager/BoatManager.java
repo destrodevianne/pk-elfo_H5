@@ -1,9 +1,10 @@
 package king.server.gameserver.instancemanager;
 
+import gnu.trove.procedure.TObjectProcedure;
+
 import java.util.Map;
 
 import javolution.util.FastMap;
-
 import king.server.Config;
 import king.server.gameserver.idfactory.IdFactory;
 import king.server.gameserver.model.L2World;
@@ -13,8 +14,6 @@ import king.server.gameserver.model.actor.instance.L2BoatInstance;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.model.actor.templates.L2CharTemplate;
 import king.server.gameserver.network.serverpackets.L2GameServerPacket;
-
-import gnu.trove.procedure.TObjectProcedure;
 
 public class BoatManager
 {

@@ -28,7 +28,6 @@ import java.util.ResourceBundle.Control;
 
 /**
  * PkElfo
- * 
  */
 public class LanguageControl extends Control
 {

@@ -46,7 +46,7 @@ public final class L2TeleporterInstance extends L2Npc
 	private static final int COND_REGULAR = 3;
 	
 	/**
-	 * @param objectId 
+	 * @param objectId
 	 * @param template
 	 */
 	public L2TeleporterInstance(int objectId, L2NpcTemplate template)
@@ -97,7 +97,7 @@ public final class L2TeleporterInstance extends L2Npc
 			{
 				return;
 			}
- 			
+			
 			int whereTo = Integer.parseInt(st.nextToken());
 			if (condition == COND_REGULAR)
 			{
@@ -254,7 +254,7 @@ public final class L2TeleporterInstance extends L2Npc
 				player.sendMessage("You can't teleport during Town War Event.");
 				return;
 			}
-			//you cannot teleport to village that is in siege
+			// you cannot teleport to village that is in siege
 			if (SiegeManager.getInstance().getSiege(list.getLocX(), list.getLocY(), list.getLocZ()) != null)
 			{
 				player.sendPacket(SystemMessageId.NO_PORT_THAT_IS_IN_SIGE);
@@ -272,8 +272,8 @@ public final class L2TeleporterInstance extends L2Npc
 			}
 			else if (player.isInCombat())
 			{
-			    player.sendMessage("You cannot use gatekeeper while you are in combat.");
-			    return;
+				player.sendMessage("You cannot use gatekeeper while you are in combat.");
+				return;
 			}
 			else if (player.isCombatFlagEquipped())
 			{
@@ -294,7 +294,7 @@ public final class L2TeleporterInstance extends L2Npc
 			{
 				return;
 			}
- 			
+			
 			Calendar cal = Calendar.getInstance();
 			int price = list.getPrice();
 			

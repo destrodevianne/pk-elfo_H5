@@ -1,5 +1,7 @@
 package king.server.gameserver.datatables;
 
+import gnu.trove.map.hash.TIntIntHashMap;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,8 +23,6 @@ import king.server.gameserver.model.actor.templates.L2NpcTemplate;
 import king.server.gameserver.model.items.instance.L2ItemInstance;
 import king.server.gameserver.model.skills.l2skills.L2SkillSummon;
 import king.server.gameserver.network.serverpackets.PetItemList;
-
-import gnu.trove.map.hash.TIntIntHashMap;
 
 public class CharSummonTable
 {

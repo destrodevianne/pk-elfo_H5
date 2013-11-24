@@ -23,7 +23,6 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.events.EventsInterface;
 import king.server.gameserver.handler.ChatHandler;

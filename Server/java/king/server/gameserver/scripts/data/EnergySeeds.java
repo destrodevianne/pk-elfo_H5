@@ -22,7 +22,6 @@ import java.util.Map;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
-
 import king.server.Config;
 import king.server.gameserver.ThreadPoolManager;
 import king.server.gameserver.ai.CtrlIntention;

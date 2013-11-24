@@ -9,7 +9,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastMap;
-
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.ThreadPoolManager;
 import king.server.gameserver.datatables.ClanTable;

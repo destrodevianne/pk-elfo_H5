@@ -12,13 +12,9 @@ import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
-import org.mmocore.network.SelectorConfig;
-import org.mmocore.network.SelectorThread;
-
 import king.server.Config;
 import king.server.L2DatabaseFactory;
 import king.server.Server;
-import king.server.gameserver.PkElfo;
 import king.server.gameserver.cache.CrestCache;
 import king.server.gameserver.cache.HtmCache;
 import king.server.gameserver.custom.AutoVoteRewardManager;
@@ -139,6 +135,9 @@ import king.server.gameserver.taskmanager.TaskManager;
 import king.server.status.Status;
 import king.server.util.DeadLockDetector;
 import king.server.util.IPv4Filter;
+
+import org.mmocore.network.SelectorConfig;
+import org.mmocore.network.SelectorThread;
 
 public class GameServer
 {
@@ -433,14 +432,13 @@ public class GameServer
 		_log.info("IdFactory: Free ObjectID's remaining: " + IdFactory.getInstance().size());
 		
 		KnownListUpdateTaskManager.getInstance();
-
+		
 		printSection("Eventos do Server");
 		Main.main();
 		EventsInterface.start();
 		TvTManager.getInstance();
 		TownWarManager.getInstance();
 		TvTRoundManager.getInstance();
-
 		
 		if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS)
 		{
@@ -460,13 +458,13 @@ public class GameServer
 		System.gc();
 		
 		if (Config.AUTO_RESTART_ENABLE)
-        {
-            GameServerRestart.getInstance().StartCalculationOfNextRestartTime();
-        }
-        else
-        {
-            _log.info("[Auto Restart]: O Sistema esta desativado.");
-        }
+		{
+			GameServerRestart.getInstance().StartCalculationOfNextRestartTime();
+		}
+		else
+		{
+			_log.info("[Auto Restart]: O Sistema esta desativado.");
+		}
 		
 		// maxMemory is the upper limit the jvm can use, totalMemory the size of
 		// the current allocation pool, freeMemory the unused memory in the

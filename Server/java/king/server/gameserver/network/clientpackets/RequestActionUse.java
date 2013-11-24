@@ -104,7 +104,7 @@ public final class RequestActionUse extends L2GameClientPacket
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
+		
 		// Don't allow to do some action if player is transformed
 		if (activeChar.isTransformed())
 		{

@@ -19,7 +19,6 @@
 package king.server.gameserver.network.gameserverpackets;
 
 import javolution.util.FastList;
-
 import king.server.util.network.BaseSendablePacket;
 
 /**

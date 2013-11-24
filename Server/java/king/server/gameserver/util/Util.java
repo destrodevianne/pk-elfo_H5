@@ -30,7 +30,6 @@ import java.util.Locale;
 
 import javolution.text.TextBuilder;
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.GeoData;
 import king.server.gameserver.ThreadPoolManager;

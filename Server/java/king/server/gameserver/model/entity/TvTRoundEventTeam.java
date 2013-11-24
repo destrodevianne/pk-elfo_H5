@@ -3,13 +3,12 @@ package king.server.gameserver.model.entity;
 import java.util.Map;
 
 import javolution.util.FastMap;
-
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 
 public class TvTRoundEventTeam
 {
 	/** The name of the team<br> */
-	private String _name;
+	private final String _name;
 	/** The team spot coordinated<br> */
 	private int[] _coordinates = new int[3];
 	/** The points and round-points of the team<br> */
@@ -18,8 +17,8 @@ public class TvTRoundEventTeam
 	private Map<Integer, L2PcInstance> _participatedPlayers = new FastMap<>();
 	
 	/**
-	 * C'tor initialize the team<br><br>
-	 *
+	 * C'tor initialize the team<br>
+	 * <br>
 	 * @param name as String<br>
 	 * @param coordinates as int[]<br>
 	 */
@@ -32,8 +31,8 @@ public class TvTRoundEventTeam
 	}
 	
 	/**
-	 * Adds a player to the team<br><br>
-	 *
+	 * Adds a player to the team<br>
+	 * <br>
 	 * @param playerInstance as L2PcInstance<br>
 	 * @return boolean: true if success, otherwise false<br>
 	 */
@@ -53,8 +52,8 @@ public class TvTRoundEventTeam
 	}
 	
 	/**
-	 * Removes a player from the team<br><br>
-	 *
+	 * Removes a player from the team<br>
+	 * <br>
 	 * @param playerObjectId as String<br>
 	 */
 	public void removePlayer(int playerObjectId)
@@ -101,8 +100,8 @@ public class TvTRoundEventTeam
 	}
 	
 	/**
-	 * Is given player in this team?<br><br>
-	 *
+	 * Is given player in this team?<br>
+	 * <br>
 	 * @param playerObjectId as String<br>
 	 * @return boolean: true if player is in this team, otherwise false<br>
 	 */
@@ -119,8 +118,8 @@ public class TvTRoundEventTeam
 	}
 	
 	/**
-	 * Returns the name of the team<br><br>
-	 *
+	 * Returns the name of the team<br>
+	 * <br>
 	 * @return String: name of the team<br>
 	 */
 	public String getName()
@@ -129,8 +128,8 @@ public class TvTRoundEventTeam
 	}
 	
 	/**
-	 * Returns the coordinates of the team spot<br><br>
-	 *
+	 * Returns the coordinates of the team spot<br>
+	 * <br>
 	 * @return int[]: team coordinates<br>
 	 */
 	public int[] getCoordinates()
@@ -139,8 +138,8 @@ public class TvTRoundEventTeam
 	}
 	
 	/**
-	 * Returns the points of the team<br><br>
-	 *
+	 * Returns the points of the team<br>
+	 * <br>
 	 * @return short: team points<br>
 	 */
 	public short getPoints()
@@ -149,8 +148,8 @@ public class TvTRoundEventTeam
 	}
 	
 	/**
-	 * Returns the round points of the team<br><br>
-	 *
+	 * Returns the round points of the team<br>
+	 * <br>
 	 * @return short: team round points<br>
 	 */
 	public short getRoundPoints()
@@ -159,8 +158,8 @@ public class TvTRoundEventTeam
 	}
 	
 	/**
-	 * Returns name and instance of all participated players in FastMap<br><br>
-	 *
+	 * Returns name and instance of all participated players in FastMap<br>
+	 * <br>
 	 * @return Map<String, L2PcInstance>: map of players in this team<br>
 	 */
 	public Map<Integer, L2PcInstance> getParticipatedPlayers()
@@ -176,8 +175,8 @@ public class TvTRoundEventTeam
 	}
 	
 	/**
-	 * Returns player count of this team<br><br>
-	 *
+	 * Returns player count of this team<br>
+	 * <br>
 	 * @return int: number of players in team<br>
 	 */
 	public int getParticipatedPlayerCount()

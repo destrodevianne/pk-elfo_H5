@@ -4,9 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.Config;
 import king.server.gameserver.engines.DocumentParser;
 import king.server.gameserver.model.L2EnchantSkillGroup;
@@ -15,6 +12,9 @@ import king.server.gameserver.model.L2EnchantSkillLearn;
 import king.server.gameserver.model.StatsSet;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.model.skills.L2Skill;
+
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 public class EnchantGroupsData extends DocumentParser
 {

@@ -1,5 +1,7 @@
 package king.server.gameserver;
 
+import gnu.trove.procedure.TObjectProcedure;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,7 +15,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastMap;
-
 import king.server.Config;
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.datatables.SkillTable;
@@ -32,8 +33,6 @@ import king.server.gameserver.network.SystemMessageId;
 import king.server.gameserver.network.serverpackets.SSQInfo;
 import king.server.gameserver.network.serverpackets.SystemMessage;
 import king.server.gameserver.util.Broadcast;
-
-import gnu.trove.procedure.TObjectProcedure;
 
 public class SevenSigns
 {

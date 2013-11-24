@@ -28,7 +28,6 @@ import java.sql.SQLException;
 import java.util.Locale;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.L2DatabaseFactory;
 import king.server.Server;
@@ -37,8 +36,7 @@ import king.server.tools.ngl.LocaleCodes;
 import king.server.util.Base64;
 
 /**
- * This class SQL Account Manager
- * PkElfo
+ * This class SQL Account Manager PkElfo
  */
 public class SQLAccountManager
 {

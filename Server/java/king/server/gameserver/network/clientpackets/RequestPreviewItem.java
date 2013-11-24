@@ -23,7 +23,6 @@ import java.util.Map;
 import java.util.logging.Level;
 
 import javolution.util.FastMap;
-
 import king.server.Config;
 import king.server.gameserver.ThreadPoolManager;
 import king.server.gameserver.TradeController;

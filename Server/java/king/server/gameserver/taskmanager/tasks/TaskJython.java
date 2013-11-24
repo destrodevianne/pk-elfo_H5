@@ -1,9 +1,9 @@
 package king.server.gameserver.taskmanager.tasks;
 
-import org.python.util.PythonInterpreter;
-
 import king.server.gameserver.taskmanager.Task;
 import king.server.gameserver.taskmanager.TaskManager.ExecutedTask;
+
+import org.python.util.PythonInterpreter;
 
 public class TaskJython extends Task
 {

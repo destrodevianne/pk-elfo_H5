@@ -20,9 +20,9 @@ package king.server.gameserver.network.communityserver.readpackets;
 
 import java.util.logging.Logger;
 
-import org.netcon.BaseReadPacket;
-
 import king.server.gameserver.network.communityserver.CommunityServerThread;
+
+import org.netcon.BaseReadPacket;
 
 /**
  * @authors Forsaiken, Gigiikun

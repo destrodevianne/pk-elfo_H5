@@ -85,13 +85,13 @@ public final class AttackRequest extends L2GameClientPacket
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
-        // If target is L2Npc and it set as not targetable
-        if (target instanceof L2Npc && !((L2Npc)target).isTargetable() && !activeChar.isGM())
-        {
-            sendPacket(ActionFailed.STATIC_PACKET);
-            return;
-        }
+		
+		// If target is L2Npc and it set as not targetable
+		if ((target instanceof L2Npc) && !((L2Npc) target).isTargetable() && !activeChar.isGM())
+		{
+			sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
 		
 		// Players can't attack objects in the other instances
 		// except from multiverse

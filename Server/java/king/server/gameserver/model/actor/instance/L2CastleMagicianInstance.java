@@ -516,7 +516,7 @@ public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTr
 			player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
 			return false;
 		}
-
+		
 		if (!TvTRoundEvent.onEscapeUse(player.getObjectId()))
 		{
 			player.sendMessage("You on TvT Round Event, teleporting disabled.");

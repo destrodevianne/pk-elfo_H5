@@ -30,11 +30,6 @@ import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import javolution.util.FastMap;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.Config;
 import king.server.gameserver.datatables.ItemTable;
 import king.server.gameserver.model.ChanceCondition;
@@ -126,6 +121,10 @@ import king.server.gameserver.model.skills.funcs.LambdaConst;
 import king.server.gameserver.model.skills.funcs.LambdaStats;
 import king.server.gameserver.model.stats.Env;
 import king.server.gameserver.model.stats.Stats;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 /**
  * @author mkizub

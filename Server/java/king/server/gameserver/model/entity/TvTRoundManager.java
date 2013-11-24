@@ -24,7 +24,7 @@ public class TvTRoundManager
 		{
 			TvTRoundEvent.init();
 			
-			this.scheduleEventStart();
+			scheduleEventStart();
 			_log.info("TvTRound Event Engine: Iniciado.");
 		}
 		else
@@ -34,8 +34,8 @@ public class TvTRoundManager
 	}
 	
 	/**
-	 * Initialize new/Returns the one and only instance<br><br>
-	 *
+	 * Initialize new/Returns the one and only instance<br>
+	 * <br>
 	 * @return TvTRoundManager<br>
 	 */
 	public static TvTRoundManager getInstance()
@@ -67,7 +67,7 @@ public class TvTRoundManager
 					testStartTime.add(Calendar.DAY_OF_MONTH, 1);
 				}
 				// Check for the test date to be the minimum (smallest in the specified list)
-				if (nextStartTime == null || testStartTime.getTimeInMillis() < nextStartTime.getTimeInMillis())
+				if ((nextStartTime == null) || (testStartTime.getTimeInMillis() < nextStartTime.getTimeInMillis()))
 				{
 					nextStartTime = testStartTime;
 				}
@@ -91,15 +91,14 @@ public class TvTRoundManager
 			Announcements.getInstance().announceToAll("TvT Round Event: Event was cancelled.");
 			_log.warning("TvTRound Event Engine: Error spawning event npc for participation.");
 			
-			this.scheduleEventStart();
+			scheduleEventStart();
 		}
 		else
 		{
-			Announcements.getInstance().announceToAll("TvT Round Event: Registration opened for " + Config.TVT_ROUND_EVENT_PARTICIPATION_TIME
-					+ " minute(s).");
+			Announcements.getInstance().announceToAll("TvT Round Event: Registration opened for " + Config.TVT_ROUND_EVENT_PARTICIPATION_TIME + " minute(s).");
 			
 			// schedule registration end
-			_task.setStartTime(System.currentTimeMillis() + 60000L * Config.TVT_ROUND_EVENT_PARTICIPATION_TIME);
+			_task.setStartTime(System.currentTimeMillis() + (60000L * Config.TVT_ROUND_EVENT_PARTICIPATION_TIME));
 			ThreadPoolManager.getInstance().executeTask(_task);
 		}
 	}
@@ -114,14 +113,13 @@ public class TvTRoundManager
 			Announcements.getInstance().announceToAll("TvT Round Event: Event cancelled due to lack of Participation.");
 			_log.info("TvTRound Event Engine: Lack of registration, abort event.");
 			
-			this.scheduleEventStart();
+			scheduleEventStart();
 		}
 		else
 		{
 			TvTRoundEvent.sysMsgToAllParticipants("TvT Round Event: Starting first round...");
-			TvTRoundEvent.sysMsgToAllParticipants("TvT Round Event: Teleporting participants to the anteroom in "
-					+ Config.TVT_ROUND_EVENT_START_RESPAWN_LEAVE_TELEPORT_DELAY + " second(s).");
-			_task.setStartTime(System.currentTimeMillis() + 60000L * Config.TVT_ROUND_EVENT_FIRST_FIGHT_RUNNING_TIME);
+			TvTRoundEvent.sysMsgToAllParticipants("TvT Round Event: Teleporting participants to the anteroom in " + Config.TVT_ROUND_EVENT_START_RESPAWN_LEAVE_TELEPORT_DELAY + " second(s).");
+			_task.setStartTime(System.currentTimeMillis() + (60000L * Config.TVT_ROUND_EVENT_FIRST_FIGHT_RUNNING_TIME));
 			ThreadPoolManager.getInstance().executeTask(_task);
 		}
 	}
@@ -143,9 +141,8 @@ public class TvTRoundManager
 		{
 			TvTRoundEvent.setInSecondRound();
 			TvTRoundEvent.sysMsgToAllParticipants("TvT Round Event: Starting second round...");
-			TvTRoundEvent.sysMsgToAllParticipants("TvT Round Event: Teleporting participants to the anteroom in "
-					+ Config.TVT_ROUND_EVENT_START_RESPAWN_LEAVE_TELEPORT_DELAY + " second(s).");
-			_task.setStartTime(System.currentTimeMillis() + 60000L * Config.TVT_ROUND_EVENT_SECOND_FIGHT_RUNNING_TIME);
+			TvTRoundEvent.sysMsgToAllParticipants("TvT Round Event: Teleporting participants to the anteroom in " + Config.TVT_ROUND_EVENT_START_RESPAWN_LEAVE_TELEPORT_DELAY + " second(s).");
+			_task.setStartTime(System.currentTimeMillis() + (60000L * Config.TVT_ROUND_EVENT_SECOND_FIGHT_RUNNING_TIME));
 			ThreadPoolManager.getInstance().executeTask(_task);
 		}
 	}
@@ -168,9 +165,8 @@ public class TvTRoundManager
 		{
 			TvTRoundEvent.setInThirdRound();
 			TvTRoundEvent.sysMsgToAllParticipants("TvT Round Event: Starting third round...");
-			TvTRoundEvent.sysMsgToAllParticipants("TvT Round Event: Teleporting participants to the anteroom in "
-					+ Config.TVT_ROUND_EVENT_START_RESPAWN_LEAVE_TELEPORT_DELAY + " second(s).");
-			_task.setStartTime(System.currentTimeMillis() + 60000L * Config.TVT_ROUND_EVENT_THIRD_FIGHT_RUNNING_TIME);
+			TvTRoundEvent.sysMsgToAllParticipants("TvT Round Event: Teleporting participants to the anteroom in " + Config.TVT_ROUND_EVENT_START_RESPAWN_LEAVE_TELEPORT_DELAY + " second(s).");
+			_task.setStartTime(System.currentTimeMillis() + (60000L * Config.TVT_ROUND_EVENT_THIRD_FIGHT_RUNNING_TIME));
 			ThreadPoolManager.getInstance().executeTask(_task);
 		}
 	}
@@ -181,12 +177,12 @@ public class TvTRoundManager
 	public void endFirstRound()
 	{
 		Announcements.getInstance().announceToAll(TvTRoundEvent.calculatePoints());
-		if (Config.TVT_ROUND_EVENT_STOP_ON_TIE && TvTRoundEvent.getRoundTie() >= Config.TVT_ROUND_EVENT_MINIMUM_TIE)
+		if (Config.TVT_ROUND_EVENT_STOP_ON_TIE && (TvTRoundEvent.getRoundTie() >= Config.TVT_ROUND_EVENT_MINIMUM_TIE))
 		{
 			TvTRoundEvent.stopEvent();
 			Announcements.getInstance().announceToAll("TvT Round Event: Event cancelled due to inactivity!");
 			
-			this.scheduleEventStart();
+			scheduleEventStart();
 		}
 		else
 		{
@@ -203,21 +199,20 @@ public class TvTRoundManager
 	public void endSecondRound()
 	{
 		Announcements.getInstance().announceToAll(TvTRoundEvent.calculatePoints());
-		if (Config.TVT_ROUND_EVENT_STOP_ON_TIE && TvTRoundEvent.getRoundTie() >= Config.TVT_ROUND_EVENT_MINIMUM_TIE)
+		if (Config.TVT_ROUND_EVENT_STOP_ON_TIE && (TvTRoundEvent.getRoundTie() >= Config.TVT_ROUND_EVENT_MINIMUM_TIE))
 		{
 			TvTRoundEvent.stopEvent();
 			Announcements.getInstance().announceToAll("TvT Round Event: Event cancelled due to inactivity!");
 			
-			this.scheduleEventStart();
+			scheduleEventStart();
 		}
 		else if (Config.TVT_ROUND_EVENT_REWARD_ON_SECOND_FIGHT_END && TvTRoundEvent.checkForPossibleWinner())
 		{
 			Announcements.getInstance().announceToAll(TvTRoundEvent.calculateRewards());
-			TvTRoundEvent.sysMsgToAllParticipants("TvT Round Event: Teleporting back to the registration npc in "
-					+ Config.TVT_ROUND_EVENT_START_RESPAWN_LEAVE_TELEPORT_DELAY + " second(s).");
+			TvTRoundEvent.sysMsgToAllParticipants("TvT Round Event: Teleporting back to the registration npc in " + Config.TVT_ROUND_EVENT_START_RESPAWN_LEAVE_TELEPORT_DELAY + " second(s).");
 			TvTRoundEvent.stopEvent();
 			
-			this.scheduleEventStart();
+			scheduleEventStart();
 		}
 		else
 		{
@@ -234,12 +229,12 @@ public class TvTRoundManager
 	public void endThirdRound()
 	{
 		Announcements.getInstance().announceToAll(TvTRoundEvent.calculatePoints());
-		if (Config.TVT_ROUND_EVENT_STOP_ON_TIE && TvTRoundEvent.getRoundTie() >= Config.TVT_ROUND_EVENT_MINIMUM_TIE)
+		if (Config.TVT_ROUND_EVENT_STOP_ON_TIE && (TvTRoundEvent.getRoundTie() >= Config.TVT_ROUND_EVENT_MINIMUM_TIE))
 		{
 			TvTRoundEvent.stopEvent();
 			Announcements.getInstance().announceToAll("TvT Round Event: Event cancelled due to inactivity!");
 			
-			this.scheduleEventStart();
+			scheduleEventStart();
 		}
 		else
 		{
@@ -258,16 +253,15 @@ public class TvTRoundManager
 		if (TvTRoundEvent.isWithoutWinners())
 		{
 			TvTRoundEvent.stopEvent();
-			this.scheduleEventStart();
+			scheduleEventStart();
 		}
 		else
 		{
 			Announcements.getInstance().announceToAll(TvTRoundEvent.calculateRewards());
-			TvTRoundEvent.sysMsgToAllParticipants("TvT Round Event: Teleporting back to the registration npc in "
-					+ Config.TVT_ROUND_EVENT_START_RESPAWN_LEAVE_TELEPORT_DELAY + " second(s).");
+			TvTRoundEvent.sysMsgToAllParticipants("TvT Round Event: Teleporting back to the registration npc in " + Config.TVT_ROUND_EVENT_START_RESPAWN_LEAVE_TELEPORT_DELAY + " second(s).");
 			TvTRoundEvent.stopEvent();
 			
-			this.scheduleEventStart();
+			scheduleEventStart();
 		}
 	}
 	
@@ -308,7 +302,7 @@ public class TvTRoundManager
 			
 			if (delay > 0)
 			{
-				this.announce(delay);
+				announce(delay);
 			}
 			
 			int nextMsg = 0;
@@ -349,35 +343,35 @@ public class TvTRoundManager
 				// start
 				if (TvTRoundEvent.isInactive())
 				{
-					TvTRoundManager.this.startReg();
+					startReg();
 				}
 				else if (TvTRoundEvent.isParticipating())
 				{
-					TvTRoundManager.this.startFirstRound();
+					startFirstRound();
 				}
 				else if (TvTRoundEvent.isInFirstRound())
 				{
-					TvTRoundManager.this.endFirstRound();
+					endFirstRound();
 				}
 				else if (TvTRoundEvent.isFRoundFinished())
 				{
-					TvTRoundManager.this.startSecondRound();
+					startSecondRound();
 				}
 				else if (TvTRoundEvent.isInSecondRound())
 				{
-					TvTRoundManager.this.endSecondRound();
+					endSecondRound();
 				}
 				else if (TvTRoundEvent.isSRoundFinished())
 				{
-					TvTRoundManager.this.startThirdRound();
+					startThirdRound();
 				}
 				else if (TvTRoundEvent.isInThirdRound())
 				{
-					TvTRoundManager.this.endThirdRound();
+					endThirdRound();
 				}
 				else
 				{
-					TvTRoundManager.this.endEvent();
+					endEvent();
 				}
 			}
 			
@@ -389,7 +383,7 @@ public class TvTRoundManager
 		
 		private void announce(long time)
 		{
-			if (time >= 3600 && time % 3600 == 0)
+			if ((time >= 3600) && ((time % 3600) == 0))
 			{
 				if (TvTRoundEvent.isParticipating())
 				{

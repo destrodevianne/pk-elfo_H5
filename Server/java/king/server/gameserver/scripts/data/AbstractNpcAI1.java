@@ -56,10 +56,10 @@ public abstract class AbstractNpcAI1 extends L2Script
 	
 	/**
 	 * This is used simply for convenience of replacing jython 'element in list' boolean method.
-	 * @param array 
-	 * @param obj 
-	 * @param <T> 
-	 * @return 
+	 * @param array
+	 * @param obj
+	 * @param <T>
+	 * @return
 	 */
 	public static <T> boolean contains(T[] array, T obj)
 	{

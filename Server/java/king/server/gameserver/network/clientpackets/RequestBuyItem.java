@@ -230,7 +230,7 @@ public final class RequestBuyItem extends L2GameClientPacket
 				Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " tried buy item for 0 adena.", Config.DEFAULT_PUNISH);
 				return;
 			}
-
+			
 			if (tradeItem.hasLimitedStock())
 			{
 				// trying to buy more then available
@@ -264,7 +264,7 @@ public final class RequestBuyItem extends L2GameClientPacket
 				slots++;
 			}
 		}
-
+		
 		if (!player.isGM() && ((weight > Integer.MAX_VALUE) || (weight < 0) || !player.getInventory().validateWeight((int) weight)))
 		{
 			player.sendPacket(SystemMessageId.WEIGHT_LIMIT_EXCEEDED);

@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 import javolution.util.FastMap;
-
 import king.server.Config;
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.model.L2Clan;

@@ -18,6 +18,7 @@
  */
 package king.server.gameserver.network.clientpackets;
 
+import gnu.trove.procedure.TObjectProcedure;
 import king.server.gameserver.datatables.ClanTable;
 import king.server.gameserver.model.L2Clan;
 import king.server.gameserver.model.L2ClanMember;
@@ -26,8 +27,6 @@ import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.network.SystemMessageId;
 import king.server.gameserver.network.serverpackets.ActionFailed;
 import king.server.gameserver.taskmanager.AttackStanceTaskManager;
-
-import gnu.trove.procedure.TObjectProcedure;
 
 public final class RequestStopPledgeWar extends L2GameClientPacket
 {

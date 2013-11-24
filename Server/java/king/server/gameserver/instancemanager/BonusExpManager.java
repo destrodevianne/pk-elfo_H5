@@ -8,20 +8,19 @@ import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import javolution.util.FastMap;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-
 import king.server.Config;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.model.itemcontainer.PcInventory;
 import king.server.gameserver.model.items.instance.L2ItemInstance;
 import king.server.gameserver.model.items.instance.L2ItemInstance.ItemLocation;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+
 public class BonusExpManager
 {
 	private final Logger _log = Logger.getLogger(getClass().getName());
-	private Map<Integer, BonusItem> _bonusItems = new FastMap<Integer, BonusItem>().shared();
+	private final Map<Integer, BonusItem> _bonusItems = new FastMap<Integer, BonusItem>().shared();
 	
 	public BonusExpManager()
 	{
@@ -54,7 +53,7 @@ public class BonusExpManager
 			
 			Document doc = factory.newDocumentBuilder().parse(file);
 			Node first = doc.getFirstChild();
-			if (first != null && "list".equalsIgnoreCase(first.getNodeName()))
+			if ((first != null) && "list".equalsIgnoreCase(first.getNodeName()))
 			{
 				for (Node n = first.getFirstChild(); n != null; n = n.getNextSibling())
 				{
@@ -68,7 +67,9 @@ public class BonusExpManager
 							{
 								att = cd.getAttributes().getNamedItem("id");
 								if (att != null)
+								{
 									itemId = Integer.parseInt(att.getNodeValue());
+								}
 								else
 								{
 									_log.severe("[" + getClass().getSimpleName() + "]MissingItemid,skipping");
@@ -77,7 +78,9 @@ public class BonusExpManager
 								
 								att = cd.getAttributes().getNamedItem("exp");
 								if (att != null)
+								{
 									bonusExp = Double.parseDouble(att.getNodeValue());
+								}
 								else
 								{
 									_log.severe("[" + getClass().getSimpleName() + "]Missingexp,skipping");
@@ -86,7 +89,9 @@ public class BonusExpManager
 								
 								att = cd.getAttributes().getNamedItem("sp");
 								if (att != null)
+								{
 									bonusSp = Double.parseDouble(att.getNodeValue());
+								}
 								else
 								{
 									_log.severe("[" + getClass().getSimpleName() + "]Missingsp,skipping");
@@ -120,16 +125,24 @@ public class BonusExpManager
 			for (int itemId : _bonusItems.keySet())
 			{
 				L2ItemInstance item = inv.getItemByItemId(itemId);
-				if (item != null && item.getLocation() == ItemLocation.INVENTORY)
+				if ((item != null) && (item.getLocation() == ItemLocation.INVENTORY))
 				{
 					bonus = _bonusItems.get(itemId);
 					bonusExp += bonus.getBonusExpMultiplyer();
 					bonusSp += bonus.getBonusSpMultiplyer();
 				}
 			}
-			return new long[] { (long) (exp * bonusExp / 1000), (long) (sp * bonusSp / 1000) };
+			return new long[]
+			{
+				(long) ((exp * bonusExp) / 1000),
+				(long) ((sp * bonusSp) / 1000)
+			};
 		}
-		return new long[] { 0L, 0L };
+		return new long[]
+		{
+			0L,
+			0L
+		};
 	}
 	
 	private final class BonusItem

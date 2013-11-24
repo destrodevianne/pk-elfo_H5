@@ -24,7 +24,7 @@ public class FakePc
 	public int race;
 	public int sex;
 	public int clazz;
-
+	
 	public int pdUnder;
 	public int pdHead;
 	public int pdRHand;
@@ -45,7 +45,7 @@ public class FakePc
 	public int pdDeco5;
 	public int pdDeco6;
 	public int pdBelt;
-
+	
 	public int pdUnderAug;
 	public int pdHeadAug;
 	public int pdRHandAug;
@@ -66,16 +66,16 @@ public class FakePc
 	public int pdDeco5Aug;
 	public int pdDeco6Aug;
 	public int pdBeltAug;
-
+	
 	public boolean pvpFlag;
 	public int karma;
 	
 	public int hairStyle;
 	public int hairColor;
 	public int face;
-
+	
 	public String title;
-
+	
 	public int clanId;
 	public int clanCrestId;
 	public int allyId;
@@ -94,7 +94,7 @@ public class FakePc
 	public byte team;
 	
 	public int clanCrestLargeId;
-
+	
 	public boolean hero;
 	
 	public boolean fishing;
@@ -106,7 +106,7 @@ public class FakePc
 	
 	public int pledgeClass;
 	public int pledgeType;
-
+	
 	public int titleColor;
 	
 	public int reputationScore;

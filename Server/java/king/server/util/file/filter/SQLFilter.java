@@ -23,8 +23,7 @@ import java.io.FileFilter;
 
 /**
  * Specialized {@link FileFilter} class.<br>
- * Accepts <b>files</b> ending with ".sql" only.
- * PkElfo
+ * Accepts <b>files</b> ending with ".sql" only. PkElfo
  */
 public class SQLFilter implements FileFilter
 {

@@ -40,7 +40,7 @@ public class ExPCCafePointInfo extends L2GameServerPacket
 		_pointType = 0;
 		_time = 0;
 	}
-
+	
 	public ExPCCafePointInfo(int points, int pointsToAdd, int time)
 	{
 		_points = points;

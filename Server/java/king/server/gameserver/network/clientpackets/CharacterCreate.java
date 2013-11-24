@@ -27,7 +27,6 @@ import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.datatables.CharNameTable;
 import king.server.gameserver.datatables.CharTemplateTable;
@@ -260,16 +259,16 @@ public final class CharacterCreate extends L2GameClientPacket
 		// TODO: Make it random.
 		final L2PcTemplate template = newChar.getTemplate();
 		newChar.setXYZInvisible(template.getSpawnX(), template.getSpawnY(), template.getSpawnZ());
-
-        if (Config.CHAR_TITLE)
-        {
-         newChar.setTitle(Config.ADD_CHAR_TITLE);
-         newChar.getAppearance().setTitleColor(Config.TITLE_COLOR);
-        }
-        else
-        {
-		newChar.setTitle("");
-        }
+		
+		if (Config.CHAR_TITLE)
+		{
+			newChar.setTitle(Config.ADD_CHAR_TITLE);
+			newChar.getAppearance().setTitleColor(Config.TITLE_COLOR);
+		}
+		else
+		{
+			newChar.setTitle("");
+		}
 		
 		if (Config.ENABLE_VITALITY)
 		{

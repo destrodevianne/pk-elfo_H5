@@ -155,5 +155,5 @@ public class L2DoorAI extends L2CharacterAI
 				}
 			}
 		}
-	}	
+	}
 }

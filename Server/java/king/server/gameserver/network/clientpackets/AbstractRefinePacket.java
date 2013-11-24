@@ -30,7 +30,6 @@ import king.server.gameserver.model.items.L2Weapon;
 import king.server.gameserver.model.items.instance.L2ItemInstance;
 import king.server.gameserver.network.SystemMessageId;
 
-
 public abstract class AbstractRefinePacket extends L2GameClientPacket
 {
 	public static final int GRADE_NONE = 0;
@@ -215,7 +214,9 @@ public abstract class AbstractRefinePacket extends L2GameClientPacket
 		}
 		// GemStones must belong to owner
 		if (gemStones.getOwnerId() != player.getObjectId())
+		{
 			return false;
+		}
 		// .. and located in inventory
 		if (gemStones.getLocation() != L2ItemInstance.ItemLocation.INVENTORY)
 		{
@@ -226,7 +227,9 @@ public abstract class AbstractRefinePacket extends L2GameClientPacket
 		
 		// Check for item id
 		if (getGemStoneId(grade) != gemStones.getItemId())
+		{
 			return false;
+		}
 		// Count must be greater or equal of required number
 		if (getGemStoneCount(grade, ls.getGrade()) > gemStones.getCount())
 		{
@@ -251,13 +254,15 @@ public abstract class AbstractRefinePacket extends L2GameClientPacket
 		}
 		// Item must belong to owner
 		if (refinerItem.getOwnerId() != player.getObjectId())
+		{
 			return false;
+		}
 		// Lifestone must be located in inventory
 		if (refinerItem.getLocation() != L2ItemInstance.ItemLocation.INVENTORY)
 		{
 			return false;
 		}
-
+		
 		final LifeStone ls = _lifeStones.get(refinerItem.getItemId());
 		if (ls == null)
 		{
@@ -294,7 +299,7 @@ public abstract class AbstractRefinePacket extends L2GameClientPacket
 		{
 			return false;
 		}
- 		
+		
 		// Item must belong to owner
 		if (item.getOwnerId() != player.getObjectId())
 		{
@@ -377,7 +382,7 @@ public abstract class AbstractRefinePacket extends L2GameClientPacket
 		{
 			return false;
 		}
- 		
+		
 		return true;
 	}
 	
@@ -426,7 +431,7 @@ public abstract class AbstractRefinePacket extends L2GameClientPacket
 		{
 			return false;
 		}
- 		
+		
 		return true;
 	}
 	

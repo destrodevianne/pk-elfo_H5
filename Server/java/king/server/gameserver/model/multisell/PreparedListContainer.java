@@ -21,7 +21,6 @@ package king.server.gameserver.model.multisell;
 import java.util.ArrayList;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.model.actor.L2Npc;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.model.items.L2Armor;

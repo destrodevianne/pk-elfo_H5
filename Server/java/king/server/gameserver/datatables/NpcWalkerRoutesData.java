@@ -6,13 +6,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.Config;
 import king.server.gameserver.engines.DocumentParser;
 import king.server.gameserver.model.L2NpcWalkerNode;
 import king.server.gameserver.network.NpcStringId;
+
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 public class NpcWalkerRoutesData extends DocumentParser
 {

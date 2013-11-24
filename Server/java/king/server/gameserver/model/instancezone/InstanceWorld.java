@@ -21,7 +21,6 @@ package king.server.gameserver.model.instancezone;
 import java.util.List;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.instancemanager.InstanceManager;
 import king.server.gameserver.model.actor.L2Character;
 import king.server.gameserver.model.entity.Instance;

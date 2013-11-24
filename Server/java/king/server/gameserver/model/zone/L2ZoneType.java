@@ -26,7 +26,6 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 import javolution.util.FastMap;
-
 import king.server.gameserver.instancemanager.InstanceManager;
 import king.server.gameserver.model.L2Object;
 import king.server.gameserver.model.L2Object.InstanceType;

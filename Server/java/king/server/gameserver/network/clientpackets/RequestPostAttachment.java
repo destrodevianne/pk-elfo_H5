@@ -19,7 +19,6 @@
 package king.server.gameserver.network.clientpackets;
 
 import static king.server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
-
 import king.server.Config;
 import king.server.gameserver.datatables.ItemTable;
 import king.server.gameserver.instancemanager.MailManager;

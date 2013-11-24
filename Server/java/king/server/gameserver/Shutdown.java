@@ -1,5 +1,7 @@
 package king.server.gameserver;
 
+import gnu.trove.procedure.TObjectProcedure;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -35,8 +37,6 @@ import king.server.gameserver.network.gameserverpackets.ServerStatus;
 import king.server.gameserver.network.serverpackets.ServerClose;
 import king.server.gameserver.network.serverpackets.SystemMessage;
 import king.server.gameserver.util.Broadcast;
-
-import gnu.trove.procedure.TObjectProcedure;
 
 public class Shutdown extends Thread
 {
@@ -677,11 +677,12 @@ public class Shutdown extends Thread
 	{
 		protected static final Shutdown _instance = new Shutdown();
 	}
-    public void autoRestart(int time)
-    {
-        _secondsShut = time;
-            countdown();
-           _shutdownMode = GM_RESTART;
-               System.exit(2);
-    }
+	
+	public void autoRestart(int time)
+	{
+		_secondsShut = time;
+		countdown();
+		_shutdownMode = GM_RESTART;
+		System.exit(2);
+	}
 }

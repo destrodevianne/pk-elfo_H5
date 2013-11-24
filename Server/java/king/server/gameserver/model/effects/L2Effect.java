@@ -757,9 +757,9 @@ public abstract class L2Effect implements IChanceSkillTrigger
 	{
 		return null;
 	}
-
+	
 	public int getId()
 	{
 		return getSkill().getId();
-	}	
+	}
 }

@@ -23,8 +23,7 @@ import java.io.FileFilter;
 
 /**
  * Specialized {@link FileFilter} class.<br>
- * Accepts <b>files</b> ending with ".bmp" only.
- * PkElfo
+ * Accepts <b>files</b> ending with ".bmp" only. PkElfo
  */
 public class BMPFilter implements FileFilter
 {

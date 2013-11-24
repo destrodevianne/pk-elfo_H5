@@ -51,7 +51,6 @@ import king.server.gameserver.network.serverpackets.ItemList;
 import king.server.gameserver.network.serverpackets.SystemMessage;
 import king.server.gameserver.util.Util;
 
-
 public final class UseItem extends L2GameClientPacket
 {
 	private static final String _C__19_USEITEM = "[C] 19 UseItem";
@@ -214,13 +213,13 @@ public final class UseItem extends L2GameClientPacket
 		
 		if (item.isEquipable())
 		{
-			if (!activeChar.isGM() && item.getEnchantLevel() > Config.MAX_ENCHANT_LEVEL_PROTECT )
-			{                              
+			if (!activeChar.isGM() && (item.getEnchantLevel() > Config.MAX_ENCHANT_LEVEL_PROTECT))
+			{
 				activeChar.sendMessage("You have been kicked for using an item overenchanted!");
-				//activeChar.closeNetConnection();
+				// activeChar.closeNetConnection();
 				return;
 			}
-
+			
 			if (!activeChar.isGM() && (item.getEnchantLevel() > Config.MAX_ENCHANT_LEVEL))
 			{
 				// Destroy the item

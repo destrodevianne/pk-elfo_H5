@@ -8,7 +8,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
-
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.InstanceListManager;
 import king.server.gameserver.model.L2Clan;

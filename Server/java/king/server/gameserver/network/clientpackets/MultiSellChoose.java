@@ -21,7 +21,6 @@ package king.server.gameserver.network.clientpackets;
 import java.util.ArrayList;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.datatables.MultiSell;
 import king.server.gameserver.model.Elementals;

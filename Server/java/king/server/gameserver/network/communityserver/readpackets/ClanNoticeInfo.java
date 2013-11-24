@@ -20,12 +20,12 @@ package king.server.gameserver.network.communityserver.readpackets;
 
 import java.util.logging.Logger;
 
-import org.netcon.BaseReadPacket;
-
 import king.server.gameserver.datatables.ClanTable;
 import king.server.gameserver.model.L2Clan;
 import king.server.gameserver.network.communityserver.CommunityServerThread;
 import king.server.gameserver.network.communityserver.writepackets.WorldInfo;
+
+import org.netcon.BaseReadPacket;
 
 /**
  * @authors Forsaiken, Gigiikun

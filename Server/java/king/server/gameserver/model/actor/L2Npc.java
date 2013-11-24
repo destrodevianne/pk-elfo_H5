@@ -34,8 +34,8 @@ import king.server.gameserver.ThreadPoolManager;
 import king.server.gameserver.cache.HtmCache;
 import king.server.gameserver.datatables.FakePcsTable;
 import king.server.gameserver.datatables.ItemTable;
-import king.server.gameserver.events.EventsInterface;
 import king.server.gameserver.datatables.NpcPersonalAIData;
+import king.server.gameserver.events.EventsInterface;
 import king.server.gameserver.handler.BypassHandler;
 import king.server.gameserver.handler.IBypassHandler;
 import king.server.gameserver.instancemanager.CHSiegeManager;
@@ -459,10 +459,10 @@ public class L2Npc extends L2Character
 		return ((Config.MAX_NPC_ANIMATION > 0) && _isRandomAnimationEnabled && !getAiType().equals(AIType.CORPSE));
 	}
 	
- 	/**
- 	 * Switches random Animation state into val.
+	/**
+	 * Switches random Animation state into val.
 	 * @param val needed state of random animation
- 	 */
+	 */
 	public void setRandomAnimationEnabled(boolean val)
 	{
 		_isRandomAnimationEnabled = val;
@@ -471,7 +471,7 @@ public class L2Npc extends L2Character
 	/**
 	 * Returns Random Animation state.<BR>
 	 * <BR>
-	 * @return 
+	 * @return
 	 */
 	public boolean isRandomAnimationEnabled()
 	{

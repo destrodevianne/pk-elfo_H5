@@ -8,7 +8,6 @@ import java.util.logging.Logger;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
-
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.datatables.NpcTable;
 import king.server.gameserver.model.L2Spawn;

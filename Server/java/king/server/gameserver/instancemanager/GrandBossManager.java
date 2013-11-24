@@ -1,5 +1,8 @@
 package king.server.gameserver.instancemanager;
 
+import gnu.trove.map.hash.TIntIntHashMap;
+import gnu.trove.map.hash.TIntObjectHashMap;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,7 +14,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastMap;
-
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.datatables.NpcTable;
 import king.server.gameserver.model.L2Object;
@@ -22,9 +24,6 @@ import king.server.gameserver.model.actor.instance.L2GrandBossInstance;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.model.zone.type.L2BossZone;
 import king.server.util.L2FastList;
-
-import gnu.trove.map.hash.TIntIntHashMap;
-import gnu.trove.map.hash.TIntObjectHashMap;
 
 public class GrandBossManager
 {

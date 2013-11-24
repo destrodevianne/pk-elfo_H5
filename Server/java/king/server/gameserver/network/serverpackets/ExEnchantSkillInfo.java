@@ -19,7 +19,6 @@
 package king.server.gameserver.network.serverpackets;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.datatables.EnchantGroupsData;
 import king.server.gameserver.model.L2EnchantSkillGroup.EnchantSkillHolder;
 import king.server.gameserver.model.L2EnchantSkillLearn;

@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.script.DateRange;
 import king.server.gameserver.script.EventDrop;
 

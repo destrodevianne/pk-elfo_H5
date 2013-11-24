@@ -33,10 +33,6 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
-import org.mmocore.network.MMOClient;
-import org.mmocore.network.MMOConnection;
-import org.mmocore.network.ReceivablePacket;
-
 import king.server.Config;
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.LoginServerThread;
@@ -61,6 +57,10 @@ import king.server.gameserver.network.serverpackets.ServerClose;
 import king.server.gameserver.security.SecondaryPasswordAuth;
 import king.server.gameserver.util.FloodProtectors;
 import king.server.gameserver.util.Util;
+
+import org.mmocore.network.MMOClient;
+import org.mmocore.network.MMOConnection;
+import org.mmocore.network.ReceivablePacket;
 
 /**
  * Represents a client connected on Game Server.
@@ -770,9 +770,9 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 							getActiveChar().getAppearance().setNameColor(Config.OFFLINE_NAME_COLOR);
 							getActiveChar().broadcastUserInfo();
 						}
-						if(Config.OFFLINE_TRADE_EFFECT)
+						if (Config.OFFLINE_TRADE_EFFECT)
 						{
-							switch(Config.OFFLINE_EFFECT_ID)
+							switch (Config.OFFLINE_EFFECT_ID)
 							{
 								case 1:
 									getActiveChar().startAbnormalEffect(AbnormalEffect.BLEEDING);
@@ -812,7 +812,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 									break;
 							}
 						}
-
+						
 						if (getActiveChar().getOfflineStartTime() == 0)
 						{
 							getActiveChar().setOfflineStartTime(System.currentTimeMillis());

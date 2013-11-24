@@ -20,7 +20,6 @@ package king.server.util.osnative;
 
 /**
  * PkElfo
- * 
  */
 public final class CodePage
 {

@@ -21,7 +21,6 @@ package king.server.util;
 import java.util.Map;
 
 import javolution.util.FastMap;
-
 import king.server.gameserver.model.interfaces.IL2EntryProcedure;
 import king.server.gameserver.model.interfaces.IL2Procedure;
 

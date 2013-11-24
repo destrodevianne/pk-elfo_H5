@@ -21,7 +21,6 @@ package king.server.gameserver.network.clientpackets;
 import java.util.List;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.datatables.AdminTable;
 import king.server.gameserver.datatables.PremiumTable;

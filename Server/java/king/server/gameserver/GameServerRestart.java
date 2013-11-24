@@ -14,37 +14,40 @@
  */
 package king.server.gameserver;
 
-import java.text.SimpleDateFormat; 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.logging.Logger;
 
 import king.server.Config;
-import king.server.gameserver.ThreadPoolManager;
 
 public class GameServerRestart
 {
 	private static GameServerRestart _instance = null;
 	protected static final Logger _log = Logger.getLogger(GameServerRestart.class.getName());
 	private Calendar NextRestart;
-	private SimpleDateFormat format = new SimpleDateFormat("HH:mm");
+	private final SimpleDateFormat format = new SimpleDateFormat("HH:mm");
 	
-    public static GameServerRestart getInstance()
-    {
-    	if(_instance == null)
-    		_instance = new GameServerRestart();
-    	return _instance;
+	public static GameServerRestart getInstance()
+	{
+		if (_instance == null)
+		{
+			_instance = new GameServerRestart();
+		}
+		return _instance;
 	}
-    
+	
 	public String getRestartNextTime()
 	{
-		if(NextRestart.getTime() != null)
+		if (NextRestart.getTime() != null)
+		{
 			return format.format(NextRestart.getTime());
+		}
 		return "[Auto Restart]: Error on getRestartNextTime.";
 	}
 	
 	private GameServerRestart()
 	{
-
+		
 	}
 	
 	public void StartCalculationOfNextRestartTime()
@@ -54,7 +57,7 @@ public class GameServerRestart
 		{
 			Calendar currentTime = Calendar.getInstance();
 			Calendar testStartTime = null;
-			long flush2 = 0,timeL = 0;
+			long flush2 = 0, timeL = 0;
 			int count = 0;
 			
 			for (String timeOfDay : Config.AUTO_RESTART_INTERVAL)
@@ -73,19 +76,19 @@ public class GameServerRestart
 				
 				timeL = testStartTime.getTimeInMillis() - currentTime.getTimeInMillis();
 				
-				if(count == 0)
+				if (count == 0)
 				{
 					flush2 = timeL;
 					NextRestart = testStartTime;
 				}
 				
-				if(timeL <  flush2)
+				if (timeL < flush2)
 				{
 					flush2 = timeL;
 					NextRestart = testStartTime;
 				}
 				
-				count ++;
+				count++;
 			}
 			
 			_log.info("[Auto Restart]: Proxima vez que vai reiniciar: " + NextRestart.getTime().toString());

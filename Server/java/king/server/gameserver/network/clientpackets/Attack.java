@@ -84,12 +84,12 @@ public final class Attack extends L2GameClientPacket
 			return;
 		}
 		
-         // If target is L2Npc and it set as not targetable              
-         if (target instanceof L2Npc && !((L2Npc)target).isTargetable() && !activeChar.isGM())
-         {
-            sendPacket(ActionFailed.STATIC_PACKET);
-                  return;
-         }
+		// If target is L2Npc and it set as not targetable
+		if ((target instanceof L2Npc) && !((L2Npc) target).isTargetable() && !activeChar.isGM())
+		{
+			sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
 		// Players can't attack objects in the other instances
 		// except from multiverse
 		else if ((target.getInstanceId() != activeChar.getInstanceId()) && (activeChar.getInstanceId() != -1))

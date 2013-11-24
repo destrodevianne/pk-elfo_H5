@@ -24,7 +24,6 @@ import java.sql.ResultSet;
 import java.util.List;
 
 import javolution.util.FastList;
-
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.datatables.CharNameTable;
 import king.server.gameserver.model.L2World;

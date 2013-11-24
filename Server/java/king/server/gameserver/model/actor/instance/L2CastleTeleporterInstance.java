@@ -18,6 +18,8 @@
  */
 package king.server.gameserver.model.actor.instance;
 
+import gnu.trove.procedure.TObjectProcedure;
+
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,8 +33,6 @@ import king.server.gameserver.network.NpcStringId;
 import king.server.gameserver.network.clientpackets.Say2;
 import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
 import king.server.gameserver.network.serverpackets.NpcSay;
-
-import gnu.trove.procedure.TObjectProcedure;
 
 /**
  * @author Kerberos

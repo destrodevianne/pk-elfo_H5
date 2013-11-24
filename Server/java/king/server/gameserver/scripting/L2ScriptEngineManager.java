@@ -52,7 +52,6 @@ import javax.script.SimpleScriptContext;
 
 import javolution.util.FastMap;
 import javolution.util.FastSet;
-
 import king.server.Config;
 import king.server.gameserver.model.quest.Quest;
 import king.server.script.jython.JythonScriptEngine;

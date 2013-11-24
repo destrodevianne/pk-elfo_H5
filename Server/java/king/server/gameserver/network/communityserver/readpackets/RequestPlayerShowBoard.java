@@ -18,11 +18,11 @@
  */
 package king.server.gameserver.network.communityserver.readpackets;
 
-import org.netcon.BaseReadPacket;
-
 import king.server.gameserver.model.L2World;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.network.serverpackets.CSShowComBoard;
+
+import org.netcon.BaseReadPacket;
 
 /**
  * @authors Forsaiken, Gigiikun

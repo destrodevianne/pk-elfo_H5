@@ -19,7 +19,6 @@
 package king.server.gameserver.model.itemcontainer;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.model.L2Clan;
 import king.server.gameserver.model.actor.instance.L2PcInstance;

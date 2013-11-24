@@ -15,10 +15,6 @@ import java.util.logging.Logger;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.Config;
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.model.CursedWeapon;
@@ -36,6 +32,10 @@ import king.server.gameserver.model.items.instance.L2ItemInstance;
 import king.server.gameserver.network.SystemMessageId;
 import king.server.gameserver.network.serverpackets.SystemMessage;
 import king.server.gameserver.util.Broadcast;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 public class CursedWeaponsManager
 {

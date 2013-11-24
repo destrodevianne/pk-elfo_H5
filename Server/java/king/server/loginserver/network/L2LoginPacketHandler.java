@@ -21,14 +21,14 @@ package king.server.loginserver.network;
 import java.nio.ByteBuffer;
 import java.util.logging.Logger;
 
-import org.mmocore.network.IPacketHandler;
-import org.mmocore.network.ReceivablePacket;
-
 import king.server.loginserver.network.L2LoginClient.LoginClientState;
 import king.server.loginserver.network.clientpackets.AuthGameGuard;
 import king.server.loginserver.network.clientpackets.RequestAuthLogin;
 import king.server.loginserver.network.clientpackets.RequestServerList;
 import king.server.loginserver.network.clientpackets.RequestServerLogin;
+
+import org.mmocore.network.IPacketHandler;
+import org.mmocore.network.ReceivablePacket;
 
 /**
  * Handler for packets received by Login Server

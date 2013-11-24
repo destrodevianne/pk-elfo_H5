@@ -26,7 +26,6 @@ import com.sun.jna.win32.W32APIOptions;
 
 /**
  * PkElfo
- * 
  */
 public interface WinConsole extends StdCallLibrary
 {

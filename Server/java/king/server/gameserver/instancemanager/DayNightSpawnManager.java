@@ -7,7 +7,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastMap;
-
 import king.server.gameserver.GameTimeController;
 import king.server.gameserver.model.L2Spawn;
 import king.server.gameserver.model.actor.L2Npc;

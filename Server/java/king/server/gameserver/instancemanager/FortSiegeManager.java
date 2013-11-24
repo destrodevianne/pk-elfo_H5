@@ -14,7 +14,6 @@ import java.util.logging.Logger;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
-
 import king.server.Config;
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.datatables.SkillTable;

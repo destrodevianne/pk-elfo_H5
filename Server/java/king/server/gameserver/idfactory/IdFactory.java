@@ -1,5 +1,7 @@
 package king.server.gameserver.idfactory;
 
+import gnu.trove.list.array.TIntArrayList;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,8 +12,6 @@ import java.util.logging.Logger;
 
 import king.server.Config;
 import king.server.L2DatabaseFactory;
-
-import gnu.trove.list.array.TIntArrayList;
 
 public abstract class IdFactory
 {
@@ -239,7 +239,7 @@ public abstract class IdFactory
 			cleanCount += stmt.executeUpdate("DELETE FROM character_quest_global_data WHERE character_quest_global_data.charId NOT IN (SELECT charId FROM characters);");
 			cleanCount += stmt.executeUpdate("DELETE FROM character_tpbookmark WHERE character_tpbookmark.charId NOT IN (SELECT charId FROM characters);");
 			cleanCount += stmt.executeUpdate("DELETE FROM character_services WHERE character_services.charId NOT IN (SELECT charId FROM characters);");
-
+			
 			// If the clan does not exist...
 			cleanCount += stmt.executeUpdate("DELETE FROM clan_privs WHERE clan_privs.clan_id NOT IN (SELECT clan_id FROM clan_data);");
 			cleanCount += stmt.executeUpdate("DELETE FROM clan_skills WHERE clan_skills.clan_id NOT IN (SELECT clan_id FROM clan_data);");
@@ -374,5 +374,6 @@ public abstract class IdFactory
 	 * @param id
 	 */
 	public abstract void releaseId(int id);
+	
 	public abstract int size();
 }

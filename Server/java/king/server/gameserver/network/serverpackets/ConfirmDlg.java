@@ -19,7 +19,6 @@
 package king.server.gameserver.network.serverpackets;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.model.actor.L2Character;
 import king.server.gameserver.model.actor.L2Npc;
 import king.server.gameserver.model.actor.L2Summon;

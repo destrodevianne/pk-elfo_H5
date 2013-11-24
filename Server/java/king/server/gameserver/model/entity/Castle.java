@@ -1,5 +1,7 @@
 package king.server.gameserver.model.entity;
 
+import gnu.trove.map.hash.TIntIntHashMap;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,7 +14,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastMap;
-
 import king.server.Config;
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.CastleUpdater;
@@ -44,8 +45,6 @@ import king.server.gameserver.model.zone.type.L2ResidenceTeleportZone;
 import king.server.gameserver.model.zone.type.L2SiegeZone;
 import king.server.gameserver.network.serverpackets.PlaySound;
 import king.server.gameserver.network.serverpackets.PledgeShowInfoUpdate;
-
-import gnu.trove.map.hash.TIntIntHashMap;
 
 public class Castle
 {

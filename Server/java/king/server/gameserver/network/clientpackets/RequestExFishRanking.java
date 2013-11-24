@@ -22,7 +22,6 @@ import king.server.Config;
 import king.server.gameserver.instancemanager.leaderboards.FishermanLeaderboard;
 import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
 
-
 /**
  * Format: (ch) just a trigger
  * @author -Wooden-
@@ -47,7 +46,9 @@ public final class RequestExFishRanking extends L2GameClientPacket
 			getClient().getActiveChar().sendPacket(htm);
 		}
 		else
-		_log.info("C5: RequestExFishRanking");
+		{
+			_log.info("C5: RequestExFishRanking");
+		}
 	}
 	
 	@Override

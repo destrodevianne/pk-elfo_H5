@@ -26,13 +26,13 @@ import java.util.Scanner;
 
 import king.server.util.osnative.CodePage;
 import king.server.util.osnative.WinConsole;
+
 import com.sun.jna.Platform;
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.IntByReference;
 
 /**
  * PkElfo
- * 
  */
 public class ConsoleLocalizator extends LocalizationParser
 {

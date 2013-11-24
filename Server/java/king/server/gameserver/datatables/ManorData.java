@@ -7,13 +7,13 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.gameserver.engines.DocumentParser;
 import king.server.gameserver.model.L2Seed;
 import king.server.gameserver.model.StatsSet;
 import king.server.gameserver.model.items.L2Item;
+
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 public class ManorData extends DocumentParser
 {

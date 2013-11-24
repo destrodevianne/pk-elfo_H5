@@ -18,7 +18,6 @@ import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 
 import javolution.text.TextBuilder;
-
 import king.server.Config;
 import king.server.gameserver.datatables.EnchantItemData;
 import king.server.gameserver.datatables.SkillTable;
@@ -41,6 +40,7 @@ import king.server.gameserver.network.serverpackets.StatusUpdate;
 import king.server.gameserver.network.serverpackets.SystemMessage;
 import king.server.gameserver.util.Util;
 import king.server.util.Rnd;
+
 //import king.server.gameserver.network.serverpackets.ExPutEnchantTargetItemResult;
 
 /**

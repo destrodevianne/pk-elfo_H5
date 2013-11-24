@@ -24,7 +24,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.ThreadPoolManager;
 import king.server.gameserver.ai.CtrlEvent;
@@ -327,7 +326,7 @@ public final class L2CubicInstance
 				}
 				return;
 			}
-
+			
 			// TvT Round event targeting
 			if (TvTRoundEvent.isStarted() && TvTRoundEvent.isPlayerParticipant(_owner.getObjectId()))
 			{

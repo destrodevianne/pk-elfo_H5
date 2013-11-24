@@ -29,14 +29,14 @@ public enum TimeConstant
 	DAY(86400000L, "DAY", "d"),
 	WEEK(604800000L, "WEEK", "w"),
 	MONTH(2592000000L, "MONTH", "M");
-
+	
 	/** Count of milliseconds */
 	private final long _millis;
 	/** Mnemonic name of period */
 	private final String _name;
 	/** Short name of period */
 	private final String _shortName;
-
+	
 	private TimeConstant(long millis, String name, String shortName)
 	{
 		_millis = millis;
@@ -44,29 +44,27 @@ public enum TimeConstant
 		_shortName = shortName;
 	}
 	
- /**
-  * @return number of millisecond in time period 
-  */
+	/**
+	 * @return number of millisecond in time period
+	 */
 	public long getTimeInMillis()
 	{
 		return _millis;
 	}
-
- /**
-  * @return mnemonic name of time period 
-  */
+	
+	/**
+	 * @return mnemonic name of time period
+	 */
 	public String getName()
 	{
 		return _name;
 	}
-
- /**
-  * @return short name of time period 
-  */
+	
+	/**
+	 * @return short name of time period
+	 */
 	public String getShortName()
 	{
 		return _shortName;
 	}
-} 
-
-
+}

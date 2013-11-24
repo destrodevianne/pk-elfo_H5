@@ -29,7 +29,6 @@ import java.util.Properties;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.Server;
 import king.server.util.Rnd;

@@ -21,7 +21,6 @@ package king.server.util;
 import java.util.Collection;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.model.interfaces.IL2Procedure;
 
 /**

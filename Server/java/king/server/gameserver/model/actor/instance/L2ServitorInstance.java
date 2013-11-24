@@ -18,6 +18,8 @@
  */
 package king.server.gameserver.model.actor.instance;
 
+import gnu.trove.map.hash.TIntObjectHashMap;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,7 +29,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.ThreadPoolManager;
@@ -45,8 +46,6 @@ import king.server.gameserver.model.skills.L2Skill;
 import king.server.gameserver.model.skills.l2skills.L2SkillSummon;
 import king.server.gameserver.model.stats.Env;
 import king.server.gameserver.network.serverpackets.SetSummonRemainTime;
-
-import gnu.trove.map.hash.TIntObjectHashMap;
 
 public class L2ServitorInstance extends L2Summon
 {

@@ -19,7 +19,6 @@
 package king.server.gameserver.network.clientpackets;
 
 import static king.server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
-
 import king.server.Config;
 import king.server.gameserver.model.TradeList;
 import king.server.gameserver.model.actor.instance.L2PcInstance;

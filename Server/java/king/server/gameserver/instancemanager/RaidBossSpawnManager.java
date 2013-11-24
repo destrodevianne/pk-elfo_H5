@@ -11,15 +11,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastMap;
-
 import king.server.Config;
 import king.server.L2DatabaseFactory;
+import king.server.gameserver.Announcements;
 import king.server.gameserver.ThreadPoolManager;
 import king.server.gameserver.datatables.NpcTable;
 import king.server.gameserver.datatables.SpawnTable;
 import king.server.gameserver.model.L2Spawn;
 import king.server.gameserver.model.StatsSet;
-import king.server.gameserver.Announcements;
 import king.server.gameserver.model.actor.instance.L2RaidBossInstance;
 import king.server.gameserver.model.actor.templates.L2NpcTemplate;
 import king.server.util.Rnd;

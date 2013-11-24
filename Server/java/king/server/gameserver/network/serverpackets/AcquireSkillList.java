@@ -19,7 +19,6 @@
 package king.server.gameserver.network.serverpackets;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.model.base.AcquireSkillType;
 
 public final class AcquireSkillList extends L2GameServerPacket

@@ -3,33 +3,33 @@ package king.server.gameserver.datatables;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.gameserver.engines.DocumentParser;
 import king.server.gameserver.model.actor.L2Npc;
 
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+
 public class NpcPersonalAIData extends DocumentParser
 {
-	private Map<String, Map<String, Integer>> _AIData;
-
+	private final Map<String, Map<String, Integer>> _AIData;
+	
 	/**
 	 * Instantiates a new table.
 	 */
 	protected NpcPersonalAIData()
 	{
 		_AIData = new HashMap<>();
-  	load();
+		load();
 	}
-
+	
 	@Override
 	public void load()
 	{
 		_AIData.clear();
-  	parseDatapackFile("data/stats/npc/PersonalAIData.xml");
+		parseDatapackFile("data/stats/npc/PersonalAIData.xml");
 		_log.info(getClass().getSimpleName() + ": Ai pessoal para " + _AIData.size() + " NPC('s).");
 	}
-
+	
 	@Override
 	protected void parseDocument()
 	{
@@ -53,7 +53,7 @@ public class NpcPersonalAIData extends DocumentParser
 								continue;
 							}
 							int val;
-							switch(c.getNodeName())
+							switch (c.getNodeName())
 							{
 								case "disableRandomAnimation":
 								case "disableRandomWalk":
@@ -64,7 +64,7 @@ public class NpcPersonalAIData extends DocumentParser
 							}
 							map.put(c.getNodeName(), val);
 						}
-
+						
 						if (!map.isEmpty())
 						{
 							_AIData.put(name, map);
@@ -74,17 +74,17 @@ public class NpcPersonalAIData extends DocumentParser
 			}
 		}
 	}
-
+	
 	/**
 	 * @param spawnName spawn name to check
-	 * @param paramName parameter to check	 
+	 * @param paramName parameter to check
 	 * @return value of given parameter for given spawn name
 	 */
 	public int getAIValue(String spawnName, String paramName)
 	{
 		return hasAIValue(spawnName, paramName) ? _AIData.get(spawnName).get(paramName) : -1;
 	}
-
+	
 	/**
 	 * @param spawnName spawn name to check
 	 * @param paramName parameter name to check
@@ -94,23 +94,23 @@ public class NpcPersonalAIData extends DocumentParser
 	{
 		return (spawnName != null) && _AIData.containsKey(spawnName) && _AIData.get(spawnName).containsKey(paramName);
 	}
-
+	
 	/**
 	 * Initializes npc parameters by specified values.
 	 * @param npc NPC to process
-	 * @param spawnName 
+	 * @param spawnName
 	 */
 	public void initializeNpcParameters(L2Npc npc, String spawnName)
 	{
 		if (_AIData.containsKey(spawnName))
 		{
 			Map<String, Integer> map = _AIData.get(spawnName);
-
+			
 			try
 			{
 				for (String key : map.keySet())
 				{
-					switch(key)
+					switch (key)
 					{
 						case "disableRandomAnimation":
 							npc.setRandomAnimationEnabled((map.get(key) == 0));
@@ -121,13 +121,13 @@ public class NpcPersonalAIData extends DocumentParser
 					}
 				}
 			}
-			catch(Exception e)
+			catch (Exception e)
 			{
 				// Do nothing
 			}
 		}
 	}
-
+	
 	/**
 	 * Gets the single instance of NpcTable.
 	 * @return single instance of NpcTable
@@ -136,7 +136,7 @@ public class NpcPersonalAIData extends DocumentParser
 	{
 		return SingletonHolder._instance;
 	}
-
+	
 	private static class SingletonHolder
 	{
 		protected static final NpcPersonalAIData _instance = new NpcPersonalAIData();

@@ -21,7 +21,6 @@ package king.server.gameserver.network.serverpackets;
 import java.util.List;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.model.L2Object;
 
 /**

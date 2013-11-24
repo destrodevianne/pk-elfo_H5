@@ -24,7 +24,6 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.SevenSignsFestival;
 import king.server.gameserver.events.EventsInterface;
@@ -75,22 +74,22 @@ public final class RequestRestart extends L2GameClientPacket
 		{
 			L2PcInstance._isoneffect = false;
 		}
-      
+		
 		if (L2PcInstance._istraderefusal == true)
 		{
 			L2PcInstance._istraderefusal = false;
 		}
-	              
+		
 		if (L2PcInstance._ispmrefusal == true)
 		{
 			L2PcInstance._ispmrefusal = false;
 		}
-	             
+		
 		if (L2PcInstance._isexpsprefusal == true)
 		{
 			L2PcInstance._isexpsprefusal = false;
 		}
-			
+		
 		if (player.isLocked())
 		{
 			_log.warning("Player " + player.getName() + " tried to restart during class change.");

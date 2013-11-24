@@ -18,6 +18,7 @@ public class PvPColorSystem
 			}
 		}
 	}
+	
 	public void updateTitleColor(L2PcInstance player)
 	{
 		Set<Integer> pkscolors = Config.PKS_COLORS_LIST.keySet();

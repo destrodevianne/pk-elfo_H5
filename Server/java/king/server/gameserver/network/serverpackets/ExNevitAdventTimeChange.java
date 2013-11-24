@@ -31,7 +31,7 @@ public class ExNevitAdventTimeChange extends L2GameServerPacket
 		_time = time;
 		_paused = paused;
 	}
-
+	
 	@Override
 	protected void writeImpl()
 	{

@@ -24,8 +24,6 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.netcon.BaseReadPacket;
-
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.datatables.ClanTable;
 import king.server.gameserver.model.L2Clan;
@@ -35,6 +33,8 @@ import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.network.communityserver.CommunityServerThread;
 import king.server.gameserver.network.communityserver.writepackets.InitWorldInfo;
 import king.server.gameserver.network.communityserver.writepackets.WorldInfo;
+
+import org.netcon.BaseReadPacket;
 
 /**
  * @authors Forsaiken, Gigiikun

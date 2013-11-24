@@ -23,7 +23,6 @@ import java.util.Collection;
 import java.util.List;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.handler.ISkillHandler;
 import king.server.gameserver.handler.SkillHandler;
 import king.server.gameserver.model.L2Object;
@@ -270,7 +269,7 @@ public final class L2Weapon extends L2Item
 	{
 		return _reducedMpConsume;
 	}
-
+	
 	/**
 	 * @return the chance to use getReducedMpConsume()
 	 */

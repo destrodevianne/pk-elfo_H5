@@ -12,7 +12,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
-
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.ThreadPoolManager;
 import king.server.gameserver.idfactory.IdFactory;

@@ -1,5 +1,7 @@
 package king.server.gameserver.model.itemauction;
 
+import gnu.trove.map.hash.TIntObjectHashMap;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,9 +17,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.Config;
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.ThreadPoolManager;
@@ -32,7 +31,8 @@ import king.server.gameserver.network.SystemMessageId;
 import king.server.gameserver.network.serverpackets.SystemMessage;
 import king.server.util.Rnd;
 
-import gnu.trove.map.hash.TIntObjectHashMap;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 public final class ItemAuctionInstance
 {

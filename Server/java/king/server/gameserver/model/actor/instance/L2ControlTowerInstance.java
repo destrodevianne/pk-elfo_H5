@@ -22,7 +22,6 @@ import java.util.List;
 import java.util.logging.Level;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.model.L2Spawn;
 import king.server.gameserver.model.actor.L2Character;
 import king.server.gameserver.model.actor.L2Tower;

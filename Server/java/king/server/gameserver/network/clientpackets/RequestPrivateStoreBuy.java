@@ -20,7 +20,6 @@ package king.server.gameserver.network.clientpackets;
 
 import static king.server.gameserver.model.actor.L2Npc.INTERACTION_DISTANCE;
 import javolution.util.FastSet;
-
 import king.server.Config;
 import king.server.gameserver.model.ItemRequest;
 import king.server.gameserver.model.L2Object;

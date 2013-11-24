@@ -233,7 +233,7 @@ public class L2MonsterInstance extends L2Attackable
 		
 		return _minionList;
 	}
-
+	
 	@Override
 	public boolean isMonster()
 	{

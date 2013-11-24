@@ -1,11 +1,11 @@
 package king.server.gameserver.datatables;
 
+import gnu.trove.map.hash.TIntObjectHashMap;
+
 import java.util.List;
 
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.model.skills.L2Skill;
-
-import gnu.trove.map.hash.TIntObjectHashMap;
 
 public class SummonEffectsTable
 {

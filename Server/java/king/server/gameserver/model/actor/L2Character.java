@@ -34,7 +34,6 @@ import java.util.logging.Logger;
 import javolution.util.FastList;
 import javolution.util.FastMap;
 import javolution.util.WeakFastSet;
-
 import king.server.Config;
 import king.server.gameserver.GameTimeController;
 import king.server.gameserver.GeoData;
@@ -602,7 +601,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 	/**
 	 * Send a packet to the L2PcInstance in this and surrounded regions of the L2Character.<BR>
 	 * <BR>
-	 * @param mov 
+	 * @param mov
 	 */
 	public void broadcastPacketToNearbyRegions(L2GameServerPacket mov)
 	{
@@ -1243,11 +1242,11 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		boolean miss1 = Formulas.calcHitMiss(this, target);
 		
 		// Consume arrows
-		//reduceArrowCount(false); 
-		if(!Config.INFINITE_ARROWS) 
-			{ 
-				reduceArrowCount(false); 
-			}
+		// reduceArrowCount(false);
+		if (!Config.INFINITE_ARROWS)
+		{
+			reduceArrowCount(false);
+		}
 		
 		_move = null;
 		
@@ -1676,9 +1675,9 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 			if (EventsInterface.isParticipating(getObjectId()))
 			{
 				
-				if (this.getTarget() instanceof L2PcInstance)
+				if (getTarget() instanceof L2PcInstance)
 				{
-					if (EventsInterface.areTeammates(getObjectId(), getTarget().getObjectId()) && !EventsInterface.getBoolean("friendlyFireEnabled", this.getObjectId()) && skill.isOffensive())
+					if (EventsInterface.areTeammates(getObjectId(), getTarget().getObjectId()) && !EventsInterface.getBoolean("friendlyFireEnabled", getObjectId()) && skill.isOffensive())
 					{
 						if (simultaneously)
 						{
@@ -1716,7 +1715,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 					}
 				}
 				
-				if (!EventsInterface.onUseMagic(this.getObjectId(), skill.getId()))
+				if (!EventsInterface.onUseMagic(getObjectId(), skill.getId()))
 				{
 					if (simultaneously)
 					{
@@ -1739,9 +1738,9 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		{
 			if (EventsInterface.isParticipating(((L2Summon) this).getOwner().getObjectId()))
 			{
-				if (this.getTarget() instanceof L2PcInstance)
+				if (getTarget() instanceof L2PcInstance)
 				{
-					if (EventsInterface.areTeammates(((L2Summon) this).getOwner().getObjectId(), getTarget().getObjectId()) && !EventsInterface.getBoolean("friendlyFireEnabled", this.getObjectId()) && skill.isOffensive())
+					if (EventsInterface.areTeammates(((L2Summon) this).getOwner().getObjectId(), getTarget().getObjectId()) && !EventsInterface.getBoolean("friendlyFireEnabled", getObjectId()) && skill.isOffensive())
 					{
 						if (simultaneously)
 						{
@@ -1755,7 +1754,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 					}
 				}
 				
-				if (!EventsInterface.canAttack(((L2Summon) this).getOwner().getObjectId(), this.getTarget().getObjectId()))
+				if (!EventsInterface.canAttack(((L2Summon) this).getOwner().getObjectId(), getTarget().getObjectId()))
 				{
 					if (simultaneously)
 					{
@@ -5146,7 +5145,9 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 						}
 						_move.onGeodataPathIndex = -1; // Set not on geodata path
 					}
-					catch (NullPointerException e) {} // nothing
+					catch (NullPointerException e)
+					{
+					} // nothing
 				}
 				
 				if ((curX < L2World.MAP_MIN_X) || (curX > L2World.MAP_MAX_X) || (curY < L2World.MAP_MIN_Y) || (curY > L2World.MAP_MAX_Y))
@@ -5967,7 +5968,9 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 	 * <B><U> Overridden in </U> :</B> <li>L2PcInstance</li>
 	 * @param bolts
 	 */
-	protected void reduceArrowCount(boolean bolts) {} // default is to do nothing
+	protected void reduceArrowCount(boolean bolts)
+	{
+	} // default is to do nothing
 	
 	/**
 	 * Manage Forced attack (shift + select target).<br>

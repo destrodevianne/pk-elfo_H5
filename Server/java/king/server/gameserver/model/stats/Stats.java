@@ -254,7 +254,7 @@ public enum Stats
 	
 	// Skill mastery
 	SKILL_MASTERY("skillMastery"),
- 	
+	
 	// Vitality
 	VITALITY_CONSUME_RATE("vitalityConsumeRate");
 	

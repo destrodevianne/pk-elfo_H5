@@ -32,7 +32,6 @@ import king.server.gameserver.Shutdown;
 
 /**
  * PkElfo
- * 
  */
 public class DeadLockDetector extends Thread
 {

@@ -10,16 +10,15 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import javolution.util.FastMap;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.xml.sax.SAXException;
-
 import king.server.Config;
 import king.server.gameserver.InstanceListManager;
 import king.server.gameserver.instancemanager.CastleManager;
 import king.server.gameserver.model.actor.instance.L2MerchantInstance;
 import king.server.gameserver.model.entity.Castle;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.xml.sax.SAXException;
 
 public class MerchantPriceConfigTable implements InstanceListManager
 {

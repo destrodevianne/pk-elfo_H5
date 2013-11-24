@@ -23,7 +23,6 @@ import java.io.FileFilter;
 
 /**
  * PkElfo
- * 
  */
 public class ExtFilter implements FileFilter
 {

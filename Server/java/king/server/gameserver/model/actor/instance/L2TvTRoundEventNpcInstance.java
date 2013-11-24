@@ -24,7 +24,7 @@ import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class L2TvTRoundEventNpcInstance extends L2Npc
 {
-	private static final String htmlPath="data/html/mods/TvTRoundEvent/";
+	private static final String htmlPath = "data/html/mods/TvTRoundEvent/";
 	
 	public L2TvTRoundEventNpcInstance(int objectId, L2NpcTemplate template)
 	{
@@ -42,7 +42,9 @@ public class L2TvTRoundEventNpcInstance extends L2Npc
 	public void showChatWindow(L2PcInstance playerInstance, int val)
 	{
 		if (playerInstance == null)
+		{
 			return;
+		}
 		
 		if (TvTRoundEvent.isParticipating())
 		{
@@ -50,9 +52,13 @@ public class L2TvTRoundEventNpcInstance extends L2Npc
 			final String htmContent;
 			
 			if (!isParticipant)
+			{
 				htmContent = HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath + "Participation.htm");
+			}
 			else
+			{
 				htmContent = HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath + "RemoveParticipation.htm");
+			}
 			
 			if (htmContent != null)
 			{
@@ -65,9 +71,11 @@ public class L2TvTRoundEventNpcInstance extends L2Npc
 				npcHtmlMessage.replace("%roundteam1playercount%", String.valueOf(teamsPlayerCounts[0]));
 				npcHtmlMessage.replace("%roundteam2name%", Config.TVT_ROUND_EVENT_TEAM_2_NAME);
 				npcHtmlMessage.replace("%roundteam2playercount%", String.valueOf(teamsPlayerCounts[1]));
-				npcHtmlMessage.replace("%roundplayercount%", String.valueOf(teamsPlayerCounts[0]+teamsPlayerCounts[1]));
+				npcHtmlMessage.replace("%roundplayercount%", String.valueOf(teamsPlayerCounts[0] + teamsPlayerCounts[1]));
 				if (!isParticipant)
+				{
 					npcHtmlMessage.replace("%roundfee%", TvTRoundEvent.getParticipationFee());
+				}
 				
 				playerInstance.sendPacket(npcHtmlMessage);
 			}
@@ -83,7 +91,7 @@ public class L2TvTRoundEventNpcInstance extends L2Npc
 				NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(getObjectId());
 				
 				npcHtmlMessage.setHtml(htmContent);
-				//npcHtmlMessage.replace("%objectId%", String.valueOf(getObjectId()));
+				// npcHtmlMessage.replace("%objectId%", String.valueOf(getObjectId()));
 				npcHtmlMessage.replace("%roundteam1name%", Config.TVT_ROUND_EVENT_TEAM_1_NAME);
 				npcHtmlMessage.replace("%roundteam1playercount%", String.valueOf(teamsPlayerCounts[0]));
 				npcHtmlMessage.replace("%roundteam1points%", String.valueOf(teamsPointsCounts[0]));

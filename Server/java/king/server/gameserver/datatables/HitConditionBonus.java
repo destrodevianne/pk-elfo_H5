@@ -1,12 +1,12 @@
 package king.server.gameserver.datatables;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.Config;
 import king.server.gameserver.GameTimeController;
 import king.server.gameserver.engines.DocumentParser;
 import king.server.gameserver.model.actor.L2Character;
+
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 public final class HitConditionBonus extends DocumentParser
 {

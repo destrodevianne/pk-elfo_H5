@@ -23,8 +23,7 @@ import java.io.FileFilter;
 
 /**
  * Specialized {@link FileFilter} class.<br>
- * Accepts <b>files</b> ending with ".htm" and ".html" only.
- * PkElfo
+ * Accepts <b>files</b> ending with ".htm" and ".html" only. PkElfo
  */
 public class HTMLFilter implements FileFilter
 {

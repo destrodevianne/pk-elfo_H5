@@ -25,7 +25,6 @@ import java.util.List;
 import java.util.Map;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.model.L2Object;
 import king.server.gameserver.model.actor.L2Character;
 import king.server.gameserver.model.actor.L2Summon;
@@ -228,10 +227,10 @@ public class CharKnownList extends ObjectKnownList
 			{
 				if (Util.checkIfInRange((int) radius, getActiveChar(), obj, true))
 				{
-						if (!(obj instanceof L2PcInstance)
-								|| !((L2PcInstance)obj).isInTownWarEvent()
-								|| !((L2PcInstance)obj).getClient().isDetached())
-							result.add((L2Character) obj);
+					if (!(obj instanceof L2PcInstance) || !((L2PcInstance) obj).isInTownWarEvent() || !((L2PcInstance) obj).getClient().isDetached())
+					{
+						result.add((L2Character) obj);
+					}
 				}
 			}
 		}

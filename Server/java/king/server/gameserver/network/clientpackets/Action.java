@@ -100,14 +100,14 @@ public final class Action extends L2GameClientPacket
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
-         // If object is L2Npc and it set as not targetable
-         if (obj instanceof L2Npc && !((L2Npc)obj).isTargetable() && !activeChar.isGM())
-         {
-             getClient().sendPacket(ActionFailed.STATIC_PACKET);
-              return;
-          }
-
+		
+		// If object is L2Npc and it set as not targetable
+		if ((obj instanceof L2Npc) && !((L2Npc) obj).isTargetable() && !activeChar.isGM())
+		{
+			getClient().sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+		
 		// Players can't interact with objects in the other instances, except from multiverse
 		if ((obj.getInstanceId() != activeChar.getInstanceId()) && (activeChar.getInstanceId() != -1))
 		{
@@ -139,8 +139,8 @@ public final class Action extends L2GameClientPacket
 			}
 			case 1:
 			{
-				//if (!activeChar.isGM() && !(obj.isNpc() && Config.ALT_GAME_VIEWNPC))
-				if (!activeChar.isGM() && !(obj instanceof L2PcInstance)&& !((obj.isNpc()) && Config.ALT_GAME_VIEWNPC))
+				// if (!activeChar.isGM() && !(obj.isNpc() && Config.ALT_GAME_VIEWNPC))
+				if (!activeChar.isGM() && !(obj instanceof L2PcInstance) && !((obj.isNpc()) && Config.ALT_GAME_VIEWNPC))
 				{
 					obj.onAction(activeChar, false);
 				}

@@ -21,7 +21,6 @@ package king.server.gameserver.network.serverpackets;
 import java.util.Calendar;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.instancemanager.TerritoryWarManager;
 import king.server.gameserver.instancemanager.TerritoryWarManager.Territory;
 import king.server.gameserver.model.L2Clan;

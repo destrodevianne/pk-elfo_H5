@@ -21,16 +21,16 @@ package king.server.gameserver.network;
 import java.nio.ByteBuffer;
 import java.util.logging.Logger;
 
+import king.server.Config;
+import king.server.gameserver.network.L2GameClient.GameClientState;
+import king.server.gameserver.network.clientpackets.*;
+import king.server.util.Util;
+
 import org.mmocore.network.IClientFactory;
 import org.mmocore.network.IMMOExecutor;
 import org.mmocore.network.IPacketHandler;
 import org.mmocore.network.MMOConnection;
 import org.mmocore.network.ReceivablePacket;
-
-import king.server.Config;
-import king.server.gameserver.network.L2GameClient.GameClientState;
-import king.server.gameserver.network.clientpackets.*;
-import king.server.util.Util;
 
 /**
  * Stateful Packet Handler<BR>

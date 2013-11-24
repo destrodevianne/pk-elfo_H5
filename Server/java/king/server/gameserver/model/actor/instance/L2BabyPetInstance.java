@@ -23,7 +23,6 @@ import java.util.List;
 import java.util.concurrent.Future;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.ThreadPoolManager;
 import king.server.gameserver.ai.CtrlIntention;
 import king.server.gameserver.datatables.PetDataTable;

@@ -6,7 +6,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastMap;
-
 import king.server.gameserver.ThreadPoolManager;
 import king.server.gameserver.model.actor.L2Character;
 import king.server.gameserver.model.actor.instance.L2CubicInstance;

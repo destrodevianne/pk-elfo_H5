@@ -21,7 +21,6 @@ package king.server.gameserver.scripts.data;
 import java.util.List;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.datatables.SkillTable;
 import king.server.gameserver.model.L2World;
 import king.server.gameserver.model.actor.L2Npc;
@@ -56,19 +55,70 @@ public class NevitsHerald extends Quest
 		NpcStringId.PRAISE_THE_ACHIEVEMENT_OF_THE_HEROES_AND_RECEIVE_NEVITS_BLESSING
 	};
 	
-    private static final int[][] _spawns =
-    {
-        { 86979, -142785, -1341, 18259 },    // Town of Schuttgart
-        { 44168, -48513, -801, 31924 },        // Rune Township
-        { 148002, -55279, -2735, 44315 },    // Town of Goddard
-        { 147953, 26656, -2205, 20352 },    // Town of Aden
-        { 82313, 53280, -1496, 14791 },        // Town of Oren
-        { 81918, 148305, -3471, 49151 },    // Town of Giran
-        { 16286, 142805, -2706, 15689 },    // Town of Dion
-        { -13968, 122050, -2990, 19497 },    // Town of Gludio
-        { -83207, 150896, -3129, 30709 },    // Gludin Village
-        { 116892, 77277, -2695, 45056 }        // Hunters Village
-    };
+	private static final int[][] _spawns =
+	{
+		{
+			86979,
+			-142785,
+			-1341,
+			18259
+		}, // Town of Schuttgart
+		{
+			44168,
+			-48513,
+			-801,
+			31924
+		}, // Rune Township
+		{
+			148002,
+			-55279,
+			-2735,
+			44315
+		}, // Town of Goddard
+		{
+			147953,
+			26656,
+			-2205,
+			20352
+		}, // Town of Aden
+		{
+			82313,
+			53280,
+			-1496,
+			14791
+		}, // Town of Oren
+		{
+			81918,
+			148305,
+			-3471,
+			49151
+		}, // Town of Giran
+		{
+			16286,
+			142805,
+			-2706,
+			15689
+		}, // Town of Dion
+		{
+			-13968,
+			122050,
+			-2990,
+			19497
+		}, // Town of Gludio
+		{
+			-83207,
+			150896,
+			-3129,
+			30709
+		}, // Gludin Village
+		{
+			116892,
+			77277,
+			-2695,
+			45056
+		}
+	// Hunters Village
+	};
 	
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)

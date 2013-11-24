@@ -18,6 +18,8 @@
  */
 package king.server.gameserver.model.olympiad;
 
+import gnu.trove.map.hash.TIntIntHashMap;
+
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.Connection;
@@ -34,7 +36,6 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 import javolution.util.FastMap;
-
 import king.server.Config;
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.Announcements;
@@ -47,8 +48,6 @@ import king.server.gameserver.model.entity.Hero;
 import king.server.gameserver.network.SystemMessageId;
 import king.server.gameserver.network.serverpackets.SystemMessage;
 import king.server.util.L2FastList;
-
-import gnu.trove.map.hash.TIntIntHashMap;
 
 /**
  * @author godson

@@ -44,8 +44,7 @@ import king.server.tools.i18n.LanguageControl;
 import king.server.util.Util;
 
 /**
- * The Class BaseGameServerRegister.
- * PkElfo
+ * The Class BaseGameServerRegister. PkElfo
  */
 public abstract class BaseGameServerRegister
 {

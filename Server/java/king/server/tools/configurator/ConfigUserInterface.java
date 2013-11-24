@@ -63,7 +63,6 @@ import javax.swing.ToolTipManager;
 import javax.swing.UIManager;
 
 import javolution.util.FastList;
-
 import king.server.tools.configurator.ConfigUserInterface.ConfigFile.ConfigComment;
 import king.server.tools.configurator.ConfigUserInterface.ConfigFile.ConfigProperty;
 import king.server.tools.i18n.LanguageControl;

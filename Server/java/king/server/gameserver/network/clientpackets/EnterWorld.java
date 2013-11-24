@@ -18,13 +18,11 @@
  */
 package king.server.gameserver.network.clientpackets;
 
-import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.Announcements;
 import king.server.gameserver.LoginServerThread;
@@ -58,6 +56,7 @@ import king.server.gameserver.model.L2World;
 import king.server.gameserver.model.PcCondOverride;
 import king.server.gameserver.model.actor.instance.L2ClassMasterInstance;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
+import king.server.gameserver.model.base.Race;
 import king.server.gameserver.model.entity.Castle;
 import king.server.gameserver.model.entity.Couple;
 import king.server.gameserver.model.entity.Fort;
@@ -73,7 +72,6 @@ import king.server.gameserver.model.items.instance.L2ItemInstance;
 import king.server.gameserver.model.quest.Quest;
 import king.server.gameserver.model.quest.QuestState;
 import king.server.gameserver.model.zone.ZoneId;
-import king.server.gameserver.model.base.Race;
 import king.server.gameserver.network.SystemMessageId;
 import king.server.gameserver.network.communityserver.CommunityServerThread;
 import king.server.gameserver.network.communityserver.writepackets.WorldInfo;
@@ -87,6 +85,7 @@ import king.server.gameserver.network.serverpackets.ExNevitAdventTimeChange;
 import king.server.gameserver.network.serverpackets.ExNoticePostArrived;
 import king.server.gameserver.network.serverpackets.ExNotifyPremiumItem;
 import king.server.gameserver.network.serverpackets.ExPCCafePointInfo;
+import king.server.gameserver.network.serverpackets.ExRedSky;
 import king.server.gameserver.network.serverpackets.ExShowContactList;
 import king.server.gameserver.network.serverpackets.ExShowScreenMessage;
 import king.server.gameserver.network.serverpackets.ExStorageMaxCount;
@@ -95,6 +94,7 @@ import king.server.gameserver.network.serverpackets.FriendList;
 import king.server.gameserver.network.serverpackets.HennaInfo;
 import king.server.gameserver.network.serverpackets.ItemList;
 import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
+import king.server.gameserver.network.serverpackets.PlaySound;
 import king.server.gameserver.network.serverpackets.PledgeShowMemberListAll;
 import king.server.gameserver.network.serverpackets.PledgeShowMemberListUpdate;
 import king.server.gameserver.network.serverpackets.PledgeSkillList;
@@ -103,11 +103,8 @@ import king.server.gameserver.network.serverpackets.QuestList;
 import king.server.gameserver.network.serverpackets.ShortCutInit;
 import king.server.gameserver.network.serverpackets.SkillCoolTime;
 import king.server.gameserver.network.serverpackets.SystemMessage;
-import king.server.gameserver.network.serverpackets.ExRedSky;
-import king.server.gameserver.network.serverpackets.PlaySound;
 import king.server.gameserver.scripting.scriptengine.listeners.player.PlayerSpawnListener;
 import king.server.gameserver.util.Util;
-import king.server.util.Base64;
 
 /**
  * Enter World Packet Handler
@@ -128,7 +125,7 @@ public class EnterWorld extends L2GameClientPacket
 	SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 	
 	private final int[][] tracert = new int[5][4];
-
+	
 	public TaskPriority getPriority()
 	{
 		return TaskPriority.PR_URGENT;
@@ -152,7 +149,7 @@ public class EnterWorld extends L2GameClientPacket
 			}
 		}
 	}
-
+	
 	@Override
 	protected void runImpl()
 	{
@@ -178,29 +175,36 @@ public class EnterWorld extends L2GameClientPacket
 		LoginServerThread.getInstance().sendClientTracert(activeChar.getAccountName(), adress);
 		
 		getClient().setClientTracert(tracert);
-
-		//cor para cada raca
-        if (Config.RACES_COLOR_ENABLE)
-        {
-            if (activeChar.getRace() == Race.Human)
-                activeChar.getAppearance().setNameColor(Config.HUMAN_COLOR);
-
-            else if (activeChar.getRace() == Race.Elf)
-                activeChar.getAppearance().setNameColor(Config.ELF_COLOR);
-
-            else if (activeChar.getRace() == Race.DarkElf)
-                activeChar.getAppearance().setNameColor(Config.DARKELF_COLOR);
-
-            else if (activeChar.getRace() == Race.Orc)
-                activeChar.getAppearance().setNameColor(Config.ORC_COLOR);
-
-            else if (activeChar.getRace() == Race.Dwarf)
-                activeChar.getAppearance().setNameColor(Config.DWARF_COLOR);
-
-            else if (activeChar.getRace() == Race.Kamael)
-                activeChar.getAppearance().setNameColor(Config.KAMAEL_COLOR);
-
-        }
+		
+		// cor para cada raca
+		if (Config.RACES_COLOR_ENABLE)
+		{
+			if (activeChar.getRace() == Race.Human)
+			{
+				activeChar.getAppearance().setNameColor(Config.HUMAN_COLOR);
+			}
+			else if (activeChar.getRace() == Race.Elf)
+			{
+				activeChar.getAppearance().setNameColor(Config.ELF_COLOR);
+			}
+			else if (activeChar.getRace() == Race.DarkElf)
+			{
+				activeChar.getAppearance().setNameColor(Config.DARKELF_COLOR);
+			}
+			else if (activeChar.getRace() == Race.Orc)
+			{
+				activeChar.getAppearance().setNameColor(Config.ORC_COLOR);
+			}
+			else if (activeChar.getRace() == Race.Dwarf)
+			{
+				activeChar.getAppearance().setNameColor(Config.DWARF_COLOR);
+			}
+			else if (activeChar.getRace() == Race.Kamael)
+			{
+				activeChar.getAppearance().setNameColor(Config.KAMAEL_COLOR);
+			}
+			
+		}
 		// Restore to instanced area if enabled
 		if (Config.RESTORE_PLAYER_INSTANCE)
 		{
@@ -224,45 +228,49 @@ public class EnterWorld extends L2GameClientPacket
 		}
 		
 		if (Config.ADD_NOBLESSE)
-			{
+		{
 			if (activeChar.getLevel() <= 2)
-			activeChar.setNoble(true);
-			activeChar.sendMessage("Parabens Agora Voce e Nobre! "+activeChar.getName()+" ");
-			}
-
-		if (Config.ADD_HERO)
 			{
-			if (activeChar.getLevel() <= 0)
-			activeChar.setHero(true);
-			activeChar.sendMessage("Parabens Agora Voce e Hero! "+activeChar.getName()+" ");
+				activeChar.setNoble(true);
 			}
-	
+			activeChar.sendMessage("Parabens Agora Voce e Nobre! " + activeChar.getName() + " ");
+		}
+		
+		if (Config.ADD_HERO)
+		{
+			if (activeChar.getLevel() <= 0)
+			{
+				activeChar.setHero(true);
+			}
+			activeChar.sendMessage("Parabens Agora Voce e Hero! " + activeChar.getName() + " ");
+		}
+		
 		if (Config.PROTECT_ENCHANT_ENABLE)
 		{
 			for (L2ItemInstance i : activeChar.getInventory().getItems())
 			{
 				if (!activeChar.isGM())
-				{       
+				{
 					if (i.isEquipable())
 					{
 						if (i.getEnchantLevel() > Config.MAX_ENCHANT_LEVEL_PROTECT)
 						{
-							//Delete Item Over enchanted
+							// Delete Item Over enchanted
 							activeChar.getInventory().destroyItem(null, i, activeChar, null);
-							//Message to Player
+							// Message to Player
 							activeChar.sendMessage("[Server]:Voce possui itens acima do level permitido!");
 							activeChar.sendMessage("[Server]:Esta acao e proibida, voce sera expulso!");
-							//If Audit is only a Kick, with this the player goes in Jail for 1.200 minutes
+							// If Audit is only a Kick, with this the player goes in Jail for 1.200 minutes
 							activeChar.setPunishLevel(L2PcInstance.PunishLevel.JAIL, Config.ENCHANT_PROTECT_PUNISH);
-							//Log in console
+							// Log in console
 							_log.info("#### ATTENCTION ####");
-							_log.info(i+" item has been removed from player.");
+							_log.info(i + " item has been removed from player.");
 						}
 					}
 				}
 			}
-		} 
-
+		}
+		
 		// Apply special GM properties to the GM when entering
 		if (activeChar.isGM())
 		{
@@ -271,7 +279,7 @@ public class EnterWorld extends L2GameClientPacket
 				activeChar.setIsInvul(true);
 			}
 			
-			if(Config.GM_SUPER_HASTE)
+			if (Config.GM_SUPER_HASTE)
 			{
 				SkillTable.getInstance().getInfo(7029, 3).getEffects(activeChar, activeChar);
 			}
@@ -317,13 +325,13 @@ public class EnterWorld extends L2GameClientPacket
 		{
 			activeChar.setIsDead(true);
 			
-            // Make Sky Red For 7 Seconds.
-            ExRedSky packet = new ExRedSky(7);
-            sendPacket(packet);
-            
-            // Play Custom Game Over Music
-            PlaySound death_music = new PlaySound(1, "Game_Over", 0, 0, 0, 0, 0);
-            sendPacket(death_music);
+			// Make Sky Red For 7 Seconds.
+			ExRedSky packet = new ExRedSky(7);
+			sendPacket(packet);
+			
+			// Play Custom Game Over Music
+			PlaySound death_music = new PlaySound(1, "Game_Over", 0, 0, 0, 0, 0);
+			sendPacket(death_music);
 		}
 		
 		boolean showClanNotice = false;
@@ -564,21 +572,24 @@ public class EnterWorld extends L2GameClientPacket
 		activeChar.sendPacket(SystemMessageId.WELCOME_TO_LINEAGE);
 		SevenSigns.getInstance().sendCurrentPeriodMsg(activeChar);
 		Announcements.getInstance().showAnnouncements(activeChar);
-		 //Information when character is logged
-        activeChar.sendMessage("Seja Bem vindo: " + activeChar.getName());
-        activeChar.sendMessage("Sua classe: " + activeChar.getClassId());
-        activeChar.sendMessage("PvP Kills: " + activeChar.getPvpKills());
-        activeChar.sendMessage("PK Kills: " + activeChar.getPkKills());
-        activeChar.sendMessage("Adena em sua bolsa: " + activeChar.getAdena());
-        
-		if(Config.SHOW_ONLINE_PLAYERS_ON_LOGIN)
+		// Information when character is logged
+		activeChar.sendMessage("Seja Bem vindo: " + activeChar.getName());
+		activeChar.sendMessage("Sua classe: " + activeChar.getClassId());
+		activeChar.sendMessage("PvP Kills: " + activeChar.getPvpKills());
+		activeChar.sendMessage("PK Kills: " + activeChar.getPkKills());
+		activeChar.sendMessage("Adena em sua bolsa: " + activeChar.getAdena());
+		
+		if (Config.SHOW_ONLINE_PLAYERS_ON_LOGIN)
 		{
 			activeChar.sendMessage("==================================");
-			activeChar.sendMessage("Temos em todo o mundo: "  + L2World.getInstance().getAllPlayers().size()+" Jogadores(s) OnLine") ;
+			activeChar.sendMessage("Temos em todo o mundo: " + L2World.getInstance().getAllPlayers().size() + " Jogadores(s) OnLine");
 			activeChar.sendMessage("==================================");
 		}
-
-		if (Config.ENABLE_AIOX_MESSAGE);
+		
+		if (Config.ENABLE_AIOX_MESSAGE)
+		{
+			;
+		}
 		{
 			if (activeChar.isAio())
 			{
@@ -586,7 +597,10 @@ public class EnterWorld extends L2GameClientPacket
 			}
 		}
 		
-		if (Config.ENABLE_VIP_MESSAGE);
+		if (Config.ENABLE_VIP_MESSAGE)
+		{
+			;
+		}
 		{
 			if (activeChar.isVip())
 			{
@@ -594,7 +608,10 @@ public class EnterWorld extends L2GameClientPacket
 			}
 		}
 		
-		if (Config.ENABLE_HERO_MESSAGE);
+		if (Config.ENABLE_HERO_MESSAGE)
+		{
+			;
+		}
 		{
 			if (activeChar.isHero())
 			{
@@ -602,49 +619,54 @@ public class EnterWorld extends L2GameClientPacket
 			}
 		}
 		
-		if (Config.ENABLE_RACE_MESSAGE);
+		if (Config.ENABLE_RACE_MESSAGE)
+		{
+			;
+		}
 		{
 			if (activeChar.getLevel() == 1)
 			{
 				activeChar.sendPacket(new ExShowScreenMessage("Bem vindo jovem iniciante!", 10000));
 			}
 			else
-				switch(activeChar.getRace())
+			{
+				switch (activeChar.getRace())
 				{
 					case Human:
-						activeChar.sendPacket(new ExShowScreenMessage("Bem vindo ao Servidor PkElfo guerreiro de Einhasad!", 10000));            
-					break;
+						activeChar.sendPacket(new ExShowScreenMessage("Bem vindo ao Servidor PkElfo guerreiro de Einhasad!", 10000));
+						break;
 					case Elf:
-						activeChar.sendPacket(new ExShowScreenMessage("Bem vindo ao Servidor PkElfo guerreiro de Eva!", 10000));            
-					break;
+						activeChar.sendPacket(new ExShowScreenMessage("Bem vindo ao Servidor PkElfo guerreiro de Eva!", 10000));
+						break;
 					case DarkElf:
-						activeChar.sendPacket(new ExShowScreenMessage("Bem vindo ao Servidor PkElfo guerreiro de Shilen!", 10000));            
-					break;
+						activeChar.sendPacket(new ExShowScreenMessage("Bem vindo ao Servidor PkElfo guerreiro de Shilen!", 10000));
+						break;
 					case Orc:
-						activeChar.sendPacket(new ExShowScreenMessage("Bem vindo ao Servidor PkElfo guerreiro de Paagrio!", 10000));            
-					break;
+						activeChar.sendPacket(new ExShowScreenMessage("Bem vindo ao Servidor PkElfo guerreiro de Paagrio!", 10000));
+						break;
 					case Dwarf:
 						activeChar.sendPacket(new ExShowScreenMessage("Bem vindo ao Servidor PkElfo guerreiro de Maphr!", 10000));
-					break;
+						break;
 					case Kamael:
 						activeChar.sendPacket(new ExShowScreenMessage("Bem vindo ao Servidor PkElfo guerreiro de Narnil!", 10000));
-					break;
+						break;
 				}
+			}
 		}
-
+		
 		if (Config.ANNOUNCE_AIOX_CONECT)
 		{
 			if (activeChar.isAio())
 			{
-				Announcements.getInstance().announceToAll("O AIOx "+activeChar.getName()+" acabou de logar.");
+				Announcements.getInstance().announceToAll("O AIOx " + activeChar.getName() + " acabou de logar.");
 			}
 		}
-
+		
 		if (Config.ANNOUNCE_VIP_CONECT)
 		{
 			if (activeChar.isVip())
 			{
-				Announcements.getInstance().announceToAll("O jogador VIP "+activeChar.getName()+" acabou de logar.");
+				Announcements.getInstance().announceToAll("O jogador VIP " + activeChar.getName() + " acabou de logar.");
 			}
 		}
 		
@@ -652,11 +674,11 @@ public class EnterWorld extends L2GameClientPacket
 		{
 			if (activeChar.isHero())
 			{
-				Announcements.getInstance().announceToAll("O Heroi "+activeChar.getName()+" acabou de logar.");
+				Announcements.getInstance().announceToAll("O Heroi " + activeChar.getName() + " acabou de logar.");
 			}
 		}
 		
-		if(Config.ALT_AIO_EFFECT_ESPECIAL)
+		if (Config.ALT_AIO_EFFECT_ESPECIAL)
 		{
 			if (activeChar.isAio())
 			{
@@ -809,13 +831,17 @@ public class EnterWorld extends L2GameClientPacket
 			activeChar.getAppearance().setTitleColor(Config.AIO_TCOLOR);
 		}
 		
-		if(activeChar.isVip())
-		{	
-			if(Config.ALLOW_VIP_NCOLOR && activeChar.isVip())
+		if (activeChar.isVip())
+		{
+			if (Config.ALLOW_VIP_NCOLOR && activeChar.isVip())
+			{
 				activeChar.getAppearance().setNameColor(Config.VIP_NCOLOR);
-			               
-			if(Config.ALLOW_VIP_TCOLOR && activeChar.isVip())
+			}
+			
+			if (Config.ALLOW_VIP_TCOLOR && activeChar.isVip())
+			{
 				activeChar.getAppearance().setTitleColor(Config.VIP_TCOLOR);
+			}
 			{
 				activeChar.sendMessage("Final do periodo de Vip em " + _daysleft + " dias.");
 			}
@@ -917,7 +943,6 @@ public class EnterWorld extends L2GameClientPacket
 		}
 	}
 	
-
 	private void onEnterAio(L2PcInstance activeChar)
 	{
 		long now = Calendar.getInstance().getTimeInMillis();
@@ -948,33 +973,7 @@ public class EnterWorld extends L2GameClientPacket
 			}
 		}
 	}
-
-       private void onEnterVip(L2PcInstance activeChar)
-       {
-               long now = Calendar.getInstance().getTimeInMillis();
-               long endDay = activeChar.getVipEndTime();
-               if(now > endDay)
-               {
-                       activeChar.setVip(false);
-                       activeChar.setVipEndTime(0);
-                       activeChar.sendMessage("[Vip System]: Removido seu status de VIP... periodo terminou  ");
-               }
-               else
-               {
-                       Date dt = new Date(endDay);
-                       _daysleft = (endDay - now)/86400000;
-                       if(_daysleft > 30)
-                               activeChar.sendMessage("[Vip System]: Periodo termina em " + df.format(dt) + ". aproveite o jogo");
-                       else if(_daysleft > 0)
-                               activeChar.sendMessage("falta " + (int)_daysleft + " para o perido de Vip terminar");
-                       else if(_daysleft < 1)
-                       {
-                               long hour = (endDay - now)/3600000;
-                               activeChar.sendMessage("falta " + (int)hour + " horas para o periodo de Vip terminar");
-                       }
-               }
-       }
-
+	
 	/**
 	 * @param activeChar
 	 */
@@ -1020,23 +1019,6 @@ public class EnterWorld extends L2GameClientPacket
 				msg.addString(activeChar.getName());
 				apprentice.sendPacket(msg);
 			}
-		}
-	}
-	
-	/**
-	 * @param string
-	 * @return
-	 */
-	private String getText(String string)
-	{
-		try
-		{
-			String result = new String(Base64.decode(string), "UTF-8");
-			return result;
-		}
-		catch (UnsupportedEncodingException e)
-		{
-			return null;
 		}
 	}
 	

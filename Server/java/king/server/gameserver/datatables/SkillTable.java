@@ -1,5 +1,8 @@
 package king.server.gameserver.datatables;
 
+import gnu.trove.list.array.TIntArrayList;
+import gnu.trove.map.hash.TIntIntHashMap;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -9,9 +12,6 @@ import king.server.Config;
 import king.server.gameserver.engines.DocumentEngine;
 import king.server.gameserver.model.holders.SkillHolder;
 import king.server.gameserver.model.skills.L2Skill;
-
-import gnu.trove.list.array.TIntArrayList;
-import gnu.trove.map.hash.TIntIntHashMap;
 
 public class SkillTable
 {

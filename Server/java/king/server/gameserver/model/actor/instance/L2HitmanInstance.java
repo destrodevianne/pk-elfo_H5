@@ -18,7 +18,6 @@ import java.util.StringTokenizer;
 
 import javolution.text.TextBuilder;
 import javolution.util.FastList;
-
 import king.server.gameserver.instancemanager.MapRegionManager;
 import king.server.gameserver.model.L2World;
 import king.server.gameserver.model.actor.L2Npc;
@@ -36,7 +35,7 @@ public class L2HitmanInstance extends L2Npc
 	{
 		super(objectID, template);
 	}
-
+	
 	@Override
 	public void onBypassFeedback(L2PcInstance player, String command)
 	{
@@ -45,27 +44,31 @@ public class L2HitmanInstance extends L2Npc
 		
 		try
 		{
-			if(currentcommand.startsWith("showList"))
+			if (currentcommand.startsWith("showList"))
+			{
 				parseWindow(player, showListWindow());
-			else if(currentcommand.startsWith("showInfo"))
+			}
+			else if (currentcommand.startsWith("showInfo"))
 			{
 				int playerId = Integer.parseInt(st.nextToken());
 				parseWindow(player, showInfoWindow(playerId));
 			}
-			else if(currentcommand.startsWith("addList"))
+			else if (currentcommand.startsWith("addList"))
 			{
 				String name = st.nextToken();
 				int bounty = Integer.parseInt(st.nextToken());
 				Hitman.getInstance().putHitOn(player, name, bounty);
 			}
-			else if(currentcommand.startsWith("removeList"))
+			else if (currentcommand.startsWith("removeList"))
 			{
 				String name = st.nextToken();
 				Hitman.getInstance().cancelAssasination(name, player);
 				showChatWindow(player, 0);
 			}
 			else
+			{
 				super.onBypassFeedback(player, command);
+			}
 		}
 		catch (Exception e)
 		{
@@ -95,29 +98,32 @@ public class L2HitmanInstance extends L2Npc
 		content.append("<tr><td width=100 align=center>Alvo</td>)");
 		content.append("<td width=100 align=center>Recompensa</td>");
 		content.append("<td width=100 align=center>Estado</td></tr></table>");
-
+		
 		FastList<PlayerToAssasinate> list = new FastList<>();
-
+		
 		// First we parse the list.. so we woun't show just an empty list ^^
-		for(PlayerToAssasinate pta : Hitman.getInstance().getTargets().values())
+		for (PlayerToAssasinate pta : Hitman.getInstance().getTargets().values())
 		{
-			if(pta.isOnline() && !pta.isPendingDelete())
+			if (pta.isOnline() && !pta.isPendingDelete())
+			{
 				list.add(pta);
+			}
 		}
 		
 		// If the list contains at least 1 target we gonna make a html for him
-		if(list.size() > 0)
+		if (list.size() > 0)
 		{
-			for(PlayerToAssasinate pta: list)
+			for (PlayerToAssasinate pta : list)
 			{
 				content.append("<table height=10 bgcolor=FFFFFF border=1>");
-				content.append("<tr><td width=100 align=center><button value=\"Informacao\" action=\"bypass -h npc_%objectId%_showInfo "+ pta.getObjectId() +"\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\" width=88 height=10></td>");
+				content.append("<tr><td width=100 align=center><button value=\"Informacao\" action=\"bypass -h npc_%objectId%_showInfo " + pta.getObjectId() + "\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\" width=88 height=10></td>");
 				content.append("<td width=100 align=center>" + pta.getBounty() + "</td>");
 				content.append("<td width=100 align=center><font color=00FF00>Online</font></td></tr>");
 				content.append("</table>");
 			}
 		}
-		else // if not, we will add a message to our list: "No target is currently online."
+		else
+		// if not, we will add a message to our list: "No target is currently online."
 		{
 			content.append("<table height=10 bgcolor=FFFFFF border=1>");
 			content.append("<tr><td width=50 align=center>&nbsp;</td>");
@@ -134,7 +140,7 @@ public class L2HitmanInstance extends L2Npc
 		
 		return html;
 	}
-
+	
 	public NpcHtmlMessage showInfoWindow(int objectId)
 	{
 		TextBuilder content = new TextBuilder("<html><head><body><center>");
@@ -145,25 +151,27 @@ public class L2HitmanInstance extends L2Npc
 		
 		content.append("<img src=L2Font-e.mini_logo-e width=245 height=80>");
 		content.append("<img src=L2UI_CH3.herotower_deco width=256 height=32>");
-		content.append("<font color=AAAAAA>Alvo: "+pta.getName()+"</font><br>");
+		content.append("<font color=AAAAAA>Alvo: " + pta.getName() + "</font><br>");
 		content.append("</center><br>");
 		
-		if(target != null)
+		if (target != null)
 		{
 			content.append("Lamentamos %player_name% se nao conseguem obter informacoes mais precisas.<br1> Mas voce tera a ver com isso.<br>");
 			content.append("<center><table border=1>");
 			content.append("<tr><td width=250 align=left>");
-			content.append("Nome: "+pta.getName()+" <br1>");
-			content.append("Recompensa: "+pta.getBounty()+" Adena<br1>");
-			content.append("Ultima Cidade: "+target.getLastTownName()+"<br1>");
-			content.append("Localizacao atual conhecida: "+map.getClosestTownName(target)+" Teritorio");
+			content.append("Nome: " + pta.getName() + " <br1>");
+			content.append("Recompensa: " + pta.getBounty() + " Adena<br1>");
+			content.append("Ultima Cidade: " + target.getLastTownName() + "<br1>");
+			content.append("Localizacao atual conhecida: " + map.getClosestTownName(target) + " Teritorio");
 			content.append("</td>");
 			content.append("</tr>");
 			content.append("</table>");
 			content.append("</center><br>");
 		}
 		else
+		{
 			content.append("Jogador esta offline.");
+		}
 		
 		content.append("<center>");
 		content.append("<button value=\"Voltar\" action=\"bypass -h npc_%objectId%_showList\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\" width=100 height=21>");
@@ -172,7 +180,7 @@ public class L2HitmanInstance extends L2Npc
 		content.append("<font color=AAAAAA>Bom Jogo</font>");
 		content.append("</center></body></head></html>");
 		html.setHtml(content.toString());
-
+		
 		return html;
 	}
 }

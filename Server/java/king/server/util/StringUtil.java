@@ -19,7 +19,6 @@
 package king.server.util;
 
 import javolution.text.TextBuilder;
-
 import king.server.Config;
 
 /**

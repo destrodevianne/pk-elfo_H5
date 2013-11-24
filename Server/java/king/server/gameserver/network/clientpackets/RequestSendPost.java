@@ -20,7 +20,6 @@ package king.server.gameserver.network.clientpackets;
 
 import static king.server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
 import static king.server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
-
 import king.server.Config;
 import king.server.gameserver.datatables.AdminTable;
 import king.server.gameserver.datatables.CharNameTable;

@@ -86,7 +86,7 @@ public final class RequestRestartPoint extends L2GameClientPacket
 		
 		if (TvTRoundEvent.isStarted() && TvTRoundEvent.isPlayerParticipant(activeChar.getObjectId()))
 		{
- 			return;
+			return;
 		}
 		
 		if (activeChar.isFakeDeath())
@@ -146,9 +146,13 @@ public final class RequestRestartPoint extends L2GameClientPacket
 					return;
 				}
 				if (activeChar.isInTownWarEvent())
-				loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, MapRegionManager.TeleportWhereType.Town);
+				{
+					loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, MapRegionManager.TeleportWhereType.Town);
+				}
 				else
-				loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, MapRegionManager.TeleportWhereType.ClanHall);
+				{
+					loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, MapRegionManager.TeleportWhereType.ClanHall);
+				}
 				
 				if ((ClanHallManager.getInstance().getClanHallByOwner(activeChar.getClan()) != null) && (ClanHallManager.getInstance().getClanHallByOwner(activeChar.getClan()).getFunction(ClanHall.FUNC_RESTORE_EXP) != null))
 				{

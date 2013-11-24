@@ -39,7 +39,7 @@ public class L2PeaceZone extends L2ZoneType
 	@Override
 	protected void onEnter(L2Character character)
 	{
-	    L2PcInstance player = character.getActingPlayer();
+		L2PcInstance player = character.getActingPlayer();
 		if (character.isPlayer())
 		{
 			if (player.isCombatFlagEquipped() && TerritoryWarManager.getInstance().isTWInProgress())
@@ -58,11 +58,11 @@ public class L2PeaceZone extends L2ZoneType
 		if (Config.PEACE_ZONE_MODE != 2)
 		{
 			character.setInsideZone(ZoneId.PEACE, true);
-         
-            if (player != null)
-            {
-                player.pauseAdventTask();
-            }
+			
+			if (player != null)
+			{
+				player.pauseAdventTask();
+			}
 		}
 		
 		if (!getAllowStore())

@@ -85,14 +85,14 @@ public class TownManager
 		}
 		return null;
 	}
-
-    /**
-     * @param player
-     * @return
-     */
-    public static L2ZoneRespawn getClosestTownNumber(L2PcInstance player)
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
+	
+	/**
+	 * @param player
+	 * @return
+	 */
+	public static L2ZoneRespawn getClosestTownNumber(L2PcInstance player)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

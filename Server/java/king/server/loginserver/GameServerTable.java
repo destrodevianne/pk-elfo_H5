@@ -40,7 +40,6 @@ import java.util.logging.Logger;
 import javolution.io.UTF8StreamReader;
 import javolution.xml.stream.XMLStreamConstants;
 import javolution.xml.stream.XMLStreamReaderImpl;
-
 import king.server.Config;
 import king.server.L2DatabaseFactory;
 import king.server.loginserver.network.gameserverpackets.ServerStatus;
@@ -48,8 +47,7 @@ import king.server.util.IPSubnet;
 import king.server.util.Rnd;
 
 /**
- * The Class GameServerTable loads the game server names and initialize the game server tables.
- * PkElfo
+ * The Class GameServerTable loads the game server names and initialize the game server tables. PkElfo
  */
 public final class GameServerTable
 {

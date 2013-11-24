@@ -32,25 +32,25 @@ package king.server.gameserver.scripting.scriptengine;
  * Example of use of one of these classes:
  * 
  * <pre>
- *	ChatListener listener = new ChatListener()
- *	{
- *		@Override
- *		public String filter(String text, L2PcInstance origin, ChatTargetType targetType)
- *		{
- *			String modifiedText = text
- *			if(!origin.isGM())
- *			{
- *				modifiedText = someFilterMethod(modifiedText);
- *			}
- *			return modifiedText;
- *		}
- *		
- *		@Override
- *		public boolean onTalk(String text, L2PcInstance origin, String target, ChatTargetType targetType)
- *		{
- *			// DO SOMETHING...
- *		}
- *	};
+ * ChatListener listener = new ChatListener()
+ * {
+ * 	@Override
+ * 	public String filter(String text, L2PcInstance origin, ChatTargetType targetType)
+ * 	{
+ * 		String modifiedText = text
+ * 		if(!origin.isGM())
+ * 		{
+ * 			modifiedText = someFilterMethod(modifiedText);
+ * 		}
+ * 		return modifiedText;
+ * 	}
+ * 	
+ * 	@Override
+ * 	public boolean onTalk(String text, L2PcInstance origin, String target, ChatTargetType targetType)
+ * 	{
+ * 		// DO SOMETHING...
+ * 	}
+ * };
  * </pre>
  * @author TheOne
  */

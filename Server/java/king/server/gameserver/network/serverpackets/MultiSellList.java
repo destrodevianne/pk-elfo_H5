@@ -19,7 +19,6 @@
 package king.server.gameserver.network.serverpackets;
 
 import static king.server.gameserver.datatables.MultiSell.PAGE_SIZE;
-
 import king.server.gameserver.model.multisell.Entry;
 import king.server.gameserver.model.multisell.Ingredient;
 import king.server.gameserver.model.multisell.ListContainer;

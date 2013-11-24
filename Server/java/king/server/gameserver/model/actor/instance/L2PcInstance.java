@@ -556,7 +556,7 @@ public final class L2PcInstance extends L2Playable
 			return punString;
 		}
 	}
-
+	
 	// Cancel return back buffs
 	private final FastList<L2Effect> cancelbuffs = new FastList<>();
 	public boolean isoncanceltask = false;
@@ -667,7 +667,7 @@ public final class L2PcInstance extends L2Playable
 	
 	private boolean _noble = false;
 	private boolean _hero = false;
-
+	
 	/** Aio System */
 	private boolean _isAio = false;
 	private long _aio_endTime = 0;
@@ -675,7 +675,7 @@ public final class L2PcInstance extends L2Playable
 	/** Vip System */
 	private boolean _isVip = false;
 	private long _vip_endTime = 0;
-
+	
 	/** The L2FolkInstance corresponding to the last Folk wich one the player talked. */
 	private L2Npc _lastFolkNpc = null;
 	
@@ -1160,13 +1160,13 @@ public final class L2PcInstance extends L2Playable
 	 * @param template The L2PcTemplate to apply to the L2PcInstance
 	 * @param accountName The name of the L2PcInstance
 	 * @param name The name of the L2PcInstance
-     * @param app the player's appearance
+	 * @param app the player's appearance
 	 * @return The L2PcInstance added to the database or null
 	 */
 	public static L2PcInstance create(L2PcTemplate template, String accountName, String name, PcAppearance app)
 	{
 		// Create a new L2PcInstance with an account name
-        L2PcInstance player = new L2PcInstance(IdFactory.getInstance().getNextId(), template, accountName, app);
+		L2PcInstance player = new L2PcInstance(IdFactory.getInstance().getNextId(), template, accountName, app);
 		// Set the name of the L2PcInstance
 		player.setName(name);
 		
@@ -5874,14 +5874,14 @@ public final class L2PcInstance extends L2Playable
 	@Override
 	public boolean doDie(L2Character killer)
 	{
-        // Play Custom Game Over Music
-        PlaySound death_music = new PlaySound(1, "Game_Over", 0, 0, 0, 0, 0);
-        sendPacket(death_music);
-        
-        // Make Sky Red For 5 Seconds.
-        ExRedSky packet = new ExRedSky(5);
-        sendPacket(packet);
-
+		// Play Custom Game Over Music
+		PlaySound death_music = new PlaySound(1, "Game_Over", 0, 0, 0, 0, 0);
+		sendPacket(death_music);
+		
+		// Make Sky Red For 5 Seconds.
+		ExRedSky packet = new ExRedSky(5);
+		sendPacket(packet);
+		
 		// Kill the L2PcInstance
 		if (!super.doDie(killer))
 		{
@@ -6303,7 +6303,7 @@ public final class L2PcInstance extends L2Playable
 		}
 		
 		// Check if it's pvp
-		if ((checkIfPvP(target) && (targetPlayer.getPvpFlag() != 0 )) || (isInsideZone(ZoneId.PVP) && targetPlayer.isInsideZone(ZoneId.PVP) ))
+		if ((checkIfPvP(target) && (targetPlayer.getPvpFlag() != 0)) || (isInsideZone(ZoneId.PVP) && targetPlayer.isInsideZone(ZoneId.PVP)))
 		{
 			increasePvpKills(target);
 			sendMessage(Config.PVP_MESSAGE);
@@ -6320,7 +6320,7 @@ public final class L2PcInstance extends L2Playable
 				sendMessage(Config.PVP_MESSAGE);
 				targetPlayer.sendMessage(Config.VICTIM_PVP_MESSAGE);
 				{
-				return;
+					return;
 				}
 			}
 			
@@ -6332,7 +6332,7 @@ public final class L2PcInstance extends L2Playable
 					increasePvpKills(target);
 					sendMessage(Config.PVP_MESSAGE);
 					targetPlayer.sendMessage(Config.VICTIM_PVP_MESSAGE);
-
+					
 				}
 			}
 			else if (targetPlayer.getPvpFlag() == 0) // Target player doesn't have karma
@@ -6346,12 +6346,12 @@ public final class L2PcInstance extends L2Playable
 				checkItemRestriction();
 				sendMessage(Config.PK_MESSAGE);
 				targetPlayer.sendMessage(Config.VICTIM_PK_MESSAGE);
-
+				
 			}
 		}
 	}
-
-    Versus vs;
+	
+	Versus vs;
 	
 	/**
 	 * Increase the pvp kills count and send the info to the player
@@ -6360,11 +6360,15 @@ public final class L2PcInstance extends L2Playable
 	public void increasePvpKills(L2Character target)
 	{
 		
-	if (vs == null)
-	vs = new Versus(this);
-	else
-	vs.increaseKills();	
-	
+		if (vs == null)
+		{
+			vs = new Versus(this);
+		}
+		else
+		{
+			vs.increaseKills();
+		}
+		
 		if ((target instanceof L2PcInstance) && AntiFeedManager.getInstance().check(this, target))
 		{
 			if (!isInTownWarEvent() || Config.TW_GIVE_PVP_AND_PK_POINTS)
@@ -7042,14 +7046,14 @@ public final class L2PcInstance extends L2Playable
 	{
 		_clan = clan;
 		
-        if (Config.CLAN_NAME_AS_TITLE)
-        {
-        setTitle(""+clan.getName()+"");
-        }
-        else
-                {
-                    setTitle("");
-                }
+		if (Config.CLAN_NAME_AS_TITLE)
+		{
+			setTitle("" + clan.getName() + "");
+		}
+		else
+		{
+			setTitle("");
+		}
 		
 		if (clan == null)
 		{
@@ -7827,7 +7831,7 @@ public final class L2PcInstance extends L2Playable
 			statement.setDate(37, new Date(getCreateDate().getTimeInMillis()));
 			statement.setInt(38, isAio() ? 1 : 0);
 			statement.setLong(39, 0);
-			statement.setInt(40, isVip() ? 1 :0);
+			statement.setInt(40, isVip() ? 1 : 0);
 			statement.setLong(41, 0);
 			statement.executeUpdate();
 		}
@@ -8846,7 +8850,7 @@ public final class L2PcInstance extends L2Playable
 			{
 				final int id = rset.getInt("skill_id");
 				final int level = rset.getInt("skill_level");
-
+				
 				// Create a L2Skill object for each record
 				final L2Skill skill = SkillTable.getInstance().getInfo(id, level);
 				
@@ -8859,7 +8863,7 @@ public final class L2PcInstance extends L2Playable
 				// Add the L2Skill object to the L2Character _skills and its Func objects to the calculator set of the L2Character
 				super.addSkill(skill);
 				
-				if (Config.SKILL_CHECK_ENABLE && (!canOverrideCond(PcCondOverride.SKILL_CONDITIONS) || Config.SKILL_CHECK_GM) && !this.isAio())
+				if (Config.SKILL_CHECK_ENABLE && (!canOverrideCond(PcCondOverride.SKILL_CONDITIONS) || Config.SKILL_CHECK_GM) && !isAio())
 				{
 					if (!SkillTreesData.getInstance().isSkillAllowed(this, skill))
 					{
@@ -12749,7 +12753,7 @@ public final class L2PcInstance extends L2Playable
 			{
 				try
 				{
-					_account.updatePoints(this._accountName);
+					_account.updatePoints(_accountName);
 				}
 				catch (Exception e)
 				{
@@ -14431,26 +14435,26 @@ public final class L2PcInstance extends L2Playable
 	{
 		return this;
 	}
-
-	/** Vip System Start 
-	 * 
+	
+	/**
+	 * Vip System Start
 	 * @return
 	 */
 	public boolean isVip()
 	{
 		return _isVip;
-	}	
-       	
+	}
+	
 	public void setVip(boolean val)
 	{
-		_isVip = val;       
-    }
-       
+		_isVip = val;
+	}
+	
 	public void setVipEndTime(long val)
 	{
 		_vip_endTime = val;
 	}
-       
+	
 	public long getVipEndTime()
 	{
 		return _vip_endTime;
@@ -14459,29 +14463,29 @@ public final class L2PcInstance extends L2Playable
 	public void rewardVipSkills()
 	{
 		L2Skill skill;
-		for(Integer skillid : Config.VIP_SKILLS.keySet())
+		for (Integer skillid : Config.VIP_SKILLS.keySet())
 		{
 			int skilllvl = Config.VIP_SKILLS.get(skillid);
-			skill = SkillTable.getInstance().getInfo(skillid,skilllvl);
-			if(skill != null)
+			skill = SkillTable.getInstance().getInfo(skillid, skilllvl);
+			if (skill != null)
 			{
 				addSkill(skill, true);
 			}
 		}
 		sendMessage("GM give to you Vip's skills");
 	}
-		
+	
 	public void lostVipSkills()
 	{
 		L2Skill skill;
-		for(Integer skillid : Config.VIP_SKILLS.keySet())
+		for (Integer skillid : Config.VIP_SKILLS.keySet())
 		{
 			int skilllvl = Config.VIP_SKILLS.get(skillid);
-			skill = SkillTable.getInstance().getInfo(skillid,skilllvl);
+			skill = SkillTable.getInstance().getInfo(skillid, skilllvl);
 			removeSkill(skill);
 		}
 	}
-
+	
 	/**
 	 * Aio System Start
 	 * @return
@@ -14573,7 +14577,7 @@ public final class L2PcInstance extends L2Playable
 			{
 				_aio_endTime = end_day;
 			}
-			else if(process.equals("vip"))
+			else if (process.equals("vip"))
 			{
 				_vip_endTime = end_day;
 			}
@@ -14594,7 +14598,7 @@ public final class L2PcInstance extends L2Playable
 				_aio_endTime = 0;
 			}
 			
-			else if(process.equals("vip"))
+			else if (process.equals("vip"))
 			{
 				_vip_endTime = 0;
 			}
@@ -14611,7 +14615,7 @@ public final class L2PcInstance extends L2Playable
 	{
 		return _aio_endTime;
 	}
-
+	
 	@Override
 	public final void sendDamageMessage(L2Character target, int damage, boolean mcrit, boolean pcrit, boolean miss)
 	{
@@ -16236,7 +16240,7 @@ public final class L2PcInstance extends L2Playable
 			sqle.printStackTrace();
 		}
 		_botPunish = null;
-		this.sendMessage("Your punishment has expired. Do not bot again!");
+		sendMessage("Your punishment has expired. Do not bot again!");
 	}
 	
 	public String getHtmlPrefix()
@@ -16706,7 +16710,7 @@ public final class L2PcInstance extends L2Playable
 				return;
 			}
 			
-			L2PcInstance.this.setRecoBonusActive(false);
+			setRecoBonusActive(false);
 		}
 	}
 	
@@ -16754,23 +16758,26 @@ public final class L2PcInstance extends L2Playable
 		}
 		return (isInTownWarEvent() || getAccessLevel().allowPeaceAttack());
 	}
-	public void ClanSkills() 
-	{ 
- 		for(Iterator<?> i = Config.CLAN_SKILLS.keySet().iterator(); i.hasNext(); broadcastUserInfo()) 
-	{ 
-	Integer skillid = (Integer)i.next(); 
-	int skilllvl = Config.CLAN_SKILLS.get(skillid).intValue(); 
-	L2Skill skill = SkillTable.getInstance().getInfo(skillid.intValue(), skilllvl); 
-	if(skill != null) 
-	        addSkill(skill, true); 
-	getClan().addNewSkill(skill); 
-	sendSkillList(); 
-	} 
-	L2Clan clan = getClan(); 
-	clan.setReputationScore(clan.getReputationScore() + Config.REPUTATION_QUANTITY, true); 
-	sendMessage((new StringBuilder()).append("Administrador te deu ").append(Config.REPUTATION_QUANTITY).append(" Pontos de Reputacao.").toString()); 
-	sendMessage("GM te deu todas as skills de clan"); 
-	} 
+	
+	public void ClanSkills()
+	{
+		for (Iterator<?> i = Config.CLAN_SKILLS.keySet().iterator(); i.hasNext(); broadcastUserInfo())
+		{
+			Integer skillid = (Integer) i.next();
+			int skilllvl = Config.CLAN_SKILLS.get(skillid).intValue();
+			L2Skill skill = SkillTable.getInstance().getInfo(skillid.intValue(), skilllvl);
+			if (skill != null)
+			{
+				addSkill(skill, true);
+			}
+			getClan().addNewSkill(skill);
+			sendSkillList();
+		}
+		L2Clan clan = getClan();
+		clan.setReputationScore(clan.getReputationScore() + Config.REPUTATION_QUANTITY, true);
+		sendMessage((new StringBuilder()).append("Administrador te deu ").append(Config.REPUTATION_QUANTITY).append(" Pontos de Reputacao.").toString());
+		sendMessage("GM te deu todas as skills de clan");
+	}
 	
 	public void setLastPetitionGmName(String gmName)
 	{
@@ -17133,7 +17140,7 @@ public final class L2PcInstance extends L2Playable
 		@Override
 		public void run()
 		{
-			L2PcInstance.this.incAdventPoints(72, true);
+			incAdventPoints(72, true);
 		}
 	}
 	

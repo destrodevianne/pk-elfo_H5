@@ -6,12 +6,11 @@ import java.util.logging.Logger;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
+import king.server.gameserver.engines.DocumentParser;
+import king.server.gameserver.events.io.Out;
 
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
-
-import king.server.gameserver.engines.DocumentParser;
-import king.server.gameserver.events.io.Out;
 
 public class Config extends DocumentParser
 {

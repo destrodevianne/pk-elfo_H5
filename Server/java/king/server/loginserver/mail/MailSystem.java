@@ -29,11 +29,10 @@ import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import javolution.util.FastMap;
+import king.server.Config;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
-
-import king.server.Config;
 
 /**
  * @author mrTJO

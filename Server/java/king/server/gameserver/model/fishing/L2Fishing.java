@@ -170,7 +170,9 @@ public class L2Fishing implements Runnable
 				_fisher.addItem("Fishing", _fishId, 1, null, true);
 				
 				if (Config.RANK_FISHERMAN_ENABLED)
+				{
 					FishermanLeaderboard.getInstance().onCatch(_fisher.getObjectId(), _fisher.getName());
+				}
 			}
 		}
 		

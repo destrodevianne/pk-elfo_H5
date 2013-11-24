@@ -24,7 +24,6 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.datatables.ItemTable;
 import king.server.gameserver.model.Elementals;

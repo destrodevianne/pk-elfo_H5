@@ -1446,7 +1446,7 @@ public class Quest extends ManagedScript
 	 * @param sender - NPC, who sent event
 	 * @param receiver - NPC, who received event
 	 * @param reference - L2Object to pass, if needed
-	 * @return 
+	 * @return
 	 */
 	public String onEventReceived(String eventName, L2Npc sender, L2Npc receiver, L2Object reference)
 	{

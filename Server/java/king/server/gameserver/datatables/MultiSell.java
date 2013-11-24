@@ -11,11 +11,6 @@ import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import javolution.util.FastList;
-
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-
 import king.server.Config;
 import king.server.gameserver.model.actor.L2Npc;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
@@ -30,6 +25,10 @@ import king.server.gameserver.network.serverpackets.MultiSellList;
 import king.server.gameserver.network.serverpackets.SystemMessage;
 import king.server.gameserver.network.serverpackets.UserInfo;
 import king.server.util.file.filter.XMLFilter;
+
+import org.w3c.dom.DOMException;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 
 public class MultiSell
 {
@@ -171,13 +170,13 @@ public class MultiSell
 	{
 		switch (id)
 		{
-			case PC_BANG_POINTS: //PcBang points
-				final int cost = player.getPcBangPoints() - (int)(amount);
+			case PC_BANG_POINTS: // PcBang points
+				final int cost = player.getPcBangPoints() - (int) (amount);
 				player.setPcBangPoints(cost);
 				SystemMessage smsgpc = SystemMessage.getSystemMessage(SystemMessageId.USING_S1_PCPOINT);
-				smsgpc.addNumber((int)amount);
+				smsgpc.addNumber((int) amount);
 				player.sendPacket(smsgpc);
-				player.sendPacket(new ExPCCafePointInfo(player.getPcBangPoints(), (int)amount, 1));
+				player.sendPacket(new ExPCCafePointInfo(player.getPcBangPoints(), (int) amount, 1));
 				return true;
 			case CLAN_REPUTATION:
 				player.getClan().takeReputationScore((int) amount, true);
@@ -428,7 +427,7 @@ public class MultiSell
 	{
 		switch (ing.getItemId())
 		{
-		    case PC_BANG_POINTS:
+			case PC_BANG_POINTS:
 			case CLAN_REPUTATION:
 			case FAME:
 				return true;

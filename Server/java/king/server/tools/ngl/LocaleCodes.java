@@ -24,7 +24,6 @@ import java.util.Map;
 
 /**
  * PkElfo
- * 
  */
 public class LocaleCodes
 {

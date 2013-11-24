@@ -199,9 +199,9 @@ public class ExShowScreenMessage extends L2GameServerPacket
 			}
 		}
 	}
+	
 	public void setUpperEffect(boolean b)
 	{
-	
 		
 	}
 }

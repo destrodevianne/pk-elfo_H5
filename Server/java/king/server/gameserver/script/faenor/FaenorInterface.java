@@ -22,7 +22,6 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.Announcements;
 import king.server.gameserver.datatables.EventDroplist;

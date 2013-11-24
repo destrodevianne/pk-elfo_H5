@@ -24,7 +24,6 @@ import java.util.logging.Level;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
-
 import king.server.Config;
 import king.server.gameserver.ItemsAutoDestroy;
 import king.server.gameserver.SevenSigns;
@@ -807,12 +806,12 @@ public class L2Attackable extends L2Npc
 									exp *= Config.VIP_XP;
 									sp *= Config.VIP_SP;
 								}
-								if (player.getLevel() <= Config.LOWLEVEL_LVL && Config.ENABLE_LOWLEVEL_XPSP) // by BrunoBR
+								if ((player.getLevel() <= Config.LOWLEVEL_LVL) && Config.ENABLE_LOWLEVEL_XPSP) // by BrunoBR
 								{
 									exp *= Config.LOWLEVEL_XP;
 									sp *= Config.LOWLEVEL_SP;
 								}
-								if (player.getLevel() >= Config.HIGHLEVEL_LVL && Config.ENABLE_HIGHLEVEL_XPSP) // by BrunoBR
+								if ((player.getLevel() >= Config.HIGHLEVEL_LVL) && Config.ENABLE_HIGHLEVEL_XPSP) // by BrunoBR
 								{
 									exp *= Config.HIGHLEVEL_XP;
 									sp *= Config.HIGHLEVEL_SP;
@@ -1119,7 +1118,7 @@ public class L2Attackable extends L2Npc
 	{
 		if ((getAI() instanceof L2SiegeGuardAI) || (getAI() instanceof L2FortSiegeGuardAI))
 		{
-
+			
 			stopHating(target);
 			setTarget(null);
 			getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);

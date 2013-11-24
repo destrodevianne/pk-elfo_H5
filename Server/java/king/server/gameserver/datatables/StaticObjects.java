@@ -4,14 +4,14 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.gameserver.engines.DocumentParser;
 import king.server.gameserver.idfactory.IdFactory;
 import king.server.gameserver.model.StatsSet;
 import king.server.gameserver.model.actor.instance.L2StaticObjectInstance;
 import king.server.gameserver.model.actor.templates.L2CharTemplate;
+
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 public final class StaticObjects extends DocumentParser
 {

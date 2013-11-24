@@ -5,7 +5,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastSet;
-
 import king.server.Config;
 import king.server.gameserver.ThreadPoolManager;
 import king.server.gameserver.model.L2Object;

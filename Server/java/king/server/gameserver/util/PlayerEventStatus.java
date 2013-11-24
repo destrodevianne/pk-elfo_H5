@@ -21,7 +21,6 @@ package king.server.gameserver.util;
 import java.util.List;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.instancemanager.InstanceManager;
 import king.server.gameserver.model.Location;
 import king.server.gameserver.model.actor.instance.L2PcInstance;

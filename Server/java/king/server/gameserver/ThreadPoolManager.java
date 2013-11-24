@@ -16,7 +16,6 @@ import java.util.logging.Logger;
 import javolution.util.FastList;
 import javolution.util.FastMap;
 import javolution.util.FastSet;
-
 import king.server.Config;
 import king.server.util.StringUtil;
 

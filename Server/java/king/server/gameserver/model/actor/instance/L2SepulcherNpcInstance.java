@@ -18,6 +18,8 @@
  */
 package king.server.gameserver.model.actor.instance;
 
+import gnu.trove.procedure.TObjectProcedure;
+
 import java.util.List;
 import java.util.concurrent.Future;
 
@@ -42,8 +44,6 @@ import king.server.gameserver.network.serverpackets.StatusUpdate;
 import king.server.gameserver.network.serverpackets.ValidateLocation;
 import king.server.gameserver.util.Util;
 import king.server.util.Rnd;
-
-import gnu.trove.procedure.TObjectProcedure;
 
 /**
  * @author sandman

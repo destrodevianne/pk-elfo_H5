@@ -7,7 +7,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
-
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.model.L2World;
 import king.server.gameserver.model.actor.instance.L2PcInstance;

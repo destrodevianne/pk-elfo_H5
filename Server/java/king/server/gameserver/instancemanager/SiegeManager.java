@@ -1,5 +1,7 @@
 package king.server.gameserver.instancemanager;
 
+import gnu.trove.map.hash.TIntObjectHashMap;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -13,7 +15,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.datatables.SkillTable;
@@ -25,8 +26,6 @@ import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.model.entity.Castle;
 import king.server.gameserver.model.entity.Siege;
 import king.server.gameserver.model.skills.L2Skill;
-
-import gnu.trove.map.hash.TIntObjectHashMap;
 
 public class SiegeManager
 {

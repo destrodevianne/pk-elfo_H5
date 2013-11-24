@@ -21,7 +21,6 @@ package king.server.gameserver.model.zone.type;
 import java.util.Map.Entry;
 
 import javolution.util.FastMap;
-
 import king.server.gameserver.ThreadPoolManager;
 import king.server.gameserver.datatables.SkillTable;
 import king.server.gameserver.instancemanager.ZoneManager;

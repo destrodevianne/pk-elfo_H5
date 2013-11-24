@@ -18,6 +18,8 @@
  */
 package king.server.gameserver.util;
 
+import gnu.trove.procedure.TObjectProcedure;
+
 import java.util.Collection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,8 +33,6 @@ import king.server.gameserver.network.serverpackets.CharInfo;
 import king.server.gameserver.network.serverpackets.CreatureSay;
 import king.server.gameserver.network.serverpackets.L2GameServerPacket;
 import king.server.gameserver.network.serverpackets.RelationChanged;
-
-import gnu.trove.procedure.TObjectProcedure;
 
 /**
  * This class ...
@@ -188,7 +188,7 @@ public final class Broadcast
 	{
 		L2World.getInstance().forEachPlayer(new ForEachPlayerBroadcast(mov));
 	}
-
+	
 	public static void announceToOnlinePlayers(String text, boolean isCritical)
 	{
 		CreatureSay cs;
@@ -204,24 +204,24 @@ public final class Broadcast
 		
 		toAllOnlinePlayers(cs);
 	}
-
+	
 	// Multilingual announces
 	public static void announceToOnlinePlayers(MultilingualBroadcast mb)
 	{
-		if (mb == null || mb.isEmpty() || !mb.hasLang("en"))
+		if ((mb == null) || mb.isEmpty() || !mb.hasLang("en"))
 		{
 			return;
 		}
-
+		
 		mb.compile();
-		L2World.getInstance().forEachPlayer(new ForEachPlayerBroadcast(mb));		
+		L2World.getInstance().forEachPlayer(new ForEachPlayerBroadcast(mb));
 	}
-
+	
 	public static void toPlayersInInstance(L2GameServerPacket mov, int instanceId)
 	{
 		L2World.getInstance().forEachPlayer(new ForEachPlayerInInstanceBroadcast(mov, instanceId));
 	}
-
+	
 	private static final class ForEachPlayerBroadcast implements TObjectProcedure<L2PcInstance>
 	{
 		L2GameServerPacket _packet;
@@ -232,13 +232,13 @@ public final class Broadcast
 			_packet = packet;
 			_mb = null;
 		}
-
+		
 		protected ForEachPlayerBroadcast(MultilingualBroadcast mb)
 		{
 			_packet = null;
 			_mb = mb;
 		}
-
+		
 		@Override
 		public final boolean execute(final L2PcInstance onlinePlayer)
 		{

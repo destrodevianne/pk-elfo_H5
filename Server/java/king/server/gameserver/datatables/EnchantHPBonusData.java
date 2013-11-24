@@ -6,14 +6,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.w3c.dom.Node;
-
 import king.server.gameserver.engines.DocumentParser;
 import king.server.gameserver.model.items.L2Item;
 import king.server.gameserver.model.items.instance.L2ItemInstance;
 import king.server.gameserver.model.skills.funcs.FuncTemplate;
 import king.server.gameserver.model.skills.funcs.LambdaConst;
 import king.server.gameserver.model.stats.Stats;
+
+import org.w3c.dom.Node;
 
 public class EnchantHPBonusData extends DocumentParser
 {

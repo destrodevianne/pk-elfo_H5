@@ -3,12 +3,12 @@ package king.server.gameserver.datatables;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.gameserver.engines.DocumentParser;
 import king.server.gameserver.model.base.ClassId;
 import king.server.gameserver.model.base.ClassInfo;
+
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 public final class ClassListData extends DocumentParser
 {

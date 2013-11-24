@@ -26,8 +26,7 @@ import king.server.tools.dbinstaller.console.DBInstallerConsole;
 import king.server.tools.dbinstaller.gui.DBConfigGUI;
 
 /**
- * Contains main class for Database Installer If system doesn't support the graphical UI, start the installer in console mode.
- * PkElfo
+ * Contains main class for Database Installer If system doesn't support the graphical UI, start the installer in console mode. PkElfo
  */
 public class LauncherLS
 {

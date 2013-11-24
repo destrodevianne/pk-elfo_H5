@@ -33,10 +33,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastMap;
-
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.gameserver.datatables.ItemTable;
 import king.server.gameserver.engines.DocumentParser;
 import king.server.gameserver.model.holders.ItemHolder;
@@ -46,34 +42,37 @@ import king.server.gameserver.util.Util;
 import king.server.util.L2Properties;
 import king.server.util.StringUtil;
 
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+
 public final class Config
 {
 	private static final Logger _log = Logger.getLogger(Config.class.getName());
 	
 	// ----------------------------------------------------------------------------------------------------//
-	// constantes																						   //
+	// constantes //
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String EOL = System.getProperty("line.separator");
 	
 	// ----------------------------------------------------------------------------------------------------//
-	// Lineage II PkElfo arquivos de definicoes de propriedades											   //
+	// Lineage II PkElfo arquivos de definicoes de propriedades //
 	// ----------------------------------------------------------------------------------------------------//
-	//						BIG BOSSES																	   //
+	// BIG BOSSES //
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String ANTHARAS_CONFIG = "./config/BigBosses/Antharas.properties";
-    public static final String BAIUM_CONFIG = "./config/BigBosses/Baium.properties";
-    public static final String BELETH_CONFIG = "./config/BigBosses/Beleth.properties";
-    public static final String CORE_CONFIG = "./config/BigBosses/Core.properties";
-    public static final String FREYA_EASY_CONFIG = "./config/BigBosses/FreyaEasy.properties";
-    public static final String FREYA_HARDCORE_CONFIG = "./config/BigBosses/FreyaHardCore.properties";
+	public static final String BAIUM_CONFIG = "./config/BigBosses/Baium.properties";
+	public static final String BELETH_CONFIG = "./config/BigBosses/Beleth.properties";
+	public static final String CORE_CONFIG = "./config/BigBosses/Core.properties";
+	public static final String FREYA_EASY_CONFIG = "./config/BigBosses/FreyaEasy.properties";
+	public static final String FREYA_HARDCORE_CONFIG = "./config/BigBosses/FreyaHardCore.properties";
 	public static final String FRINTEZZA_CONFIG = "./config/BigBosses/Frintezza.properties";
-    public static final String ORFEN_CONFIG = "./config/BigBosses/Orfen.properties";
-    public static final String QUEEN_ANT_CONFIG = "./config/BigBosses/QueenAnt.properties";
-    public static final String SAILREN_CONFIG = "./config/BigBosses/Sailren.properties";
-	public static final String SEE_OF_INFINITY_CONFIG = "./config/BigBosses/SeedOfInfinity.properties"; 
+	public static final String ORFEN_CONFIG = "./config/BigBosses/Orfen.properties";
+	public static final String QUEEN_ANT_CONFIG = "./config/BigBosses/QueenAnt.properties";
+	public static final String SAILREN_CONFIG = "./config/BigBosses/Sailren.properties";
+	public static final String SEE_OF_INFINITY_CONFIG = "./config/BigBosses/SeedOfInfinity.properties";
 	public static final String VALAKAS_CONFIG = "./config/BigBosses/Valakas.properties";
-    public static final String ZAKEN_CONFIG = "./config/BigBosses/Zaken.properties";
-    // ----------------------------------------------------------------------------------------------------//
+	public static final String ZAKEN_CONFIG = "./config/BigBosses/Zaken.properties";
+	// ----------------------------------------------------------------------------------------------------//
 	public static final String AIO_CONFIG_FILE = "./config/AIOx/Aio.properties";
 	public static final String AUTO_RESTART = "./config/AutoRestart/AutoRestart.properties";
 	public static final String CHARACTER_CONFIG_FILE = "./config/Character.properties";
@@ -87,8 +86,8 @@ public final class Config
 	public static final String FLOOD_PROTECTOR_FILE = "./config/FloodProtector.properties";
 	public static final String FORTSIEGE_CONFIGURATION_FILE = "./config/FortSiege.properties";
 	public static final String GENERAL_CONFIG_FILE = "./config/General.properties";
-	public static final String GRACIASEEDS_CONFIG_FILE = "./config/GraciaSeeds.properties";	
-	public static final String HEXID_FILE = "./config/hexid.txt";	
+	public static final String GRACIASEEDS_CONFIG_FILE = "./config/GraciaSeeds.properties";
+	public static final String HEXID_FILE = "./config/hexid.txt";
 	public static final String ID_CONFIG_FILE = "./config/IdFactory.properties";
 	public static final String IP_CONFIG_FILE = "./config/ipconfig.xml";
 	public static final String LOGIN_CONFIGURATION_FILE = "./config/LoginServer.properties";
@@ -97,27 +96,27 @@ public final class Config
 	public static final String L2JMOD_CONFIG_FILE = "./config/L2JMods.properties";
 	public static final String MMO_CONFIG_FILE = "./config/MMO.properties";
 	public static final String NPC_CONFIG_FILE = "./config/NPC.properties";
-	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olympiad.properties";	
+	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olympiad.properties";
 	public static final String PKELFO_FILE = "./config/Pkelfo.properties";
 	public static final String PREMIUM_CONFIG_FILE = "./config/Premium.properties";
 	public static final String PVPPK_CONFIG_FILE = "./config/PvPpK/PvpPk.properties";
 	public static final String RATES_CONFIG_FILE = "./config/Rates.properties";
 	public static final String SECURITY_CONFIG_FILE = "./config/Security.properties";
-	public static final String CONFIGURATION_FILE = "./config/Server.properties";	
+	public static final String CONFIGURATION_FILE = "./config/Server.properties";
 	public static final String SIEGE_CONFIGURATION_FILE = "./config/Siege.properties";
 	public static final String TELNET_FILE = "./config/Telnet.properties";
-	public static final String TW_CONFIGURATION_FILE = "./config/TerritoryWar.properties";	
+	public static final String TW_CONFIGURATION_FILE = "./config/TerritoryWar.properties";
 	public static final String USER_CONFIG_FILE = "./config/User.properties";
 	public static final String VIP_CONFIG_FILE = "./config/VIP/Vip.properties";
-	//########################################################################################################//
-	//						AIOx PROPERTIES
-	//########################################################################################################//
+	// ########################################################################################################//
+	// AIOx PROPERTIES
+	// ########################################################################################################//
 	public static boolean ALT_AIO_EFFECT_ESPECIAL;
 	public static boolean ANNOUNCE_AIOX_DESCONECT;
 	public static boolean ANNOUNCE_AIOX_CONECT;
 	public static boolean ENABLE_AIOX_MESSAGE;
 	// ----------------------------------------------------------------------------------------------------//
-	// Sistema de AIO Bufer	
+	// Sistema de AIO Bufer
 	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ENABLE_AIO_SYSTEM;
 	public static Map<Integer, Integer> AIO_SKILLS;
@@ -131,26 +130,26 @@ public final class Config
 	public static boolean ANNOUNCE_HERO_CONECT;
 	public static boolean ANNOUNCE_HERO_DESCONECT;
 	public static boolean ENABLE_HERO_MESSAGE;
-
-	//########################################################################################################//
-	//						AUTORESTART PROPERTIES
-	//########################################################################################################//
+	
+	// ########################################################################################################//
+	// AUTORESTART PROPERTIES
+	// ########################################################################################################//
 	public static boolean AUTO_RESTART_ENABLE;
 	public static int AUTO_RESTART_TIME;
 	public static String[] AUTO_RESTART_INTERVAL;
-	//########################################################################################################//
-	//						PKELFO PROPERTIES
-	//########################################################################################################//
+	// ########################################################################################################//
+	// PKELFO PROPERTIES
+	// ########################################################################################################//
 	public static boolean FENCE_MOVIE_BUILDER;
 	public static boolean CLAN_LEADER_COLOR_ENABLED;
 	public static int CLAN_LEADER_COLOR;
 	public static int CLAN_LEADER_COLOR_CLAN_LEVEL;
 	// ----------------------------------------------------------------------------------------------------//
-	// Clan Full 
+	// Clan Full
 	// ----------------------------------------------------------------------------------------------------//
-	public static boolean ENABLE_CLAN_SYSTEM; 
-	public static Map<Integer, Integer> CLAN_SKILLS; 
-	public static byte CLAN_LEVEL; 
+	public static boolean ENABLE_CLAN_SYSTEM;
+	public static Map<Integer, Integer> CLAN_SKILLS;
+	public static byte CLAN_LEVEL;
 	public static int REPUTATION_QUANTITY;
 	public static String PVPS_COLORS;
 	public static FastMap<Integer, Integer> PVPS_COLORS_LIST;
@@ -160,11 +159,11 @@ public final class Config
 	public static boolean SHOW_ONLINE_PLAYERS_ON_LOGIN;
 	public static int MAX_PARTY_MEMBERS;
 	// ----------------------------------------------------------------------------------------------------//
-	//Shots Infinitos: SS, BSS e flechas 
+	// Shots Infinitos: SS, BSS e flechas
 	// ----------------------------------------------------------------------------------------------------//
-	public static boolean INFINITE_SOUL_SHOT; 
-	public static boolean INFINITE_SPIRIT_SHOT; 
-	public static boolean INFINITE_BLESSED_SPIRIT_SHOT; 
+	public static boolean INFINITE_SOUL_SHOT;
+	public static boolean INFINITE_SPIRIT_SHOT;
+	public static boolean INFINITE_BLESSED_SPIRIT_SHOT;
 	public static boolean INFINITE_ARROWS;
 	// ----------------------------------------------------------------------------------------------------//
 	// balance
@@ -192,32 +191,32 @@ public final class Config
 	public static float POLE_VS_ROBE;
 	
 	// ----------------------------------------------------------------------------------------------------//
-	//  CONFIGURACOES ESPECIAIS RELACIONADAS AS RACAS  //
+	// CONFIGURACOES ESPECIAIS RELACIONADAS AS RACAS //
 	// ----------------------------------------------------------------------------------------------------//
-	//  Cor para cada raca
+	// Cor para cada raca
 	// ----------------------------------------------------------------------------------------------------//
-    public static boolean RACES_COLOR_ENABLE;
-    public static int HUMAN_COLOR;
-    public static int ELF_COLOR;
-    public static int DARKELF_COLOR;
-    public static int ORC_COLOR;
-    public static int DWARF_COLOR;
-    public static int KAMAEL_COLOR;
-    public static boolean ENABLE_RACE_MESSAGE;
-    // ----------------------------------------------------------------------------------------------------//
- 	// CONFIGURACOES DE PVP E PK
-    // ----------------------------------------------------------------------------------------------------//
-    public static boolean ENABLE_PVP_REWARD;
-    public static int PVP_REWARD_ITEM;
-    public static int AMOUNT_PVP_REWARD;
-    public static String PK_MESSAGE;
-    public static String PVP_MESSAGE;
-    public static String VICTIM_PK_MESSAGE;
-    public static String VICTIM_PVP_MESSAGE;
-
-    // ----------------------------------------------------------------------------------------------------//
+	public static boolean RACES_COLOR_ENABLE;
+	public static int HUMAN_COLOR;
+	public static int ELF_COLOR;
+	public static int DARKELF_COLOR;
+	public static int ORC_COLOR;
+	public static int DWARF_COLOR;
+	public static int KAMAEL_COLOR;
+	public static boolean ENABLE_RACE_MESSAGE;
+	// ----------------------------------------------------------------------------------------------------//
+	// CONFIGURACOES DE PVP E PK
+	// ----------------------------------------------------------------------------------------------------//
+	public static boolean ENABLE_PVP_REWARD;
+	public static int PVP_REWARD_ITEM;
+	public static int AMOUNT_PVP_REWARD;
+	public static String PK_MESSAGE;
+	public static String PVP_MESSAGE;
+	public static String VICTIM_PK_MESSAGE;
+	public static String VICTIM_PVP_MESSAGE;
+	
+	// ----------------------------------------------------------------------------------------------------//
 	// PC bang points
-    // ----------------------------------------------------------------------------------------------------//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean PC_BANG_ENABLED;
 	public static int MAX_PC_BANG_POINTS;
 	public static boolean ENABLE_DOUBLE_PC_BANG_POINTS;
@@ -288,9 +287,9 @@ public final class Config
 	public static String VOTE_SYSTEM_ITEM_ID;
 	public static String VOTE_SYSTEM_ITEM_COUNT;
 	public static boolean ALLOW_REFUSE_BUFF;
-	//########################################################################################################//
-	//						Event Custom Config
-	//########################################################################################################//
+	// ########################################################################################################//
+	// Event Custom Config
+	// ########################################################################################################//
 	public static int TW_TOWN_ID;
 	public static String TW_TOWN_NAME;
 	public static boolean TW_ALL_TOWNS;
@@ -390,10 +389,10 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	public static float RateMultipler;
 	public static int time_crazyrate;
-    
-	//########################################################################################################//
-	//						CHARACTER PROPERTIES
-	//########################################################################################################//
+	
+	// ########################################################################################################//
+	// CHARACTER PROPERTIES
+	// ########################################################################################################//
 	public static boolean ALT_GAME_DELEVEL;
 	public static boolean DECREASE_SKILL_LEVEL;
 	public static double ALT_WEIGHT_LIMIT;
@@ -514,13 +513,13 @@ public final class Config
 	public static String ADD_CHAR_TITLE;
 	public static int TITLE_COLOR;
 	// ----------------------------------------------------------------------------------------------------//
-	//Novos chars Hero
+	// Novos chars Hero
 	// ----------------------------------------------------------------------------------------------------//
-    public static boolean ADD_HERO;
-    // ----------------------------------------------------------------------------------------------------//
-    //Novos chars Nobre
-    // ----------------------------------------------------------------------------------------------------//
-    public static boolean ADD_NOBLESSE;
+	public static boolean ADD_HERO;
+	// ----------------------------------------------------------------------------------------------------//
+	// Novos chars Nobre
+	// ----------------------------------------------------------------------------------------------------//
+	public static boolean ADD_NOBLESSE;
 	public static long MAX_ADENA;
 	public static boolean AUTO_LOOT;
 	public static boolean AUTO_LOOT_RAIDS;
@@ -556,11 +555,11 @@ public final class Config
 	public static boolean STORE_UI_SETTINGS;
 	public static String[] FORBIDDEN_NAMES;
 	public static boolean SILENCE_MODE_EXCLUDE;
-	//########################################################################################################//
-	//						FREATURE PROPERTIES
-	//########################################################################################################//
+	// ########################################################################################################//
+	// FREATURE PROPERTIES
+	// ########################################################################################################//
 	// ----------------------------------------------------------------------------------------------------//
-	// ClanHall 
+	// ClanHall
 	// ----------------------------------------------------------------------------------------------------//
 	public static long CH_TELE_FEE_RATIO;
 	public static int CH_TELE1_FEE;
@@ -614,7 +613,7 @@ public final class Config
 	public static int CH_FRONT2_FEE;
 	public static boolean CH_BUFF_FREE;
 	// ----------------------------------------------------------------------------------------------------//
-	// Castle 
+	// Castle
 	// ----------------------------------------------------------------------------------------------------//
 	public static long CS_TELE_FEE_RATIO;
 	public static int CS_TELE1_FEE;
@@ -644,7 +643,7 @@ public final class Config
 	public static List<Integer> SIEGE_HOUR_LIST_MORNING;
 	public static List<Integer> SIEGE_HOUR_LIST_AFTERNOON;
 	// ----------------------------------------------------------------------------------------------------//
-	// Fortress 
+	// Fortress
 	// ----------------------------------------------------------------------------------------------------//
 	public static long FS_TELE_FEE_RATIO;
 	public static int FS_TELE1_FEE;
@@ -708,9 +707,9 @@ public final class Config
 	public static int CLAN_LEVEL_10_REQUIREMENT;
 	public static int CLAN_LEVEL_11_REQUIREMENT;
 	public static boolean ALLOW_WYVERN_DURING_SIEGE;
-	//########################################################################################################//
-	//						GENERAL PROPERTIES
-	//########################################################################################################//
+	// ########################################################################################################//
+	// GENERAL PROPERTIES
+	// ########################################################################################################//
 	public static boolean EVERYBODY_HAS_ADMIN_RIGHTS;
 	public static boolean DISPLAY_SERVER_VERSION;
 	public static boolean SERVER_LIST_BRACKET;
@@ -973,9 +972,9 @@ public final class Config
 	public static FloodProtectorConfig FLOOD_PROTECTOR_SENDMAIL;
 	public static FloodProtectorConfig FLOOD_PROTECTOR_CHARACTER_SELECT;
 	public static FloodProtectorConfig FLOOD_PROTECTOR_ITEM_AUCTION;
-	//########################################################################################################//
-	//						L2JMODS PROPERTIES
-	//########################################################################################################//
+	// ########################################################################################################//
+	// L2JMODS PROPERTIES
+	// ########################################################################################################//
 	public static boolean L2JMOD_CHAMPION_ENABLE;
 	public static boolean L2JMOD_CHAMPION_PASSIVE;
 	public static int L2JMOD_CHAMPION_REWARD_LOWER_LVL_ITEM_CHANCE;
@@ -1045,7 +1044,7 @@ public final class Config
 	public static int RecoveryVitalityItemId;
 	public static int RecoveryVitalityItemCount;
 	public static int SPItemId;
-	public static int SPItemCount;	
+	public static int SPItemCount;
 	public static int L2JMOD_WEDDING_PRICE;
 	public static boolean L2JMOD_WEDDING_PUNISH_INFIDELITY;
 	public static boolean L2JMOD_WEDDING_TELEPORT;
@@ -1072,12 +1071,12 @@ public final class Config
 	public static int OFFLINE_NAME_COLOR;
 	public static boolean OFFLINE_FAME;
 	// ----------------------------------------------------------------------------------------------------//
-	//Offline Effect
+	// Offline Effect
 	// ----------------------------------------------------------------------------------------------------//
 	public static boolean OFFLINE_TRADE_EFFECT;
 	public static int OFFLINE_EFFECT_ID;
 	// ----------------------------------------------------------------------------------------------------//
-	//Custom Unstuck Animation Skill ID
+	// Custom Unstuck Animation Skill ID
 	// ----------------------------------------------------------------------------------------------------//
 	public static int UNSTUCK_ANIMATION_ID;
 	public static boolean L2JMOD_ENABLE_MANA_POTIONS_SUPPORT;
@@ -1112,9 +1111,9 @@ public final class Config
 	public static int L2JMOD_DUALBOX_CHECK_MAX_L2EVENT_PARTICIPANTS_PER_IP;
 	public static Map<Integer, Integer> L2JMOD_DUALBOX_CHECK_WHITELIST;
 	public static boolean L2JMOD_ALLOW_CHANGE_PASSWORD;
-	//########################################################################################################//
-	//						USERS PROPERTIES
-	//########################################################################################################//
+	// ########################################################################################################//
+	// USERS PROPERTIES
+	// ########################################################################################################//
 	public static boolean ENABLE_TRADE_REFUSAL;
 	public static boolean ENABLE_PM_REFUSAL;
 	public static boolean SHOW_USER;
@@ -1131,9 +1130,9 @@ public final class Config
 	public static int HIGHLEVEL_LVL;
 	public static int HIGHLEVEL_XP;
 	public static int HIGHLEVEL_SP;
-	//########################################################################################################//
-	//						VIP PROPERTIES
-	//########################################################################################################//
+	// ########################################################################################################//
+	// VIP PROPERTIES
+	// ########################################################################################################//
 	public static boolean ENABLE_VIP_MESSAGE;
 	public static boolean ANNOUNCE_VIP_CONECT;
 	public static boolean ANNOUNCE_VIP_DESCONECT;
@@ -1149,9 +1148,9 @@ public final class Config
 	public static int VIP_SP;
 	public static boolean ENABLE_VIP_SYSTEM;
 	public static Map<Integer, Integer> VIP_SKILLS;
-	//########################################################################################################//
-	//						NPC PROPERTIES
-	//########################################################################################################//
+	// ########################################################################################################//
+	// NPC PROPERTIES
+	// ########################################################################################################//
 	public static boolean ANNOUNCE_MAMMON_SPAWN;
 	public static boolean ALT_MOB_AGRO_IN_PEACEZONE;
 	public static boolean ALT_ATTACKABLE_NPCS;
@@ -1196,9 +1195,9 @@ public final class Config
 	public static double PET_HP_REGEN_MULTIPLIER;
 	public static double PET_MP_REGEN_MULTIPLIER;
 	public static List<Integer> NON_TALKING_NPCS;
-	//########################################################################################################//
-	//						PvP PROPERTIES
-	//########################################################################################################//
+	// ########################################################################################################//
+	// PvP PROPERTIES
+	// ########################################################################################################//
 	public static int KARMA_MIN_KARMA;
 	public static int KARMA_MAX_KARMA;
 	public static int KARMA_XP_DIVIDER;
@@ -1210,9 +1209,9 @@ public final class Config
 	public static String KARMA_NONDROPPABLE_ITEMS;
 	public static int[] KARMA_LIST_NONDROPPABLE_PET_ITEMS;
 	public static int[] KARMA_LIST_NONDROPPABLE_ITEMS;
-	//########################################################################################################//
-	//						RATES PROPERTIES
-	//########################################################################################################//
+	// ########################################################################################################//
+	// RATES PROPERTIES
+	// ########################################################################################################//
 	public static float RATE_XP;
 	public static float RATE_SP;
 	public static float RATE_PARTY_XP;
@@ -1283,9 +1282,9 @@ public final class Config
 	public static int SSQ_DAWN_TICKET_BUNDLE;
 	public static int SSQ_MANORS_AGREEMENT_ID;
 	public static int SSQ_JOIN_DAWN_ADENA_FEE;
-	//########################################################################################################//
-	//						SERVER PROPERTIES
-	//########################################################################################################//
+	// ########################################################################################################//
+	// SERVER PROPERTIES
+	// ########################################################################################################//
 	public static int PORT_GAME;
 	public static int PORT_LOGIN;
 	public static String LOGIN_BIND_ADDRESS;
@@ -1311,17 +1310,17 @@ public final class Config
 	public static boolean LOG_LOGIN_CONTROLLER;
 	public static boolean LOGIN_SERVER_SCHEDULE_RESTART;
 	public static long LOGIN_SERVER_SCHEDULE_RESTART_TIME;
-	//########################################################################################################//
-	//						COMMUNITYSERVER PROPERTIES
-	//########################################################################################################//
+	// ########################################################################################################//
+	// COMMUNITYSERVER PROPERTIES
+	// ########################################################################################################//
 	public static boolean ENABLE_COMMUNITY_BOARD;
 	public static String COMMUNITY_SERVER_ADDRESS;
 	public static int COMMUNITY_SERVER_PORT;
 	public static byte[] COMMUNITY_SERVER_HEX_ID;
 	public static int COMMUNITY_SERVER_SQL_DP_ID;
-	//########################################################################################################//
-	//						MMO PROPERTIES
-	//########################################################################################################//
+	// ########################################################################################################//
+	// MMO PROPERTIES
+	// ########################################################################################################//
 	public static int MMO_SELECTOR_SLEEP_TIME;
 	public static int MMO_MAX_SEND_PER_PASS;
 	public static int MMO_MAX_READ_PER_PASS;
@@ -1359,12 +1358,14 @@ public final class Config
 	public static String DATAPACK_VERSION;
 	public static int PVP_NORMAL_TIME;
 	public static int PVP_PVP_TIME;
+	
 	public static enum IdFactoryType
 	{
 		Compaction,
 		BitSet,
 		Stack
 	}
+	
 	public static IdFactoryType IDFACTORY_TYPE;
 	public static boolean BAD_ID_CHECKING;
 	public static double ENCHANT_CHANCE;
@@ -1406,7 +1407,7 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ALLOW_TELEPORT_VOICECOMMAND;
 	// ----------------------------------------------------------------------------------------------------//
-	//Protect Enchant
+	// Protect Enchant
 	// ----------------------------------------------------------------------------------------------------//
 	public static boolean PROTECT_ENCHANT_ENABLE;
 	public static int MAX_ENCHANT_LEVEL_PROTECT;
@@ -1415,9 +1416,9 @@ public final class Config
 	// titulo muda ao entrar em um clan
 	// ----------------------------------------------------------------------------------------------------//
 	public static boolean CLAN_NAME_AS_TITLE;
-	//########################################################################################################//
-	//						GRANSDBOSS PROPERTIES
-    //########################################################################################################//
+	// ########################################################################################################//
+	// GRANSDBOSS PROPERTIES
+	// ########################################################################################################//
 	public static int Antharas_Wait_Time;
 	public static int Valakas_Wait_Time;
 	public static int Interval_Of_Antharas_Spawn;
@@ -1470,17 +1471,17 @@ public final class Config
 	// chatfilter
 	// ----------------------------------------------------------------------------------------------------//
 	public static ArrayList<String> FILTER_LIST;
-	//########################################################################################################//
-	//						SEXCURITY PROPERTIES
-	//########################################################################################################//
+	// ########################################################################################################//
+	// SEXCURITY PROPERTIES
+	// ########################################################################################################//
 	public static boolean SECOND_AUTH_ENABLED;
 	public static int SECOND_AUTH_MAX_ATTEMPTS;
 	public static long SECOND_AUTH_BAN_TIME;
 	public static String SECOND_AUTH_REC_LINK;
 	public static boolean ENABLE_BOTREPORT;
-	//########################################################################################################//
-	//						EMAIl PROPERTIES
-	//########################################################################################################//
+	// ########################################################################################################//
+	// EMAIl PROPERTIES
+	// ########################################################################################################//
 	public static String EMAIL_SERVERINFO_NAME;
 	public static String EMAIL_SERVERINFO_ADDRESS;
 	public static boolean EMAIL_SYS_ENABLED;
@@ -1494,18 +1495,18 @@ public final class Config
 	public static String EMAIL_SYS_ADDRESS;
 	public static String EMAIL_SYS_SELECTQUERY;
 	public static String EMAIL_SYS_DBFIELD;
-	//########################################################################################################//
-	//						CONQUERABLE HALLS PROPERTIES
-	//########################################################################################################//
+	// ########################################################################################################//
+	// CONQUERABLE HALLS PROPERTIES
+	// ########################################################################################################//
 	public static int CHS_CLAN_MINLEVEL;
 	public static int CHS_MAX_ATTACKERS;
 	public static int CHS_MAX_FLAGS_PER_CLAN;
 	public static boolean CHS_ENABLE_FAME;
 	public static int CHS_FAME_AMOUNT;
 	public static int CHS_FAME_FREQUENCY;
-	//########################################################################################################//
-	//						PREMIUM PORPERTIES
-	//########################################################################################################//
+	// ########################################################################################################//
+	// PREMIUM PORPERTIES
+	// ########################################################################################################//
 	public static boolean PREMIUM_SERVICE_ENABLED;
 	public static boolean PREMIUM_ALLOW_VOICED;
 	public static boolean PREMIUM_PARTY_DROPSPOIL;
@@ -1520,6 +1521,7 @@ public final class Config
 	public static float PREMIUM_RATE_DROP_ITEMS;
 	public static float PREMIUM_RATE_DROP_ITEMS_BY_RAID;
 	public static Map<Integer, Float> PREMIUM_RATE_DROP_ITEMS_ID;
+	
 	/**
 	 * This class initializes all global variables for configuration.<br>
 	 * If the key doesn't appear in properties file, a default value is set by this class. {@link #CONFIGURATION_FILE} (properties file) for configuring your server.
@@ -1608,9 +1610,9 @@ public final class Config
 			GAME_SERVER_SUBNETS = ipcd.getSubnets();
 			GAME_SERVER_HOSTS = ipcd.getHosts();
 			
-			//########################################################################################################//
-			//						Load Community Properties														  //
-			//########################################################################################################//
+			// ########################################################################################################//
+			// Load Community Properties //
+			// ########################################################################################################//
 			L2Properties communityServerSettings = new L2Properties();
 			final File community = new File(COMMUNITY_CONFIGURATION_FILE);
 			try (InputStream is = new FileInputStream(community))
@@ -1628,10 +1630,10 @@ public final class Config
 			COMMUNITY_SERVER_HEX_ID = new BigInteger(communityServerSettings.getProperty("CommunityServerHexId", "0"), 16).toByteArray();
 			COMMUNITY_SERVER_SQL_DP_ID = Integer.parseInt(communityServerSettings.getProperty("CommunityServerSqlDpId", "200"));
 			
-			//########################################################################################################//
-			//						ANTHARAS PROPERTIES
-			//########################################################################################################//
-
+			// ########################################################################################################//
+			// ANTHARAS PROPERTIES
+			// ########################################################################################################//
+			
 			L2Properties AntharasSettings = new L2Properties();
 			final File antharas = new File(ANTHARAS_CONFIG);
 			try (InputStream is = new FileInputStream(antharas))
@@ -1664,10 +1666,10 @@ public final class Config
 			}
 			Random_Of_Antharas_Spawn = Random_Of_Antharas_Spawn * 3600000;
 			
-			//########################################################################################################//
-			//						BAIUM PROPERTIES
-			//########################################################################################################//
-
+			// ########################################################################################################//
+			// BAIUM PROPERTIES
+			// ########################################################################################################//
+			
 			L2Properties BaiumSettings = new L2Properties();
 			final File baium = new File(BAIUM_CONFIG);
 			try (InputStream is = new FileInputStream(baium))
@@ -1693,10 +1695,10 @@ public final class Config
 			}
 			Random_Of_Baium_Spawn = Random_Of_Baium_Spawn * 3600000;
 			
-			//########################################################################################################//
-			//						BELETH PROPERTIES
-			//########################################################################################################//
-
+			// ########################################################################################################//
+			// BELETH PROPERTIES
+			// ########################################################################################################//
+			
 			L2Properties BelethSettings = new L2Properties();
 			final File beleth = new File(BELETH_CONFIG);
 			try (InputStream is = new FileInputStream(beleth))
@@ -1707,7 +1709,7 @@ public final class Config
 			{
 				_log.log(Level.SEVERE, "Erro ao ler o arquivo Beleth Properties!", e);
 			}
-						
+			
 			INTERVAL_OF_BELETH_SPAWN = Integer.parseInt(BelethSettings.getProperty("IntervalOfBelethSpawn", "192"));
 			if ((INTERVAL_OF_BELETH_SPAWN < 1) || (INTERVAL_OF_BELETH_SPAWN > 480))
 			{
@@ -1724,10 +1726,10 @@ public final class Config
 			
 			BELETH_MIN_PLAYERS = Integer.parseInt(BelethSettings.getProperty("BelethMinPlayers", "36"));
 			
-			//########################################################################################################//
-			//						CORE PROPERTIES
-			//########################################################################################################//
-
+			// ########################################################################################################//
+			// CORE PROPERTIES
+			// ########################################################################################################//
+			
 			L2Properties CoreSettings = new L2Properties();
 			final File core = new File(CORE_CONFIG);
 			try (InputStream is = new FileInputStream(core))
@@ -1753,10 +1755,10 @@ public final class Config
 			}
 			Random_Of_Core_Spawn = Random_Of_Core_Spawn * 3600000;
 			
-			//########################################################################################################//
-			//						FREYA EASY PROPERTIES
-			//########################################################################################################//
-
+			// ########################################################################################################//
+			// FREYA EASY PROPERTIES
+			// ########################################################################################################//
+			
 			L2Properties FreyaEasySettings = new L2Properties();
 			final File freyaeasy = new File(FREYA_EASY_CONFIG);
 			try (InputStream is = new FileInputStream(freyaeasy))
@@ -1771,10 +1773,10 @@ public final class Config
 			MAX_FREYA_PLAYERS = Integer.parseInt(FreyaEasySettings.getProperty("MaxFreyaPlayers", "27"));
 			MIN_LEVEL_PLAYERS = Integer.parseInt(FreyaEasySettings.getProperty("MinLevelPlayers", "82"));
 			
-			//########################################################################################################//
-			//						FREYA HARD CORE PROPERTIES
-			//########################################################################################################//
-
+			// ########################################################################################################//
+			// FREYA HARD CORE PROPERTIES
+			// ########################################################################################################//
+			
 			L2Properties FreyaHardCoreSettings = new L2Properties();
 			final File freyahardcore = new File(FREYA_HARDCORE_CONFIG);
 			try (InputStream is = new FileInputStream(freyahardcore))
@@ -1790,10 +1792,10 @@ public final class Config
 			MAX_FREYA_HC_PLAYERS = Integer.parseInt(FreyaHardCoreSettings.getProperty("MaxFreyaHcPlayers", "45"));
 			MIN_LEVEL_HC_PLAYERS = Integer.parseInt(FreyaHardCoreSettings.getProperty("MinLevelHcPlayers", "82"));
 			
-			//########################################################################################################//
-			//						FRINTEZZA PROPERTIES
-			//########################################################################################################//
-
+			// ########################################################################################################//
+			// FRINTEZZA PROPERTIES
+			// ########################################################################################################//
+			
 			L2Properties FrintezzaSettings = new L2Properties();
 			final File frintezza = new File(FRINTEZZA_CONFIG);
 			try (InputStream is = new FileInputStream(frintezza))
@@ -1808,10 +1810,10 @@ public final class Config
 			FRINTEZZA_MINPLAYERS = Integer.parseInt(FrintezzaSettings.getProperty("FrintezzaMinPlayers", "36"));
 			FRINTEZZA_MAXPLAYERS = Integer.parseInt(FrintezzaSettings.getProperty("FrintezzaMaxPlayers", "45"));
 			
-			//########################################################################################################//
-			//						ORFEM PROPERTIES
-			//########################################################################################################//
-
+			// ########################################################################################################//
+			// ORFEM PROPERTIES
+			// ########################################################################################################//
+			
 			L2Properties OrfenSettings = new L2Properties();
 			final File orfen = new File(ORFEN_CONFIG);
 			try (InputStream is = new FileInputStream(orfen))
@@ -1822,7 +1824,7 @@ public final class Config
 			{
 				_log.log(Level.SEVERE, "Erro ao ler o arquivo Orfen Properties!", e);
 			}
-						
+			
 			Interval_Of_Orfen_Spawn = Integer.parseInt(OrfenSettings.getProperty("IntervalOfOrfenSpawn", "48"));
 			if ((Interval_Of_Orfen_Spawn < 1) || (Interval_Of_Orfen_Spawn > 480))
 			{
@@ -1837,10 +1839,10 @@ public final class Config
 			}
 			Random_Of_Orfen_Spawn = Random_Of_Orfen_Spawn * 3600000;
 			
-			//########################################################################################################//
-			//						QUEEN ANT PROPERTIES
-			//########################################################################################################//
-
+			// ########################################################################################################//
+			// QUEEN ANT PROPERTIES
+			// ########################################################################################################//
+			
 			L2Properties QueenSettings = new L2Properties();
 			final File queen = new File(QUEEN_ANT_CONFIG);
 			try (InputStream is = new FileInputStream(queen))
@@ -1851,7 +1853,7 @@ public final class Config
 			{
 				_log.log(Level.SEVERE, "Erro ao ler o arquivo Queen Ant Properties!", e);
 			}
-						
+			
 			Interval_Of_QueenAnt_Spawn = Integer.parseInt(QueenSettings.getProperty("IntervalOfQueenAntSpawn", "36"));
 			if ((Interval_Of_QueenAnt_Spawn < 1) || (Interval_Of_QueenAnt_Spawn > 480))
 			{
@@ -1866,10 +1868,10 @@ public final class Config
 			}
 			Random_Of_QueenAnt_Spawn = Random_Of_QueenAnt_Spawn * 3600000;
 			
-			//########################################################################################################//
-			//						SAILREN PROPERTIES
-			//########################################################################################################//
-
+			// ########################################################################################################//
+			// SAILREN PROPERTIES
+			// ########################################################################################################//
+			
 			L2Properties SailrenSettings = new L2Properties();
 			final File sailren = new File(SAILREN_CONFIG);
 			try (InputStream is = new FileInputStream(sailren))
@@ -1880,7 +1882,7 @@ public final class Config
 			{
 				_log.log(Level.SEVERE, "Erro ao ler o arquivo Sailren Properties!", e);
 			}
-						
+			
 			Interval_Of_Sailren_Spawn = Integer.parseInt(SailrenSettings.getProperty("IntervalOfSailrenSpawn", "12"));
 			if ((Interval_Of_Sailren_Spawn < 1) || (Interval_Of_Sailren_Spawn > 192))
 			{
@@ -1895,10 +1897,10 @@ public final class Config
 			}
 			Random_Of_Sailren_Spawn = Random_Of_Sailren_Spawn * 3600000;
 			
-			//########################################################################################################//
-			//						SEE OF INFINITY PROPERTIES
-			//########################################################################################################//
-
+			// ########################################################################################################//
+			// SEE OF INFINITY PROPERTIES
+			// ########################################################################################################//
+			
 			L2Properties SeeOfInfinitySettings = new L2Properties();
 			final File seeofinfinity = new File(SEE_OF_INFINITY_CONFIG);
 			try (InputStream is = new FileInputStream(seeofinfinity))
@@ -1919,9 +1921,9 @@ public final class Config
 			HEART_DEFENCE_MIN_PLAYERS = Integer.parseInt(SeeOfInfinitySettings.getProperty("MinHeaDefPlayers", "18"));
 			HEART_DEFENCE_MAX_PLAYERS = Integer.parseInt(SeeOfInfinitySettings.getProperty("MaxHeaDefPlayers", "27"));
 			
-			//########################################################################################################//
-			//						VALAKAS PROPERTIES
-			//########################################################################################################//
+			// ########################################################################################################//
+			// VALAKAS PROPERTIES
+			// ########################################################################################################//
 			
 			L2Properties ValakasSettings = new L2Properties();
 			final File valakas = new File(VALAKAS_CONFIG);
@@ -1940,7 +1942,7 @@ public final class Config
 				Valakas_Wait_Time = 30;
 			}
 			Valakas_Wait_Time = Valakas_Wait_Time * 60000;
-						
+			
 			Interval_Of_Valakas_Spawn = Integer.parseInt(ValakasSettings.getProperty("IntervalOfValakasSpawn", "264"));
 			if ((Interval_Of_Valakas_Spawn < 1) || (Interval_Of_Valakas_Spawn > 480))
 			{
@@ -1955,10 +1957,10 @@ public final class Config
 			}
 			Random_Of_Valakas_Spawn = Random_Of_Valakas_Spawn * 3600000;
 			
-			//########################################################################################################//
-			//						ZAKEN PROPERTIES
-			//########################################################################################################//
-
+			// ########################################################################################################//
+			// ZAKEN PROPERTIES
+			// ########################################################################################################//
+			
 			L2Properties ZakenSettings = new L2Properties();
 			final File zaken = new File(ZAKEN_CONFIG);
 			try (InputStream is = new FileInputStream(zaken))
@@ -1969,7 +1971,7 @@ public final class Config
 			{
 				_log.log(Level.SEVERE, "Erro ao ler o arquivo Zaken Properties!", e);
 			}
-						
+			
 			ZAKEN_MINLEVEL_DAYTIME = Integer.parseInt(ZakenSettings.getProperty("ZakenMinLevelDaytime", "55"));
 			ZAKEN_MINLEVEL_DAYTIME83 = Integer.parseInt(ZakenSettings.getProperty("ZakenMinLevelDaytime83", "78"));
 			ZAKEN_MINMEMBERS_DAYTIME = Integer.parseInt(ZakenSettings.getProperty("ZakenMinMembersDaytime", "9"));
@@ -1977,9 +1979,9 @@ public final class Config
 			ZAKEN_MAXMEMBERS_DAYTIME = Integer.parseInt(ZakenSettings.getProperty("ZakenMaxMembersDaytime", "27"));
 			ZAKEN_MAXMEMBERS_NIGHTTIME = Integer.parseInt(ZakenSettings.getProperty("ZakenMaxMembersNighttime", "450"));
 			
-			//########################################################################################################//
-			//						Load Feature L2Properties file (if exists)										  //
-			//########################################################################################################//
+			// ########################################################################################################//
+			// Load Feature L2Properties file (if exists) //
+			// ########################################################################################################//
 			L2Properties Feature = new L2Properties();
 			final File feature = new File(FEATURE_CONFIG_FILE);
 			try (InputStream is = new FileInputStream(feature))
@@ -2210,9 +2212,9 @@ public final class Config
 			CLAN_LEVEL_11_REQUIREMENT = Integer.parseInt(Feature.getProperty("ClanLevel11Requirement", "170"));
 			ALLOW_WYVERN_DURING_SIEGE = Boolean.parseBoolean(Feature.getProperty("AllowRideWyvernDuringSiege", "True"));
 			
-			//########################################################################################################//
-			//						PkElfo Properties 																  //
-			//########################################################################################################//
+			// ########################################################################################################//
+			// PkElfo Properties //
+			// ########################################################################################################//
 			L2Properties PkelfoSettings = new L2Properties();
 			final File PkElfo = new File(PKELFO_FILE);
 			try (InputStream is = new FileInputStream(PkElfo))
@@ -2225,40 +2227,44 @@ public final class Config
 				ANNOUNCE_CASTLE_LORDS = Boolean.parseBoolean(PkelfoSettings.getProperty("AnnounceCastleLords", "True"));
 				SHOW_ONLINE_PLAYERS_ON_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("ShowOnlinePlayersOnLogin", "True"));
 				MAX_PARTY_MEMBERS = Integer.parseInt(PkelfoSettings.getProperty("MaxPartyMembers", "12"));
-
-				// Clan Full 
-				ENABLE_CLAN_SYSTEM = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableClanSystem", "True")); 
-				if(ENABLE_CLAN_SYSTEM) 
-				{ 
-				String AioSkillsSplit[] = PkelfoSettings.getProperty("ClanSkills", "").split(";"); 
-				CLAN_SKILLS = new FastMap<>(AioSkillsSplit.length); 
-				String arr[] = AioSkillsSplit; 
-				int len = arr.length; 
-				for(int i = 0; i < len; i++) 
-				{ 
-						String skill = arr[i]; 
-						String skillSplit[] = skill.split(","); 
-						if(skillSplit.length != 2) 
-						{ 
-								System.out.println((new StringBuilder()).append("[Clan System]: invalid config property in custom/custom.properties -> ClanSkills \"").append(skill).append("\"").toString()); 
-								continue; 
-						} 
-						try 
-						{ 
-								CLAN_SKILLS.put(Integer.valueOf(Integer.parseInt(skillSplit[0])), Integer.valueOf(Integer.parseInt(skillSplit[1]))); 
-								continue; 
-						} 
-						catch(NumberFormatException nfe) { } 
-						if(!skill.equals("")) 
-								System.out.println((new StringBuilder()).append("[Clan System]: invalid config property in custom/custom.properties -> ClanSkills \"").append(skillSplit[0]).append("\"").append(skillSplit[1]).toString()); 
-						} 
-				} 
-				CLAN_LEVEL = Byte.parseByte(PkelfoSettings.getProperty("ClanSetLevel", "8")); 
+				
+				// Clan Full
+				ENABLE_CLAN_SYSTEM = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableClanSystem", "True"));
+				if (ENABLE_CLAN_SYSTEM)
+				{
+					String AioSkillsSplit[] = PkelfoSettings.getProperty("ClanSkills", "").split(";");
+					CLAN_SKILLS = new FastMap<>(AioSkillsSplit.length);
+					String arr[] = AioSkillsSplit;
+					int len = arr.length;
+					for (int i = 0; i < len; i++)
+					{
+						String skill = arr[i];
+						String skillSplit[] = skill.split(",");
+						if (skillSplit.length != 2)
+						{
+							System.out.println((new StringBuilder()).append("[Clan System]: invalid config property in custom/custom.properties -> ClanSkills \"").append(skill).append("\"").toString());
+							continue;
+						}
+						try
+						{
+							CLAN_SKILLS.put(Integer.valueOf(Integer.parseInt(skillSplit[0])), Integer.valueOf(Integer.parseInt(skillSplit[1])));
+							continue;
+						}
+						catch (NumberFormatException nfe)
+						{
+						}
+						if (!skill.equals(""))
+						{
+							System.out.println((new StringBuilder()).append("[Clan System]: invalid config property in custom/custom.properties -> ClanSkills \"").append(skillSplit[0]).append("\"").append(skillSplit[1]).toString());
+						}
+					}
+				}
+				CLAN_LEVEL = Byte.parseByte(PkelfoSettings.getProperty("ClanSetLevel", "8"));
 				REPUTATION_QUANTITY = Integer.parseInt(PkelfoSettings.getProperty("ReputationScore", "10000"));
-				//Shots Infinitos: SS, BSS e flechas 
-				INFINITE_SOUL_SHOT = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteSoulShot", "False")); 
-				INFINITE_SPIRIT_SHOT = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteSpiritShot", "False")); 
-				INFINITE_BLESSED_SPIRIT_SHOT = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteBlessedSpiritShot", "False")); 
+				// Shots Infinitos: SS, BSS e flechas
+				INFINITE_SOUL_SHOT = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteSoulShot", "False"));
+				INFINITE_SPIRIT_SHOT = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteSpiritShot", "False"));
+				INFINITE_BLESSED_SPIRIT_SHOT = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteBlessedSpiritShot", "False"));
 				INFINITE_ARROWS = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteArrows", "false"));
 				DAGGER_VS_HEAVY = Float.parseFloat(PkelfoSettings.getProperty("DaggerVsHeavy", "1.00"));
 				DAGGER_VS_LIGHT = Float.parseFloat(PkelfoSettings.getProperty("DaggerVsLight", "1.00"));
@@ -2360,7 +2366,7 @@ public final class Config
 				CMD_FAKE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandFakePlayer", "false"));
 				FAKE_PLAYERS = Integer.parseInt(PkelfoSettings.getProperty("NumberOfFakes", "1"));
 				BOSS_STATS = Boolean.parseBoolean(PkelfoSettings.getProperty("GrandBossStats", "false"));
-
+				
 			}
 			
 			catch (Exception e)
@@ -2423,7 +2429,7 @@ public final class Config
 				_log.warning("Config: " + e.getMessage());
 				throw new Error("Failed to Load " + COMMUNITY_PVP + " File.");
 			}
-						
+			
 			// Event Custom Config
 			L2Properties Event = new L2Properties();
 			final File Events = new File(EVENT_FILE);
@@ -2718,9 +2724,9 @@ public final class Config
 			{
 				_log.log(Level.SEVERE, "Error while loading Event settings!", e);
 			}
-
-			//############################  USER PROPERTIES  ##########################################################//
-
+			
+			// ############################ USER PROPERTIES ##########################################################//
+			
 			L2Properties UserSettings = new L2Properties();
 			final File user = new File(USER_CONFIG_FILE);
 			try (InputStream is = new FileInputStream(user))
@@ -2731,42 +2737,42 @@ public final class Config
 			{
 				_log.log(Level.SEVERE, "Error while loading USER settings!", e);
 			}
-			//############################  PAINEL DE USUARIOS  #######################################################//			
-			ENABLE_PM_REFUSAL = Boolean.parseBoolean(UserSettings.getProperty("AllowPmCommand","False"));
-			ENABLE_TRADE_REFUSAL = Boolean.parseBoolean(UserSettings.getProperty("AllowTradeCommand","False"));
-			SHOW_USER = Boolean.parseBoolean(UserSettings.getProperty("AllowUserCommand","False"));
-			ENABLE_SPECIAL_EFFECT = Boolean.parseBoolean(UserSettings.getProperty("AllowSpecialEffect","False"));
+			// ############################ PAINEL DE USUARIOS #######################################################//
+			ENABLE_PM_REFUSAL = Boolean.parseBoolean(UserSettings.getProperty("AllowPmCommand", "False"));
+			ENABLE_TRADE_REFUSAL = Boolean.parseBoolean(UserSettings.getProperty("AllowTradeCommand", "False"));
+			SHOW_USER = Boolean.parseBoolean(UserSettings.getProperty("AllowUserCommand", "False"));
+			ENABLE_SPECIAL_EFFECT = Boolean.parseBoolean(UserSettings.getProperty("AllowSpecialEffect", "False"));
 			ENABLE_EXP_REFUSAL = Boolean.parseBoolean(UserSettings.getProperty("AllowExpRefusal", "true"));
 			
-			//############################  CONFIGURACOES ESPECIAIS RELACIONADAS AS RACAS  ############################//
-            RACES_COLOR_ENABLE = Boolean.parseBoolean(UserSettings.getProperty("RacesColorEnable", "False"));
-            HUMAN_COLOR = Integer.decode("0x" + UserSettings.getProperty("HumanNameColor", "FFFFFF"));
-            ELF_COLOR = Integer.decode("0x" + UserSettings.getProperty("ElfNameColor", "FFFFFF"));
-            DARKELF_COLOR = Integer.decode("0x" + UserSettings.getProperty("DarkElfNameColor", "FFFFFF"));
-            ORC_COLOR = Integer.decode("0x" + UserSettings.getProperty("OrcNameColor", "FFFFFF"));
-            DWARF_COLOR = Integer.decode("0x" + UserSettings.getProperty("DwarfNameColor", "FFFFFF"));
-            KAMAEL_COLOR = Integer.decode("0x" + UserSettings.getProperty("KamaelNameColor", "FFFFFF"));
-            ENABLE_RACE_MESSAGE = Boolean.parseBoolean(UserSettings.getProperty("EnableRaceMessage", "False"));
-            
-            //###########################  Comandos  ##################################################################//
-            COMMAND_LIDER = Boolean.parseBoolean(UserSettings.getProperty("CommandLider", "False"));
-            COMMAND_LOGOUT = Boolean.parseBoolean(UserSettings.getProperty("CommandLogout", "False"));
-            
-            //###########################  Movimento pelas teclas do teclado ##########################################//
-            ALLOW_KEYBOARD_MOVEMENT = Boolean.parseBoolean(UserSettings.getProperty("AllowKeyboardMovement", "false"));
-            
-            //###########################  XP e SP diferenciado para char abaixo do lv40 e acima do lv41 ##############//
-            ENABLE_LOWLEVEL_XPSP = Boolean.parseBoolean(UserSettings.getProperty("EnableLowLevelXpSp", "True"));
-            LOWLEVEL_LVL = Integer.parseInt(UserSettings.getProperty("LowLevelLvl", "40"));
-            LOWLEVEL_XP = Integer.parseInt(UserSettings.getProperty("LowLevelXp", "2"));
-            LOWLEVEL_SP = Integer.parseInt(UserSettings.getProperty("LowLevelSp", "2"));
-            ENABLE_HIGHLEVEL_XPSP = Boolean.parseBoolean(UserSettings.getProperty("EnableHighLevelXpSp", "True"));
-            HIGHLEVEL_LVL = Integer.parseInt(UserSettings.getProperty("HighLevelLvl", "41"));
-            HIGHLEVEL_XP = Integer.parseInt(UserSettings.getProperty("HighLevelXp", "2"));
-            HIGHLEVEL_SP = Integer.parseInt(UserSettings.getProperty("HighLevelSp", "2"));
-            
-			//############################  VIP PROPERTIES  ###########################################################//
-
+			// ############################ CONFIGURACOES ESPECIAIS RELACIONADAS AS RACAS ############################//
+			RACES_COLOR_ENABLE = Boolean.parseBoolean(UserSettings.getProperty("RacesColorEnable", "False"));
+			HUMAN_COLOR = Integer.decode("0x" + UserSettings.getProperty("HumanNameColor", "FFFFFF"));
+			ELF_COLOR = Integer.decode("0x" + UserSettings.getProperty("ElfNameColor", "FFFFFF"));
+			DARKELF_COLOR = Integer.decode("0x" + UserSettings.getProperty("DarkElfNameColor", "FFFFFF"));
+			ORC_COLOR = Integer.decode("0x" + UserSettings.getProperty("OrcNameColor", "FFFFFF"));
+			DWARF_COLOR = Integer.decode("0x" + UserSettings.getProperty("DwarfNameColor", "FFFFFF"));
+			KAMAEL_COLOR = Integer.decode("0x" + UserSettings.getProperty("KamaelNameColor", "FFFFFF"));
+			ENABLE_RACE_MESSAGE = Boolean.parseBoolean(UserSettings.getProperty("EnableRaceMessage", "False"));
+			
+			// ########################### Comandos ##################################################################//
+			COMMAND_LIDER = Boolean.parseBoolean(UserSettings.getProperty("CommandLider", "False"));
+			COMMAND_LOGOUT = Boolean.parseBoolean(UserSettings.getProperty("CommandLogout", "False"));
+			
+			// ########################### Movimento pelas teclas do teclado ##########################################//
+			ALLOW_KEYBOARD_MOVEMENT = Boolean.parseBoolean(UserSettings.getProperty("AllowKeyboardMovement", "false"));
+			
+			// ########################### XP e SP diferenciado para char abaixo do lv40 e acima do lv41 ##############//
+			ENABLE_LOWLEVEL_XPSP = Boolean.parseBoolean(UserSettings.getProperty("EnableLowLevelXpSp", "True"));
+			LOWLEVEL_LVL = Integer.parseInt(UserSettings.getProperty("LowLevelLvl", "40"));
+			LOWLEVEL_XP = Integer.parseInt(UserSettings.getProperty("LowLevelXp", "2"));
+			LOWLEVEL_SP = Integer.parseInt(UserSettings.getProperty("LowLevelSp", "2"));
+			ENABLE_HIGHLEVEL_XPSP = Boolean.parseBoolean(UserSettings.getProperty("EnableHighLevelXpSp", "True"));
+			HIGHLEVEL_LVL = Integer.parseInt(UserSettings.getProperty("HighLevelLvl", "41"));
+			HIGHLEVEL_XP = Integer.parseInt(UserSettings.getProperty("HighLevelXp", "2"));
+			HIGHLEVEL_SP = Integer.parseInt(UserSettings.getProperty("HighLevelSp", "2"));
+			
+			// ############################ VIP PROPERTIES ###########################################################//
+			
 			L2Properties VipSettings = new L2Properties();
 			final File vip = new File(VIP_CONFIG_FILE);
 			try (InputStream is = new FileInputStream(vip))
@@ -2777,8 +2783,8 @@ public final class Config
 			{
 				_log.log(Level.SEVERE, "Erro ao ler o arquivo VIP Properties!", e);
 			}
-				
-			//############################  SISTEMA DE VIP ############################################################//
+			
+			// ############################ SISTEMA DE VIP ############################################################//
 			ALLOW_VIP_NCOLOR = Boolean.parseBoolean(VipSettings.getProperty("AllowVipNameColor", "True"));
 			VIP_NCOLOR = Integer.decode("0x" + VipSettings.getProperty("VipNameColor", "0088FF"));
 			ALLOW_VIP_TCOLOR = Boolean.parseBoolean(VipSettings.getProperty("AllowVipTitleColor", "True"));
@@ -2787,7 +2793,7 @@ public final class Config
 			VIP_XP = Integer.parseInt(VipSettings.getProperty("VipMulXp", "2"));
 			VIP_SP = Integer.parseInt(VipSettings.getProperty("VipMulSp", "2"));
 			ENABLE_VIP_SYSTEM = Boolean.parseBoolean(VipSettings.getProperty("EnableVipSystem", "True"));
-			if(ENABLE_VIP_SYSTEM) //create map if system is enabled
+			if (ENABLE_VIP_SYSTEM) // create map if system is enabled
 			{
 				String[] VipSkillsSplit = VipSettings.getProperty("VipSkills", "").split(";");
 				VIP_SKILLS = new FastMap<>(VipSkillsSplit.length);
@@ -2797,7 +2803,7 @@ public final class Config
 					if (skillSplit.length != 2)
 					{
 						System.out.println("[Vip System]: cxonfiguracao invalida do Vip.properties -> VipSkills \"" + skill + "\"");
-                                                       }
+					}
 					else
 					{
 						try
@@ -2815,12 +2821,12 @@ public final class Config
 				}
 			}
 			
-			//############################  Anuncio de VIP  ###########################################################//
+			// ############################ Anuncio de VIP ###########################################################//
 			ANNOUNCE_VIP_DESCONECT = Boolean.parseBoolean(VipSettings.getProperty("AnnounceVipDesconect", "False"));
 			ANNOUNCE_VIP_CONECT = Boolean.parseBoolean(VipSettings.getProperty("AnnounceVipConect", "False"));
 			ENABLE_VIP_MESSAGE = Boolean.parseBoolean(VipSettings.getProperty("VipMensagem", "False"));
 			
-			//############################  AIOX PROPERTIES  ##########################################################//
+			// ############################ AIOX PROPERTIES ##########################################################//
 			L2Properties AioSettings = new L2Properties();
 			final File aio = new File(AIO_CONFIG_FILE);
 			try (InputStream is = new FileInputStream(aio))
@@ -2831,8 +2837,8 @@ public final class Config
 			{
 				_log.log(Level.SEVERE, "Error while loading AIO settings!", e);
 			}
-
-			//############################  ANUNCIO DE LOGE E DESLOGE DE AIOX E HERO ############################//
+			
+			// ############################ ANUNCIO DE LOGE E DESLOGE DE AIOX E HERO ############################//
 			ALT_AIO_EFFECT_ESPECIAL = Boolean.parseBoolean(AioSettings.getProperty("AllowAioEffectEspecial", "True"));
 			ANNOUNCE_AIOX_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxDesconect", "False"));
 			ANNOUNCE_AIOX_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxConect", "False"));
@@ -2841,7 +2847,7 @@ public final class Config
 			ANNOUNCE_HERO_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroConect", "False"));
 			ENABLE_HERO_MESSAGE = Boolean.parseBoolean(AioSettings.getProperty("HeroMensagem", "False"));
 			
-			//############################  SISTEMA DE AIOX BUFFER ##############################################//
+			// ############################ SISTEMA DE AIOX BUFFER ##############################################//
 			ENABLE_AIO_SYSTEM = Boolean.parseBoolean(AioSettings.getProperty("EnableAioSystem", "true"));
 			ALLOW_AIO_NCOLOR = Boolean.parseBoolean(AioSettings.getProperty("AllowAioNameColor", "true"));
 			AIO_NCOLOR = Integer.decode("0x" + AioSettings.getProperty("AioNameColor", "000000"));
@@ -2850,54 +2856,54 @@ public final class Config
 			AIO_ITEMID = Integer.parseInt(AioSettings.getProperty("ItemIdAio", "2523"));
 			ALLOW_AIO_ITEM = Boolean.parseBoolean(AioSettings.getProperty("AllowAIOItem", "True"));
 			if (ENABLE_AIO_SYSTEM) // create map if system is enabled
+			{
+				String[] AioSkillsSplit = AioSettings.getProperty("AioSkills", "").split(";");
+				AIO_SKILLS = new FastMap<>(AioSkillsSplit.length);
+				for (String skill : AioSkillsSplit)
 				{
-					String[] AioSkillsSplit = AioSettings.getProperty("AioSkills", "").split(";");
-					AIO_SKILLS = new FastMap<>(AioSkillsSplit.length);
-					for (String skill : AioSkillsSplit)
+					String[] skillSplit = skill.split(",");
+					if (skillSplit.length != 2)
 					{
-						String[] skillSplit = skill.split(",");
-						if (skillSplit.length != 2)
+						System.out.println("[Aio System]: invalida a propriedade da config Aio.properties -> AioSkills \"" + skill + "\"");
+					}
+					else
+					{
+						try
+						{
+							AIO_SKILLS.put(Integer.parseInt(skillSplit[0]), Integer.parseInt(skillSplit[1]));
+						}
+						catch (NumberFormatException nfe)
+						{
+							if (!skill.equals(""))
 							{
-								System.out.println("[Aio System]: invalida a propriedade da config Aio.properties -> AioSkills \"" + skill + "\"");
+								System.out.println("[Aio System]: invalida a propriedade da config Aio.properties -> AioSkills \"" + skillSplit[0] + "\"" + skillSplit[1]);
 							}
-							else
-							{
-								try
-								{
-									AIO_SKILLS.put(Integer.parseInt(skillSplit[0]), Integer.parseInt(skillSplit[1]));
-								}
-								catch (NumberFormatException nfe)
-								{
-									if (!skill.equals(""))
-									{
-										System.out.println("[Aio System]: invalida a propriedade da config Aio.properties -> AioSkills \"" + skillSplit[0] + "\"" + skillSplit[1]);
-									}
-								}
-							}
+						}
 					}
 				}
-
-			//############################  CHAT ESPECIAL PARA AIOX  #################################################//
+			}
+			
+			// ############################ CHAT ESPECIAL PARA AIOX #################################################//
 			ENABLE_AIO_CHAT = Boolean.parseBoolean(AioSettings.getProperty("EnableAIOChat", "True"));
 			
-			//############################  AUTO RESTART PROPERTIES  #################################################//
+			// ############################ AUTO RESTART PROPERTIES #################################################//
 			// Load Auto restart L2Properties file (if exists)
-            final File auto_restart = new File(AUTO_RESTART);
-            try (InputStream is = new FileInputStream(auto_restart))
-            {
-                L2Properties autores = new L2Properties();
-                autores.load(is);
-                AUTO_RESTART_ENABLE = Boolean.parseBoolean(autores.getProperty("EnableAutoRestart", "false"));
-                AUTO_RESTART_TIME = Integer.parseInt(autores.getProperty("RestartInSeconds", "360"));
-                AUTO_RESTART_INTERVAL = autores.getProperty("Intervalo", "00:00").split(",");
-            }
-            catch (Exception e)
-            {
-                _log.warning("Config: " + e.getMessage());
-                throw new Error("Falha ao carregar o arquivo " + AUTO_RESTART + " .");
-            }
-            //########################################################################################################//
-            
+			final File auto_restart = new File(AUTO_RESTART);
+			try (InputStream is = new FileInputStream(auto_restart))
+			{
+				L2Properties autores = new L2Properties();
+				autores.load(is);
+				AUTO_RESTART_ENABLE = Boolean.parseBoolean(autores.getProperty("EnableAutoRestart", "false"));
+				AUTO_RESTART_TIME = Integer.parseInt(autores.getProperty("RestartInSeconds", "360"));
+				AUTO_RESTART_INTERVAL = autores.getProperty("Intervalo", "00:00").split(",");
+			}
+			catch (Exception e)
+			{
+				_log.warning("Config: " + e.getMessage());
+				throw new Error("Falha ao carregar o arquivo " + AUTO_RESTART + " .");
+			}
+			// ########################################################################################################//
+			
 			// Character L2Properties
 			L2Properties Character = new L2Properties();
 			final File chars = new File(CHARACTER_CONFIG_FILE);
@@ -3126,18 +3132,18 @@ public final class Config
 			STARTING_LEVEL = Byte.parseByte(Character.getProperty("StartingLevel", "1"));
 			STARTING_SP = Integer.parseInt(Character.getProperty("StartingSP", "0"));
 			
-			//####################  TITULO PARA NOVOS CHAR  ##########################################################//
+			// #################### TITULO PARA NOVOS CHAR ##########################################################//
 			CHAR_TITLE = Boolean.parseBoolean(Character.getProperty("CharTitle", "False"));
 			ADD_CHAR_TITLE = Character.getProperty("CharAddTitle", "PkElfo");
 			TITLE_COLOR = Integer.decode("0x" + Character.getProperty("TitleColor", "00FF00"));
-
-			//####################  NOVOS CHAR HERO  #################################################################//
-            ADD_HERO = Boolean.parseBoolean(Character.getProperty("NewHeroesCharacter", "False"));
-            
-            //####################  NOVOS CHAR NOBRE #################################################################//
-            ADD_NOBLESSE = Boolean.parseBoolean(Character.getProperty("NoblesseAtNewChars", "False"));
-            //########################################################################################################//
-            
+			
+			// #################### NOVOS CHAR HERO #################################################################//
+			ADD_HERO = Boolean.parseBoolean(Character.getProperty("NewHeroesCharacter", "False"));
+			
+			// #################### NOVOS CHAR NOBRE #################################################################//
+			ADD_NOBLESSE = Boolean.parseBoolean(Character.getProperty("NoblesseAtNewChars", "False"));
+			// ########################################################################################################//
+			
 			MAX_ADENA = Long.parseLong(Character.getProperty("MaxAdena", "99900000000"));
 			if (MAX_ADENA < 0)
 			{
@@ -3254,10 +3260,10 @@ public final class Config
 			}
 			
 			IS_TELNET_ENABLED = Boolean.parseBoolean(telnetSettings.getProperty("EnableTelnet", "false"));
-
+			
 			// Comando de Teleporte para areas de UpLevel
 			ALLOW_TELEPORT_VOICECOMMAND = Boolean.parseBoolean(PkelfoSettings.getProperty("UpLevel", "True"));
-			//Enchant protect
+			// Enchant protect
 			PROTECT_ENCHANT_ENABLE = Boolean.parseBoolean(PkelfoSettings.getProperty("EnchantProtectEnable", "true"));
 			MAX_ENCHANT_LEVEL_PROTECT = Integer.parseInt(PkelfoSettings.getProperty("MaxEnchantLevelProtect", "30"));
 			ENCHANT_PROTECT_PUNISH = Integer.parseInt(PkelfoSettings.getProperty("EnchantProtectPunish", "60"));
@@ -4089,12 +4095,12 @@ public final class Config
 			OFFLINE_MAX_DAYS = Integer.parseInt(L2JModSettings.getProperty("OfflineMaxDays", "30"));
 			OFFLINE_DISCONNECT_FINISHED = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineDisconnectFinished", "true"));
 			
-			//Offline Effect
+			// Offline Effect
 			OFFLINE_TRADE_EFFECT = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineTradeEffect", "True"));
 			OFFLINE_EFFECT_ID = Integer.parseInt(L2JModSettings.getProperty("OfflineEffectId", "7"));
 			UNSTUCK_ANIMATION_ID = Integer.parseInt(L2JModSettings.getProperty("UnstuckSkillID", "1050"));
 			L2JMOD_ENABLE_MANA_POTIONS_SUPPORT = Boolean.parseBoolean(L2JModSettings.getProperty("EnableManaPotionSupport", "True"));
-						
+			
 			L2JMOD_DISPLAY_SERVER_TIME = Boolean.parseBoolean(L2JModSettings.getProperty("DisplayServerTime", "false"));
 			
 			WELCOME_MESSAGE_ENABLED = Boolean.parseBoolean(L2JModSettings.getProperty("ScreenWelcomeMessageEnable", "True"));
@@ -4105,7 +4111,7 @@ public final class Config
 			L2JMOD_ANTIFEED_DUALBOX = Boolean.parseBoolean(L2JModSettings.getProperty("AntiFeedDualbox", "true"));
 			L2JMOD_ANTIFEED_DISCONNECTED_AS_DUALBOX = Boolean.parseBoolean(L2JModSettings.getProperty("AntiFeedDisconnectedAsDualbox", "true"));
 			L2JMOD_ANTIFEED_INTERVAL = 1000 * Integer.parseInt(L2JModSettings.getProperty("AntiFeedInterval", "120"));
-									
+			
 			L2JMOD_CHAT_ADMIN = Boolean.parseBoolean(L2JModSettings.getProperty("ChatAdmin", "false"));
 			
 			L2JMOD_MULTILANG_DEFAULT = L2JModSettings.getProperty("MultiLangDefault", "en");
@@ -4192,8 +4198,8 @@ public final class Config
 			}
 			L2JMOD_ALLOW_CHANGE_PASSWORD = Boolean.parseBoolean(L2JModSettings.getProperty("AllowChangePassword", "False"));
 			
-			//############################  PVPPK PROPERTIES  #########################################################//
-						
+			// ############################ PVPPK PROPERTIES #########################################################//
+			
 			final File pvppk = new File(PVPPK_CONFIG_FILE);
 			L2Properties PvPpKSettings = new L2Properties();
 			try (InputStream is = new FileInputStream(pvppk))
@@ -4204,16 +4210,16 @@ public final class Config
 			{
 				_log.log(Level.SEVERE, "Erro ao ler o arquivo PvPpK Properties!", e);
 			}
-			//--------------------------- usar mana potion no PvP ----------------------------------------------------//
+			// --------------------------- usar mana potion no PvP ----------------------------------------------------//
 			PVP_MANAPOTION = Boolean.parseBoolean(PvPpKSettings.getProperty("PvPManaPotion", "True"));
 			
-			//--------------------------- anuncio global de PvP e Pk -------------------------------------------------//
+			// --------------------------- anuncio global de PvP e Pk -------------------------------------------------//
 			ANNOUNCE_PK_PVP = Boolean.parseBoolean(PvPpKSettings.getProperty("AnnouncePkPvP", "True"));
 			ANNOUNCE_PK_PVP_NORMAL_MESSAGE = Boolean.parseBoolean(PvPpKSettings.getProperty("AnnouncePkPvPNormalMessage", "True"));
 			ANNOUNCE_PK_MSG = PvPpKSettings.getProperty("AnnouncePkMsg", "$killer has matou $target");
 			ANNOUNCE_PVP_MSG = PvPpKSettings.getProperty("AnnouncePvpMsg", "$killer derrotou $target");
 			
-			//--------------------------- a cada quantidade de pvp ou pk pontos muda a cor no nome -------------------//
+			// --------------------------- a cada quantidade de pvp ou pk pontos muda a cor no nome -------------------//
 			PVPS_COLORS = PvPpKSettings.getProperty("PvpsColors", "");
 			PVPS_COLORS_LIST = new FastMap<>();
 			
@@ -4248,10 +4254,10 @@ public final class Config
 				}
 			}
 			
-			//--------------------------- Colocar a cadeia em modo de zona de PvP ------------------------------------//
+			// --------------------------- Colocar a cadeia em modo de zona de PvP ------------------------------------//
 			JAIL_IS_PVP = Boolean.parseBoolean(PvPpKSettings.getProperty("JailIsPvp", "False"));
 			
-			//--------------------------- configuracoes para Jogadores PK --------------------------------------------//
+			// --------------------------- configuracoes para Jogadores PK --------------------------------------------//
 			ALT_GAME_KARMA_PLAYER_CAN_BE_KILLED_IN_PEACEZONE = Boolean.parseBoolean(PvPpKSettings.getProperty("AltKarmaPlayerCanBeKilledInPeaceZone", "false"));
 			ALT_GAME_KARMA_PLAYER_CAN_SHOP = Boolean.parseBoolean(PvPpKSettings.getProperty("AltKarmaPlayerCanShop", "true"));
 			ALT_GAME_KARMA_PLAYER_CAN_TELEPORT = Boolean.parseBoolean(PvPpKSettings.getProperty("AltKarmaPlayerCanTeleport", "true"));
@@ -4259,7 +4265,7 @@ public final class Config
 			ALT_GAME_KARMA_PLAYER_CAN_TRADE = Boolean.parseBoolean(PvPpKSettings.getProperty("AltKarmaPlayerCanTrade", "true"));
 			ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE = Boolean.parseBoolean(PvPpKSettings.getProperty("AltKarmaPlayerCanUseWareHouse", "true"));
 			
-			//--------------------------------------------------------------------------------------------------------//
+			// --------------------------------------------------------------------------------------------------------//
 			ALT_ALLOW_REFINE_PVP_ITEM = Boolean.parseBoolean(PvPpKSettings.getProperty("AltAllowRefinePVPItem", "False"));
 			KARMA_MIN_KARMA = Integer.parseInt(PvPpKSettings.getProperty("MinKarma", "240"));
 			KARMA_MAX_KARMA = Integer.parseInt(PvPpKSettings.getProperty("MaxKarma", "10000"));
@@ -4294,18 +4300,18 @@ public final class Config
 			PVP_NORMAL_TIME = Integer.parseInt(PvPpKSettings.getProperty("PvPVsNormalTime", "120000"));
 			PVP_PVP_TIME = Integer.parseInt(PvPpKSettings.getProperty("PvPVsPvPTime", "60000"));
 			
-			//--------------------------- Ganho de item (configuravel) ao ganhar um PvP -------------------------------//
+			// --------------------------- Ganho de item (configuravel) ao ganhar um PvP -------------------------------//
 			ENABLE_PVP_REWARD = Boolean.parseBoolean(PvPpKSettings.getProperty("EnablePvPReward", "False"));
 			PVP_REWARD_ITEM = Integer.parseInt(PvPpKSettings.getProperty("PvPRewardItem", "6673"));
 			AMOUNT_PVP_REWARD = Integer.parseInt(PvPpKSettings.getProperty("AmountPvPReward", "1"));
 			
-			//--------------------------- mensagem para vitimas de pk e pvp e para quem deu pk e pvp ------------------//
+			// --------------------------- mensagem para vitimas de pk e pvp e para quem deu pk e pvp ------------------//
 			PK_MESSAGE = PvPpKSettings.getProperty("PkMessage", "Voce acabou de matar um inocente!");
 			PVP_MESSAGE = PvPpKSettings.getProperty("PvpMessage", "Boa luta, voce destruiu seu inimigo!");
-			VICTIM_PK_MESSAGE = PvPpKSettings.getProperty("VictimPkMessage", "LOL? Ele te matou e você nao faz nada???");
+			VICTIM_PK_MESSAGE = PvPpKSettings.getProperty("VictimPkMessage", "LOL? Ele te matou e vocï¿½ nao faz nada???");
 			VICTIM_PVP_MESSAGE = PvPpKSettings.getProperty("VictimPvpMessage", "Noob. Vai ficar mais forte antes de ir a um PvP.");
 			
-			//#########################################################################################################//
+			// #########################################################################################################//
 			
 			// Load Olympiad L2Properties file (if exists)
 			final File oly = new File(OLYMPIAD_CONFIG_FILE);
@@ -4465,7 +4471,7 @@ public final class Config
 			CHS_FAME_AMOUNT = Integer.parseInt(ClanHallSiege.getProperty("FameAmount", "0"));
 			CHS_FAME_FREQUENCY = Integer.parseInt(ClanHallSiege.getProperty("FameFrequency", "0"));
 			
-			//############################  PREMIUM PROPERTIES  #####################################################//
+			// ############################ PREMIUM PROPERTIES #####################################################//
 			L2Properties PremiumProperties = new L2Properties();
 			final File premium = new File(PREMIUM_CONFIG_FILE);
 			try (InputStream is = new FileInputStream(premium))
@@ -4566,7 +4572,7 @@ public final class Config
 				}
 			}
 		}
-		//#######################################################################################################//
+		// #######################################################################################################//
 		else if (Server.serverMode == Server.MODE_LOGINSERVER)
 		{
 			L2Properties ServerSettings = new L2Properties();

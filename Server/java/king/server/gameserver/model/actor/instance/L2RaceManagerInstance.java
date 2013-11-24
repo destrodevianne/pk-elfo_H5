@@ -21,7 +21,6 @@ package king.server.gameserver.model.actor.instance;
 import java.util.List;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.MonsterRace;
 import king.server.gameserver.ThreadPoolManager;
 import king.server.gameserver.idfactory.IdFactory;

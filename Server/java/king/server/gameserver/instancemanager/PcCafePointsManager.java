@@ -16,7 +16,9 @@ public class PcCafePointsManager
 	public static PcCafePointsManager getInstance()
 	{
 		if (_instance == null)
+		{
 			_instance = new PcCafePointsManager();
+		}
 		return _instance;
 	}
 	
@@ -27,10 +29,14 @@ public class PcCafePointsManager
 	public void givePcCafePoint(final L2PcInstance player, final long givedexp)
 	{
 		if (!Config.PC_BANG_ENABLED)
+		{
 			return;
+		}
 		
-		if (player.isInsideZone(ZoneId.PEACE) || player.isInsideZone(ZoneId.PVP) || player.isInsideZone(ZoneId.SIEGE) || player.isOnlineInt() == 0 || player.isInJail())
+		if (player.isInsideZone(ZoneId.PEACE) || player.isInsideZone(ZoneId.PVP) || player.isInsideZone(ZoneId.SIEGE) || (player.isOnlineInt() == 0) || player.isInJail())
+		{
 			return;
+		}
 		
 		if (player.getPcBangPoints() >= Config.MAX_PC_BANG_POINTS)
 		{
@@ -39,19 +45,22 @@ public class PcCafePointsManager
 			return;
 		}
 		int _points = (int) (givedexp * 0.0001 * Config.PC_BANG_POINT_RATE);
-		if (player.getActiveClass() == ClassId.archmage.getId() || player.getActiveClass() == ClassId.soultaker.getId() || player.getActiveClass() == ClassId.stormScreamer.getId() || player.getActiveClass() == ClassId.mysticMuse.getId())
+		if ((player.getActiveClass() == ClassId.archmage.getId()) || (player.getActiveClass() == ClassId.soultaker.getId()) || (player.getActiveClass() == ClassId.stormScreamer.getId()) || (player.getActiveClass() == ClassId.mysticMuse.getId()))
+		{
 			_points /= 2;
+		}
 		
 		if (Config.RANDOM_PC_BANG_POINT)
+		{
 			_points = Rnd.get(_points / 2, _points);
+		}
 		
 		@SuppressWarnings("unused")
 		boolean doublepoint = false;
 		SystemMessage sm = null;
 		if (_points > 0)
 		{
-			if (Config.ENABLE_DOUBLE_PC_BANG_POINTS
-					&& Rnd.get(100) < Config.DOUBLE_PC_BANG_POINTS_CHANCE)
+			if (Config.ENABLE_DOUBLE_PC_BANG_POINTS && (Rnd.get(100) < Config.DOUBLE_PC_BANG_POINTS_CHANCE))
 			{
 				_points *= 2;
 				sm = SystemMessage.getSystemMessage(SystemMessageId.ACQUIRED_S1_PCPOINT_DOUBLE);
@@ -61,8 +70,10 @@ public class PcCafePointsManager
 			{
 				sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_ACQUIRED_S1_PC_CAFE_POINTS);
 			}
-			if (player.getPcBangPoints() + _points > Config.MAX_PC_BANG_POINTS)
-				_points = Config.MAX_PC_BANG_POINTS-player.getPcBangPoints();
+			if ((player.getPcBangPoints() + _points) > Config.MAX_PC_BANG_POINTS)
+			{
+				_points = Config.MAX_PC_BANG_POINTS - player.getPcBangPoints();
+			}
 			sm.addNumber(_points);
 			player.sendPacket(sm);
 			player.setPcBangPoints(player.getPcBangPoints() + _points);

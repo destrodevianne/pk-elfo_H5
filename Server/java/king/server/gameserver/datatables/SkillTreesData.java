@@ -1,5 +1,7 @@
 package king.server.gameserver.datatables;
 
+import gnu.trove.map.hash.TIntObjectHashMap;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,9 +11,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
 
 import king.server.Config;
 import king.server.gameserver.engines.DocumentParser;
@@ -31,7 +30,8 @@ import king.server.gameserver.model.holders.SkillHolder;
 import king.server.gameserver.model.interfaces.ISkillsHolder;
 import king.server.gameserver.model.skills.L2Skill;
 
-import gnu.trove.map.hash.TIntObjectHashMap;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 /**
  * This class loads and manage the characters and pledges skills trees.<br>

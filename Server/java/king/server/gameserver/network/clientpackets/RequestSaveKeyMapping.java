@@ -23,7 +23,6 @@ import java.util.Map;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
-
 import king.server.Config;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.model.entity.ActionKey;

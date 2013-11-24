@@ -25,14 +25,13 @@ import java.util.List;
 import java.util.logging.Level;
 
 import javolution.util.FastList;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-
 import king.server.gameserver.engines.DocumentBase;
 import king.server.gameserver.model.StatsSet;
 import king.server.gameserver.model.conditions.Condition;
 import king.server.gameserver.model.items.L2Item;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 
 /**
  * @author mkizub, JIV

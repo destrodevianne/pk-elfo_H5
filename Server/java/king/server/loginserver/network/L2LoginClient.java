@@ -26,10 +26,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
-import org.mmocore.network.MMOClient;
-import org.mmocore.network.MMOConnection;
-import org.mmocore.network.SendablePacket;
-
 import king.server.Config;
 import king.server.loginserver.LoginController;
 import king.server.loginserver.SessionKey;
@@ -41,6 +37,10 @@ import king.server.loginserver.network.serverpackets.PlayFail.PlayFailReason;
 import king.server.util.Rnd;
 import king.server.util.crypt.LoginCrypt;
 import king.server.util.crypt.ScrambledKeyPair;
+
+import org.mmocore.network.MMOClient;
+import org.mmocore.network.MMOConnection;
+import org.mmocore.network.SendablePacket;
 
 /**
  * Represents a client connected into the LoginServer

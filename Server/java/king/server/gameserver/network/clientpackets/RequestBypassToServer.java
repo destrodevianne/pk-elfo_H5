@@ -23,7 +23,6 @@ import java.util.StringTokenizer;
 import java.util.logging.Level;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.ai.CtrlIntention;
 import king.server.gameserver.communitybbs.CommunityBoard;

@@ -16,22 +16,26 @@ import king.server.gameserver.model.actor.instance.L2PcInstance;
 public class Hitman
 {
 	private static Hitman _instance;
-	public FastMap <Integer, PlayerToAssasinate> _targets;
+	public FastMap<Integer, PlayerToAssasinate> _targets;
 	public Logger _log = Logger.getLogger(Hitman.class.getName());
 	
 	// Data Strings
-	private static String   SQL_SELECT  = "select targetId,clientId,target_name,bounty,pending_delete from hitman_list";
-	private static String   SQL_DELETE  = "delete from hitman_list where targetId=?";
-	private static String   SQL_SAVEING = "replace into `hitman_list` VALUES (?, ?, ?, ?, ?)";
-	private static String[] SQL_OFFLINE = { "select * from characters where char_name=?", "select * from characters where charId=?" };
-
+	private static String SQL_SELECT = "select targetId,clientId,target_name,bounty,pending_delete from hitman_list";
+	private static String SQL_DELETE = "delete from hitman_list where targetId=?";
+	private static String SQL_SAVEING = "replace into `hitman_list` VALUES (?, ?, ?, ?, ?)";
+	private static String[] SQL_OFFLINE =
+	{
+		"select * from characters where char_name=?",
+		"select * from characters where charId=?"
+	};
+	
 	// Clean every 15 mins ^^
-	private int MIN_MAX_CLEAN_RATE = (15 * 60000);
+	private final int MIN_MAX_CLEAN_RATE = (15 * 60000);
 	
 	// Fancy lookin
 	public static boolean start()
 	{
-		if(Config.ALLOW_HITMAN_GDE)
+		if (Config.ALLOW_HITMAN_GDE)
 		{
 			getInstance();
 		}
@@ -41,7 +45,7 @@ public class Hitman
 	
 	public static Hitman getInstance()
 	{
-		if(_instance == null)
+		if (_instance == null)
 		{
 			_instance = new Hitman();
 		}
@@ -65,15 +69,15 @@ public class Hitman
 			PreparedStatement st = con.prepareStatement(SQL_SELECT);
 			ResultSet rs = st.executeQuery();
 			
-			while(rs.next())
+			while (rs.next())
 			{
 				int targetId = rs.getInt("targetId");
 				int clientId = rs.getInt("clientId");
 				String target_name = rs.getString("target_name");
 				int bounty = rs.getInt("bounty");
 				boolean pending = rs.getInt("pending_delete") == 1;
-
-				if(pending)
+				
+				if (pending)
 				{
 					removeTarget(targetId, false);
 				}
@@ -82,14 +86,14 @@ public class Hitman
 					map.put(targetId, new PlayerToAssasinate(targetId, clientId, bounty, target_name));
 				}
 			}
-			_log.info("Hitman: "+map.size()+" Assassinato Alvo(s)");
+			_log.info("Hitman: " + map.size() + " Assassinato Alvo(s)");
 			rs.close();
 			st.close();
 			con.close();
 		}
-		catch(Exception e)
+		catch (Exception e)
 		{
-			_log.warning("Hitman: "+e.getCause());
+			_log.warning("Hitman: " + e.getCause());
 			return new FastMap<>();
 		}
 		
@@ -98,21 +102,21 @@ public class Hitman
 	
 	public void onDeath(L2PcInstance assassin, L2PcInstance target)
 	{
-		if(_targets.containsKey(target.getObjectId()))
+		if (_targets.containsKey(target.getObjectId()))
 		{
 			PlayerToAssasinate pta = _targets.get(target.getObjectId());
-			String name= getOfflineData(null, pta.getClientId())[1];
+			String name = getOfflineData(null, pta.getClientId())[1];
 			L2PcInstance client = L2World.getInstance().getPlayer(name);
 			
 			target.sendMessage("Voce foi assassinado. Sua recompensa e 0.");
 			
-			if(client != null)
+			if (client != null)
 			{
-				client.sendMessage("O seu pedido de assassinato para matar o jogador(a) "+target.getName()+" foi cumprido.");
+				client.sendMessage("O seu pedido de assassinato para matar o jogador(a) " + target.getName() + " foi cumprido.");
 				client.setHitmanTarget(0);
 			}
 			
-			assassin.sendMessage("You assassinated "+target.getName()+", sua recompensa sera convertida em Adena!");
+			assassin.sendMessage("You assassinated " + target.getName() + ", sua recompensa sera convertida em Adena!");
 			assassin.addAdena("Hitman", pta.getBounty(), target, true);
 			removeTarget(pta.getObjectId(), true);
 		}
@@ -120,15 +124,15 @@ public class Hitman
 	
 	public void onEnterWorld(L2PcInstance activeChar)
 	{
-		if(_targets.containsKey(activeChar.getObjectId()))
+		if (_targets.containsKey(activeChar.getObjectId()))
 		{
 			PlayerToAssasinate pta = _targets.get(activeChar.getObjectId());
 			activeChar.sendMessage("Ha um pedido para assassinar voce. Recompensa valendo " + pta.getBounty() + " Adena(s).");
 		}
 		
-		if(activeChar.getHitmanTarget() > 0)
+		if (activeChar.getHitmanTarget() > 0)
 		{
-			if(!_targets.containsKey(activeChar.getHitmanTarget()))
+			if (!_targets.containsKey(activeChar.getHitmanTarget()))
 			{
 				activeChar.sendMessage("Seu alvo foi eliminado. Tenha um bom dia.");
 				activeChar.setHitmanTarget(0);
@@ -144,7 +148,7 @@ public class Hitman
 	{
 		try
 		{
-			for(PlayerToAssasinate pta : _targets.values())
+			for (PlayerToAssasinate pta : _targets.values())
 			{
 				Connection con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement st = con.prepareStatement(SQL_SAVEING);
@@ -158,9 +162,9 @@ public class Hitman
 				con.close();
 			}
 		}
-		catch(Exception e)
+		catch (Exception e)
 		{
-			_log.warning("Hitman: "+e);
+			_log.warning("Hitman: " + e);
 		}
 		System.out.println("Hitman: Lista salva.");
 	}
@@ -169,21 +173,21 @@ public class Hitman
 	{
 		L2PcInstance player = L2World.getInstance().getPlayer(playerName);
 		
-		if(client.getHitmanTarget() > 0)
+		if (client.getHitmanTarget() > 0)
 		{
 			client.sendMessage("Voce ja fez um pedido de assassinato, voce pode colocar apenas um pedido por vez.");
 			return;
 		}
-		else if(client.getAdena() < bounty)
+		else if (client.getAdena() < bounty)
 		{
 			client.sendMessage("Nao ha adena suficiente.");
 			return;
 		}
-		else if((player == null) && CharNameTable.getInstance().doesCharNameExist(playerName))
+		else if ((player == null) && CharNameTable.getInstance().doesCharNameExist(playerName))
 		{
 			Integer targetId = Integer.parseInt(getOfflineData(playerName, 0)[0]);
-
-			if(_targets.containsKey(targetId))
+			
+			if (_targets.containsKey(targetId))
 			{
 				client.sendMessage("There is already a hit on that player.");
 				return;
@@ -192,9 +196,9 @@ public class Hitman
 			client.reduceAdena("Hitman", bounty, client, true);
 			client.setHitmanTarget(targetId);
 		}
-		else if((player != null) && CharNameTable.getInstance().doesCharNameExist(playerName))
+		else if ((player != null) && CharNameTable.getInstance().doesCharNameExist(playerName))
 		{
-			if(_targets.containsKey(player.getObjectId()))
+			if (_targets.containsKey(player.getObjectId()))
 			{
 				client.sendMessage("There is already a hit on that player.");
 				return;
@@ -215,14 +219,14 @@ public class Hitman
 		@Override
 		public void run()
 		{
-			if(Config.DEBUG)
+			if (Config.DEBUG)
 			{
 				_log.info("Cleaning sequance initiated.");
 			}
 			
-			for(PlayerToAssasinate target : _targets.values())
+			for (PlayerToAssasinate target : _targets.values())
 			{
-				if(target.isPendingDelete())
+				if (target.isPendingDelete())
 				{
 					removeTarget(target.getObjectId(), true);
 				}
@@ -241,15 +245,15 @@ public class Hitman
 			st.execute();
 			st.close();
 			con.close();
-
-			if(live)
+			
+			if (live)
 			{
 				_targets.remove(obId);
 			}
 		}
-		catch(Exception e)
+		catch (Exception e)
 		{
-			_log.warning("Hitman: "+e);
+			_log.warning("Hitman: " + e);
 		}
 	}
 	
@@ -257,20 +261,20 @@ public class Hitman
 	{
 		L2PcInstance target = L2World.getInstance().getPlayer(name);
 		
-		if(client.getHitmanTarget() <= 0)
+		if (client.getHitmanTarget() <= 0)
 		{
 			client.sendMessage("Voce nao possui um pedido de assassinato.");
 			return;
 		}
-		else if((target == null) && CharNameTable.getInstance().doesCharNameExist(name))
+		else if ((target == null) && CharNameTable.getInstance().doesCharNameExist(name))
 		{
 			PlayerToAssasinate pta = _targets.get(client.getHitmanTarget());
 			
-			if(!_targets.containsKey(pta.getObjectId()))
+			if (!_targets.containsKey(pta.getObjectId()))
 			{
 				client.sendMessage("Nao ha acerto sobre esse jogador.");
 			}
-			else if(pta.getClientId() == client.getObjectId())
+			else if (pta.getClientId() == client.getObjectId())
 			{
 				removeTarget(pta.getObjectId(), true);
 				client.sendMessage("O pedido de assassinato foi cancelado.");
@@ -281,15 +285,15 @@ public class Hitman
 				client.sendMessage("Voce nao e o proprietario desse alvo!.");
 			}
 		}
-		else if((target != null) && CharNameTable.getInstance().doesCharNameExist(name))
+		else if ((target != null) && CharNameTable.getInstance().doesCharNameExist(name))
 		{
 			PlayerToAssasinate pta = _targets.get(target.getObjectId());
-
-			if(!_targets.containsKey(pta.getObjectId()))
+			
+			if (!_targets.containsKey(pta.getObjectId()))
 			{
 				client.sendMessage("Nao ha acerto sobre esse jogador.");
 			}
-			else if(pta.getClientId() == client.getObjectId())
+			else if (pta.getClientId() == client.getObjectId())
 			{
 				removeTarget(pta.getObjectId(), true);
 				client.sendMessage("O pedido de assassinato foi cancelado.");
@@ -310,8 +314,8 @@ public class Hitman
 	/**
 	 * Its useing a array in case in a future update more values will be added
 	 * @param name
-	 * @param objId 
-	 * @return 
+	 * @param objId
+	 * @return
 	 */
 	public String[] getOfflineData(String name, int objId)
 	{
@@ -320,8 +324,8 @@ public class Hitman
 		{
 			Connection con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement st = con.prepareStatement(objId > 0 ? SQL_OFFLINE[1] : SQL_OFFLINE[0]);
-
-			if(objId > 0)
+			
+			if (objId > 0)
 			{
 				st.setInt(1, objId);
 			}
@@ -331,24 +335,25 @@ public class Hitman
 			}
 			
 			ResultSet rs = st.executeQuery();
-
-			while(rs.next())
+			
+			while (rs.next())
 			{
 				set[0] = String.valueOf(rs.getInt("charId"));
 				set[1] = rs.getString("char_name");
 			}
-
+			
 			rs.close();
 			st.close();
 			con.close();
 		}
-		catch(Exception e){
-			_log.warning("Hitman: "+e);
+		catch (Exception e)
+		{
+			_log.warning("Hitman: " + e);
 		}
 		
 		return set;
 	}
-
+	
 	public boolean exists(int objId)
 	{
 		return _targets.containsKey(objId);
@@ -366,7 +371,7 @@ public class Hitman
 	{
 		return _targets;
 	}
-
+	
 	/**
 	 * @param targets the _targets to set
 	 */

@@ -5,13 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.gameserver.engines.DocumentParser;
 import king.server.gameserver.model.StatsSet;
 import king.server.gameserver.model.base.ClassId;
 import king.server.gameserver.model.items.L2Henna;
+
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 public final class HennaData extends DocumentParser
 {

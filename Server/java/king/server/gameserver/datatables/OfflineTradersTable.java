@@ -168,9 +168,9 @@ public class OfflineTradersTable
 					player.setClient(client);
 					player.setOfflineStartTime(time);
 					
-					if(Config.OFFLINE_TRADE_EFFECT)
+					if (Config.OFFLINE_TRADE_EFFECT)
 					{
-						switch(Config.OFFLINE_EFFECT_ID)
+						switch (Config.OFFLINE_EFFECT_ID)
 						{
 							case 1:
 								player.startAbnormalEffect(AbnormalEffect.BLEEDING);
@@ -210,7 +210,7 @@ public class OfflineTradersTable
 								break;
 						}
 					}
-	
+					
 					player.spawnMe(player.getX(), player.getY(), player.getZ());
 					LoginServerThread.getInstance().addGameServerLogin(player.getAccountName(), client);
 					try (PreparedStatement stm_items = con.prepareStatement(LOAD_OFFLINE_ITEMS))

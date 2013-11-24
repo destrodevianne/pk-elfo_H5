@@ -4,9 +4,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.Config;
 import king.server.gameserver.engines.DocumentParser;
 import king.server.gameserver.model.L2DropData;
@@ -14,6 +11,9 @@ import king.server.gameserver.model.StatsSet;
 import king.server.gameserver.model.actor.instance.L2MonsterInstance;
 import king.server.gameserver.model.stats.Stats;
 import king.server.util.Rnd;
+
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 public final class ChampionData extends DocumentParser
 {

@@ -3,7 +3,6 @@ package king.server.gameserver.model.entity;
 import java.util.Map;
 
 import javolution.util.FastMap;
-
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 
 public class TvTEventTeam

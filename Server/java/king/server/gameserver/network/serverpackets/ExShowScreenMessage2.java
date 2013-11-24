@@ -30,12 +30,12 @@ public class ExShowScreenMessage2 extends L2GameServerPacket
 		BOTTOM_RIGHT
 	}
 	
-	private boolean _hide;
-	private int _sysMessageId;
-	private int _time;
-	private ScreenMessageAlign _text_align;
-	private boolean _big_font;
-	private boolean _effect;
+	private final boolean _hide;
+	private final int _sysMessageId;
+	private final int _time;
+	private final ScreenMessageAlign _text_align;
+	private final boolean _big_font;
+	private final boolean _effect;
 	private int _clientMessageId;
 	private final ArrayList<String> _text = new ArrayList<>();
 	
@@ -73,8 +73,10 @@ public class ExShowScreenMessage2 extends L2GameServerPacket
 		writeC(0xfe);
 		writeH(0x39);
 		writeD(_hide ? 0x00 : 0x01);
-		if(_hide)
+		if (_hide)
+		{
 			return;
+		}
 		writeD(_sysMessageId);
 		writeD(_text_align.ordinal() + 1);
 		writeD(0x00);
@@ -86,6 +88,8 @@ public class ExShowScreenMessage2 extends L2GameServerPacket
 		writeD(0x00);
 		writeD(_clientMessageId);
 		for (String text : _text)
+		{
 			writeS(text);
+		}
 	}
 }

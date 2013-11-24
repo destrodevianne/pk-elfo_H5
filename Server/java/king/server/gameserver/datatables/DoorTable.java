@@ -8,9 +8,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.gameserver.engines.DocumentParser;
 import king.server.gameserver.idfactory.IdFactory;
 import king.server.gameserver.instancemanager.InstanceManager;
@@ -19,6 +16,9 @@ import king.server.gameserver.model.StatsSet;
 import king.server.gameserver.model.actor.instance.L2DoorInstance;
 import king.server.gameserver.model.actor.templates.L2DoorTemplate;
 import king.server.gameserver.pathfinding.AbstractNodeLoc;
+
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 public class DoorTable extends DocumentParser
 {

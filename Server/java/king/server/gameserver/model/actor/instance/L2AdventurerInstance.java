@@ -23,7 +23,6 @@ import king.server.gameserver.model.actor.templates.L2NpcTemplate;
 
 /**
  * This class ...
- *
  * @version $Revision: $ $Date: $
  * @author LBaldi
  */
@@ -47,10 +46,12 @@ public class L2AdventurerInstance extends L2NpcInstance
 		else
 		{
 			pom = npcId + "-" + val;
- 		}
+		}
 		
 		if (Config.PC_BANG_ENABLED)
-				return "data/html/adventurer_guildsman/" + pom + "-pcbangpoint.htm";
+		{
+			return "data/html/adventurer_guildsman/" + pom + "-pcbangpoint.htm";
+		}
 		return "data/html/adventurer_guildsman/" + pom + ".htm";
 	}
 }

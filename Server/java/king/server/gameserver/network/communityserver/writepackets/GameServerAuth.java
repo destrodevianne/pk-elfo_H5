@@ -18,9 +18,9 @@
  */
 package king.server.gameserver.network.communityserver.writepackets;
 
-import org.netcon.BaseWritePacket;
-
 import king.server.Config;
+
+import org.netcon.BaseWritePacket;
 
 /**
  * @authors Forsaiken, Gigiikun

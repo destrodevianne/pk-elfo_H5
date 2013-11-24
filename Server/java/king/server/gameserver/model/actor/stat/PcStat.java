@@ -19,7 +19,6 @@
 package king.server.gameserver.model.actor.stat;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.datatables.ExperienceTable;
 import king.server.gameserver.datatables.NpcTable;

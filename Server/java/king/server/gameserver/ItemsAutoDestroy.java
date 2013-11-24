@@ -3,7 +3,6 @@ package king.server.gameserver;
 import java.util.List;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.gameserver.instancemanager.ItemsOnGroundManager;
 import king.server.gameserver.model.L2World;

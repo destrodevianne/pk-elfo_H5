@@ -23,8 +23,7 @@ import java.io.FileFilter;
 
 /**
  * Specialized {@link FileFilter} class.<br>
- * Accepts files ending with ".xml" only.
- * PkElfo
+ * Accepts files ending with ".xml" only. PkElfo
  */
 public class XMLFilter implements FileFilter
 {

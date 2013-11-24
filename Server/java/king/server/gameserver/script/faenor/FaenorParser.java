@@ -26,10 +26,10 @@ import java.util.Locale;
 
 import javax.script.ScriptContext;
 
+import king.server.gameserver.script.Parser;
+
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
-import king.server.gameserver.script.Parser;
 
 /**
  * @author Luis Arias

@@ -14,6 +14,8 @@
  */
 package king.server.gameserver.communitybbs.Manager;
 
+import gnu.trove.iterator.TIntObjectIterator;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.StringTokenizer;
@@ -37,7 +39,6 @@ import king.server.gameserver.network.serverpackets.CreatureSay;
 import king.server.gameserver.network.serverpackets.ShowBoard;
 import king.server.gameserver.network.serverpackets.SystemMessage;
 import king.server.util.StringUtil;
-import gnu.trove.iterator.TIntObjectIterator;
 
 public class RegionBBSManager extends BaseBBSManager
 {

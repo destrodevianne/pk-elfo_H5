@@ -4,7 +4,6 @@ import java.net.InetAddress;
 import java.util.List;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.GameTimeController;
 import king.server.gameserver.ai.CtrlIntention;
 import king.server.gameserver.datatables.ItemTable;

@@ -21,7 +21,6 @@ package king.server.gameserver.network.serverpackets;
 import java.util.List;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.datatables.CharNameTable;
 import king.server.gameserver.model.L2World;
 import king.server.gameserver.model.actor.instance.L2PcInstance;

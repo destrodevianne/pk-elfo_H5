@@ -32,7 +32,6 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.GeoData;
@@ -2374,5 +2373,5 @@ public final class L2ItemInstance extends L2Object
 	public boolean isWear()
 	{
 		return _wear;
-	}	
+	}
 }

@@ -21,7 +21,6 @@ package king.server.gameserver.pathfinding.cellnodes;
 import java.util.concurrent.locks.ReentrantLock;
 
 import javolution.util.FastList;
-
 import king.server.Config;
 
 /**

@@ -24,7 +24,6 @@ import java.util.concurrent.Future;
 import java.util.logging.Level;
 
 import javolution.util.FastList;
-
 import king.server.gameserver.ThreadPoolManager;
 import king.server.gameserver.ai.L2CharacterAI;
 import king.server.gameserver.ai.L2DoorAI;

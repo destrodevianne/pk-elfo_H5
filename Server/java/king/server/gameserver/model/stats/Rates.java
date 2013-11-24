@@ -14,7 +14,6 @@
  */
 package king.server.gameserver.model.stats;
 
-
 /**
  * Enum of some rates.
  * @author GKR

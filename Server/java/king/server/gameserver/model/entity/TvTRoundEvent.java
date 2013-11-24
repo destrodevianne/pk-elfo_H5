@@ -60,7 +60,7 @@ public class TvTRoundEvent
 	protected static final Logger _log = Logger.getLogger(TvTRoundEvent.class.getName());
 	/** html path **/
 	private static final String htmlPath = "data/html/mods/TvTRoundEvent/";
-	/**	The teams of the TvTRoundEvent<br> */
+	/** The teams of the TvTRoundEvent<br> */
 	private static TvTRoundEventTeam[] _teams = new TvTRoundEventTeam[2];
 	/** The state of the TvTRoundEvent<br> */
 	private static EventState _state = EventState.INACTIVE;
@@ -93,8 +93,8 @@ public class TvTRoundEvent
 	/**
 	 * Starts the participation of the TvTRoundEvent<br>
 	 * 1. Get L2NpcTemplate by Config.TVT_ROUND_EVENT_PARTICIPATION_NPC_ID<br>
-	 * 2. Try to spawn a new npc of it<br><br>
-	 *
+	 * 2. Try to spawn a new npc of it<br>
+	 * <br>
 	 * @return boolean: true if success, otherwise false<br>
 	 */
 	public static boolean startParticipation()
@@ -138,7 +138,7 @@ public class TvTRoundEvent
 		return true;
 	}
 	
-	private static int highestLevelPcInstanceOf(Map< Integer, L2PcInstance > players)
+	private static int highestLevelPcInstanceOf(Map<Integer, L2PcInstance> players)
 	{
 		int maxLevel = Integer.MIN_VALUE, maxLevelId = -1;
 		for (L2PcInstance player : players.values())
@@ -159,8 +159,8 @@ public class TvTRoundEvent
 	 * 3. Close doors specified in configs<br>
 	 * 4. Open the anteroom doors specified in configs<br>
 	 * 5. Set state EventState.FIRSTROUND<br>
-	 * 6. Teleport all participants to team spot<br><br>
-	 *
+	 * 6. Teleport all participants to team spot<br>
+	 * <br>
 	 * @return boolean: true if success, otherwise false<br>
 	 */
 	public static boolean startEvent()
@@ -169,13 +169,13 @@ public class TvTRoundEvent
 		setState(EventState.STARTING);
 		
 		// Randomize and balance team distribution
-		Map< Integer, L2PcInstance > allParticipants = new FastMap< >();
+		Map<Integer, L2PcInstance> allParticipants = new FastMap<>();
 		allParticipants.putAll(_teams[0].getParticipatedPlayers());
 		allParticipants.putAll(_teams[1].getParticipatedPlayers());
 		_teams[0].cleanMe();
 		_teams[1].cleanMe();
 		cleanRoundTie();
-
+		
 		L2PcInstance player;
 		Iterator<L2PcInstance> iter;
 		if (needParticipationFee())
@@ -191,7 +191,11 @@ public class TvTRoundEvent
 			}
 		}
 		
-		int balance[] = { 0, 0 }, priority = 0, highestLevelPlayerId;
+		int balance[] =
+		{
+			0,
+			0
+		}, priority = 0, highestLevelPlayerId;
 		L2PcInstance highestLevelPlayer;
 		// XXX: allParticipants should be sorted by level instead of using highestLevelPcInstanceOf for every fetch
 		while (!allParticipants.isEmpty())
@@ -203,10 +207,13 @@ public class TvTRoundEvent
 			_teams[priority].addPlayer(highestLevelPlayer);
 			balance[priority] += highestLevelPlayer.getLevel();
 			// Exiting if no more players
-			if (allParticipants.isEmpty()) break;
+			if (allParticipants.isEmpty())
+			{
+				break;
+			}
 			// The other team gets one player
 			// XXX: Code not dry
-			priority = 1-priority;
+			priority = 1 - priority;
 			highestLevelPlayerId = highestLevelPcInstanceOf(allParticipants);
 			highestLevelPlayer = allParticipants.get(highestLevelPlayerId);
 			allParticipants.remove(highestLevelPlayerId);
@@ -217,7 +224,7 @@ public class TvTRoundEvent
 		}
 		
 		// Check for enought participants
-		if (_teams[0].getParticipatedPlayerCount() < Config.TVT_ROUND_EVENT_MIN_PLAYERS_IN_TEAMS || _teams[1].getParticipatedPlayerCount() < Config.TVT_ROUND_EVENT_MIN_PLAYERS_IN_TEAMS)
+		if ((_teams[0].getParticipatedPlayerCount() < Config.TVT_ROUND_EVENT_MIN_PLAYERS_IN_TEAMS) || (_teams[1].getParticipatedPlayerCount() < Config.TVT_ROUND_EVENT_MIN_PLAYERS_IN_TEAMS))
 		{
 			// Set state INACTIVE
 			setState(EventState.INACTIVE);
@@ -259,7 +266,7 @@ public class TvTRoundEvent
 				_TvTRoundEventInstance = InstanceManager.getInstance().createDynamicInstance(Config.TVT_ROUND_EVENT_INSTANCE_FILE);
 				InstanceManager.getInstance().getInstance(_TvTRoundEventInstance).setAllowSummon(false);
 				InstanceManager.getInstance().getInstance(_TvTRoundEventInstance).setPvPInstance(true);
-				InstanceManager.getInstance().getInstance(_TvTRoundEventInstance).setEmptyDestroyTime(Config.TVT_ROUND_EVENT_START_RESPAWN_LEAVE_TELEPORT_DELAY * 1000 + 60000L);
+				InstanceManager.getInstance().getInstance(_TvTRoundEventInstance).setEmptyDestroyTime((Config.TVT_ROUND_EVENT_START_RESPAWN_LEAVE_TELEPORT_DELAY * 1000) + 60000L);
 			}
 			catch (Exception e)
 			{
@@ -299,14 +306,14 @@ public class TvTRoundEvent
 	 * Starts the TvTRoundEvent fights<br>
 	 * 1. Abort if not enough participants(return false)<br>
 	 * 2. Open the anteroom doors specified in configs<br>
-	 * 3. Teleport all participants to anterooms<br><br>
-	 *
+	 * 3. Teleport all participants to anterooms<br>
+	 * <br>
 	 * @return boolean: true if success, otherwise false<br>
 	 */
 	public static boolean startFights()
 	{
 		// Re-check for enough participants
-		if (_teams[0].getParticipatedPlayerCount() < Config.TVT_ROUND_EVENT_MIN_PLAYERS_IN_TEAMS || _teams[1].getParticipatedPlayerCount() < Config.TVT_ROUND_EVENT_MIN_PLAYERS_IN_TEAMS)
+		if ((_teams[0].getParticipatedPlayerCount() < Config.TVT_ROUND_EVENT_MIN_PLAYERS_IN_TEAMS) || (_teams[1].getParticipatedPlayerCount() < Config.TVT_ROUND_EVENT_MIN_PLAYERS_IN_TEAMS))
 		{
 			return false;
 		}
@@ -363,8 +370,8 @@ public class TvTRoundEvent
 	 * Calculates the TvTRoundEvent points<br>
 	 * 1. Check if both teams are at a tie (points equals)<br>
 	 * 2. Set state EventState.REWARDING<br>
-	 * 3. Give round point to the team with more points<br><br>
-	 *
+	 * 3. Give round point to the team with more points<br>
+	 * <br>
 	 * @return String: winning team name<br>
 	 */
 	public static String calculatePoints()
@@ -412,8 +419,8 @@ public class TvTRoundEvent
 	 * 2. Wait till teams are not at a tie anymore<br>
 	 * 3. Set state EventState.REWARDING<br>
 	 * 4. Reward team with more points<br>
-	 * 5. Show win html to winning team participants<br><br>
-	 *
+	 * 5. Show win html to winning team participants<br>
+	 * <br>
 	 * @return String: winning team name<br>
 	 */
 	public static String calculateRewards()
@@ -454,8 +461,8 @@ public class TvTRoundEvent
 		// Iterate over all participated player instances of the winning team
 		for (L2PcInstance playerInstance : team.getParticipatedPlayers().values())
 		{
-           // Check for nullpointer or inactive player
-           if (playerInstance == null || playerInstance.getScore() == 0)
+			// Check for nullpointer or inactive player
+			if ((playerInstance == null) || (playerInstance.getScore() == 0))
 			{
 				continue;
 			}
@@ -502,7 +509,7 @@ public class TvTRoundEvent
 			NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(0);
 			
 			statusUpdate.addAttribute(StatusUpdate.CUR_LOAD, playerInstance.getCurrentLoad());
-			npcHtmlMessage.setHtml(HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath+"Reward.htm"));
+			npcHtmlMessage.setHtml(HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath + "Reward.htm"));
 			playerInstance.sendPacket(statusUpdate);
 			playerInstance.sendPacket(npcHtmlMessage);
 		}
@@ -521,7 +528,7 @@ public class TvTRoundEvent
 	{
 		// Set state INACTIVATING
 		setState(EventState.INACTIVATING);
-		//Unspawn event npc
+		// Unspawn event npc
 		unSpawnNpc();
 		// Opens all doors specified in configs for tvt round
 		openDoors(Config.TVT_ROUND_DOORS_IDS_TO_CLOSE);
@@ -553,8 +560,8 @@ public class TvTRoundEvent
 	/**
 	 * Adds a player to a TvTRoundEvent team<br>
 	 * 1. Calculate the id of the team in which the player should be added<br>
-	 * 2. Add the player to the calculated team<br><br>
-	 *
+	 * 2. Add the player to the calculated team<br>
+	 * <br>
 	 * @param playerInstance as L2PcInstance<br>
 	 * @return boolean: true if success, otherwise false<br>
 	 */
@@ -584,8 +591,9 @@ public class TvTRoundEvent
 	/**
 	 * Removes a TvTRoundEvent player from it's team<br>
 	 * 1. Get team id of the player<br>
-	 * 2. Remove player from it's team<br><br>
-	 * @param playerObjectId 
+	 * 2. Remove player from it's team<br>
+	 * <br>
+	 * @param playerObjectId
 	 * @return boolean: true if success, otherwise false<br>
 	 */
 	public static boolean removeParticipant(int playerObjectId)
@@ -606,7 +614,7 @@ public class TvTRoundEvent
 	
 	public static boolean needParticipationFee()
 	{
-		return Config.TVT_ROUND_EVENT_PARTICIPATION_FEE[0] != 0 && Config.TVT_ROUND_EVENT_PARTICIPATION_FEE[1] != 0;
+		return (Config.TVT_ROUND_EVENT_PARTICIPATION_FEE[0] != 0) && (Config.TVT_ROUND_EVENT_PARTICIPATION_FEE[1] != 0);
 	}
 	
 	public static boolean hasParticipationFee(L2PcInstance playerInstance)
@@ -635,8 +643,8 @@ public class TvTRoundEvent
 	/**
 	 * Send a SystemMessage to all participated players<br>
 	 * 1. Send the message to all players of team number one<br>
-	 * 2. Send the message to all players of team number two<br><br>
-	 *
+	 * 2. Send the message to all players of team number two<br>
+	 * <br>
 	 * @param message as String<br>
 	 */
 	public static void sysMsgToAllParticipants(String message)
@@ -660,7 +668,7 @@ public class TvTRoundEvent
 	
 	/**
 	 * Close doors specified in configs
-	 * @param doors 
+	 * @param doors
 	 */
 	public static void closeDoors(List<Integer> doors)
 	{
@@ -677,7 +685,7 @@ public class TvTRoundEvent
 	
 	/**
 	 * Open doors specified in configs
-	 * @param doors 
+	 * @param doors
 	 */
 	public static void openDoors(List<Integer> doors)
 	{
@@ -707,8 +715,8 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Called when a player logs in<br><br>
-	 *
+	 * Called when a player logs in<br>
+	 * <br>
 	 * @param playerInstance as L2PcInstance<br>
 	 */
 	public static void onLogin(L2PcInstance playerInstance)
@@ -730,8 +738,8 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Called when a player logs out<br><br>
-	 *
+	 * Called when a player logs out<br>
+	 * <br>
 	 * @param playerInstance as L2PcInstance<br>
 	 */
 	public static void onLogout(L2PcInstance playerInstance)
@@ -740,17 +748,15 @@ public class TvTRoundEvent
 		{
 			if (removeParticipant(playerInstance.getObjectId()))
 			{
-				playerInstance.setXYZInvisible(Config.TVT_ROUND_EVENT_PARTICIPATION_NPC_COORDINATES[0] + Rnd.get(101)-50,
-						Config.TVT_ROUND_EVENT_PARTICIPATION_NPC_COORDINATES[1] + Rnd.get(101)-50,
-						Config.TVT_ROUND_EVENT_PARTICIPATION_NPC_COORDINATES[2]);
+				playerInstance.setXYZInvisible((Config.TVT_ROUND_EVENT_PARTICIPATION_NPC_COORDINATES[0] + Rnd.get(101)) - 50, (Config.TVT_ROUND_EVENT_PARTICIPATION_NPC_COORDINATES[1] + Rnd.get(101)) - 50, Config.TVT_ROUND_EVENT_PARTICIPATION_NPC_COORDINATES[2]);
 			}
 		}
 	}
 	
 	/**
 	 * Called on every bypass by npc of type L2TvTRoundEventNpc<br>
-	 * Needs synchronization cause of the max player check<br><br>
-	 *
+	 * Needs synchronization cause of the max player check<br>
+	 * <br>
 	 * @param command as String<br>
 	 * @param playerInstance as L2PcInstance<br>
 	 */
@@ -770,7 +776,7 @@ public class TvTRoundEvent
 			
 			if (playerInstance.isCursedWeaponEquipped())
 			{
-				htmContent = HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath+"CursedWeaponEquipped.htm");
+				htmContent = HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath + "CursedWeaponEquipped.htm");
 				if (htmContent != null)
 				{
 					npcHtmlMessage.setHtml(htmContent);
@@ -778,7 +784,7 @@ public class TvTRoundEvent
 			}
 			else if (OlympiadManager.getInstance().isRegistered(playerInstance))
 			{
-				htmContent = HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath+"Olympiad.htm");
+				htmContent = HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath + "Olympiad.htm");
 				if (htmContent != null)
 				{
 					npcHtmlMessage.setHtml(htmContent);
@@ -786,15 +792,15 @@ public class TvTRoundEvent
 			}
 			else if (playerInstance.getKarma() > 0)
 			{
-				htmContent = HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath+"Karma.htm");
+				htmContent = HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath + "Karma.htm");
 				if (htmContent != null)
 				{
 					npcHtmlMessage.setHtml(htmContent);
 				}
 			}
-			else if (playerLevel < Config.TVT_ROUND_EVENT_MIN_LVL || playerLevel > Config.TVT_ROUND_EVENT_MAX_LVL)
+			else if ((playerLevel < Config.TVT_ROUND_EVENT_MIN_LVL) || (playerLevel > Config.TVT_ROUND_EVENT_MAX_LVL))
 			{
-				htmContent = HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath+"Level.htm");
+				htmContent = HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath + "Level.htm");
 				if (htmContent != null)
 				{
 					npcHtmlMessage.setHtml(htmContent);
@@ -802,9 +808,9 @@ public class TvTRoundEvent
 					npcHtmlMessage.replace("%roundmax%", String.valueOf(Config.TVT_ROUND_EVENT_MAX_LVL));
 				}
 			}
-			else if (_teams[0].getParticipatedPlayerCount() == Config.TVT_ROUND_EVENT_MAX_PLAYERS_IN_TEAMS && _teams[1].getParticipatedPlayerCount() == Config.TVT_ROUND_EVENT_MAX_PLAYERS_IN_TEAMS)
+			else if ((_teams[0].getParticipatedPlayerCount() == Config.TVT_ROUND_EVENT_MAX_PLAYERS_IN_TEAMS) && (_teams[1].getParticipatedPlayerCount() == Config.TVT_ROUND_EVENT_MAX_PLAYERS_IN_TEAMS))
 			{
-				htmContent = HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath+"TeamsFull.htm");
+				htmContent = HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath + "TeamsFull.htm");
 				if (htmContent != null)
 				{
 					npcHtmlMessage.setHtml(htmContent);
@@ -813,7 +819,7 @@ public class TvTRoundEvent
 			}
 			else if ((Config.TVT_ROUND_EVENT_MAX_PARTICIPANTS_PER_IP > 0) && !AntiFeedManager.getInstance().tryAddPlayer(AntiFeedManager.TVT_ROUND_ID, playerInstance, Config.TVT_ROUND_EVENT_MAX_PARTICIPANTS_PER_IP))
 			{
-				htmContent = HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath+"IPRestriction.htm");
+				htmContent = HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath + "IPRestriction.htm");
 				if (htmContent != null)
 				{
 					npcHtmlMessage.setHtml(htmContent);
@@ -822,7 +828,7 @@ public class TvTRoundEvent
 			}
 			else if (needParticipationFee() && !hasParticipationFee(playerInstance))
 			{
-				htmContent = HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath+"ParticipationFee.htm");
+				htmContent = HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath + "ParticipationFee.htm");
 				if (htmContent != null)
 				{
 					npcHtmlMessage.setHtml(htmContent);
@@ -831,7 +837,7 @@ public class TvTRoundEvent
 			}
 			else if (addParticipant(playerInstance))
 			{
-				npcHtmlMessage.setHtml(HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath+"Registered.htm"));
+				npcHtmlMessage.setHtml(HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath + "Registered.htm"));
 			}
 			else
 			{
@@ -850,15 +856,16 @@ public class TvTRoundEvent
 			
 			NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(0);
 			
-			npcHtmlMessage.setHtml(HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath+"Unregistered.htm"));
+			npcHtmlMessage.setHtml(HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmlPath + "Unregistered.htm"));
 			playerInstance.sendPacket(npcHtmlMessage);
 		}
 	}
 	
 	/**
-	 * Called on every onAction in L2PcIstance<br><br>
-	 * @param playerInstance 
-	 * @param targetedPlayerObjectId 
+	 * Called on every onAction in L2PcIstance<br>
+	 * <br>
+	 * @param playerInstance
+	 * @param targetedPlayerObjectId
 	 * @return boolean: true if player is allowed to target, otherwise false<br>
 	 */
 	public static boolean onAction(L2PcInstance playerInstance, int targetedPlayerObjectId)
@@ -890,8 +897,8 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Called on every scroll use<br><br>
-	 *
+	 * Called on every scroll use<br>
+	 * <br>
 	 * @param playerObjectId as String<br>
 	 * @return boolean: true if player is allowed to use scroll, otherwise false<br>
 	 */
@@ -911,8 +918,8 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Called on every potion use<br><br>
-	 *
+	 * Called on every potion use<br>
+	 * <br>
 	 * @param playerObjectId as String<br>
 	 * @return boolean: true if player is allowed to use potions, otherwise false<br>
 	 */
@@ -932,8 +939,8 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Called on every escape use(thanks to nbd)<br><br>
-	 *
+	 * Called on every escape use(thanks to nbd)<br>
+	 * <br>
 	 * @param playerObjectId as String<br>
 	 * @return boolean: true if player is not in tvt round event, otherwise false<br>
 	 */
@@ -953,8 +960,8 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Called on every summon item use<br><br>
-	 *
+	 * Called on every summon item use<br>
+	 * <br>
 	 * @param playerObjectId as String<br>
 	 * @return boolean: true if player is allowed to summon by item, otherwise false<br>
 	 */
@@ -974,8 +981,8 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Is called when a player is killed<br><br>
-	 * 
+	 * Is called when a player is killed<br>
+	 * <br>
 	 * @param killerCharacter as L2Character<br>
 	 * @param killedPlayerInstance as L2PcInstance<br>
 	 */
@@ -1009,7 +1016,7 @@ public class TvTRoundEvent
 		
 		L2PcInstance killerPlayerInstance = null;
 		
-		if (killerCharacter instanceof L2PetInstance || killerCharacter instanceof L2ServitorInstance)
+		if ((killerCharacter instanceof L2PetInstance) || (killerCharacter instanceof L2ServitorInstance))
 		{
 			killerPlayerInstance = ((L2Summon) killerCharacter).getOwner();
 			
@@ -1049,8 +1056,8 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Called on Appearing packet received (player finished teleporting)<br><br>
-	 * 
+	 * Called on Appearing packet received (player finished teleporting)<br>
+	 * <br>
 	 * @param playerInstance
 	 */
 	public static void onTeleported(L2PcInstance playerInstance)
@@ -1068,7 +1075,9 @@ public class TvTRoundEvent
 				{
 					L2Skill skill = SkillTable.getInstance().getInfo(i, Config.TVT_ROUND_EVENT_MAGE_BUFFS.get(i));
 					if (skill != null)
+					{
 						skill.getEffects(playerInstance, playerInstance);
+					}
 				}
 			}
 		}
@@ -1140,8 +1149,9 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Sets the TvTRoundEvent state<br><br>
-	 * @return 
+	 * Sets the TvTRoundEvent state<br>
+	 * <br>
+	 * @return
 	 * @param state as EventState<br>
 	 */
 	private static void setState(EventState state)
@@ -1153,8 +1163,9 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Is TvTRoundEvent inactive?<br><br>
-	 * @return 
+	 * Is TvTRoundEvent inactive?<br>
+	 * <br>
+	 * @return
 	 * @return boolean: true if event is inactive(waiting for next event cycle), otherwise false<br>
 	 */
 	public static boolean isInactive()
@@ -1170,8 +1181,9 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Is TvTRoundEvent in inactivating?<br><br>
-	 * @return 
+	 * Is TvTRoundEvent in inactivating?<br>
+	 * <br>
+	 * @return
 	 * @return boolean: true if event is in inactivating progress, otherwise false<br>
 	 */
 	public static boolean isInactivating()
@@ -1187,8 +1199,9 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Is TvTRoundEvent in participation?<br><br>
-	 * @return 
+	 * Is TvTRoundEvent in participation?<br>
+	 * <br>
+	 * @return
 	 * @return boolean: true if event is in participation progress, otherwise false<br>
 	 */
 	public static boolean isParticipating()
@@ -1204,8 +1217,9 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Is TvTRoundEvent starting?<br><br>
-	 * @return 
+	 * Is TvTRoundEvent starting?<br>
+	 * <br>
+	 * @return
 	 * @return boolean: true if event is starting up(setting up fighting spot, teleport players etc.), otherwise false<br>
 	 */
 	public static boolean isStarting()
@@ -1221,8 +1235,9 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Is TvTRoundEvent in the first round?<br><br>
-	 * @return 
+	 * Is TvTRoundEvent in the first round?<br>
+	 * <br>
+	 * @return
 	 */
 	public static boolean isInFirstRound()
 	{
@@ -1237,8 +1252,9 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Is TvTRoundEvent first round finished?<br><br>
-	 * @return 
+	 * Is TvTRoundEvent first round finished?<br>
+	 * <br>
+	 * @return
 	 */
 	public static boolean isFRoundFinished()
 	{
@@ -1253,8 +1269,9 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Is TvTRoundEvent in the second round?<br><br>
-	 * @return 
+	 * Is TvTRoundEvent in the second round?<br>
+	 * <br>
+	 * @return
 	 */
 	public static boolean isInSecondRound()
 	{
@@ -1269,8 +1286,9 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Is TvTRoundEvent second round finished?<br><br>
-	 * @return 
+	 * Is TvTRoundEvent second round finished?<br>
+	 * <br>
+	 * @return
 	 */
 	public static boolean isSRoundFinished()
 	{
@@ -1285,8 +1303,9 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Is TvTRoundEvent in the third round?<br><br>
-	 * @return 
+	 * Is TvTRoundEvent in the third round?<br>
+	 * <br>
+	 * @return
 	 */
 	public static boolean isInThirdRound()
 	{
@@ -1301,8 +1320,9 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Is TvTRoundEvent third round finished?<br><br>
-	 * @return 
+	 * Is TvTRoundEvent third round finished?<br>
+	 * <br>
+	 * @return
 	 */
 	public static boolean isTRoundFinished()
 	{
@@ -1317,8 +1337,8 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Is TvTRoundEvent started?<br><br>
-	 *
+	 * Is TvTRoundEvent started?<br>
+	 * <br>
 	 * @return boolean: true if event is started, otherwise false<br>
 	 */
 	public static boolean isStarted()
@@ -1331,8 +1351,8 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Is TvTRoundEvent rewarding?<br><br>
-	 *
+	 * Is TvTRoundEvent rewarding?<br>
+	 * <br>
 	 * @return boolean: true if event is currently rewarding, otherwise false<br>
 	 */
 	public static boolean isRewarding()
@@ -1348,8 +1368,9 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Is TvTRoundEvent finished without winners?<br><br>
-	 * @return 
+	 * Is TvTRoundEvent finished without winners?<br>
+	 * <br>
+	 * @return
 	 */
 	public static boolean isWithoutWinners()
 	{
@@ -1394,8 +1415,8 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Returns the team id of a player, if player is not participant it returns -1<br><br>
-	 *
+	 * Returns the team id of a player, if player is not participant it returns -1<br>
+	 * <br>
 	 * @param playerObjectId as String<br>
 	 * @return byte: team name of the given playerName, if not in event -1<br>
 	 */
@@ -1405,8 +1426,8 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Returns the team of a player, if player is not participant it returns null <br><br>
-	 *
+	 * Returns the team of a player, if player is not participant it returns null <br>
+	 * <br>
 	 * @param playerObjectId objectId as Integer<br>
 	 * @return TvTRoundEventTeam: team of the given playerObjectId, if not in event null <br>
 	 */
@@ -1416,8 +1437,8 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Returns the enemy team of a player, if player is not participant it returns null <br><br>
-	 *
+	 * Returns the enemy team of a player, if player is not participant it returns null <br>
+	 * <br>
 	 * @param playerObjectId objectId as Integer<br>
 	 * @return TvTRoundEventTeam: enemy team of the given playerObjectId, if not in event null <br>
 	 */
@@ -1427,9 +1448,9 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Returns the team coordinates in which the player is in, if player is not in a team return null<br><br>
-	 * @param playerObjectId 
-	 *
+	 * Returns the team coordinates in which the player is in, if player is not in a team return null<br>
+	 * <br>
+	 * @param playerObjectId
 	 * @return int[]: coordinates of teams, 2 elements, index 0 for team 1 and index 1 for team 2<br>
 	 */
 	public static int[] getParticipantTeamCoordinates(int playerObjectId)
@@ -1438,9 +1459,9 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Is given player participant of the event?<br><br>
-	 * @param playerObjectId 
-	 *
+	 * Is given player participant of the event?<br>
+	 * <br>
+	 * @param playerObjectId
 	 * @return boolean: true if player is participant, ohterwise false<br>
 	 */
 	public static boolean isPlayerParticipant(int playerObjectId)
@@ -1454,8 +1475,8 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Returns participated player count<br><br>
-	 *
+	 * Returns participated player count<br>
+	 * <br>
 	 * @return int: amount of players registered in the event<br>
 	 */
 	public static int getParticipatedPlayersCount()
@@ -1469,33 +1490,44 @@ public class TvTRoundEvent
 	}
 	
 	/**
-	 * Returns teams names<br><br>
-	 *
+	 * Returns teams names<br>
+	 * <br>
 	 * @return String[]: names of teams, 2 elements, index 0 for team 1 and index 1 for team 2<br>
 	 */
 	public static String[] getTeamNames()
 	{
-		return new String[] { _teams[0].getName(), _teams[1].getName() };
+		return new String[]
+		{
+			_teams[0].getName(),
+			_teams[1].getName()
+		};
 	}
 	
 	/**
-	 * Returns player count of both teams<br><br>
-	 *
+	 * Returns player count of both teams<br>
+	 * <br>
 	 * @return int[]: player count of teams, 2 elements, index 0 for team 1 and index 1 for team 2<br>
 	 */
 	public static int[] getTeamsPlayerCounts()
 	{
-		return new int[] { _teams[0].getParticipatedPlayerCount(), _teams[1].getParticipatedPlayerCount() };
+		return new int[]
+		{
+			_teams[0].getParticipatedPlayerCount(),
+			_teams[1].getParticipatedPlayerCount()
+		};
 	}
 	
 	/**
 	 * Returns points count of both teams
-	 *
 	 * @return int[]: points of teams, 2 elements, index 0 for team 1 and index 1 for team 2<br>
 	 */
 	public static int[] getTeamsPoints()
 	{
-		return new int[] { _teams[0].getPoints(), _teams[1].getPoints() };
+		return new int[]
+		{
+			_teams[0].getPoints(),
+			_teams[1].getPoints()
+		};
 	}
 	
 	public static void cleanTeamsPoints()

@@ -5,9 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.Config;
 import king.server.gameserver.SevenSigns;
 import king.server.gameserver.engines.DocumentParser;
@@ -25,6 +22,9 @@ import king.server.gameserver.model.entity.Instance;
 import king.server.gameserver.model.entity.clanhall.SiegableHall;
 import king.server.gameserver.model.zone.type.L2ClanHallZone;
 import king.server.gameserver.model.zone.type.L2RespawnZone;
+
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 public class MapRegionManager extends DocumentParser
 {
@@ -453,9 +453,11 @@ public class MapRegionManager extends DocumentParser
 			L2RespawnZone zone = ZoneManager.getInstance().getZone(activeChar, L2RespawnZone.class);
 			if (zone != null)
 			{
-           if (Config.TW_RANDOM_SPAWN && activeChar.isInTownWarEvent())
-               return getRestartRegion(activeChar, zone.getRespawnPoint((L2PcInstance) activeChar)).getRandomLoc();
-        	   return getRestartRegion(activeChar, zone.getRespawnPoint((L2PcInstance) activeChar)).getSpawnLoc();
+				if (Config.TW_RANDOM_SPAWN && activeChar.isInTownWarEvent())
+				{
+					return getRestartRegion(activeChar, zone.getRespawnPoint((L2PcInstance) activeChar)).getRandomLoc();
+				}
+				return getRestartRegion(activeChar, zone.getRespawnPoint((L2PcInstance) activeChar)).getSpawnLoc();
 			}
 			return getMapRegion(activeChar).getSpawnLoc();
 		}

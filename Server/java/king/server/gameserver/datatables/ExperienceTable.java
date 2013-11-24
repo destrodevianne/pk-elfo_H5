@@ -3,10 +3,10 @@ package king.server.gameserver.datatables;
 import java.util.HashMap;
 import java.util.Map;
 
+import king.server.gameserver.engines.DocumentParser;
+
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
-
-import king.server.gameserver.engines.DocumentParser;
 
 public final class ExperienceTable extends DocumentParser
 {

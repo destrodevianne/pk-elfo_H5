@@ -37,7 +37,7 @@ public class EventContainer
 	
 	protected Random rnd = new Random();
 	
-	private FastMap<Integer, AbstractEvent> events;
+	private final FastMap<Integer, AbstractEvent> events;
 	
 	public FastList<Integer> eventIds;
 	
@@ -47,44 +47,78 @@ public class EventContainer
 		events = new FastMap<>();
 		
 		if (DM.enabled && Config.getInstance().getBoolean(0, "eventEnabled_1"))
+		{
 			eventIds.add(1);
+		}
 		if (Domination.enabled && Config.getInstance().getBoolean(0, "eventEnabled_2"))
+		{
 			eventIds.add(2);
+		}
 		if (DoubleDomination.enabled && Config.getInstance().getBoolean(0, "eventEnabled_3"))
+		{
 			eventIds.add(3);
+		}
 		if (LMS.enabled && Config.getInstance().getBoolean(0, "eventEnabled_4"))
+		{
 			eventIds.add(4);
+		}
 		if (Lucky.enabled && Config.getInstance().getBoolean(0, "eventEnabled_5"))
+		{
 			eventIds.add(5);
+		}
 		if (Simon.enabled && Config.getInstance().getBoolean(0, "eventEnabled_6"))
+		{
 			eventIds.add(6);
+		}
 		if (TvT.enabled && Config.getInstance().getBoolean(0, "eventEnabled_7"))
+		{
 			eventIds.add(7);
+		}
 		if (VIPTvT.enabled && Config.getInstance().getBoolean(0, "eventEnabled_8"))
+		{
 			eventIds.add(8);
+		}
 		if (Zombie.enabled && Config.getInstance().getBoolean(0, "eventEnabled_9"))
+		{
 			eventIds.add(9);
+		}
 		if (CTF.enabled && Config.getInstance().getBoolean(0, "eventEnabled_10"))
+		{
 			eventIds.add(10);
+		}
 		if (Russian.enabled && Config.getInstance().getBoolean(0, "eventEnabled_11"))
+		{
 			eventIds.add(11);
+		}
 		if (Bomb.enabled && Config.getInstance().getBoolean(0, "eventEnabled_12"))
+		{
 			eventIds.add(12);
+		}
 		if (Mutant.enabled && Config.getInstance().getBoolean(0, "eventEnabled_13"))
+		{
 			eventIds.add(13);
+		}
 		if (Battlefield.enabled && Config.getInstance().getBoolean(0, "eventEnabled_14"))
+		{
 			eventIds.add(14);
+		}
 		
 	}
 	
 	public AbstractEvent createEvent(int id)
 	{
 		if (!eventIds.contains(id))
+		{
 			return null;
+		}
 		
 		for (AbstractEvent event : events.values())
+		{
 			if (event.eventId == id)
+			{
 				return null;
+			}
+		}
 		
 		switch (id)
 		{

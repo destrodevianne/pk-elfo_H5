@@ -21,10 +21,10 @@ package king.server.gameserver.network.serverpackets;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.mmocore.network.SendablePacket;
-
 import king.server.Config;
 import king.server.gameserver.network.L2GameClient;
+
+import org.mmocore.network.SendablePacket;
 
 /**
  * @author KenM

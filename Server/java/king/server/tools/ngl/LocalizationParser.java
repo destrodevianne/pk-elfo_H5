@@ -33,7 +33,6 @@ import org.w3c.dom.Node;
 
 /**
  * PkElfo
- * 
  */
 public class LocalizationParser
 {

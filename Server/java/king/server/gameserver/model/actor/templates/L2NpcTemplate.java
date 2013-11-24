@@ -26,7 +26,6 @@ import java.util.Map.Entry;
 import java.util.logging.Logger;
 
 import javolution.util.FastMap;
-
 import king.server.gameserver.datatables.HerbDropTable;
 import king.server.gameserver.model.L2DropCategory;
 import king.server.gameserver.model.L2DropData;

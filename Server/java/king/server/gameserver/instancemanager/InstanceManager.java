@@ -7,15 +7,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javolution.util.FastMap;
-
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.engines.DocumentParser;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.model.entity.Instance;
 import king.server.gameserver.model.instancezone.InstanceWorld;
+
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 public class InstanceManager extends DocumentParser
 {
