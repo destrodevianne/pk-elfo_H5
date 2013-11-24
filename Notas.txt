@@ -1,2 +1,4 @@
 Parei de traduzir em Server/java/king/server/loginserver/FloodProtectedListerner.java
+mudar spawn dos npcs dos eventos Last Hero e Hide and Seek
+continuar mudança do spawn do npc do evento master enchanting
 
