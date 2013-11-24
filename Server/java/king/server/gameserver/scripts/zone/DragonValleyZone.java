@@ -9,7 +9,6 @@ import king.server.gameserver.instancemanager.ZoneManager;
 import king.server.gameserver.model.L2Party;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.model.base.ClassId;
-import king.server.gameserver.model.skills.L2Skill;
 import king.server.gameserver.model.zone.type.L2ScriptZone;
 import king.server.gameserver.scripts.data.AbstractNpcAI1;
 
@@ -67,8 +66,7 @@ public class DragonValleyZone extends AbstractNpcAI1
             {
                 if (getBuffLevel(pc) > 0)
                 {
-                    L2Skill skill = SkillTable.getInstance().getInfo(6885, getBuffLevel(pc));
-                    //skill.getEffects(pc, pc); desativado para teste
+                    SkillTable.getInstance().getInfo(6885, getBuffLevel(pc));
                 }
             }
         }
