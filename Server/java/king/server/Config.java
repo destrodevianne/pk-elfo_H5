@@ -473,6 +473,8 @@ public final class Config
 	public static boolean ALT_GAME_KARMA_PLAYER_CAN_SHOP;
 	public static boolean ALT_GAME_KARMA_PLAYER_CAN_TELEPORT;
 	public static boolean ALT_GAME_KARMA_PLAYER_CAN_USE_GK;
+	public static boolean ALT_GAME_PVP_CAN_USE_GK;
+	public static boolean ALLOW_AIO_USE_GK;
 	public static boolean ALT_GAME_KARMA_PLAYER_CAN_TRADE;
 	public static boolean ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE;
 	public static int MAX_PERSONAL_FAME_POINTS;
@@ -2886,6 +2888,9 @@ public final class Config
 			// ############################ CHAT ESPECIAL PARA AIOX #################################################//
 			ENABLE_AIO_CHAT = Boolean.parseBoolean(AioSettings.getProperty("EnableAIOChat", "True"));
 			
+			// ############################ PROIBIR AIOX USAR GATEKEEPER ############################################//
+			ALLOW_AIO_USE_GK = Boolean.parseBoolean(AioSettings.getProperty("AllowAioUseGk", "false"));
+			
 			// ############################ AUTO RESTART PROPERTIES #################################################//
 			// Load Auto restart L2Properties file (if exists)
 			final File auto_restart = new File(AUTO_RESTART);
@@ -4262,7 +4267,8 @@ public final class Config
 			ALT_GAME_KARMA_PLAYER_CAN_SHOP = Boolean.parseBoolean(PvPpKSettings.getProperty("AltKarmaPlayerCanShop", "true"));
 			ALT_GAME_KARMA_PLAYER_CAN_TELEPORT = Boolean.parseBoolean(PvPpKSettings.getProperty("AltKarmaPlayerCanTeleport", "true"));
 			ALT_GAME_KARMA_PLAYER_CAN_USE_GK = Boolean.parseBoolean(PvPpKSettings.getProperty("AltKarmaPlayerCanUseGK", "false"));
-			ALT_GAME_KARMA_PLAYER_CAN_TRADE = Boolean.parseBoolean(PvPpKSettings.getProperty("AltKarmaPlayerCanTrade", "true"));
+			ALT_GAME_PVP_CAN_USE_GK = Boolean.parseBoolean(PvPpKSettings.getProperty("AltPvPplayerCanUseGK", "false"));
+			ALT_GAME_KARMA_PLAYER_CAN_TRADE = Boolean.parseBoolean(PvPpKSettings.getProperty("AltKarmaPlayerCanTrade", "false"));
 			ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE = Boolean.parseBoolean(PvPpKSettings.getProperty("AltKarmaPlayerCanUseWareHouse", "true"));
 			
 			// --------------------------------------------------------------------------------------------------------//
@@ -5327,6 +5333,9 @@ public final class Config
 				break;
 			case "altkarmaplayercanusegk":
 				ALT_GAME_KARMA_PLAYER_CAN_USE_GK = Boolean.parseBoolean(pValue);
+				break;
+			case "altpvpplayercanusegk":
+				ALT_GAME_PVP_CAN_USE_GK = Boolean.parseBoolean(pValue);
 				break;
 			case "altkarmaplayercanteleport":
 				ALT_GAME_KARMA_PLAYER_CAN_TELEPORT = Boolean.parseBoolean(pValue);

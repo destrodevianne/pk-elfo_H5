@@ -26,7 +26,7 @@ public class PkElfo
 		_log.info("                                                                                                                                                    ");
 		_log.info("                    		High Five Projeto                    		");
 		_log.info("                                                                                                                                                    ");
-		_log.info("                		 2013 ALL RIGHTS RESERVED                		 ");
+		_log.info("                    		2013 ALL RIGHTS RESERVED                    		");
 		_log.info("_______________________________________________________________________________");
 	}
 }

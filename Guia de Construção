@@ -204,6 +204,8 @@ Adicionado Multikill Announcer With Sounds
 ***Mod para evento de rates funciona assim: ao ser habilitado multiplica-se as rates de XP e SP diferentes para jogadores que estão abaixo do level 40 e acima do level 41
 ***mensagem diferente para ganhador e perdedor de PvP
 ***mensagem diferente para quem deu pk e quem levou pk
+***MoD bloqueia o uso de GateKeepers para Chars em Modo Flag ( PvP )
+***Desabilitar AIOx usar a GK
 
 ###############################################
 ################## PROTECOES ##################

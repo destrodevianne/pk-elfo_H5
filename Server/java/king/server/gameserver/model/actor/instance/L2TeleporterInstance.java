@@ -265,19 +265,30 @@ public final class L2TeleporterInstance extends L2Npc
 				player.sendPacket(SystemMessageId.NO_PORT_THAT_IS_IN_SIGE);
 				return;
 			}
+
+			else if (!Config.ALT_GAME_PVP_CAN_USE_GK && (player.getPvpFlag() > 0))
+			{
+				player.sendMessage("Nao fuja do PvP!");
+				return;
+			}
 			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK && (player.getKarma() > 0)) // karma
 			{
-				player.sendMessage("Go away, you're not welcome here.");
+				player.sendMessage("Va embora, voce nao e bem vindo aqui.");
 				return;
 			}
 			else if (player.isInCombat())
 			{
-				player.sendMessage("You cannot use gatekeeper while you are in combat.");
+				player.sendMessage("Voce nao pode usar a gatekeeper, enquanto voce estiver em combate.");
 				return;
 			}
 			else if (player.isCombatFlagEquipped())
 			{
 				player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_WHILE_IN_POSSESSION_OF_A_WARD);
+				return;
+			}
+			else if (!Config.ALLOW_AIO_USE_GK && (player.isAio()))
+			{
+				player.sendMessage("Aio buffers nao estao autorizados a utilizar GateKeepers.");
 				return;
 			}
 			else if (list.getIsForNoble() && !player.isNoble())
