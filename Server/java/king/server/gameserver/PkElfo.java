@@ -14,9 +14,9 @@ public class PkElfo
 	{
 		_log.info("_______________________________________________________________________________");
 		_log.info("                                                                                                                                                     ");
-		_log.info("                    		      Team - PkElfo                    		      ");
+		_log.info("                    		   Team - PkElfo                    		   ");
 		_log.info("                                                                                                                                                     ");
-		_log.info("                    		   Developer: Mamute05                    		   ");
+		_log.info("                    		Developer: Mamute05                    		");
 		_log.info("                                                                                                                                                    ");
 		_log.info("  #         #######        #####    #   #   ######   #        ######     ####              ");
 		_log.info("  #                #       #    #   #  #    #        #        #         #    #       ");
@@ -24,9 +24,9 @@ public class PkElfo
 		_log.info("  #        #               #        #  #    #        #        #         #    #         ");
 		_log.info("  ######    #######        #        #   #   ######   ######   #          ####       ");
 		_log.info("                                                                                                                                                    ");
-		_log.info("                     			High Five Projeto                     			");
+		_log.info("                    		High Five Projeto                    		");
 		_log.info("                                                                                                                                                    ");
-		_log.info("                			� 2013 ALL RIGHTS RESERVED                			");
+		_log.info("                		 2013 ALL RIGHTS RESERVED                		 ");
 		_log.info("_______________________________________________________________________________");
 	}
 }

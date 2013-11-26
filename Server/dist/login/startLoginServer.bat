@@ -1,8 +1,8 @@
 @echo off
-title KingServer: Login Console
+title Pkelfo: Login Console
 color 02
 :start
-echo Iniciando KingServer Login Server.
+echo Iniciando Pkelfo Login Server.
 echo.
 
 java -Xms128m -Xmx128m -cp ./../libs/*;l2jlogin.jar king.server.loginserver.L2LoginServer
@@ -19,11 +19,11 @@ goto start
 
 :error
 echo.
-echo Login Server terminated abnormally!
+echo O Login Server terminou anormalmente!
 echo.
 
 :end
 echo.
-echo Login Server Terminated.
+echo Login Server Terminado.
 echo.
 pause

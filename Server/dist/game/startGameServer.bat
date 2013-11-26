@@ -1,8 +1,8 @@
 @echo off
-title KingServer: Game Server Console
+title PkElfo: Game Server Console
 color 02
 :start
-echo Iniciando KingServer Game Server.
+echo Iniciando PkElfo Game Server.
 echo.
 
 java -server -Xmx1024m -Xms1024m -Xmn512m -XX:PermSize=256m -XX:SurvivorRatio=8 -Xnoclassgc -XX:+AggressiveOpts -cp ./../libs/*;KingServer.jar king.server.gameserver.GameServer
@@ -20,17 +20,17 @@ goto end
 
 :restart
 echo.
-echo Admin Restarted Game Server.
+echo ADM reiniciou o Game Server.
 echo.
 goto start
 
 :error
 echo.
-echo Game Server Terminated Abnormally!
+echo O Game Server Terminou Anormalmente!
 echo.
 
 :end
 echo.
-echo Game Server Terminated.
+echo Game Server Terminou.
 echo.
 pause

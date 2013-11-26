@@ -439,6 +439,8 @@ public class GameServer
 		TvTManager.getInstance();
 		TownWarManager.getInstance();
 		TvTRoundManager.getInstance();
+		// L2 PkElfo Team
+		PkElfo.PkElfoInfo();
 		
 		if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS)
 		{
@@ -539,10 +541,7 @@ public class GameServer
 		
 		// Initialize config
 		Config.load();
-		
-		// L2 PkElfo Team
-		PkElfo.PkElfoInfo();
-		
+				
 		printSection("Database");
 		L2DatabaseFactory.getInstance();
 		gameServer = new GameServer();
