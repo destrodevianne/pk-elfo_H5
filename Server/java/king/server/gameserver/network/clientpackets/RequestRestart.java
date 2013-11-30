@@ -89,6 +89,10 @@ public final class RequestRestart extends L2GameClientPacket
 		{
 			L2PcInstance._isexpsprefusal = false;
 		}
+		if (L2PcInstance._isbuffrefusal == true)
+		{
+			L2PcInstance._isbuffrefusal = false;
+		}
 		
 		if (player.isLocked())
 		{

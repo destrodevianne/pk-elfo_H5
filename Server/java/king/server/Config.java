@@ -1132,6 +1132,7 @@ public final class Config
 	public static int HIGHLEVEL_LVL;
 	public static int HIGHLEVEL_XP;
 	public static int HIGHLEVEL_SP;
+	public static boolean ENABLE_BUFF_REFUSAL;
 	// ########################################################################################################//
 	// VIP PROPERTIES
 	// ########################################################################################################//
@@ -2772,6 +2773,9 @@ public final class Config
 			HIGHLEVEL_LVL = Integer.parseInt(UserSettings.getProperty("HighLevelLvl", "41"));
 			HIGHLEVEL_XP = Integer.parseInt(UserSettings.getProperty("HighLevelXp", "2"));
 			HIGHLEVEL_SP = Integer.parseInt(UserSettings.getProperty("HighLevelSp", "2"));
+			
+			// ########################### comando debuf do painel de usuario ########################################//
+			ENABLE_BUFF_REFUSAL = Boolean.parseBoolean(UserSettings.getProperty("AllowDeBuffCommand","False"));
 			
 			// ############################ VIP PROPERTIES ###########################################################//
 			

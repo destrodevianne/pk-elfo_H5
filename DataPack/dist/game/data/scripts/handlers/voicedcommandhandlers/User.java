@@ -109,6 +109,18 @@ public class User implements IVoicedCommandHandler
                   {
                           UserPanelReply.replace("%pm%", "OFF");
                   }
+                  if (!Config.ENABLE_BUFF_REFUSAL)
+                  {
+                          UserPanelReply.replace("%debuff%", "Disabled");
+                  }
+                  else if (L2PcInstance._isbuffrefusal == true)
+                  {
+                          UserPanelReply.replace("%debuff%", "ON");
+                  }
+                  else
+                  {
+                          UserPanelReply.replace("%debuff%", "OFF");
+                  }
                   if (!Config.ENABLE_TRADE_REFUSAL)
                   {
                           UserPanelReply.replace("%trade%", "Disabled");

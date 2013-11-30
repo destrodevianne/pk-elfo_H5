@@ -140,7 +140,7 @@ Evento Last Hero
 .openatod (Serve para abrir todos os Ancient Tome of the Demon que o player tiver na bag, ao invez de ficar clicando eternamente)
 .lider (teleporta para o lider do seu clan)
 .logout (desloga imediatamente)
-.user (abre painel de usuario que contem, informacoes do servidor, rates e comandos de habilitar/desabilitar pm, trade e ganho de xp/sp)
+.user (abre painel de usuario que contem, informacoes do servidor, rates e comandos de habilitar/desabilitar pm, trade e ganho de xp/sp - adicionado opcao de desabilitar debuf)
 .cancel (cancela todos os buffs das barras de buff)
 
 -----------------------------------------------------------------------------------------------------------

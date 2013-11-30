@@ -36,7 +36,9 @@ public class UserActions implements IVoicedCommandHandler
     	"expoff" , 
     	"expon", 
     	"pmoff", 
-    	"pmon" 
+    	"pmon",
+    	"buff_block",
+    	"buff_unblock"
     	};
       
        @Override
@@ -260,6 +262,64 @@ public class UserActions implements IVoicedCommandHandler
                                       
                                }
                        }
+                      if ((command.startsWith("buff_block")))
+                      {
+                              if (Config.ENABLE_BUFF_REFUSAL)
+                              {
+                                      if (L2PcInstance._isbuffrefusal == true)
+                                      {
+                                              activeChar.setMessageRefusal(false);
+                                              activeChar.sendMessage("O comando de desabilitar debuff esta desativado");
+                                              ExShowScreenMessage message1 = new ExShowScreenMessage("O comando de desabilitar debuff esta desativado!", 4000);
+                                              activeChar.sendPacket(message1);
+                                              L2PcInstance._isbuffrefusal = false;
+                                      }
+                                      else
+                                      {
+                                              activeChar.sendMessage("Voce ja esta com o comando ativado!");
+                                              ExShowScreenMessage message1 = new ExShowScreenMessage("Voce ja esta com o comando ativado!", 4000);
+                                              activeChar.sendPacket(message1);       
+                                              return false;  
+                                      }
+                              }
+                              else
+                              {
+                                      activeChar.sendMessage("O comando foi desativado");
+                                      ExShowScreenMessage message1 = new ExShowScreenMessage("O comando foi desativado pelo ADM!", 4000);
+                                      activeChar.sendPacket(message1);
+                                      return false;  
+                                     
+                              }
+                      }
+                     if ((command.startsWith("buff_unblock")))
+                      {
+                              if (Config.ENABLE_BUFF_REFUSAL)
+                              {
+                                      if (L2PcInstance._isbuffrefusal == false)
+                                      {
+                                              activeChar.setMessageRefusal(true);
+                                              activeChar.sendMessage("O comando de desabilitar debuff esta ativado");
+                                              ExShowScreenMessage message1 = new ExShowScreenMessage("O comando de desabilitar debuff esta ativado!", 4000);
+                                              activeChar.sendPacket(message1);
+                                              L2PcInstance._isbuffrefusal = true;
+                                      }
+                                      else
+                                      {
+                                              activeChar.sendMessage("Voce ja esta com o comando ativado!");
+                                              ExShowScreenMessage message1 = new ExShowScreenMessage("Voce ja esta com o comando ativado!", 4000);
+                                              activeChar.sendPacket(message1);       
+                                              return false;  
+                                      }
+                              }
+                              else
+                              {
+                                      activeChar.sendMessage("O comando foi desativado");
+                                      ExShowScreenMessage message1 = new ExShowScreenMessage("O comando foi desativado pelo ADM!", 4000);
+                                      activeChar.sendPacket(message1);
+                                      return false;  
+                                     
+                              }
+                      }
        return false;          
        }
       

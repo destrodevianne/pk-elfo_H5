@@ -1,4 +1,4 @@
-package king.server.gameserver;
+package king.server.loginserver;
 
 import java.util.logging.Logger;
 
@@ -6,11 +6,11 @@ import java.util.logging.Logger;
  * PkElfo
  */
 
-public class PkElfo
+public class L2PkElfo
 {
-	private static final Logger _log = Logger.getLogger(GameServer.class.getName());
+	private static final Logger _log = Logger.getLogger(L2PkElfo.class.getName());
 	
-	public static void PkElfoInfo()
+	public static void L2PkElfoInfo()
 	{
 		_log.info("_______________________________________________________________________________");
 		_log.info("                                                                               ");
