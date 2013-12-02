@@ -20,7 +20,7 @@ public class Lider implements IVoicedCommandHandler
                 if (Config.COMMAND_LIDER)
                 {
                         
-                        if (command.equalsIgnoreCase("lider") && activeChar.isVip());
+                        if (command.equalsIgnoreCase("lider") && activeChar.isVip())
                         {
                                 
                                 if (activeChar.getClan() == null)

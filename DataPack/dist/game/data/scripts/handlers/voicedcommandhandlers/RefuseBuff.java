@@ -17,13 +17,13 @@ public class RefuseBuff implements IVoicedCommandHandler
 	@Override
 	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String target)
 	{
-		if (command.equals("allowbuff") && activeChar.isVip());
+		if (command.equals("allowbuff") && activeChar.isVip())
 		{
 			CreatureSay nm = new CreatureSay(0, Say2.TELL,"Server","Refuse Buff Mode ON.");
 			activeChar.sendPacket(nm);
 			activeChar.setisRefusingBuff(false);
 		}
-		else if (command.equals("refusebuff") && activeChar.isVip());
+		else if (command.equals("refusebuff") && activeChar.isVip())
 		{
 			CreatureSay nm = new CreatureSay(0, Say2.TELL,"Server","Refuse Buff Mode OFF.");
 			activeChar.sendPacket(nm);

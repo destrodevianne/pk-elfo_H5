@@ -24,7 +24,7 @@ public class Banking implements IVoicedCommandHandler
 		{
 			activeChar.sendMessage(".deposit (" + Config.BANKING_SYSTEM_ADENA + " Adena = " + Config.BANKING_SYSTEM_GOLDBARS + " Goldbar) / .withdraw (" + Config.BANKING_SYSTEM_GOLDBARS + " Goldbar = " + Config.BANKING_SYSTEM_ADENA + " Adena)");
 		}
-		else if (command.equals("deposit") && activeChar.isVip());
+		else if (command.equals("deposit") && activeChar.isVip())
 		{
 			if (activeChar.getInventory().getInventoryItemCount(57, 0) >= Config.BANKING_SYSTEM_ADENA)
 			{
@@ -41,7 +41,7 @@ public class Banking implements IVoicedCommandHandler
 				activeChar.sendMessage("You do not have enough Adena to convert to Goldbar(s), you need " + Config.BANKING_SYSTEM_ADENA + " Adena.");
 			}
 		}
-		else if (command.equals("withdraw") && activeChar.isVip());
+		else if (command.equals("withdraw") && activeChar.isVip())
 		{
 			if (activeChar.getInventory().getInventoryItemCount(3470, 0) >= Config.BANKING_SYSTEM_GOLDBARS)
 			{
