@@ -26,6 +26,7 @@ import king.server.gameserver.model.L2World;
 import king.server.gameserver.model.PcCondOverride;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.network.SystemMessageId;
+import king.server.gameserver.network.clientpackets.Say2;
 import king.server.gameserver.network.serverpackets.CreatureSay;
 import king.server.gameserver.util.Util;
 
@@ -46,6 +47,15 @@ public class ChatShout implements IChatHandler
 	@Override
 	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
 	{
+        if (Config.CHAT_SHOUT_NEED_PVPS)
+        {
+                if (activeChar.getPvpKills() < Config.PVPS_TO_USE_CHAT_SHOUT)
+                {
+                         CreatureSay ct = new CreatureSay(0, Say2.TELL,"Shout","Voce presisa ter " + Config.PVPS_TO_USE_CHAT_SHOUT + " PvPs para usar o Chat Shout.");
+                         activeChar.sendPacket(ct);
+                         return;
+                }
+        }		
 		if (activeChar.isChatBanned() && Util.contains(Config.BAN_CHAT_CHANNELS, type))
 		{
 			activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);

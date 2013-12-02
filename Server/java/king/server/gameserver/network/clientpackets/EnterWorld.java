@@ -274,6 +274,24 @@ public class EnterWorld extends L2GameClientPacket
 		// Apply special GM properties to the GM when entering
 		if (activeChar.isGM())
 		{
+			if (Config.ENABLE_SAFE_ADMIN_PROTECTION)
+			{
+				if(Config.SAFE_ADMIN_NAMES.contains(activeChar.getName()))
+				{
+					activeChar.getPcAdmin().setIsSafeAdmin(true);
+					if (Config.SAFE_ADMIN_SHOW_ADMIN_ENTER)
+					{
+						_log.info("Safe Admin: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") Acabou de Logar.");
+					}
+				}
+				else
+				{
+					activeChar.getPcAdmin().punishUnSafeAdmin();
+					_log.warning("ATENCAO: FALSO ADMIN: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") foi punido ao tentar logar.");
+					_log.warning("A punicao configurada foi executada.");
+				}
+			}
+						
 			if (Config.GM_STARTUP_INVULNERABLE && AdminTable.getInstance().hasAccess("admin_invul", activeChar.getAccessLevel()))
 			{
 				activeChar.setIsInvul(true);

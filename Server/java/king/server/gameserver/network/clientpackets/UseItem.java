@@ -46,6 +46,7 @@ import king.server.gameserver.model.skills.L2Skill;
 import king.server.gameserver.model.skills.L2SkillType;
 import king.server.gameserver.network.SystemMessageId;
 import king.server.gameserver.network.serverpackets.ActionFailed;
+import king.server.gameserver.network.serverpackets.CreatureSay;
 import king.server.gameserver.network.serverpackets.ExUseSharedGroupItem;
 import king.server.gameserver.network.serverpackets.ItemList;
 import king.server.gameserver.network.serverpackets.SystemMessage;
@@ -134,6 +135,129 @@ public final class UseItem extends L2GameClientPacket
 		{
 			activeChar.sendPacket(SystemMessageId.CANNOT_USE_QUEST_ITEMS);
 			return;
+		}
+		if (!Config.ALLOW_HEAVY_USE_LIGHT)
+		{
+			if (Config.NOTALLOWEDUSELIGHT.contains(activeChar.getClassId().getId()))
+			{
+				if (item.getItemType() == L2ArmorType.LIGHT)
+				{
+					CreatureSay cs = new CreatureSay(0, Say2.PARTYROOM_COMMANDER, "Sistema Bloqueio de Armaduras", " " + activeChar.getName() + " light! Nao esta autorizada para o uso dessa Classe.");
+					activeChar.sendPacket(cs);
+					return;
+				}
+			}
+		}
+		
+		if (!Config.ALLOW_LIGHT_USE_HEAVY)
+		{
+			if (Config.NOTALLOWEDUSEHEAVY.contains(activeChar.getClassId().getId()))
+			{
+				if (item.getItemType() == L2ArmorType.HEAVY)
+				{
+					CreatureSay cs = new CreatureSay(0, Say2.PARTYROOM_COMMANDER, "Sistema Bloqueio de Armaduras", " " + activeChar.getName() + " Heavy! Nao esta autorizada para o uso dessa Classe.");
+					activeChar.sendPacket(cs);
+					return;
+				}
+			}
+		}
+		
+		if (Config.ALT_DISABLE_BOW_CLASSES)
+		{
+			if ((item.getItem() instanceof L2Weapon) && (((L2Weapon) item.getItem()).getItemType() == L2WeaponType.BOW))
+			{
+				if (Config.DISABLE_BOW_CLASSES.contains(activeChar.getClassId().getId()))
+				{
+					CreatureSay cs = new CreatureSay(0, Say2.PARTYROOM_COMMANDER, "Sistema Bloqueio de Arma", " " + activeChar.getName() + " Nao esta autorizada para o uso dessa Classe.");
+					activeChar.sendPacket(cs);
+					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+					return;
+				}
+			}
+		}
+		
+		if (Config.ALT_DISABLE_DAGGER_CLASSES)
+		{
+			if ((item.getItem() instanceof L2Weapon) && (((L2Weapon) item.getItem()).getItemType() == L2WeaponType.DAGGER))
+			{
+				if (Config.DISABLE_DAGGER_CLASSES.contains(activeChar.getClassId().getId()))
+				{
+					CreatureSay cs = new CreatureSay(0, Say2.PARTYROOM_COMMANDER, "Sistema Bloqueio de Arma", " " + activeChar.getName() + " Nao esta autorizada para o uso dessa Classe.");
+					activeChar.sendPacket(cs);
+					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+					return;
+				}
+			}
+		}
+		
+		if (Config.ALT_DISABLE_SWORD_CLASSES)
+		{
+			if ((item.getItem() instanceof L2Weapon) && (((L2Weapon) item.getItem()).getItemType() == L2WeaponType.SWORD))
+			{
+				if (Config.DISABLE_SWORD_CLASSES.contains(activeChar.getClassId().getId()))
+				{
+					CreatureSay cs = new CreatureSay(0, Say2.PARTYROOM_COMMANDER, "Sistema Bloqueio de Arma", " " + activeChar.getName() + " Nao esta autorizada para o uso dessa Classe.");
+					activeChar.sendPacket(cs);
+					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+					return;
+				}
+			}
+		}
+		
+		if (Config.ALT_DISABLE_BLUNT_CLASSES)
+		{
+			if ((item.getItem() instanceof L2Weapon) && (((L2Weapon) item.getItem()).getItemType() == L2WeaponType.BLUNT))
+			{
+				if (Config.DISABLE_BLUNT_CLASSES.contains(activeChar.getClassId().getId()))
+				{
+					CreatureSay cs = new CreatureSay(0, Say2.PARTYROOM_COMMANDER, "Sistema Bloqueio de Arma", " " + activeChar.getName() + " Nao esta autorizada para o uso dessa Classe.");
+					activeChar.sendPacket(cs);
+					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+					return;
+				}
+			}
+		}
+		
+		if (Config.ALT_DISABLE_DUAL_CLASSES)
+		{
+			if ((item.getItem() instanceof L2Weapon) && (((L2Weapon) item.getItem()).getItemType() == L2WeaponType.DUAL))
+			{
+				if (Config.DISABLE_DUAL_CLASSES.contains(activeChar.getClassId().getId()))
+				{
+					CreatureSay cs = new CreatureSay(0, Say2.PARTYROOM_COMMANDER, "Sistema Bloqueio de Arma", " " + activeChar.getName() + " Nao esta autorizada para o uso dessa Classe.");
+					activeChar.sendPacket(cs);
+					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+					return;
+				}
+			}
+		}
+		
+		if (Config.ALT_DISABLE_POLE_CLASSES)
+		{
+			if ((item.getItem() instanceof L2Weapon) && (((L2Weapon) item.getItem()).getItemType() == L2WeaponType.POLE))
+			{
+				if (Config.DISABLE_POLE_CLASSES.contains(activeChar.getClassId().getId()))
+				{
+					CreatureSay cs = new CreatureSay(0, Say2.PARTYROOM_COMMANDER, "Sistema Bloqueio de Arma", " " + activeChar.getName() + " Nao esta autorizada para o uso dessa Classe.");
+					activeChar.sendPacket(cs);
+					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+					return;
+				}
+			}
+		}
+		
+		if (Config.ALT_DISABLE_BIGSWORD_CLASSES)
+		{
+			if ((item.getItem() instanceof L2Weapon) && (((L2Weapon) item.getItem()).getItemType() == L2WeaponType.BIGSWORD))
+			{
+				if (Config.DISABLE_BIGSWORD_CLASSES.contains(activeChar.getClassId().getId()))
+				{
+					CreatureSay cs = new CreatureSay(0, Say2.PARTYROOM_COMMANDER, "Sistema Bloqueio de Arma", " " + activeChar.getName() + " Nao esta autorizada para o uso dessa Classe.");
+					activeChar.sendPacket(cs);
+					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+					return;
+				}
+			}
 		}
 		
 		// No UseItem is allowed while the player is in special conditions

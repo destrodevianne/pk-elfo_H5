@@ -258,7 +258,15 @@ public final class CharacterCreate extends L2GameClientPacket
 		
 		// TODO: Make it random.
 		final L2PcTemplate template = newChar.getTemplate();
-		newChar.setXYZInvisible(template.getSpawnX(), template.getSpawnY(), template.getSpawnZ());
+
+		if (Config.SPAWN_CHAR)
+        {
+         newChar.setXYZInvisible(Config.SPAWN_X, Config.SPAWN_Y, Config.SPAWN_Z );
+        }
+        else
+        {
+         newChar.setXYZInvisible(template.getSpawnX(), template.getSpawnY(), template.getSpawnZ());
+        }
 		
 		if (Config.CHAR_TITLE)
 		{

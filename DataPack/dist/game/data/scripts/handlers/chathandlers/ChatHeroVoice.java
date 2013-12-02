@@ -25,6 +25,7 @@ import king.server.gameserver.model.L2World;
 import king.server.gameserver.model.PcCondOverride;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.network.SystemMessageId;
+import king.server.gameserver.network.clientpackets.Say2;
 import king.server.gameserver.network.serverpackets.CreatureSay;
 import king.server.gameserver.util.Util;
 
@@ -45,6 +46,15 @@ public class ChatHeroVoice implements IChatHandler
 	@Override
 	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
 	{
+        if (Config.CHAT_HERO_NEED_PVPS)
+        {
+                if (activeChar.getPvpKills() < Config.PVPS_TO_USE_CHAT_HERO)
+                {
+                         CreatureSay ct = new CreatureSay(0, Say2.TELL,"Hero Voice","Voce presisa ter " + Config.PVPS_TO_USE_CHAT_HERO + " PvPs para usar o Chat Hero.");
+                         activeChar.sendPacket(ct);
+                         return;
+                }
+        }
 		if (activeChar.isHero() || activeChar.canOverrideCond(PcCondOverride.CHAT_CONDITIONS))
 		{
 			if (activeChar.isChatBanned() && Util.contains(Config.BAN_CHAT_CHANNELS, type))

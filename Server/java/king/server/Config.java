@@ -80,6 +80,7 @@ public final class Config
 	public static final String COMMUNITY_PVP = "./config/CommunityPvP.properties";
 	public static final String COMMUNITY_CONFIGURATION_FILE = "./config/CommunityServer.properties";
 	public static final String CH_SIEGE_FILE = "./config/ConquerableHallSiege.properties";
+	public static final String RESTRICTIONS_CONFIG_FILE = "./config/Restrictions.properties";
 	public static final String EMAIL_CONFIG_FILE = "./config/Email.properties";
 	public static final String EVENT_FILE = "./config/Event.properties";
 	public static final String FEATURE_CONFIG_FILE = "./config/Feature.properties";
@@ -511,6 +512,10 @@ public final class Config
 	public static long STARTING_ADENA;
 	public static byte STARTING_LEVEL;
 	public static int STARTING_SP;
+	public static boolean SPAWN_CHAR;
+	public static int SPAWN_X;
+	public static int SPAWN_Y;
+	public static int SPAWN_Z;	
 	public static boolean CHAR_TITLE;
 	public static String ADD_CHAR_TITLE;
 	public static int TITLE_COLOR;
@@ -557,6 +562,35 @@ public final class Config
 	public static boolean STORE_UI_SETTINGS;
 	public static String[] FORBIDDEN_NAMES;
 	public static boolean SILENCE_MODE_EXCLUDE;
+	// Define L2Class
+	public static boolean ALLOW_LIGHT_USE_HEAVY;
+	public static String NOTALLOWCLASS;
+	public static ArrayList<Integer> NOTALLOWEDUSEHEAVY;
+	public static boolean ALLOW_HEAVY_USE_LIGHT;
+	public static String NOTALLOWCLASSE;
+	public static ArrayList<Integer> NOTALLOWEDUSELIGHT;
+	// Bloque Weapons
+	public static boolean ALT_DISABLE_BOW_CLASSES;
+	public static String DISABLE_BOW_CLASSES_STRING;
+	public static ArrayList<Integer> DISABLE_BOW_CLASSES;
+	public static boolean ALT_DISABLE_DAGGER_CLASSES;
+	public static String DISABLE_DAGGER_CLASSES_STRING;
+	public static ArrayList<Integer> DISABLE_DAGGER_CLASSES;
+	public static boolean ALT_DISABLE_SWORD_CLASSES;
+	public static String DISABLE_SWORD_CLASSES_STRING;
+	public static ArrayList<Integer> DISABLE_SWORD_CLASSES;
+	public static boolean ALT_DISABLE_BLUNT_CLASSES;
+	public static String DISABLE_BLUNT_CLASSES_STRING;
+	public static ArrayList<Integer> DISABLE_BLUNT_CLASSES;
+	public static boolean ALT_DISABLE_DUAL_CLASSES;
+	public static String DISABLE_DUAL_CLASSES_STRING;
+	public static ArrayList<Integer> DISABLE_DUAL_CLASSES;
+	public static boolean ALT_DISABLE_POLE_CLASSES;
+	public static String DISABLE_POLE_CLASSES_STRING;
+	public static ArrayList<Integer> DISABLE_POLE_CLASSES;
+	public static boolean ALT_DISABLE_BIGSWORD_CLASSES;
+	public static String DISABLE_BIGSWORD_CLASSES_STRING;
+	public static ArrayList<Integer> DISABLE_BIGSWORD_CLASSES;	
 	// ########################################################################################################//
 	// FREATURE PROPERTIES
 	// ########################################################################################################//
@@ -1113,6 +1147,7 @@ public final class Config
 	public static int L2JMOD_DUALBOX_CHECK_MAX_L2EVENT_PARTICIPANTS_PER_IP;
 	public static Map<Integer, Integer> L2JMOD_DUALBOX_CHECK_WHITELIST;
 	public static boolean L2JMOD_ALLOW_CHANGE_PASSWORD;
+	public static boolean CHAR_IS_DEAD = false;
 	// ########################################################################################################//
 	// USERS PROPERTIES
 	// ########################################################################################################//
@@ -1482,6 +1517,24 @@ public final class Config
 	public static long SECOND_AUTH_BAN_TIME;
 	public static String SECOND_AUTH_REC_LINK;
 	public static boolean ENABLE_BOTREPORT;
+	// ########################################################################################################//
+	// Safe Admin
+	// ########################################################################################################//
+	public static boolean ENABLE_SAFE_ADMIN_PROTECTION;
+	public static List<String> SAFE_ADMIN_NAMES = new ArrayList<>();
+	public static int SAFE_ADMIN_PUNISH;
+	public static boolean SAFE_ADMIN_SHOW_ADMIN_ENTER;
+	public static String BLOCK_DATE_FORMAT;
+	public static String BLOCK_HOUR_FORMAT;		
+	// ########################################################################################################//
+	// PVP Chat Shoutem e Hero
+	// ########################################################################################################//	
+	public static boolean CHAT_SHOUT_NEED_PVPS;
+	public static int PVPS_TO_USE_CHAT_SHOUT;
+	public static boolean CHAT_TRADE_NEED_PVPS;
+	public static int PVPS_TO_USE_CHAT_TRADE;
+	public static boolean CHAT_HERO_NEED_PVPS;
+	public static int PVPS_TO_USE_CHAT_HERO;	
 	// ########################################################################################################//
 	// EMAIl PROPERTIES
 	// ########################################################################################################//
@@ -2925,6 +2978,7 @@ public final class Config
 				_log.log(Level.SEVERE, "Error while loading Characters settings!", e);
 			}
 			
+			CHAR_IS_DEAD = Boolean.parseBoolean(Character.getProperty("ChatDeadProtection", "False"));
 			ALT_GAME_DELEVEL = Boolean.parseBoolean(Character.getProperty("Delevel", "true"));
 			DECREASE_SKILL_LEVEL = Boolean.parseBoolean(Character.getProperty("DecreaseSkillOnDelevel", "true"));
 			ALT_WEIGHT_LIMIT = Double.parseDouble(Character.getProperty("AltWeightLimit", "1"));
@@ -3140,6 +3194,12 @@ public final class Config
 			STARTING_ADENA = Long.parseLong(Character.getProperty("StartingAdena", "0"));
 			STARTING_LEVEL = Byte.parseByte(Character.getProperty("StartingLevel", "1"));
 			STARTING_SP = Integer.parseInt(Character.getProperty("StartingSP", "0"));
+
+			// #################### CUSTOM SPAWN PARA NOVOS CHAR ##########################################################//
+			SPAWN_CHAR = Boolean.parseBoolean(Character.getProperty("CustomSpawn", "false"));
+			SPAWN_X = Integer.parseInt(Character.getProperty("SpawnX", ""));
+			SPAWN_Y = Integer.parseInt(Character.getProperty("SpawnY", ""));
+			SPAWN_Z = Integer.parseInt(Character.getProperty("SpawnZ", ""));
 			
 			// #################### TITULO PARA NOVOS CHAR ##########################################################//
 			CHAR_TITLE = Boolean.parseBoolean(Character.getProperty("CharTitle", "False"));
@@ -3226,6 +3286,102 @@ public final class Config
 			FORBIDDEN_NAMES = Character.getProperty("ForbiddenNames", "").split(",");
 			SILENCE_MODE_EXCLUDE = Boolean.parseBoolean(Character.getProperty("SilenceModeExclude", "False"));
 			PLAYER_MOVEMENT_BLOCK_TIME = Integer.parseInt(Character.getProperty("NpcTalkBlockingTime", "0")) * 1000;
+
+			// Restrictions Custom Config
+			L2Properties RestrictionSettings = new L2Properties();
+			final File Restrictions = new File(RESTRICTIONS_CONFIG_FILE);
+			try (InputStream is = new FileInputStream(Restrictions))
+			{
+				RestrictionSettings.load(is);
+				ALLOW_HEAVY_USE_LIGHT = Boolean.parseBoolean(RestrictionSettings.getProperty("AllowHeavyUseLight", "False"));
+				NOTALLOWCLASSE = RestrictionSettings.getProperty("NotAllowedUseLight", "");
+				NOTALLOWEDUSELIGHT = new ArrayList<>();
+				for (String classId : NOTALLOWCLASSE.split(","))
+				{
+					NOTALLOWEDUSELIGHT.add(Integer.parseInt(classId));
+				}
+				ALLOW_LIGHT_USE_HEAVY = Boolean.parseBoolean(RestrictionSettings.getProperty("AllowLightUseHeavy", "False"));
+				NOTALLOWCLASS = RestrictionSettings.getProperty("NotAllowedUseHeavy", "");
+				NOTALLOWEDUSEHEAVY = new ArrayList<>();
+				for (String classId : NOTALLOWCLASS.split(","))
+				{
+					NOTALLOWEDUSEHEAVY.add(Integer.parseInt(classId));
+				}
+				ALT_DISABLE_BOW_CLASSES = Boolean.parseBoolean(RestrictionSettings.getProperty("AltDisableBow", "False"));
+				DISABLE_BOW_CLASSES_STRING = RestrictionSettings.getProperty("DisableBowForClasses", "");
+				DISABLE_BOW_CLASSES = new ArrayList<>();
+				for (String class_id : DISABLE_BOW_CLASSES_STRING.split(","))
+				{
+					if (!class_id.equals(""))
+					{
+						DISABLE_BOW_CLASSES.add(Integer.parseInt(class_id));
+					}
+				}
+				ALT_DISABLE_DAGGER_CLASSES = Boolean.parseBoolean(RestrictionSettings.getProperty("AltDisableDagger", "False"));
+				DISABLE_DAGGER_CLASSES_STRING = RestrictionSettings.getProperty("DisableDaggerForClasses", "");
+				DISABLE_DAGGER_CLASSES = new ArrayList<>();
+				for (String class_id : DISABLE_DAGGER_CLASSES_STRING.split(","))
+				{
+					if (!class_id.equals(""))
+					{
+						DISABLE_DAGGER_CLASSES.add(Integer.parseInt(class_id));
+					}
+				}
+				ALT_DISABLE_SWORD_CLASSES = Boolean.parseBoolean(RestrictionSettings.getProperty("AltDisableSword", "False"));
+				DISABLE_SWORD_CLASSES_STRING = RestrictionSettings.getProperty("DisableSwordForClasses", "");
+				DISABLE_SWORD_CLASSES = new ArrayList<>();
+				for (String class_id : DISABLE_SWORD_CLASSES_STRING.split(","))
+				{
+					if (!class_id.equals(""))
+					{
+						DISABLE_SWORD_CLASSES.add(Integer.parseInt(class_id));
+					}
+				}
+				ALT_DISABLE_BLUNT_CLASSES = Boolean.parseBoolean(RestrictionSettings.getProperty("AltDisableBlunt", "False"));
+				DISABLE_BLUNT_CLASSES_STRING = RestrictionSettings.getProperty("DisableBluntForClasses", "");
+				DISABLE_BLUNT_CLASSES = new ArrayList<>();
+				for (String class_id : DISABLE_BLUNT_CLASSES_STRING.split(","))
+				{
+					if (!class_id.equals(""))
+					{
+						DISABLE_BLUNT_CLASSES.add(Integer.parseInt(class_id));
+					}
+				}
+				ALT_DISABLE_DUAL_CLASSES = Boolean.parseBoolean(RestrictionSettings.getProperty("AltDisableDual", "False"));
+				DISABLE_DUAL_CLASSES_STRING = RestrictionSettings.getProperty("DisableDualForClasses", "");
+				DISABLE_DUAL_CLASSES = new ArrayList<>();
+				for (String class_id : DISABLE_DUAL_CLASSES_STRING.split(","))
+				{
+					if (!class_id.equals(""))
+					{
+						DISABLE_DUAL_CLASSES.add(Integer.parseInt(class_id));
+					}
+				}
+				ALT_DISABLE_POLE_CLASSES = Boolean.parseBoolean(RestrictionSettings.getProperty("AltDisablePolle", "False"));
+				DISABLE_POLE_CLASSES_STRING = RestrictionSettings.getProperty("DisablePolleForClasses", "");
+				DISABLE_POLE_CLASSES = new ArrayList<>();
+				for (String class_id : DISABLE_POLE_CLASSES_STRING.split(","))
+				{
+					if (!class_id.equals(""))
+					{
+						DISABLE_POLE_CLASSES.add(Integer.parseInt(class_id));
+					}
+				}
+				ALT_DISABLE_BIGSWORD_CLASSES = Boolean.parseBoolean(RestrictionSettings.getProperty("AltDisableBigSword", "False"));
+				DISABLE_BIGSWORD_CLASSES_STRING = RestrictionSettings.getProperty("DisableBigSwordForClasses", "");
+				DISABLE_BIGSWORD_CLASSES = new ArrayList<>();
+				for (String class_id : DISABLE_BIGSWORD_CLASSES_STRING.split(","))
+				{
+					if (!class_id.equals(""))
+					{
+						DISABLE_BIGSWORD_CLASSES.add(Integer.parseInt(class_id));
+					}
+				}
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Error while loading Characters settings!", e);
+			}			
 			
 			// Load L2J Server Version L2Properties file (if exists)
 			L2Properties serverVersion = new L2Properties();
@@ -4462,6 +4618,34 @@ public final class Config
 			SECOND_AUTH_BAN_TIME = Integer.parseInt(SecuritySettings.getProperty("SecondAuthBanTime", "480"));
 			SECOND_AUTH_REC_LINK = SecuritySettings.getProperty("SecondAuthRecoveryLink", "5");
 			ENABLE_BOTREPORT = Boolean.valueOf(SecuritySettings.getProperty("EnableBotReport", "false"));
+
+			//Safe Admin
+			ENABLE_SAFE_ADMIN_PROTECTION = Boolean.parseBoolean(SecuritySettings.getProperty("EnableSafeAdminProtection", "True"));
+			
+				String[] san = SecuritySettings.getProperty("SafeAdminName", "").split(",");
+				SAFE_ADMIN_NAMES = new ArrayList<>(san.length);
+				if (san.length != 0)
+			{
+					for (String name : san)
+					{
+					SAFE_ADMIN_NAMES.add(name);
+					}
+				}
+				
+			SAFE_ADMIN_PUNISH = Integer.parseInt(SecuritySettings.getProperty("SafeAdminPunish", "3"));
+			SAFE_ADMIN_SHOW_ADMIN_ENTER = Boolean.parseBoolean(SecuritySettings.getProperty("SafeAdminShowAdminEnter", "False"));
+			// Block IP
+			BLOCK_DATE_FORMAT = SecuritySettings.getProperty("BlockDateFormat", "dd.MM.yy");
+			BLOCK_HOUR_FORMAT = SecuritySettings.getProperty("BlockHourFormat", "HH:mm");
+			
+			// PVP Chat Shoutem e Hero
+			CHAT_SHOUT_NEED_PVPS = Boolean.parseBoolean(SecuritySettings.getProperty("ChatShoutNeedPvps", "False"));
+			PVPS_TO_USE_CHAT_SHOUT = Integer.parseInt(SecuritySettings.getProperty("PvpsToUseChatShout", "0"));
+			CHAT_TRADE_NEED_PVPS = Boolean.parseBoolean(SecuritySettings.getProperty("ChatTradeNeedPvps", "False"));
+			PVPS_TO_USE_CHAT_TRADE = Integer.parseInt(SecuritySettings.getProperty("PvpsToUseChatTrade", "0"));
+			CHAT_HERO_NEED_PVPS = Boolean.parseBoolean(SecuritySettings.getProperty("ChatHeroNeedPvps", "False"));
+			PVPS_TO_USE_CHAT_HERO = Integer.parseInt(SecuritySettings.getProperty("PvpsToUseChatHero", "0"));			
+			
 			
 			L2Properties ClanHallSiege = new L2Properties();
 			final File ch_siege = new File(CH_SIEGE_FILE);

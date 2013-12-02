@@ -232,6 +232,12 @@ public final class Say2 extends L2GameClientPacket
 				}
 			}
 		}
+
+		if (Config.CHAR_IS_DEAD && activeChar.isDead())
+		{
+			activeChar.sendMessage("Morto nao fala");
+			return;
+		}
 		
 		if (activeChar.isInJail() && Config.JAIL_DISABLE_CHAT)
 		{

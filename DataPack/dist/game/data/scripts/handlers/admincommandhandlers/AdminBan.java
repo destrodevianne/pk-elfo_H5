@@ -24,6 +24,7 @@ import java.sql.SQLException;
 import java.util.StringTokenizer;
 
 import king.server.Config;
+import king.server.gameserver.Announcements;
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.LoginServerThread;
 import king.server.gameserver.communitybbs.Manager.RegionBBSManager;
@@ -119,7 +120,7 @@ public class AdminBan implements IAdminCommandHandler
 			else
 			{
 				targetPlayer.setPunishLevel(L2PcInstance.PunishLevel.ACC, 0);
-				activeChar.sendMessage("Account " + targetPlayer.getAccountName() + " banned.");
+				Announcements.getInstance().announceToAll("A conta de " + targetPlayer.getAccountName() + " foi Banida.");
 				auditAction(command, activeChar, targetPlayer.getAccountName());
 			}
 		}
@@ -247,7 +248,7 @@ public class AdminBan implements IAdminCommandHandler
 					targetPlayer.untransform();
 				}
 				targetPlayer.setPunishLevel(L2PcInstance.PunishLevel.JAIL, duration);
-				activeChar.sendMessage("Character " + targetPlayer.getName() + " jailed for " + (duration > 0 ? duration + " minutes." : "ever!"));
+				Announcements.getInstance().announceToAll("" + targetPlayer.getName() + " esta preso por " + (duration > 0 ? duration + " minutos." : "tempo indeterminado!"));
 				auditAction(command, activeChar, targetPlayer.getName());
 				}
 			else

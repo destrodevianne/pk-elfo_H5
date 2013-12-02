@@ -16730,7 +16730,18 @@ public final class L2PcInstance extends L2Playable
 		// Maintain = 1, nomal 0
 		return _recoBonusMode;
 	}
-	
+
+	private PcAdmin _PcAdmin = null;
+ 	
+	public PcAdmin getPcAdmin()
+	{
+		if (_PcAdmin == null)
+		{
+			_PcAdmin = new PcAdmin(this);
+		}
+		return _PcAdmin;
+	}
+		
 	public short getScore()
 	{
 		return points;
