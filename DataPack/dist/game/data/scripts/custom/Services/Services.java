@@ -179,7 +179,7 @@ public class Services extends Quest
         			{
             			player.getClan().setLevel(player.getClan().getLevel() + 1);
             			player.getClan().broadcastClanStatus();
-            			player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
+            			player.sendMessage("Seu clan agora esta no level " + player.getClan().getLevel() + ".");
                         player.setTarget(player);
                         player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
                         return "ClanLevelUp.htm";
@@ -191,7 +191,7 @@ public class Services extends Quest
             				st.takeItems(clanLevelItemsId[0], clanLevelItemsCount[0]);
             				player.getClan().setLevel(player.getClan().getLevel() + 1);
             				player.getClan().broadcastClanStatus();
-                			player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
+                			player.sendMessage("Seu clan agora esta no level " + player.getClan().getLevel() + ".");
                             player.setTarget(player);
                             player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
                             return "ClanLevelUp.htm";
@@ -208,7 +208,7 @@ public class Services extends Quest
             				st.takeItems(clanLevelItemsId[1], clanLevelItemsCount[1]);
             				player.getClan().setLevel(player.getClan().getLevel() + 1);
             				player.getClan().broadcastClanStatus();
-                			player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
+                			player.sendMessage("Seu clan agora esta no level " + player.getClan().getLevel() + ".");
                             player.setTarget(player);
                             player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
                             return "ClanLevelUp.htm";
@@ -225,7 +225,7 @@ public class Services extends Quest
             				st.takeItems(clanLevelItemsId[2], clanLevelItemsCount[2]);
             				player.getClan().setLevel(player.getClan().getLevel() + 1);
             				player.getClan().broadcastClanStatus();
-                			player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
+                			player.sendMessage("Seu clan agora esta no level " + player.getClan().getLevel() + ".");
                             player.setTarget(player);
                             player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
                             return "ClanLevelUp.htm";
@@ -242,7 +242,7 @@ public class Services extends Quest
             				st.takeItems(clanLevelItemsId[3], clanLevelItemsCount[3]);
             				player.getClan().setLevel(player.getClan().getLevel() + 1);
             				player.getClan().broadcastClanStatus();
-                			player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
+                			player.sendMessage("Seu clan agora esta no level " + player.getClan().getLevel() + ".");
                             player.setTarget(player);
                             player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
                             return "ClanLevelUp.htm";
@@ -259,7 +259,7 @@ public class Services extends Quest
             				st.takeItems(clanLevelItemsId[4], clanLevelItemsCount[4]);
             				player.getClan().setLevel(player.getClan().getLevel() + 1);
             				player.getClan().broadcastClanStatus();
-                			player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
+                			player.sendMessage("Seu clan agora esta no level " + player.getClan().getLevel() + ".");
                             player.setTarget(player);
                             player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
                             return "ClanLevelUp.htm";
@@ -276,7 +276,7 @@ public class Services extends Quest
             				st.takeItems(clanLevelItemsId[5], clanLevelItemsCount[5]);
             				player.getClan().setLevel(player.getClan().getLevel() + 1);
             				player.getClan().broadcastClanStatus();
-                			player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
+                			player.sendMessage("Seu clan agora esta no level " + player.getClan().getLevel() + ".");
                             player.setTarget(player);
                             player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
                             return "ClanLevelUp.htm";
@@ -297,7 +297,7 @@ public class Services extends Quest
                     }
                     catch (Exception e)
                     {
-                    	_log.info("Error updating clan level for player " + player.getName() + ". Error: " + e);
+                    	_log.info("Erro atualizando nivel do clan para o jogador " + player.getName() + ". Erro: " + e);
                     }
                     
         			player.getClan().broadcastClanStatus();
@@ -337,17 +337,17 @@ public class Services extends Quest
                     {
                         if (!newName.matches("^[a-zA-Z0-9]+$"))
                         {
-                            player.sendMessage("Incorrect name. Please try again.");
+                            player.sendMessage("Nome incorreto. Por favor, tente novamente.");
                             return "ChangeName.htm";
                         }
                         else if (newName.equals(player.getName()))
                         {
-                            player.sendMessage("Please, choose a different name.");
+                            player.sendMessage("Por favor, escolha um nome diferente.");
                             return "ChangeName.htm";
                         }
                         else if (CharNameTable.getInstance().doesCharNameExist(newName))
                         {
-                            player.sendMessage("The name " + newName + " already exists.");
+                            player.sendMessage("O nome " + newName + " ja existe.");
                             return "ChangeName.htm";
                         }
                         else
@@ -365,7 +365,7 @@ public class Services extends Quest
                             st.takeItems(changeNameItemId, changeNameItemCount);
                             player.setName(newName);
                             player.store();
-                            player.sendMessage("Your new character name is " + newName);
+                            player.sendMessage("O novo nome do seu personagem: " + newName);
                             player.broadcastUserInfo();
                             return "ChangeName-Success.htm";
                         }
@@ -378,7 +378,7 @@ public class Services extends Quest
             }
             catch (Exception e)
             {
-                player.sendMessage("Please, insert a correct name.");
+                player.sendMessage("Por favor, insira um nome correto.");
                 return "ChangeName.htm";
             }
         }
@@ -393,7 +393,7 @@ public class Services extends Quest
                 {
                     if (pkReduceCount == 0)
                     {
-                        player.sendMessage("Please, put a higher value.");
+                        player.sendMessage("Por favor, coloque um valor mais elevado.");
                         return "PkServices.htm";
                     }
                     else
@@ -402,7 +402,7 @@ public class Services extends Quest
                         {
                             st.takeItems(pkReduceItemId, pkReduceItemCount * pkReduceCount);
                             player.setPkKills(player.getPkKills() - pkReduceCount);
-                            player.sendMessage("You have successfuly cleaned " + pkReduceCount + " PKs.");
+                            player.sendMessage("Voce limpou com sucesso " + pkReduceCount + " PKs.");
                             player.broadcastUserInfo();
                             return "PkServices-Success.htm";
                         }
@@ -419,7 +419,7 @@ public class Services extends Quest
             }
             catch (Exception e)
             {
-                player.sendMessage("Incorrect value. Please try again.");
+                player.sendMessage("Valor incorreto. Por favor, tente novamente.");
                 return "PkServices.htm";
             }
         }
@@ -445,27 +445,27 @@ public class Services extends Quest
 	                    {
 	                        if (!player.isClanLeader())
 	                        {
-	                        	player.sendMessage("Only the clan leader can change the clan name.");
+	                        	player.sendMessage("Apenas o lider do clan pode mudar o nome do clan.");
 	                        	return "ChangeClanName.htm";
 	                        }
 	                        else if (player.getClan().getLevel() < clanMinLevel)
 	                        {
-	                        	player.sendMessage("Your clan must be at least level " + clanMinLevel + " to change the name.");
+	                        	player.sendMessage("Seu clan deve estar pelo menos no nivel " + clanMinLevel + " para alterar o nome.");
 	                        	return "ChangeClanName.htm";
 	                        }
 	                    	else if (!newClanName.matches("^[a-zA-Z0-9]+$"))
 	                        {
-	                            player.sendMessage("Incorrect name. Please try again.");
+	                            player.sendMessage("Nome incorreto. Por favor, tente novamente.");
 	                            return "ChangeClanName.htm";
 	                        }
 	                        else if (newClanName.equals(player.getClan().getName()))
 	                        {
-	                            player.sendMessage("Please, choose a different name.");
+	                            player.sendMessage("Por favor, escolha um nome diferente.");
 	                            return "ChangeClanName.htm";
 	                        }
 	                        else if (null != ClanTable.getInstance().getClanByName(newClanName))
 	                        {
-	                            player.sendMessage("The name " + newClanName + " already exists.");
+	                            player.sendMessage("O nome " + newClanName + " ja existe.");
 	                            return "ChangeClanName.htm";
 	                        }
 	                        else
@@ -493,10 +493,10 @@ public class Services extends Quest
 	                            }
 	                            catch (Exception e)
 	                            {
-	                            	_log.info("Error updating clan name for player " + player.getName() + ". Error: " + e);
+	                            	_log.info("Erro atualizando nome do clan para o jogador " + player.getName() + ". Erro: " + e);
 	                            }
 	                            
-	                            player.sendMessage("Your new clan name is " + newClanName);
+	                            player.sendMessage("O novo nome do clan: " + newClanName);
 	                            player.getClan().broadcastClanStatus();
 	                            return "ChangeClanName-Success.htm";
 	                        }
@@ -509,7 +509,7 @@ public class Services extends Quest
 	        	}
 	        	catch (Exception e)
 	        	{
-	                player.sendMessage("Please, insert a correct name.");
+	                player.sendMessage("Por favor, insira um nome correto.");
 	                return "ChangeClanName.htm";
 	        	}
         	}
@@ -533,7 +533,7 @@ public class Services extends Quest
                 {
 	                if (reputationPointsCount == 0)
 	                {
-	                    player.sendMessage("Please, put a higher value.");
+	                    player.sendMessage("Por favor, coloque um valor mais elevado.");
 	                    return "ClanReputationPoints.htm";
 	                }
 	                else
@@ -554,7 +554,7 @@ public class Services extends Quest
             }
             catch (Exception e)
             {
-                player.sendMessage("Incorrect value. Please try again.");
+                player.sendMessage("Valor incorreto. Por favor, tente novamente.");
                 return "ClanReputationPoints.htm";
             }
         }

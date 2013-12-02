@@ -206,6 +206,14 @@ Adicionado Multikill Announcer With Sounds
 ***mensagem diferente para quem deu pk e quem levou pk
 ***MoD bloqueia o uso de GateKeepers para Chars em Modo Flag ( PvP )
 ***Desabilitar AIOx usar a GK
+Mod Safe Admin System
+Mod Custom spawn para novos chars
+Mod Pvps to use Chat Shout, Chat Trade & Chat Hero
+Mod Sistema de Equipamentos E Restrições
+Mod desabilitar chat para players mortos
+NPC services (Limpar PKs, Level UP Clan, Clan reputação, Mudar sexo do char, Virar Nobles, Mudar nome do clan, Mudar nome do char)
+Mod anuncio de ban global
+Mod anuncio de jail global
 
 ###############################################
 ################## PROTECOES ##################
@@ -229,6 +237,8 @@ Npc Comprar Bracelete - ID 30098
 Npc Top PvpPk - ID 36602
 Npc Safe Enchant +30 - ID 36609
 Npc AIOx (mostra os Aio do server) - ID 80001
+Npc de Servicos ID: 9013 
+Npc Gerenciador de Sieges ID: 55
 
 ###############################################
 ############## SYSTEM EXCLUSIVA ###############
