@@ -39,10 +39,6 @@ import king.server.gameserver.network.clientpackets.Say2;
 import king.server.gameserver.network.serverpackets.NpcSay;
 import king.server.gameserver.network.serverpackets.SystemMessage;
 
-/**
- ** @author GKR 2011-03-24
- */
-
 public class JiniasHideout extends Quest
 {
 	private class JiniasWorld extends InstanceWorld
@@ -73,7 +69,7 @@ public class JiniasHideout extends Quest
 		-5413
 	};
 	
-	public class teleCoord
+	private class teleCoord
 	{
 		int instanceId;
 		int x;
@@ -261,18 +257,18 @@ public class JiniasHideout extends Quest
 			{
 				switch (((JiniasWorld) world).questId)
 				{
-					case 10285:
-						htmltext = "";
-						break;
-					case 10286:
-						htmltext = "";
-						hostQuest.playSound("ItemSound.quest_middle");
-						hostQuest.set("cond", "5");
-						break;
-					case 10287:
-						htmltext = "";
-						hostQuest.playSound("ItemSound.quest_middle");
-						hostQuest.set("cond", "5");
+				case 10285:
+					htmltext = "";
+					break;
+				case 10286:
+					htmltext = "";
+					hostQuest.playSound("ItemSound.quest_middle");
+					hostQuest.set("cond", "5");
+					break;
+				case 10287:
+					htmltext = "";
+					hostQuest.playSound("ItemSound.quest_middle");
+					hostQuest.set("cond", "5");
 				}
 			}
 		}

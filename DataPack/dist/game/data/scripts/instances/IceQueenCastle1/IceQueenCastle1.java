@@ -27,6 +27,7 @@ import king.server.gameserver.datatables.SkillTable;
 import king.server.gameserver.instancemanager.InstanceManager;
 import king.server.gameserver.model.L2CharPosition;
 import king.server.gameserver.model.L2World;
+import king.server.gameserver.model.Location;
 import king.server.gameserver.model.actor.L2Character;
 import king.server.gameserver.model.actor.L2Npc;
 import king.server.gameserver.model.actor.instance.L2DoorInstance;
@@ -64,7 +65,6 @@ public class IceQueenCastle1 extends Quest
 		}
 	}
 	
-	private static final String qn = "IceQueenCastle1";
 	private static final int INSTANCEID = 137;
 	
 	// NPC's, mobs
@@ -95,22 +95,6 @@ public class IceQueenCastle1 extends Quest
 		-848
 	};
 	
-	public class teleCoord
-	{
-		int instanceId;
-		int x;
-		int y;
-		int z;
-	}
-	
-	private void teleportplayer(L2PcInstance player, teleCoord teleto)
-	{
-		player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		player.setInstanceId(teleto.instanceId);
-		player.teleToLocation(teleto.x, teleto.y, teleto.z);
-		return;
-	}
-	
 	private boolean checkConditions(L2PcInstance player)
 	{
 		if ((player.getLevel() < 82) || (player.getLevel() > 85))
@@ -124,13 +108,7 @@ public class IceQueenCastle1 extends Quest
 		return true;
 	}
 	
-	protected void exitInstance(L2PcInstance player, teleCoord tele)
-	{
-		player.setInstanceId(0);
-		player.teleToLocation(tele.x, tele.y, tele.z);
-	}
-	
-	protected int enterInstance(L2PcInstance player, String template, teleCoord teleto)
+	protected int enterInstance(L2PcInstance player, String template, Location loc)
 	{
 		int instanceId = 0;
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
@@ -143,11 +121,10 @@ public class IceQueenCastle1 extends Quest
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
 				return 0;
 			}
-			teleto.instanceId = world.getInstanceId();
-			teleportplayer(player, teleto);
+			teleportPlayer(player, loc, world.getInstanceId());
 			return instanceId;
 		}
-		// New instance
+		
 		if (!checkConditions(player))
 		{
 			return 0;
@@ -161,10 +138,8 @@ public class IceQueenCastle1 extends Quest
 		((IQWorld) world).storeTime[0] = System.currentTimeMillis();
 		InstanceManager.getInstance().addWorld(world);
 		_log.info("IQWorld started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
-		teleto.instanceId = instanceId;
-		teleportplayer(player, teleto);
+		teleportPlayer(player, loc, world.getInstanceId());
 		world.addAllowed(player.getObjectId());
-		
 		// Open door
 		L2DoorInstance door = InstanceManager.getInstance().getInstance(instanceId).getDoor(23140101);
 		if (door != null)
@@ -230,12 +205,10 @@ public class IceQueenCastle1 extends Quest
 					
 					// Leave instance
 					world.removeAllowed(pl.getObjectId());
-					teleCoord tele = new teleCoord();
-					tele.instanceId = 0;
-					tele.x = RETURN_POINT[0];
-					tele.y = RETURN_POINT[1];
-					tele.z = RETURN_POINT[2];
-					exitInstance(pl, tele);
+					int x = RETURN_POINT[0];
+					int y = RETURN_POINT[1];
+					int z = RETURN_POINT[2];
+					teleportPlayer(pl, new Location(x, y, z), 0);
 					
 					// destroy instance after 1 min
 					Instance inst = InstanceManager.getInstance().getInstance(npc.getInstanceId());
@@ -257,7 +230,7 @@ public class IceQueenCastle1 extends Quest
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		int npcId = npc.getNpcId();
-		QuestState st = player.getQuestState(qn);
+		QuestState st = player.getQuestState(getName());
 		if (st == null)
 		{
 			st = newQuestState(player);
@@ -265,10 +238,9 @@ public class IceQueenCastle1 extends Quest
 		
 		if (npcId == JINIA2)
 		{
-			teleCoord tele = new teleCoord();
-			tele.x = ENTRY_POINT[0];
-			tele.y = ENTRY_POINT[1];
-			tele.z = ENTRY_POINT[2];
+			int x = ENTRY_POINT[0];
+			int y = ENTRY_POINT[1];
+			int z = ENTRY_POINT[2];
 			
 			QuestState hostQuest = player.getQuestState(Q10285_MeetingSirra.class.getSimpleName());
 			
@@ -278,7 +250,7 @@ public class IceQueenCastle1 extends Quest
 				hostQuest.playSound("ItemSound.quest_middle");
 			}
 			
-			if (enterInstance(player, "IceQueenCastle1.xml", tele) <= 0)
+			if (enterInstance(player, "IceQueenCastle1.xml", new Location(x, y, z)) <= 0)
 			{
 				return "32781-10.htm";
 			}
@@ -292,8 +264,6 @@ public class IceQueenCastle1 extends Quest
 	{
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(character.getInstanceId());
 		if ((tmpworld != null) && (tmpworld instanceof IQWorld) && (tmpworld.getTemplateId() == 137))
-		{
-		}
 		{
 			IQWorld world = (IQWorld) tmpworld;
 			if (!world.showIsInProgress && (character instanceof L2PcInstance)) // triggers show begin
@@ -362,6 +332,6 @@ public class IceQueenCastle1 extends Quest
 	
 	public static void main(String[] args)
 	{
-		new IceQueenCastle1(-1, qn, "instances");
+		new IceQueenCastle1(-1, IceQueenCastle1.class.getSimpleName(), "instances");
 	}
 }
