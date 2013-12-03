@@ -61,9 +61,11 @@
 		<set name="castRange" val="200" />
 		<set name="effectRange" val="300" />
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="6391" />
 		<set name="magicLvl" val="1" />
 		<set name="neutral" val="true" />
 		<set name="operateType" val="A1" />
+		<set name="skillType" val="BEAST_FEED" />
 		<set name="reuseDelay" val="1000" />
 		<set name="target" val="TARGET_ONE" /> <!-- FIXME: This should be TARGET_OTHERS -->
 		<cond msgId="113" addName="1">

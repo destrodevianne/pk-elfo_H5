@@ -2024,11 +2024,13 @@
 		<set name="hitTime" val="3000" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="lvlBonusRate" val="1" />
 		<set name="lvlDepend" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="nextActionAttack" val="true" />
+		<set name="offensive" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="15000" />
@@ -2043,7 +2045,7 @@
 		<enchant2 name="mpInitialConsume" val="#ench2MpInitialConsume" />
 		<enchant3 name="magicLvl" val="#enchantMagicLvl" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="15" val="0" triggeredId="6090" chanceType="ON_EXIT" effectPower="70" effectType="PARALYZE" abnormalLvl="1" abnormalType="paralyze">
+			<effect name="ChanceSkillTrigger" abnormalTime="15" val="0" triggeredId="6090" chanceType="ON_EXIT" effectPower="40" effectType="PARALYZE" abnormalLvl="1" abnormalType="paralyze">
 				<mul order="0x30" stat="pAtkSpd" val="0.5" />
 				<mul order="0x30" stat="runSpd" val="0.5" />
 				<mul order="0x30" stat="mAtkSpd" val="0.5" />
