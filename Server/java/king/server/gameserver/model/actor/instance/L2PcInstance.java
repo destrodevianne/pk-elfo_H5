@@ -5884,6 +5884,32 @@ public final class L2PcInstance extends L2Playable
 		sendPacket(packet);
 		
 		// Kill the L2PcInstance
+		if (KILL_STEAK>0)
+		{
+			if (KILL_STEAK>=5&&KILL_STEAK<20)
+				Announcements.getInstance().announceToAll(killer.getName()+" has stopped "+getName()+"'s killing spree of "+KILL_STEAK+" kills!!");
+			else if (KILL_STEAK<40)
+			{
+				sendMessage(killer.getName()+" has stopped "+getName()+"'s killing spree of "+KILL_STEAK+" kills!!");
+				if (!hadHero)
+					setHero(false);
+			}
+			else if (KILL_STEAK<60)
+			{
+				sendMessage(killer.getName()+" has ended "+getName()+"'s rampage of "+KILL_STEAK+" strait kills!");
+				stopAbnormalEffect(AbnormalEffect.VITALITY);
+				if (!hadHero)
+				setHero(false);
+			}
+			else if (KILL_STEAK>60)
+			{
+				sendMessage(killer.getName()+" has given an end to "+getName()+"'s reign of terror of "+KILL_STEAK+" strait kills!!!");
+				stopAbnormalEffect(AbnormalEffect.VITALITY);
+				if (!hadHero)
+					setHero(false);
+			}
+			KILL_STEAK=0;
+		}		
 		if (!super.doDie(killer))
 		{
 			return false;
@@ -6351,9 +6377,9 @@ public final class L2PcInstance extends L2Playable
 			}
 		}
 	}
-	
 	Versus vs;
-	
+	private int KILL_STEAK=0;
+	final boolean hadHero=Hero.getInstance().isHero(getObjectId());	
 	/**
 	 * Increase the pvp kills count and send the info to the player
 	 * @param target
@@ -6376,7 +6402,28 @@ public final class L2PcInstance extends L2Playable
 			{
 				// Add karma to attacker and increase its PK counter
 				setPvpKills(getPvpKills() + 1);
-				
+			KILL_STEAK++;
+			switch (KILL_STEAK)
+			{
+				case 15:
+					sendMessage("Falta 5 PVP para virar Spree!!!");
+					break;
+				case 20:
+					Announcements.getInstance().announceToAll(getName()+" Virou Spree!");
+					setHero(true);
+					break;
+				case 40:
+					Announcements.getInstance().announceToAll(getName()+" Virou Rampage!!");
+					startAbnormalEffect(AbnormalEffect.VITALITY);
+					break;
+				case 60:
+					Announcements.getInstance().announceToAll(getName()+" Virou um Legendary!");
+					for (L2PcInstance players : L2World.getInstance().getAllPlayersArray())
+					{
+						players.sendPacket(new ExRedSky(10));
+					}
+					break;
+			}				
 				PvPColorSystem pvpcolor = new PvPColorSystem();
 				pvpcolor.updateNameColor(this);
 				pvpcolor.updateTitleColor(this);

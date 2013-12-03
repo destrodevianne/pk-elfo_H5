@@ -351,7 +351,17 @@ public class EnterWorld extends L2GameClientPacket
 			PlaySound death_music = new PlaySound(1, "Game_Over", 0, 0, 0, 0, 0);
 			sendPacket(death_music);
 		}
+
+		if (Config.ANNOUNCE_NOBLESSE_LOGIN && activeChar.isNoble())
+		{
+			Announcements.getInstance().announceToAll("Noblesse: " + activeChar.getName() + " is now online!");
+		}
 		
+		if (Config.ANNOUNCE_HERO_LOGIN && activeChar.isHero())
+		{
+			Announcements.getInstance().announceToAll("Hero: " + activeChar.getName() + "Class: " + activeChar.getClassId() + " is now online!");
+		}
+				
 		boolean showClanNotice = false;
 		
 		// Clan related checks are here

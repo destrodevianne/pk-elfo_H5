@@ -157,6 +157,8 @@ public final class Config
 	public static String PKS_COLORS;
 	public static FastMap<Integer, Integer> PKS_COLORS_LIST;
 	public static boolean ANNOUNCE_CASTLE_LORDS;
+	public static boolean ANNOUNCE_NOBLESSE_LOGIN = false;
+	public static boolean ANNOUNCE_HERO_LOGIN = false;
 	public static boolean SHOW_ONLINE_PLAYERS_ON_LOGIN;
 	public static int MAX_PARTY_MEMBERS;
 	// ----------------------------------------------------------------------------------------------------//
@@ -2281,6 +2283,8 @@ public final class Config
 				CLAN_LEADER_COLOR = Integer.decode((new StringBuilder()).append("0x").append(PkelfoSettings.getProperty("ClanLeaderColor", "00FFFF")).toString()).intValue();
 				CLAN_LEADER_COLOR_CLAN_LEVEL = Integer.parseInt(PkelfoSettings.getProperty("ClanLeaderColorAtClanLevel", "1"));
 				ANNOUNCE_CASTLE_LORDS = Boolean.parseBoolean(PkelfoSettings.getProperty("AnnounceCastleLords", "True"));
+				ANNOUNCE_NOBLESSE_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("AnnounceNoblesseLogin", "False"));
+				ANNOUNCE_HERO_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("AnnounceHeroLogin", "False"));
 				SHOW_ONLINE_PLAYERS_ON_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("ShowOnlinePlayersOnLogin", "True"));
 				MAX_PARTY_MEMBERS = Integer.parseInt(PkelfoSettings.getProperty("MaxPartyMembers", "12"));
 				
