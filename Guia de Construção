@@ -21,8 +21,7 @@ Várias Updates | Skills, Droplist, Handlers
 algumas instances/quests
 Knoriks, Dragons & Drakes de LOA atualizados e reorganizados
 Adicionado Walkers em DV
-Ai's para áreas, mobs, bosses e Npcs
-cancel.java
+Ai's para areas, mobs, bosses e Npcs
 FIX nos itens: Jet Bike Mount Bracelet Pack e Jet Bike Mount Bracelet Pack - Event
 FIX dos itens: Jet Bike Mount Bracelet 7-Day Pack e Jet Bike Mount Bracelet 7-Day Pack - Event
 FIX nos itens: Jet Bike Mount Bracelet 30-Day Pack e Jet Bike Mount Bracelet 30-Day Pack - Event
@@ -193,8 +192,8 @@ Clan Full
 Mod quando morrer o ceu fica vermelho e da um som de Game Over
 Mod ao entrar em um clan o titulo muda altomaticamente para o do clan
 Mod aviso quando um Raid Boss renascer
-Mod Evento de dança
-Clan halls conquistáveis
+Mod Evento de danca
+Clan halls conquistaveis
 comando /unstuck com skill configuravel
 Novos char nobres
 Novos char herois
@@ -216,7 +215,6 @@ Adicionado Multikill Announcer With Sounds
 ***mensagem diferente para quem deu pk e quem levou pk
 ***MoD bloqueia o uso de GateKeepers para Chars em Modo Flag ( PvP )
 ***Desabilitar AIOx usar a GK
-Mod Safe Admin System
 Mod Custom spawn para novos chars
 Mod Pvps to use Chat Shout, Chat Trade & Chat Hero
 Mod Sistema de Equipamentos E Restrições
@@ -224,13 +222,17 @@ Mod desabilitar chat para players mortos
 NPC services (Limpar PKs, Level UP Clan, Clan reputação, Mudar sexo do char, Virar Nobles, Mudar nome do clan, Mudar nome do char)
 Mod anuncio de ban global
 Mod anuncio de jail global
+Mod Anuncios login para Nobles & Hero
+Mod  kingle spree (vc mata 20 vezes sem morrer ai anuncia no server e o player ganha status de heroi, matar 30 sem morrer vira rampage e recebe efeito glow vitalit alem dos status e aura de heroi e tambem anuncia em todo servidor, 60 legendary)
+Mod efeito glow vitality em armaduras full +16
 
 ###############################################
 ################## PROTECOES ##################
 Protecao contra Bot
 Recurso AntiPHX
-Proteção de overenchant
+Protecao de overenchant
 AntiAfkTvt
+Safe Admin System
 
 ###############################################
 ################# NPCS CUSTOM #################
@@ -261,9 +263,9 @@ Alguns arquivos traduzidos
 
 ###############################################
 ############## OUTROS #########################
-Adicionado pasta com novas Texturas de botões e etc.
+Adicionado pasta com novas Texturas de botoes e etc.
 Adcionado pasta ScreenShots com imagens das novas texturas
 Colocado Banner no GS
-Personalização do NPC de encantamento com texturas novas e coloração das letras
+Personalizacao do NPC de encantamento com texturas novas e coloracao das letras
 
 
