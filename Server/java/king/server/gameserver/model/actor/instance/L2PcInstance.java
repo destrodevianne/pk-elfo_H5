@@ -66,6 +66,7 @@ import king.server.gameserver.communitybbs.Manager.ForumsBBSManager;
 import king.server.gameserver.communitybbs.Manager.RegionBBSManager;
 import king.server.gameserver.custom.PvPColorSystem;
 import king.server.gameserver.datatables.AdminTable;
+import king.server.gameserver.datatables.ArmorSetsData;
 import king.server.gameserver.datatables.AdventBonus;
 import king.server.gameserver.datatables.CharNameTable;
 import king.server.gameserver.datatables.CharSummonTable;
@@ -435,7 +436,8 @@ public final class L2PcInstance extends L2Playable
 			getPlayer().setRecentFakeDeath(false);
 		}
 	}
-	
+
+	private int abnormal = AbnormalEffect.VITALITY.getMask();
 	private L2GameClient _client;
 	
 	private String _accountName;
@@ -8312,8 +8314,79 @@ public final class L2PcInstance extends L2Playable
 		// Restore items in pet inventory.
 		restorePetInventoryItems();
 	}
-	
-	/**
+   
+   //added Armor effect
+   public void checkForVitalityEffect()
+   {
+      
+       boolean getVitalityEffect = false;
+       try
+       {
+           if (
+                   ArmorSetsData.getInstance().getSet(9417).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(9418).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(9419).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(9420).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(9426).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(9427).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(10126).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(10127).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(9433).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(9434).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(9435).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(9436).isEnchanted(20, this)
+            	   || ArmorSetsData.getInstance().getSet(13432).isEnchanted(20, this)
+   		    	   || ArmorSetsData.getInstance().getSet(13433).isEnchanted(20, this)
+		 		   || ArmorSetsData.getInstance().getSet(13434).isEnchanted(20, this)
+	  			   || ArmorSetsData.getInstance().getSet(13435).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(13436).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(13437).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(14520).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(14521).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(14522).isEnchanted(20, this)
+			 	   || ArmorSetsData.getInstance().getSet(14523).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(14524).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(14525).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(15575).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(15576).isEnchanted(20, this)
+			  	   || ArmorSetsData.getInstance().getSet(15577).isEnchanted(20, this)
+			  	   || ArmorSetsData.getInstance().getSet(15592).isEnchanted(20, this)
+			  	   || ArmorSetsData.getInstance().getSet(15593).isEnchanted(20, this)
+			   	   || ArmorSetsData.getInstance().getSet(15594).isEnchanted(20, this)
+     	   	 	   || ArmorSetsData.getInstance().getSet(15609).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(15610).isEnchanted(20, this)
+			 	   || ArmorSetsData.getInstance().getSet(15611).isEnchanted(20, this)
+			  	   || ArmorSetsData.getInstance().getSet(16168).isEnchanted(20, this)
+			  	   || ArmorSetsData.getInstance().getSet(16169).isEnchanted(20, this)
+	    	  	   || ArmorSetsData.getInstance().getSet(16170).isEnchanted(20, this)
+			  	   || ArmorSetsData.getInstance().getSet(16171).isEnchanted(20, this)
+			   	   || ArmorSetsData.getInstance().getSet(16172).isEnchanted(20, this)
+			   	   || ArmorSetsData.getInstance().getSet(16173).isEnchanted(20, this)
+			  	   || ArmorSetsData.getInstance().getSet(16174).isEnchanted(20, this)
+			   	   || ArmorSetsData.getInstance().getSet(16175).isEnchanted(20, this)
+			  	   || ArmorSetsData.getInstance().getSet(16176).isEnchanted(20, this)                   
+               )
+           {
+               getVitalityEffect = true;
+           }
+       }
+       catch (Exception e)
+       {
+           _log.log(Level.WARNING,"Armor exception message: " + e.getMessage(),e);
+      
+       }
+      
+       if (getVitalityEffect)
+       {
+           startAbnormalEffect(abnormal);
+       }
+       else
+       {
+           stopAbnormalEffect(abnormal);
+       }
+   }
+   
+   /**
 	 * Restore recipe book data for this L2PcInstance.
 	 * @param loadCommon
 	 */

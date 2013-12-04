@@ -201,6 +201,36 @@ public final class L2ArmorSet
 		
 		return true;
 	}
+   
+      
+   //added Armor effect
+   public boolean isEnchanted(int enchantLevel, L2PcInstance player)
+   {
+       // Player don't have full set
+       if (!containAll(player))
+           return false;
+      
+       Inventory inv = player.getInventory();
+      
+       L2ItemInstance chestItem = inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST);
+       L2ItemInstance legsItem = inv.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
+       L2ItemInstance headItem = inv.getPaperdollItem(Inventory.PAPERDOLL_HEAD);
+       L2ItemInstance glovesItem = inv.getPaperdollItem(Inventory.PAPERDOLL_GLOVES);
+       L2ItemInstance feetItem = inv.getPaperdollItem(Inventory.PAPERDOLL_FEET);
+   
+       if (chestItem == null || chestItem.getEnchantLevel() < enchantLevel)
+           return false;
+               if(!_legs.isEmpty() && (legsItem == null || legsItem.getEnchantLevel() < enchantLevel))
+                   return false;
+               if (!_gloves.isEmpty() && (glovesItem == null || glovesItem.getEnchantLevel() < enchantLevel))
+                   return false;
+               if (!_head.isEmpty() && (headItem == null || headItem.getEnchantLevel() < enchantLevel))
+                   return false;
+               if (!_feet.isEmpty() && (feetItem == null || feetItem.getEnchantLevel() < enchantLevel))
+                   return false;
+   
+           return true;
+       }
 	
 	public boolean containItem(int slot, int itemId)
 	{

@@ -652,6 +652,7 @@ public abstract class Inventory extends ItemContainer
 								_log.warning("Inventory.ArmorSetListener: Incorrect skill: " + holder + ".");
 							}
 						}
+						player.checkForVitalityEffect();	
 					}
 				}
 			}
@@ -740,6 +741,8 @@ public abstract class Inventory extends ItemContainer
 			
 			if (remove)
 			{
+               //added Armor effect
+               player.checkForVitalityEffect();
 				if (skills != null)
 				{
 					for (SkillHolder holder : skills)
