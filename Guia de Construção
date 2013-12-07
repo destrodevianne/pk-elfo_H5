@@ -162,69 +162,76 @@ Evento Last Hero
 
 ###############################################
 ##################### MOD #####################
-# Rewards for kill on TvT
-# Bandeiras de clan nos Npcs sem quest
-***Numero Maximo de membros na party (nao ultrapassar 12, porque buga o servidor)
-Community Board
-***Anuncio de deslogamento de AIOx 
-***Anuncio de logamento de AIOx
-***Anuncio de deslogamento de VIP 
-***Anuncio de logamento de VIP
-***Anuncio de deslogamento de Hero
-***Anuncio de logamento de Hero
-***Mensagem de boas vindas na tela para aio, vip e hero.
-***Chat exclusivo para char AIOx
-Ao dar Shift+Click em algum char ou npc ou monstro, mostrara todos items e status dele.
-Efeito de enchant rondom em todos os mobs e Npcs
-Efeito para char em modo de shop offline
-Balance Classe
-Lider de clan com nick de cor diferente
-Novos chars com titulo
-Nevit's Advent Blessing
-Arena Leaderboard
-Craft Leaderboard
-Fisherman Leaderboard
-PC Bang Points
-Prime Shop
-Sistema de consumiveis infinitosSS, BSS e Arrows
-Fake online players
-Clan Full
+Mod Community Board
+Mod Ao dar Shift+Click em algum char ou npc ou monstro, mostrara todos items e status dele.
+Mod Efeito de enchant rondom em todos os mobs e Npcs
+Mod Efeito para char em modo de shop offline
+Mod Balance Classe
+Mod Lider de clan com nick de cor diferente
+Mod Novos chars com titulo
+Mod Nevit's Advent Blessing
+Mod Arena Leaderboard
+Mod Craft Leaderboard
+Mod Fisherman Leaderboard
+Mod PC Bang Points
+Mod Prime Shop
+Mod Sistema de consumiveis infinitosSS, BSS e Arrows
+Mod Fake online players
+Mod Clan Full
 Mod quando morrer o ceu fica vermelho e da um som de Game Over
 Mod ao entrar em um clan o titulo muda altomaticamente para o do clan
 Mod aviso quando um Raid Boss renascer
 Mod Evento de danca
-Clan halls conquistaveis
-comando /unstuck com skill configuravel
-Novos char nobres
-Novos char herois
-Muda o nome dos Champions
-Cor do nome diferente para cada raca
-Mensagem diferente para cada raca
-Painel de usuario com comandos
+Mod Clan halls conquistaveis
+Mod comando /unstuck com skill configuravel
+Mod Novos char nobres
+Mod Novos char herois
+Mod Muda o nome dos Champions
+Mod Cor do nome diferente para cada raca
+Mod Mensagem diferente para cada raca
+Mod Painel de usuario com comandos
 Mod Efeito para AIOx
-Ao criar novo char ganha VIP por dias (configuravel)
-Ao criar novo char ganha AIOx por dias (configuravel)
-Adicionado Mod de Restart
-Adicionado Multikill Announcer With Sounds
-***Ao matar um jogador com PK ganha-se 1 ponto de PvP
-***Recompensa personalizada para o PvP
-***PvP/PK Color System
-***Adicionado MOD movimento pelo teclado pelas setinhas
+Mod Adicionado Mod de Restart
+# Mod Rewards for kill on TvT
+# Mod Bandeiras de clan nos Npcs sem quest
+***Mod Adicionado Multikill Announcer With Sounds
+***Mod Numero Maximo de membros na party (nao ultrapassar 12, porque buga o servidor)
+***Mod Anuncio de deslogamento de AIOx 
+***Mod Anuncio de logamento de AIOx
+***Mod Anuncio de deslogamento de VIP 
+***Mod Anuncio de logamento de VIP
+***Mod Anuncio de deslogamento de Hero
+***Mod Anuncio de logamento de Hero
+***Mod Mensagem de boas vindas na tela para aio, vip e hero.
+***Mod Chat exclusivo para char AIOx
+***Mod Ao matar um jogador com PK ganha-se 1 ponto de PvP
+***Mod Recompensa personalizada para o PvP
+***Mod PvP/PK Color System
+***Mod Adicionado MOD movimento pelo teclado pelas setinhas
 ***Mod para evento de rates funciona assim: ao ser habilitado multiplica-se as rates de XP e SP diferentes para jogadores que estão abaixo do level 40 e acima do level 41
-***mensagem diferente para ganhador e perdedor de PvP
-***mensagem diferente para quem deu pk e quem levou pk
-***MoD bloqueia o uso de GateKeepers para Chars em Modo Flag ( PvP )
-***Desabilitar AIOx usar a GK
-Mod Custom spawn para novos chars
-Mod Pvps to use Chat Shout, Chat Trade & Chat Hero
-Mod Sistema de Equipamentos E Restrições
-Mod desabilitar chat para players mortos
-NPC services (Limpar PKs, Level UP Clan, Clan reputação, Mudar sexo do char, Virar Nobles, Mudar nome do clan, Mudar nome do char)
-Mod anuncio de ban global
-Mod anuncio de jail global
-Mod Anuncios login para Nobles & Hero
-Mod  kingle spree (vc mata 20 vezes sem morrer ai anuncia no server e o player ganha status de heroi, matar 30 sem morrer vira rampage e recebe efeito glow vitalit alem dos status e aura de heroi e tambem anuncia em todo servidor, 60 legendary)
-Mod efeito glow vitality em armaduras full +20
+***Mod mensagem diferente para ganhador e perdedor de PvP
+***Mod mensagem diferente para quem deu pk e quem levou pk
+***Mod bloqueia o uso de GateKeepers para Chars em Modo Flag ( PvP )
+***Mod Desabilitar AIOx usar a GK
+***Mod Custom spawn para novos chars
+***Mod Pvps to use Chat Shout, Chat Trade & Chat Hero
+***Mod Sistema de Equipamentos E Restrições
+***Mod desabilitar chat para players mortos
+***Mod NPC services (Limpar PKs, Level UP Clan, Clan reputação, Mudar sexo do char, Virar Nobles, Mudar nome do clan, Mudar nome do char)
+***Mod anuncio de ban global
+***Mod anuncio de jail global
+***Mod Anuncios login para Nobles & Hero
+***Mod efeito glow vitality em armaduras full +20
+
+---------------------------------------------------------------------------------------------------------------------------------------
+|***Mod  kingle spree (vc mata 20 vezes sem morrer ai anuncia no server e o player ganha status de heroi, matar 30                    |
+|sem morrer vira rampage e recebe efeito glow vitalit alem dos status e aura de heroi e tambem anuncia em todo servidor, 60 legendary)|
+---------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+|***Mod Clan war zone (No momento que o cara teleportar para zone ou entrar nela, o codigo vai verificar se ele tem clan. 			  |
+|Se ele tiver clan, cada kill que ele fizer em algum outro player de outro clan que tambem estiver nessa zone, 						  |
+|sera contado alem do pvp uma reputacao para o clan.)																				  |
+---------------------------------------------------------------------------------------------------------------------------------------
 
 ###############################################
 ################## PROTECOES ##################

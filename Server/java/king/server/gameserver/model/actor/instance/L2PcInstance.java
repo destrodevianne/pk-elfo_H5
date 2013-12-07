@@ -225,6 +225,7 @@ import king.server.gameserver.model.zone.L2ZoneType;
 import king.server.gameserver.model.zone.ZoneId;
 import king.server.gameserver.model.zone.type.L2BossZone;
 import king.server.gameserver.model.zone.type.L2NoRestartZone;
+import king.server.gameserver.model.zone.type.L2ClanWarZone;
 import king.server.gameserver.network.DialogId;
 import king.server.gameserver.network.L2GameClient;
 import king.server.gameserver.network.SystemMessageId;
@@ -6404,6 +6405,22 @@ public final class L2PcInstance extends L2Playable
 			{
 				// Add karma to attacker and increase its PK counter
 				setPvpKills(getPvpKills() + 1);
+				L2PcInstance targetPlayer = target.getActingPlayer();
+				if(isInsideZone(ZoneId.CLANWAR) & targetPlayer.isInsideZone(ZoneId.CLANWAR) && (getClanId() != targetPlayer.getClanId()) && getClan() != null && targetPlayer.getClan() != null)
+				{
+					if(Config.ALLOW_CLANWAR_REP)
+					{
+						getClan().addReputationScore(Config.CLANWAR_ADD_REP, true);
+					}        
+					sendMessage("Voce matou alguem de um clan inimigo. Seu clan sera recompensado com 50 pontos de reputacao!");
+					if(Config.ALLOW_CLANWAR_REWARD)
+					{
+						// Item Reward system
+						addItem("Loot", Config.CLANWAR_REWARD_ITEM, Config.CLANWAR_REWARD_COUNT, this, true);
+						sendMessage("Voce sera recompensado por matar um mebro de um clan inimigo!");
+					}
+				}
+
 			KILL_STEAK++;
 			switch (KILL_STEAK)
 			{

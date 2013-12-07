@@ -75,6 +75,7 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String AIO_CONFIG_FILE = "./config/AIOx/Aio.properties";
 	public static final String AUTO_RESTART = "./config/AutoRestart/AutoRestart.properties";
+	public static final String CLANWAR_FILE = "./config/clan/ClanWarZone.properties";
 	public static final String CHARACTER_CONFIG_FILE = "./config/Character.properties";
 	public static final String CHAT_FILTER_FILE = "./config/chatfilter.txt";
 	public static final String COMMUNITY_PVP = "./config/CommunityPvP.properties";
@@ -138,6 +139,14 @@ public final class Config
 	public static boolean AUTO_RESTART_ENABLE;
 	public static int AUTO_RESTART_TIME;
 	public static String[] AUTO_RESTART_INTERVAL;
+	// ########################################################################################################//
+	// CLANWARZONE PROPERTIES
+	// ########################################################################################################//
+	public static boolean ALLOW_CLANWAR_REWARD;
+	public static int CLANWAR_REWARD_ITEM;
+	public static int CLANWAR_REWARD_COUNT;
+	public static boolean ALLOW_CLANWAR_REP;
+	public static int CLANWAR_ADD_REP;
 	// ########################################################################################################//
 	// PKELFO PROPERTIES
 	// ########################################################################################################//
@@ -2968,8 +2977,27 @@ public final class Config
 				_log.warning("Config: " + e.getMessage());
 				throw new Error("Falha ao carregar o arquivo " + AUTO_RESTART + " .");
 			}
-			// ########################################################################################################//
 			
+			// ############################ CLANWARZONE PROPERTIES ####################################################//
+			// Load Clan War Zone L2Properties file (if exists)
+			final File clanwarzone = new File(CLANWAR_FILE);
+			try (InputStream is = new FileInputStream(clanwarzone))
+			{
+				L2Properties clanwar = new L2Properties();
+				clanwar.load(is);
+				ALLOW_CLANWAR_REWARD = Boolean.parseBoolean(clanwar.getProperty("AllowClanwarSystem", "False"));
+				CLANWAR_REWARD_ITEM = Integer.parseInt(clanwar.getProperty("ClanRewardItem", "57"));
+				CLANWAR_REWARD_COUNT = Integer.parseInt(clanwar.getProperty("ClanRewardA-beep-t", "1"));
+				ALLOW_CLANWAR_REP = Boolean.parseBoolean(clanwar.getProperty("AllowClanwarRepSystem", "False"));
+				CLANWAR_ADD_REP = Integer.parseInt(clanwar.getProperty("ClanAddRepAm-beep-t", "1"));
+			}
+			catch (Exception e)
+			{
+				_log.warning("Config: " + e.getMessage());
+				throw new Error("Falha ao carregar o arquivo " + CLANWAR_FILE + " .");
+			}
+			
+			// ########################################################################################################//
 			// Character L2Properties
 			L2Properties Character = new L2Properties();
 			final File chars = new File(CHARACTER_CONFIG_FILE);

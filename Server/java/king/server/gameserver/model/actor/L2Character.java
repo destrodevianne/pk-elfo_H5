@@ -223,6 +223,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 	protected FusionSkill _fusionSkill;
 	
 	private final byte[] _zones = new byte[ZoneId.getZoneCount()];
+	
 	protected byte _zoneValidateCounter = 4;
 	
 	private boolean _isInTownWar;
