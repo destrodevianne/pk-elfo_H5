@@ -13,7 +13,7 @@
 		<node X="-112798" Y="-250855" />
 		<node X="-113353" Y="-250857" />
 	</zone>
-	<zone name="gm_room" type="JailZone" shape="NPoly" minZ="-3050" maxZ="-2850"> <!-- [16_10] -->
+	<zone name="gm_room" type="ClanWarZone" shape="NPoly" minZ="-3050" maxZ="-2850"> <!-- [16_10] -->
 		<node X="-115727" Y="-251652" />
 		<node X="-113365" Y="-251655" />
 		<node X="-113365" Y="-248191" />
