@@ -67,7 +67,7 @@ public class TownWarManager
 		}
 		catch (Exception e)
 		{
-			_log.warning("TownWar Engine: Error figuring out a start time. Check TownWarEventInterval in config file.");
+			_log.warning("TownWar Engine: Erro ao calcular uma hora de inicio. Verifique TownWarEventInterval no arquivo de configuracao.");
 		}
 	}
 	
@@ -92,13 +92,13 @@ public class TownWarManager
 			}
 			TownManager.getTown(20).setIsTWZone(true);
 			TownManager.getTown(20).updateForCharactersInside();
-			Announcements.getInstance().announceToAll("Town War: All towns are war zone.");
+			Announcements.getInstance().announceToAll("Town War: Todas as cidades estao em zona de guerra.");
 		}
 		else
 		{
 			TownManager.getTown(Config.TW_TOWN_ID).setIsTWZone(true);
 			TownManager.getTown(Config.TW_TOWN_ID).updateForCharactersInside();
-			Announcements.getInstance().announceToAll("Town War: " + Config.TW_TOWN_NAME + " is a war zone.");
+			Announcements.getInstance().announceToAll("Town War: " + Config.TW_TOWN_NAME + " esta como zona de guerra.");
 		}
 		
 		_task.setStartTime(System.currentTimeMillis() + (60000L * Config.TW_RUNNING_TIME));
@@ -118,13 +118,13 @@ public class TownWarManager
 			}
 			TownManager.getTown(20).setIsTWZone(false);
 			TownManager.getTown(20).updateForCharactersInside();
-			Announcements.getInstance().announceToAll("Town War: All towns are returned normal.");
+			Announcements.getInstance().announceToAll("Town War: Todas as cidades voltaram ao normal.");
 		}
 		else
 		{
 			TownManager.getTown(Config.TW_TOWN_ID).setIsTWZone(false);
 			TownManager.getTown(Config.TW_TOWN_ID).updateForCharactersInside();
-			Announcements.getInstance().announceToAll("Town War: " + Config.TW_TOWN_NAME + " is returned normal.");
+			Announcements.getInstance().announceToAll("Town War: " + Config.TW_TOWN_NAME + " voltou ao normal.");
 		}
 		
 		scheduleEventStart();
@@ -219,7 +219,7 @@ public class TownWarManager
 			{
 				if (isStarting)
 				{
-					Announcements.getInstance().announceToAll("Town War Event: " + (time / 60 / 60) + " hour(s) until event starts!");
+					Announcements.getInstance().announceToAll("Town War Event: " + (time / 60 / 60) + " hour(s) ate que o evento comece!");
 				}
 				else if (isStarted)
 				{
@@ -227,7 +227,7 @@ public class TownWarManager
 					{
 						if ((onlinePlayer != null) && onlinePlayer.isOnline())
 						{
-							onlinePlayer.sendMessage("Town War Event: " + (time / 60 / 60) + " hour(s) until event is finished!");
+							onlinePlayer.sendMessage("Town War Event: " + (time / 60 / 60) + " hour(s) ate que o evento termine!");
 						}
 					}
 				}
@@ -236,7 +236,7 @@ public class TownWarManager
 			{
 				if (isStarting)
 				{
-					Announcements.getInstance().announceToAll("Town War Event: " + (time / 60) + " minute(s) until event starts!");
+					Announcements.getInstance().announceToAll("Town War Event: " + (time / 60) + " minute(s) ate que o evento comece!");
 				}
 				else if (isStarted)
 				{
@@ -244,7 +244,7 @@ public class TownWarManager
 					{
 						if ((onlinePlayer != null) && onlinePlayer.isOnline())
 						{
-							onlinePlayer.sendMessage("Town War Event: " + (time / 60) + " minute(s) until the event is finished!");
+							onlinePlayer.sendMessage("Town War Event: " + (time / 60) + " minute(s) ate que o evento termine!");
 						}
 					}
 				}
@@ -253,7 +253,7 @@ public class TownWarManager
 			{
 				if (isStarting)
 				{
-					Announcements.getInstance().announceToAll("Town War Event: " + time + " second(s) until event starts!");
+					Announcements.getInstance().announceToAll("Town War Event: " + time + " second(s) ate que o evento comece!");
 				}
 				else if (isStarted)
 				{
@@ -261,7 +261,7 @@ public class TownWarManager
 					{
 						if ((onlinePlayer != null) && onlinePlayer.isOnline())
 						{
-							onlinePlayer.sendMessage("Town War Event: " + time + " second(s) until the event is finished!");
+							onlinePlayer.sendMessage("Town War Event: " + time + " second(s) ate que o evento termine!");
 						}
 					}
 				}

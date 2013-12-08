@@ -62,7 +62,7 @@ public class L2TownZone extends L2ZoneType
 		if (_isTWZone)
 		{
 			character.setInTownWarEvent(true);
-			character.sendMessage("You entered a Town War event zone.");
+			character.sendMessage("Voce entrou em uma zona do evento Town War.");
 		}
 		character.setInsideZone(ZoneId.TOWN, true);
 	}
@@ -73,7 +73,7 @@ public class L2TownZone extends L2ZoneType
 		if (_isTWZone)
 		{
 			character.setInTownWarEvent(false);
-			character.sendMessage("You left a Town War event zone.");
+			character.sendMessage("Voce deixou uma zona do evento Town War.");
 		}
 		
 		character.setInsideZone(ZoneId.TOWN, false);
@@ -84,12 +84,12 @@ public class L2TownZone extends L2ZoneType
 		if (_isTWZone)
 		{
 			character.setInTownWarEvent(true);
-			character.sendMessage("You entered a Town War event zone.");
+			character.sendMessage("Voce entrou em uma zona do evento Town War.");
 		}
 		else
 		{
 			character.setInTownWarEvent(false);
-			character.sendMessage("You left a Town War event zone.");
+			character.sendMessage("Voce deixou uma zona do evento Town War.");
 		}
 	}
 	

@@ -6317,7 +6317,7 @@ public final class L2PcInstance extends L2Playable
 			sm.addItemName(Config.TW_ITEM_ID);
 			sm.addItemNumber(Config.TW_ITEM_AMOUNT);
 			sendPacket(sm);
-			sendMessage("You received your prize for a Town War kill!");
+			sendMessage("Voce recebeu o seu premio por matar no evento TownWar!");
 		}
 		
 		// If in duel and you kill (only can kill l2summon), do nothing

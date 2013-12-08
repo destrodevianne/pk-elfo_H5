@@ -817,7 +817,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 	{
 		if (Config.TW_DISABLE_GK && isInTownWarEvent() && !isPendingRevive())
 		{
-			sendMessage("You can't teleport during Town War Event.");
+			sendMessage("Voce nao pode se teleportar durante o evento TownWar.");
 			return;
 		}
 		
