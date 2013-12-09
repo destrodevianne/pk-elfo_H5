@@ -161,10 +161,6 @@ public final class Config
 	public static Map<Integer, Integer> CLAN_SKILLS;
 	public static byte CLAN_LEVEL;
 	public static int REPUTATION_QUANTITY;
-	public static String PVPS_COLORS;
-	public static FastMap<Integer, Integer> PVPS_COLORS_LIST;
-	public static String PKS_COLORS;
-	public static FastMap<Integer, Integer> PKS_COLORS_LIST;
 	public static boolean ANNOUNCE_CASTLE_LORDS;
 	public static boolean ANNOUNCE_NOBLESSE_LOGIN = false;
 	public static boolean ANNOUNCE_HERO_LOGIN = false;
@@ -289,6 +285,32 @@ public final class Config
 	public static int NpcBuffer_PriceScheme;
 	public static int NpcBuffer_MaxScheme;
 	public static int NpcBuffer_consumableID;
+	// ########################################################################################################//
+	// Addons tittle color and name
+	// ########################################################################################################//
+	public static boolean PVP_COLOR_SYSTEM_ENABLED;
+	public static int PVP_AMOUNT1;
+	public static int PVP_AMOUNT2;
+	public static int PVP_AMOUNT3;
+	public static int PVP_AMOUNT4;
+	public static int PVP_AMOUNT5;
+	public static int NAME_COLOR_FOR_PVP_AMOUNT1;
+	public static int NAME_COLOR_FOR_PVP_AMOUNT2;
+	public static int NAME_COLOR_FOR_PVP_AMOUNT3;
+	public static int NAME_COLOR_FOR_PVP_AMOUNT4;
+	public static int NAME_COLOR_FOR_PVP_AMOUNT5;
+	public static boolean PK_COLOR_SYSTEM_ENABLED;
+	public static int PK_AMOUNT1;
+	public static int PK_AMOUNT2;
+	public static int PK_AMOUNT3;
+	public static int PK_AMOUNT4;
+	public static int PK_AMOUNT5;
+	public static int TITLE_COLOR_FOR_PK_AMOUNT1;
+	public static int TITLE_COLOR_FOR_PK_AMOUNT2;
+	public static int TITLE_COLOR_FOR_PK_AMOUNT3;
+	public static int TITLE_COLOR_FOR_PK_AMOUNT4;
+	public static int TITLE_COLOR_FOR_PK_AMOUNT5;
+	// ########################################################################################################//
 	public static boolean VOTE_SYSTEM_ENABLE;
 	public static boolean VOTE_SYSTEM_HOPZONE;
 	public static boolean VOTE_SYSTEM_DATABASE_SAVE;
@@ -4416,40 +4438,31 @@ public final class Config
 			ANNOUNCE_PK_MSG = PvPpKSettings.getProperty("AnnouncePkMsg", "$killer has matou $target");
 			ANNOUNCE_PVP_MSG = PvPpKSettings.getProperty("AnnouncePvpMsg", "$killer derrotou $target");
 			
-			// --------------------------- a cada quantidade de pvp ou pk pontos muda a cor no nome -------------------//
-			PVPS_COLORS = PvPpKSettings.getProperty("PvpsColors", "");
-			PVPS_COLORS_LIST = new FastMap<>();
-			
-			String[] splitted_pvps_colors = PVPS_COLORS.split(";");
-			
-			for (String iii : splitted_pvps_colors)
-			{
-				String[] pvps_colors = iii.split(",");
-				if (pvps_colors.length != 2)
-				{
-					System.out.println("propriedades invalidas.");
-				}
-				else
-				{
-					PVPS_COLORS_LIST.put(Integer.parseInt(pvps_colors[0]), Integer.decode("0x" + pvps_colors[1]));
-				}
-			}
-			PKS_COLORS = PvPpKSettings.getProperty("PksColors", "");
-			PKS_COLORS_LIST = new FastMap<>();
-			String[] splitted_pks_colors = PKS_COLORS.split(";");
-			
-			for (String iii : splitted_pks_colors)
-			{
-				String[] pks_colors = iii.split(",");
-				if (pks_colors.length != 2)
-				{
-					System.out.println("propriedades invalidas.");
-				}
-				else
-				{
-					PKS_COLORS_LIST.put(Integer.parseInt(pks_colors[0]), Integer.decode("0x" + pks_colors[1]));
-				}
-			}
+	
+			// --------------------------- announce pvp and pk e name and title color ---------------------------------//
+			// Tittle color and name
+			PVP_COLOR_SYSTEM_ENABLED = Boolean.parseBoolean(PvPpKSettings.getProperty("EnablePvPColorSystem", "false"));
+			PVP_AMOUNT1 = Integer.parseInt(PvPpKSettings.getProperty("PvpAmount1", "500"));
+			PVP_AMOUNT2 = Integer.parseInt(PvPpKSettings.getProperty("PvpAmount2", "1000"));
+			PVP_AMOUNT3 = Integer.parseInt(PvPpKSettings.getProperty("PvpAmount3", "1500"));
+			PVP_AMOUNT4 = Integer.parseInt(PvPpKSettings.getProperty("PvpAmount4", "2500"));
+			PVP_AMOUNT5 = Integer.parseInt(PvPpKSettings.getProperty("PvpAmount5", "5000"));
+			NAME_COLOR_FOR_PVP_AMOUNT1 = Integer.decode("0x" + PvPpKSettings.getProperty("ColorForAmount1", "00FF00"));
+			NAME_COLOR_FOR_PVP_AMOUNT2 = Integer.decode("0x" + PvPpKSettings.getProperty("ColorForAmount2", "00FF00"));
+			NAME_COLOR_FOR_PVP_AMOUNT3 = Integer.decode("0x" + PvPpKSettings.getProperty("ColorForAmount3", "00FF00"));
+			NAME_COLOR_FOR_PVP_AMOUNT4 = Integer.decode("0x" + PvPpKSettings.getProperty("ColorForAmount4", "00FF00"));
+			NAME_COLOR_FOR_PVP_AMOUNT5 = Integer.decode("0x" + PvPpKSettings.getProperty("ColorForAmount4", "00FF00"));
+			PK_COLOR_SYSTEM_ENABLED = Boolean.parseBoolean(PvPpKSettings.getProperty("EnablePkColorSystem", "false"));
+			PK_AMOUNT1 = Integer.parseInt(PvPpKSettings.getProperty("PkAmount1", "500"));
+			PK_AMOUNT2 = Integer.parseInt(PvPpKSettings.getProperty("PkAmount2", "1000"));
+			PK_AMOUNT3 = Integer.parseInt(PvPpKSettings.getProperty("PkAmount3", "1500"));
+			PK_AMOUNT4 = Integer.parseInt(PvPpKSettings.getProperty("PkAmount4", "2500"));
+			PK_AMOUNT5 = Integer.parseInt(PvPpKSettings.getProperty("PkAmount5", "5000"));
+			TITLE_COLOR_FOR_PK_AMOUNT1 = Integer.decode("0x" + PvPpKSettings.getProperty("TitleForAmount1", "00FF00"));
+			TITLE_COLOR_FOR_PK_AMOUNT2 = Integer.decode("0x" + PvPpKSettings.getProperty("TitleForAmount2", "00FF00"));
+			TITLE_COLOR_FOR_PK_AMOUNT3 = Integer.decode("0x" + PvPpKSettings.getProperty("TitleForAmount3", "00FF00"));
+			TITLE_COLOR_FOR_PK_AMOUNT4 = Integer.decode("0x" + PvPpKSettings.getProperty("TitleForAmount4", "00FF00"));
+			TITLE_COLOR_FOR_PK_AMOUNT5 = Integer.decode("0x" + PvPpKSettings.getProperty("TitleForAmount5", "00FF00"));
 			
 			// --------------------------- Colocar a cadeia em modo de zona de PvP ------------------------------------//
 			JAIL_IS_PVP = Boolean.parseBoolean(PvPpKSettings.getProperty("JailIsPvp", "False"));

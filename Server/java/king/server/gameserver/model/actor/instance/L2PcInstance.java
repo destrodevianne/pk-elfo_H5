@@ -64,7 +64,6 @@ import king.server.gameserver.cache.WarehouseCacheManager;
 import king.server.gameserver.communitybbs.BB.Forum;
 import king.server.gameserver.communitybbs.Manager.ForumsBBSManager;
 import king.server.gameserver.communitybbs.Manager.RegionBBSManager;
-import king.server.gameserver.custom.PvPColorSystem;
 import king.server.gameserver.datatables.AdminTable;
 import king.server.gameserver.datatables.ArmorSetsData;
 import king.server.gameserver.datatables.AdventBonus;
@@ -258,6 +257,7 @@ import king.server.gameserver.network.serverpackets.ExStorageMaxCount;
 import king.server.gameserver.network.serverpackets.ExUseSharedGroupItem;
 import king.server.gameserver.network.serverpackets.ExVitalityPointInfo;
 import king.server.gameserver.network.serverpackets.ExVoteSystemInfo;
+import king.server.gameserver.network.serverpackets.ExShowScreenMessage;
 import king.server.gameserver.network.serverpackets.FriendStatusPacket;
 import king.server.gameserver.network.serverpackets.GameGuardQuery;
 import king.server.gameserver.network.serverpackets.GetOnVehicle;
@@ -438,6 +438,10 @@ public final class L2PcInstance extends L2Playable
 		}
 	}
 
+	// addons anuncios pvp and pk
+	private int consecutiveKillCount = 0;
+	private int consecutivepkCount = 0;
+	
 	private int abnormal = AbnormalEffect.VITALITY.getMask();
 	private L2GameClient _client;
 	
@@ -4899,6 +4903,77 @@ public final class L2PcInstance extends L2Playable
 		}
 	}
 	
+	// addons PVP name and color - START
+		public void updatePvPColor(int pvpKillAmount)
+		{
+			if (Config.PVP_COLOR_SYSTEM_ENABLED)
+			{
+				// Check if the character has GM access and if so, let them be.
+				if (isGM())
+				{
+					return;
+				}
+
+				if ((pvpKillAmount >= (Config.PVP_AMOUNT1)) && (pvpKillAmount <= (Config.PVP_AMOUNT2)))
+				{
+					getAppearance().setNameColor(Config.NAME_COLOR_FOR_PVP_AMOUNT1);
+				}
+				else if ((pvpKillAmount >= (Config.PVP_AMOUNT2)) && (pvpKillAmount <= (Config.PVP_AMOUNT3)))
+				{
+					getAppearance().setNameColor(Config.NAME_COLOR_FOR_PVP_AMOUNT2);
+				}
+				else if ((pvpKillAmount >= (Config.PVP_AMOUNT3)) && (pvpKillAmount <= (Config.PVP_AMOUNT4)))
+				{
+					getAppearance().setNameColor(Config.NAME_COLOR_FOR_PVP_AMOUNT3);
+				}
+				else if ((pvpKillAmount >= (Config.PVP_AMOUNT4)) && (pvpKillAmount <= (Config.PVP_AMOUNT5)))
+				{
+					getAppearance().setNameColor(Config.NAME_COLOR_FOR_PVP_AMOUNT4);
+				}
+				else if (pvpKillAmount >= (Config.PVP_AMOUNT5))
+				{
+					getAppearance().setNameColor(Config.NAME_COLOR_FOR_PVP_AMOUNT5);
+				}
+			}
+		}
+		// addons PVP Color System - End
+
+		// addons Pk Color System - Start
+		public void updatePkColor(int pkKillAmount)
+		{
+			if (Config.PK_COLOR_SYSTEM_ENABLED)
+			{
+				// Check if the character has GM access and if so, let them be, like above.
+				if (isGM())
+				{
+					return;
+				}
+
+				if ((pkKillAmount >= (Config.PK_AMOUNT1)) && (pkKillAmount <= (Config.PVP_AMOUNT2)))
+				{
+					getAppearance().setTitleColor(Config.TITLE_COLOR_FOR_PK_AMOUNT1);
+				}
+				else if ((pkKillAmount >= (Config.PK_AMOUNT2)) && (pkKillAmount <= (Config.PVP_AMOUNT3)))
+				{
+					getAppearance().setTitleColor(Config.TITLE_COLOR_FOR_PK_AMOUNT2);
+				}
+				else if ((pkKillAmount >= (Config.PK_AMOUNT3)) && (pkKillAmount <= (Config.PVP_AMOUNT4)))
+				{
+					getAppearance().setTitleColor(Config.TITLE_COLOR_FOR_PK_AMOUNT3);
+				}
+				else if ((pkKillAmount >= (Config.PK_AMOUNT4)) && (pkKillAmount <= (Config.PVP_AMOUNT5)))
+				{
+					getAppearance().setTitleColor(Config.TITLE_COLOR_FOR_PK_AMOUNT4);
+				}
+				else if (pkKillAmount >= (Config.PK_AMOUNT5))
+				{
+					getAppearance().setTitleColor(Config.TITLE_COLOR_FOR_PK_AMOUNT5);
+				}
+ 	
+			}
+		}
+			// Custom Pk Color System - END
+	
 	/**
 	 * Send a Server->Client packet UserInfo to this L2PcInstance and CharInfo to all L2PcInstance in its _KnownPlayers. <B><U> Concept</U> :</B> Others L2PcInstance in the detection area of the L2PcInstance are identified in <B>_knownPlayers</B>. In order to inform other players of this
 	 * L2PcInstance state modifications, server just need to go through _knownPlayers to send Server->Client Packet <B><U> Actions</U> :</B> <li>Send a Server->Client packet UserInfo to this L2PcInstance (Public and Private Data)</li> <li>Send a Server->Client packet CharInfo to all L2PcInstance in
@@ -6405,6 +6480,66 @@ public final class L2PcInstance extends L2Playable
 			{
 				// Add karma to attacker and increase its PK counter
 				setPvpKills(getPvpKills() + 1);
+				
+				// pvp color
+				updatePvPColor(getPvpKills());
+				broadcastUserInfo();
+	
+				// addons consecutive pvp
+				consecutiveKillCount++;
+
+				if (consecutiveKillCount == 1)
+				{
+					Announcements.getInstance().announceToAll(getName() + " voce matou um inimigo!");
+				}
+				else if (consecutiveKillCount == 2)
+				{
+					Announcements.getInstance().announceToAll(getName() + " Morte dupla");
+				}
+	
+				else if (consecutiveKillCount == 3)
+				{
+					Announcements.getInstance().announceToAll(getName() + " Morte tripla");
+				}
+
+				else if (consecutiveKillCount == 4)
+				{
+					Announcements.getInstance().announceToAll(getName() + " Morte quadrupla");
+				}
+
+				else if (consecutiveKillCount == 5)
+				{
+					Announcements.getInstance().announceToAll(getName() + " Morte quindupla");
+				}
+
+				else if (consecutiveKillCount > 5)
+				{
+					Announcements.getInstance().announceToAll(getName() + " Lendario!");
+				}
+
+				// muy bonito verdad? jajaja
+				broadcastPacket(new MagicSkillUse(this, target, 721, 1, 1, 0));// efecto sobre el char q muere by fissban
+
+				L2PcInstance player_target = target.getActingPlayer();
+				// custom anuncio para cuando muere un heroe
+				if (player_target.isHero())
+				{
+					final ExShowScreenMessage cs; // final??
+					final String texto = "O heroi " + target.getName() + " caiu nas maos de " + getName(); // final??
+					cs = new ExShowScreenMessage(texto, 1500);
+					Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().valueCollection();
+
+					for (L2PcInstance playersOnline : pls)
+					{
+						if (playersOnline == null)
+						{
+							continue;
+						}
+
+						playersOnline.sendPacket(cs);// envio del msj
+					}
+				}
+				
 				L2PcInstance targetPlayer = target.getActingPlayer();
 				if(isInsideZone(ZoneId.CLANWAR) & targetPlayer.isInsideZone(ZoneId.CLANWAR) && (getClanId() != targetPlayer.getClanId()) && getClan() != null && targetPlayer.getClan() != null)
 				{
@@ -6443,9 +6578,6 @@ public final class L2PcInstance extends L2Playable
 					}
 					break;
 			}				
-				PvPColorSystem pvpcolor = new PvPColorSystem();
-				pvpcolor.updateNameColor(this);
-				pvpcolor.updateTitleColor(this);
 				// Send a Server->Client UserInfo packet to attacker with its Karma and PK Counter
 				sendPacket(new UserInfo(this));
 				sendPacket(new ExBrExtraUserInfo(this));
@@ -6530,6 +6662,25 @@ public final class L2PcInstance extends L2Playable
 		if ((target instanceof L2PcInstance) && AntiFeedManager.getInstance().check(this, target) && (!isInTownWarEvent() || Config.TW_GIVE_PVP_AND_PK_POINTS))
 		{
 			setPkKills(getPkKills() + 1);
+		}
+		
+		// addons pk color
+		updatePkColor(getPvpKills());
+		broadcastUserInfo();
+	
+		// addons consecutive pk
+		consecutivepkCount++;
+		if (consecutivepkCount == 1)
+		{
+			Announcements.getInstance().announceToAll(getName() + " um assassino inocente!");
+		}
+		else if (consecutivepkCount == 2)
+		{
+			Announcements.getInstance().announceToAll(getName() + " esta matando todos em seu caminho!");
+		}
+		else if (consecutivepkCount > 2)
+		{
+			Announcements.getInstance().announceToAll(getName() + " esta massacrando tudo!");
 		}
 		
 		// Send a Server->Client UserInfo packet to attacker with its Karma and PK Counter

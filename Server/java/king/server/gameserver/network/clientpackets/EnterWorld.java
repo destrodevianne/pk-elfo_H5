@@ -30,7 +30,6 @@ import king.server.gameserver.SevenSigns;
 import king.server.gameserver.TaskPriority;
 import king.server.gameserver.cache.HtmCache;
 import king.server.gameserver.communitybbs.Manager.RegionBBSManager;
-import king.server.gameserver.custom.PvPColorSystem;
 import king.server.gameserver.datatables.AdminTable;
 import king.server.gameserver.datatables.SkillTable;
 import king.server.gameserver.datatables.SkillTreesData;
@@ -153,11 +152,7 @@ public class EnterWorld extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		
-		PvPColorSystem pvpcolor = new PvPColorSystem();
-		pvpcolor.updateNameColor(activeChar);
-		pvpcolor.updateTitleColor(activeChar);
+		L2PcInstance activeChar = getClient().getActiveChar();		
 		
 		if (activeChar == null)
 		{
