@@ -121,6 +121,7 @@ import handlers.admincommandhandlers.AdminUnblockIp;
 import handlers.admincommandhandlers.AdminVip;
 import handlers.admincommandhandlers.AdminVitality;
 import handlers.admincommandhandlers.AdminZone;
+import handlers.admincommandhandlers.AdminMensagem;
 import handlers.bypasshandlers.ArenaBuff;
 import handlers.bypasshandlers.Augment;
 import handlers.bypasshandlers.BloodAlliance;
@@ -472,6 +473,7 @@ public class MasterHandler
 			AdminMovieMaker.class,
 			AdminCrazy.class,
 			AdminVip.class,
+			AdminMensagem.class,
 		},
 		{
 			// Bypass Handlers

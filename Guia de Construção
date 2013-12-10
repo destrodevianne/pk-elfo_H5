@@ -97,6 +97,7 @@ Evento Last Hero
 //unbanchat <nome do char> <tempo em minutos>
 //mass hero (da hero para todos online)
 .tw_goto_ward
+//msgtela + texto (manda mesagem global no centro da tela)
 
 ###############################################
 ######## COMANDOS DE DONO DE CASTELO ##########
