@@ -155,6 +155,13 @@ public final class Config
 	public static int CLAN_LEADER_COLOR;
 	public static int CLAN_LEADER_COLOR_CLAN_LEVEL;
 	// ----------------------------------------------------------------------------------------------------//
+	// Teleporte custom para o comando unstuck
+	// ----------------------------------------------------------------------------------------------------//
+	public static boolean UnstuckCustom;
+	public static int LocX;
+	public static int LocY;
+	public static int LocZ;
+	// ----------------------------------------------------------------------------------------------------//
 	// Clan Full
 	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ENABLE_CLAN_SYSTEM;
@@ -2313,6 +2320,12 @@ public final class Config
 				CLAN_LEADER_COLOR_ENABLED = Boolean.parseBoolean(PkelfoSettings.getProperty("ClanLeaderNameColorEnabled", "True"));
 				CLAN_LEADER_COLOR = Integer.decode((new StringBuilder()).append("0x").append(PkelfoSettings.getProperty("ClanLeaderColor", "00FFFF")).toString()).intValue();
 				CLAN_LEADER_COLOR_CLAN_LEVEL = Integer.parseInt(PkelfoSettings.getProperty("ClanLeaderColorAtClanLevel", "1"));
+				//---------------------------------------------------------------------------------------------
+				UnstuckCustom = Boolean.parseBoolean(PkelfoSettings.getProperty("UnstuckCustom", "true"));
+				LocX = Integer.parseInt(PkelfoSettings.getProperty("LocX", "10724"));
+				LocY = Integer.parseInt(PkelfoSettings.getProperty("LocY", "-23729"));
+				LocZ = Integer.parseInt(PkelfoSettings.getProperty("LocZ", "-3650"));
+				//---------------------------------------------------------------------------------------------
 				ANNOUNCE_CASTLE_LORDS = Boolean.parseBoolean(PkelfoSettings.getProperty("AnnounceCastleLords", "True"));
 				ANNOUNCE_NOBLESSE_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("AnnounceNoblesseLogin", "False"));
 				ANNOUNCE_HERO_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("AnnounceHeroLogin", "False"));
