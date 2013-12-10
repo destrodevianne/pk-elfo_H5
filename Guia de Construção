@@ -68,6 +68,7 @@ SuperStar
 TheValentineEvent
 TrickorTransmutation
 LuckyPig
+***Happy Hour (pelo comando //happyhour)
 
 ###############PHOENIX ENGINE:################
 Battlefield
@@ -98,6 +99,7 @@ Evento Last Hero
 //mass hero (da hero para todos online)
 .tw_goto_ward
 //msgtela + texto (manda mesagem global no centro da tela)
+***//happyhour (inicia o evento Happy Hour)
 
 ###############################################
 ######## COMANDOS DE DONO DE CASTELO ##########

@@ -149,6 +149,7 @@ public class ThreadPoolManager
 		}
 		catch (RejectedExecutionException e)
 		{
+			// _log.info("Ignorado: " + initial + " " + delay);
 			return null; /* shutdown, ignore */
 		}
 	}

@@ -81,7 +81,6 @@ public final class Config
 	public static final String COMMUNITY_PVP = "./config/CommunityPvP.properties";
 	public static final String COMMUNITY_CONFIGURATION_FILE = "./config/CommunityServer.properties";
 	public static final String CH_SIEGE_FILE = "./config/ConquerableHallSiege.properties";
-	public static final String RESTRICTIONS_CONFIG_FILE = "./config/Restrictions.properties";
 	public static final String EMAIL_CONFIG_FILE = "./config/Email.properties";
 	public static final String EVENT_FILE = "./config/Event.properties";
 	public static final String FEATURE_CONFIG_FILE = "./config/Feature.properties";
@@ -103,6 +102,7 @@ public final class Config
 	public static final String PREMIUM_CONFIG_FILE = "./config/Premium.properties";
 	public static final String PVPPK_CONFIG_FILE = "./config/PvPpK/PvpPk.properties";
 	public static final String RATES_CONFIG_FILE = "./config/Rates.properties";
+	public static final String RESTRICTIONS_CONFIG_FILE = "./config/Restrictions.properties";
 	public static final String SECURITY_CONFIG_FILE = "./config/Security.properties";
 	public static final String CONFIGURATION_FILE = "./config/Server.properties";
 	public static final String SIEGE_CONFIGURATION_FILE = "./config/Siege.properties";

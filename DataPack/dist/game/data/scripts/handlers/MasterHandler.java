@@ -122,6 +122,7 @@ import handlers.admincommandhandlers.AdminVip;
 import handlers.admincommandhandlers.AdminVitality;
 import handlers.admincommandhandlers.AdminZone;
 import handlers.admincommandhandlers.AdminMensagem;
+import handlers.admincommandhandlers.AdminHappyHour;
 import handlers.bypasshandlers.ArenaBuff;
 import handlers.bypasshandlers.Augment;
 import handlers.bypasshandlers.BloodAlliance;
@@ -474,6 +475,7 @@ public class MasterHandler
 			AdminCrazy.class,
 			AdminVip.class,
 			AdminMensagem.class,
+			AdminHappyHour.class,
 		},
 		{
 			// Bypass Handlers
