@@ -41,6 +41,7 @@ public class AdminMensagem implements IAdminCommandHandler
                                 }
                                 playersOnline.sendPacket(cs);// envio da mensagem
                         }
+                        AdminHelpPage.showHelpPage(activeChar, "main_menu.htm");
                 }
                 else
                 {

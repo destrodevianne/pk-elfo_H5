@@ -113,6 +113,7 @@ Evento Last Hero
 .set home
 .set group
 .siege ( mostra estatsticas dos castelos e tambem permite o lider do clan registrar para siege)
+.clanmsg + texto (manda mensagem global no meio da tela para os membros do clan)
 
 ###############################################
 ################## COMANDOS ###################
@@ -225,7 +226,11 @@ Mod Adicionado Mod de Restart
 ***Mod anuncio de jail global
 ***Mod Anuncios login para Nobles & Hero
 ***Mod efeito glow vitality em armaduras full +20
-
+***Mod Adicionado restrincao de AIO em Oly
+-------------------------------------------------------
+***Mod Restricoes adicionada para os AIOS              |
+|	- Eles nao podem atacar em nenhuma circunstancia.  |
+|	- Nao podem usar suas habilidades fora da cidade.  |
 ---------------------------------------------------------------------------------------------------------------------------------------
 |***Mod  kingle spree (vc mata 20 vezes sem morrer ai anuncia no server e o player ganha status de heroi, matar 30                    |
 |sem morrer vira rampage e recebe efeito glow vitalit alem dos status e aura de heroi e tambem anuncia em todo servidor, 60 legendary)|

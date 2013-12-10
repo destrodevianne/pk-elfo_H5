@@ -339,6 +339,7 @@ import handlers.voicedcommandhandlers.User;
 import handlers.voicedcommandhandlers.Lider;
 import handlers.voicedcommandhandlers.Logout;
 import handlers.voicedcommandhandlers.Cancelar;
+import handlers.voicedcommandhandlers.ClanMensagem;
 
 public class MasterHandler
 {
@@ -658,6 +659,7 @@ public class MasterHandler
 			UserActions.class,
 			Lider.class,
 			Logout.class,
+			ClanMensagem.class,
 			(Config.CANCELAR_ONLINE ? Cancelar.class : null),
 			(Config.CMD_ONLINE ? Online.class : null),
 			(Config.BOSS_STATS ? RaidBoosStatus.class : null),

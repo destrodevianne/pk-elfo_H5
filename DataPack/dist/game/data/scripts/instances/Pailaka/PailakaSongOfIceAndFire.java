@@ -431,7 +431,7 @@ public class PailakaSongOfIceAndFire extends Quest
 	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		QuestState st = player.getQuestState(qn);
-		if ((st != null) && !st.isStarted())
+		if ((st != null) && st.isStarted())
 		{
 			final int cond = st.getCond();
 			switch (npc.getNpcId())

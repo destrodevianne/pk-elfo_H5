@@ -240,6 +240,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 	
 	protected final String COND_EXCEPTIONS = "COND_EX_" + getObjectId();
 	
+	private L2PcInstance _activeChar;
 	/**
 	 * @return True if debugging is enabled for this L2Character
 	 */
@@ -830,7 +831,15 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 			teleToLocation(x, y, z, heading, 0);
 		}
 	}
-	
+		// system VIP
+		public boolean isAio()
+		{
+			if (_activeChar.isAio())
+			{
+				return true;
+			}
+			return false;
+		}
 	/**
 	 * Launch a physical attack against a target (Simple, Bow, Pole or Dual).<br>
 	 * <B><U>Actions</U>:</B>
@@ -847,6 +856,13 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 	 */
 	protected void doAttack(L2Character target)
 	{
+		// Restriccion para el Aio
+		// if ((this instanceof L2PcInstance) && isAio())
+		// {
+		// sendMessage("you cant attack");
+		// sendPacket(ActionFailed.STATIC_PACKET);
+		// return;
+		// }
 		if ((this instanceof L2PcInstance) && EventsInterface.doAttack(getObjectId(), target.getObjectId()))
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
@@ -866,6 +882,12 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		
 		if (!isAlikeDead())
 		{
+			if (isPlayer() && isAio())
+			{
+				sendMessage("Voce nao pode atacar");
+				sendPacket(ActionFailed.STATIC_PACKET);
+				return;
+			}
 			if ((isNpc() && target.isAlikeDead()) || !getKnownList().knowsObject(target))
 			{
 				getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
@@ -2231,6 +2253,15 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 	 */
 	protected boolean checkDoCastConditions(L2Skill skill)
 	{
+		if (isPlayer() && isAio() && !isInsideZone(ZoneId.PEACE))
+		{
+			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+			sm.addSkillName(skill);
+			sendPacket(sm);
+			sendPacket(ActionFailed.STATIC_PACKET);
+			return false;
+		}
+
 		if ((skill == null) || isSkillDisabled(skill))
 		{
 			// Send a Server->Client packet ActionFailed to the L2PcInstance

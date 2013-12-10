@@ -230,7 +230,7 @@ public class OlympiadManager
 			player.sendPacket(SystemMessageId.GAME_REQUEST_CANNOT_BE_MADE);
 			return false;
 		}
-		
+	
 		final int charId = player.getObjectId();
 		if (Olympiad.getInstance().getRemainingWeeklyMatches(charId) < 1)
 		{
@@ -244,6 +244,13 @@ public class OlympiadManager
 			{
 				if (!checkNoble(player, player))
 				{
+					return false;
+				}
+				
+				// restricao de olimpiadas para os chars AIO
+				if (player.isAio())
+				{
+					player.sendMessage("Um Char AIO nao pode participar das olimpiadas!");
 					return false;
 				}
 				
