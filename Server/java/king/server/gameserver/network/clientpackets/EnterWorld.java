@@ -709,14 +709,6 @@ public class EnterWorld extends L2GameClientPacket
 			}
 		}
 		
-		if (Config.ANNOUNCE_NEWBIE_CONECT)
-		{
-			if (activeChar.isNewbie())
-			{
-				Announcements.getInstance().announceToAll("Um novo jogador: "+ activeChar.getName() +" acabou de logar.");
-			}
-		}
-		
 		if (showClanNotice)
 		{
 			NpcHtmlMessage notice = new NpcHtmlMessage(1);

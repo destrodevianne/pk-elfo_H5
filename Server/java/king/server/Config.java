@@ -557,10 +557,6 @@ public final class Config
 	public static String ADD_CHAR_TITLE;
 	public static int TITLE_COLOR;
 	// ----------------------------------------------------------------------------------------------------//
-	// Anuncio de novos jogadores ao logar
-	// ----------------------------------------------------------------------------------------------------//
-	public static boolean ANNOUNCE_NEWBIE_CONECT;
-	// ----------------------------------------------------------------------------------------------------//
 	// Novos chars Hero
 	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ADD_HERO;
@@ -2962,7 +2958,6 @@ public final class Config
 			ENABLE_AIOX_MESSAGE = Boolean.parseBoolean(AioSettings.getProperty("AioMensagem", "False"));
 			ANNOUNCE_HERO_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroDesconect", "False"));
 			ANNOUNCE_HERO_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroConect", "False"));
-			ANNOUNCE_NEWBIE_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceNewBieConect", "False"));
 			ENABLE_HERO_MESSAGE = Boolean.parseBoolean(AioSettings.getProperty("HeroMensagem", "False"));
 			
 			// ############################ SISTEMA DE AIOX BUFFER ##############################################//

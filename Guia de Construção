@@ -40,6 +40,7 @@ FIX Skill Charm
 FIX Skill Veil
 FIX Skill Freezing Strike
 FIX Skill Lightning Strike
+Adicionado nova tabela na DB para salvar senha Descriptada
 
 ###############################################
 ################### EVENTOS ###################
