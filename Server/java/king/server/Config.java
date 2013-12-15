@@ -204,7 +204,6 @@ public final class Config
 	public static float POLE_VS_HEAVY;
 	public static float POLE_VS_LIGHT;
 	public static float POLE_VS_ROBE;
-	
 	// ----------------------------------------------------------------------------------------------------//
 	// CONFIGURACOES ESPECIAIS RELACIONADAS AS RACAS //
 	// ----------------------------------------------------------------------------------------------------//
@@ -228,7 +227,6 @@ public final class Config
 	public static String PVP_MESSAGE;
 	public static String VICTIM_PK_MESSAGE;
 	public static String VICTIM_PVP_MESSAGE;
-	
 	// ----------------------------------------------------------------------------------------------------//
 	// PC bang points
 	// ----------------------------------------------------------------------------------------------------//
@@ -430,7 +428,6 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	public static float RateMultipler;
 	public static int time_crazyrate;
-	
 	// ########################################################################################################//
 	// CHARACTER PROPERTIES
 	// ########################################################################################################//
@@ -559,6 +556,10 @@ public final class Config
 	public static boolean CHAR_TITLE;
 	public static String ADD_CHAR_TITLE;
 	public static int TITLE_COLOR;
+	// ----------------------------------------------------------------------------------------------------//
+	// Anuncio de novos jogadores ao logar
+	// ----------------------------------------------------------------------------------------------------//
+	public static boolean ANNOUNCE_NEWBIE_CONECT;
 	// ----------------------------------------------------------------------------------------------------//
 	// Novos chars Hero
 	// ----------------------------------------------------------------------------------------------------//
@@ -2945,13 +2946,14 @@ public final class Config
 				_log.log(Level.SEVERE, "Error while loading AIO settings!", e);
 			}
 			
-			// ############################ ANUNCIO DE LOGE E DESLOGE DE AIOX E HERO ############################//
+			// ############################ ANUNCIO DE LOGE E DESLOGE DE AIOX HERO e NEWBIE ######################//
 			ALT_AIO_EFFECT_ESPECIAL = Boolean.parseBoolean(AioSettings.getProperty("AllowAioEffectEspecial", "True"));
 			ANNOUNCE_AIOX_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxDesconect", "False"));
 			ANNOUNCE_AIOX_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxConect", "False"));
 			ENABLE_AIOX_MESSAGE = Boolean.parseBoolean(AioSettings.getProperty("AioMensagem", "False"));
 			ANNOUNCE_HERO_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroDesconect", "False"));
 			ANNOUNCE_HERO_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroConect", "False"));
+			ANNOUNCE_NEWBIE_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceNewBieConect", "False"));
 			ENABLE_HERO_MESSAGE = Boolean.parseBoolean(AioSettings.getProperty("HeroMensagem", "False"));
 			
 			// ############################ SISTEMA DE AIOX BUFFER ##############################################//
@@ -4602,7 +4604,7 @@ public final class Config
 			{
 				LIST_OLY_RESTRICTED_ITEMS.add(Integer.parseInt(id));
 			}
-			ALT_OLY_ENCHANT_LIMIT = Integer.parseInt(Olympiad.getProperty("AltOlyEnchantLimit", "-1"));
+			ALT_OLY_ENCHANT_LIMIT = Integer.parseInt(Olympiad.getProperty("LimiteEnchantOlly", "-1"));
 			ALT_OLY_WAIT_TIME = Integer.parseInt(Olympiad.getProperty("AltOlyWaitTime", "120"));
 			
 			final File hex = new File(HEXID_FILE);
