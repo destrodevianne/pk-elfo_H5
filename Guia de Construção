@@ -101,6 +101,7 @@ Evento Last Hero
 .tw_goto_ward
 //msgtela + texto (manda mesagem global no centro da tela)
 ***//happyhour (inicia o evento Happy Hour)
+***//deport (teleporta todos os players que estiverem perto do GM/ADM enchendo o saco para giran)
 
 ###############################################
 ######## COMANDOS DE DONO DE CASTELO ##########

@@ -52,6 +52,7 @@ import handlers.admincommandhandlers.AdminCursedWeapons;
 import handlers.admincommandhandlers.AdminDanceSystem;
 import handlers.admincommandhandlers.AdminDebug;
 import handlers.admincommandhandlers.AdminDelete;
+import handlers.admincommandhandlers.AdminDeport;
 import handlers.admincommandhandlers.AdminDisconnect;
 import handlers.admincommandhandlers.AdminDoorControl;
 import handlers.admincommandhandlers.AdminEditChar;
@@ -429,6 +430,7 @@ public class MasterHandler
 			AdminKick.class,
 			AdminKill.class,
 			AdminLevel.class,
+			AdminDeport.class,
 			AdminLogin.class,
 			AdminMammon.class,
 			AdminManor.class,
