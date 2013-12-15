@@ -30,6 +30,8 @@ import king.server.gameserver.events.EventsInterface;
 import king.server.gameserver.instancemanager.AntiFeedManager;
 import king.server.gameserver.model.L2Party;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
+import king.server.gameserver.model.zone.ZoneId;
+import king.server.gameserver.model.zone.type.L2MultiFunctionZone;
 import king.server.gameserver.network.L2GameClient;
 import king.server.gameserver.network.L2GameClient.GameClientState;
 import king.server.gameserver.network.SystemMessageId;
@@ -125,6 +127,15 @@ public final class RequestRestart extends L2GameClientPacket
 			sendPacket(RestartResponse.valueOf(false));
 			return;
 		}
+		
+		// MultiFunction Zone inicio
+		if (player.isInsideZone(ZoneId.MULTI_FUNCTION) && !L2MultiFunctionZone.restart_zone)
+		{
+			player.sendMessage("Voce nao pode reiniciar enquanto estiver dentro de uma Multifunction zone.");
+			sendPacket(RestartResponse.valueOf(false));
+			return;
+		}
+		// MultiFunction Zone fim
 		
 		// Prevent player from restarting if they are a festival participant
 		// and it is in progress, otherwise notify party members that the player

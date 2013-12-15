@@ -45,7 +45,7 @@ public abstract class ItemContainer
 {
 	protected static final Logger _log = Logger.getLogger(ItemContainer.class.getName());
 	
-	protected final List<L2ItemInstance> _items;
+	public final List<L2ItemInstance> _items;
 	
 	protected ItemContainer()
 	{

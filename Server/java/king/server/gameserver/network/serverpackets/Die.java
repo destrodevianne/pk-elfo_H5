@@ -35,6 +35,8 @@ import king.server.gameserver.model.entity.Fort;
 import king.server.gameserver.model.entity.TvTEvent;
 import king.server.gameserver.model.entity.TvTRoundEvent;
 import king.server.gameserver.model.entity.clanhall.SiegableHall;
+import king.server.gameserver.model.zone.ZoneId;
+import king.server.gameserver.model.zone.type.L2MultiFunctionZone;
 
 public class Die extends L2GameServerPacket
 {
@@ -61,7 +63,7 @@ public class Die extends L2GameServerPacket
 			
 		}
 		_charObjId = cha.getObjectId();
-		_canTeleport = !((cha.isPlayer() && ((TvTEvent.isStarted() && TvTEvent.isPlayerParticipant(_charObjId)) || (TvTRoundEvent.isStarted() && TvTRoundEvent.isPlayerParticipant(_charObjId)))) || cha.isPendingRevive());
+		_canTeleport = !((cha.isPlayer() && ((TvTEvent.isStarted() && TvTEvent.isPlayerParticipant(_charObjId)) || (TvTRoundEvent.isStarted() && TvTRoundEvent.isPlayerParticipant(_charObjId)))) || cha.isPendingRevive()) || (cha.isInsideZone(ZoneId.MULTI_FUNCTION) && !L2MultiFunctionZone.revive);
 		
 		if (cha instanceof L2PcInstance)
 		{

@@ -223,6 +223,7 @@ import king.server.gameserver.model.stats.Stats;
 import king.server.gameserver.model.zone.L2ZoneType;
 import king.server.gameserver.model.zone.ZoneId;
 import king.server.gameserver.model.zone.type.L2BossZone;
+import king.server.gameserver.model.zone.type.L2MultiFunctionZone;
 import king.server.gameserver.model.zone.type.L2NoRestartZone;
 import king.server.gameserver.model.zone.type.L2ClanWarZone;
 import king.server.gameserver.network.DialogId;
@@ -6480,6 +6481,9 @@ public final class L2PcInstance extends L2Playable
 			{
 				// Add karma to attacker and increase its PK counter
 				setPvpKills(getPvpKills() + 1);
+				
+				// MultiFunction Zone
+				L2MultiFunctionZone.givereward(this);
 				
 				// pvp color
 				updatePvPColor(getPvpKills());

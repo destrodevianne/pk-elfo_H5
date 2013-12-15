@@ -43,6 +43,8 @@ import king.server.gameserver.model.items.instance.L2ItemInstance;
 import king.server.gameserver.model.items.type.L2ArmorType;
 import king.server.gameserver.model.items.type.L2WeaponType;
 import king.server.gameserver.model.skills.L2Skill;
+import king.server.gameserver.model.zone.ZoneId;
+import king.server.gameserver.model.zone.type.L2MultiFunctionZone;
 import king.server.gameserver.model.skills.L2SkillType;
 import king.server.gameserver.network.SystemMessageId;
 import king.server.gameserver.network.serverpackets.ActionFailed;
@@ -130,6 +132,14 @@ public final class UseItem extends L2GameClientPacket
 		{
 			return;
 		}
+		
+		
+		if (getClient().getActiveChar().isInsideZone(ZoneId.MULTI_FUNCTION) && !L2MultiFunctionZone.checkItem(item))
+		{
+			getClient().getActiveChar().sendMessage("You cannot use " + item.getName() + " inside this zone.");
+			return;
+		}
+		// MultiFunction Zone fim
 		
 		if (item.getItem().getType2() == L2Item.TYPE2_QUEST)
 		{

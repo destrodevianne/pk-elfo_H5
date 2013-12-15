@@ -29,6 +29,8 @@ import king.server.gameserver.events.EventsInterface;
 import king.server.gameserver.model.L2Party;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.model.entity.L2Event;
+import king.server.gameserver.model.zone.ZoneId;
+import king.server.gameserver.model.zone.type.L2MultiFunctionZone;
 import king.server.gameserver.network.SystemMessageId;
 import king.server.gameserver.network.serverpackets.ActionFailed;
 import king.server.gameserver.network.serverpackets.SystemMessage;
@@ -151,6 +153,15 @@ public final class Logout extends L2GameClientPacket
 				Announcements.getInstance().announceToAll("Hero: " + player.getName() + " acabou de deslogar.");
 			}
 		}
+		
+		// MultiFunction Zone inicio
+		if (player.isInsideZone(ZoneId.MULTI_FUNCTION) && !L2MultiFunctionZone.logout_zone)
+		{
+			player.sendMessage("Voce nao pode sair enquanto estiver dentro de uma Multifunction zone.");
+			player.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+		// MultiFunction Zone fim
 		
 		// Prevent player from logging out if they are a festival participant
 		// and it is in progress, otherwise notify party members that the player

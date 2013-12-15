@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 import javolution.util.FastMap;
 import king.server.Config;
 import king.server.L2DatabaseFactory;
+import king.server.gameserver.Announcements;
 import king.server.gameserver.CastleUpdater;
 import king.server.gameserver.SevenSigns;
 import king.server.gameserver.ThreadPoolManager;
@@ -546,6 +547,9 @@ public class Castle
 					_log.log(Level.WARNING, "Exception in setOwner: " + e.getMessage(), e);
 				}
 				oldOwner.setCastleId(0); // Unset has castle flag for old owner
+				
+				Announcements.getInstance().announceToAll(oldOwner.getName() + " voce perdeu o " + getName() + " caste!");
+				
 				for (L2PcInstance member : oldOwner.getOnlineMembers(0))
 				{
 					removeResidentialSkills(member);
@@ -595,6 +599,7 @@ public class Castle
 				member.sendSkillList();
 			}
 			clan.setCastleId(0);
+			Announcements.getInstance().announceToAll(clan.getName() + " voce perdeu o " + getName() + " castle!");
 			clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
 		}
 		
@@ -952,6 +957,9 @@ public class Castle
 			if (clan != null)
 			{
 				clan.setCastleId(getCastleId()); // Set has castle flag for new owner
+				
+				Announcements.getInstance().announceToAll(clan.getName() + " tomou " + getName() + " castle!");
+				
 				clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
 				clan.broadcastToOnlineMembers(new PlaySound(1, "Siege_Victory", 0, 0, 0, 0, 0));
 				ThreadPoolManager.getInstance().scheduleGeneral(new CastleUpdater(clan, 1), 3600000); // Schedule owner tasks to start running

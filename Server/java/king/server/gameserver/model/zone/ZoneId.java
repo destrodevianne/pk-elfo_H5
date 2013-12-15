@@ -47,7 +47,8 @@ public enum ZoneId
 	NO_BOOKMARK(20),
 	NO_ITEM_DROP(21),
 	NO_RESTART(22),
-	CLANWAR(23);
+	CLANWAR(23),
+	MULTI_FUNCTION(24);
 	
 	private final int _id;
 	
