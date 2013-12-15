@@ -69,6 +69,7 @@ TheValentineEvent
 TrickorTransmutation
 LuckyPig
 ***Happy Hour (pelo comando //happyhour)
+***Evento RaidSpawn (a cada 30 minutos um raid e spawnado em determinado lugar, o tempo, raid, lugar de spawn e recompensa podem ser configurados no arquivo java do evento).
 
 ###############PHOENIX ENGINE:################
 Battlefield

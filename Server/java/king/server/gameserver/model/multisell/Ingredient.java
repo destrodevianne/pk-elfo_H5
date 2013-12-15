@@ -31,15 +31,17 @@ public class Ingredient
 {
 	private int _itemId;
 	private long _itemCount;
+	private int _EnchantmentLevel;
 	private boolean _isTaxIngredient;
 	private boolean _maintainIngredient;
 	private L2Item _template = null;
 	private ItemInfo _itemInfo = null;
 	
-	public Ingredient(int itemId, long itemCount, boolean isTaxIngredient, boolean maintainIngredient)
+	public Ingredient(int itemId, long itemCount, int EnchantmentLevel, boolean isTaxIngredient, boolean maintainIngredient)
 	{
 		_itemId = itemId;
 		_itemCount = itemCount;
+		_EnchantmentLevel = EnchantmentLevel;
 		_isTaxIngredient = isTaxIngredient;
 		_maintainIngredient = maintainIngredient;
 		if (_itemId > 0)
@@ -53,7 +55,7 @@ public class Ingredient
 	 */
 	public Ingredient getCopy()
 	{
-		return new Ingredient(_itemId, _itemCount, _isTaxIngredient, _maintainIngredient);
+		return new Ingredient(_itemId, _itemCount, _EnchantmentLevel, _isTaxIngredient, _maintainIngredient);
 	}
 	
 	public final L2Item getTemplate()
@@ -78,7 +80,7 @@ public class Ingredient
 	
 	public final int getEnchantLevel()
 	{
-		return _itemInfo != null ? _itemInfo.getEnchantLevel() : 0;
+		return _itemInfo == null?_EnchantmentLevel:_itemInfo.getEnchantLevel();
 	}
 	
 	public final void setItemId(int itemId)

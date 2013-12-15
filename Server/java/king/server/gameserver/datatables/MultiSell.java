@@ -341,6 +341,9 @@ public class MultiSell
 		{
 			if ("ingredient".equalsIgnoreCase(n.getNodeName()))
 			{
+				int enchantmentLevel = 0;
+				if (n.getAttributes().getNamedItem("enchantmentLevel") != null)
+				enchantmentLevel = Integer.parseInt(n.getAttributes().getNamedItem("enchantmentLevel").getNodeValue());
 				int id = Integer.parseInt(n.getAttributes().getNamedItem("id").getNodeValue());
 				long count = Long.parseLong(n.getAttributes().getNamedItem("count").getNodeValue());
 				boolean isTaxIngredient, mantainIngredient;
@@ -365,14 +368,18 @@ public class MultiSell
 					mantainIngredient = false;
 				}
 				
-				entry.addIngredient(new Ingredient(id, count, isTaxIngredient, mantainIngredient));
+				entry.addIngredient(new Ingredient(id, count, enchantmentLevel, isTaxIngredient, mantainIngredient));
 			}
 			else if ("production".equalsIgnoreCase(n.getNodeName()))
 			{
+				int enchantmentLevel = 0;
+				if (n.getAttributes().getNamedItem("enchantmentLevel") != null)
+				enchantmentLevel = Integer.parseInt(n.getAttributes().getNamedItem("enchantmentLevel").getNodeValue());
+				    
 				int id = Integer.parseInt(n.getAttributes().getNamedItem("id").getNodeValue());
 				long count = (long) (Long.parseLong(n.getAttributes().getNamedItem("count").getNodeValue()) * list.getUseRate());
 				
-				entry.addProduct(new Ingredient(id, count, false, false));
+				entry.addProduct(new Ingredient(id, count, enchantmentLevel, false, false));
 			}
 		}
 		
