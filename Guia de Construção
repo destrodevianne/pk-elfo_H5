@@ -234,6 +234,7 @@ Mod Adicionado Mod de Restart
 ***Mod MultiFunction zone Custom (coloca determinada zona como especial, podendo restringir varias coisas, como items classes, enchantes e etc.)
 ***Mod anuncio de perda ou tomada de castelo depois da siege
 ***Mod que permite vender item encantado nos shops
+***Mod criar itens na Bag ao criar novos char (configuravel o ID do item e a quantidade)
 -------------------------------------------------------
 ***Mod Restricoes adicionada para os AIOS              |
 |	- Eles nao podem atacar em nenhuma circunstancia.  |

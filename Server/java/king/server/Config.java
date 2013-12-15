@@ -1209,6 +1209,10 @@ public final class Config
 	public static int HIGHLEVEL_XP;
 	public static int HIGHLEVEL_SP;
 	public static boolean ENABLE_BUFF_REFUSAL;
+	// Item que sera criado na bag ao se criar um novo char ---------------------------------------------------//
+	public static boolean STARTING_ITEMS = false;
+	public static int STARTING_ITEMS_ID;
+	public static long STARTING_ITEMS_COUNT;
 	// ########################################################################################################//
 	// VIP PROPERTIES
 	// ########################################################################################################//
@@ -2878,6 +2882,11 @@ public final class Config
 			
 			// ########################### comando debuf do painel de usuario ########################################//
 			ENABLE_BUFF_REFUSAL = Boolean.parseBoolean(UserSettings.getProperty("AllowDeBuffCommand","False"));
+			
+			// ############################ itens na bag ao criar novo char ##########################################//
+			STARTING_ITEMS = Boolean.parseBoolean(UserSettings.getProperty("StartingItems", "False"));
+			STARTING_ITEMS_ID = Integer.parseInt(UserSettings.getProperty("StartingItemId", "3470"));
+			STARTING_ITEMS_COUNT = Long.parseLong(UserSettings.getProperty("StartingItemCount", "0"));			
 			
 			// ############################ VIP PROPERTIES ###########################################################//
 			

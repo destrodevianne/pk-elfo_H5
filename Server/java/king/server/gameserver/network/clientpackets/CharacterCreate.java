@@ -278,6 +278,11 @@ public final class CharacterCreate extends L2GameClientPacket
 			newChar.setTitle("");
 		}
 		
+		if (Config.STARTING_ITEMS)
+		{
+			newChar.addItem("Init", Config.STARTING_ITEMS_ID, (int) Config.STARTING_ITEMS_COUNT, null, false);
+		}
+		
 		if (Config.ENABLE_VITALITY)
 		{
 			newChar.setVitalityPoints(Math.min(Config.STARTING_VITALITY_POINTS, PcStat.MAX_VITALITY_POINTS), true);
