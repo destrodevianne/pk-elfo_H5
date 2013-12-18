@@ -250,7 +250,7 @@ public final class CharacterCreate extends L2GameClientPacket
 		}
 		
 		L2World.getInstance().storeObject(newChar);
-		
+		//quantidade de adena que os novos jogares comecarao
 		if (Config.STARTING_ADENA > 0)
 		{
 			newChar.addAdena("Init", Config.STARTING_ADENA, null, false);
@@ -258,7 +258,7 @@ public final class CharacterCreate extends L2GameClientPacket
 		
 		// TODO: Make it random.
 		final L2PcTemplate template = newChar.getTemplate();
-
+		//spawn custom para novos jogadores
 		if (Config.SPAWN_CHAR)
         {
          newChar.setXYZInvisible(Config.SPAWN_X, Config.SPAWN_Y, Config.SPAWN_Z );
@@ -267,7 +267,7 @@ public final class CharacterCreate extends L2GameClientPacket
         {
          newChar.setXYZInvisible(template.getSpawnX(), template.getSpawnY(), template.getSpawnZ());
         }
-		
+		//titulo para novos jogadores
 		if (Config.CHAR_TITLE)
 		{
 			newChar.setTitle(Config.ADD_CHAR_TITLE);
@@ -277,7 +277,12 @@ public final class CharacterCreate extends L2GameClientPacket
 		{
 			newChar.setTitle("");
 		}
-		
+		//mudar cor do nome de novos jogadores
+		if (Config.COLOR_NEW_CHAR_NAME)
+		{
+			newChar.getAppearance().setNameColor(Config.NAME_COLOR);
+		}
+		//items na bag de novos jogadores
 		if (Config.STARTING_ITEMS)
 		{
 			newChar.addItem("Init", Config.STARTING_ITEMS_ID, (int) Config.STARTING_ITEMS_COUNT, null, false);
@@ -287,10 +292,12 @@ public final class CharacterCreate extends L2GameClientPacket
 		{
 			newChar.setVitalityPoints(Math.min(Config.STARTING_VITALITY_POINTS, PcStat.MAX_VITALITY_POINTS), true);
 		}
+		//level que os novos jogadores iniciarao
 		if (Config.STARTING_LEVEL > 1)
 		{
 			newChar.getStat().addLevel((byte) (Config.STARTING_LEVEL - 1));
 		}
+		//quantidade de SP que os novos jogadores iniciarao
 		if (Config.STARTING_SP > 0)
 		{
 			newChar.getStat().addSp(Config.STARTING_SP);
@@ -306,7 +313,7 @@ public final class CharacterCreate extends L2GameClientPacket
 		// add sit shortcut
 		shortcut = new L2ShortCut(10, 0, 3, 0, 0, 1);
 		newChar.registerShortCut(shortcut);
-		
+		//novos jogadores comecarem com equipamentos
 		if (template.hasInitialEquipment())
 		{
 			L2ItemInstance item;

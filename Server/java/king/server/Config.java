@@ -556,6 +556,8 @@ public final class Config
 	public static boolean CHAR_TITLE;
 	public static String ADD_CHAR_TITLE;
 	public static int TITLE_COLOR;
+	public static boolean  COLOR_NEW_CHAR_NAME;
+	public static int NAME_COLOR;
 	// ----------------------------------------------------------------------------------------------------//
 	// Novos chars Hero
 	// ----------------------------------------------------------------------------------------------------//
@@ -3268,21 +3270,25 @@ public final class Config
 			STARTING_LEVEL = Byte.parseByte(Character.getProperty("StartingLevel", "1"));
 			STARTING_SP = Integer.parseInt(Character.getProperty("StartingSP", "0"));
 
-			// #################### CUSTOM SPAWN PARA NOVOS CHAR ##########################################################//
+			// #################### CUSTOM SPAWN PARA NOVOS CHAR ######################################################//
 			SPAWN_CHAR = Boolean.parseBoolean(Character.getProperty("CustomSpawn", "false"));
 			SPAWN_X = Integer.parseInt(Character.getProperty("SpawnX", ""));
 			SPAWN_Y = Integer.parseInt(Character.getProperty("SpawnY", ""));
 			SPAWN_Z = Integer.parseInt(Character.getProperty("SpawnZ", ""));
 			
-			// #################### TITULO PARA NOVOS CHAR ##########################################################//
+			// #################### TITULO PARA NOVOS CHAR ############################################################//
 			CHAR_TITLE = Boolean.parseBoolean(Character.getProperty("CharTitle", "False"));
 			ADD_CHAR_TITLE = Character.getProperty("CharAddTitle", "PkElfo");
 			TITLE_COLOR = Integer.decode("0x" + Character.getProperty("TitleColor", "00FF00"));
 			
-			// #################### NOVOS CHAR HERO #################################################################//
+			// #################### COR DO NOME DOS NOVOS CHAR #######################################################//
+			COLOR_NEW_CHAR_NAME = Boolean.parseBoolean(Character.getProperty("ColorStartName", "False"));
+			NAME_COLOR = Integer.decode("0x" + Character.getProperty("NameColor", "00FF00"));
+			
+			// #################### NOVOS CHAR HERO ###################################################################//
 			ADD_HERO = Boolean.parseBoolean(Character.getProperty("NewHeroesCharacter", "False"));
 			
-			// #################### NOVOS CHAR NOBRE #################################################################//
+			// #################### NOVOS CHAR NOBRE ##################################################################//
 			ADD_NOBLESSE = Boolean.parseBoolean(Character.getProperty("NoblesseAtNewChars", "False"));
 			// ########################################################################################################//
 			
