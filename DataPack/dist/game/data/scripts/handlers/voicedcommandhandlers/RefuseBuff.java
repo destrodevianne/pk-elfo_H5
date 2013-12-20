@@ -5,7 +5,9 @@ import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.network.clientpackets.Say2;
 import king.server.gameserver.network.serverpackets.CreatureSay;
 
-
+/**
+ * PkElfo
+ */
 public class RefuseBuff implements IVoicedCommandHandler
 {
 	private String[] _voicedCommands =

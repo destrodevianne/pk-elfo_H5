@@ -4,7 +4,9 @@ import king.server.Config;
 import king.server.gameserver.handler.IVoicedCommandHandler;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 
-
+/**
+ * PkElfo
+ */
 public class Teleport implements IVoicedCommandHandler
 {
  private static final String[] VOICED_COMMANDS =

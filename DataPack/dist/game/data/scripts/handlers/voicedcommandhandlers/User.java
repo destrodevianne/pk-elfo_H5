@@ -10,9 +10,8 @@ import king.server.gameserver.network.serverpackets.ExShowScreenMessage;
 import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
- * @author NeverMore
+ * PkElfo
  */
-
 public class User implements IVoicedCommandHandler
 {
        public static final String[] VOICED_COMMANDS = { "user" , "user1", "user2", "user3" };

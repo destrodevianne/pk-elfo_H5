@@ -342,6 +342,9 @@ import handlers.voicedcommandhandlers.Logout;
 import handlers.voicedcommandhandlers.Cancelar;
 import handlers.voicedcommandhandlers.ClanMensagem;
 
+/**
+ * PkElfo
+ */
 public class MasterHandler
 {
 	private static final Logger _log = Logger.getLogger(MasterHandler.class.getName());

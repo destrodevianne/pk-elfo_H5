@@ -6,6 +6,9 @@ import king.server.gameserver.instancemanager.CastleManager;
 import king.server.gameserver.model.L2World;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 
+/**
+ * PkElfo
+ */
 public class Lider implements IVoicedCommandHandler
 {
         private static final String[] VOICED_COMMANDS = 

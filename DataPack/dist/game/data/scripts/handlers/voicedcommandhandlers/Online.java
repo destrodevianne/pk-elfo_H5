@@ -5,6 +5,9 @@ import king.server.gameserver.handler.IVoicedCommandHandler;
 import king.server.gameserver.model.L2World;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 
+/**
+ * PkElfo
+ */
 public class Online implements IVoicedCommandHandler
 {
     private static String[] _voicedCommands =

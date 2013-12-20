@@ -8,6 +8,9 @@ import java.util.Calendar;
 import king.server.L2DatabaseFactory;
 import king.server.gameserver.model.quest.Quest;
 
+/**
+ * PkElfo
+ */
 public class EventsConfig extends Quest
 {
 	private static final String qn = "EventsConfig";

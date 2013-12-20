@@ -1,5 +1,4 @@
 package handlers.voicedcommandhandlers;
-
     
 import king.server.gameserver.handler.IVoicedCommandHandler;
 import king.server.gameserver.model.L2ClanMember;
@@ -7,9 +6,8 @@ import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.network.serverpackets.ExShowScreenMessage;
 
 /**
-* PkElfo
-*/
-
+ * PkElfo
+ */
 public class ClanMensagem implements IVoicedCommandHandler
 	{
 		private static final String[] _voicedCommands =

@@ -11,9 +11,7 @@ import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
- * @author Phear3d
- * @version 1.0 (TWGm.java)
- * .tw voiced command for GMs to locate Ward(s) & Player(s) holding Ward(s) during TW.
+ * PkElfo
  */
 public class TWGm implements IVoicedCommandHandler
 {

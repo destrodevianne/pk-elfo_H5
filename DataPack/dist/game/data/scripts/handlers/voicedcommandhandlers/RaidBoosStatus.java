@@ -10,6 +10,9 @@ import king.server.gameserver.instancemanager.GrandBossManager;
 import king.server.gameserver.model.StatsSet;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
  
+/**
+ * PkElfo
+ */
 public class RaidBoosStatus implements IVoicedCommandHandler
 {
 	static final Logger _log = Logger.getLogger(RaidBoosStatus.class.getName());
