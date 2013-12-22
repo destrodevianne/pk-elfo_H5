@@ -27,6 +27,8 @@ import king.server.gameserver.handler.IAdminCommandHandler;
 import king.server.gameserver.model.L2Object;
 import king.server.gameserver.model.actor.instance.L2PcInstance;
 import king.server.gameserver.network.SystemMessageId;
+import king.server.gameserver.util.IllegalPlayerAction;
+import king.server.gameserver.util.Util;
 import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
@@ -143,7 +145,27 @@ public class AdminExpSp implements IAdminCommandHandler
 		{
 			return false;
 		}
-		if ((expval != 0) || (spval != 0))
+		
+		// Comeca o Mod de Protecao contra GMs corruptos
+		/**
+        * Protecao contra GMs corruptos.
+        * GMEdit Se ativado, o GM nao sera capaz de adicionar Exp ou SP para qualquer outro
+        * jogador que nao seja um personagem GM. E, alem disso .. Ambos os jogadores e o
+        * GM serao banidos.
+        */
+        if (Config.GM_EDIT && (expval != 0) || (spval != 0) && !player.isGM())
+        {
+        	//Warn the player about his inmediate ban.
+        	player.sendMessage("O GM tentou editar-lo em "+expval+" pontos de exp e em "+spval+" pontos de sp. Ambos serao banidos.");
+        	Util.handleIllegalPlayerAction(player,"O jogador "+player.getName()+" foi editado ilegalmente. BAN!!", IllegalPlayerAction.PUNISH_KICKBAN);
+        	//Warn the GM about his inmediate ban.
+        	player.sendMessage("Voce tentou editar no jogador "+player.getName()+" a "+expval+" e a "+spval+". Voce sera banido agora.");
+        	Util.handleIllegalPlayerAction(activeChar,"O GM "+activeChar.getName()+" tentou editar alguem. BAN!!", IllegalPlayerAction.PUNISH_KICKBAN);
+        	_log.severe("O GM "+activeChar.getName()+" tentou editar o jogador "+player.getName()+". Por isso ambos foram banidos.");
+        }
+        else if(expval != 0 || spval != 0)
+        	
+        // Termina o Mod de Protecao contra GMs corruptos
 		{
 			// Common character information
 			player.sendMessage("Admin is adding you " + expval + " xp and " + spval + " sp.");

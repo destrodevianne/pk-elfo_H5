@@ -1560,6 +1560,7 @@ public final class Config
 	public static long SECOND_AUTH_BAN_TIME;
 	public static String SECOND_AUTH_REC_LINK;
 	public static boolean ENABLE_BOTREPORT;
+	public static boolean GM_EDIT;
 	// ########################################################################################################//
 	// Safe Admin
 	// ########################################################################################################//
@@ -4688,7 +4689,10 @@ public final class Config
 			SECOND_AUTH_BAN_TIME = Integer.parseInt(SecuritySettings.getProperty("SecondAuthBanTime", "480"));
 			SECOND_AUTH_REC_LINK = SecuritySettings.getProperty("SecondAuthRecoveryLink", "5");
 			ENABLE_BOTREPORT = Boolean.valueOf(SecuritySettings.getProperty("EnableBotReport", "false"));
-
+			
+			// Protecao contra GMs corruptos
+			GM_EDIT = Boolean.valueOf(SecuritySettings.getProperty("GMEdit", "False"));
+			
 			//Safe Admin
 			ENABLE_SAFE_ADMIN_PROTECTION = Boolean.parseBoolean(SecuritySettings.getProperty("EnableSafeAdminProtection", "True"));
 			
