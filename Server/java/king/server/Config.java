@@ -1145,6 +1145,7 @@ public final class Config
 	public static boolean OFFLINE_SET_NAME_COLOR;
 	public static int OFFLINE_NAME_COLOR;
 	public static boolean OFFLINE_FAME;
+	public static boolean OFFLINE_MODE_SET_INVULNERABLE;
 	// ----------------------------------------------------------------------------------------------------//
 	// Offline Effect
 	// ----------------------------------------------------------------------------------------------------//
@@ -4325,36 +4326,37 @@ public final class Config
 				}
 			}
 			
-			BANKING_SYSTEM_ENABLED = Boolean.parseBoolean(L2JModSettings.getProperty("BankingEnabled", "True"));
+			BANKING_SYSTEM_ENABLED = Boolean.parseBoolean(L2JModSettings.getProperty("BankingEnabled", "False"));
 			BANKING_SYSTEM_GOLDBARS = Integer.parseInt(L2JModSettings.getProperty("BankingGoldbarCount", "1"));
 			BANKING_SYSTEM_ADENA = Integer.parseInt(L2JModSettings.getProperty("BankingAdenaCount", "1000000000"));
 			
-			OFFLINE_TRADE_ENABLE = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineTradeEnable", "True"));
-			OFFLINE_CRAFT_ENABLE = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineCraftEnable", "True"));
-			OFFLINE_MODE_IN_PEACE_ZONE = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineModeInPaceZone", "True"));
-			OFFLINE_MODE_NO_DAMAGE = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineModeNoDamage", "True"));
-			OFFLINE_SET_NAME_COLOR = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineSetNameColor", "True"));
+			OFFLINE_TRADE_ENABLE = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineTradeEnable", "False"));
+			OFFLINE_CRAFT_ENABLE = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineCraftEnable", "False"));
+			OFFLINE_MODE_IN_PEACE_ZONE = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineModeInPaceZone", "False"));
+			OFFLINE_MODE_NO_DAMAGE = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineModeNoDamage", "False"));
+			OFFLINE_SET_NAME_COLOR = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineSetNameColor", "False"));
 			OFFLINE_NAME_COLOR = Integer.decode("0x" + L2JModSettings.getProperty("OfflineNameColor", "808080"));
-			OFFLINE_FAME = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineFame", "true"));
-			RESTORE_OFFLINERS = Boolean.parseBoolean(L2JModSettings.getProperty("RestoreOffliners", "True"));
+			OFFLINE_FAME = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineFame", "False"));
+			RESTORE_OFFLINERS = Boolean.parseBoolean(L2JModSettings.getProperty("RestoreOffliners", "False"));
 			OFFLINE_MAX_DAYS = Integer.parseInt(L2JModSettings.getProperty("OfflineMaxDays", "30"));
-			OFFLINE_DISCONNECT_FINISHED = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineDisconnectFinished", "true"));
+			OFFLINE_DISCONNECT_FINISHED = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineDisconnectFinished", "False"));
+			OFFLINE_MODE_SET_INVULNERABLE = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineModeSetInvulnerable", "False"));
 			
 			// Offline Effect
 			OFFLINE_TRADE_EFFECT = Boolean.parseBoolean(L2JModSettings.getProperty("OfflineTradeEffect", "True"));
 			OFFLINE_EFFECT_ID = Integer.parseInt(L2JModSettings.getProperty("OfflineEffectId", "7"));
 			UNSTUCK_ANIMATION_ID = Integer.parseInt(L2JModSettings.getProperty("UnstuckSkillID", "1050"));
-			L2JMOD_ENABLE_MANA_POTIONS_SUPPORT = Boolean.parseBoolean(L2JModSettings.getProperty("EnableManaPotionSupport", "True"));
+			L2JMOD_ENABLE_MANA_POTIONS_SUPPORT = Boolean.parseBoolean(L2JModSettings.getProperty("EnableManaPotionSupport", "False"));
 			
 			L2JMOD_DISPLAY_SERVER_TIME = Boolean.parseBoolean(L2JModSettings.getProperty("DisplayServerTime", "false"));
 			
-			WELCOME_MESSAGE_ENABLED = Boolean.parseBoolean(L2JModSettings.getProperty("ScreenWelcomeMessageEnable", "True"));
+			WELCOME_MESSAGE_ENABLED = Boolean.parseBoolean(L2JModSettings.getProperty("ScreenWelcomeMessageEnable", "False"));
 			WELCOME_MESSAGE_TEXT = L2JModSettings.getProperty("ScreenWelcomeMessageText", "Bem Vindo ao mundo do Lineage II");
 			WELCOME_MESSAGE_TIME = Integer.parseInt(L2JModSettings.getProperty("ScreenWelcomeMessageTime", "10")) * 1000;
 			
 			L2JMOD_ANTIFEED_ENABLE = Boolean.parseBoolean(L2JModSettings.getProperty("AntiFeedEnable", "false"));
 			L2JMOD_ANTIFEED_DUALBOX = Boolean.parseBoolean(L2JModSettings.getProperty("AntiFeedDualbox", "true"));
-			L2JMOD_ANTIFEED_DISCONNECTED_AS_DUALBOX = Boolean.parseBoolean(L2JModSettings.getProperty("AntiFeedDisconnectedAsDualbox", "true"));
+			L2JMOD_ANTIFEED_DISCONNECTED_AS_DUALBOX = Boolean.parseBoolean(L2JModSettings.getProperty("AntiFeedDisconnectedAsDualbox", "False"));
 			L2JMOD_ANTIFEED_INTERVAL = 1000 * Integer.parseInt(L2JModSettings.getProperty("AntiFeedInterval", "120"));
 			
 			L2JMOD_CHAT_ADMIN = Boolean.parseBoolean(L2JModSettings.getProperty("ChatAdmin", "false"));

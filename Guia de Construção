@@ -238,6 +238,7 @@ Mod Adicionado Mod de Restart
 ***Mod criar itens na Bag ao criar novos char (configuravel o ID do item e a quantidade)
 ***Mod mudar cor do nome dos novos jogadores (configuravel a cor)
 ***Mod Proteção contra GM Corrupto [Precisa de Teste]
+***Mod Protecao para jogadores em modo de loja offline (ficam invulneraveis)
 -------------------------------------------------------
 ***Mod Restricoes adicionada para os AIOS              |
 |	- Eles nao podem atacar em nenhuma circunstancia.  |
