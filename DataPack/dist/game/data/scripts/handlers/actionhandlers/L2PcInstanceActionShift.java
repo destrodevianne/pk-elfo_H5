@@ -1,20 +1,20 @@
 package handlers.actionhandlers;
 
-import king.server.Config;
-import king.server.gameserver.handler.AdminCommandHandler;
-import king.server.gameserver.handler.IActionHandler;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.L2Object.InstanceType;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.itemcontainer.Inventory;
-import king.server.gameserver.model.stats.BaseStats;
-import king.server.gameserver.model.stats.Stats;
-import king.server.gameserver.network.serverpackets.MyTargetSelected;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.gameserver.network.serverpackets.ValidateLocation;
-import king.server.util.StringUtil;
+import pk.elfo.Config;
+import pk.elfo.gameserver.handler.AdminCommandHandler;
+import pk.elfo.gameserver.handler.IActionHandler;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.L2Object.InstanceType;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.itemcontainer.Inventory;
+import pk.elfo.gameserver.model.stats.BaseStats;
+import pk.elfo.gameserver.model.stats.Stats;
+import pk.elfo.gameserver.network.serverpackets.MyTargetSelected;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.network.serverpackets.ValidateLocation;
+import pk.elfo.util.StringUtil;
 
 public class L2PcInstanceActionShift implements IActionHandler
 {

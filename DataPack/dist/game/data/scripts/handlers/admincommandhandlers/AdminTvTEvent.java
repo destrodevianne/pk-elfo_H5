@@ -18,13 +18,13 @@
  */
 package handlers.admincommandhandlers;
 
-import king.server.Config;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.TvTEvent;
-import king.server.gameserver.model.entity.TvTEventTeleporter;
-import king.server.gameserver.model.entity.TvTManager;
+import pk.elfo.Config;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.TvTEvent;
+import pk.elfo.gameserver.model.entity.TvTEventTeleporter;
+import pk.elfo.gameserver.model.entity.TvTManager;
 
 /**
  * @author FBIagent

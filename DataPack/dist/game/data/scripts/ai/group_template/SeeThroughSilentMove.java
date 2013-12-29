@@ -18,12 +18,11 @@
  */
 package ai.group_template;
 
+import pk.elfo.gameserver.datatables.SpawnTable;
+import pk.elfo.gameserver.model.L2Spawn;
+import pk.elfo.gameserver.model.actor.L2Attackable;
+import pk.elfo.gameserver.model.actor.L2Npc;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.datatables.SpawnTable;
-import king.server.gameserver.model.L2Spawn;
-import king.server.gameserver.model.actor.L2Attackable;
-import king.server.gameserver.model.actor.L2Npc;
 
 /**
  * See Through Silent Move AI.

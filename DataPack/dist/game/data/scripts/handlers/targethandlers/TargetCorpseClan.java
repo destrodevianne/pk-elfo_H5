@@ -21,21 +21,20 @@ package handlers.targethandlers;
 import java.util.Collection;
 import java.util.List;
 
+import pk.elfo.gameserver.handler.ITargetTypeHandler;
+import pk.elfo.gameserver.model.L2Clan;
+import pk.elfo.gameserver.model.L2ClanMember;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.TvTEvent;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.skills.L2SkillType;
+import pk.elfo.gameserver.model.skills.targets.L2TargetType;
+import pk.elfo.gameserver.model.zone.ZoneId;
+import pk.elfo.gameserver.util.Util;
 import javolution.util.FastList;
-
-import king.server.gameserver.handler.ITargetTypeHandler;
-import king.server.gameserver.model.L2Clan;
-import king.server.gameserver.model.L2ClanMember;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.TvTEvent;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.skills.L2SkillType;
-import king.server.gameserver.model.skills.targets.L2TargetType;
-import king.server.gameserver.model.zone.ZoneId;
-import king.server.gameserver.util.Util;
 
 /**
  * @author UnAfraid

@@ -19,17 +19,16 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.DateFormat;
 
-import king.server.Config;
-import king.server.L2DatabaseFactory;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.instancemanager.BotManager;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.gameserver.network.serverpackets.SystemMessage;
-import king.server.gameserver.util.BotPunish;
-
+import pk.elfo.Config;
+import pk.elfo.L2DatabaseFactory;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.instancemanager.BotManager;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.util.BotPunish;
 import javolution.text.TextBuilder;
 
 public class AdminCheckBot implements IAdminCommandHandler

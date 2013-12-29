@@ -20,19 +20,18 @@ package ai.group_template;
 
 import java.util.List;
 
+import pk.elfo.gameserver.datatables.NpcTable;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2ChestInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.network.serverpackets.PlaySound;
+import pk.elfo.gameserver.util.Util;
+import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.datatables.NpcTable;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2ChestInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.actor.templates.L2NpcTemplate;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.network.serverpackets.PlaySound;
-import king.server.gameserver.util.Util;
-import king.server.util.Rnd;
 
 /**
  * Chest AI implementation.

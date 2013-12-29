@@ -18,10 +18,10 @@
  */
 package handlers.admincommandhandlers;
 
-import king.server.gameserver.cache.HtmCache;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.cache.HtmCache;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
  * This class handles following admin commands: - help path = shows /data/html/admin/path file to char, should not be used by GM's directly

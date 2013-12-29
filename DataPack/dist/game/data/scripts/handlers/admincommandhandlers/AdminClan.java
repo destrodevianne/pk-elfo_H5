@@ -22,24 +22,24 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.StringTokenizer;
 
-import king.server.L2DatabaseFactory;
-import king.server.gameserver.cache.HtmCache;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.instancemanager.CastleManager;
-import king.server.gameserver.instancemanager.ClanHallManager;
-import king.server.gameserver.instancemanager.FortManager;
-import king.server.gameserver.instancemanager.SiegeManager;
-import king.server.gameserver.model.L2Clan;
-import king.server.gameserver.model.L2ClanMember;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.communityserver.CommunityServerThread;
-import king.server.gameserver.network.communityserver.writepackets.WorldInfo;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.gameserver.network.serverpackets.SystemMessage;
-import king.server.gameserver.util.Util;
+import pk.elfo.L2DatabaseFactory;
+import pk.elfo.gameserver.cache.HtmCache;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.instancemanager.CastleManager;
+import pk.elfo.gameserver.instancemanager.ClanHallManager;
+import pk.elfo.gameserver.instancemanager.FortManager;
+import pk.elfo.gameserver.instancemanager.SiegeManager;
+import pk.elfo.gameserver.model.L2Clan;
+import pk.elfo.gameserver.model.L2ClanMember;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.communityserver.CommunityServerThread;
+import pk.elfo.gameserver.network.communityserver.writepackets.WorldInfo;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.util.Util;
 
 /**
  * @author UnAfraid, Zoey76

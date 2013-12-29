@@ -18,13 +18,12 @@
  */
 package quests.Q00702_ATrapForRevenge;
 
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.quest.State;
 import quests.Q10273_GoodDayToFly.Q10273_GoodDayToFly;
-
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.model.quest.State;
 
 /**
  * A Trap for Revenge (702)

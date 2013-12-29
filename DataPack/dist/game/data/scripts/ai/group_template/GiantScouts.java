@@ -20,19 +20,18 @@ package ai.group_template;
 
 import java.util.Collection;
 
+import pk.elfo.gameserver.GeoData;
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.L2Attackable;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2MonsterInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.NpcStringId;
+import pk.elfo.gameserver.network.clientpackets.Say2;
+import pk.elfo.gameserver.network.serverpackets.CreatureSay;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.GeoData;
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.L2Attackable;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2MonsterInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.NpcStringId;
-import king.server.gameserver.network.clientpackets.Say2;
-import king.server.gameserver.network.serverpackets.CreatureSay;
 
 /**
  * Giant Scouts AI.

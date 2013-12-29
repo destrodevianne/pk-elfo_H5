@@ -21,23 +21,23 @@ package handlers.admincommandhandlers;
 import java.util.Calendar;
 import java.util.StringTokenizer;
 
-import king.server.gameserver.SevenSigns;
-import king.server.gameserver.datatables.ClanTable;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.instancemanager.AuctionManager;
-import king.server.gameserver.instancemanager.CHSiegeManager;
-import king.server.gameserver.instancemanager.CastleManager;
-import king.server.gameserver.instancemanager.ClanHallManager;
-import king.server.gameserver.model.L2Clan;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.Castle;
-import king.server.gameserver.model.entity.ClanHall;
-import king.server.gameserver.model.entity.clanhall.SiegableHall;
-import king.server.gameserver.model.zone.type.L2ClanHallZone;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.gameserver.util.Util;
-import king.server.util.StringUtil;
+import pk.elfo.gameserver.SevenSigns;
+import pk.elfo.gameserver.datatables.ClanTable;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.instancemanager.AuctionManager;
+import pk.elfo.gameserver.instancemanager.CHSiegeManager;
+import pk.elfo.gameserver.instancemanager.CastleManager;
+import pk.elfo.gameserver.instancemanager.ClanHallManager;
+import pk.elfo.gameserver.model.L2Clan;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.Castle;
+import pk.elfo.gameserver.model.entity.ClanHall;
+import pk.elfo.gameserver.model.entity.clanhall.SiegableHall;
+import pk.elfo.gameserver.model.zone.type.L2ClanHallZone;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.util.Util;
+import pk.elfo.util.StringUtil;
 
 /**
  * This class handles all siege commands.

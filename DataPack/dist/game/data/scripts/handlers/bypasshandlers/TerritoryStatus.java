@@ -18,13 +18,13 @@
  */
 package handlers.bypasshandlers;
 
-import king.server.gameserver.datatables.ClanTable;
-import king.server.gameserver.handler.IBypassHandler;
-import king.server.gameserver.model.L2Clan;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.datatables.ClanTable;
+import pk.elfo.gameserver.handler.IBypassHandler;
+import pk.elfo.gameserver.model.L2Clan;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class TerritoryStatus implements IBypassHandler
 {

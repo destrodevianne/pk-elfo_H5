@@ -18,20 +18,20 @@
  */
 package vehicles.AirShipGludioGracia;
 
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.instancemanager.AirShipManager;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.VehiclePathPoint;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2AirShipInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.network.NpcStringId;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.clientpackets.Say2;
-import king.server.gameserver.network.serverpackets.NpcSay;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.instancemanager.AirShipManager;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.VehiclePathPoint;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2AirShipInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.network.NpcStringId;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.clientpackets.Say2;
+import pk.elfo.gameserver.network.serverpackets.NpcSay;
 
 /**
  * @author DS

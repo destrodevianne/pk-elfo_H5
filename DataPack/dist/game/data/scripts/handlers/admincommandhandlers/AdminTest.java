@@ -21,15 +21,15 @@ package handlers.admincommandhandlers;
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 
-import king.server.Config;
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.network.serverpackets.MagicSkillUse;
+import pk.elfo.Config;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
 
 /**
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $

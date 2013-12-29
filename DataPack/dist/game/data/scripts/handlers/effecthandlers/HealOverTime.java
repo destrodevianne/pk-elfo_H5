@@ -18,12 +18,12 @@
  */
 package handlers.effecthandlers;
 
-import king.server.gameserver.model.effects.EffectTemplate;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.effects.L2EffectType;
-import king.server.gameserver.model.stats.Env;
-import king.server.gameserver.network.serverpackets.ExRegMax;
-import king.server.gameserver.network.serverpackets.StatusUpdate;
+import pk.elfo.gameserver.model.effects.EffectTemplate;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.effects.L2EffectType;
+import pk.elfo.gameserver.model.stats.Env;
+import pk.elfo.gameserver.network.serverpackets.ExRegMax;
+import pk.elfo.gameserver.network.serverpackets.StatusUpdate;
 
 public class HealOverTime extends L2Effect
 {

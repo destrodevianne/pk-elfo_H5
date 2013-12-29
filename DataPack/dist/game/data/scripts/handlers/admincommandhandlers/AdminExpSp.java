@@ -21,15 +21,15 @@ package handlers.admincommandhandlers;
 import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
-import king.server.Config;
-import king.server.gameserver.datatables.ClassListData;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.util.IllegalPlayerAction;
-import king.server.gameserver.util.Util;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.Config;
+import pk.elfo.gameserver.datatables.ClassListData;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.util.IllegalPlayerAction;
+import pk.elfo.gameserver.util.Util;
 
 /**
  * This class handles following admin commands: <li>add_exp_sp_to_character <i>shows menu for add or remove</i> <li>add_exp_sp exp sp <i>Adds exp & sp to target, displays menu if a parameter is missing</i> <li>remove_exp_sp exp sp <i>Removes exp & sp from target, displays menu if a parameter is

@@ -20,18 +20,18 @@ package instances.RankuFloor;
 
 import java.util.Calendar;
 
-import king.server.gameserver.instancemanager.InstanceManager;
-import king.server.gameserver.model.L2Party;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.Instance;
-import king.server.gameserver.model.instancezone.InstanceWorld;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.SystemMessage;
-import king.server.gameserver.util.Util;
+import pk.elfo.gameserver.instancemanager.InstanceManager;
+import pk.elfo.gameserver.model.L2Party;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.Instance;
+import pk.elfo.gameserver.model.instancezone.InstanceWorld;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.util.Util;
 
 /**
  * Tower of Infinitum (10th Floor) instance zone.

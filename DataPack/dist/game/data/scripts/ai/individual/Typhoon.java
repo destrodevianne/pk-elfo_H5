@@ -18,13 +18,12 @@
  */
 package ai.individual;
 
+import pk.elfo.gameserver.instancemanager.RaidBossSpawnManager;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.actor.instance.L2RaidBossInstance;
+import pk.elfo.gameserver.model.holders.SkillHolder;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.instancemanager.RaidBossSpawnManager;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.actor.instance.L2RaidBossInstance;
-import king.server.gameserver.model.holders.SkillHolder;
 
 /**
  * Typhoon's AI.

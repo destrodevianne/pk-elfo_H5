@@ -18,21 +18,21 @@
  */
 package hellbound.Quarry;
 
-import king.server.Config;
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.instancemanager.HellboundManager;
-import king.server.gameserver.instancemanager.ZoneManager;
-import king.server.gameserver.model.actor.L2Attackable;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.actor.instance.L2QuestGuardInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.zone.L2ZoneType;
-import king.server.gameserver.network.NpcStringId;
-import king.server.gameserver.network.clientpackets.Say2;
-import king.server.gameserver.network.serverpackets.NpcSay;
+import pk.elfo.Config;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.instancemanager.HellboundManager;
+import pk.elfo.gameserver.instancemanager.ZoneManager;
+import pk.elfo.gameserver.model.actor.L2Attackable;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.actor.instance.L2QuestGuardInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.zone.L2ZoneType;
+import pk.elfo.gameserver.network.NpcStringId;
+import pk.elfo.gameserver.network.clientpackets.Say2;
+import pk.elfo.gameserver.network.serverpackets.NpcSay;
 
 /**
  * @author DS, GKR

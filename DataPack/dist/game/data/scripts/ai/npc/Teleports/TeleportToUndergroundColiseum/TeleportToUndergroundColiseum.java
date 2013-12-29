@@ -18,12 +18,11 @@
  */
 package ai.npc.Teleports.TeleportToUndergroundColiseum;
 
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.util.Util;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.util.Util;
 
 /**
  * Underground Coliseum teleport AI

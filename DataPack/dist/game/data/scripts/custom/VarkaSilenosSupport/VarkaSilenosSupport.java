@@ -21,16 +21,16 @@ package custom.VarkaSilenosSupport;
 import java.util.HashMap;
 import java.util.Map;
 
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.model.quest.State;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.network.serverpackets.ActionFailed;
-import king.server.gameserver.network.serverpackets.WareHouseWithdrawalList;
-import king.server.gameserver.util.Util;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.quest.State;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.network.serverpackets.ActionFailed;
+import pk.elfo.gameserver.network.serverpackets.WareHouseWithdrawalList;
+import pk.elfo.gameserver.util.Util;
 
 /**
  * Varka Silenos Support AI.<br>

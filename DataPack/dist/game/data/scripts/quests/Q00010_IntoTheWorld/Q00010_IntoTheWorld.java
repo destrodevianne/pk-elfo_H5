@@ -18,12 +18,12 @@
  */
 package quests.Q00010_IntoTheWorld;
 
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.base.Race;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.model.quest.State;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.base.Race;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.quest.State;
 
 /**
  * Into the World (10)

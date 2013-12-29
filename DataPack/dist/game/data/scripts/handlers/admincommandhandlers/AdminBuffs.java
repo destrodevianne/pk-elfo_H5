@@ -21,19 +21,19 @@ package handlers.admincommandhandlers;
 import java.util.Collection;
 import java.util.StringTokenizer;
 
-import king.server.Config;
-import king.server.gameserver.datatables.SkillTreesData;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.gameserver.network.serverpackets.SkillCoolTime;
-import king.server.gameserver.util.GMAudit;
-import king.server.util.StringUtil;
+import pk.elfo.Config;
+import pk.elfo.gameserver.datatables.SkillTreesData;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.network.serverpackets.SkillCoolTime;
+import pk.elfo.gameserver.util.GMAudit;
+import pk.elfo.util.StringUtil;
 
 public class AdminBuffs implements IAdminCommandHandler
 {

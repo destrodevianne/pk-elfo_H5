@@ -24,14 +24,14 @@ import java.util.StringTokenizer;
 
 import org.mmocore.network.NioNetStringBuffer;
 
-import king.server.gameserver.GameServer;
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.clientpackets.L2GameClientPacket;
-import king.server.gameserver.network.serverpackets.AdminForgePacket;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.util.StringUtil;
+import pk.elfo.gameserver.GameServer;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.clientpackets.L2GameClientPacket;
+import pk.elfo.gameserver.network.serverpackets.AdminForgePacket;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.util.StringUtil;
 
 /**
  * This class handles commands for gm to forge packets

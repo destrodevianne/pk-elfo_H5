@@ -14,15 +14,14 @@
  */
 package quests.Q10295_SevenSignSolinasTomb;
 
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.quest.State;
+import pk.elfo.gameserver.network.serverpackets.OnEventTrigger;
+import pk.elfo.gameserver.network.serverpackets.SocialAction;
 import quests.Q10294_SevenSignToTheMonastery.Q10294_SevenSignToTheMonastery;
-
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.model.quest.State;
-import king.server.gameserver.network.serverpackets.OnEventTrigger;
-import king.server.gameserver.network.serverpackets.SocialAction;
 
 public final class Q10295_SevenSignSolinasTomb extends Quest
 {

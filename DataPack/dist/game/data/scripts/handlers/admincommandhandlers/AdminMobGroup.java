@@ -18,18 +18,18 @@
  */
 package handlers.admincommandhandlers;
 
-import king.server.gameserver.datatables.NpcTable;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.MobGroup;
-import king.server.gameserver.model.MobGroupTable;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.actor.templates.L2NpcTemplate;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.MagicSkillUse;
-import king.server.gameserver.network.serverpackets.SetupGauge;
-import king.server.gameserver.util.Broadcast;
+import pk.elfo.gameserver.datatables.NpcTable;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.MobGroup;
+import pk.elfo.gameserver.model.MobGroupTable;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
+import pk.elfo.gameserver.network.serverpackets.SetupGauge;
+import pk.elfo.gameserver.util.Broadcast;
 
 /**
  * @author littlecrow Admin commands handler for controllable mobs

@@ -18,10 +18,9 @@
  */
 package vehicles.KeucereusSouthController;
 
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.VehiclePathPoint;
 import vehicles.AirShipController;
-
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.VehiclePathPoint;
 
 public class KeucereusSouthController extends AirShipController
 {

@@ -29,30 +29,30 @@ import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import king.server.Config;
-import king.server.L2DatabaseFactory;
-import king.server.gameserver.TradeController;
-import king.server.gameserver.cache.HtmCache;
-import king.server.gameserver.datatables.ItemTable;
-import king.server.gameserver.datatables.MerchantPriceConfigTable.MerchantPriceConfig;
-import king.server.gameserver.datatables.NpcTable;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2DropCategory;
-import king.server.gameserver.model.L2DropData;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.L2TradeList;
-import king.server.gameserver.model.L2TradeList.L2TradeItem;
-import king.server.gameserver.model.StatsSet;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2MerchantInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.actor.templates.L2NpcTemplate;
-import king.server.gameserver.model.items.L2Item;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.skills.L2SkillType;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.util.StringUtil;
+import pk.elfo.Config;
+import pk.elfo.L2DatabaseFactory;
+import pk.elfo.gameserver.TradeController;
+import pk.elfo.gameserver.cache.HtmCache;
+import pk.elfo.gameserver.datatables.ItemTable;
+import pk.elfo.gameserver.datatables.NpcTable;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.datatables.MerchantPriceConfigTable.MerchantPriceConfig;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2DropCategory;
+import pk.elfo.gameserver.model.L2DropData;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.L2TradeList;
+import pk.elfo.gameserver.model.StatsSet;
+import pk.elfo.gameserver.model.L2TradeList.L2TradeItem;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2MerchantInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
+import pk.elfo.gameserver.model.items.L2Item;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.skills.L2SkillType;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.util.StringUtil;
 
 /**
  * @author terry con.close() change by Zoey76 24/02/2011
@@ -822,7 +822,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 			}
 			else if (statToSet.equals("type"))
 			{
-				Class.forName("king.server.gameserver.model.actor.instance." + value + "Instance");
+				Class.forName("pk.elfo.gameserver.model.actor.instance." + value + "Instance");
 				newNpcData.set("type", value);
 			}
 			else if (statToSet.equals("attackRange"))

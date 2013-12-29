@@ -20,17 +20,16 @@ package custom.Validators;
 
 import java.util.Arrays;
 
+import pk.elfo.Config;
+import pk.elfo.gameserver.datatables.ClassListData;
+import pk.elfo.gameserver.model.PcCondOverride;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.util.Util;
 import javolution.util.FastList;
-
-import king.server.Config;
-import king.server.gameserver.datatables.ClassListData;
-import king.server.gameserver.model.PcCondOverride;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.util.Util;
 
 /**
  * Sub-class skills validator.<br>

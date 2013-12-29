@@ -18,14 +18,14 @@
  */
 package handlers.admincommandhandlers;
 
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.Elementals;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.itemcontainer.Inventory;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.InventoryUpdate;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.Elementals;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.itemcontainer.Inventory;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.InventoryUpdate;
 
 /**
  * This class handles following admin commands: - delete = deletes target

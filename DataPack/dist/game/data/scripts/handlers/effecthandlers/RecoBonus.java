@@ -1,10 +1,10 @@
 package handlers.effecthandlers;
 
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.stats.Env;
-import king.server.gameserver.model.effects.EffectTemplate;
-import king.server.gameserver.model.effects.L2EffectType;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.effects.EffectTemplate;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.effects.L2EffectType;
+import pk.elfo.gameserver.model.stats.Env;
 
 
 public class RecoBonus extends L2Effect
@@ -16,7 +16,7 @@ public class RecoBonus extends L2Effect
 
     /**
      *
-     * @see king.server.gameserver.model.effects.L2Effect#getEffectType()
+     * @see pk.elfo.gameserver.model.effects.L2Effect#getEffectType()
      */
     @Override
     public L2EffectType getEffectType()
@@ -26,7 +26,7 @@ public class RecoBonus extends L2Effect
 
     /**
      *
-     * @see king.server.gameserver.model.effects.L2Effect#onStart()
+     * @see pk.elfo.gameserver.model.effects.L2Effect#onStart()
      */
     @Override
     public boolean onStart()
@@ -42,7 +42,7 @@ public class RecoBonus extends L2Effect
 
     /**
      *
-     * @see king.server.gameserver.model.effects.L2Effect#onExit()
+     * @see pk.elfo.gameserver.model.effects.L2Effect#onExit()
      */
     @Override
     public void onExit()
@@ -58,7 +58,7 @@ public class RecoBonus extends L2Effect
 
     /**
      *
-     * @see king.server.gameserver.model.effects.L2Effect#onActionTime()
+     * @see pk.elfo.gameserver.model.effects.L2Effect#onActionTime()
      */
     @Override
     public boolean onActionTime()

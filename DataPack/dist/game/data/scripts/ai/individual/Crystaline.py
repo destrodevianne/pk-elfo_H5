@@ -1,16 +1,16 @@
 import sys
-from king.server.gameserver.ai                    import CtrlIntention
-from king.server.gameserver.datatables            import ItemTable
-from king.server.gameserver.instancemanager       import InstanceManager
-from king.server.gameserver.model.items.instance   import L2ItemInstance
-from king.server.gameserver.model                 import L2World
-from king.server.gameserver.model                 import Location
-from king.server.gameserver.model.quest           import State
-from king.server.gameserver.model.quest           import QuestState
-from king.server.gameserver.model.quest.jython    import QuestJython as JQuest
-from king.server.gameserver.network.serverpackets import CreatureSay
-from king.server.gameserver.network.serverpackets import MagicSkillUse
-from king.server.util                             import Rnd
+from pk.elfo.gameserver.ai                    import CtrlIntention
+from pk.elfo.gameserver.datatables            import ItemTable
+from pk.elfo.gameserver.instancemanager       import InstanceManager
+from pk.elfo.gameserver.model.items.instance   import L2ItemInstance
+from pk.elfo.gameserver.model                 import L2World
+from pk.elfo.gameserver.model                 import Location
+from pk.elfo.gameserver.model.quest           import State
+from pk.elfo.gameserver.model.quest           import QuestState
+from pk.elfo.gameserver.model.quest.jython    import QuestJython as JQuest
+from pk.elfo.gameserver.network.serverpackets import CreatureSay
+from pk.elfo.gameserver.network.serverpackets import MagicSkillUse
+from pk.elfo.util                             import Rnd
 
 npcid     = 32328  # ¤τ΄Ή°�±[
 crystalid = 9693

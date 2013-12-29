@@ -18,20 +18,19 @@
  */
 package ai.group_template;
 
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.instancemanager.ZoneManager;
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.zone.type.L2EffectZone;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.util.Util;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.instancemanager.ZoneManager;
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.zone.type.L2EffectZone;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.SystemMessage;
-import king.server.gameserver.util.Util;
 
 /**
  * Dummy AI for spawns/respawns only for testing.

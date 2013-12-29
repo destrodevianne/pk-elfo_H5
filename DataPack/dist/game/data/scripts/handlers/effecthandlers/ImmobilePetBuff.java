@@ -18,11 +18,11 @@
  */
 package handlers.effecthandlers;
 
-import king.server.gameserver.model.actor.L2Summon;
-import king.server.gameserver.model.effects.EffectTemplate;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.effects.L2EffectType;
-import king.server.gameserver.model.stats.Env;
+import pk.elfo.gameserver.model.actor.L2Summon;
+import pk.elfo.gameserver.model.effects.EffectTemplate;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.effects.L2EffectType;
+import pk.elfo.gameserver.model.stats.Env;
 
 /**
  * @author demonia

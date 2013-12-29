@@ -1,7 +1,7 @@
 package handlers.usercommandhandlers;
 
-import king.server.gameserver.handler.IUserCommandHandler;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.handler.IUserCommandHandler;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * PkElfo

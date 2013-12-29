@@ -21,14 +21,14 @@ package handlers.admincommandhandlers;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import king.server.Config;
-import king.server.gameserver.GameTimeController;
-import king.server.gameserver.Shutdown;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.gameserver.util.Util;
+import pk.elfo.Config;
+import pk.elfo.gameserver.GameTimeController;
+import pk.elfo.gameserver.Shutdown;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.util.Util;
 
 /**
  * This class handles following admin commands: - server_shutdown [sec] = shows menu or shuts down server in sec seconds

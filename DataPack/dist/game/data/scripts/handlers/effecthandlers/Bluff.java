@@ -18,15 +18,15 @@
  */
 package handlers.effecthandlers;
 
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2NpcInstance;
-import king.server.gameserver.model.actor.instance.L2SiegeSummonInstance;
-import king.server.gameserver.model.effects.EffectTemplate;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.effects.L2EffectType;
-import king.server.gameserver.model.stats.Env;
-import king.server.gameserver.network.serverpackets.StartRotation;
-import king.server.gameserver.network.serverpackets.StopRotation;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2NpcInstance;
+import pk.elfo.gameserver.model.actor.instance.L2SiegeSummonInstance;
+import pk.elfo.gameserver.model.effects.EffectTemplate;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.effects.L2EffectType;
+import pk.elfo.gameserver.model.stats.Env;
+import pk.elfo.gameserver.network.serverpackets.StartRotation;
+import pk.elfo.gameserver.network.serverpackets.StopRotation;
 
 /**
  * Implementation of the Bluff Effect

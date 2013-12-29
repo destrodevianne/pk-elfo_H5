@@ -6,15 +6,15 @@ import sys
 from java.sql import PreparedStatement
 from java.sql import ResultSet
 from java.sql import SQLException
-from king.server import L2DatabaseFactory
-from king.server.gameserver.datatables import SkillTable
-from king.server.gameserver.model.quest import State
-from king.server.gameserver.model.quest import QuestState
-from king.server.gameserver.model.quest.jython import QuestJython as JQuest
-from king.server.gameserver.network import SystemMessageId
-from king.server.gameserver.network.serverpackets import ItemList
-from king.server.gameserver.network.serverpackets import NpcSay
-from king.server.gameserver.network.serverpackets import SystemMessage
+from pk.elfo import L2DatabaseFactory
+from pk.elfo.gameserver.datatables import SkillTable
+from pk.elfo.gameserver.model.quest import State
+from pk.elfo.gameserver.model.quest import QuestState
+from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
+from pk.elfo.gameserver.network import SystemMessageId
+from pk.elfo.gameserver.network.serverpackets import ItemList
+from pk.elfo.gameserver.network.serverpackets import NpcSay
+from pk.elfo.gameserver.network.serverpackets import SystemMessage
 
 qn = "421_LittleWingAdventures"
 

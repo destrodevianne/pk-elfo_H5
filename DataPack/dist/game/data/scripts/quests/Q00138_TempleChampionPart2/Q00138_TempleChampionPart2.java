@@ -18,12 +18,11 @@
  */
 package quests.Q00138_TempleChampionPart2;
 
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
 import quests.Q00137_TempleChampionPart1.Q00137_TempleChampionPart1;
-
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
 
 /**
  * Temple Champion - 2 (138)

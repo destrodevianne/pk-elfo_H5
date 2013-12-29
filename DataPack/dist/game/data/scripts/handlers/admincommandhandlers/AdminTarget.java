@@ -18,9 +18,9 @@
  */
 package handlers.admincommandhandlers;
 
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * This class handles following admin commands: - target name = sets player with respective name as target

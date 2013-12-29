@@ -1,10 +1,10 @@
 # 111 Elrokian Hunter's Proof by TheOne
  
 import sys
-from king.server.gameserver.model.quest import State
-from king.server.gameserver.model.quest import QuestState
-from king.server.gameserver.model.quest.jython import QuestJython as JQuest
-from king.server.gameserver.network.serverpackets import PlaySound
+from pk.elfo.gameserver.model.quest import State
+from pk.elfo.gameserver.model.quest import QuestState
+from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
+from pk.elfo.gameserver.network.serverpackets import PlaySound
  
 qn = "111_Elrokian_Hunters_Proof"
  

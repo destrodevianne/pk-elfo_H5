@@ -1,13 +1,13 @@
 package handlers.voicedcommandhandlers;
 
-import king.server.gameserver.handler.IVoicedCommandHandler;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.L2Event;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.gameserver.network.serverpackets.SystemMessage;
-import king.server.util.StringUtil;
+import pk.elfo.gameserver.handler.IVoicedCommandHandler;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.L2Event;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.util.StringUtil;
 
 /**
  * PkElfo

@@ -18,11 +18,11 @@
  */
 package handlers.effecthandlers;
 
-import king.server.gameserver.model.ChanceCondition;
-import king.server.gameserver.model.effects.EffectTemplate;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.effects.L2EffectType;
-import king.server.gameserver.model.stats.Env;
+import pk.elfo.gameserver.model.ChanceCondition;
+import pk.elfo.gameserver.model.effects.EffectTemplate;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.effects.L2EffectType;
+import pk.elfo.gameserver.model.stats.Env;
 
 public class ChanceSkillTrigger extends L2Effect
 {

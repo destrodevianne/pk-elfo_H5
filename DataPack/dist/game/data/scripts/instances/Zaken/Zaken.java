@@ -18,42 +18,41 @@
  */
 package instances.Zaken;
 
-import static king.server.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
+import static pk.elfo.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
 
 import java.util.Calendar;
 import java.util.List;
 
+import pk.elfo.Config;
+import pk.elfo.gameserver.GeoEngine;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.instancemanager.InstanceManager;
+import pk.elfo.gameserver.instancemanager.ZoneManager;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.L2Party;
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.actor.L2Attackable;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.L2Summon;
+import pk.elfo.gameserver.model.actor.instance.L2DecoyInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.instancezone.InstanceWorld;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.quest.State;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.zone.L2ZoneForm;
+import pk.elfo.gameserver.model.zone.L2ZoneType;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.AbstractNpcInfo;
+import pk.elfo.gameserver.network.serverpackets.PlaySound;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.util.Util;
+import pk.elfo.util.Rnd;
 import javolution.util.FastList;
 import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
-
-import king.server.Config;
-import king.server.gameserver.GeoEngine;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.instancemanager.InstanceManager;
-import king.server.gameserver.instancemanager.ZoneManager;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.L2Party;
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.actor.L2Attackable;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.L2Summon;
-import king.server.gameserver.model.actor.instance.L2DecoyInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.instancezone.InstanceWorld;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.model.quest.State;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.zone.L2ZoneForm;
-import king.server.gameserver.model.zone.L2ZoneType;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.AbstractNpcInfo;
-import king.server.gameserver.network.serverpackets.PlaySound;
-import king.server.gameserver.network.serverpackets.SystemMessage;
-import king.server.gameserver.util.Util;
-import king.server.util.Rnd;
 
 public class Zaken extends AbstractNpcAI
 {

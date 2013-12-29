@@ -1,12 +1,12 @@
 package handlers.admincommandhandlers;
 
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.effects.AbnormalEffect;
-import king.server.gameserver.network.serverpackets.ExShowScreenMessage;
-import king.server.gameserver.network.serverpackets.PlaySound;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.effects.AbnormalEffect;
+import pk.elfo.gameserver.network.serverpackets.ExShowScreenMessage;
+import pk.elfo.gameserver.network.serverpackets.PlaySound;
 
 /**
  * @author NeverMore

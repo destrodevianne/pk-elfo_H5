@@ -18,13 +18,13 @@
  */
 package handlers.actionhandlers;
 
-import king.server.gameserver.handler.IActionHandler;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.L2Object.InstanceType;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.MyTargetSelected;
+import pk.elfo.gameserver.handler.IActionHandler;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.L2Object.InstanceType;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.MyTargetSelected;
 
 public class L2DecoyAction implements IActionHandler
 {

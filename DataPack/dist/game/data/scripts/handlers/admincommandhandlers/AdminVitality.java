@@ -20,10 +20,10 @@ package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
 
-import king.server.Config;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.actor.stat.PcStat;
+import pk.elfo.Config;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.actor.stat.PcStat;
 
 /**
  * @author Psychokiller1888

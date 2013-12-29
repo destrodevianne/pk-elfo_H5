@@ -21,23 +21,22 @@ package ai.individual.Venom;
 import java.util.ArrayList;
 import java.util.List;
 
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.datatables.SpawnTable;
+import pk.elfo.gameserver.instancemanager.CastleManager;
+import pk.elfo.gameserver.instancemanager.GlobalVariablesManager;
+import pk.elfo.gameserver.instancemanager.MapRegionManager;
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.actor.L2Attackable;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.holders.SkillHolder;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.zone.ZoneId;
+import pk.elfo.gameserver.network.NpcStringId;
+import pk.elfo.gameserver.network.clientpackets.Say2;
+import pk.elfo.gameserver.scripting.scriptengine.events.SiegeEvent;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.datatables.SpawnTable;
-import king.server.gameserver.instancemanager.CastleManager;
-import king.server.gameserver.instancemanager.GlobalVariablesManager;
-import king.server.gameserver.instancemanager.MapRegionManager;
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.actor.L2Attackable;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.holders.SkillHolder;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.zone.ZoneId;
-import king.server.gameserver.network.NpcStringId;
-import king.server.gameserver.network.clientpackets.Say2;
-import king.server.gameserver.scripting.scriptengine.events.SiegeEvent;
 
 /**
  * Venom AI on Rune Castle.

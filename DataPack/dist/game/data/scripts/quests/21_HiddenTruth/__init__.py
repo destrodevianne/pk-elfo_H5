@@ -2,12 +2,12 @@
 # this script is part of the Official L2J Datapack Project.
 # Visit http://www.l2jdp.com/forum/ for more details.
 import sys
-from king.server.gameserver.ai 						import CtrlIntention
-from king.server.gameserver.model.quest 				import State
-from king.server.gameserver.model.quest 				import QuestState
-from king.server.gameserver.model.quest.jython 		import QuestJython as JQuest
-from king.server.gameserver.model 					import L2CharPosition
-from king.server.gameserver.network.serverpackets 	import NpcSay
+from pk.elfo.gameserver.ai 						import CtrlIntention
+from pk.elfo.gameserver.model.quest 				import State
+from pk.elfo.gameserver.model.quest 				import QuestState
+from pk.elfo.gameserver.model.quest.jython 		import QuestJython as JQuest
+from pk.elfo.gameserver.model 					import L2CharPosition
+from pk.elfo.gameserver.network.serverpackets 	import NpcSay
 
 qn = "21_HiddenTruth"
 

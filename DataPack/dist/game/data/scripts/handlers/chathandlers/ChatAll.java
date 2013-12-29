@@ -22,15 +22,15 @@ import java.util.Collection;
 import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
-import king.server.Config;
-import king.server.gameserver.handler.IChatHandler;
-import king.server.gameserver.handler.IVoicedCommandHandler;
-import king.server.gameserver.handler.VoicedCommandHandler;
-import king.server.gameserver.model.BlockList;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.CreatureSay;
-import king.server.gameserver.util.Util;
+import pk.elfo.Config;
+import pk.elfo.gameserver.handler.IChatHandler;
+import pk.elfo.gameserver.handler.IVoicedCommandHandler;
+import pk.elfo.gameserver.handler.VoicedCommandHandler;
+import pk.elfo.gameserver.model.BlockList;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.CreatureSay;
+import pk.elfo.gameserver.util.Util;
 
 /**
  * A chat handler

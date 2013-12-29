@@ -20,15 +20,14 @@ package ai.individual;
 
 import java.util.Set;
 
+import pk.elfo.gameserver.datatables.SpawnTable;
+import pk.elfo.gameserver.model.L2Spawn;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.NpcStringId;
+import pk.elfo.gameserver.network.clientpackets.Say2;
+import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.datatables.SpawnTable;
-import king.server.gameserver.model.L2Spawn;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.NpcStringId;
-import king.server.gameserver.network.clientpackets.Say2;
-import king.server.gameserver.network.serverpackets.NpcSay;
 
 /**
  * Dilios AI

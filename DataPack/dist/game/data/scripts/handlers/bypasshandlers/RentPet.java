@@ -20,14 +20,14 @@ package handlers.bypasshandlers;
 
 import java.util.StringTokenizer;
 
-import king.server.Config;
-import king.server.gameserver.handler.IBypassHandler;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2MerchantInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.gameserver.network.serverpackets.SetupGauge;
+import pk.elfo.Config;
+import pk.elfo.gameserver.handler.IBypassHandler;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2MerchantInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.network.serverpackets.SetupGauge;
 
 public class RentPet implements IBypassHandler
 {

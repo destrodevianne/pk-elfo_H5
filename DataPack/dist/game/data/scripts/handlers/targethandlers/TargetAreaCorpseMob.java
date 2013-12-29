@@ -21,16 +21,15 @@ package handlers.targethandlers;
 import java.util.Collection;
 import java.util.List;
 
+import pk.elfo.gameserver.handler.ITargetTypeHandler;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.skills.targets.L2TargetType;
+import pk.elfo.gameserver.model.zone.ZoneId;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.util.Util;
 import javolution.util.FastList;
-
-import king.server.gameserver.handler.ITargetTypeHandler;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.skills.targets.L2TargetType;
-import king.server.gameserver.model.zone.ZoneId;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.util.Util;
 
 /**
  * @author UnAfraid

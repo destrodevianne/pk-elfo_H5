@@ -18,20 +18,20 @@
  */
 package handlers.effecthandlers;
 
-import king.server.Config;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.L2Attackable.RewardItem;
-import king.server.gameserver.model.actor.instance.L2MonsterInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.effects.EffectTemplate;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.effects.L2EffectType;
-import king.server.gameserver.model.stats.Env;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.InventoryUpdate;
-import king.server.gameserver.network.serverpackets.ItemList;
-import king.server.gameserver.network.serverpackets.SystemMessage;
-import king.server.util.Rnd;
+import pk.elfo.Config;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.L2Attackable.RewardItem;
+import pk.elfo.gameserver.model.actor.instance.L2MonsterInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.effects.EffectTemplate;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.effects.L2EffectType;
+import pk.elfo.gameserver.model.stats.Env;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.InventoryUpdate;
+import pk.elfo.gameserver.network.serverpackets.ItemList;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.util.Rnd;
 
 /**
  * Harvesting effect.

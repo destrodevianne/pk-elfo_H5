@@ -17,11 +17,10 @@ package ai.individual;
 import java.util.HashMap;
 import java.util.Map;
 
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.NpcStringId;
-import king.server.gameserver.network.serverpackets.NpcSay;
-
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.NpcStringId;
+import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import ai.npc.AbstractNpcAI;
 import javolution.util.FastSet;
 

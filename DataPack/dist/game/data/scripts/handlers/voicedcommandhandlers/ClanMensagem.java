@@ -1,9 +1,9 @@
 package handlers.voicedcommandhandlers;
     
-import king.server.gameserver.handler.IVoicedCommandHandler;
-import king.server.gameserver.model.L2ClanMember;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.serverpackets.ExShowScreenMessage;
+import pk.elfo.gameserver.handler.IVoicedCommandHandler;
+import pk.elfo.gameserver.model.L2ClanMember;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.serverpackets.ExShowScreenMessage;
 
 /**
  * PkElfo

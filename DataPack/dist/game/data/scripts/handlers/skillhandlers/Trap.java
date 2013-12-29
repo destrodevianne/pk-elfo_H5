@@ -18,15 +18,15 @@
  */
 package handlers.skillhandlers;
 
-import king.server.gameserver.handler.ISkillHandler;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Trap;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.Quest.TrapAction;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.skills.L2SkillType;
-import king.server.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.handler.ISkillHandler;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Trap;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.Quest.TrapAction;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.skills.L2SkillType;
+import pk.elfo.gameserver.network.SystemMessageId;
 
 public class Trap implements ISkillHandler
 {

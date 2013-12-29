@@ -18,14 +18,13 @@
  */
 package quests.Q00242_PossessorOfAPreciousSoul2;
 
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.quest.State;
 import quests.Q00241_PossessorOfAPreciousSoul1.Q00241_PossessorOfAPreciousSoul1;
-
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.model.quest.State;
 
 /**
  * Possessor Of A PreciousSoul part 2 (242)<br>

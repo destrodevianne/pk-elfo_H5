@@ -20,18 +20,18 @@ package handlers.itemhandlers;
 
 import java.util.logging.Level;
 
-import king.server.Config;
-import king.server.gameserver.handler.IItemHandler;
-import king.server.gameserver.model.ShotType;
-import king.server.gameserver.model.actor.L2Playable;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.holders.SkillHolder;
-import king.server.gameserver.model.items.L2Weapon;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.model.items.type.L2ActionType;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.MagicSkillUse;
-import king.server.gameserver.util.Broadcast;
+import pk.elfo.Config;
+import pk.elfo.gameserver.handler.IItemHandler;
+import pk.elfo.gameserver.model.ShotType;
+import pk.elfo.gameserver.model.actor.L2Playable;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.holders.SkillHolder;
+import pk.elfo.gameserver.model.items.L2Weapon;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.model.items.type.L2ActionType;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
+import pk.elfo.gameserver.util.Broadcast;
 
 public class BlessedSpiritShot implements IItemHandler
 {

@@ -18,10 +18,10 @@
  */
 package hellbound.Shadai;
 
-import king.server.gameserver.GameTimeController;
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.GameTimeController;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.quest.Quest;
 
 /**
  * @author GKR

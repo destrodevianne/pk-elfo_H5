@@ -14,11 +14,11 @@
  */
 package handlers.admincommandhandlers;
 
-import king.server.Config;
-import king.server.gameserver.Announcements;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.instancemanager.TownManager;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.Config;
+import pk.elfo.gameserver.Announcements;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.instancemanager.TownManager;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * @author SolidSnake, mrTJO

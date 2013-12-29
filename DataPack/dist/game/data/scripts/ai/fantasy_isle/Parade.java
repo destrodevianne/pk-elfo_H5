@@ -22,15 +22,14 @@ import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.concurrent.ScheduledFuture;
 
+import pk.elfo.gameserver.GameTimeController;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.model.L2CharPosition;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import javolution.util.FastList;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.GameTimeController;
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.model.L2CharPosition;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.network.serverpackets.NpcSay;
 
 /**
  * Fantasy Isle Parade

@@ -1,11 +1,11 @@
 package handlers.usercommandhandlers;
 
-import king.server.gameserver.handler.IUserCommandHandler;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.olympiad.Olympiad;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.handler.IUserCommandHandler;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.olympiad.Olympiad;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * PkElfo

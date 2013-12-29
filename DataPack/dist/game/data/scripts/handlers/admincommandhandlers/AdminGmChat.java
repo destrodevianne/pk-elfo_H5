@@ -18,14 +18,14 @@
  */
 package handlers.admincommandhandlers;
 
-import king.server.gameserver.datatables.AdminTable;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.clientpackets.Say2;
-import king.server.gameserver.network.serverpackets.CreatureSay;
+import pk.elfo.gameserver.datatables.AdminTable;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.clientpackets.Say2;
+import pk.elfo.gameserver.network.serverpackets.CreatureSay;
 
 /**
  * This class handles following admin commands: - gmchat text = sends text to all online GM's - gmchat_menu text = same as gmchat, displays the admin panel after chat

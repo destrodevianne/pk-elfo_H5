@@ -14,21 +14,20 @@
  */
 package instances.LibraryOfSages;
 
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.instancemanager.InstanceManager;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.Instance;
-import king.server.gameserver.model.instancezone.InstanceWorld;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.network.NpcStringId;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.clientpackets.Say2;
-import king.server.gameserver.network.serverpackets.NpcSay;
-import king.server.gameserver.network.serverpackets.SystemMessage;
-import king.server.util.Rnd;
-
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.instancemanager.InstanceManager;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.Instance;
+import pk.elfo.gameserver.model.instancezone.InstanceWorld;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.network.NpcStringId;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.clientpackets.Say2;
+import pk.elfo.gameserver.network.serverpackets.NpcSay;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.util.Rnd;
 import javolution.util.FastList;
 import javolution.util.FastMap;
 

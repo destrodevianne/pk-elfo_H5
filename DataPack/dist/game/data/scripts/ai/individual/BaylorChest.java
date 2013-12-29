@@ -1,11 +1,10 @@
 package ai.individual;
 
-import king.server.gameserver.datatables.ItemTable;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.util.Rnd;
-
+import pk.elfo.gameserver.datatables.ItemTable;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
 
 public class BaylorChest extends AbstractNpcAI

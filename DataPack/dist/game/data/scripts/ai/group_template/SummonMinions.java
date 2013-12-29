@@ -24,17 +24,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.model.actor.L2Attackable;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.NpcStringId;
+import pk.elfo.gameserver.network.clientpackets.Say2;
 import javolution.util.FastList;
 import javolution.util.FastMap;
 import javolution.util.FastSet;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.model.actor.L2Attackable;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.NpcStringId;
-import king.server.gameserver.network.clientpackets.Say2;
 
 /**
  * Summon Minions AI. Based on work of Slyce.

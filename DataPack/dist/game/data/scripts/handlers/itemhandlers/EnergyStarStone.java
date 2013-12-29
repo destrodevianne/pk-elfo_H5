@@ -18,13 +18,13 @@
  */
 package handlers.itemhandlers;
 
-import king.server.gameserver.model.actor.L2Playable;
-import king.server.gameserver.model.actor.instance.L2AirShipInstance;
-import king.server.gameserver.model.actor.instance.L2ControllableAirShipInstance;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.ActionFailed;
-import king.server.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.model.actor.L2Playable;
+import pk.elfo.gameserver.model.actor.instance.L2AirShipInstance;
+import pk.elfo.gameserver.model.actor.instance.L2ControllableAirShipInstance;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.ActionFailed;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 public class EnergyStarStone extends ItemSkills
 {

@@ -18,9 +18,9 @@
  */
 package transformations;
 
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.instancemanager.TransformationManager;
-import king.server.gameserver.model.L2Transformation;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.instancemanager.TransformationManager;
+import pk.elfo.gameserver.model.L2Transformation;
 
 public class TinGolem extends L2Transformation
 {

@@ -1,12 +1,12 @@
 package handlers.voicedcommandhandlers;
 
-import king.server.Config;
-import king.server.gameserver.cache.HtmCache;
-import king.server.gameserver.handler.IVoicedCommandHandler;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.TvTEvent;
-import king.server.gameserver.network.serverpackets.ActionFailed;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.Config;
+import pk.elfo.gameserver.cache.HtmCache;
+import pk.elfo.gameserver.handler.IVoicedCommandHandler;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.TvTEvent;
+import pk.elfo.gameserver.network.serverpackets.ActionFailed;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
  * PkElfo

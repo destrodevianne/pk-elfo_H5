@@ -18,13 +18,12 @@
  */
 package ai.npc.ForgeOfTheGods;
 
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.NpcStringId;
+import pk.elfo.gameserver.network.clientpackets.Say2;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.NpcStringId;
-import king.server.gameserver.network.clientpackets.Say2;
 
 /**
  * Rooney AI

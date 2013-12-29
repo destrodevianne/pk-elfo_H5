@@ -1,10 +1,10 @@
 # Made by Emperorc
 import sys
-from king.server.gameserver.model.quest import State
-from king.server.gameserver.model.quest import QuestState
-from king.server.gameserver.model.quest.jython import QuestJython as JQuest
-from king.server.gameserver.network.serverpackets import NpcSay
-from king.server.gameserver.ai import CtrlIntention
+from pk.elfo.gameserver.model.quest import State
+from pk.elfo.gameserver.model.quest import QuestState
+from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
+from pk.elfo.gameserver.network.serverpackets import NpcSay
+from pk.elfo.gameserver.ai import CtrlIntention
 
 qn = "22_TragedyInVonHellmannForest"
 

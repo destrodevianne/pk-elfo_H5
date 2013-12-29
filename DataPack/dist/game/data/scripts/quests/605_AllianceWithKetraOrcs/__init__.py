@@ -1,10 +1,10 @@
 #Made by Emperorc
 import sys
-from king.server import Config
-from king.server.gameserver.model.quest import State
-from king.server.gameserver.model.quest import QuestState
-from king.server.gameserver.model.quest.jython import QuestJython as JQuest
-from king.server.gameserver.util import Util
+from pk.elfo import Config
+from pk.elfo.gameserver.model.quest import State
+from pk.elfo.gameserver.model.quest import QuestState
+from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
+from pk.elfo.gameserver.util import Util
 
 qn = "605_AllianceWithKetraOrcs"
 

@@ -5,8 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Calendar;
 
-import king.server.L2DatabaseFactory;
-import king.server.gameserver.model.quest.Quest;
+import pk.elfo.L2DatabaseFactory;
+import pk.elfo.gameserver.model.quest.Quest;
 
 /**
  * PkElfo

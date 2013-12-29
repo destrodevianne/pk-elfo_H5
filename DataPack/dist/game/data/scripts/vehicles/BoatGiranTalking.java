@@ -21,14 +21,14 @@ package vehicles;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.instancemanager.BoatManager;
-import king.server.gameserver.model.VehiclePathPoint;
-import king.server.gameserver.model.actor.instance.L2BoatInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.clientpackets.Say2;
-import king.server.gameserver.network.serverpackets.CreatureSay;
-import king.server.gameserver.network.serverpackets.PlaySound;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.instancemanager.BoatManager;
+import pk.elfo.gameserver.model.VehiclePathPoint;
+import pk.elfo.gameserver.model.actor.instance.L2BoatInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.clientpackets.Say2;
+import pk.elfo.gameserver.network.serverpackets.CreatureSay;
+import pk.elfo.gameserver.network.serverpackets.PlaySound;
 
 /**
  * @author DS

@@ -8,20 +8,20 @@ import java.sql.SQLException;
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 
-import king.server.Config;
-import king.server.L2DatabaseFactory;
-import king.server.gameserver.handler.ITelnetHandler;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.itemcontainer.Inventory;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.CharInfo;
-import king.server.gameserver.network.serverpackets.ExBrExtraUserInfo;
-import king.server.gameserver.network.serverpackets.InventoryUpdate;
-import king.server.gameserver.network.serverpackets.SystemMessage;
-import king.server.gameserver.network.serverpackets.UserInfo;
-import king.server.gameserver.util.GMAudit;
+import pk.elfo.Config;
+import pk.elfo.L2DatabaseFactory;
+import pk.elfo.gameserver.handler.ITelnetHandler;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.itemcontainer.Inventory;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.CharInfo;
+import pk.elfo.gameserver.network.serverpackets.ExBrExtraUserInfo;
+import pk.elfo.gameserver.network.serverpackets.InventoryUpdate;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.network.serverpackets.UserInfo;
+import pk.elfo.gameserver.util.GMAudit;
 
 /**
  * PkElfo

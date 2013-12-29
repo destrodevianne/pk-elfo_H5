@@ -18,13 +18,13 @@
  */
 package handlers.actionhandlers;
 
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.handler.IActionHandler;
-import king.server.gameserver.instancemanager.MercTicketManager;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.L2Object.InstanceType;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.handler.IActionHandler;
+import pk.elfo.gameserver.instancemanager.MercTicketManager;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.L2Object.InstanceType;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 
 public class L2ItemInstanceAction implements IActionHandler
 {

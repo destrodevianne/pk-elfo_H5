@@ -21,14 +21,13 @@ package quests.Q00654_JourneyToASettlement;
 import java.util.HashMap;
 import java.util.Map;
 
+import pk.elfo.Config;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.quest.State;
 import quests.Q00119_LastImperialPrince.Q00119_LastImperialPrince;
-
-import king.server.Config;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.model.quest.State;
 
 /**
  * Journey to a Settlement (654)

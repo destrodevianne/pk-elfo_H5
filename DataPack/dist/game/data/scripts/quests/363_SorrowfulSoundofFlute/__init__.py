@@ -1,9 +1,9 @@
 # Jovial Accordian Written By Elektra
 # Fixed by mr
 import sys
-from king.server.gameserver.model.quest import State
-from king.server.gameserver.model.quest import QuestState
-from king.server.gameserver.model.quest.jython import QuestJython as JQuest
+from pk.elfo.gameserver.model.quest import State
+from pk.elfo.gameserver.model.quest import QuestState
+from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "363_SorrowfulSoundofFlute"
 

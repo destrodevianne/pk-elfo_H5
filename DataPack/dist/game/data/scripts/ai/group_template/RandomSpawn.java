@@ -20,12 +20,11 @@ package ai.group_template;
 
 import java.util.Map;
 
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.actor.L2Npc;
 import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.actor.L2Npc;
 
 /**
  * Manages spawn of NPC's, having several random spawn points.

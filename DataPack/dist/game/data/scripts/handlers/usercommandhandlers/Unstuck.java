@@ -1,20 +1,20 @@
 package handlers.usercommandhandlers;
 
-import king.server.Config;
-import king.server.gameserver.GameTimeController;
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.handler.IUserCommandHandler;
-import king.server.gameserver.instancemanager.MapRegionManager;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.TvTEvent;
-import king.server.gameserver.model.entity.TvTRoundEvent;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.network.serverpackets.ActionFailed;
-import king.server.gameserver.network.serverpackets.MagicSkillUse;
-import king.server.gameserver.network.serverpackets.SetupGauge;
-import king.server.gameserver.util.Broadcast;
+import pk.elfo.Config;
+import pk.elfo.gameserver.GameTimeController;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.handler.IUserCommandHandler;
+import pk.elfo.gameserver.instancemanager.MapRegionManager;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.TvTEvent;
+import pk.elfo.gameserver.model.entity.TvTRoundEvent;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.network.serverpackets.ActionFailed;
+import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
+import pk.elfo.gameserver.network.serverpackets.SetupGauge;
+import pk.elfo.gameserver.util.Broadcast;
 
 /**
  * PkElfo

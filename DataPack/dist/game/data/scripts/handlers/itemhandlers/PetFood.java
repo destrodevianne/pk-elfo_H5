@@ -20,19 +20,19 @@ package handlers.itemhandlers;
 
 import java.util.List;
 
-import king.server.Config;
-import king.server.gameserver.datatables.PetDataTable;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.handler.IItemHandler;
-import king.server.gameserver.model.actor.L2Playable;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.actor.instance.L2PetInstance;
-import king.server.gameserver.model.holders.SkillHolder;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.MagicSkillUse;
-import king.server.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.Config;
+import pk.elfo.gameserver.datatables.PetDataTable;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.handler.IItemHandler;
+import pk.elfo.gameserver.model.actor.L2Playable;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PetInstance;
+import pk.elfo.gameserver.model.holders.SkillHolder;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * @author Kerberos, Zoey76

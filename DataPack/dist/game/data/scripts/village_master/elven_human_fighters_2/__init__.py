@@ -5,9 +5,9 @@
 # Let us know if you did not receive a copy of such files.
 import sys
 
-from king.server.gameserver.model.quest        import State
-from king.server.gameserver.model.quest        import QuestState
-from king.server.gameserver.model.quest.jython import QuestJython as JQuest
+from pk.elfo.gameserver.model.quest        import State
+from pk.elfo.gameserver.model.quest        import QuestState
+from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "elven_human_fighters_2"
 #Quest items

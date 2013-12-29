@@ -18,13 +18,13 @@
  */
 package handlers.admincommandhandlers;
 
-import king.server.gameserver.datatables.DoorTable;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.instancemanager.CastleManager;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.instance.L2DoorInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.Castle;
+import pk.elfo.gameserver.datatables.DoorTable;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.instancemanager.CastleManager;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.instance.L2DoorInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.Castle;
 
 /**
  * This class handles following admin commands: - open1 = open coloseum door 24190001 - open2 = open coloseum door 24190002 - open3 = open coloseum door 24190003 - open4 = open coloseum door 24190004 - openall = open all coloseum door - close1 = close coloseum door 24190001 - close2 = close coloseum

@@ -18,14 +18,14 @@
  */
 package handlers.effecthandlers;
 
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.effects.EffectTemplate;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.effects.L2EffectType;
-import king.server.gameserver.model.stats.Env;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.StatusUpdate;
-import king.server.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.effects.EffectTemplate;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.effects.L2EffectType;
+import pk.elfo.gameserver.model.stats.Env;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.StatusUpdate;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * @author UnAfraid

@@ -21,14 +21,14 @@ package handlers.admincommandhandlers;
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 
-import king.server.gameserver.datatables.ClanTable;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2Clan;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.GMViewPledgeInfo;
-import king.server.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.datatables.ClanTable;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2Clan;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.GMViewPledgeInfo;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * <B>Pledge Manipulation:</B><BR>

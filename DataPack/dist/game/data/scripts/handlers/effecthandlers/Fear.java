@@ -18,24 +18,24 @@
  */
 package handlers.effecthandlers;
 
-import king.server.Config;
-import king.server.gameserver.GeoData;
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.model.L2CharPosition;
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.actor.instance.L2DefenderInstance;
-import king.server.gameserver.model.actor.instance.L2FortCommanderInstance;
-import king.server.gameserver.model.actor.instance.L2GrandBossInstance;
-import king.server.gameserver.model.actor.instance.L2NpcInstance;
-import king.server.gameserver.model.actor.instance.L2PetInstance;
-import king.server.gameserver.model.actor.instance.L2RaidBossInstance;
-import king.server.gameserver.model.actor.instance.L2SiegeFlagInstance;
-import king.server.gameserver.model.actor.instance.L2SiegeSummonInstance;
-import king.server.gameserver.model.effects.EffectFlag;
-import king.server.gameserver.model.effects.EffectTemplate;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.effects.L2EffectType;
-import king.server.gameserver.model.stats.Env;
+import pk.elfo.Config;
+import pk.elfo.gameserver.GeoData;
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.model.L2CharPosition;
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.actor.instance.L2DefenderInstance;
+import pk.elfo.gameserver.model.actor.instance.L2FortCommanderInstance;
+import pk.elfo.gameserver.model.actor.instance.L2GrandBossInstance;
+import pk.elfo.gameserver.model.actor.instance.L2NpcInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PetInstance;
+import pk.elfo.gameserver.model.actor.instance.L2RaidBossInstance;
+import pk.elfo.gameserver.model.actor.instance.L2SiegeFlagInstance;
+import pk.elfo.gameserver.model.actor.instance.L2SiegeSummonInstance;
+import pk.elfo.gameserver.model.effects.EffectFlag;
+import pk.elfo.gameserver.model.effects.EffectTemplate;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.effects.L2EffectType;
+import pk.elfo.gameserver.model.stats.Env;
 
 /**
  * Implementation of the Fear Effect

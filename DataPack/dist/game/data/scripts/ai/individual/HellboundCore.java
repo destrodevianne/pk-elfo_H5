@@ -18,14 +18,13 @@
  */
 package ai.individual;
 
+import pk.elfo.gameserver.instancemanager.HellboundManager;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2MonsterInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.holders.SkillHolder;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.instancemanager.HellboundManager;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2MonsterInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.holders.SkillHolder;
 
 /**
  * Manages Naia's cast on the Hellbound Core

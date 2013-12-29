@@ -21,15 +21,14 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.logging.Level;
 
-import king.server.Config;
-import king.server.L2DatabaseFactory;
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.util.L2FastList;
-
+import pk.elfo.Config;
+import pk.elfo.L2DatabaseFactory;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.util.L2FastList;
 import javolution.text.TextBuilder;
 
 public class TopPvpPk extends Quest

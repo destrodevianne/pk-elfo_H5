@@ -23,21 +23,21 @@ import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import king.server.Config;
-import king.server.gameserver.datatables.ClassListData;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.datatables.SkillTreesData;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2Clan;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.L2SkillLearn;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.gameserver.network.serverpackets.PledgeSkillList;
-import king.server.gameserver.network.serverpackets.SystemMessage;
-import king.server.util.StringUtil;
+import pk.elfo.Config;
+import pk.elfo.gameserver.datatables.ClassListData;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.datatables.SkillTreesData;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2Clan;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.L2SkillLearn;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.network.serverpackets.PledgeSkillList;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.util.StringUtil;
 
 /**
  * This class handles following admin commands:

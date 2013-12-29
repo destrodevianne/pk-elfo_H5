@@ -20,17 +20,16 @@ package ai.npc.NpcBuffers;
 
 import java.util.Collection;
 
+import pk.elfo.gameserver.SevenSigns;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.network.NpcStringId;
+import pk.elfo.gameserver.network.clientpackets.Say2;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.SevenSigns;
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.network.NpcStringId;
-import king.server.gameserver.network.clientpackets.Say2;
 
 /**
  * Preacher of Doom and Orator of Revelations AI

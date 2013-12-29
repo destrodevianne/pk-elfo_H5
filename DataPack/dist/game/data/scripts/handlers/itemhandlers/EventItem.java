@@ -20,16 +20,16 @@ package handlers.itemhandlers;
 
 import java.util.logging.Logger;
 
-import king.server.gameserver.handler.IItemHandler;
-import king.server.gameserver.instancemanager.HandysBlockCheckerManager;
-import king.server.gameserver.instancemanager.HandysBlockCheckerManager.ArenaParticipantsHolder;
-import king.server.gameserver.model.actor.L2Playable;
-import king.server.gameserver.model.actor.instance.L2BlockInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.handler.IItemHandler;
+import pk.elfo.gameserver.instancemanager.HandysBlockCheckerManager;
+import pk.elfo.gameserver.instancemanager.HandysBlockCheckerManager.ArenaParticipantsHolder;
+import pk.elfo.gameserver.model.actor.L2Playable;
+import pk.elfo.gameserver.model.actor.instance.L2BlockInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 public class EventItem implements IItemHandler
 {

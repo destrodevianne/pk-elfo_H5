@@ -25,24 +25,24 @@ package handlers.effecthandlers;
 import java.util.ArrayList;
 import java.util.List;
 
-import king.server.gameserver.ai.CtrlEvent;
-import king.server.gameserver.datatables.NpcTable;
-import king.server.gameserver.idfactory.IdFactory;
-import king.server.gameserver.model.ShotType;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.instance.L2EffectPointInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.actor.templates.L2NpcTemplate;
-import king.server.gameserver.model.effects.EffectTemplate;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.effects.L2EffectType;
-import king.server.gameserver.model.skills.l2skills.L2SkillSignetCasttime;
-import king.server.gameserver.model.skills.targets.L2TargetType;
-import king.server.gameserver.model.stats.Env;
-import king.server.gameserver.model.stats.Formulas;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.MagicSkillLaunched;
-import king.server.gameserver.util.Point3D;
+import pk.elfo.gameserver.ai.CtrlEvent;
+import pk.elfo.gameserver.datatables.NpcTable;
+import pk.elfo.gameserver.idfactory.IdFactory;
+import pk.elfo.gameserver.model.ShotType;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.instance.L2EffectPointInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
+import pk.elfo.gameserver.model.effects.EffectTemplate;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.effects.L2EffectType;
+import pk.elfo.gameserver.model.skills.l2skills.L2SkillSignetCasttime;
+import pk.elfo.gameserver.model.skills.targets.L2TargetType;
+import pk.elfo.gameserver.model.stats.Env;
+import pk.elfo.gameserver.model.stats.Formulas;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.MagicSkillLaunched;
+import pk.elfo.gameserver.util.Point3D;
 
 public class SignetMDam extends L2Effect
 {

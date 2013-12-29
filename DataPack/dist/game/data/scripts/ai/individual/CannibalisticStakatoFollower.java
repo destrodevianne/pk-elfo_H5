@@ -14,13 +14,12 @@
  */
 package ai.individual;
 
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2MonsterInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.serverpackets.MagicSkillUse;
-import king.server.util.Rnd;
-
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2MonsterInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
+import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
 
 public class CannibalisticStakatoFollower extends AbstractNpcAI

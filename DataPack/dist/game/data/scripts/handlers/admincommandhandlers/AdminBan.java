@@ -23,16 +23,16 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.StringTokenizer;
 
-import king.server.Config;
-import king.server.gameserver.Announcements;
-import king.server.L2DatabaseFactory;
-import king.server.gameserver.LoginServerThread;
-import king.server.gameserver.communitybbs.Manager.RegionBBSManager;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.util.GMAudit;
+import pk.elfo.Config;
+import pk.elfo.L2DatabaseFactory;
+import pk.elfo.gameserver.Announcements;
+import pk.elfo.gameserver.LoginServerThread;
+import pk.elfo.gameserver.communitybbs.Manager.RegionBBSManager;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.util.GMAudit;
 
 /**
  * This class handles following admin commands: - ban_acc <account_name> = changes account access level to -1 and logs him off. If no account is specified target's account is used. - ban_char <char_name> = changes a characters access level to -1 and logs him off. If no character is specified target

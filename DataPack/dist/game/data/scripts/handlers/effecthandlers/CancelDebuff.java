@@ -18,13 +18,13 @@
  */
 package handlers.effecthandlers;
 
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.effects.EffectTemplate;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.effects.L2EffectType;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.stats.Env;
-import king.server.util.Rnd;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.effects.EffectTemplate;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.effects.L2EffectType;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.stats.Env;
+import pk.elfo.util.Rnd;
 
 /**
  * @author UnAfraid

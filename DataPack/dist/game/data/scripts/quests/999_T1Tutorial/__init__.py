@@ -3,11 +3,11 @@
 # C4 addons by Kerberos
 # updated to Kamael by Kerberos
 import sys
-from king.server.gameserver.model.quest import State
-from king.server.gameserver.model.quest import QuestState
-from king.server.gameserver.model.quest.jython import QuestJython as JQuest
-from king.server.gameserver.network.serverpackets import PlaySound
-from king.server import Config
+from pk.elfo.gameserver.model.quest import State
+from pk.elfo.gameserver.model.quest import QuestState
+from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
+from pk.elfo.gameserver.network.serverpackets import PlaySound
+from pk.elfo import Config
 
 qn = "999_T1Tutorial"
 qnTutorial = "255_Tutorial"

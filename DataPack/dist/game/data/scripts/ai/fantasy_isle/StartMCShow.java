@@ -18,7 +18,7 @@
  */
 package ai.fantasy_isle;
 
-import king.server.gameserver.instancemanager.QuestManager;
+import pk.elfo.gameserver.instancemanager.QuestManager;
 
 /**
  * Start MC Show.

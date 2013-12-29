@@ -18,15 +18,15 @@
  */
 package handlers.bypasshandlers;
 
-import king.server.Config;
-import king.server.gameserver.SevenSigns;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.handler.IBypassHandler;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.actor.instance.L2WyvernManagerInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.util.Util;
+import pk.elfo.Config;
+import pk.elfo.gameserver.SevenSigns;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.handler.IBypassHandler;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.actor.instance.L2WyvernManagerInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.util.Util;
 
 public class RideWyvern implements IBypassHandler
 {

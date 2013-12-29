@@ -1,10 +1,10 @@
 # Made by Emperorc
 # Update 17-01-08 by t0rm3nt0r
 import sys
-from king.server.gameserver.model.quest import State
-from king.server.gameserver.model.quest import QuestState
-from king.server.gameserver.model.quest.jython import QuestJython as JQuest
-from king.server.gameserver.network.serverpackets      import SocialAction
+from pk.elfo.gameserver.model.quest import State
+from pk.elfo.gameserver.model.quest import QuestState
+from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
+from pk.elfo.gameserver.network.serverpackets      import SocialAction
 
 qn = "62_PathoftheTrooper"
 

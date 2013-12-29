@@ -1,10 +1,11 @@
 package custom.AntiAfkTvt;
 
 import java.util.ArrayList;
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.TvTEvent;
-import king.server.gameserver.model.entity.TvTEventTeam;
+
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.TvTEvent;
+import pk.elfo.gameserver.model.entity.TvTEventTeam;
 
 public class AntiAfkTvt
 {

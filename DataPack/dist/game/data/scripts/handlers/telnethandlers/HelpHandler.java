@@ -3,7 +3,7 @@ package handlers.telnethandlers;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-import king.server.gameserver.handler.ITelnetHandler;
+import pk.elfo.gameserver.handler.ITelnetHandler;
 
 /**
  * PkElfo

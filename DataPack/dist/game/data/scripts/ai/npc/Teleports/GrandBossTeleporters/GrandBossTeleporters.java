@@ -18,20 +18,19 @@
  */
 package ai.npc.Teleports.GrandBossTeleporters;
 
+import pk.elfo.Config;
+import pk.elfo.gameserver.datatables.DoorTable;
+import pk.elfo.gameserver.instancemanager.GrandBossManager;
+import pk.elfo.gameserver.instancemanager.QuestManager;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2GrandBossInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.zone.type.L2BossZone;
 import ai.individual.Antharas;
 import ai.individual.Valakas;
 import ai.npc.AbstractNpcAI;
-
-import king.server.Config;
-import king.server.gameserver.datatables.DoorTable;
-import king.server.gameserver.instancemanager.GrandBossManager;
-import king.server.gameserver.instancemanager.QuestManager;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2GrandBossInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.model.zone.type.L2BossZone;
 
 /**
  * Grand Bosses teleport AI.<br>

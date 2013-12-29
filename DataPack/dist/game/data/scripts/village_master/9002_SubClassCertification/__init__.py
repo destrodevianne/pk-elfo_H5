@@ -3,14 +3,14 @@
 
 import sys
 
-from king.server.gameserver.datatables import ClassListData
-from king.server.gameserver.model.base         import ClassType
-from king.server.gameserver.model.base         import Race
-from king.server.gameserver.model.quest        import State
-from king.server.gameserver.model.quest        import QuestState
-from king.server.gameserver.model.quest.jython import QuestJython as JQuest
-from king.server.gameserver.network            import SystemMessageId
-from king.server.gameserver.network.serverpackets import SystemMessage
+from pk.elfo.gameserver.datatables import ClassListData
+from pk.elfo.gameserver.model.base         import ClassType
+from pk.elfo.gameserver.model.base         import Race
+from pk.elfo.gameserver.model.quest        import State
+from pk.elfo.gameserver.model.quest        import QuestState
+from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
+from pk.elfo.gameserver.network            import SystemMessageId
+from pk.elfo.gameserver.network.serverpackets import SystemMessage
 
 qn = "9002_SubClassCertification"
 NPC=[30026,30031,30037,30066,30070,30109,30115,30120,30154,30174,30175,30176,30187, \

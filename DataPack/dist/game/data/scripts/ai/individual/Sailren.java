@@ -14,20 +14,19 @@
  */
 package ai.individual;
 
-import king.server.Config;
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.instancemanager.GrandBossManager;
-import king.server.gameserver.model.L2CharPosition;
-import king.server.gameserver.model.StatsSet;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2GrandBossInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.serverpackets.PlaySound;
-import king.server.gameserver.network.serverpackets.SocialAction;
-import king.server.gameserver.network.serverpackets.SpecialCamera;
-import king.server.util.Rnd;
-
+import pk.elfo.Config;
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.instancemanager.GrandBossManager;
+import pk.elfo.gameserver.model.L2CharPosition;
+import pk.elfo.gameserver.model.StatsSet;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2GrandBossInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.serverpackets.PlaySound;
+import pk.elfo.gameserver.network.serverpackets.SocialAction;
+import pk.elfo.gameserver.network.serverpackets.SpecialCamera;
+import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
 
 public class Sailren extends AbstractNpcAI

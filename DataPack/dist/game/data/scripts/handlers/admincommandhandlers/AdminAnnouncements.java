@@ -21,19 +21,18 @@ package handlers.admincommandhandlers;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import pk.elfo.Config;
+import pk.elfo.gameserver.Announcements;
+import pk.elfo.gameserver.cache.HtmCache;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.taskmanager.AutoAnnounceTaskManager;
+import pk.elfo.gameserver.taskmanager.AutoAnnounceTaskManager.AutoAnnouncement;
+import pk.elfo.gameserver.util.Util;
+import pk.elfo.util.StringUtil;
 import javolution.text.TextBuilder;
-
-import king.server.Config;
-import king.server.gameserver.Announcements;
-import king.server.gameserver.cache.HtmCache;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.gameserver.taskmanager.AutoAnnounceTaskManager;
-import king.server.gameserver.taskmanager.AutoAnnounceTaskManager.AutoAnnouncement;
-import king.server.gameserver.util.Util;
-import king.server.util.StringUtil;
 
 /**
  * This class handles following admin commands: - announce text = announces text to all players - list_announcements = show menu - reload_announcements = reloads announcements from txt file - announce_announcements = announce all stored announcements to all players - add_announcement text = adds

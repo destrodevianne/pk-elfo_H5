@@ -3,12 +3,12 @@
 # v0.1.r0 2005.12.05
 # v1.1.r0 2008.03.27: Update/Rewrite by Emperorc
 import sys
-from king.server.gameserver.datatables         			import SkillTable
-from king.server.gameserver.network.serverpackets      	import NpcSay 
-from king.server.gameserver.network.serverpackets      	import MagicSkillUse
-from king.server.gameserver.model.quest        			import State
-from king.server.gameserver.model.quest        			import QuestState
-from king.server.gameserver.model.quest.jython 			import QuestJython as JQuest
+from pk.elfo.gameserver.datatables         			import SkillTable
+from pk.elfo.gameserver.network.serverpackets      	import NpcSay 
+from pk.elfo.gameserver.network.serverpackets      	import MagicSkillUse
+from pk.elfo.gameserver.model.quest        			import State
+from pk.elfo.gameserver.model.quest        			import QuestState
+from pk.elfo.gameserver.model.quest.jython 			import QuestJython as JQuest
 
 qn="501_ProofOfClanAlliance"
 

@@ -1,8 +1,8 @@
 # Made by Mr. Have fun! - Version 0.3 by DrLecter
 import sys
-from king.server.gameserver.model.quest import State
-from king.server.gameserver.model.quest import QuestState
-from king.server.gameserver.model.quest.jython import QuestJython as JQuest
+from pk.elfo.gameserver.model.quest import State
+from pk.elfo.gameserver.model.quest import QuestState
+from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "265_ChainsOfSlavery"
 

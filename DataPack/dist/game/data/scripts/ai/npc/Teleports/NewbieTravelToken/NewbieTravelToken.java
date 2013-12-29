@@ -20,14 +20,13 @@ package ai.npc.Teleports.NewbieTravelToken;
 
 import java.util.Map;
 
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.util.Util;
 import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.util.Util;
 
 /**
  * Newbie Travel Token AI.<br>

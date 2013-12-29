@@ -3,12 +3,12 @@
 
 import sys
 import time
-from king.server.gameserver.datatables					import SkillTable
-from king.server.gameserver.model.actor.instance		import L2PcInstance
-from king.server.gameserver.model.quest					import State
-from king.server.gameserver.model.quest					import QuestState
-from king.server.gameserver.model.quest.jython		import QuestJython as JQuest
-from king.server.gameserver.network.serverpackets	import ExStartScenePlayer
+from pk.elfo.gameserver.datatables					import SkillTable
+from pk.elfo.gameserver.model.actor.instance		import L2PcInstance
+from pk.elfo.gameserver.model.quest					import State
+from pk.elfo.gameserver.model.quest					import QuestState
+from pk.elfo.gameserver.model.quest.jython		import QuestJython as JQuest
+from pk.elfo.gameserver.network.serverpackets	import ExStartScenePlayer
 
 qn = "194_SevenSignContractOfMammon"
 

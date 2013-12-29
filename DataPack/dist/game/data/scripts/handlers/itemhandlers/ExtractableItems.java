@@ -21,16 +21,16 @@ package handlers.itemhandlers;
 import java.util.List;
 import java.util.logging.Logger;
 
-import king.server.Config;
-import king.server.gameserver.datatables.ItemTable;
-import king.server.gameserver.handler.IItemHandler;
-import king.server.gameserver.model.L2ExtractableProduct;
-import king.server.gameserver.model.actor.L2Playable;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.items.L2EtcItem;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.util.Rnd;
+import pk.elfo.Config;
+import pk.elfo.gameserver.datatables.ItemTable;
+import pk.elfo.gameserver.handler.IItemHandler;
+import pk.elfo.gameserver.model.L2ExtractableProduct;
+import pk.elfo.gameserver.model.actor.L2Playable;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.items.L2EtcItem;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.util.Rnd;
 
 /**
  * @author FBIagent 11/12/2006

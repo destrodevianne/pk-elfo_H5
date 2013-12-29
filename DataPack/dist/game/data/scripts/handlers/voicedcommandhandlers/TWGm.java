@@ -4,11 +4,11 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 
-import king.server.gameserver.handler.IVoicedCommandHandler;
-import king.server.gameserver.instancemanager.TerritoryWarManager;
-import king.server.gameserver.model.TerritoryWard;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.handler.IVoicedCommandHandler;
+import pk.elfo.gameserver.instancemanager.TerritoryWarManager;
+import pk.elfo.gameserver.model.TerritoryWard;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
  * PkElfo

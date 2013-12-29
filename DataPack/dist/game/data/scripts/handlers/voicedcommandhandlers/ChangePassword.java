@@ -3,11 +3,11 @@ package handlers.voicedcommandhandlers;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 
-import king.server.gameserver.LoginServerThread;
-import king.server.gameserver.cache.HtmCache;
-import king.server.gameserver.handler.IVoicedCommandHandler;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.LoginServerThread;
+import pk.elfo.gameserver.cache.HtmCache;
+import pk.elfo.gameserver.handler.IVoicedCommandHandler;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
  * PkElfo

@@ -20,17 +20,17 @@ package handlers.admincommandhandlers;
 
 import java.util.logging.Logger;
 
-import king.server.Config;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.itemcontainer.Inventory;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.CharInfo;
-import king.server.gameserver.network.serverpackets.ExBrExtraUserInfo;
-import king.server.gameserver.network.serverpackets.InventoryUpdate;
-import king.server.gameserver.network.serverpackets.UserInfo;
+import pk.elfo.Config;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.itemcontainer.Inventory;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.CharInfo;
+import pk.elfo.gameserver.network.serverpackets.ExBrExtraUserInfo;
+import pk.elfo.gameserver.network.serverpackets.InventoryUpdate;
+import pk.elfo.gameserver.network.serverpackets.UserInfo;
 
 /**
  * This class handles following admin commands: - enchant_armor

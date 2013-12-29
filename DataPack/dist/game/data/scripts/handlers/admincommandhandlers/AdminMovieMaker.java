@@ -1,8 +1,8 @@
 package handlers.admincommandhandlers;
 
-import king.server.gameserver.fence.MovieMakerManager;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.fence.MovieMakerManager;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 public class AdminMovieMaker implements IAdminCommandHandler
 {

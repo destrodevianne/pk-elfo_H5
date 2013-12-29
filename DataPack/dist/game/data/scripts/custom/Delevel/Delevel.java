@@ -5,15 +5,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import king.server.L2DatabaseFactory;
-import king.server.gameserver.cache.HtmCache;
-import king.server.gameserver.datatables.ExperienceTable;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.network.serverpackets.ActionFailed;
-import king.server.gameserver.network.serverpackets.CreatureSay;
+import pk.elfo.L2DatabaseFactory;
+import pk.elfo.gameserver.cache.HtmCache;
+import pk.elfo.gameserver.datatables.ExperienceTable;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.network.serverpackets.ActionFailed;
+import pk.elfo.gameserver.network.serverpackets.CreatureSay;
 
 public class Delevel extends Quest
 {

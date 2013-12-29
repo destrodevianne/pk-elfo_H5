@@ -14,16 +14,16 @@
  */
 package handlers.itemhandlers;
 
-import king.server.gameserver.datatables.NpcTable;
-import king.server.gameserver.handler.IItemHandler;
-import king.server.gameserver.model.L2Spawn;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.L2Playable;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.actor.templates.L2NpcTemplate;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.datatables.NpcTable;
+import pk.elfo.gameserver.handler.IItemHandler;
+import pk.elfo.gameserver.model.L2Spawn;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.L2Playable;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * Custom item handler to allow items to summon NPCs.

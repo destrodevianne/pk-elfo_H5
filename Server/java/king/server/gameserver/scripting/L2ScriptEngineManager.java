@@ -54,7 +54,7 @@ import javolution.util.FastMap;
 import javolution.util.FastSet;
 import king.server.Config;
 import king.server.gameserver.model.quest.Quest;
-import king.server.script.jython.JythonScriptEngine;
+import com.l2jserver.script.jython.JythonScriptEngine;
 
 /**
  * Caches script engines and provides functionality for executing and managing scripts.

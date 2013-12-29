@@ -2,15 +2,15 @@ package handlers.effecthandlers;
 
 import java.util.logging.Logger;
 
-import king.server.Config;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.effects.EffectTemplate;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.effects.L2EffectType;
-import king.server.gameserver.model.stats.Env;
-import king.server.gameserver.model.stats.Stats;
-import king.server.util.Rnd;
-import king.server.util.StringUtil;
+import pk.elfo.Config;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.effects.EffectTemplate;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.effects.L2EffectType;
+import pk.elfo.gameserver.model.stats.Env;
+import pk.elfo.gameserver.model.stats.Stats;
+import pk.elfo.util.Rnd;
+import pk.elfo.util.StringUtil;
 
 public class Cancel extends L2Effect
 {

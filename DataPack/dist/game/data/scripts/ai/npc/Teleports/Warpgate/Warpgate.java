@@ -18,19 +18,18 @@
  */
 package ai.npc.Teleports.Warpgate;
 
+import pk.elfo.Config;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.instancemanager.HellboundManager;
+import pk.elfo.gameserver.model.PcCondOverride;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.zone.L2ZoneType;
 import quests.Q00130_PathToHellbound.Q00130_PathToHellbound;
 import quests.Q00133_ThatsBloodyHot.Q00133_ThatsBloodyHot;
 import ai.npc.AbstractNpcAI;
-
-import king.server.Config;
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.instancemanager.HellboundManager;
-import king.server.gameserver.model.PcCondOverride;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.model.zone.L2ZoneType;
 
 /**
  * Warpgate teleport AI.

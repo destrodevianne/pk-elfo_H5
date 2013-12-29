@@ -20,17 +20,17 @@ package handlers.admincommandhandlers;
 
 import java.util.Calendar;
 
-import king.server.Config;
-import king.server.gameserver.datatables.ClanTable;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.instancemanager.CHSiegeManager;
-import king.server.gameserver.model.L2Clan;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
-import king.server.gameserver.model.entity.clanhall.SiegableHall;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.gameserver.network.serverpackets.SiegeInfo;
+import pk.elfo.Config;
+import pk.elfo.gameserver.datatables.ClanTable;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.instancemanager.CHSiegeManager;
+import pk.elfo.gameserver.model.L2Clan;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
+import pk.elfo.gameserver.model.entity.clanhall.SiegableHall;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.network.serverpackets.SiegeInfo;
 
 /**
  * @author BiggBoss

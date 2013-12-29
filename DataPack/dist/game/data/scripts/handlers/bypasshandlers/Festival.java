@@ -22,21 +22,21 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.logging.Level;
 
-import king.server.Config;
-import king.server.gameserver.SevenSigns;
-import king.server.gameserver.SevenSignsFestival;
-import king.server.gameserver.handler.IBypassHandler;
-import king.server.gameserver.model.L2Party;
-import king.server.gameserver.model.L2Party.messageType;
-import king.server.gameserver.model.StatsSet;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.instance.L2FestivalGuideInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.gameserver.network.serverpackets.SystemMessage;
-import king.server.util.StringUtil;
+import pk.elfo.Config;
+import pk.elfo.gameserver.SevenSigns;
+import pk.elfo.gameserver.SevenSignsFestival;
+import pk.elfo.gameserver.handler.IBypassHandler;
+import pk.elfo.gameserver.model.L2Party;
+import pk.elfo.gameserver.model.StatsSet;
+import pk.elfo.gameserver.model.L2Party.messageType;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.instance.L2FestivalGuideInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.util.StringUtil;
 
 public class Festival implements IBypassHandler
 {

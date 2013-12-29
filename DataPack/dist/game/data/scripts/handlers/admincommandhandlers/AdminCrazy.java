@@ -2,11 +2,11 @@ package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
 
-import king.server.Config;
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.CrazyRates;
+import pk.elfo.Config;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.CrazyRates;
 
 
 public class AdminCrazy implements IAdminCommandHandler

@@ -1,11 +1,11 @@
 package handlers.voicedcommandhandlers;
 
-import king.server.gameserver.handler.IVoicedCommandHandler;
-import king.server.gameserver.instancemanager.CastleManager;
-import king.server.gameserver.model.actor.instance.L2DoorInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.Castle;
-import king.server.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.handler.IVoicedCommandHandler;
+import pk.elfo.gameserver.instancemanager.CastleManager;
+import pk.elfo.gameserver.model.actor.instance.L2DoorInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.Castle;
+import pk.elfo.gameserver.network.SystemMessageId;
 
 /**
  * PkElfo

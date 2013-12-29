@@ -1,9 +1,9 @@
 import sys
 from java.util import Iterator
-from king.server import L2DatabaseFactory
-from king.server.gameserver.model.quest import State
-from king.server.gameserver.model.quest import QuestState
-from king.server.gameserver.model.quest.jython import QuestJython as JQuest
+from pk.elfo import L2DatabaseFactory
+from pk.elfo.gameserver.model.quest import State
+from pk.elfo.gameserver.model.quest import QuestState
+from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
  
 qn = "50300_aio"
  

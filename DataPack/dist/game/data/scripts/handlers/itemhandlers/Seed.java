@@ -18,21 +18,21 @@
  */
 package handlers.itemhandlers;
 
-import king.server.gameserver.datatables.ManorData;
-import king.server.gameserver.handler.IItemHandler;
-import king.server.gameserver.instancemanager.CastleManorManager;
-import king.server.gameserver.instancemanager.MapRegionManager;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.L2Playable;
-import king.server.gameserver.model.actor.instance.L2ChestInstance;
-import king.server.gameserver.model.actor.instance.L2MonsterInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.holders.SkillHolder;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.ActionFailed;
+import pk.elfo.gameserver.datatables.ManorData;
+import pk.elfo.gameserver.handler.IItemHandler;
+import pk.elfo.gameserver.instancemanager.CastleManorManager;
+import pk.elfo.gameserver.instancemanager.MapRegionManager;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.L2Playable;
+import pk.elfo.gameserver.model.actor.instance.L2ChestInstance;
+import pk.elfo.gameserver.model.actor.instance.L2MonsterInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.holders.SkillHolder;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.ActionFailed;
 
 /**
  * @author l3x

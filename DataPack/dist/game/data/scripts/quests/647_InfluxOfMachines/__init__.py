@@ -1,10 +1,10 @@
 # Fix by Cromir & Black Night for Kilah
 # Quest: Influx of Machines
 import sys
-from king.server import Config
-from king.server.gameserver.model.quest import State
-from king.server.gameserver.model.quest import QuestState
-from king.server.gameserver.model.quest.jython import QuestJython as JQuest
+from pk.elfo import Config
+from pk.elfo.gameserver.model.quest import State
+from pk.elfo.gameserver.model.quest import QuestState
+from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "647_InfluxOfMachines"
 

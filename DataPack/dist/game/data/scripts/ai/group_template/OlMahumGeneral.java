@@ -14,14 +14,13 @@
  */
 package ai.group_template;
 
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.network.NpcStringId;
+import pk.elfo.gameserver.network.serverpackets.NpcSay;
+import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.network.NpcStringId;
-import king.server.gameserver.network.serverpackets.NpcSay;
-import king.server.util.Rnd;
 
 public class OlMahumGeneral extends AbstractNpcAI 
 {

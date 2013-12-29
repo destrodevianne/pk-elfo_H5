@@ -7,20 +7,20 @@ import java.util.StringTokenizer;
 
 import javax.script.ScriptException;
 
-import king.server.gameserver.cache.HtmCache;
-import king.server.gameserver.datatables.ItemTable;
-import king.server.gameserver.datatables.MultiSell;
-import king.server.gameserver.datatables.NpcTable;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.datatables.SpawnTable;
-import king.server.gameserver.datatables.TeleportLocationTable;
-import king.server.gameserver.handler.ITelnetHandler;
-import king.server.gameserver.instancemanager.DayNightSpawnManager;
-import king.server.gameserver.instancemanager.QuestManager;
-import king.server.gameserver.instancemanager.RaidBossSpawnManager;
-import king.server.gameserver.instancemanager.ZoneManager;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.scripting.L2ScriptEngineManager;
+import pk.elfo.gameserver.cache.HtmCache;
+import pk.elfo.gameserver.datatables.ItemTable;
+import pk.elfo.gameserver.datatables.MultiSell;
+import pk.elfo.gameserver.datatables.NpcTable;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.datatables.SpawnTable;
+import pk.elfo.gameserver.datatables.TeleportLocationTable;
+import pk.elfo.gameserver.handler.ITelnetHandler;
+import pk.elfo.gameserver.instancemanager.DayNightSpawnManager;
+import pk.elfo.gameserver.instancemanager.QuestManager;
+import pk.elfo.gameserver.instancemanager.RaidBossSpawnManager;
+import pk.elfo.gameserver.instancemanager.ZoneManager;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.scripting.L2ScriptEngineManager;
 
 /**
  * PkElfo

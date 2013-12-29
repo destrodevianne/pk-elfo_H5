@@ -18,16 +18,16 @@
  */
 package handlers.itemhandlers;
 
-import king.server.gameserver.handler.IItemHandler;
-import king.server.gameserver.model.actor.L2Playable;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.model.zone.ZoneId;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.Dice;
-import king.server.gameserver.network.serverpackets.SystemMessage;
-import king.server.gameserver.util.Broadcast;
-import king.server.util.Rnd;
+import pk.elfo.gameserver.handler.IItemHandler;
+import pk.elfo.gameserver.model.actor.L2Playable;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.model.zone.ZoneId;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.Dice;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.util.Broadcast;
+import pk.elfo.util.Rnd;
 
 public class RollingDice implements IItemHandler
 {

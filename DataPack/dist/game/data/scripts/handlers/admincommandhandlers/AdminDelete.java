@@ -18,13 +18,13 @@
  */
 package handlers.admincommandhandlers;
 
-import king.server.gameserver.datatables.SpawnTable;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.instancemanager.RaidBossSpawnManager;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.L2Spawn;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.datatables.SpawnTable;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.instancemanager.RaidBossSpawnManager;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.L2Spawn;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * This class handles following admin commands: - delete = deletes target

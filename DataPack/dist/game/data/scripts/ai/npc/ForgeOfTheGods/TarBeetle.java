@@ -18,13 +18,12 @@
  */
 package ai.npc.ForgeOfTheGods;
 
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.holders.SkillHolder;
+import pk.elfo.gameserver.model.skills.L2Skill;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.holders.SkillHolder;
-import king.server.gameserver.model.skills.L2Skill;
 
 /**
  * Tar Beetle AI

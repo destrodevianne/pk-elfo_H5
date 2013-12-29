@@ -18,16 +18,16 @@
  */
 package ai.fantasy_isle;
 
-import king.server.Config;
-import king.server.gameserver.instancemanager.HandysBlockCheckerManager;
-import king.server.gameserver.instancemanager.HandysBlockCheckerManager.ArenaParticipantsHolder;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.ExCubeGameChangeTimeToStart;
-import king.server.gameserver.network.serverpackets.ExCubeGameRequestReady;
-import king.server.gameserver.network.serverpackets.ExCubeGameTeamList;
+import pk.elfo.Config;
+import pk.elfo.gameserver.instancemanager.HandysBlockCheckerManager;
+import pk.elfo.gameserver.instancemanager.HandysBlockCheckerManager.ArenaParticipantsHolder;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.ExCubeGameChangeTimeToStart;
+import pk.elfo.gameserver.network.serverpackets.ExCubeGameRequestReady;
+import pk.elfo.gameserver.network.serverpackets.ExCubeGameTeamList;
 
 /**
  * Handys Block Checker Event AI.

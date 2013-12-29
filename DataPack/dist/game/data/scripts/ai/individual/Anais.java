@@ -20,17 +20,16 @@ package ai.individual;
 
 import java.util.Map;
 
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.datatables.SpawnTable;
+import pk.elfo.gameserver.model.L2Spawn;
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.actor.L2Attackable;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.holders.SkillHolder;
+import pk.elfo.gameserver.model.quest.QuestTimer;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.datatables.SpawnTable;
-import king.server.gameserver.model.L2Spawn;
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.actor.L2Attackable;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.holders.SkillHolder;
-import king.server.gameserver.model.quest.QuestTimer;
 
 /**
  * Anais AI.

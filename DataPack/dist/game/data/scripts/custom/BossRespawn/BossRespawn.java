@@ -15,14 +15,13 @@
 package custom.BossRespawn;
 
 
+import pk.elfo.gameserver.datatables.NpcTable;
+import pk.elfo.gameserver.instancemanager.GrandBossManager;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import javolution.text.TextBuilder;
-
-import king.server.gameserver.instancemanager.GrandBossManager;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.gameserver.datatables.NpcTable;
 
 public class BossRespawn extends Quest
 {

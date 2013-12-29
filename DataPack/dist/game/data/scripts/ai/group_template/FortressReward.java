@@ -14,17 +14,17 @@
  */
 package ai.group_template;
 
-import king.server.Config;
-import king.server.gameserver.instancemanager.QuestManager;
-import king.server.gameserver.model.L2Clan;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.Fort;
-import king.server.gameserver.model.entity.FortSiege;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.util.Util;
-import king.server.util.Rnd;
+import pk.elfo.Config;
+import pk.elfo.gameserver.instancemanager.QuestManager;
+import pk.elfo.gameserver.model.L2Clan;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.Fort;
+import pk.elfo.gameserver.model.entity.FortSiege;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.util.Util;
+import pk.elfo.util.Rnd;
 
 public class FortressReward extends Quest
 {

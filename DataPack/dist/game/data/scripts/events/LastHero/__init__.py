@@ -1,18 +1,18 @@
 import sys
-from king.server.gameserver.model.quest import State
-from king.server.gameserver.model.quest import QuestState
-from king.server.gameserver.model.quest import Quest
-from king.server.gameserver.datatables import DoorTable
-from king.server.gameserver.datatables import SkillTable
-from king.server.gameserver.model.quest.jython import QuestJython as JQuest
-from king.server.gameserver import Announcements
-from king.server import L2DatabaseFactory
-from king.server.gameserver.ai import CtrlIntention
-from king.server.util import Rnd
+from pk.elfo.gameserver.model.quest import State
+from pk.elfo.gameserver.model.quest import QuestState
+from pk.elfo.gameserver.model.quest import Quest
+from pk.elfo.gameserver.datatables import DoorTable
+from pk.elfo.gameserver.datatables import SkillTable
+from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
+from pk.elfo.gameserver import Announcements
+from pk.elfo import L2DatabaseFactory
+from pk.elfo.gameserver.ai import CtrlIntention
+from pk.elfo.util import Rnd
 from java.lang import System
-from king.server.gameserver.model import L2World
-from king.server.gameserver.model.actor.instance import L2DoorInstance
-from king.server.gameserver.datatables import DoorTable;
+from pk.elfo.gameserver.model import L2World
+from pk.elfo.gameserver.model.actor.instance import L2DoorInstance
+from pk.elfo.gameserver.datatables import DoorTable;
 
 qn = "LastHero"
 # =======================================#

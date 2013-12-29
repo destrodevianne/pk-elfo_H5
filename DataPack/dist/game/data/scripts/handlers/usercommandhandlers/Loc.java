@@ -1,13 +1,13 @@
 package handlers.usercommandhandlers;
 
-import king.server.gameserver.handler.IUserCommandHandler;
-import king.server.gameserver.instancemanager.MapRegionManager;
-import king.server.gameserver.instancemanager.ZoneManager;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.base.Race;
-import king.server.gameserver.model.zone.type.L2RespawnZone;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.handler.IUserCommandHandler;
+import pk.elfo.gameserver.instancemanager.MapRegionManager;
+import pk.elfo.gameserver.instancemanager.ZoneManager;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.base.Race;
+import pk.elfo.gameserver.model.zone.type.L2RespawnZone;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * PkElfo

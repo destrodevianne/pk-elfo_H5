@@ -28,22 +28,22 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.util.StringTokenizer;
 
-import king.server.Config;
-import king.server.gameserver.Announcements;
-import king.server.gameserver.datatables.AdminTable;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.instancemanager.TransformationManager;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.L2Event;
-import king.server.gameserver.model.entity.L2Event.EventState;
-import king.server.gameserver.network.serverpackets.CharInfo;
-import king.server.gameserver.network.serverpackets.ExBrExtraUserInfo;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.gameserver.network.serverpackets.PlaySound;
-import king.server.gameserver.network.serverpackets.UserInfo;
-import king.server.util.Rnd;
-import king.server.util.StringUtil;
+import pk.elfo.Config;
+import pk.elfo.gameserver.Announcements;
+import pk.elfo.gameserver.datatables.AdminTable;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.instancemanager.TransformationManager;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.L2Event;
+import pk.elfo.gameserver.model.entity.L2Event.EventState;
+import pk.elfo.gameserver.network.serverpackets.CharInfo;
+import pk.elfo.gameserver.network.serverpackets.ExBrExtraUserInfo;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.network.serverpackets.PlaySound;
+import pk.elfo.gameserver.network.serverpackets.UserInfo;
+import pk.elfo.util.Rnd;
+import pk.elfo.util.StringUtil;
 
 /**
  * This class handles following admin commands: - admin = shows menu

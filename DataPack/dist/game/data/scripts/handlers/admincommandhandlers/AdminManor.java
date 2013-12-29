@@ -21,13 +21,13 @@ package handlers.admincommandhandlers;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.instancemanager.CastleManager;
-import king.server.gameserver.instancemanager.CastleManorManager;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.Castle;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.util.StringUtil;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.instancemanager.CastleManager;
+import pk.elfo.gameserver.instancemanager.CastleManorManager;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.Castle;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.util.StringUtil;
 
 /**
  * Admin comand handler for Manor System This class handles following admin commands: - manor_info = shows info about current manor state - manor_approve = approves settings for the next manor period - manor_setnext = changes manor settings to the next day's - manor_reset castle = resets all manor

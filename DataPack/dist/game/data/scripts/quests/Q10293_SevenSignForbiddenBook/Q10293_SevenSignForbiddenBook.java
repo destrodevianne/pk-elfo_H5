@@ -1,13 +1,12 @@
 package quests.Q10293_SevenSignForbiddenBook;
 
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.quest.State;
+import pk.elfo.gameserver.network.serverpackets.SocialAction;
 import quests.Q10292_SevenSignsGirlofDoubt.Q10292_SevenSignsGirlofDoubt;
-
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.model.quest.State;
-import king.server.gameserver.network.serverpackets.SocialAction;
 
 public class Q10293_SevenSignForbiddenBook extends Quest
 {

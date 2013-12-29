@@ -18,12 +18,12 @@
  */
 package handlers.itemhandlers;
 
-import king.server.gameserver.handler.IItemHandler;
-import king.server.gameserver.instancemanager.TerritoryWarManager;
-import king.server.gameserver.model.actor.L2Playable;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.handler.IItemHandler;
+import pk.elfo.gameserver.instancemanager.TerritoryWarManager;
+import pk.elfo.gameserver.model.actor.L2Playable;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
 
 /**
  * This class provides handling for items that should display a map when double clicked.

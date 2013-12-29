@@ -21,17 +21,17 @@ package handlers.skillhandlers;
 import java.util.List;
 import java.util.logging.Level;
 
-import king.server.gameserver.handler.ISkillHandler;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.ShotType;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.skills.L2SkillType;
-import king.server.gameserver.model.stats.Env;
-import king.server.gameserver.model.stats.Formulas;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.handler.ISkillHandler;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.ShotType;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.skills.L2SkillType;
+import pk.elfo.gameserver.model.stats.Env;
+import pk.elfo.gameserver.model.stats.Formulas;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 public class StealBuffs implements ISkillHandler
 {

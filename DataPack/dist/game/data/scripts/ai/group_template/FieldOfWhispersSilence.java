@@ -10,16 +10,15 @@
  * details.
  * 
  * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://king.server.ru/>.
+ * this program. If not, see <http://pk.elfo.ru/>.
  */
 package ai.group_template;
 
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.NpcStringId;
+import pk.elfo.gameserver.network.serverpackets.CreatureSay;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.NpcStringId;
-import king.server.gameserver.network.serverpackets.CreatureSay;
 
 public class FieldOfWhispersSilence extends AbstractNpcAI
 {

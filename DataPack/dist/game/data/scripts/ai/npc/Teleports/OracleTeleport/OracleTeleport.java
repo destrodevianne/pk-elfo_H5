@@ -18,16 +18,15 @@
  */
 package ai.npc.Teleports.OracleTeleport;
 
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.itemcontainer.PcInventory;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.quest.State;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.util.Util;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.itemcontainer.PcInventory;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.model.quest.State;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.util.Util;
 
 /**
  * Oracle teleport AI.

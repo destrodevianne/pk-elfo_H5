@@ -18,15 +18,15 @@
  */
 package handlers.admincommandhandlers;
 
-import king.server.gameserver.MonsterRace;
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.DeleteObject;
-import king.server.gameserver.network.serverpackets.MonRaceInfo;
-import king.server.gameserver.network.serverpackets.PlaySound;
-import king.server.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.MonsterRace;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.DeleteObject;
+import pk.elfo.gameserver.network.serverpackets.MonRaceInfo;
+import pk.elfo.gameserver.network.serverpackets.PlaySound;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * This class handles following admin commands: - invul = turns invulnerability on/off

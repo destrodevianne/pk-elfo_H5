@@ -21,15 +21,14 @@ package quests.Q10289_FadeToBlack;
 import java.util.ArrayList;
 import java.util.List;
 
+import pk.elfo.gameserver.model.L2Party;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.quest.State;
+import pk.elfo.gameserver.util.Util;
 import quests.Q10288_SecretMission.Q10288_SecretMission;
-
-import king.server.gameserver.model.L2Party;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.model.quest.State;
-import king.server.gameserver.util.Util;
 
 /**
  * Fade to Black (10289)

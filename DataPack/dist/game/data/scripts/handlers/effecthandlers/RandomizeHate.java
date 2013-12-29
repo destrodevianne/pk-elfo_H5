@@ -21,15 +21,14 @@ package handlers.effecthandlers;
 import java.util.Collection;
 import java.util.List;
 
+import pk.elfo.gameserver.model.actor.L2Attackable;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.effects.EffectTemplate;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.effects.L2EffectType;
+import pk.elfo.gameserver.model.stats.Env;
+import pk.elfo.util.Rnd;
 import javolution.util.FastList;
-
-import king.server.gameserver.model.actor.L2Attackable;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.effects.EffectTemplate;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.effects.L2EffectType;
-import king.server.gameserver.model.stats.Env;
-import king.server.util.Rnd;
 
 public class RandomizeHate extends L2Effect
 {

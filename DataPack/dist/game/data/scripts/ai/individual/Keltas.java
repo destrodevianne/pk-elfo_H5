@@ -20,17 +20,16 @@ package ai.individual;
 
 import java.util.List;
 
+import pk.elfo.gameserver.model.L2Spawn;
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2MonsterInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.NpcStringId;
+import pk.elfo.gameserver.network.clientpackets.Say2;
+import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import javolution.util.FastList;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.model.L2Spawn;
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2MonsterInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.NpcStringId;
-import king.server.gameserver.network.clientpackets.Say2;
-import king.server.gameserver.network.serverpackets.NpcSay;
 
 /**
  * Manages Darion's Enforcer's and Darion's Executioner spawn/despawn

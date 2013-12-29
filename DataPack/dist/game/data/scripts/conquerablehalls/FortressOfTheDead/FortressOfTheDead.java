@@ -22,15 +22,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import king.server.gameserver.GameTimeController;
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.datatables.ClanTable;
-import king.server.gameserver.model.L2Clan;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
-import king.server.gameserver.network.NpcStringId;
-import king.server.gameserver.network.clientpackets.Say2;
+import pk.elfo.gameserver.GameTimeController;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.datatables.ClanTable;
+import pk.elfo.gameserver.model.L2Clan;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
+import pk.elfo.gameserver.network.NpcStringId;
+import pk.elfo.gameserver.network.clientpackets.Say2;
 
 /**
  * Fortress of the Dead clan hall siege script.

@@ -6,12 +6,12 @@ import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import king.server.L2DatabaseFactory;
-import king.server.gameserver.handler.IUserCommandHandler;
-import king.server.gameserver.model.L2Clan;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.L2DatabaseFactory;
+import pk.elfo.gameserver.handler.IUserCommandHandler;
+import pk.elfo.gameserver.model.L2Clan;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * PkElfo

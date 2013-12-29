@@ -1,6 +1,6 @@
 package events;
 
-import king.server.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.Quest;
 
 public class EventsSpawn extends Quest
 {

@@ -25,15 +25,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.logging.Logger;
 
-import king.server.L2DatabaseFactory;
-import king.server.gameserver.datatables.CharNameTable;
-import king.server.gameserver.datatables.ClanTable;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.olympiad.OlympiadManager;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.network.serverpackets.MagicSkillUse;
+import pk.elfo.L2DatabaseFactory;
+import pk.elfo.gameserver.datatables.CharNameTable;
+import pk.elfo.gameserver.datatables.ClanTable;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.olympiad.OlympiadManager;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
 
 /**
  * @author Colet

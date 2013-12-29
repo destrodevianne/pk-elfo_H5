@@ -20,13 +20,13 @@ package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
 
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.instancemanager.QuestManager;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Event;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.util.StringUtil;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.instancemanager.QuestManager;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Event;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.util.StringUtil;
 
 public class AdminEvents implements IAdminCommandHandler
 {

@@ -1,10 +1,10 @@
 package handlers.admincommandhandlers;
  
-import king.server.gameserver.datatables.ClanTable;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.datatables.ClanTable;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.skills.L2Skill;
   
 public class AdminClanSkills implements IAdminCommandHandler
 {

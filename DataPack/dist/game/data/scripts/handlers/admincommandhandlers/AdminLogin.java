@@ -20,12 +20,12 @@ package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
 
-import king.server.Config;
-import king.server.gameserver.LoginServerThread;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.gameserverpackets.ServerStatus;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.Config;
+import pk.elfo.gameserver.LoginServerThread;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.gameserverpackets.ServerStatus;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
  * This class handles the admin commands that acts on the login

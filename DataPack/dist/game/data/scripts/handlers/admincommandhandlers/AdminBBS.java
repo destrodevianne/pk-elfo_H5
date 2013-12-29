@@ -18,9 +18,9 @@
  */
 package handlers.admincommandhandlers;
 
-import king.server.gameserver.communitybbs.Manager.AdminBBSManager;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.communitybbs.Manager.AdminBBSManager;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 public class AdminBBS implements IAdminCommandHandler
 {

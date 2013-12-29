@@ -1,17 +1,16 @@
 package quests.Q10294_SevenSignToTheMonastery;
 
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.quest.State;
+import pk.elfo.gameserver.network.serverpackets.OnEventTrigger;
+import pk.elfo.gameserver.network.serverpackets.SocialAction;
+import pk.elfo.gameserver.util.Util;
+import pk.elfo.util.Rnd;
 import quests.Q10293_SevenSignForbiddenBook.Q10293_SevenSignForbiddenBook;
-
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.model.quest.State;
-import king.server.gameserver.network.serverpackets.OnEventTrigger;
-import king.server.gameserver.network.serverpackets.SocialAction;
-import king.server.gameserver.util.Util;
-import king.server.util.Rnd;
 
 public final class Q10294_SevenSignToTheMonastery extends Quest
 {

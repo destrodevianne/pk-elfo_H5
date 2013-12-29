@@ -20,23 +20,22 @@ package handlers.bypasshandlers;
 
 import java.util.List;
 
+import pk.elfo.Config;
+import pk.elfo.gameserver.cache.HtmCache;
+import pk.elfo.gameserver.handler.IBypassHandler;
+import pk.elfo.gameserver.instancemanager.QuestManager;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.quest.State;
+import pk.elfo.gameserver.model.quest.Quest.QuestEventType;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.ActionFailed;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.util.StringUtil;
 import javolution.util.FastList;
-
-import king.server.Config;
-import king.server.gameserver.cache.HtmCache;
-import king.server.gameserver.handler.IBypassHandler;
-import king.server.gameserver.instancemanager.QuestManager;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.Quest.QuestEventType;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.model.quest.State;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.ActionFailed;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.util.StringUtil;
 
 public class QuestLink implements IBypassHandler
 {

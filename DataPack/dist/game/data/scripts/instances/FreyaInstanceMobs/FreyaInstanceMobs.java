@@ -18,25 +18,24 @@
  */
 package instances.FreyaInstanceMobs;
 
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.datatables.NpcTable;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.datatables.SpawnTable;
+import pk.elfo.gameserver.instancemanager.InstanceManager;
+import pk.elfo.gameserver.model.L2Spawn;
+import pk.elfo.gameserver.model.actor.L2Attackable;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.entity.Instance;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.network.serverpackets.ExShowScreenMessage2;
+import pk.elfo.gameserver.util.Broadcast;
+import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.datatables.NpcTable;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.datatables.SpawnTable;
-import king.server.gameserver.instancemanager.InstanceManager;
-import king.server.gameserver.model.L2Spawn;
-import king.server.gameserver.model.actor.L2Attackable;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.actor.templates.L2NpcTemplate;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.entity.Instance;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.network.serverpackets.ExShowScreenMessage2;
-import king.server.gameserver.util.Broadcast;
-import king.server.util.Rnd;
 
 public class FreyaInstanceMobs extends AbstractNpcAI
 {

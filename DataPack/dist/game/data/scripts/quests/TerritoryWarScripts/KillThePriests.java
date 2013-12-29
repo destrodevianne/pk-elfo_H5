@@ -18,7 +18,7 @@
  */
 package quests.TerritoryWarScripts;
 
-import king.server.gameserver.network.NpcStringId;
+import pk.elfo.gameserver.network.NpcStringId;
 
 /**
  * Deny Blessings (737)

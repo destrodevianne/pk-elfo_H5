@@ -20,13 +20,13 @@ package handlers.admincommandhandlers;
 
 import java.util.logging.Logger;
 
-import king.server.gameserver.TradeController;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2TradeList;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.serverpackets.ActionFailed;
-import king.server.gameserver.network.serverpackets.BuyList;
-import king.server.gameserver.network.serverpackets.ExBuySellList;
+import pk.elfo.gameserver.TradeController;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2TradeList;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.serverpackets.ActionFailed;
+import pk.elfo.gameserver.network.serverpackets.BuyList;
+import pk.elfo.gameserver.network.serverpackets.ExBuySellList;
 
 
 /**

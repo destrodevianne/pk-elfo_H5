@@ -18,20 +18,20 @@
  */
 package handlers.actionhandlers;
 
-import king.server.Config;
-import king.server.gameserver.GeoData;
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.handler.IActionHandler;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.L2Object.InstanceType;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.TvTEvent;
-import king.server.gameserver.model.entity.TvTRoundEvent;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.ActionFailed;
-import king.server.gameserver.network.serverpackets.MyTargetSelected;
-import king.server.gameserver.network.serverpackets.ValidateLocation;
+import pk.elfo.Config;
+import pk.elfo.gameserver.GeoData;
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.handler.IActionHandler;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.L2Object.InstanceType;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.TvTEvent;
+import pk.elfo.gameserver.model.entity.TvTRoundEvent;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.ActionFailed;
+import pk.elfo.gameserver.network.serverpackets.MyTargetSelected;
+import pk.elfo.gameserver.network.serverpackets.ValidateLocation;
 
 public class L2PcInstanceAction implements IActionHandler
 {

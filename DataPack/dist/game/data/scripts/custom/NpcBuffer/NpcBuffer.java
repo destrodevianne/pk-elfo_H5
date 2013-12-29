@@ -14,7 +14,8 @@
  */
 package custom.NpcBuffer;
 
-import static king.server.gameserver.util.Util.formatAdena;
+import static pk.elfo.gameserver.util.Util.formatAdena;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,32 +24,32 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import king.server.Config;
-import king.server.L2DatabaseFactory;
-import king.server.gameserver.datatables.ItemTable;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.instancemanager.QuestManager;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.L2Summon;
-import king.server.gameserver.model.actor.instance.L2CubicInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.actor.instance.L2PetInstance;
-import king.server.gameserver.model.actor.instance.L2ServitorInstance;
-import king.server.gameserver.model.olympiad.OlympiadManager;
-import king.server.gameserver.model.actor.stat.PcStat;
-import king.server.gameserver.model.actor.stat.SummonStat;
-import king.server.gameserver.model.actor.status.PcStatus;
-import king.server.gameserver.model.actor.status.SummonStatus;
-import king.server.gameserver.model.items.L2Item;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.ActionFailed;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.gameserver.network.serverpackets.SetSummonRemainTime;
-import king.server.gameserver.network.serverpackets.SetupGauge;
-import king.server.gameserver.model.skills.L2SkillType;
+import pk.elfo.Config;
+import pk.elfo.L2DatabaseFactory;
+import pk.elfo.gameserver.datatables.ItemTable;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.instancemanager.QuestManager;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.L2Summon;
+import pk.elfo.gameserver.model.actor.instance.L2CubicInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PetInstance;
+import pk.elfo.gameserver.model.actor.instance.L2ServitorInstance;
+import pk.elfo.gameserver.model.actor.stat.PcStat;
+import pk.elfo.gameserver.model.actor.stat.SummonStat;
+import pk.elfo.gameserver.model.actor.status.PcStatus;
+import pk.elfo.gameserver.model.actor.status.SummonStatus;
+import pk.elfo.gameserver.model.items.L2Item;
+import pk.elfo.gameserver.model.olympiad.OlympiadManager;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.skills.L2SkillType;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.ActionFailed;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.network.serverpackets.SetSummonRemainTime;
+import pk.elfo.gameserver.network.serverpackets.SetupGauge;
 
 /**
  * @Squid and ????

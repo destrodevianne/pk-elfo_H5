@@ -18,19 +18,19 @@
  */
 package handlers.skillhandlers;
 
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.handler.ISkillHandler;
-import king.server.gameserver.instancemanager.InstanceManager;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.instance.L2ChestInstance;
-import king.server.gameserver.model.actor.instance.L2DoorInstance;
-import king.server.gameserver.model.entity.Instance;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.skills.L2SkillType;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.ActionFailed;
-import king.server.util.Rnd;
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.handler.ISkillHandler;
+import pk.elfo.gameserver.instancemanager.InstanceManager;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.instance.L2ChestInstance;
+import pk.elfo.gameserver.model.actor.instance.L2DoorInstance;
+import pk.elfo.gameserver.model.entity.Instance;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.skills.L2SkillType;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.ActionFailed;
+import pk.elfo.util.Rnd;
 
 public class Unlock implements ISkillHandler
 {

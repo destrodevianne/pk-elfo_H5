@@ -20,10 +20,10 @@ package handlers.admincommandhandlers;
 
 import java.util.logging.Logger;
 
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.serverpackets.SocialAction;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.serverpackets.SocialAction;
 
 
 public class AdminMassHero implements IAdminCommandHandler

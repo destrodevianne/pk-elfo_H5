@@ -20,20 +20,20 @@ package handlers.itemhandlers;
 
 import java.util.logging.Level;
 
-import king.server.gameserver.handler.IItemHandler;
-import king.server.gameserver.instancemanager.CastleManager;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Playable;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.actor.instance.L2PetInstance;
-import king.server.gameserver.model.entity.Castle;
-import king.server.gameserver.model.entity.TvTEvent;
-import king.server.gameserver.model.holders.SkillHolder;
-import king.server.gameserver.model.entity.TvTRoundEvent;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.ActionFailed;
-import king.server.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.handler.IItemHandler;
+import pk.elfo.gameserver.instancemanager.CastleManager;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Playable;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PetInstance;
+import pk.elfo.gameserver.model.entity.Castle;
+import pk.elfo.gameserver.model.entity.TvTEvent;
+import pk.elfo.gameserver.model.entity.TvTRoundEvent;
+import pk.elfo.gameserver.model.holders.SkillHolder;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.ActionFailed;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 public class ScrollOfResurrection implements IItemHandler
 {

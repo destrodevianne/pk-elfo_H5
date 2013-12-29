@@ -16,11 +16,11 @@ package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
 
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.network.serverpackets.SkillCoolTime;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.network.serverpackets.SkillCoolTime;
 
 public class AdminReuse implements IAdminCommandHandler
 {

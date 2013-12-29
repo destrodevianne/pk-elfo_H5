@@ -1,11 +1,11 @@
 package custom.NoblesseManager;
 
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.instancemanager.QuestManager;
-import king.server.gameserver.network.serverpackets.UserInfo;
+import pk.elfo.gameserver.instancemanager.QuestManager;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.network.serverpackets.UserInfo;
 
 /*********************************
  * Custom Npc 'Noblesse Manager' *

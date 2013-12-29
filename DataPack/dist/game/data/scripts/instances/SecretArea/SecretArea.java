@@ -18,14 +18,14 @@
  */
 package instances.SecretArea;
 
-import king.server.gameserver.instancemanager.InstanceManager;
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.Instance;
-import king.server.gameserver.model.instancezone.InstanceWorld;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.instancemanager.InstanceManager;
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.Instance;
+import pk.elfo.gameserver.model.instancezone.InstanceWorld;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.network.SystemMessageId;
 
 /**
  * Secret Area in the Keucereus Fortress instance zone.

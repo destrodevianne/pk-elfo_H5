@@ -18,14 +18,14 @@
  */
 package handlers.effecthandlers;
 
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.model.effects.EffectFlag;
-import king.server.gameserver.model.effects.EffectTemplate;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.effects.L2EffectType;
-import king.server.gameserver.model.skills.L2SkillType;
-import king.server.gameserver.model.stats.Env;
-import king.server.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.model.effects.EffectFlag;
+import pk.elfo.gameserver.model.effects.EffectTemplate;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.effects.L2EffectType;
+import pk.elfo.gameserver.model.skills.L2SkillType;
+import pk.elfo.gameserver.model.stats.Env;
+import pk.elfo.gameserver.network.SystemMessageId;
 
 public class ChameleonRest extends L2Effect
 {

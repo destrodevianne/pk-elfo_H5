@@ -18,11 +18,11 @@
  */
 package handlers.skillhandlers;
 
-import king.server.gameserver.handler.ISkillHandler;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.skills.L2SkillType;
+import pk.elfo.gameserver.handler.ISkillHandler;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.skills.L2SkillType;
 
 /**
  * @author Forsaiken

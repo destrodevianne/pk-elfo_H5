@@ -1,9 +1,8 @@
 package ai.individual;
 
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
 
 public class Kechi extends AbstractNpcAI
 {

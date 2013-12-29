@@ -14,11 +14,10 @@
  */
 package ai.individual;
 
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.skills.L2Skill;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.skills.L2Skill;
 
 
 public class WhiteAllosce extends AbstractNpcAI

@@ -1,8 +1,8 @@
 package handlers.voicedcommandhandlers;
 
-import king.server.Config;
-import king.server.gameserver.handler.IVoicedCommandHandler;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.Config;
+import pk.elfo.gameserver.handler.IVoicedCommandHandler;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * PkElfo
@@ -86,7 +86,7 @@ public boolean useVoicedCommand(String command, L2PcInstance activeChar, String 
                         else if(command.startsWith("up30"))
                         {
                         activeChar.teleToLocation(102656, 101463, -3571);
-                        activeChar.sendMessage("Up do level 30 ao 40, Bem vindo a Hardin’s Private Academy ");
+                        activeChar.sendMessage("Up do level 30 ao 40, Bem vindo a Hardinï¿½s Private Academy ");
                         return false;
                         }
                         else if(command.startsWith("up40"))

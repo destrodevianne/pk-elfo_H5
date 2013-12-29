@@ -21,21 +21,20 @@ package ai.group_template;
 import java.util.Calendar;
 import java.util.Map;
 
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.datatables.SpawnTable;
+import pk.elfo.gameserver.instancemanager.ZoneManager;
+import pk.elfo.gameserver.model.L2Spawn;
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2MonsterInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.zone.L2ZoneType;
+import pk.elfo.gameserver.model.zone.type.L2EffectZone;
+import pk.elfo.gameserver.util.Util;
 import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.datatables.SpawnTable;
-import king.server.gameserver.instancemanager.ZoneManager;
-import king.server.gameserver.model.L2Spawn;
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2MonsterInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.zone.L2ZoneType;
-import king.server.gameserver.model.zone.type.L2EffectZone;
-import king.server.gameserver.util.Util;
 
 /**
  * Seed Of Annihilation AI.

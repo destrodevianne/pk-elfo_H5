@@ -20,11 +20,11 @@ package handlers.admincommandhandlers;
 
 import java.io.File;
 
-import king.server.Config;
-import king.server.gameserver.cache.CrestCache;
-import king.server.gameserver.cache.HtmCache;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.Config;
+import pk.elfo.gameserver.cache.CrestCache;
+import pk.elfo.gameserver.cache.HtmCache;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * @author Layanere

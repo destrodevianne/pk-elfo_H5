@@ -21,14 +21,14 @@ package quests.Q00252_ItSmellsDelicious;
 import java.util.ArrayList;
 import java.util.List;
 
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.L2Party;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.model.quest.State;
-import king.server.gameserver.util.Util;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.L2Party;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.quest.State;
+import pk.elfo.gameserver.util.Util;
 
 /**
  * It Smells Delicious! (252) Updated by corbin12, thanks VLight for help.

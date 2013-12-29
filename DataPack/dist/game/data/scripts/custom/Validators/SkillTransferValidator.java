@@ -18,19 +18,19 @@
  */
 package custom.Validators;
 
-import king.server.Config;
-import king.server.gameserver.datatables.ClassListData;
-import king.server.gameserver.datatables.SkillTreesData;
-import king.server.gameserver.model.L2SkillLearn;
-import king.server.gameserver.model.PcCondOverride;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.holders.ItemHolder;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.scripting.scriptengine.events.ProfessionChangeEvent;
-import king.server.gameserver.scripting.scriptengine.impl.L2Script;
-import king.server.gameserver.util.Util;
+import pk.elfo.Config;
+import pk.elfo.gameserver.datatables.ClassListData;
+import pk.elfo.gameserver.datatables.SkillTreesData;
+import pk.elfo.gameserver.model.L2SkillLearn;
+import pk.elfo.gameserver.model.PcCondOverride;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.holders.ItemHolder;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.scripting.scriptengine.events.ProfessionChangeEvent;
+import pk.elfo.gameserver.scripting.scriptengine.impl.L2Script;
+import pk.elfo.gameserver.util.Util;
 
 /**
  * Skill Transfer validator.

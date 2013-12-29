@@ -20,17 +20,17 @@ package ai.npc;
 
 import java.util.logging.Logger;
 
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.model.actor.L2Attackable;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.L2Playable;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.NpcStringId;
-import king.server.gameserver.network.serverpackets.NpcSay;
-import king.server.gameserver.network.serverpackets.SocialAction;
-import king.server.gameserver.scripting.scriptengine.impl.L2Script;
-import king.server.gameserver.util.Broadcast;
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.model.actor.L2Attackable;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.L2Playable;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.NpcStringId;
+import pk.elfo.gameserver.network.serverpackets.NpcSay;
+import pk.elfo.gameserver.network.serverpackets.SocialAction;
+import pk.elfo.gameserver.scripting.scriptengine.impl.L2Script;
+import pk.elfo.gameserver.util.Broadcast;
 
 /**
  * Abstract NPC AI class for datapack based AIs.

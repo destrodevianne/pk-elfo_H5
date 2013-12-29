@@ -1,8 +1,8 @@
 package handlers.voicedcommandhandlers;
 
-import king.server.gameserver.handler.IVoicedCommandHandler;
-import king.server.gameserver.instancemanager.HellboundManager;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.handler.IVoicedCommandHandler;
+import pk.elfo.gameserver.instancemanager.HellboundManager;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * PkElfo

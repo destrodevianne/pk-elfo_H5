@@ -18,19 +18,19 @@
  */
 package handlers.effecthandlers;
 
-import king.server.Config;
-import king.server.gameserver.GeoData;
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.effects.EffectTemplate;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.effects.L2EffectType;
-import king.server.gameserver.model.stats.Env;
-import king.server.gameserver.network.serverpackets.FlyToLocation;
-import king.server.gameserver.network.serverpackets.FlyToLocation.FlyType;
-import king.server.gameserver.network.serverpackets.ValidateLocation;
-import king.server.gameserver.util.Util;
+import pk.elfo.Config;
+import pk.elfo.gameserver.GeoData;
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.effects.EffectTemplate;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.effects.L2EffectType;
+import pk.elfo.gameserver.model.stats.Env;
+import pk.elfo.gameserver.network.serverpackets.FlyToLocation;
+import pk.elfo.gameserver.network.serverpackets.ValidateLocation;
+import pk.elfo.gameserver.network.serverpackets.FlyToLocation.FlyType;
+import pk.elfo.gameserver.util.Util;
 
 /**
  * This class handles warp effects, disappear and quickly turn up in a near location. If geodata enabled and an object is between initial and final point, flight is stopped just before colliding with object. Flight course and radius are set as skill properties (flyCourse and flyRadius): <li>Fly

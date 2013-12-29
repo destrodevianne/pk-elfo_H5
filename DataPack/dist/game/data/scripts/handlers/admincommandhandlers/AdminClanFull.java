@@ -1,12 +1,12 @@
 package handlers.admincommandhandlers;
 
-import king.server.Config;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.EtcStatusUpdate;
-import king.server.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.Config;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.EtcStatusUpdate;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 public class AdminClanFull implements IAdminCommandHandler
 {

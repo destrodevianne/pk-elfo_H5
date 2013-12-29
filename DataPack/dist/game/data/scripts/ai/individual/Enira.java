@@ -16,12 +16,11 @@ package ai.individual;
 
 import java.util.Calendar;
 
+import pk.elfo.gameserver.datatables.SpawnTable;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.datatables.SpawnTable;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.util.Rnd;
 
 public class Enira extends AbstractNpcAI
 {

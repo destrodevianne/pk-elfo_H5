@@ -18,11 +18,11 @@
  */
 package handlers.admincommandhandlers;
 
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.instancemanager.PetitionManager;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.instancemanager.PetitionManager;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
 
 /**
  * This class handles commands for GMs to respond to petitions.

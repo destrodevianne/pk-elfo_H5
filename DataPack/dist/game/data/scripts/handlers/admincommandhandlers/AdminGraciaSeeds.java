@@ -21,11 +21,11 @@ package handlers.admincommandhandlers;
 import java.util.Calendar;
 import java.util.StringTokenizer;
 
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.instancemanager.GraciaSeedsManager;
-import king.server.gameserver.instancemanager.SoIManager;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.instancemanager.GraciaSeedsManager;
+import pk.elfo.gameserver.instancemanager.SoIManager;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class AdminGraciaSeeds implements IAdminCommandHandler
 {

@@ -1,12 +1,11 @@
 package ai.individual;
 
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.util.Rnd;
 
 public class Trex extends AbstractNpcAI
 {

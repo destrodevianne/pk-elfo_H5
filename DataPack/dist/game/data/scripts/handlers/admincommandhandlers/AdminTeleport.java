@@ -25,26 +25,26 @@ import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
-import king.server.Config;
-import king.server.L2DatabaseFactory;
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.datatables.NpcTable;
-import king.server.gameserver.datatables.SpawnTable;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.instancemanager.MapRegionManager;
-import king.server.gameserver.instancemanager.RaidBossSpawnManager;
-import king.server.gameserver.model.L2CharPosition;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.L2Spawn;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2GrandBossInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.actor.instance.L2RaidBossInstance;
-import king.server.gameserver.model.actor.templates.L2NpcTemplate;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.util.StringUtil;
+import pk.elfo.Config;
+import pk.elfo.L2DatabaseFactory;
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.datatables.NpcTable;
+import pk.elfo.gameserver.datatables.SpawnTable;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.instancemanager.MapRegionManager;
+import pk.elfo.gameserver.instancemanager.RaidBossSpawnManager;
+import pk.elfo.gameserver.model.L2CharPosition;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.L2Spawn;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2GrandBossInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.actor.instance.L2RaidBossInstance;
+import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.util.StringUtil;
 
 /**
  * This class handles following admin commands: - show_moves - show_teleport - teleport_to_character - move_to - teleport_character

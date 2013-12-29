@@ -18,28 +18,28 @@
  */
 package handlers.skillhandlers;
 
-import king.server.Config;
-import king.server.gameserver.GeoData;
-import king.server.gameserver.handler.ISkillHandler;
-import king.server.gameserver.instancemanager.ZoneManager;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.PcCondOverride;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.itemcontainer.Inventory;
-import king.server.gameserver.model.items.L2Weapon;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.model.items.type.L2WeaponType;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.skills.L2SkillType;
-import king.server.gameserver.model.zone.L2ZoneType;
-import king.server.gameserver.model.zone.ZoneId;
-import king.server.gameserver.model.zone.type.L2FishingZone;
-import king.server.gameserver.model.zone.type.L2WaterZone;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.InventoryUpdate;
-import king.server.gameserver.util.Util;
-import king.server.util.Rnd;
+import pk.elfo.Config;
+import pk.elfo.gameserver.GeoData;
+import pk.elfo.gameserver.handler.ISkillHandler;
+import pk.elfo.gameserver.instancemanager.ZoneManager;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.PcCondOverride;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.itemcontainer.Inventory;
+import pk.elfo.gameserver.model.items.L2Weapon;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.model.items.type.L2WeaponType;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.skills.L2SkillType;
+import pk.elfo.gameserver.model.zone.L2ZoneType;
+import pk.elfo.gameserver.model.zone.ZoneId;
+import pk.elfo.gameserver.model.zone.type.L2FishingZone;
+import pk.elfo.gameserver.model.zone.type.L2WaterZone;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.InventoryUpdate;
+import pk.elfo.gameserver.util.Util;
+import pk.elfo.util.Rnd;
 
 public class Fishing implements ISkillHandler
 {

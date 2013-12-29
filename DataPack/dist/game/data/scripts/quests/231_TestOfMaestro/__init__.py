@@ -2,9 +2,9 @@
 # Shadow Weapon Coupons contributed by BiTi for the Official L2J Datapack Project
 # Visit http://www.l2jdp.com/forum/ for more details
 import sys
-from king.server.gameserver.model.quest import State
-from king.server.gameserver.model.quest import QuestState
-from king.server.gameserver.model.quest.jython import QuestJython as JQuest
+from pk.elfo.gameserver.model.quest import State
+from pk.elfo.gameserver.model.quest import QuestState
+from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "231_TestOfMaestro"
 

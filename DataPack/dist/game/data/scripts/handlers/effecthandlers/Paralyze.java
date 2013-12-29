@@ -18,13 +18,13 @@
  */
 package handlers.effecthandlers;
 
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.model.effects.AbnormalEffect;
-import king.server.gameserver.model.effects.EffectFlag;
-import king.server.gameserver.model.effects.EffectTemplate;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.effects.L2EffectType;
-import king.server.gameserver.model.stats.Env;
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.model.effects.AbnormalEffect;
+import pk.elfo.gameserver.model.effects.EffectFlag;
+import pk.elfo.gameserver.model.effects.EffectTemplate;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.effects.L2EffectType;
+import pk.elfo.gameserver.model.stats.Env;
 
 public class Paralyze extends L2Effect
 {

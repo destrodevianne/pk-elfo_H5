@@ -2,11 +2,11 @@
 # Based on official server Franz
 
 import sys
-from king.server import Config
-from king.server.gameserver.instancemanager import TerritoryWarManager
-from king.server.gameserver.model.quest import State
-from king.server.gameserver.model.quest import QuestState
-from king.server.gameserver.model.quest.jython import QuestJython as JQuest
+from pk.elfo import Config
+from pk.elfo.gameserver.instancemanager import TerritoryWarManager
+from pk.elfo.gameserver.model.quest import State
+from pk.elfo.gameserver.model.quest import QuestState
+from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "176_StepsForHonor"
 

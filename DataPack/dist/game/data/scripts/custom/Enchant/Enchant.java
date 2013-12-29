@@ -2,17 +2,17 @@ package custom.Enchant;
 
 import java.util.logging.Logger;
 
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.itemcontainer.Inventory;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.model.olympiad.OlympiadManager;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.network.serverpackets.CharInfo;
-import king.server.gameserver.network.serverpackets.ExBrExtraUserInfo;
-import king.server.gameserver.network.serverpackets.InventoryUpdate;
-import king.server.gameserver.network.serverpackets.UserInfo;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.itemcontainer.Inventory;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.model.olympiad.OlympiadManager;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.network.serverpackets.CharInfo;
+import pk.elfo.gameserver.network.serverpackets.ExBrExtraUserInfo;
+import pk.elfo.gameserver.network.serverpackets.InventoryUpdate;
+import pk.elfo.gameserver.network.serverpackets.UserInfo;
 
 public class Enchant extends Quest
 {

@@ -18,7 +18,7 @@
  */
 package quests.TerritoryWarScripts;
 
-import king.server.gameserver.network.NpcStringId;
+import pk.elfo.gameserver.network.NpcStringId;
 
 /**
  * For the Sake of the Territory - Aden (721)

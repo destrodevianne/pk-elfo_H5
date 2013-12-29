@@ -18,29 +18,28 @@
  */
 package instances.DisciplesNecropolis;
 
+import pk.elfo.gameserver.GeoData;
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.instancemanager.InstanceManager;
+import pk.elfo.gameserver.model.actor.L2Attackable;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2DoorInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.Instance;
+import pk.elfo.gameserver.model.instancezone.InstanceWorld;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.clientpackets.Say2;
+import pk.elfo.gameserver.network.serverpackets.CreatureSay;
+import pk.elfo.gameserver.network.serverpackets.NpcSay;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.util.Util;
+import pk.elfo.util.Rnd;
 import quests.Q196_SevenSignsSealOfTheEmperor.Q196_SevenSignsSealOfTheEmperor;
 import javolution.util.FastList;
-
-import king.server.gameserver.GeoData;
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.instancemanager.InstanceManager;
-import king.server.gameserver.model.actor.L2Attackable;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2DoorInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.Instance;
-import king.server.gameserver.model.instancezone.InstanceWorld;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.clientpackets.Say2;
-import king.server.gameserver.network.serverpackets.CreatureSay;
-import king.server.gameserver.network.serverpackets.NpcSay;
-import king.server.gameserver.network.serverpackets.SystemMessage;
-import king.server.gameserver.util.Util;
-import king.server.util.Rnd;
 
 /**
  ** @author Gnacik

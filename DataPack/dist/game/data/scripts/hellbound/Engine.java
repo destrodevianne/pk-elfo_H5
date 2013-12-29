@@ -30,14 +30,14 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import king.server.Config;
-import king.server.gameserver.Announcements;
-import king.server.gameserver.datatables.DoorTable;
-import king.server.gameserver.instancemanager.HellboundManager;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2DoorInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
+import pk.elfo.Config;
+import pk.elfo.gameserver.Announcements;
+import pk.elfo.gameserver.datatables.DoorTable;
+import pk.elfo.gameserver.instancemanager.HellboundManager;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2DoorInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
 
 public class Engine extends Quest implements Runnable
 {

@@ -22,17 +22,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import king.server.gameserver.cache.HtmCache;
-import king.server.gameserver.datatables.ClanTable;
-import king.server.gameserver.datatables.NpcTable;
-import king.server.gameserver.model.L2Clan;
-import king.server.gameserver.model.L2Spawn;
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.gameserver.util.Util;
+import pk.elfo.gameserver.cache.HtmCache;
+import pk.elfo.gameserver.datatables.ClanTable;
+import pk.elfo.gameserver.datatables.NpcTable;
+import pk.elfo.gameserver.model.L2Clan;
+import pk.elfo.gameserver.model.L2Spawn;
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.util.Util;
 
 /**
  * Fortress of Resistance clan hall siege Script.

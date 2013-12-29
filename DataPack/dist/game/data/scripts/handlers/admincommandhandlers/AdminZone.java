@@ -20,18 +20,18 @@ package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
 
-import king.server.gameserver.cache.HtmCache;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.instancemanager.MapRegionManager;
-import king.server.gameserver.instancemanager.ZoneManager;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.L2WorldRegion;
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.zone.L2ZoneType;
-import king.server.gameserver.model.zone.ZoneId;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.util.StringUtil;
+import pk.elfo.gameserver.cache.HtmCache;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.instancemanager.MapRegionManager;
+import pk.elfo.gameserver.instancemanager.ZoneManager;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.L2WorldRegion;
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.zone.L2ZoneType;
+import pk.elfo.gameserver.model.zone.ZoneId;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.util.StringUtil;
 
 /**
  * Small typo fix by Zoey76 24/02/2011

@@ -22,27 +22,26 @@ import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import pk.elfo.Config;
+import pk.elfo.gameserver.cache.HtmCache;
+import pk.elfo.gameserver.datatables.AdminTable;
+import pk.elfo.gameserver.datatables.DoorTable;
+import pk.elfo.gameserver.datatables.FakePcsTable;
+import pk.elfo.gameserver.datatables.ItemTable;
+import pk.elfo.gameserver.datatables.MultiSell;
+import pk.elfo.gameserver.datatables.NpcTable;
+import pk.elfo.gameserver.datatables.NpcWalkerRoutesData;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.datatables.SpawnTable;
+import pk.elfo.gameserver.datatables.TeleportLocationTable;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.instancemanager.QuestManager;
+import pk.elfo.gameserver.model.L2Spawn;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.olympiad.Olympiad;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import javolution.text.TextBuilder;
-
-import king.server.Config;
-import king.server.gameserver.cache.HtmCache;
-import king.server.gameserver.datatables.AdminTable;
-import king.server.gameserver.datatables.DoorTable;
-import king.server.gameserver.datatables.FakePcsTable;
-import king.server.gameserver.datatables.ItemTable;
-import king.server.gameserver.datatables.MultiSell;
-import king.server.gameserver.datatables.NpcTable;
-import king.server.gameserver.datatables.NpcWalkerRoutesData;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.datatables.SpawnTable;
-import king.server.gameserver.datatables.TeleportLocationTable;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.instancemanager.QuestManager;
-import king.server.gameserver.model.L2Spawn;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.olympiad.Olympiad;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
  * This class handles following admin commands: - admin|admin1/admin2/admin3/admin4/admin5 = slots for the 5 starting admin menus - gmliston/gmlistoff = includes/excludes active character from /gmlist results - silence = toggles private messages acceptance mode - diet = toggles weight penalty mode -

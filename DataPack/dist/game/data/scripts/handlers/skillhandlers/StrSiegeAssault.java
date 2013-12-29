@@ -18,18 +18,18 @@
  */
 package handlers.skillhandlers;
 
-import king.server.gameserver.handler.ISkillHandler;
-import king.server.gameserver.instancemanager.CastleManager;
-import king.server.gameserver.instancemanager.FortManager;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.ShotType;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.Castle;
-import king.server.gameserver.model.entity.Fort;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.skills.L2SkillType;
-import king.server.gameserver.model.stats.Formulas;
+import pk.elfo.gameserver.handler.ISkillHandler;
+import pk.elfo.gameserver.instancemanager.CastleManager;
+import pk.elfo.gameserver.instancemanager.FortManager;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.ShotType;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.Castle;
+import pk.elfo.gameserver.model.entity.Fort;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.skills.L2SkillType;
+import pk.elfo.gameserver.model.stats.Formulas;
 
 /**
  * @author _tomciaaa_

@@ -18,38 +18,37 @@
  */
 package ai.individual;
 
-import static king.server.gameserver.ai.CtrlIntention.AI_INTENTION_FOLLOW;
-import static king.server.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
+import static pk.elfo.gameserver.ai.CtrlIntention.AI_INTENTION_FOLLOW;
+import static pk.elfo.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.logging.Level;
 
+import pk.elfo.Config;
+import pk.elfo.gameserver.GeoData;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.instancemanager.GrandBossManager;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.StatsSet;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2DecoyInstance;
+import pk.elfo.gameserver.model.actor.instance.L2GrandBossInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.quest.QuestTimer;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.zone.type.L2BossZone;
+import pk.elfo.gameserver.network.serverpackets.Earthquake;
+import pk.elfo.gameserver.network.serverpackets.MoveToPawn;
+import pk.elfo.gameserver.network.serverpackets.PlaySound;
+import pk.elfo.gameserver.util.Util;
 import javolution.util.FastList;
 import ai.npc.AbstractNpcAI;
-
-import king.server.Config;
-import king.server.gameserver.GeoData;
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.instancemanager.GrandBossManager;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.StatsSet;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2DecoyInstance;
-import king.server.gameserver.model.actor.instance.L2GrandBossInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.quest.QuestTimer;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.zone.type.L2BossZone;
-import king.server.gameserver.network.serverpackets.Earthquake;
-import king.server.gameserver.network.serverpackets.MoveToPawn;
-import king.server.gameserver.network.serverpackets.PlaySound;
-import king.server.gameserver.util.Util;
 
 /**
  * Baium's AI.<br>

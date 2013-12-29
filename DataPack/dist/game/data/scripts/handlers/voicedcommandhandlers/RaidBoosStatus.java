@@ -4,11 +4,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Logger;
 
-import king.server.gameserver.datatables.NpcTable;
-import king.server.gameserver.handler.IVoicedCommandHandler;
-import king.server.gameserver.instancemanager.GrandBossManager;
-import king.server.gameserver.model.StatsSet;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.datatables.NpcTable;
+import pk.elfo.gameserver.handler.IVoicedCommandHandler;
+import pk.elfo.gameserver.instancemanager.GrandBossManager;
+import pk.elfo.gameserver.model.StatsSet;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
  
 /**
  * PkElfo

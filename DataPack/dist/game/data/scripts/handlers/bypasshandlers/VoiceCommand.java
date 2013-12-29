@@ -18,11 +18,11 @@
  */
 package handlers.bypasshandlers;
 
-import king.server.gameserver.handler.IBypassHandler;
-import king.server.gameserver.handler.IVoicedCommandHandler;
-import king.server.gameserver.handler.VoicedCommandHandler;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.handler.IBypassHandler;
+import pk.elfo.gameserver.handler.IVoicedCommandHandler;
+import pk.elfo.gameserver.handler.VoicedCommandHandler;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * @author DS

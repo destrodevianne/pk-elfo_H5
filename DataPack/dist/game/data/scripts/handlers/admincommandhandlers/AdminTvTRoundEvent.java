@@ -14,13 +14,13 @@
  */
 package handlers.admincommandhandlers;
 
-import king.server.Config;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.TvTRoundEvent;
-import king.server.gameserver.model.entity.TvTRoundEventTeleporter;
-import king.server.gameserver.model.entity.TvTRoundManager;
+import pk.elfo.Config;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.TvTRoundEvent;
+import pk.elfo.gameserver.model.entity.TvTRoundEventTeleporter;
+import pk.elfo.gameserver.model.entity.TvTRoundManager;
 
 /**
  * @author SolidSnake

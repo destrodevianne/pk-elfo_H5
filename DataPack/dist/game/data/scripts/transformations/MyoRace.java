@@ -18,9 +18,9 @@
  */
 package transformations;
 
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.instancemanager.TransformationManager;
-import king.server.gameserver.model.L2Transformation;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.instancemanager.TransformationManager;
+import pk.elfo.gameserver.model.L2Transformation;
 
 /*
  * TODO: Skill levels. How do they work? Transformation is given at level 83, there are 6 levels of the skill. How are they assigned? Based on player level somehow? Based on servitor?

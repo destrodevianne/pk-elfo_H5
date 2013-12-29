@@ -18,9 +18,9 @@
  */
 package transformations;
 
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.instancemanager.TransformationManager;
-import king.server.gameserver.model.L2Transformation;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.instancemanager.TransformationManager;
+import pk.elfo.gameserver.model.L2Transformation;
 
 /**
  * TODO: Buffs disappear once you get transformed, but reappear after the transformed state wears off. Skills involved in the minigame but are not assigned directly to players: Flip Nearby Blocks - 5847 - For Flip Block, there are two skills, one for each side (makes sense). For this, there is only

@@ -18,17 +18,16 @@
  */
 package quests.Q00453_NotStrongEnoughAlone;
 
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.quest.State;
+import pk.elfo.gameserver.model.quest.QuestState.QuestType;
+import pk.elfo.gameserver.network.serverpackets.ExQuestNpcLogList;
+import pk.elfo.gameserver.util.Util;
+import pk.elfo.util.Rnd;
 import quests.Q10282_ToTheSeedOfAnnihilation.Q10282_ToTheSeedOfAnnihilation;
-
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.model.quest.QuestState.QuestType;
-import king.server.gameserver.model.quest.State;
-import king.server.gameserver.network.serverpackets.ExQuestNpcLogList;
-import king.server.gameserver.util.Util;
-import king.server.util.Rnd;
 
 /**
  * Not Strong Enough Alone (453)

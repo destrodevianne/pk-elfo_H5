@@ -20,17 +20,16 @@ package handlers.targethandlers;
 
 import java.util.List;
 
+import pk.elfo.Config;
+import pk.elfo.gameserver.handler.ITargetTypeHandler;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.actor.L2Attackable;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.instance.L2ServitorInstance;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.skills.targets.L2TargetType;
+import pk.elfo.gameserver.network.SystemMessageId;
 import javolution.util.FastList;
-
-import king.server.Config;
-import king.server.gameserver.handler.ITargetTypeHandler;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.actor.L2Attackable;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.instance.L2ServitorInstance;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.skills.targets.L2TargetType;
-import king.server.gameserver.network.SystemMessageId;
 
 /**
  * @author UnAfraid

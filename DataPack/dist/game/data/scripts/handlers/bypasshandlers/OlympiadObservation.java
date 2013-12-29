@@ -20,18 +20,18 @@ package handlers.bypasshandlers;
 
 import java.util.logging.Level;
 
-import king.server.gameserver.handler.IBypassHandler;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2OlympiadManagerInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.TvTEvent;
-import king.server.gameserver.model.olympiad.Olympiad;
-import king.server.gameserver.model.olympiad.OlympiadGameManager;
-import king.server.gameserver.model.olympiad.OlympiadGameTask;
-import king.server.gameserver.model.olympiad.OlympiadManager;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.ExOlympiadMatchList;
+import pk.elfo.gameserver.handler.IBypassHandler;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2OlympiadManagerInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.TvTEvent;
+import pk.elfo.gameserver.model.olympiad.Olympiad;
+import pk.elfo.gameserver.model.olympiad.OlympiadGameManager;
+import pk.elfo.gameserver.model.olympiad.OlympiadGameTask;
+import pk.elfo.gameserver.model.olympiad.OlympiadManager;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.ExOlympiadMatchList;
 
 /**
  * @author DS

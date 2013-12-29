@@ -30,14 +30,14 @@ import javolution.util.FastMap;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import king.server.gameserver.GeoData;
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.datatables.NpcTable;
-import king.server.gameserver.engines.DocumentParser;
-import king.server.gameserver.model.L2Spawn;
-import king.server.gameserver.model.L2Territory;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.util.Rnd;
+import pk.elfo.gameserver.GeoData;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.datatables.NpcTable;
+import pk.elfo.gameserver.engines.DocumentParser;
+import pk.elfo.gameserver.model.L2Spawn;
+import pk.elfo.gameserver.model.L2Territory;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.util.Rnd;
 
 /**
  * Tar Beetle zone spawn

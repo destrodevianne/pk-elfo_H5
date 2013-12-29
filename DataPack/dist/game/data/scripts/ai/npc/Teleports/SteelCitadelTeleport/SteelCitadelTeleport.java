@@ -18,16 +18,15 @@
  */
 package ai.npc.Teleports.SteelCitadelTeleport;
 
+import pk.elfo.Config;
+import pk.elfo.gameserver.instancemanager.GrandBossManager;
+import pk.elfo.gameserver.instancemanager.ZoneManager;
+import pk.elfo.gameserver.model.L2CommandChannel;
+import pk.elfo.gameserver.model.L2Party;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.zone.type.L2BossZone;
 import ai.npc.AbstractNpcAI;
-
-import king.server.Config;
-import king.server.gameserver.instancemanager.GrandBossManager;
-import king.server.gameserver.instancemanager.ZoneManager;
-import king.server.gameserver.model.L2CommandChannel;
-import king.server.gameserver.model.L2Party;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.zone.type.L2BossZone;
 
 /**
  * Steel Citadel teleport AI.

@@ -26,16 +26,16 @@ import java.util.Set;
 
 import javax.script.ScriptException;
 
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.instancemanager.QuestManager;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.Quest.QuestEventType;
-import king.server.gameserver.model.quest.QuestTimer;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.gameserver.scripting.L2ScriptEngineManager;
-import king.server.gameserver.util.Util;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.instancemanager.QuestManager;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestTimer;
+import pk.elfo.gameserver.model.quest.Quest.QuestEventType;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.scripting.L2ScriptEngineManager;
+import pk.elfo.gameserver.util.Util;
 
 public class AdminQuest implements IAdminCommandHandler
 {

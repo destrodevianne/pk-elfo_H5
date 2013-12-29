@@ -18,21 +18,21 @@
  */
 package handlers.skillhandlers;
 
-import king.server.gameserver.datatables.FishingRodsData;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.handler.ISkillHandler;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.ShotType;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.fishing.L2Fishing;
-import king.server.gameserver.model.fishing.L2FishingRod;
-import king.server.gameserver.model.items.L2Weapon;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.skills.L2SkillType;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.ActionFailed;
+import pk.elfo.gameserver.datatables.FishingRodsData;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.handler.ISkillHandler;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.ShotType;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.fishing.L2Fishing;
+import pk.elfo.gameserver.model.fishing.L2FishingRod;
+import pk.elfo.gameserver.model.items.L2Weapon;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.skills.L2SkillType;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.ActionFailed;
 
 public class FishingSkill implements ISkillHandler
 {

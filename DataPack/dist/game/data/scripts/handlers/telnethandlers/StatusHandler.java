@@ -6,19 +6,19 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import king.server.gameserver.GameTimeController;
-import king.server.gameserver.LoginServerThread;
-import king.server.gameserver.datatables.AdminTable;
-import king.server.gameserver.handler.ITelnetHandler;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.L2Summon;
-import king.server.gameserver.model.actor.instance.L2DoorInstance;
-import king.server.gameserver.model.actor.instance.L2MonsterInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.GameTimeController;
+import pk.elfo.gameserver.LoginServerThread;
+import pk.elfo.gameserver.datatables.AdminTable;
+import pk.elfo.gameserver.handler.ITelnetHandler;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.L2Summon;
+import pk.elfo.gameserver.model.actor.instance.L2DoorInstance;
+import pk.elfo.gameserver.model.actor.instance.L2MonsterInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 
 /**
  * PkElfo

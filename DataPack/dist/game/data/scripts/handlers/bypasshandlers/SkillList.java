@@ -21,16 +21,16 @@ package handlers.bypasshandlers;
 import java.util.List;
 import java.util.logging.Level;
 
-import king.server.Config;
-import king.server.gameserver.datatables.SkillTreesData;
-import king.server.gameserver.handler.IBypassHandler;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2NpcInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.base.ClassId;
-import king.server.gameserver.network.serverpackets.ActionFailed;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.Config;
+import pk.elfo.gameserver.datatables.SkillTreesData;
+import pk.elfo.gameserver.handler.IBypassHandler;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2NpcInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.base.ClassId;
+import pk.elfo.gameserver.network.serverpackets.ActionFailed;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class SkillList implements IBypassHandler
 {

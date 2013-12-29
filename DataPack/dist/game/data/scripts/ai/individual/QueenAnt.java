@@ -20,26 +20,25 @@ package ai.individual;
 
 import java.util.List;
 
+import pk.elfo.Config;
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.instancemanager.GrandBossManager;
+import pk.elfo.gameserver.model.StatsSet;
+import pk.elfo.gameserver.model.actor.L2Attackable;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.L2Playable;
+import pk.elfo.gameserver.model.actor.instance.L2GrandBossInstance;
+import pk.elfo.gameserver.model.actor.instance.L2MonsterInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.holders.SkillHolder;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.zone.type.L2BossZone;
+import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
+import pk.elfo.gameserver.network.serverpackets.PlaySound;
+import pk.elfo.util.Rnd;
 import javolution.util.FastList;
 import ai.npc.AbstractNpcAI;
-
-import king.server.Config;
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.instancemanager.GrandBossManager;
-import king.server.gameserver.model.StatsSet;
-import king.server.gameserver.model.actor.L2Attackable;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.L2Playable;
-import king.server.gameserver.model.actor.instance.L2GrandBossInstance;
-import king.server.gameserver.model.actor.instance.L2MonsterInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.holders.SkillHolder;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.zone.type.L2BossZone;
-import king.server.gameserver.network.serverpackets.MagicSkillUse;
-import king.server.gameserver.network.serverpackets.PlaySound;
-import king.server.util.Rnd;
 
 /**
  * Queen Ant's AI

@@ -1,9 +1,9 @@
 # Made by Mr. Have fun! Version 0.2
 # Fixed by Pela Version 0.3 - Enough credits, but DrLecter was here :D
 import sys
-from king.server.gameserver.model.quest import State
-from king.server.gameserver.model.quest import QuestState
-from king.server.gameserver.model.quest.jython import QuestJython as JQuest
+from pk.elfo.gameserver.model.quest import State
+from pk.elfo.gameserver.model.quest import QuestState
+from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "297_GatekeepersFavor"
 

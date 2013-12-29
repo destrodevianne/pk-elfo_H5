@@ -17,20 +17,19 @@ package ai.group_template;
 import java.util.Calendar;
 import java.util.List;
 
+import pk.elfo.Config;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.instancemanager.TownManager;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.zone.type.L2TownZone;
+import pk.elfo.gameserver.network.NpcStringId;
+import pk.elfo.gameserver.network.clientpackets.Say2;
+import pk.elfo.gameserver.network.serverpackets.NpcSay;
+import pk.elfo.util.Rnd;
 import javolution.util.FastList;
-
-import king.server.Config;
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.instancemanager.TownManager;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.zone.type.L2TownZone;
-import king.server.gameserver.network.NpcStringId;
-import king.server.gameserver.network.clientpackets.Say2;
-import king.server.gameserver.network.serverpackets.NpcSay;
-import king.server.util.Rnd;
 
 public class MercenaryCaptain extends Quest
 {

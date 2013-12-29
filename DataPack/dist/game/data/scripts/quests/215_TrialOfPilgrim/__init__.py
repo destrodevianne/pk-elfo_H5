@@ -4,11 +4,11 @@
 # Latest update by Kerberos
 
 import sys
-from king.server import Config
-from king.server.gameserver.model.quest import State
-from king.server.gameserver.model.quest import QuestState
-from king.server.gameserver.model.quest.jython import QuestJython as JQuest
-from king.server.gameserver.network.serverpackets import SocialAction
+from pk.elfo import Config
+from pk.elfo.gameserver.model.quest import State
+from pk.elfo.gameserver.model.quest import QuestState
+from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
+from pk.elfo.gameserver.network.serverpackets import SocialAction
 
 qn = "215_TrialOfPilgrim"
 

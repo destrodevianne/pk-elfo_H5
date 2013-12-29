@@ -21,14 +21,13 @@ package ai.individual;
 import java.util.Arrays;
 import java.util.Map;
 
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2MonsterInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.util.MinionList;
+import pk.elfo.util.L2FastMap;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2MonsterInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.util.MinionList;
-import king.server.util.L2FastMap;
 
 /**
  * Manages minion's spawn, idle despawn and Teleportation Cube spawn.

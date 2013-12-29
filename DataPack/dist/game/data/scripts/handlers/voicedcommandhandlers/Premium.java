@@ -1,19 +1,19 @@
 package handlers.voicedcommandhandlers;
 
-import king.server.Config;
-import king.server.gameserver.datatables.ItemTable;
-import king.server.gameserver.datatables.PremiumTable;
-import king.server.gameserver.instancemanager.ExpirableServicesManager;
-import king.server.gameserver.instancemanager.ExpirableServicesManager.ServiceType;
-import king.server.gameserver.handler.IVoicedCommandHandler;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.holders.ItemHolder;
-import king.server.gameserver.network.DialogId;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.ConfirmDlg;
-import king.server.gameserver.util.Util;
-
 import java.util.Date;
+
+import pk.elfo.Config;
+import pk.elfo.gameserver.datatables.ItemTable;
+import pk.elfo.gameserver.datatables.PremiumTable;
+import pk.elfo.gameserver.handler.IVoicedCommandHandler;
+import pk.elfo.gameserver.instancemanager.ExpirableServicesManager;
+import pk.elfo.gameserver.instancemanager.ExpirableServicesManager.ServiceType;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.holders.ItemHolder;
+import pk.elfo.gameserver.network.DialogId;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.ConfirmDlg;
+import pk.elfo.gameserver.util.Util;
 
 /**
  * PkElfo
@@ -28,7 +28,7 @@ public class Premium implements IVoicedCommandHandler
 	
 	/**
 	 * 
-	 * @see king.server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, king.server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+	 * @see pk.elfo.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, pk.elfo.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
 	 */
 	@Override
 	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String target)
@@ -103,7 +103,7 @@ public class Premium implements IVoicedCommandHandler
 	
 	/**
 	 * 
-	 * @see king.server.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
+	 * @see pk.elfo.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
 	 */
 	@Override
 	public String[] getVoicedCommandList()

@@ -1,8 +1,8 @@
 package handlers.admincommandhandlers;
 
-import king.server.gameserver.fence.FenceBuilderManager;
-import king.server.gameserver.handler.IAdminCommandHandler;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.fence.FenceBuilderManager;
+import pk.elfo.gameserver.handler.IAdminCommandHandler;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 public class AdminFence implements IAdminCommandHandler
 {

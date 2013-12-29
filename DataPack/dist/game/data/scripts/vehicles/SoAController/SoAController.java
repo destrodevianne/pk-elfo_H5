@@ -14,10 +14,9 @@
  */
 package vehicles.SoAController;
 
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.VehiclePathPoint;
 import vehicles.AirShipController;
-
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.VehiclePathPoint;
 
 public class SoAController extends AirShipController
 {

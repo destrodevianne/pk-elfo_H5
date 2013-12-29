@@ -2,10 +2,10 @@
 # by Vashts6583
 # Please pardon the sloppiness of the code and the poor naming standards of my .htm files
 import sys
-from king.server.gameserver.model.quest import State
-from king.server.gameserver.model.quest import QuestState
-from king.server.gameserver.model.quest.jython import QuestJython as JQuest
-from king.server.gameserver.model.base import Race
+from pk.elfo.gameserver.model.quest import State
+from pk.elfo.gameserver.model.quest import QuestState
+from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
+from pk.elfo.gameserver.model.base import Race
 
 qn = "236_SeedsOfChaos"
 

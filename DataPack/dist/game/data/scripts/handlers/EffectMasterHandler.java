@@ -4,8 +4,7 @@ import java.lang.reflect.Method;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import king.server.gameserver.handler.EffectHandler;
-
+import pk.elfo.gameserver.handler.EffectHandler;
 import handlers.effecthandlers.AbortCast;
 import handlers.effecthandlers.RebalanceHP;
 import handlers.effecthandlers.Betray;

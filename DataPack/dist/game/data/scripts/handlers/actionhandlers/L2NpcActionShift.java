@@ -18,26 +18,26 @@
  */
 package handlers.actionhandlers;
 
-import king.server.Config;
-import king.server.gameserver.datatables.ItemTable;
-import king.server.gameserver.handler.IActionHandler;
-import king.server.gameserver.model.Elementals;
-import king.server.gameserver.model.L2DropCategory;
-import king.server.gameserver.model.L2DropData;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.L2Object.InstanceType;
-import king.server.gameserver.model.actor.L2Attackable;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2MerchantInstance;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.items.L2Item;
-import king.server.gameserver.model.stats.BaseStats;
-import king.server.gameserver.model.stats.Stats;
-import king.server.gameserver.network.serverpackets.MyTargetSelected;
-import king.server.gameserver.network.serverpackets.NpcHtmlMessage;
-import king.server.gameserver.network.serverpackets.StatusUpdate;
-import king.server.util.StringUtil;
+import pk.elfo.Config;
+import pk.elfo.gameserver.datatables.ItemTable;
+import pk.elfo.gameserver.handler.IActionHandler;
+import pk.elfo.gameserver.model.Elementals;
+import pk.elfo.gameserver.model.L2DropCategory;
+import pk.elfo.gameserver.model.L2DropData;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.L2Object.InstanceType;
+import pk.elfo.gameserver.model.actor.L2Attackable;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2MerchantInstance;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.items.L2Item;
+import pk.elfo.gameserver.model.stats.BaseStats;
+import pk.elfo.gameserver.model.stats.Stats;
+import pk.elfo.gameserver.network.serverpackets.MyTargetSelected;
+import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+import pk.elfo.gameserver.network.serverpackets.StatusUpdate;
+import pk.elfo.util.StringUtil;
 
 public class L2NpcActionShift implements IActionHandler
 {

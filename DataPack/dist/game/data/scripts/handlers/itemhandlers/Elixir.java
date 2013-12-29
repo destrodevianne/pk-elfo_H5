@@ -18,9 +18,9 @@
  */
 package handlers.itemhandlers;
 
-import king.server.gameserver.model.actor.L2Playable;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.model.actor.L2Playable;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.network.SystemMessageId;
 
 public class Elixir extends ItemSkills
 {

@@ -20,18 +20,17 @@ package custom.RaidbossInfo;
 
 import java.util.Map;
 
+import pk.elfo.gameserver.datatables.NpcTable;
+import pk.elfo.gameserver.datatables.SpawnTable;
+import pk.elfo.gameserver.model.L2Spawn;
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
+import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.util.Util;
 import javolution.util.FastMap;
-
-import king.server.gameserver.datatables.NpcTable;
-import king.server.gameserver.datatables.SpawnTable;
-import king.server.gameserver.model.L2Spawn;
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.actor.templates.L2NpcTemplate;
-import king.server.gameserver.model.quest.Quest;
-import king.server.gameserver.model.quest.QuestState;
-import king.server.gameserver.util.Util;
 
 /**
  * @authors: Kerberos (python), Nyaran (java)

@@ -20,16 +20,16 @@ package handlers.effecthandlers;
 
 import java.util.logging.Logger;
 
-import king.server.Config;
-import king.server.gameserver.GeoData;
-import king.server.gameserver.model.Location;
-import king.server.gameserver.model.effects.EffectTemplate;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.effects.L2EffectType;
-import king.server.gameserver.model.stats.Env;
-import king.server.gameserver.network.serverpackets.FlyToLocation;
-import king.server.gameserver.network.serverpackets.FlyToLocation.FlyType;
-import king.server.gameserver.network.serverpackets.ValidateLocation;
+import pk.elfo.Config;
+import pk.elfo.gameserver.GeoData;
+import pk.elfo.gameserver.model.Location;
+import pk.elfo.gameserver.model.effects.EffectTemplate;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.effects.L2EffectType;
+import pk.elfo.gameserver.model.stats.Env;
+import pk.elfo.gameserver.network.serverpackets.FlyToLocation;
+import pk.elfo.gameserver.network.serverpackets.ValidateLocation;
+import pk.elfo.gameserver.network.serverpackets.FlyToLocation.FlyType;
 
 public class EnemyCharge extends L2Effect
 {

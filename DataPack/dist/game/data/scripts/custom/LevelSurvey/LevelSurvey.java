@@ -23,17 +23,17 @@ import java.util.logging.Logger;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import king.server.Config;
-import king.server.gameserver.engines.DocumentParser;
-import king.server.gameserver.instancemanager.GlobalVariablesManager;
-import king.server.gameserver.instancemanager.MailManager;
-import king.server.gameserver.model.StatsSet;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.entity.Message;
-import king.server.gameserver.model.entity.Message.SendBySystem;
-import king.server.gameserver.model.holders.ItemHolder;
-import king.server.gameserver.scripting.scriptengine.events.PlayerLevelChangeEvent;
-import king.server.gameserver.scripting.scriptengine.impl.L2Script;
+import pk.elfo.Config;
+import pk.elfo.gameserver.engines.DocumentParser;
+import pk.elfo.gameserver.instancemanager.GlobalVariablesManager;
+import pk.elfo.gameserver.instancemanager.MailManager;
+import pk.elfo.gameserver.model.StatsSet;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.Message;
+import pk.elfo.gameserver.model.entity.Message.SendBySystem;
+import pk.elfo.gameserver.model.holders.ItemHolder;
+import pk.elfo.gameserver.scripting.scriptengine.events.PlayerLevelChangeEvent;
+import pk.elfo.gameserver.scripting.scriptengine.impl.L2Script;
 
 /**
  * @author UnAfraid
@@ -92,7 +92,7 @@ public class LevelSurvey extends L2Script
 		}
 
 		/* (non-Javadoc)
-		 * @see king.server.gameserver.engines.DocumentParser#load()
+		 * @see pk.elfo.gameserver.engines.DocumentParser#load()
 		 */
 		@Override
 		public void load()

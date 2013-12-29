@@ -2,15 +2,15 @@ package events.HideAndSeek;
 
 import java.util.concurrent.ScheduledFuture;
 
-import king.server.Config;
-import king.server.gameserver.Announcements;
-import king.server.gameserver.ThreadPoolManager;
-import king.server.gameserver.datatables.NpcTable;
-import king.server.gameserver.datatables.SpawnTable;
-import king.server.gameserver.model.L2Spawn;
-import king.server.gameserver.model.StatsSet;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.network.serverpackets.ExShowScreenMessage;
+import pk.elfo.Config;
+import pk.elfo.gameserver.Announcements;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.datatables.NpcTable;
+import pk.elfo.gameserver.datatables.SpawnTable;
+import pk.elfo.gameserver.model.L2Spawn;
+import pk.elfo.gameserver.model.StatsSet;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.network.serverpackets.ExShowScreenMessage;
 import javolution.util.FastMap;
 
 public final class Engine {

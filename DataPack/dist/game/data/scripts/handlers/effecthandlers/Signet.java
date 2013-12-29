@@ -18,21 +18,20 @@
  */
 package handlers.effecthandlers;
 
+import pk.elfo.gameserver.datatables.SkillTable;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.instance.L2EffectPointInstance;
+import pk.elfo.gameserver.model.effects.EffectTemplate;
+import pk.elfo.gameserver.model.effects.L2Effect;
+import pk.elfo.gameserver.model.effects.L2EffectType;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.skills.l2skills.L2SkillSignet;
+import pk.elfo.gameserver.model.skills.l2skills.L2SkillSignetCasttime;
+import pk.elfo.gameserver.model.stats.Env;
+import pk.elfo.gameserver.model.zone.ZoneId;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
 import javolution.util.FastList;
-
-import king.server.gameserver.datatables.SkillTable;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.instance.L2EffectPointInstance;
-import king.server.gameserver.model.effects.EffectTemplate;
-import king.server.gameserver.model.effects.L2Effect;
-import king.server.gameserver.model.effects.L2EffectType;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.skills.l2skills.L2SkillSignet;
-import king.server.gameserver.model.skills.l2skills.L2SkillSignetCasttime;
-import king.server.gameserver.model.stats.Env;
-import king.server.gameserver.model.zone.ZoneId;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.MagicSkillUse;
 
 /**
  * @author Forsaiken, Sami

@@ -10,15 +10,14 @@
  * details.
  * 
  * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://king.server.ru/>.
+ * this program. If not, see <http://pk.elfo.ru/>.
  */
 package ai.group_template;
 
+import pk.elfo.gameserver.instancemanager.InstanceManager;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.instancemanager.InstanceManager;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
 
 public class TomlanKamos extends AbstractNpcAI
 {

@@ -2,11 +2,11 @@ package handlers.voicedcommandhandlers;
 
 import java.util.StringTokenizer;
 
-import king.server.gameserver.datatables.AdminTable;
-import king.server.gameserver.datatables.CharNameTable;
-import king.server.gameserver.handler.IVoicedCommandHandler;
-import king.server.gameserver.model.L2World;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.datatables.AdminTable;
+import pk.elfo.gameserver.datatables.CharNameTable;
+import pk.elfo.gameserver.handler.IVoicedCommandHandler;
+import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * PkElfo

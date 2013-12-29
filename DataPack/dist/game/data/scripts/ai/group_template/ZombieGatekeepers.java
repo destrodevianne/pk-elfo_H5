@@ -14,18 +14,16 @@
  */
 package ai.group_template;
 
+import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.model.actor.L2Attackable;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+import pk.elfo.gameserver.model.skills.L2Skill;
 import javolution.util.FastList;
 import javolution.util.FastMap;
-
 import ai.npc.AbstractNpcAI;
-
-import king.server.gameserver.ai.CtrlIntention;
-import king.server.gameserver.model.items.instance.L2ItemInstance;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.actor.L2Attackable;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.L2Npc;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
 
 public class ZombieGatekeepers extends AbstractNpcAI 
 {

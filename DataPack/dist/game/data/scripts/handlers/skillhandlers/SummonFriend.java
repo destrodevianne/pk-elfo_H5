@@ -20,17 +20,17 @@ package handlers.skillhandlers;
 
 import java.util.logging.Level;
 
-import king.server.gameserver.handler.ISkillHandler;
-import king.server.gameserver.model.L2Object;
-import king.server.gameserver.model.L2Party;
-import king.server.gameserver.model.actor.L2Character;
-import king.server.gameserver.model.actor.instance.L2PcInstance;
-import king.server.gameserver.model.skills.L2Skill;
-import king.server.gameserver.model.skills.L2SkillType;
-import king.server.gameserver.network.SystemMessageId;
-import king.server.gameserver.network.serverpackets.ConfirmDlg;
-import king.server.gameserver.network.serverpackets.SystemMessage;
-import king.server.gameserver.util.Util;
+import pk.elfo.gameserver.handler.ISkillHandler;
+import pk.elfo.gameserver.model.L2Object;
+import pk.elfo.gameserver.model.L2Party;
+import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.skills.L2SkillType;
+import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.ConfirmDlg;
+import pk.elfo.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.util.Util;
 
 /**
  * @author BiTi, Sami, Zoey76
