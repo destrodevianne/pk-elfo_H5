@@ -1,4 +1,4 @@
-package custom.NpcBufferGod;
+package custom.NpcBufferGOD;
 
 /**
  * PkElfo
