@@ -98,6 +98,7 @@ import handlers.admincommandhandlers.AdminPledge;
 import handlers.admincommandhandlers.AdminPolymorph;
 import handlers.admincommandhandlers.AdminPremium;
 import handlers.admincommandhandlers.AdminQuest;
+import handlers.admincommandhandlers.AdminRecallAll;
 import handlers.admincommandhandlers.AdminRepairChar;
 import handlers.admincommandhandlers.AdminRes;
 import handlers.admincommandhandlers.AdminReuse;
@@ -449,6 +450,7 @@ public class MasterHandler
 			AdminPolymorph.class,
 			AdminPremium.class,
 			AdminQuest.class,
+			AdminRecallAll.class,
 			AdminRepairChar.class,
 			AdminRes.class,
 			AdminRide.class,

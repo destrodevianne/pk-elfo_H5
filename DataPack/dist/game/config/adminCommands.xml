@@ -666,6 +666,8 @@
 	<admin command="admin_punish_bot" accessLevel="7" />
 	<admin command="admin_clanskills" accessLevel="7" />
 	<admin command="admin_masshero" accessLevel="7" />
+	<admin command="admin_recallall" accessLevel="7" />
+	<admin command="admin_deport" accessLevel="7" />
 	<admin command="admin_setteam1" accessLevel="7" />
 	<admin command="admin_setteam2" accessLevel="7" />
 	<admin command="admin_clearteam" accessLevel="7" />
