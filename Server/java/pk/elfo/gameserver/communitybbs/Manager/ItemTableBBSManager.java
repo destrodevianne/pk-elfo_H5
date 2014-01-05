@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 import pk.elfo.L2DatabaseFactory;
 
 /**
- * Fixed by L2J Eternity-World
+ * PkElfo
  */
 public class ItemTableBBSManager
 {

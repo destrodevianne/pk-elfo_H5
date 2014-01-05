@@ -1,3 +1,21 @@
+/*
+ * Copyright (C) 2004-2013 L2J Server
+ * 
+ * This file is part of L2J Server.
+ * 
+ * L2J Server is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * L2J Server is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
 package pk.elfo.gameserver.communitybbs.BB;
 
 import java.sql.Connection;
@@ -24,6 +42,17 @@ public class Topic
 	private final int _type;
 	private final int _cReply;
 	
+	/**
+	 * @param ct
+	 * @param id
+	 * @param fid
+	 * @param name
+	 * @param date
+	 * @param oname
+	 * @param oid
+	 * @param type
+	 * @param Creply
+	 */
 	public Topic(ConstructorType ct, int id, int fid, String name, long date, String oname, int oid, int type, int Creply)
 	{
 		_id = id;
@@ -70,6 +99,9 @@ public class Topic
 		CREATE
 	}
 	
+	/**
+	 * @return the topic Id
+	 */
 	public int getID()
 	{
 		return _id;
@@ -80,6 +112,9 @@ public class Topic
 		return _forumId;
 	}
 	
+	/**
+	 * @return the topic name
+	 */
 	public String getName()
 	{
 		return _topicName;
@@ -90,6 +125,9 @@ public class Topic
 		return _ownerName;
 	}
 	
+	/**
+	 * @param f
+	 */
 	public void deleteme(Forum f)
 	{
 		TopicBBSManager.getInstance().delTopic(this);
@@ -107,6 +145,9 @@ public class Topic
 		}
 	}
 	
+	/**
+	 * @return the topic date
+	 */
 	public long getDate()
 	{
 		return _date;

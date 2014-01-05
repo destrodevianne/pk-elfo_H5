@@ -1,3 +1,21 @@
+/*
+ * Copyright (C) 2004-2013 L2J Server
+ * 
+ * This file is part of L2J Server.
+ * 
+ * L2J Server is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * L2J Server is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
 package pk.elfo.gameserver.communitybbs.Manager;
 
 import java.sql.Connection;
@@ -7,10 +25,11 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+
 import pk.elfo.L2DatabaseFactory;
 import pk.elfo.gameserver.communitybbs.BB.Forum;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
-import javolution.util.FastList;
 
 public class ForumsBBSManager extends BaseBBSManager
 {
@@ -18,6 +37,9 @@ public class ForumsBBSManager extends BaseBBSManager
 	private final List<Forum> _table;
 	private int _lastid = 1;
 	
+	/**
+	 * PkElfo
+	 */
 	protected ForumsBBSManager()
 	{
 		_table = new FastList<>();
@@ -38,6 +60,9 @@ public class ForumsBBSManager extends BaseBBSManager
 		}
 	}
 	
+	/**
+	 * Inits the root.
+	 */
 	public void initRoot()
 	{
 		for (Forum f : _table)
@@ -47,6 +72,10 @@ public class ForumsBBSManager extends BaseBBSManager
 		_log.info("Loaded " + _table.size() + " forums. Last forum id used: " + _lastid);
 	}
 	
+	/**
+	 * Adds the forum.
+	 * @param ff the forum
+	 */
 	public void addForum(Forum ff)
 	{
 		if (ff == null)
@@ -67,6 +96,11 @@ public class ForumsBBSManager extends BaseBBSManager
 	{
 	}
 	
+	/**
+	 * Gets the forum by name.
+	 * @param name the forum name
+	 * @return the forum by name
+	 */
 	public Forum getForumByName(String name)
 	{
 		for (Forum f : _table)
@@ -79,6 +113,15 @@ public class ForumsBBSManager extends BaseBBSManager
 		return null;
 	}
 	
+	/**
+	 * Creates the new forum.
+	 * @param name the forum name
+	 * @param parent the parent forum
+	 * @param type the forum type
+	 * @param perm the perm
+	 * @param oid the oid
+	 * @return the new forum
+	 */
 	public Forum createNewForum(String name, Forum parent, int type, int perm, int oid)
 	{
 		Forum forum = new Forum(name, parent, type, perm, oid);
@@ -86,11 +129,20 @@ public class ForumsBBSManager extends BaseBBSManager
 		return forum;
 	}
 	
+	/**
+	 * Gets the a new Id.
+	 * @return the a new Id
+	 */
 	public int getANewID()
 	{
 		return ++_lastid;
 	}
 	
+	/**
+	 * Gets the forum by Id.
+	 * @param idf the the forum Id
+	 * @return the forum by Id
+	 */
 	public Forum getForumByID(int idf)
 	{
 		for (Forum f : _table)
@@ -109,6 +161,10 @@ public class ForumsBBSManager extends BaseBBSManager
 		
 	}
 	
+	/**
+	 * Gets the single instance of ForumsBBSManager.
+	 * @return single instance of ForumsBBSManager
+	 */
 	public static ForumsBBSManager getInstance()
 	{
 		return SingletonHolder._instance;

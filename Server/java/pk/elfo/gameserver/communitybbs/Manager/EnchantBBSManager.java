@@ -17,6 +17,8 @@ package pk.elfo.gameserver.communitybbs.Manager;
 import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
+import javolution.text.TextBuilder;
+
 import pk.elfo.Config;
 import pk.elfo.gameserver.datatables.ItemTable;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
@@ -25,10 +27,9 @@ import pk.elfo.gameserver.model.items.L2Item;
 import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
-import javolution.text.TextBuilder;
 
 /**
- * Created by LordWinter 25.02.2011 Fixed by L2J Eternity-World
+ * PkElfo
  */
 public class EnchantBBSManager extends BaseBBSManager
 {
@@ -205,11 +206,11 @@ public class EnchantBBSManager extends BaseBBSManager
 			sb.append("<button value=\"next +14 (Price: " + (price * (price + 10)) + " " + name + ")\" action=\"bypass -h _bbsechant;enchantgo;14;" + (price * (price + 10)) + ";" + ItemForEchantObjID + "\" width=200 height=20 back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
 			sb.append("<br1>");
 			sb.append("<button value=\"next +15 (Price: " + (price * (price + 11)) + " " + name + ")\" action=\"bypass -h _bbsechant;enchantgo;15;" + (price * (price + 11)) + ";" + ItemForEchantObjID + "\" width=200 height=20 back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
-			sb.append("</td><td width=200>");
+			sb.append("<br1>");
 			sb.append("<button value=\"next +16 (Price: " + (price * (price + 12)) + " " + name + ")\" action=\"bypass -h _bbsechant;enchantgo;16;" + (price * (price + 12)) + ";" + ItemForEchantObjID + "\" width=200 height=20 back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
 			sb.append("<br1>");
 			sb.append("<button value=\"next +17 (Price: " + (price * (price + 13)) + " " + name + ")\" action=\"bypass -h _bbsechant;enchantgo;17;" + (price * (price + 13)) + ";" + ItemForEchantObjID + "\" width=200 height=20 back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
-			sb.append("<br1>");
+			sb.append("</td><td width=200>");
 			sb.append("<button value=\"next +18 (Price: " + (price * (price + 14)) + " " + name + ")\" action=\"bypass -h _bbsechant;enchantgo;18;" + (price * (price + 14)) + ";" + ItemForEchantObjID + "\" width=200 height=20 back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
 			sb.append("<br1>");
 			sb.append("<button value=\"next +19 (Price: " + (price * (price + 15)) + " " + name + ")\" action=\"bypass -h _bbsechant;enchantgo;19;" + (price * (price + 15)) + ";" + ItemForEchantObjID + "\" width=200 height=20 back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
@@ -227,6 +228,14 @@ public class EnchantBBSManager extends BaseBBSManager
 			sb.append("<button value=\"next +25 (Price: " + (price * (price + 21)) + " " + name + ")\" action=\"bypass -h _bbsechant;enchantgo;25;" + (price * (price + 21)) + ";" + ItemForEchantObjID + "\" width=200 height=20 back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
 			sb.append("<br1>");
 			sb.append("<button value=\"next +26 (Price: " + (price * (price + 22)) + " " + name + ")\" action=\"bypass -h _bbsechant;enchantgo;26;" + (price * (price + 22)) + ";" + ItemForEchantObjID + "\" width=200 height=20 back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
+			sb.append("<br1>");
+			sb.append("<button value=\"next +27 (Price: " + (price * (price + 23)) + " " + name + ")\" action=\"bypass -h _bbsechant;enchantgo;27;" + (price * (price + 22)) + ";" + ItemForEchantObjID + "\" width=200 height=20 back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
+			sb.append("<br1>");
+			sb.append("<button value=\"next +28 (Price: " + (price * (price + 24)) + " " + name + ")\" action=\"bypass -h _bbsechant;enchantgo;28;" + (price * (price + 22)) + ";" + ItemForEchantObjID + "\" width=200 height=20 back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
+			sb.append("<br1>");
+			sb.append("<button value=\"next +29 (Price: " + (price * (price + 25)) + " " + name + ")\" action=\"bypass -h _bbsechant;enchantgo;29;" + (price * (price + 22)) + ";" + ItemForEchantObjID + "\" width=200 height=20 back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
+			sb.append("<br1>");
+			sb.append("<button value=\"next +30 (Price: " + (price * (price + 26)) + " " + name + ")\" action=\"bypass -h _bbsechant;enchantgo;30;" + (price * (price + 22)) + ";" + ItemForEchantObjID + "\" width=200 height=20 back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
 			sb.append("</td></tr></table><br1><button value=\"Back\" action=\"bypass -h _bbsechant\" width=70 height=18 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 			
 			NpcHtmlMessage adminReply = new NpcHtmlMessage(5);

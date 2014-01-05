@@ -16,6 +16,8 @@ package pk.elfo.gameserver.communitybbs.Manager;
 
 import java.util.StringTokenizer;
 
+import javolution.text.TextBuilder;
+
 import pk.elfo.Config;
 import pk.elfo.gameserver.datatables.ItemTable;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
@@ -26,10 +28,9 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.util.Util;
-import javolution.text.TextBuilder;
 
 /**
- * Created by LordWinter 26.02.2011 Fixed by L2J Eternity-World
+ * PkElfo
  */
 public class ClassBBSManager extends BaseBBSManager
 {

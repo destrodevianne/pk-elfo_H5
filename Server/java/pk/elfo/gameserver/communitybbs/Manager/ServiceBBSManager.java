@@ -112,6 +112,11 @@ public class ServiceBBSManager extends BaseBBSManager
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_ITEMS));
 					return;
 				}
+				if (activeChar.getStat().getLevel() < 10)
+				{
+					activeChar.sendMessage("You must be more than 10 Lv.");
+					return;
+				}
 				activeChar.destroyItemByItemId("ShopBBS", Config.DelevelItemId, Config.DelevelItemCount, activeChar, true);
 				activeChar.getStat().removeExpAndSp((activeChar.getExp() - ExperienceTable.getInstance().getExpForLevel(activeChar.getStat().getLevel() - 1)), 0);
 			}
@@ -127,16 +132,22 @@ public class ServiceBBSManager extends BaseBBSManager
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_ITEMS));
 					return;
 				}
-				
+				if (activeChar.getClassId().level() < 3)
+				{
+					activeChar.sendMessage("You must have third class.");
+					return;
+				}
 				if (activeChar.isHero())
 				{
 					activeChar.broadcastPacket(new SocialAction(activeChar.getObjectId(), 16));
+					activeChar.sendMessage("You already have Hero.");
 				}
 				else
 				{
 					activeChar.destroyItemByItemId("ShopBBS", Config.HeroItemId, Config.HeroItemCount, activeChar, true);
 					activeChar.getLevel();
 					activeChar.getStat().addLevel(Byte.parseByte(_val));
+					activeChar.setHero(true);
 					activeChar.broadcastUserInfo();
 				}
 			}

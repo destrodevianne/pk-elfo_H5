@@ -19,6 +19,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.StringTokenizer;
 
+import javolution.text.TextBuilder;
+
 import pk.elfo.L2DatabaseFactory;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.zone.ZoneId;
@@ -26,10 +28,9 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.network.serverpackets.ShowBoard;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
-import javolution.text.TextBuilder;
 
 /**
- * Created by LordWinter Fixed by RobikBobik
+ * PkElfo
  */
 public class TeleportBBSManager extends BaseBBSManager
 {

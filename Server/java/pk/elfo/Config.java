@@ -111,6 +111,44 @@ public final class Config
 	public static final String TW_CONFIGURATION_FILE = "./config/TerritoryWar.properties";
 	public static final String USER_CONFIG_FILE = "./config/User.properties";
 	public static final String VIP_CONFIG_FILE = "./config/VIP/Vip.properties";
+	//======================================================================================//
+	//                               CommunityPVP 
+	//======================================================================================//
+	public static int TOP_PLAYER_ROW_HEIGHT;
+	public static int TOP_PLAYER_RESULTS;
+	public static int RAID_LIST_ROW_HEIGHT;
+	public static int RAID_LIST_RESULTS;
+	public static boolean RAID_LIST_SORT_ASC;
+	public static boolean ALLOW_REAL_ONLINE_STATS;
+	public static boolean ALLOW_COMMUNITY_TELEPORT;
+	public static boolean ALLOW_COMMUNITY_MULTISELL;
+	public static boolean ALLOW_COMMUNITY_BUFF;
+	public static boolean BUFF_COST;
+	public static boolean ALLOW_COMMUNITY_SERVICES;
+	public static boolean ALLOW_COMMUNITY_CLASS;
+	public static boolean ALLOW_COMMUNITY_ENCHANT;
+	public static boolean ALLOW_COMMUNITY_STATS;
+	public static String ALLOW_CLASS_MASTERSCB;
+	public static String CLASS_MASTERS_PRICECB;
+	public static int[] CLASS_MASTERS_PRICE_LISTCB = new int[4];
+	public static int CLASS_MASTERS_PRICE_ITEMCB;
+	public static ArrayList<Integer> ALLOW_CLASS_MASTERS_LISTCB = new ArrayList<>();
+	public static int ENCHANT_ITEM;
+	public static boolean BUFF_PEACE_ZONE;
+	public static int DelevelItemId;
+	public static int DelevelItemCount;
+	public static int NoblItemId;
+	public static int NoblItemCount;
+	public static int GenderItemId;
+	public static int GenderItemCount;
+	public static int HeroItemId;
+	public static int HeroItemCount;
+	public static int RecoveryPKItemId;
+	public static int RecoveryPKItemCount;
+	public static int RecoveryVitalityItemId;
+	public static int RecoveryVitalityItemCount;
+	public static int SPItemId;
+	public static int SPItemCount;	
 	// ########################################################################################################//
 	// AIOx PROPERTIES
 	// ########################################################################################################//
@@ -1092,35 +1130,6 @@ public final class Config
 	public static boolean TVT_ALLOW_VOICED_COMMAND;
 	public static boolean TVT_ALLOW_REGISTER_VOICED_COMMAND;
 	public static boolean L2JMOD_ALLOW_WEDDING;
-	public static boolean ALLOW_COMMUNITY_MULTISELL;
-	public static boolean ALLOW_COMMUNITY_CLASS;
-	public static boolean ALLOW_COMMUNITY_ENCHANT;
-	public static boolean ALLOW_COMMUNITY_BUFF;
-	public static boolean ALLOW_COMMUNITY_TELEPORT;
-	public static boolean ALLOW_COMMUNITY_STATS;
-	public static String ALLOW_CLASS_MASTERSCB;
-	public static String CLASS_MASTERS_PRICECB;
-	public static int[] CLASS_MASTERS_PRICE_LISTCB = new int[4];
-	public static int CLASS_MASTERS_PRICE_ITEMCB;
-	public static ArrayList<Integer> ALLOW_CLASS_MASTERS_LISTCB = new ArrayList<>();
-	public static int ENCHANT_ITEM;
-	public static boolean BUFF_PEACE_ZONE;
-	public static boolean BUFF_COST;
-	public static boolean ALLOW_COMMUNITY_SERVICES;
-	public static int DelevelItemId;
-	public static int DelevelItemCount;
-	public static int NoblItemId;
-	public static int NoblItemCount;
-	public static int GenderItemId;
-	public static int GenderItemCount;
-	public static int HeroItemId;
-	public static int HeroItemCount;
-	public static int RecoveryPKItemId;
-	public static int RecoveryPKItemCount;
-	public static int RecoveryVitalityItemId;
-	public static int RecoveryVitalityItemCount;
-	public static int SPItemId;
-	public static int SPItemCount;
 	public static int L2JMOD_WEDDING_PRICE;
 	public static boolean L2JMOD_WEDDING_PUNISH_INFIDELITY;
 	public static boolean L2JMOD_WEDDING_TELEPORT;
