@@ -41,6 +41,8 @@ FIX Skill Veil
 FIX Skill Freezing Strike
 FIX Skill Lightning Strike
 Adicionado nova tabela na DB para salvar senha Descriptada
+editado NPC de Enchante (agora é possível add elemental)
+Modificações na CommunityPVP e ADD Enchantes até +30
 
 ###############################################
 ################### EVENTOS ###################
@@ -71,6 +73,7 @@ TrickorTransmutation
 LuckyPig
 ***Happy Hour (pelo comando //happyhour)
 ***Evento RaidSpawn (a cada 30 minutos um raid e spawnado em determinado lugar, o tempo, raid, lugar de spawn e recompensa podem ser configurados no arquivo java do evento).
+BloodShed 
 
 ###############PHOENIX ENGINE:################
 Battlefield
@@ -103,6 +106,7 @@ Evento Last Hero
 //msgtela + texto (manda mesagem global no centro da tela)
 ***//happyhour (inicia o evento Happy Hour)
 ***//deport (teleporta todos os players que estiverem perto do GM/ADM enchendo o saco para giran)
+ADD Comando AdminRecalAll
 
 ###############################################
 ######## COMANDOS DE DONO DE CASTELO ##########
