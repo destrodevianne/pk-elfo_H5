@@ -1478,12 +1478,12 @@ public class Siege implements Siegable
 				getCastle().getSiegeDate().set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
 			}
 			// set the next siege day to the next weekend
-			getCastle().getSiegeDate().add(Calendar.DAY_OF_MONTH, 7);
+			getCastle().getSiegeDate().add(Calendar.DAY_OF_MONTH, Config.DAY_TO_SIEGE);
 		}
 		
 		if (!SevenSigns.getInstance().isDateInSealValidPeriod(getCastle().getSiegeDate()))
 		{
-			getCastle().getSiegeDate().add(Calendar.DAY_OF_MONTH, 7);
+			getCastle().getSiegeDate().add(Calendar.DAY_OF_MONTH, Config.DAY_TO_SIEGE);
 		}
 		
 		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_ANNOUNCED_SIEGE_TIME);
