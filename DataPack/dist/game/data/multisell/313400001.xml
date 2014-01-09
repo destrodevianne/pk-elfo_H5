@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
-	<npcs>
-		<npc>31340</npc> <!-- Mathias (Captain) -->
-	</npcs>
+	<!-- <npc>31340</npc> --> <!-- Mathias (Captain) -->
 	<item>
 		<!-- Blue Elmore Coin -->
 		<ingredient count="40" id="21750" />

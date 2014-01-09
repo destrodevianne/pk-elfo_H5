@@ -524,6 +524,8 @@
 	                                <xs:enumeration value="admin_punish_bot" />
 	                                <xs:enumeration value="admin_clanskills" />
 	                                <xs:enumeration value="admin_masshero" />
+									<xs:enumeration value="admin_recallall" />
+									<xs:enumeration value="admin_deport" />
                                  	<xs:enumeration value="admin_setteam1" />
 	                                <xs:enumeration value="admin_setteam2" />
                                    	<xs:enumeration value="admin_clearteam" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/transformations.xsd">
-	<transform id="301" type="CURSED" can_swim="1" normal_attackable="1" setName="Zariche" setTitle=""> 
+	<transform id="301" type="CURSED" can_swim="1" normal_attackable="1"> 
 		<Male>
 			<collision radius="12" height="31.5725" />
 			<moving walk="80" run="125" waterWalk="50" waterRun="50" flyWalk="0" flyRun="0" unknownWalk="0" unknownRun="0" />
