@@ -220,8 +220,13 @@ import pk.elfo.gameserver.model.stats.Stats;
 import pk.elfo.gameserver.model.zone.L2ZoneType;
 import pk.elfo.gameserver.model.zone.ZoneId;
 import pk.elfo.gameserver.model.zone.type.L2BossZone;
-import pk.elfo.gameserver.model.zone.type.L2ClanWarZone;
 import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone1;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone2;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone3;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone4;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone5;
+import pk.elfo.gameserver.model.zone.type.L2ClanWarZone;
 import pk.elfo.gameserver.model.zone.type.L2NoRestartZone;
 import pk.elfo.gameserver.network.DialogId;
 import pk.elfo.gameserver.network.L2GameClient;
@@ -6484,6 +6489,11 @@ public final class L2PcInstance extends L2Playable
 				
 				// MultiFunction Zone
 				L2MultiFunctionZone.givereward(this);
+				L2MultiFunctionZone1.givereward(this);
+				L2MultiFunctionZone2.givereward(this);
+				L2MultiFunctionZone3.givereward(this);
+				L2MultiFunctionZone4.givereward(this);
+				L2MultiFunctionZone5.givereward(this);
 				
 				// pvp color
 				updatePvPColor(getPvpKills());

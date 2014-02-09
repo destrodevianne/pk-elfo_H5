@@ -145,8 +145,13 @@
 									<xs:enumeration value="TerritoryWarZone" />
 									<xs:enumeration value="TownZone" />
 									<xs:enumeration value="WaterZone" />
-									<xs:enumeration value="ClanWarZone" />
 									<xs:enumeration value="MultiFunctionZone" />
+									<xs:enumeration value="MultiFunctionZone1" />
+									<xs:enumeration value="MultiFunctionZone2" />
+									<xs:enumeration value="MultiFunctionZone3" />
+									<xs:enumeration value="MultiFunctionZone4" />
+									<xs:enumeration value="MultiFunctionZone5" />
+									<xs:enumeration value="ClanWarZone" />									
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:attribute>

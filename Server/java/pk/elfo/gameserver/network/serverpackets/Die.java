@@ -37,6 +37,11 @@ import pk.elfo.gameserver.model.entity.TvTRoundEvent;
 import pk.elfo.gameserver.model.entity.clanhall.SiegableHall;
 import pk.elfo.gameserver.model.zone.ZoneId;
 import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone1;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone2;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone3;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone4;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone5;
 
 public class Die extends L2GameServerPacket
 {
@@ -63,7 +68,7 @@ public class Die extends L2GameServerPacket
 			
 		}
 		_charObjId = cha.getObjectId();
-		_canTeleport = !((cha.isPlayer() && ((TvTEvent.isStarted() && TvTEvent.isPlayerParticipant(_charObjId)) || (TvTRoundEvent.isStarted() && TvTRoundEvent.isPlayerParticipant(_charObjId)))) || cha.isPendingRevive()) || (cha.isInsideZone(ZoneId.MULTI_FUNCTION) && !L2MultiFunctionZone.revive);
+		_canTeleport = !((cha.isPlayer() && ((TvTEvent.isStarted() && TvTEvent.isPlayerParticipant(_charObjId)) || (TvTRoundEvent.isStarted() && TvTRoundEvent.isPlayerParticipant(_charObjId)))) || cha.isPendingRevive()) || (cha.isInsideZone(ZoneId.MULTI_FUNCTION) && L2MultiFunctionZone.revive) || (cha.isInsideZone(ZoneId.MULTI_FUNCTION1) && L2MultiFunctionZone1.revive1) || (cha.isInsideZone(ZoneId.MULTI_FUNCTION2) && L2MultiFunctionZone2.revive2) || (cha.isInsideZone(ZoneId.MULTI_FUNCTION3) && L2MultiFunctionZone3.revive3) || (cha.isInsideZone(ZoneId.MULTI_FUNCTION4) && L2MultiFunctionZone4.revive4) || (cha.isInsideZone(ZoneId.MULTI_FUNCTION5) && L2MultiFunctionZone5.revive5);
 		
 		if (cha instanceof L2PcInstance)
 		{

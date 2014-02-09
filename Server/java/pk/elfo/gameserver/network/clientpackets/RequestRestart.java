@@ -31,6 +31,11 @@ import pk.elfo.gameserver.model.L2Party;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.zone.ZoneId;
 import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone1;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone2;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone3;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone4;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone5;
 import pk.elfo.gameserver.network.L2GameClient;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.L2GameClient.GameClientState;
@@ -135,6 +140,41 @@ public final class RequestRestart extends L2GameClientPacket
 			sendPacket(RestartResponse.valueOf(false));
 			return;
 		}
+		
+		if (player.isInsideZone(ZoneId.MULTI_FUNCTION1) && !L2MultiFunctionZone1.restart_zone1)
+        {
+            player.sendMessage("Voce nao pode reiniciar enquanto estiver dentro de uma Multifunction zone.");
+            sendPacket(RestartResponse.valueOf(false));
+            return;
+        }
+
+        if (player.isInsideZone(ZoneId.MULTI_FUNCTION2) && !L2MultiFunctionZone2.restart_zone2)
+        {
+            player.sendMessage("Voce nao pode reiniciar enquanto estiver dentro de uma Multifunction zone.");
+            sendPacket(RestartResponse.valueOf(false));
+            return;
+        }
+
+        if (player.isInsideZone(ZoneId.MULTI_FUNCTION3) && !L2MultiFunctionZone3.restart_zone3)
+        {
+            player.sendMessage("Voce nao pode reiniciar enquanto estiver dentro de uma Multifunction zone.");
+            sendPacket(RestartResponse.valueOf(false));
+            return;
+        }
+
+        if (player.isInsideZone(ZoneId.MULTI_FUNCTION4) && !L2MultiFunctionZone4.restart_zone4)
+        {
+            player.sendMessage("Voce nao pode reiniciar enquanto estiver dentro de uma Multifunction zone.");
+            sendPacket(RestartResponse.valueOf(false));
+            return;
+        }
+
+        if (player.isInsideZone(ZoneId.MULTI_FUNCTION5) && !L2MultiFunctionZone5.restart_zone5)
+        {
+            player.sendMessage("Voce nao pode reiniciar enquanto estiver dentro de uma Multifunction zone.");
+            sendPacket(RestartResponse.valueOf(false));
+            return;
+        }
 		// MultiFunction Zone fim
 		
 		// Prevent player from restarting if they are a festival participant

@@ -27,7 +27,7 @@ import pk.elfo.gameserver.model.itemcontainer.Inventory;
 import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 
 /**
- * @author Luno
+ * @author PkElfo
  */
 public final class L2ArmorSet
 {

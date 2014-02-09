@@ -46,6 +46,11 @@ import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.model.skills.L2SkillType;
 import pk.elfo.gameserver.model.zone.ZoneId;
 import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone1;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone2;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone3;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone4;
+import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone5;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.ActionFailed;
 import pk.elfo.gameserver.network.serverpackets.CreatureSay;
@@ -133,12 +138,42 @@ public final class UseItem extends L2GameClientPacket
 			return;
 		}
 		
-		
+		// MultiFunction Zone inicio
 		if (getClient().getActiveChar().isInsideZone(ZoneId.MULTI_FUNCTION) && !L2MultiFunctionZone.checkItem(item))
 		{
-			getClient().getActiveChar().sendMessage("You cannot use " + item.getName() + " inside this zone.");
+			getClient().getActiveChar().sendMessage("Voce nao pode usar este item: " + item.getName() + " ,no interior desta zona.");
 			return;
 		}
+		
+		if (getClient().getActiveChar().isInsideZone(ZoneId.MULTI_FUNCTION1) && !L2MultiFunctionZone1.checkItem(item))
+        {
+            getClient().getActiveChar().sendMessage("You cannot use " + item.getName() + " inside this zone.");
+            return;
+        }
+
+        if (getClient().getActiveChar().isInsideZone(ZoneId.MULTI_FUNCTION2) && !L2MultiFunctionZone2.checkItem(item))
+        {
+            getClient().getActiveChar().sendMessage("You cannot use " + item.getName() + " inside this zone.");
+            return;
+        }
+
+        if (getClient().getActiveChar().isInsideZone(ZoneId.MULTI_FUNCTION3) && !L2MultiFunctionZone3.checkItem(item))
+        {
+            getClient().getActiveChar().sendMessage("You cannot use " + item.getName() + " inside this zone.");
+            return;
+        }
+
+        if (getClient().getActiveChar().isInsideZone(ZoneId.MULTI_FUNCTION4) && !L2MultiFunctionZone4.checkItem(item))
+        {
+            getClient().getActiveChar().sendMessage("You cannot use " + item.getName() + " inside this zone.");
+            return;
+        }
+
+        if (getClient().getActiveChar().isInsideZone(ZoneId.MULTI_FUNCTION5) && !L2MultiFunctionZone5.checkItem(item))
+        {
+            getClient().getActiveChar().sendMessage("You cannot use " + item.getName() + " inside this zone.");
+            return;
+        }
 		// MultiFunction Zone fim
 		
 		if (item.getItem().getType2() == L2Item.TYPE2_QUEST)
