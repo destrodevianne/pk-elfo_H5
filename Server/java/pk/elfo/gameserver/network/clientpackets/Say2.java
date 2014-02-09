@@ -243,7 +243,7 @@ public final class Say2 extends L2GameClientPacket
 		{
 			if ((_type == TELL) || (_type == SHOUT) || (_type == TRADE) || (_type == HERO_VOICE))
 			{
-				activeChar.sendMessage("You can not chat with players outside of the jail.");
+				activeChar.sendMessage("Voce nao pode conversar com os jogadores fora da prisao.");
 				return;
 			}
 		}
