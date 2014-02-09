@@ -5968,26 +5968,26 @@ public final class L2PcInstance extends L2Playable
 		sendPacket(packet);
 		
 		// Kill the L2PcInstance
-		if (KILL_STEAK>0)
+		if (KILL_STEAK > 0)
 		{
-			if (KILL_STEAK>=5&&KILL_STEAK<20)
-				Announcements.getInstance().announceToAll(killer.getName()+" has stopped "+getName()+"'s killing spree of "+KILL_STEAK+" kills!!");
-			else if (KILL_STEAK<40)
+			if (KILL_STEAK >= 5 && KILL_STEAK < 20)
+				Announcements.getInstance().announceToAll(killer.getName()+" parou "+getName()+"'s killing spree of "+KILL_STEAK+" mortes!!");
+			else if (KILL_STEAK < 40)
 			{
-				sendMessage(killer.getName()+" has stopped "+getName()+"'s killing spree of "+KILL_STEAK+" kills!!");
+				sendMessage(killer.getName()+" parou "+getName()+"'s killing spree of "+KILL_STEAK+" mortes!!");
 				if (!hadHero)
 					setHero(false);
 			}
-			else if (KILL_STEAK<60)
+			else if (KILL_STEAK < 60)
 			{
-				sendMessage(killer.getName()+" has ended "+getName()+"'s rampage of "+KILL_STEAK+" strait kills!");
+				sendMessage(killer.getName()+" terminou "+getName()+"'s rampage of "+KILL_STEAK+" strait kills!");
 				stopAbnormalEffect(AbnormalEffect.VITALITY);
 				if (!hadHero)
 				setHero(false);
 			}
-			else if (KILL_STEAK>60)
+			else if (KILL_STEAK > 60)
 			{
-				sendMessage(killer.getName()+" has given an end to "+getName()+"'s reign of terror of "+KILL_STEAK+" strait kills!!!");
+				sendMessage(killer.getName()+" deu um fim ao reinado de terror de "+getName()+"acabando com "+KILL_STEAK+" mortes!!!");
 				stopAbnormalEffect(AbnormalEffect.VITALITY);
 				if (!hadHero)
 					setHero(false);
