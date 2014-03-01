@@ -10,6 +10,7 @@ import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 /**
  * PkElfo
  */
+
 public class MyBirthday implements IUserCommandHandler
 {
 	private static final int[] COMMAND_IDS =

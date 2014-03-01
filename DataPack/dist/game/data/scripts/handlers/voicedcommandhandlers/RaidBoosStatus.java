@@ -13,6 +13,7 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 /**
  * PkElfo
  */
+
 public class RaidBoosStatus implements IVoicedCommandHandler
 {
 	static final Logger _log = Logger.getLogger(RaidBoosStatus.class.getName());

@@ -12,6 +12,7 @@ import pk.elfo.util.StringUtil;
 /**
  * PkElfo
  */
+
 public class StatsVCmd implements IVoicedCommandHandler
 {
 	private static final String[] VOICED_COMMANDS =
@@ -24,7 +25,7 @@ public class StatsVCmd implements IVoicedCommandHandler
 	{
 		if (!command.equals("stats") || (params == null) || params.isEmpty())
 		{
-			activeChar.sendMessage("Use: .stats <player name>");
+			activeChar.sendMessage("Use: .stats <nome do jogador>");
 			return false;
 		}
 		
@@ -49,7 +50,7 @@ public class StatsVCmd implements IVoicedCommandHandler
 			return false;
 		}
 		
-		final StringBuilder replyMSG = StringUtil.startAppend(300 + (pc.getEventStatus().kills.size() * 50), "<html><body>" + "<center><font color=\"LEVEL\">[ L2J EVENT ENGINE ]</font></center><br><br>Statistics for player <font color=\"LEVEL\">", pc.getName(), "</font><br>Total kills <font color=\"FF0000\">", String.valueOf(pc.getEventStatus().kills.size()), "</font><br><br>Detailed list: <br>");
+		final StringBuilder replyMSG = StringUtil.startAppend(300 + (pc.getEventStatus().kills.size() * 50), "<html><body>" + "<center><font color=\"LEVEL\">[ L2J EVENT ENGINE ]</font></center><br><br>Estatisticas para o jogador <font color=\"LEVEL\">", pc.getName(), "</font><br>Total de kills <font color=\"FF0000\">", String.valueOf(pc.getEventStatus().kills.size()), "</font><br><br>Lista detalhada: <br>");
 		for (L2PcInstance plr : pc.getEventStatus().kills)
 		{
 			StringUtil.append(replyMSG, "<font color=\"FF0000\">", plr.getName(), "</font><br>");

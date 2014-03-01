@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.bypasshandlers;
 
 import java.util.Calendar;
@@ -37,6 +19,10 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.util.StringUtil;
+
+/**
+ * PkElfo
+ */
 
 public class Festival implements IBypassHandler
 {
@@ -80,7 +66,7 @@ public class Festival implements IBypassHandler
 					// Check if a festival is in progress, then don't allow registration yet.
 					if (SevenSignsFestival.getInstance().isFestivalInitialized())
 					{
-						activeChar.sendMessage("You cannot sign up while a festival is in progress.");
+						activeChar.sendMessage("Voce nao pode se inscrever enquanto um festival estiver em andamento.");
 						return true;
 					}
 					
@@ -153,7 +139,7 @@ public class Festival implements IBypassHandler
 					// Check if a festival is in progress, if it is don't register the score.
 					if (SevenSignsFestival.getInstance().isFestivalInProgress())
 					{
-						activeChar.sendMessage("You cannot register a score while a festival is in progress.");
+						activeChar.sendMessage("Voce nao pode registrar uma pontuacao enquanto um festival estiver em andamento.");
 						return true;
 					}
 					
@@ -185,7 +171,7 @@ public class Festival implements IBypassHandler
 					// Check if the player collected any blood offerings during the festival.
 					if (bloodOfferings == null)
 					{
-						activeChar.sendMessage("You do not have any blood offerings to contribute.");
+						activeChar.sendMessage("Voce nao tem qualquer oferta de sangue para contribuir.");
 						return true;
 					}
 					
@@ -210,7 +196,7 @@ public class Festival implements IBypassHandler
 					}
 					break;
 				case 4: // Current High Scores
-					final StringBuilder strBuffer = StringUtil.startAppend(500, "<html><body>Festival Guide:<br>These are the top scores of the week, for the ");
+					final StringBuilder strBuffer = StringUtil.startAppend(500, "<html><body>Guia do Festival:<br>Estes sao os melhores resultados da semana, para a ");
 					
 					final StatsSet dawnData = SevenSignsFestival.getInstance().getHighestScoreData(SevenSigns.CABAL_DAWN, npc.getFestivalType());
 					final StatsSet duskData = SevenSignsFestival.getInstance().getHighestScoreData(SevenSigns.CABAL_DUSK, npc.getFestivalType());
@@ -234,7 +220,7 @@ public class Festival implements IBypassHandler
 					}
 					else
 					{
-						strBuffer.append("Dawn: No record exists. Score 0<br>");
+						strBuffer.append("Dawn: Nao existe nenhum registro. Score 0<br>");
 					}
 					
 					if (duskScore > 0)
@@ -243,7 +229,7 @@ public class Festival implements IBypassHandler
 					}
 					else
 					{
-						strBuffer.append("Dusk: No record exists. Score 0<br>");
+						strBuffer.append("Dusk: Nao existe nenhum registro. Score 0<br>");
 					}
 					
 					if ((overallScore > 0) && (overallData != null))
@@ -258,14 +244,14 @@ public class Festival implements IBypassHandler
 							cabalStr = "Children of Dusk";
 						}
 						
-						StringUtil.append(strBuffer, "Consecutive top scores: ", calculateDate(overallData.getString("date")), ". Score ", String.valueOf(overallScore), "<br>Affilated side: ", cabalStr, "<br>", overallData.getString("members"), "<br>");
+						StringUtil.append(strBuffer, "Melhores pontuacoes consecutivas: ", calculateDate(overallData.getString("date")), ". Score ", String.valueOf(overallScore), "<br>lado filiado: ", cabalStr, "<br>", overallData.getString("members"), "<br>");
 					}
 					else
 					{
-						strBuffer.append("Consecutive top scores: No record exists. Score 0<br>");
+						strBuffer.append("Melhores pontuacoes consecutivas: Nao existe recorde. Score 0<br>");
 					}
 					
-					StringUtil.append(strBuffer, "<a action=\"bypass -h npc_", String.valueOf(npc.getObjectId()), "_Chat 0\">Go back.</a></body></html>");
+					StringUtil.append(strBuffer, "<a action=\"bypass -h npc_", String.valueOf(npc.getObjectId()), "_Chat 0\">Voltar.</a></body></html>");
 					
 					NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
 					html.setHtml(strBuffer.toString());
@@ -317,14 +303,14 @@ public class Festival implements IBypassHandler
 						}
 						else
 						{
-							activeChar.sendMessage("Only the party leader can leave a festival when a party has minimum number of members.");
+							activeChar.sendMessage("Apenas o lider da party pode deixar o festival quando uma party tiver o numero mínimo de membros.");
 						}
 					}
 					break;
 				case 0: // Distribute Accumulated Bonus
 					if (!SevenSigns.getInstance().isSealValidationPeriod())
 					{
-						activeChar.sendMessage("Bonuses cannot be paid during the competition period.");
+						activeChar.sendMessage("Os bonus nao podem ser pagos durante o periodo de competicao.");
 						return true;
 					}
 					

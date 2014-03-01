@@ -7,6 +7,7 @@ import pk.elfo.util.Rnd;
 /**
  * PkElfo
  */
+
 public class OpenAtod implements IVoicedCommandHandler
 {
 	private static final String[] _voicedCommands =

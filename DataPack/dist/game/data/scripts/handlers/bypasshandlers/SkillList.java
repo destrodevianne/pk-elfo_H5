@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.bypasshandlers;
 
 import java.util.List;
@@ -31,6 +13,10 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.base.ClassId;
 import pk.elfo.gameserver.network.serverpackets.ActionFailed;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
+
+/**
+ * PkElfo
+ */
 
 public class SkillList implements IBypassHandler
 {
@@ -70,12 +56,12 @@ public class SkillList implements IBypassHandler
 						}
 					}
 					
-					String text = "<html><body><center>Skill learning:</center><br>";
+					String text = "<html><body><center>Aprendizagem de Skill:</center><br>";
 					
 					if (!own_class)
 					{
 						String charType = activeChar.getClassId().isMage() ? "fighter" : "mage";
-						text += "Skills of your class are the easiest to learn.<br>" + "Skills of another class of your race are a little harder.<br>" + "Skills for classes of another race are extremely difficult.<br>" + "But the hardest of all to learn are the  " + charType + "skills!<br>";
+						text += "Habilidades de cada classe sao as mais faceis de aprender.<br>" + "Habilidades de uma outra classe da sua raca sao um pouco mais dificil.<br>" + "Habilidades de outras classes e de outra raca sao extremamente dificeis.<br>" + "Mas a mais dificil de todas para aprender e a  " + charType + "skills!<br>";
 					}
 					
 					// make a list of classes
@@ -107,7 +93,7 @@ public class SkillList implements IBypassHandler
 					}
 					else
 					{
-						text += "No Skills.<br>";
+						text += "Nao ha Skills.<br>";
 					}
 					text += "</body></html>";
 					

@@ -12,6 +12,10 @@ import pk.elfo.gameserver.model.stats.Stats;
 import pk.elfo.util.Rnd;
 import pk.elfo.util.StringUtil;
 
+/**
+ * PkElfo
+ */
+
 public class Cancel extends L2Effect
 {
     protected static final Logger _log = Logger.getLogger(Cancel.class.getName());

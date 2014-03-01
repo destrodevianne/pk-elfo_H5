@@ -11,6 +11,7 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 /**
  * PkElfo
  */
+
 public class TvTVoiced implements IVoicedCommandHandler
 {
 	private static final boolean USE_STATIC_HTML = true;

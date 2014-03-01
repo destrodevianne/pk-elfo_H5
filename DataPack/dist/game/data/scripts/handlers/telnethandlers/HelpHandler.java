@@ -8,6 +8,7 @@ import pk.elfo.gameserver.handler.ITelnetHandler;
 /**
  * PkElfo
  */
+
 public class HelpHandler implements ITelnetHandler
 {
 	private final String[] _commands =
@@ -20,7 +21,7 @@ public class HelpHandler implements ITelnetHandler
 	{
 		if (command.equals("help"))
 		{
-			_print.println("The following is a list of all available commands: ");
+			_print.println("A seguir esta uma lista de todos os comandos disponiveis: ");
 			_print.println("help                  - shows this help.");
 			_print.println("status                - displays basic server statistics.");
 			_print.println("gamestat privatestore - displays info about stores");
@@ -46,7 +47,7 @@ public class HelpHandler implements ITelnetHandler
 		}
 		else if (command.equals("help debug"))
 		{
-			_print.println("The following is a list of all available debug commands: ");
+			_print.println("A seguir esta uma lista de todos os comandos de depuracao disponiveis: ");
 			_print.println("full                - Dumps complete debug information to an file (recommended)");
 			_print.println("decay               - prints info about the DecayManager");
 			_print.println("packetsend          - Send packet data to a player");

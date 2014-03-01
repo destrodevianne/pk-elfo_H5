@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.bypasshandlers;
 
 import pk.elfo.gameserver.handler.IBypassHandler;
@@ -26,6 +8,10 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.EtcStatusUpdate;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.util.StringUtil;
+
+/**
+ * PkElfo
+ */
 
 public class RemoveDeathPenalty implements IBypassHandler
 {
@@ -85,11 +71,11 @@ public class RemoveDeathPenalty implements IBypassHandler
 							activeChar.sendPacket(new EtcStatusUpdate(activeChar));
 							return true;
 						}
-						replyMSG.append("The wound you have received from death's touch is too deep to be healed for the money you have to give me. Find more money if you wish death's mark to be fully removed from you.");
+						replyMSG.append("A ferida que voce recebeu de toque da morte esta muito profunda para ser curada pela quantidade de dinheiro que voce tem para me dar. Consiga mais dinheiro se quiser tirar a marca da morte de voce.");
 					}
 					else
 					{
-						replyMSG.append("You have no more death wounds that require healing.<br>" + "Go forth and fight, both for this world and your own glory.");
+						replyMSG.append("Voce nao tem mais feridas de morte que necessitam de cura.<br>" + "Va em frente e lute, tanto para este mundo quanto para a sua propria gloria.");
 					}
 					
 					replyMSG.append("</body></html>");

@@ -11,6 +11,7 @@ import pk.elfo.util.StringUtil;
 /**
  * PkElfo
  */
+
 public class Lang implements IVoicedCommandHandler
 {
 	private static final String[] VOICED_COMMANDS =

@@ -11,6 +11,7 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 /**
  * PkElfo
  */
+
 public class TvTVoicedInfo implements IVoicedCommandHandler
 {
 	private static final String[] _voicedCommands =

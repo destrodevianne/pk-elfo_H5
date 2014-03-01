@@ -26,6 +26,7 @@ import pk.elfo.gameserver.util.GMAudit;
 /**
  * PkElfo
  */
+
 public class PlayerHandler implements ITelnetHandler
 {
 	private final String[] _commands =
@@ -48,14 +49,14 @@ public class PlayerHandler implements ITelnetHandler
 				L2PcInstance player = L2World.getInstance().getPlayer(command);
 				if (player != null)
 				{
-					player.sendMessage("You are kicked by gm");
+					player.sendMessage("Voce foi chutado por um gm");
 					player.logout();
-					_print.println("Player kicked");
+					_print.println("Jogador chutado");
 				}
 			}
 			catch (StringIndexOutOfBoundsException e)
 			{
-				_print.println("Please enter player name to kick");
+				_print.println("Por favor, insira o nome do jogador para chutar");
 			}
 		}
 		else if (command.startsWith("give"))
@@ -83,7 +84,7 @@ public class PlayerHandler implements ITelnetHandler
 				}
 				else
 				{
-					_print.println("Player not found");
+					_print.println("Jogador nao encontrado");
 				}
 			}
 			catch (Exception e)
@@ -169,12 +170,12 @@ public class PlayerHandler implements ITelnetHandler
 					success = setEnchant(player, enchant, itemType);
 					if (success)
 					{
-						_print.println("Item enchanted successfully.");
+						_print.println("Item encantado com sucesso.");
 					}
 				}
 				else if (!success)
 				{
-					_print.println("Item failed to enchant.");
+					_print.println("Item falhou ao encantar.");
 				}
 			}
 			catch (Exception e)
@@ -205,7 +206,7 @@ public class PlayerHandler implements ITelnetHandler
 				if (playerObj != null)
 				{
 					playerObj.setPunishLevel(L2PcInstance.PunishLevel.JAIL, delay);
-					_print.println("Character " + playerObj.getName() + " jailed for " + (delay > 0 ? delay + " minutes." : "ever!"));
+					_print.println("O Personagem " + playerObj.getName() + " foi preso por " + (delay > 0 ? delay + " minutos." : "ever!"));
 				}
 				else
 				{
@@ -225,16 +226,16 @@ public class PlayerHandler implements ITelnetHandler
 						
 						if (count == 0)
 						{
-							_print.println("Character not found!");
+							_print.println("Personagem nao encontrado!");
 						}
 						else
 						{
-							_print.println("Character " + name + " jailed for " + (delay > 0 ? delay + " minutes." : "ever!"));
+							_print.println("O Personagem " + name + " foi preso por " + (delay > 0 ? delay + " minutos." : "ever!"));
 						}
 					}
 					catch (SQLException se)
 					{
-						_print.println("SQLException while jailing player");
+						_print.println("SQLException excecao ao jogador na prisao");
 						if (Config.DEBUG)
 						{
 							se.printStackTrace();
@@ -244,7 +245,7 @@ public class PlayerHandler implements ITelnetHandler
 			}
 			catch (NoSuchElementException nsee)
 			{
-				_print.println("Specify a character name.");
+				_print.println("Especifique o nome do personagem.");
 			}
 			catch (Exception e)
 			{
@@ -265,7 +266,7 @@ public class PlayerHandler implements ITelnetHandler
 				if (playerObj != null)
 				{
 					playerObj.setPunishLevel(L2PcInstance.PunishLevel.NONE, 0);
-					_print.println("Character " + playerObj.getName() + " removed from jail");
+					_print.println("O Personagem " + playerObj.getName() + " foi tirado da cadeia");
 				}
 				else
 				{
@@ -285,16 +286,16 @@ public class PlayerHandler implements ITelnetHandler
 						
 						if (count == 0)
 						{
-							_print.println("Character not found!");
+							_print.println("Personagem nao encontrado!");
 						}
 						else
 						{
-							_print.println("Character " + name + " set free.");
+							_print.println("O Prsonagem " + name + " foi solto.");
 						}
 					}
 					catch (SQLException se)
 					{
-						_print.println("SQLException while jailing player");
+						_print.println("SQLException excecao ao jogador na prisao");
 						if (Config.DEBUG)
 						{
 							se.printStackTrace();
@@ -304,7 +305,7 @@ public class PlayerHandler implements ITelnetHandler
 			}
 			catch (NoSuchElementException nsee)
 			{
-				_print.println("Specify a character name.");
+				_print.println("Especifique o nome do personagem.");
 			}
 			catch (Exception e)
 			{
@@ -357,8 +358,8 @@ public class PlayerHandler implements ITelnetHandler
 			activeChar.broadcastPacket(new ExBrExtraUserInfo(activeChar));
 			
 			// informations
-			activeChar.sendMessage("Changed enchantment of " + activeChar.getName() + "'s " + itemInstance.getItem().getName() + " from " + curEnchant + " to " + ench + ".");
-			activeChar.sendMessage("Admin has changed the enchantment of your " + itemInstance.getItem().getName() + " from " + curEnchant + " to " + ench + ".");
+			activeChar.sendMessage("Mudanca de encantamento do " + activeChar.getName() + "'s " + itemInstance.getItem().getName() + " a partir de " + curEnchant + " para " + ench + ".");
+			activeChar.sendMessage("O Administrador mudou o encantamento da seu " + itemInstance.getItem().getName() + " a partir de " + curEnchant + " para " + ench + ".");
 			
 			// log
 			GMAudit.auditGMAction("TelnetAdministrator", "enchant", activeChar.getName(), itemInstance.getItem().getName() + "(" + itemInstance.getObjectId() + ")" + " from " + curEnchant + " to " + ench);

@@ -11,6 +11,7 @@ import pk.elfo.gameserver.network.serverpackets.SiegeInfo;
 /**
  * PkElfo
  */
+
 public class Siege implements IVoicedCommandHandler
 {
 	private static final String[] VOICED_COMMANDS =

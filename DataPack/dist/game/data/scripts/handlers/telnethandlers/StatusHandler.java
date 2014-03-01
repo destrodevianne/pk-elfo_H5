@@ -23,6 +23,7 @@ import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 /**
  * PkElfo
  */
+
 public class StatusHandler implements ITelnetHandler
 {
 	private final String[] _commands =
@@ -48,7 +49,7 @@ public class StatusHandler implements ITelnetHandler
 		{
 			System.gc();
 			StringBuilder sb = new StringBuilder();
-			sb.append("RAM Used: " + ((Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1048576)); // 1024 * 1024 = 1048576
+			sb.append("RAM UsedA: " + ((Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1048576)); // 1024 * 1024 = 1048576
 			_print.println(sb.toString());
 		}
 		else if (command.startsWith("memusage"))
@@ -70,13 +71,13 @@ public class StatusHandler implements ITelnetHandler
 			DecimalFormat df2 = new DecimalFormat(" # 'KB'");
 			
 			_print.println("+----");// ...
-			_print.println("| Allowed Memory:" + df2.format(max));
-			_print.println("|    |= Allocated Memory:" + df2.format(allocated) + df.format((allocated / max) * 100));
-			_print.println("|    |= Non-Allocated Memory:" + df2.format(nonAllocated) + df.format((nonAllocated / max) * 100));
-			_print.println("| Allocated Memory:" + df2.format(allocated));
-			_print.println("|    |= Used Memory:" + df2.format(used) + df.format((used / max) * 100));
-			_print.println("|    |= Unused (cached) Memory:" + df2.format(cached) + df.format((cached / max) * 100));
-			_print.println("| Useable Memory:" + df2.format(useable) + df.format((useable / max) * 100)); // ...
+			_print.println("| Memoria permitida:" + df2.format(max));
+			_print.println("|    |= Memoria alocada:" + df2.format(allocated) + df.format((allocated / max) * 100));
+			_print.println("|    |= Memoria nao alocada:" + df2.format(nonAllocated) + df.format((nonAllocated / max) * 100));
+			_print.println("| Memoria alocada:" + df2.format(allocated));
+			_print.println("|    |= Memoria usada:" + df2.format(used) + df.format((used / max) * 100));
+			_print.println("|    |= Memoria nao usada (cached):" + df2.format(cached) + df.format((cached / max) * 100));
+			_print.println("| Memoria utilizavel:" + df2.format(useable) + df.format((useable / max) * 100)); // ...
 			_print.println("+----");
 		}
 		else if (command.equals("gmlist"))
@@ -89,7 +90,7 @@ public class StatusHandler implements ITelnetHandler
 				gmList = gmList + ", " + player;
 				igm++;
 			}
-			_print.println("There are currently " + igm + " GM(s) online...");
+			_print.println("Atualmente " + igm + " GM(s) online...");
 			if (!gmList.isEmpty())
 			{
 				_print.println(gmList);
@@ -198,7 +199,7 @@ public class StatusHandler implements ITelnetHandler
 		sb.append("\r\n  ---> Server Uptime: " + getUptime(uptime));
 		sb.append("\r\n  --->      GM Count: " + getOnlineGMS());
 		sb.append("\r\n  --->       Threads: " + Thread.activeCount());
-		sb.append("\r\n  RAM Used: " + ((Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1048576)); // 1024 * 1024 = 1048576
+		sb.append("\r\n  RAM Usada: " + ((Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1048576)); // 1024 * 1024 = 1048576
 		sb.append("\r\n");
 		
 		return sb.toString();

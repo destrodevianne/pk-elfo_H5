@@ -11,6 +11,7 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 /**
  * PkElfo
  */
+
 public class ChatAdmin implements IVoicedCommandHandler
 {
 	private static final String[] VOICED_COMMANDS =
@@ -31,7 +32,7 @@ public class ChatAdmin implements IVoicedCommandHandler
 		{
 			if (params == null)
 			{
-				activeChar.sendMessage("Usage: .banchat name [minutes]");
+				activeChar.sendMessage("Use: .banchat + nome + [minutos]");
 				return true;
 			}
 			StringTokenizer st = new StringTokenizer(params);
@@ -47,7 +48,7 @@ public class ChatAdmin implements IVoicedCommandHandler
 					}
 					catch (NumberFormatException e)
 					{
-						activeChar.sendMessage("Wrong ban length !");
+						activeChar.sendMessage("Comprimento excedido !");
 						return false;
 					}
 				}
@@ -62,45 +63,45 @@ public class ChatAdmin implements IVoicedCommandHandler
 					L2PcInstance player = L2World.getInstance().getPlayer(objId);
 					if ((player == null) || !player.isOnline())
 					{
-						activeChar.sendMessage("Player not online !");
+						activeChar.sendMessage("O jogador nao esta online !");
 						return false;
 					}
 					if (player.getPunishLevel() != L2PcInstance.PunishLevel.NONE)
 					{
-						activeChar.sendMessage("Player is already punished !");
+						activeChar.sendMessage("O jogador ja esta punido !");
 						return false;
 					}
 					if (player == activeChar)
 					{
-						activeChar.sendMessage("You can't ban yourself !");
+						activeChar.sendMessage("Voce nao pode proibir-se !");
 						return false;
 					}
 					if (player.isGM())
 					{
-						activeChar.sendMessage("You can't ban GM !");
+						activeChar.sendMessage("Voce nao pode proibir um GM !");
 						return false;
 					}
 					if (AdminTable.getInstance().hasAccess(command, player.getAccessLevel()))
 					{
-						activeChar.sendMessage("You can't ban moderator !");
+						activeChar.sendMessage("Voce nao pode proibir um moderator !");
 						return false;
 					}
 					
 					player.setPunishLevel(L2PcInstance.PunishLevel.CHAT, length);
-					player.sendMessage("Chat banned by moderator " + activeChar.getName());
+					player.sendMessage("Chat banido pelo moderator " + activeChar.getName());
 					
 					if (length > 0)
 					{
-						activeChar.sendMessage("Player " + player.getName() + " chat banned for " + length + " minutes.");
+						activeChar.sendMessage("O Jogador " + player.getName() + " teve o chat banido por " + length + " minutos.");
 					}
 					else
 					{
-						activeChar.sendMessage("Player " + player.getName() + " chat banned forever.");
+						activeChar.sendMessage("O Jogador " + player.getName() + " teve o chat banido para sempre.");
 					}
 				}
 				else
 				{
-					activeChar.sendMessage("Player not found !");
+					activeChar.sendMessage("Jogador nao encontrado !");
 					return false;
 				}
 			}
@@ -109,7 +110,7 @@ public class ChatAdmin implements IVoicedCommandHandler
 		{
 			if (params == null)
 			{
-				activeChar.sendMessage("Usage: .unbanchat name");
+				activeChar.sendMessage("Use: .unbanchat + nome");
 				return true;
 			}
 			StringTokenizer st = new StringTokenizer(params);
@@ -123,23 +124,23 @@ public class ChatAdmin implements IVoicedCommandHandler
 					L2PcInstance player = L2World.getInstance().getPlayer(objId);
 					if ((player == null) || !player.isOnline())
 					{
-						activeChar.sendMessage("Player not online !");
+						activeChar.sendMessage("O jogador nao esta online !");
 						return false;
 					}
 					if (player.getPunishLevel() != L2PcInstance.PunishLevel.CHAT)
 					{
-						activeChar.sendMessage("Player is not chat banned !");
+						activeChar.sendMessage("O jogador nao esta com o chat banido !");
 						return false;
 					}
 					
 					player.setPunishLevel(L2PcInstance.PunishLevel.NONE, 0);
 					
-					activeChar.sendMessage("Player " + player.getName() + " chat unbanned.");
-					player.sendMessage("Chat unbanned by moderator " + activeChar.getName());
+					activeChar.sendMessage("O jogador " + player.getName() + " teve o seu chat desbanido.");
+					player.sendMessage("Chat desbanido pelo moderator " + activeChar.getName());
 				}
 				else
 				{
-					activeChar.sendMessage("Player not found !");
+					activeChar.sendMessage("Jogador nao encontrado !");
 					return false;
 				}
 			}

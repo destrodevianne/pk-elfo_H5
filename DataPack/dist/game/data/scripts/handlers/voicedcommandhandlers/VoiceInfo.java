@@ -10,6 +10,7 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 /**
  * PkElfo
  */
+
 public class VoiceInfo implements IVoicedCommandHandler
 {
 	private static String[]	VOICED_COMMANDS	=
@@ -49,7 +50,7 @@ public class VoiceInfo implements IVoicedCommandHandler
 		}
 		else
 		{
-			activeChar.sendMessage("omg lame error! where is " + htmFile + " ! blame the Server Admin");
+			activeChar.sendMessage("omg lame error! onde esta " + htmFile + " ! culpar o Admin Server");
 		}
 		return true;
 	}

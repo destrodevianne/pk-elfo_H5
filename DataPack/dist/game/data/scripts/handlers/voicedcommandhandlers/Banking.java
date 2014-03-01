@@ -7,6 +7,7 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 /**
  * PkElfo
  */
+
 public class Banking implements IVoicedCommandHandler
 {
 	private static final String[] _voicedCommands =
@@ -33,11 +34,11 @@ public class Banking implements IVoicedCommandHandler
 				}
 				activeChar.getInventory().addItem("Goldbar", 3470, Config.BANKING_SYSTEM_GOLDBARS, activeChar, null);
 				activeChar.getInventory().updateDatabase();
-				activeChar.sendMessage("Thank you, you now have " + Config.BANKING_SYSTEM_GOLDBARS + " Goldbar(s), and " + Config.BANKING_SYSTEM_ADENA + " less adena.");
+				activeChar.sendMessage("Obrigado, agora voce tem " + Config.BANKING_SYSTEM_GOLDBARS + " Goldbar(s), e menos " + Config.BANKING_SYSTEM_ADENA + " de adena.");
 			}
 			else
 			{
-				activeChar.sendMessage("You do not have enough Adena to convert to Goldbar(s), you need " + Config.BANKING_SYSTEM_ADENA + " Adena.");
+				activeChar.sendMessage("Voce nao tem Adena suficiente para converter em Goldbar(s), voce precisa de " + Config.BANKING_SYSTEM_ADENA + " Adena.");
 			}
 		}
 		else if (command.equals("withdraw") && activeChar.isVip())
@@ -50,11 +51,11 @@ public class Banking implements IVoicedCommandHandler
 				}
 				activeChar.getInventory().addAdena("Adena", Config.BANKING_SYSTEM_ADENA, activeChar, null);
 				activeChar.getInventory().updateDatabase();
-				activeChar.sendMessage("Thank you, you now have " + Config.BANKING_SYSTEM_ADENA + " Adena, and " + Config.BANKING_SYSTEM_GOLDBARS + " less Goldbar(s).");
+				activeChar.sendMessage("Obrigado, agora voce tem " + Config.BANKING_SYSTEM_ADENA + " Adena, e menos " + Config.BANKING_SYSTEM_GOLDBARS + " de Goldbar(s).");
 			}
 			else
 			{
-				activeChar.sendMessage("You do not have any Goldbars to turn into " + Config.BANKING_SYSTEM_ADENA + " Adena.");
+				activeChar.sendMessage("Voce nao tem nenhum Goldbars para se transformar em " + Config.BANKING_SYSTEM_ADENA + " Adena.");
 			}
 		}
 		return true;

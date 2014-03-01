@@ -15,6 +15,7 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 /**
  * PkElfo
  */
+
 public class Repair implements IVoicedCommandHandler
 {
 	static final Logger _log = Logger.getLogger(Repair.class.getName());
@@ -268,7 +269,7 @@ public class Repair implements IVoicedCommandHandler
 		}
 		catch (Exception e)
 		{
-			_log.warning("GameServer: could not repair character:" + e);
+			_log.warning("GameServer: nao poderia reparar o Personagem:" + e);
 		}
 		finally
 		{

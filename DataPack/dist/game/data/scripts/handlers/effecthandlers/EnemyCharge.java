@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.effecthandlers;
 
 import java.util.logging.Logger;
@@ -30,6 +12,10 @@ import pk.elfo.gameserver.model.stats.Env;
 import pk.elfo.gameserver.network.serverpackets.FlyToLocation;
 import pk.elfo.gameserver.network.serverpackets.ValidateLocation;
 import pk.elfo.gameserver.network.serverpackets.FlyToLocation.FlyType;
+
+/**
+ * PkElfo
+ */
 
 public class EnemyCharge extends L2Effect
 {
@@ -68,7 +54,7 @@ public class EnemyCharge extends L2Effect
 		double distance = Math.sqrt((dx * dx) + (dy * dy));
 		if (distance > 2000)
 		{
-			_log.info("EffectEnemyCharge was going to use invalid coordinates for characters, getEffector: " + curX + "," + curY + " and getEffected: " + getEffected().getX() + "," + getEffected().getY());
+			_log.info("EffectEnemyCharge ia usar coordenadas invalidas para os personagens, getEffector: " + curX + "," + curY + " e getEffected: " + getEffected().getX() + "," + getEffected().getY());
 			return false;
 		}
 		int offset = Math.max((int) distance - getSkill().getFlyRadius(), 30);

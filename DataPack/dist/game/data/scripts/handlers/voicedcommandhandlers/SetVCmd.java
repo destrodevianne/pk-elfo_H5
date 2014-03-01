@@ -8,6 +8,7 @@ import pk.elfo.gameserver.util.Util;
 /**
  * PkElfo
  */
+
 public class SetVCmd implements IVoicedCommandHandler
 {
 	private static final String[] VOICED_COMMANDS =

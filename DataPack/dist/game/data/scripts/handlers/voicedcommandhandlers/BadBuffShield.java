@@ -6,6 +6,7 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 /**
  * PkElfo
  */
+
 public class BadBuffShield implements IVoicedCommandHandler
 {
 	private static final String[] _voicedCommands =
@@ -23,12 +24,12 @@ public class BadBuffShield implements IVoicedCommandHandler
 	{
 		if (command.equalsIgnoreCase("shieldon"))
 		{
-			activeChar.sendMessage("You are now under the grief-buff protection");
+			activeChar.sendMessage("Voce agora esta sob a protecao de grief-buff");
 			activeChar.setProtectedPlayer(true);
 		}
 		else if (command.equalsIgnoreCase("shieldoff"))
 		{
-			activeChar.sendMessage("The grief-buff protection is now desactivated");
+			activeChar.sendMessage("A protecao do grief-buff agora foi desativada");
 			activeChar.setProtectedPlayer(false);
 		}
 		return true;

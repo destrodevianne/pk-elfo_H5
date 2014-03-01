@@ -12,6 +12,7 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 /**
  * PkElfo
  */
+
 public class User implements IVoicedCommandHandler
 {
        public static final String[] VOICED_COMMANDS = { "user" , "user1", "user2", "user3" };

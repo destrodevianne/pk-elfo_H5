@@ -12,6 +12,7 @@ import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 /**
  * PkElfo
  */
+
 public class Loc implements IUserCommandHandler
 {
 	private static final int[] COMMAND_IDS =

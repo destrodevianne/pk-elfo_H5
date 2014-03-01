@@ -8,6 +8,7 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 /**
  * PkElfo
  */
+
 public class Online implements IVoicedCommandHandler
 {
     private static String[] _voicedCommands =

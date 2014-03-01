@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.bypasshandlers;
 
 import pk.elfo.Config;
@@ -27,6 +9,10 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.actor.instance.L2WyvernManagerInstance;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.util.Util;
+
+/**
+ * PkElfo
+ */
 
 public class RideWyvern implements IBypassHandler
 {
@@ -63,13 +49,13 @@ public class RideWyvern implements IBypassHandler
 		
 		if (!Config.ALLOW_WYVERN_DURING_SIEGE && (npc.isInSiege() || activeChar.isInSiege()))
 		{
-			activeChar.sendMessage("You cannot ride wyvern during siege.");
+			activeChar.sendMessage("Voce nao pode montar em um wyvern durante a siege.");
 			return false;
 		}
 		
 		if ((SevenSigns.getInstance().getSealOwner(SevenSigns.SEAL_STRIFE) == SevenSigns.CABAL_DUSK) && SevenSigns.getInstance().isSealValidationPeriod())
 		{
-			activeChar.sendMessage("You cannot ride wyvern while Seal of Strife controlled by Dusk.");
+			activeChar.sendMessage("Voce nao pode montar em um wyvern enquanto o Seal of Strife esiver sendo controlado por Dusk.");
 			return false;
 		}
 		
@@ -81,7 +67,7 @@ public class RideWyvern implements IBypassHandler
 			}
 			else
 			{
-				activeChar.sendMessage("Summon your Strider first.");
+				activeChar.sendMessage("Chame o seu primeiro Strider.");
 			}
 		}
 		else if (Util.contains(STRIDERS, activeChar.getSummon().getNpcId()))
@@ -90,7 +76,7 @@ public class RideWyvern implements IBypassHandler
 			{
 				if (activeChar.getSummon().getLevel() < 55)
 				{
-					activeChar.sendMessage("Your Strider Has not reached the required level.");
+					activeChar.sendMessage("Seu Strider nao atingiu o nivel exigido.");
 				}
 				else
 				{
@@ -99,19 +85,19 @@ public class RideWyvern implements IBypassHandler
 					{
 						activeChar.getInventory().destroyItemByItemId("Wyvern", 1460, 25, activeChar, npc);
 						activeChar.addSkill(SkillTable.FrequentSkill.WYVERN_BREATH.getSkill());
-						activeChar.sendMessage("The Wyvern has been summoned successfully!");
+						activeChar.sendMessage("O Wyvern foi convocado com sucesso!");
 					}
 					return true;
 				}
 			}
 			else
 			{
-				activeChar.sendMessage("You need 25 Crystals: B Grade.");
+				activeChar.sendMessage("Voce precisa de 25 Crystals: B Grade.");
 			}
 		}
 		else
 		{
-			activeChar.sendMessage("Unsummon your pet.");
+			activeChar.sendMessage("Para esconjurar seu animal de estimacao.");
 		}
 		
 		return false;

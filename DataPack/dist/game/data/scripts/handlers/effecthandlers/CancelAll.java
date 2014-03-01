@@ -5,6 +5,10 @@ import pk.elfo.gameserver.model.effects.L2Effect;
 import pk.elfo.gameserver.model.effects.L2EffectType;
 import pk.elfo.gameserver.model.stats.Env;
 
+/**
+ * PkElfo
+ */
+
 public class CancelAll extends L2Effect
 {
     public CancelAll(Env env, EffectTemplate template)

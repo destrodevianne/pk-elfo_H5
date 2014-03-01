@@ -6,6 +6,7 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 /**
  * PkElfo
  */
+
 public class Cancelar implements IVoicedCommandHandler
 {
         private static final String[] VOICED_COMMANDS =

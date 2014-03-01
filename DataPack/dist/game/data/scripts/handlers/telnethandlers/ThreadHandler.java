@@ -9,6 +9,7 @@ import pk.elfo.gameserver.handler.ITelnetHandler;
 /**
  * PkElfo
  */
+
 public class ThreadHandler implements ITelnetHandler
 {
 	private final String[] _commands =
@@ -31,7 +32,7 @@ public class ThreadHandler implements ITelnetHandler
 		else if (command.equals("purge"))
 		{
 			ThreadPoolManager.getInstance().purge();
-			_print.println("STATUS OF THREAD POOLS AFTER PURGE COMMAND:");
+			_print.println("SITUACAO DA THREAD POOLS APOS REMOCAO DE COMANDO:");
 			_print.println("");
 			for (String line : ThreadPoolManager.getInstance().getStats())
 			{

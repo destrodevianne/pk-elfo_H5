@@ -91,6 +91,7 @@ import handlers.effecthandlers.Warp;
 /**
  * PkElfo
  */
+
 public final class EffectMasterHandler
 {
 	private static final Logger _log = Logger.getLogger(EffectMasterHandler.class.getName());
@@ -195,7 +196,7 @@ public final class EffectMasterHandler
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Failed invoking getInstance method for handler: " + _loadInstances.getSimpleName(), e);
+			_log.log(Level.WARNING, "Falha no metodo getInstance invocando para manipulador: " + _loadInstances.getSimpleName(), e);
 			return;
 		}
 		
@@ -220,7 +221,7 @@ public final class EffectMasterHandler
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "Failed loading effect handler" + ((c == null) ? "!" : ":" + c.getSimpleName()), e);
+				_log.log(Level.WARNING, "Falha no manipulador de efeito de carga" + ((c == null) ? "!" : ":" + c.getSimpleName()), e);
 				continue;
 			}
 		}
@@ -230,11 +231,11 @@ public final class EffectMasterHandler
 		{
 			method = loadInstance.getClass().getMethod("size");
 			Object returnVal = method.invoke(loadInstance);
-			_log.log(Level.INFO, loadInstance.getClass().getSimpleName() + ": Loaded " + returnVal + " Handlers");
+			_log.log(Level.INFO, loadInstance.getClass().getSimpleName() + ": Carregado " + returnVal + " Handlers");
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Failed invoking size method for handler: " + loadInstance.getClass().getSimpleName(), e);
+			_log.log(Level.WARNING, "Falha no metodo de tamanho de invocacao do manipulador: " + loadInstance.getClass().getSimpleName(), e);
 		}
 	}
 }

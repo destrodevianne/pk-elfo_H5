@@ -6,7 +6,10 @@ import pk.elfo.gameserver.model.effects.L2Effect;
 import pk.elfo.gameserver.model.effects.L2EffectType;
 import pk.elfo.gameserver.model.stats.Env;
 
-
+/**
+ * PkElfo
+ */
+ 
 public class RecoBonus extends L2Effect
 {
     public RecoBonus(Env env, EffectTemplate template)

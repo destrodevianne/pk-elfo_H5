@@ -12,6 +12,7 @@ import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 /**
  * PkElfo
  */
+
 public class InstanceZone implements IUserCommandHandler
 {
 	private static final int[] COMMAND_IDS =
@@ -73,7 +74,7 @@ public class InstanceZone implements IUserCommandHandler
 				    sm.addNumber(minutes);
 				    }
 				    else
-					sm = SystemMessage.sendString("Solo Instance will be available to re-use in " + hours + " hours and " + minutes + " minutes.");
+					sm = SystemMessage.sendString("Solo Instancia estarao disponiveis para reutilizacao em " + hours + " horas e " + minutes + " minutos.");
                      
 					activeChar.sendPacket(sm);
 				}

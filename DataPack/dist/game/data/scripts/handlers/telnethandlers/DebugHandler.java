@@ -37,6 +37,7 @@ import javolution.util.FastTable;
 /**
  * PkElfo
  */
+
 public class DebugHandler implements ITelnetHandler
 {
 	private final String[] _commands =
@@ -67,7 +68,7 @@ public class DebugHandler implements ITelnetHandler
 				{
 					if (st.countTokens() < 2)
 					{
-						_print.println("Usage: debug packetsend <charName> <packetData>");
+						_print.println("Use: debug packetsend <charName> <packetData>");
 						return false;
 					}
 					String charName = st.nextToken();
@@ -75,7 +76,7 @@ public class DebugHandler implements ITelnetHandler
 					
 					if (targetPlayer == null)
 					{
-						_print.println("Player " + charName + " cannot be found online");
+						_print.println("O Jogador " + charName + " nao esta online");
 						return false;
 					}
 					
@@ -90,7 +91,7 @@ public class DebugHandler implements ITelnetHandler
 					}
 					
 					targetPlayer.sendPacket(sp);
-					_print.println("Packet sent to player " + charName);
+					_print.println("Packet enviado para o jogador " + charName);
 				}
 				else if (dbg.equals("PacketTP"))
 				{
@@ -147,36 +148,36 @@ public class DebugHandler implements ITelnetHandler
 					
 					StringBuilder sb = new StringBuilder();
 					sb.append(sdf.format(cal.getTime()));
-					sb.append("\n\nL2J Server Version: " + Config.SERVER_VERSION);
-					sb.append("\nDP Revision: " + Config.DATAPACK_VERSION);
+					sb.append("\n\nL2J Core Versao: " + Config.SERVER_VERSION);
+					sb.append("\nDP Revisao: " + Config.DATAPACK_VERSION);
 					sb.append("\n\n");
 					uptime = _uptime;
 					sb.append(getServerStatus());
 					sb.append("\n\n");
-					sb.append("\n## Java Platform Information ##");
-					sb.append("\nJava Runtime Name: " + System.getProperty("java.runtime.name"));
-					sb.append("\nJava Version: " + System.getProperty("java.version"));
-					sb.append("\nJava Class Version: " + System.getProperty("java.class.version"));
+					sb.append("\n## Java Platforma Informacao ##");
+					sb.append("\nJava Runtime Nome: " + System.getProperty("java.runtime.name"));
+					sb.append("\nJava Versao: " + System.getProperty("java.version"));
+					sb.append("\nJava Class Versao: " + System.getProperty("java.class.version"));
 					sb.append('\n');
-					sb.append("\n## Virtual Machine Information ##");
-					sb.append("\nVM Name: " + System.getProperty("java.vm.name"));
-					sb.append("\nVM Version: " + System.getProperty("java.vm.version"));
-					sb.append("\nVM Vendor: " + System.getProperty("java.vm.vendor"));
+					sb.append("\n## Maquina Virtual Informacao ##");
+					sb.append("\nVM Nome: " + System.getProperty("java.vm.name"));
+					sb.append("\nVM Versao: " + System.getProperty("java.vm.version"));
+					sb.append("\nVM Vendedor: " + System.getProperty("java.vm.vendor"));
 					sb.append("\nVM Info: " + System.getProperty("java.vm.info"));
 					sb.append('\n');
-					sb.append("\n## OS Information ##");
-					sb.append("\nName: " + System.getProperty("os.name"));
-					sb.append("\nArchiteture: " + System.getProperty("os.arch"));
-					sb.append("\nVersion: " + System.getProperty("os.version"));
+					sb.append("\n## OS Informacao ##");
+					sb.append("\nNome: " + System.getProperty("os.name"));
+					sb.append("\nArquitetura: " + System.getProperty("os.arch"));
+					sb.append("\nVersao: " + System.getProperty("os.version"));
 					sb.append('\n');
-					sb.append("\n## Runtime Information ##");
+					sb.append("\n## Runtime Informacao ##");
 					sb.append("\nCPU Count: " + Runtime.getRuntime().availableProcessors());
-					sb.append("\nCurrent Free Heap Size: " + (Runtime.getRuntime().freeMemory() / 1024 / 1024) + " mb");
-					sb.append("\nCurrent Heap Size: " + (Runtime.getRuntime().totalMemory() / 1024 / 1024) + " mb");
-					sb.append("\nMaximum Heap Size: " + (Runtime.getRuntime().maxMemory() / 1024 / 1024) + " mb");
+					sb.append("\nCorrnte Free Heap Size: " + (Runtime.getRuntime().freeMemory() / 1024 / 1024) + " mb");
+					sb.append("\nCorrnte Heap Size: " + (Runtime.getRuntime().totalMemory() / 1024 / 1024) + " mb");
+					sb.append("\nMaximo Heap Size: " + (Runtime.getRuntime().maxMemory() / 1024 / 1024) + " mb");
 					
 					sb.append('\n');
-					sb.append("\n## Class Path Information ##\n");
+					sb.append("\n## Class Path Informacao ##\n");
 					String cp = System.getProperty("java.class.path");
 					String[] libs = cp.split(File.pathSeparator);
 					for (String lib : libs)
@@ -186,7 +187,7 @@ public class DebugHandler implements ITelnetHandler
 					}
 					
 					sb.append('\n');
-					sb.append("## Threads Information ##\n");
+					sb.append("## Threads Informacao ##\n");
 					Map<Thread, StackTraceElement[]> allThread = Thread.getAllStackTraces();
 					
 					FastTable<Entry<Thread, StackTraceElement[]>> entries = new FastTable<>();
@@ -259,7 +260,7 @@ public class DebugHandler implements ITelnetHandler
 						}
 					}
 					
-					sb.append("\n\n## Thread Pool Manager Statistics ##\n");
+					sb.append("\n\n## Thread Pool Estatisticas do Gerenciador ##\n");
 					for (String line : ThreadPoolManager.getInstance().getStats())
 					{
 						sb.append(line);
@@ -281,7 +282,7 @@ public class DebugHandler implements ITelnetHandler
 					out.close();
 					fos.close();
 					
-					_print.println("Debug output saved to log/" + f.getName());
+					_print.println("Saida de depuracao salvar a sessao/" + f.getName());
 					_print.flush();
 				}
 			}
@@ -337,7 +338,7 @@ public class DebugHandler implements ITelnetHandler
 				return thread;
 			}
 		}
-		throw new IllegalStateException("Deadlocked Thread not found");
+		throw new IllegalStateException("Deadlocked Thread nao encontrado");
 	}
 	
 	public String getServerStatus()
@@ -440,7 +441,7 @@ public class DebugHandler implements ITelnetHandler
 		sb.append("\r\n  ---> Server Uptime: " + getUptime(uptime));
 		sb.append("\r\n  --->      GM Count: " + getOnlineGMS());
 		sb.append("\r\n  --->       Threads: " + Thread.activeCount());
-		sb.append("\r\n  RAM Used: " + ((Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1048576)); // 1024 * 1024 = 1048576
+		sb.append("\r\n  RAM Useda: " + ((Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1048576)); // 1024 * 1024 = 1048576
 		sb.append("\r\n");
 		
 		return sb.toString();

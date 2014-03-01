@@ -16,6 +16,7 @@ import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 /**
  * PkElfo
  */
+
 public class ClanWarsList implements IUserCommandHandler
 {
 	private static final Logger _log = Logger.getLogger(ClanWarsList.class.getName());

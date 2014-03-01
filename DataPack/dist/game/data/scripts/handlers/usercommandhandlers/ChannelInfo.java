@@ -8,6 +8,7 @@ import pk.elfo.gameserver.network.serverpackets.ExMultiPartyCommandChannelInfo;
 /**
  * PkElfo
  */
+
 public class ChannelInfo implements IUserCommandHandler
 {
 	private static final int[] COMMAND_IDS =

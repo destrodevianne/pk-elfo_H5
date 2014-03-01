@@ -31,9 +31,9 @@ import pk.elfo.gameserver.network.serverpackets.CreatureSay;
 import pk.elfo.gameserver.util.Util;
 
 /**
- * Trade chat handler.
- * @author durgus
+ * PkElfo
  */
+
 public class ChatTrade implements IChatHandler
 {
 	private static final int[] COMMAND_IDS =
@@ -87,7 +87,7 @@ public class ChatTrade implements IChatHandler
 		{
 			if (!activeChar.canOverrideCond(PcCondOverride.CHAT_CONDITIONS) && !activeChar.getFloodProtectors().getGlobalChat().tryPerformAction("global chat"))
 			{
-				activeChar.sendMessage("Do not spam trade channel.");
+				activeChar.sendMessage("Nao pode flodar no chat global.");
 				return;
 			}
 			

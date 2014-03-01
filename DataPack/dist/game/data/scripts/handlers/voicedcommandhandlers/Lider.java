@@ -9,6 +9,7 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 /**
  * PkElfo
  */
+
 public class Lider implements IVoicedCommandHandler
 {
         private static final String[] VOICED_COMMANDS = 
@@ -36,7 +37,7 @@ public class Lider implements IVoicedCommandHandler
                                 
                                 if (leader == null)
                                 {
-                                        activeChar.sendMessage("Seu lider nao estar online.");
+                                        activeChar.sendMessage("Seu lider nao esta online.");
                                         return false;
                                 }
                                 else if (leader.isInJail())

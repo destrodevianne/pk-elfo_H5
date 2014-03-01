@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.effecthandlers;
 
 import java.util.ArrayList;
@@ -34,11 +16,9 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.util.Rnd;
 
 /**
- * Restoration Random effect.<br>
- * This effect is present in item skills that "extract" new items upon usage.<br>
- * This effect has been unhardcoded in order to work on targets as well.
- * @author Zoey76
+ * PkElfo
  */
+ 
 public class RestorationRandom extends L2Effect
 {
 	public RestorationRandom(Env env, EffectTemplate template)
@@ -62,7 +42,7 @@ public class RestorationRandom extends L2Effect
 		
 		if (exSkill.getProductItems().isEmpty())
 		{
-			_log.warning("Extractable Skill with no data, probably wrong/empty table in Skill Id: " + getSkill().getId());
+			_log.warning("Habilidade extraivel sem dados, provavelmente errado / mesa vazia em Skill Id: " + getSkill().getId());
 			return false;
 		}
 		

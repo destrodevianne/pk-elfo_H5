@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.bypasshandlers;
 
 import java.util.Collection;
@@ -46,8 +28,9 @@ import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.util.L2FastList;
 
 /**
- * @author DS
+ * PkElfo
  */
+
 public class OlympiadManagerLink implements IBypassHandler
 {
 	private static final String[] COMMANDS =
@@ -222,7 +205,7 @@ public class OlympiadManagerLink implements IBypassHandler
 						OlympiadManager.getInstance().registerNoble(activeChar, CompetitionType.TEAMS);
 						break;
 					default:
-						_log.warning("Olympiad System: Couldnt send packet for request " + val);
+						_log.warning("Sistema de olimpiada: Nao conseguiram enviar o pacote para o pedido " + val);
 						break;
 				}
 			}
@@ -238,7 +221,7 @@ public class OlympiadManagerLink implements IBypassHandler
 				
 				if (params[1] == null)
 				{
-					_log.warning("Olympiad Buffer Warning: npcId = " + ((L2Npc) target).getNpcId() + " has no buffGroup set in the bypass for the buff selected.");
+					_log.warning("Olympiad Buffer Aviso: npcId = " + ((L2Npc) target).getNpcId() + " nao ha buffGroup definido no bypass para o buff selecionado.");
 					return false;
 				}
 				int buffGroup = Integer.parseInt(params[1]);
@@ -247,7 +230,7 @@ public class OlympiadManagerLink implements IBypassHandler
 				
 				if (npcBuffGroupInfo == null)
 				{
-					_log.warning("Olympiad Buffer Warning: npcId = " + ((L2Npc) target).getNpcId() + " Location: " + target.getX() + ", " + target.getY() + ", " + target.getZ() + " Player: " + activeChar.getName() + " has tried to use skill group (" + buffGroup + ") not assigned to the NPC Buffer!");
+					_log.warning("Olympiad Buffer Aviso: npcId = " + ((L2Npc) target).getNpcId() + " Localizacao: " + target.getX() + ", " + target.getY() + ", " + target.getZ() + " Jogador: " + activeChar.getName() + " tentou usar skill de grupo (" + buffGroup + ") nao atribuido ao NPC Buffer!");
 					return false;
 				}
 				
@@ -329,7 +312,7 @@ public class OlympiadManagerLink implements IBypassHandler
 						activeChar.sendPacket(new ExHeroList());
 						break;
 					default:
-						_log.warning("Olympiad System: Couldnt send packet for request " + val);
+						_log.warning("Sistema de Olimpiada: Nao conseguiram enviar o pacote para o pedido " + val);
 						break;
 				}
 			}

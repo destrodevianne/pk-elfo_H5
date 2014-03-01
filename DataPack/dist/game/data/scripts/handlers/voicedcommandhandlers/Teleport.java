@@ -7,6 +7,7 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 /**
  * PkElfo
  */
+
 public class Teleport implements IVoicedCommandHandler
 {
  private static final String[] VOICED_COMMANDS =
@@ -127,7 +128,7 @@ public boolean useVoicedCommand(String command, L2PcInstance activeChar, String 
 
  @Override
 public String[] getVoicedCommandList()
- {
-        return VOICED_COMMANDS;
- }
+	{
+	return VOICED_COMMANDS;
+	}
 }

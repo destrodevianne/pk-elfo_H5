@@ -12,6 +12,7 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 /**
  * PkElfo
  */
+
 public class ChangePassword implements IVoicedCommandHandler
 {
 	private static final String[] _voicedCommands =
@@ -45,17 +46,17 @@ public class ChangePassword implements IVoicedCommandHandler
 				{
 					if (!newpass.equals(repeatnewpass))
 					{
-						activeChar.sendMessage("The new password doesn't match with the repeated one!");
+						activeChar.sendMessage("A nova senha nao corresponde com a repetida!");
 						return false;
 					}
 					if (newpass.length() < 3)
 					{
-						activeChar.sendMessage("The new password is shorter than 3 chars! Please try with a longer one.");
+						activeChar.sendMessage("A nova senha esta menor que 3 caracteres! Por favor, tente uma mais longa.");
 						return false;
 					}
 					if (newpass.length() > 30)
 					{
-						activeChar.sendMessage("The new password is longer than 30 chars! Please try with a shorter one.");
+						activeChar.sendMessage("A nova senha tem mais de 30 caracteres! Por favor, tente uma menor.");
 						return false;
 					}
 					
@@ -63,13 +64,13 @@ public class ChangePassword implements IVoicedCommandHandler
 				}
 				else
 				{
-					activeChar.sendMessage("Invalid password data! You have to fill all boxes.");
+					activeChar.sendMessage("Dados de senha invalida! Voce deve preencher todas as caixas.");
 					return false;
 				}
 			}
 			catch (Exception e)
 			{
-				activeChar.sendMessage("A problem occured while changing password!");
+				activeChar.sendMessage("Ocorreu um problema ao alterar a senha!");
 				_log.log(Level.WARNING, "", e);
 			}
 		}
@@ -79,7 +80,7 @@ public class ChangePassword implements IVoicedCommandHandler
 			String html = HtmCache.getInstance().getHtm("en", "data/html/mods/ChangePassword.htm");
 			if (html == null)
 			{
-				html = "<html><body><br><br><center><font color=LEVEL>404:</font> File Not Found</center></body></html>";
+				html = "<html><body><br><br><center><font color=LEVEL>404:</font> Arquivo nao encontrado</center></body></html>";
 			}
 			activeChar.sendPacket(new NpcHtmlMessage(1, html));
 			return true;

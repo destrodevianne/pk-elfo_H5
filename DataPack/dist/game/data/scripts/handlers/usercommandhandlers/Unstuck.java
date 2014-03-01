@@ -19,6 +19,7 @@ import pk.elfo.gameserver.util.Broadcast;
 /**
  * PkElfo
  */
+
 public class Unstuck implements IUserCommandHandler
 {
 	private static final int[] COMMAND_IDS =
@@ -65,7 +66,7 @@ public class Unstuck implements IUserCommandHandler
 				activeChar.doCast(GM_escape);
 				return true;
 			}
-			activeChar.sendMessage("You use Escape: 1 second.");
+			activeChar.sendMessage("Voce usou escape: 1 second.");
 		}
 		else if ((Config.UNSTUCK_INTERVAL == 300) && (escape != null))
 		{
@@ -76,11 +77,11 @@ public class Unstuck implements IUserCommandHandler
 		{
 			if (Config.UNSTUCK_INTERVAL > 100)
 			{
-				activeChar.sendMessage("You use Escape: " + (unstuckTimer / 60000) + " minutes.");
+				activeChar.sendMessage("Voce usou escape: " + (unstuckTimer / 60000) + " minutos.");
 			}
 			else
 			{
-				activeChar.sendMessage("You use Escape: " + (unstuckTimer / 1000) + " seconds.");
+				activeChar.sendMessage("Voce usou escape: " + (unstuckTimer / 1000) + " segundos.");
 			}
 		}
 		activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);

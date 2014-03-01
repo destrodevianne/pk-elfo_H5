@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.actionhandlers;
 
 import pk.elfo.gameserver.ai.CtrlIntention;
@@ -25,6 +7,10 @@ import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.L2Object.InstanceType;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
+
+/**
+ * PkElfo
+ */
 
 public class L2ItemInstanceAction implements IActionHandler
 {
@@ -39,11 +25,11 @@ public class L2ItemInstanceAction implements IActionHandler
 		{
 			if (activeChar.isInParty())
 			{
-				activeChar.sendMessage("You cannot pickup mercenaries while in a party.");
+				activeChar.sendMessage("Voce nao pode pegar mercenarios enquanto estiver em party.");
 			}
 			else
 			{
-				activeChar.sendMessage("Only the castle lord can pickup mercenaries.");
+				activeChar.sendMessage("Somente o lord do castelo pode melhorar os mercenarios.");
 			}
 			
 			activeChar.setTarget(target);

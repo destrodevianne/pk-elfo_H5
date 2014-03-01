@@ -346,6 +346,7 @@ import handlers.voicedcommandhandlers.ClanMensagem;
 /**
  * PkElfo
  */
+
 public class MasterHandler
 {
 	private static final Logger _log = Logger.getLogger(MasterHandler.class.getName());
@@ -751,7 +752,7 @@ public class MasterHandler
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "Failed invoking getInstance method for handler: " + _loadInstances[i].getSimpleName(), e);
+				_log.log(Level.WARNING, "Falha no metodo getInstance invocando para manipulador: " + _loadInstances[i].getSimpleName(), e);
 				continue;
 			}
 			
@@ -781,7 +782,7 @@ public class MasterHandler
 				}
 				catch (Exception e)
 				{
-					_log.log(Level.WARNING, "Failed loading handler" + ((c == null) ? "!" : ":" + c.getSimpleName()), e);
+					_log.log(Level.WARNING, "Manipulador de carga falhou" + ((c == null) ? "!" : ":" + c.getSimpleName()), e);
 					continue;
 				}
 			}
@@ -794,7 +795,7 @@ public class MasterHandler
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "Failed invoking size method for handler: " + loadInstance.getClass().getSimpleName(), e);
+				_log.log(Level.WARNING, "Falha no metodo tamanho invocação de manipulador: " + loadInstance.getClass().getSimpleName(), e);
 				continue;
 			}
 		}

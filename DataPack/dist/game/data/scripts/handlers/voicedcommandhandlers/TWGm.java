@@ -13,6 +13,7 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 /**
  * PkElfo
  */
+
 public class TWGm implements IVoicedCommandHandler
 {
 	private static final String[] _voicedCommands = { "tw", "tw_goto_ward" };
@@ -66,7 +67,7 @@ public class TWGm implements IVoicedCommandHandler
 			{
 				//build beginning of html page
 				StringBuilder sb = new StringBuilder();
-				sb.append("<html><title>TW Wards GM Panel</title><body><br><center>-<font color=\"0066FF\">Current TW Ward List</font>-</center>");
+				sb.append("<html><title>TW Wards GM Panel</title><body><br><center>-<font color=\"0066FF\">Lista Corrente do TW Ward</font>-</center>");
 
 				//get & build current Wardlist
 				if (TerritoryWarManager.getInstance().isTWInProgress())
@@ -96,7 +97,7 @@ public class TWGm implements IVoicedCommandHandler
 				}
 				else
 				{
-					sb.append("<br><br><center>The Ward List is empty!<br></center></body></html>");
+					sb.append("<br><br><center>A Lista de Ward esta vazia!<br></center></body></html>");
 			    	npcHtmlMessage.setHtml(sb.toString());
 			    	activeChar.sendPacket(npcHtmlMessage);
 			    	return true;

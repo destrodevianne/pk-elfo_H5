@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.chathandlers;
 
 import pk.elfo.Config;
@@ -29,9 +11,9 @@ import pk.elfo.gameserver.network.serverpackets.CreatureSay;
 import pk.elfo.gameserver.util.Util;
 
 /**
- * Tell chat handler.
- * @author durgus
+ * PkElfo
  */
+
 public class ChatTell implements IChatHandler
 {
 	private static final int[] COMMAND_IDS =
@@ -72,7 +54,7 @@ public class ChatTell implements IChatHandler
 		{
 			if (Config.JAIL_DISABLE_CHAT && receiver.isInJail() && !activeChar.canOverrideCond(PcCondOverride.CHAT_CONDITIONS))
 			{
-				activeChar.sendMessage("Player is in jail.");
+				activeChar.sendMessage("O jogador esta na cadeia.");
 				return;
 			}
 			if (receiver.isChatBanned())
@@ -82,7 +64,7 @@ public class ChatTell implements IChatHandler
 			}
 			if ((receiver.getClient() == null) || receiver.getClient().isDetached())
 			{
-				activeChar.sendMessage("Player is in offline mode.");
+				activeChar.sendMessage("O jogador esta em modo offline.");
 				return;
 			}
 			if (!BlockList.isBlocked(receiver, activeChar))

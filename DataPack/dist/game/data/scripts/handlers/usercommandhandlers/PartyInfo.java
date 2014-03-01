@@ -9,6 +9,7 @@ import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 /**
  * PkElfo
  */
+
 public class PartyInfo implements IUserCommandHandler
 {
 	private static final int[] COMMAND_IDS =
@@ -53,7 +54,7 @@ public class PartyInfo implements IUserCommandHandler
 				sm.addPcName(party.getLeader());
 				activeChar.sendPacket(sm);
 			}
-			activeChar.sendMessage("Members: " + party.getMemberCount() + "/9"); // TODO: Custom?
+			activeChar.sendMessage("Membros: " + party.getMemberCount() + "/9"); // TODO: Custom?
 		}
 		activeChar.sendPacket(SystemMessageId.FRIEND_LIST_FOOTER);
 		return true;

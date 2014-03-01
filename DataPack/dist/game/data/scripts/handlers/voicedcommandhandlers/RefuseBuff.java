@@ -8,6 +8,7 @@ import pk.elfo.gameserver.network.serverpackets.CreatureSay;
 /**
  * PkElfo
  */
+
 public class RefuseBuff implements IVoicedCommandHandler
 {
 	private String[] _voicedCommands =

@@ -18,6 +18,7 @@ import pk.elfo.gameserver.util.Util;
 /**
  * PkElfo
  */
+
 public class Premium implements IVoicedCommandHandler
 {
 	private static final String[] VOICED_COMMANDS =
@@ -60,30 +61,27 @@ public class Premium implements IVoicedCommandHandler
 		{
 			if (!Config.PREMIUM_ALLOW_VOICED)
 			{
-				activeChar.sendMessage("Command is forbidden");
+				activeChar.sendMessage("O comando esta proibido");
 			}
 			else
 			{
 				String[] cmdSplit = command.split("_");
 				if (cmdSplit.length != 2)
 				{
-					activeChar.sendMessage("Invalid parameter");
+					activeChar.sendMessage("Parametro invalido");
 				}
 				else
 				{
 					ItemHolder payItem = PremiumTable.getPrice(cmdSplit[1]);
 					if (payItem == null)
 					{
-						activeChar.sendMessage("Invalid parameter");
+						activeChar.sendMessage("Parametro invalido");
 					}
 					else
 					{
 						if (payItem.getCount() > 0)
 						{
-							ConfirmDlg confirmation = new ConfirmDlg(SystemMessageId.S1.getId()).addString("Vai custar " + 
-																																														Long.toString(payItem.getCount()) +  " pcs. " + 
-																																														ItemTable.getInstance().getTemplate(payItem.getId()).getName() + 
-																																														". Are you agreed?");
+							ConfirmDlg confirmation = new ConfirmDlg(SystemMessageId.S1.getId()).addString("Vai custar " + Long.toString(payItem.getCount()) +  " pcs. " + ItemTable.getInstance().getTemplate(payItem.getId()).getName() + ". Are you agreed?");
 							activeChar.sendPacket(confirmation);
 							activeChar.setDialogId(DialogId.PREMIUM);
 							PremiumTable.getInstance().addRequest(activeChar, cmdSplit[1]);

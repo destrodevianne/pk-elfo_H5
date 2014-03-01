@@ -8,6 +8,7 @@ import pk.elfo.gameserver.network.serverpackets.ExShowScreenMessage;
 /**
  * PkElfo
  */
+
 public class ClanMensagem implements IVoicedCommandHandler
 	{
 		private static final String[] _voicedCommands =

@@ -10,6 +10,7 @@ import pk.elfo.gameserver.network.SystemMessageId;
 /**
  * PkElfo
  */
+
 public class CastleVCmd implements IVoicedCommandHandler
 {
 	private static final String[] VOICED_COMMANDS =
@@ -27,7 +28,7 @@ public class CastleVCmd implements IVoicedCommandHandler
 			case "opendoors":
 				if (!params.equals("castle"))
 				{
-					activeChar.sendMessage("Only Castle doors can be open.");
+					activeChar.sendMessage("Somente portas do castelo podem ser abertas.");
 					return false;
 				}
 				
@@ -47,7 +48,7 @@ public class CastleVCmd implements IVoicedCommandHandler
 				final Castle castle = CastleManager.getInstance().getCastleById(activeChar.getClan().getCastleId());
 				if (castle == null)
 				{
-					activeChar.sendMessage("Your clan does not own a castle.");
+					activeChar.sendMessage("Seu clan nao possui um castelo.");
 					return false;
 				}
 				
@@ -66,7 +67,7 @@ public class CastleVCmd implements IVoicedCommandHandler
 			case "closedoors":
 				if (!params.equals("castle"))
 				{
-					activeChar.sendMessage("Only Castle doors can be closed.");
+					activeChar.sendMessage("Somente portas do castelo podem ser fechadas.");
 					return false;
 				}
 				if (!activeChar.isClanLeader())
@@ -83,7 +84,7 @@ public class CastleVCmd implements IVoicedCommandHandler
 				final Castle castle2 = CastleManager.getInstance().getCastleById(activeChar.getClan().getCastleId());
 				if (castle2 == null)
 				{
-					activeChar.sendMessage("Your clan does not own a castle.");
+					activeChar.sendMessage("Seu clan nao possui um castelo.");
 					return false;
 				}
 				
@@ -95,7 +96,7 @@ public class CastleVCmd implements IVoicedCommandHandler
 				
 				if (castle2.checkIfInZone(door2.getX(), door2.getY(), door2.getZ()))
 				{
-					activeChar.sendMessage("The gate is being closed.");
+					activeChar.sendMessage("O portao esta sendo fechado.");
 					door2.closeMe();
 				}
 				break;

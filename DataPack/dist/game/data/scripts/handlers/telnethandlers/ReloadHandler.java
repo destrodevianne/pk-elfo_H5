@@ -25,6 +25,7 @@ import pk.elfo.gameserver.scripting.L2ScriptEngineManager;
 /**
  * PkElfo
  */
+
 public class ReloadHandler implements ITelnetHandler
 {
 	private final String[] _commands =
@@ -44,50 +45,50 @@ public class ReloadHandler implements ITelnetHandler
 				
 				if (type.equals("multisell"))
 				{
-					_print.print("Reloading multisell... ");
+					_print.print("Recarregando multisell... ");
 					MultiSell.getInstance().reload();
 					_print.println("done");
 				}
 				else if (type.equals("skill"))
 				{
-					_print.print("Reloading skills... ");
+					_print.print("Recarregando skills... ");
 					SkillTable.getInstance().reload();
 					_print.println("done");
 				}
 				else if (type.equals("npc"))
 				{
-					_print.print("Reloading npc templates... ");
+					_print.print("Recarregando npc templates... ");
 					NpcTable.getInstance().reloadAllNpc();
 					QuestManager.getInstance().reloadAllQuests();
 					_print.println("done");
 				}
 				else if (type.equals("html"))
 				{
-					_print.print("Reloading html cache... ");
+					_print.print("Recarregando html cache... ");
 					HtmCache.getInstance().reload();
 					_print.println("done");
 				}
 				else if (type.equals("item"))
 				{
-					_print.print("Reloading item templates... ");
+					_print.print("Recarregando item templates... ");
 					ItemTable.getInstance().reload();
 					_print.println("done");
 				}
 				else if (type.equals("zone"))
 				{
-					_print.print("Reloading zone tables... ");
+					_print.print("Recarregando zone tables... ");
 					ZoneManager.getInstance().reload();
 					_print.println("done");
 				}
 				else if (type.equals("teleports"))
 				{
-					_print.print("Reloading telport location table... ");
+					_print.print("Recarregando telport location table... ");
 					TeleportLocationTable.getInstance().reloadAll();
 					_print.println("done");
 				}
 				else if (type.equals("spawns"))
 				{
-					_print.print("Reloading spawns... ");
+					_print.print("Recarregando spawns... ");
 					RaidBossSpawnManager.getInstance().cleanUp();
 					DayNightSpawnManager.getInstance().cleanUp();
 					L2World.getInstance().deleteVisibleNpcSpawns();
@@ -108,26 +109,26 @@ public class ReloadHandler implements ITelnetHandler
 							try
 							{
 								L2ScriptEngineManager.getInstance().executeScript(file);
-								_print.println(file.getName() + " was successfully loaded!\n");
+								_print.println(file.getName() + " foi carregado com exito!\n");
 							}
 							catch (ScriptException e)
 							{
-								_print.println("Failed loading: " + questPath);
+								_print.println("Falha ao ler: " + questPath);
 								L2ScriptEngineManager.getInstance().reportScriptFileError(file, e);
 							}
 							catch (Exception e)
 							{
-								_print.println("Failed loading: " + questPath);
+								_print.println("Falha ao ler: " + questPath);
 							}
 						}
 						else
 						{
-							_print.println(file.getName() + " is not a file in: " + questPath);
+							_print.println(file.getName() + " nao e um arquivo em: " + questPath);
 						}
 					}
 					catch (StringIndexOutOfBoundsException e)
 					{
-						_print.println("Please Enter Some Text!");
+						_print.println("Por favor defina um texto!");
 					}
 				}
 			}

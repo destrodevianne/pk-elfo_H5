@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.bypasshandlers;
 
 import java.util.StringTokenizer;
@@ -28,6 +10,10 @@ import pk.elfo.gameserver.model.actor.instance.L2MerchantInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.network.serverpackets.SetupGauge;
+
+/**
+ * PkElfo
+ */
 
 public class RentPet implements IBypassHandler
 {
@@ -62,7 +48,7 @@ public class RentPet implements IBypassHandler
 			if (st.countTokens() < 1)
 			{
 				NpcHtmlMessage msg = new NpcHtmlMessage(((L2Npc) target).getObjectId());
-				msg.setHtml("<html><body>Pet Manager:<br>" + "You can rent a wyvern or strider for adena.<br>My prices:<br1>" + "<table border=0><tr><td>Ride</td></tr>" + "<tr><td>Wyvern</td><td>Strider</td></tr>" + "<tr><td><a action=\"bypass -h npc_%objectId%_RentPet 1\">30 sec/1800 adena</a></td><td><a action=\"bypass -h npc_%objectId%_RentPet 11\">30 sec/900 adena</a></td></tr>" + "<tr><td><a action=\"bypass -h npc_%objectId%_RentPet 2\">1 min/7200 adena</a></td><td><a action=\"bypass -h npc_%objectId%_RentPet 12\">1 min/3600 adena</a></td></tr>" + "<tr><td><a action=\"bypass -h npc_%objectId%_RentPet 3\">10 min/720000 adena</a></td><td><a action=\"bypass -h npc_%objectId%_RentPet 13\">10 min/360000 adena</a></td></tr>" + "<tr><td><a action=\"bypass -h npc_%objectId%_RentPet 4\">30 min/6480000 adena</a></td><td><a action=\"bypass -h npc_%objectId%_RentPet 14\">30 min/3240000 adena</a></td></tr>" + "</table>" + "</body></html>");
+				msg.setHtml("<html><body>Adestrador de Pet:<br>" + "Voce pode alugar um wyvern ou um strider por adena.<br>Meus precos:<br1>" + "<table border=0><tr><td>Passeio</td></tr>" + "<tr><td>Wyvern</td><td>Strider</td></tr>" + "<tr><td><a action=\"bypass -h npc_%objectId%_RentPet 1\">30 seg/1800 adena</a></td><td><a action=\"bypass -h npc_%objectId%_RentPet 11\">30 seg/900 adena</a></td></tr>" + "<tr><td><a action=\"bypass -h npc_%objectId%_RentPet 2\">1 min/7200 adena</a></td><td><a action=\"bypass -h npc_%objectId%_RentPet 12\">1 min/3600 adena</a></td></tr>" + "<tr><td><a action=\"bypass -h npc_%objectId%_RentPet 3\">10 min/720000 adena</a></td><td><a action=\"bypass -h npc_%objectId%_RentPet 13\">10 min/360000 adena</a></td></tr>" + "<tr><td><a action=\"bypass -h npc_%objectId%_RentPet 4\">30 min/6480000 adena</a></td><td><a action=\"bypass -h npc_%objectId%_RentPet 14\">30 min/3240000 adena</a></td></tr>" + "</table>" + "</body></html>");
 				msg.replace("%objectId%", String.valueOf(((L2Npc) target).getObjectId()));
 				activeChar.sendPacket(msg);
 			}

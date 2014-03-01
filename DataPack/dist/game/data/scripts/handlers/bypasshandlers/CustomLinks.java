@@ -11,7 +11,7 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
  * <a action="bypass -h CustomLinks custom.html">Custom Link</a><br>
  * Root directory data/html/
  * @version 1.0
- * @author Zoey76
+ * PkElfo
  */
 public class CustomLinks implements IBypassHandler
 {
@@ -34,7 +34,7 @@ public class CustomLinks implements IBypassHandler
 			
 			if ((content == null) || content.isEmpty())
 			{
-				_log.warning("[" + getClass().getSimpleName() + "] " + filename + " content is null or empty.");
+				_log.warning("[" + getClass().getSimpleName() + "] " + filename + " conteudo esta nulo ou vazio.");
 				return false;
 			}
 			

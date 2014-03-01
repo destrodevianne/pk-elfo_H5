@@ -15,6 +15,7 @@ import pk.elfo.gameserver.network.serverpackets.CreatureSay;
 /**
  * PkElfo
  */
+
 public class ChatsHandler implements ITelnetHandler
 {
 	private final String[] _commands =
@@ -33,11 +34,11 @@ public class ChatsHandler implements ITelnetHandler
 			{
 				command = command.substring(9);
 				Announcements.getInstance().announceToAll(command);
-				_print.println("Announcement Sent!");
+				_print.println("Anuncio enviado!");
 			}
 			catch (StringIndexOutOfBoundsException e)
 			{
-				_print.println("Please Enter Some Text To Announce!");
+				_print.println("Por favor defina um texto para anunciar!");
 			}
 		}
 		else if (command.startsWith("msg"))
@@ -54,16 +55,16 @@ public class ChatsHandler implements ITelnetHandler
 				{
 					reciever.sendPacket(cs);
 					_print.println("Telnet Priv->" + name + ": " + message);
-					_print.println("Message Sent!");
+					_print.println("Mensagem enviada!");
 				}
 				else
 				{
-					_print.println("Unable To Find Username: " + name);
+					_print.println("Nao foi possivel encontrar o Usuario: " + name);
 				}
 			}
 			catch (StringIndexOutOfBoundsException e)
 			{
-				_print.println("Please Enter Some Text!");
+				_print.println("Por favor defina um texto!");
 			}
 		}
 		else if (command.startsWith("gmchat"))
@@ -73,11 +74,11 @@ public class ChatsHandler implements ITelnetHandler
 				command = command.substring(7);
 				CreatureSay cs = new CreatureSay(0, Say2.ALLIANCE, "Telnet GM Broadcast from " + _cSocket.getInetAddress().getHostAddress(), command);
 				AdminTable.getInstance().broadcastToGMs(cs);
-				_print.println("Your Message Has Been Sent To " + getOnlineGMS() + " GM(s).");
+				_print.println("Sua mensagem foi enviada " + getOnlineGMS() + " GM(s).");
 			}
 			catch (StringIndexOutOfBoundsException e)
 			{
-				_print.println("Please Enter Some Text To Announce!");
+				_print.println("Por favor defina um texto para anunciar!");
 			}
 		}
 		return false;

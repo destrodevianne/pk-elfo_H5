@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.bypasshandlers;
 
 import java.text.DateFormat;
@@ -33,6 +15,10 @@ import pk.elfo.gameserver.network.serverpackets.ActionFailed;
 import pk.elfo.gameserver.network.serverpackets.InventoryUpdate;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
+
+/**
+ * PkElfo
+ */
 
 public class Loto implements IBypassHandler
 {
@@ -171,8 +157,8 @@ public class Loto implements IBypassHandler
 			
 			if (count == 5)
 			{
-				String search = "0\">Return";
-				String replace = "22\">Your lucky numbers have been selected above.";
+				String search = "0\">Retornar";
+				String replace = "22\">Seus numeros da sorte foram selecionados acima.";
 				html.replace(search, replace);
 			}
 		}
@@ -276,16 +262,16 @@ public class Loto implements IBypassHandler
 						switch ((int) check[0])
 						{
 							case 1:
-								message += "- 1st Prize";
+								message += "- 1st Premio";
 								break;
 							case 2:
-								message += "- 2nd Prize";
+								message += "- 2nd Premio";
 								break;
 							case 3:
-								message += "- 3th Prize";
+								message += "- 3th Premio";
 								break;
 							case 4:
-								message += "- 4th Prize";
+								message += "- 4th Premio";
 								break;
 						}
 						message += " " + check[1] + "a.";
@@ -295,7 +281,7 @@ public class Loto implements IBypassHandler
 			}
 			if (message.isEmpty())
 			{
-				message += "There has been no winning lottery ticket.<br>";
+				message += "Nao houve nenhum bilhete de loteria premiado.<br>";
 			}
 			html.replace("%result%", message);
 		}

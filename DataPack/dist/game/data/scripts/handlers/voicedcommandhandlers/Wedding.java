@@ -36,6 +36,7 @@ import pk.elfo.gameserver.util.Broadcast;
 /**
  * PkElfo
  */
+
 public class Wedding implements IVoicedCommandHandler
 {
 	static final Logger _log = Logger.getLogger(Wedding.class.getName());
