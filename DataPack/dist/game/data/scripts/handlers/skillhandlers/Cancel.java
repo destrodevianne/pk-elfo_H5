@@ -17,6 +17,10 @@ import pk.elfo.util.Rnd;
 import pk.elfo.util.StringUtil;
 import javolution.util.FastList;
 
+/**
+ * PkElfo
+ */
+ 
 public class Cancel implements ISkillHandler
 {
     private static final L2SkillType[] SKILL_IDS =
@@ -257,8 +261,6 @@ public class Cancel implements ISkillHandler
             }
             skill.getEffectsSelf(activeChar);
         }
-
-
         activeChar.setChargedShot(activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS) ? ShotType.BLESSED_SPIRITSHOTS : ShotType.SPIRITSHOTS, false);
     }
 

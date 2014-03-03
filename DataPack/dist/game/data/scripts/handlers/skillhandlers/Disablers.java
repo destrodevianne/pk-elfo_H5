@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.skillhandlers;
 
 import java.util.logging.Logger;
@@ -45,9 +27,9 @@ import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.util.Rnd;
 
 /**
- * This Handles Disabler skills
- * @author _drunk_
+ * PkElfo
  */
+ 
 public class Disablers implements ISkillHandler
 {
 	private static final L2SkillType[] SKILL_IDS =
@@ -589,7 +571,7 @@ public class Disablers implements ISkillHandler
 									ISkillHandler Healhandler = SkillHandler.getInstance().getHandler(L2SkillType.HEAL);
 									if (Healhandler == null)
 									{
-										_log.severe("Couldn't find skill handler for HEAL.");
+										_log.severe("Nao foi possivel encontrar o handler para a Skill HEAL.");
 										continue;
 									}
 									L2Character tgts[] = new L2Character[]

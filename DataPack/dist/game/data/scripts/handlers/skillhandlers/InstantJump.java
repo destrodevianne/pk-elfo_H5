@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.skillhandlers;
 
 import pk.elfo.Config;
@@ -36,9 +18,9 @@ import pk.elfo.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import pk.elfo.gameserver.util.Util;
 
 /**
- * Some parts taken from EffectWarp, which cannot be used for this case.
- * @author Didldak
+ * PkElfo
  */
+ 
 public class InstantJump implements ISkillHandler
 {
 	
@@ -70,20 +52,17 @@ public class InstantJump implements ISkillHandler
 		}
 		
 		int x = 0, y = 0, z = 0;
-		
 		int px = target.getX();
 		int py = target.getY();
 		double ph = Util.convertHeadingToDegree(target.getHeading());
 		
 		ph += 180;
-		
 		if (ph > 360)
 		{
 			ph -= 360;
 		}
 		
 		ph = (Math.PI * ph) / 180;
-		
 		x = (int) (px + (25 * Math.cos(ph)));
 		y = (int) (py + (25 * Math.sin(ph)));
 		z = target.getZ();
@@ -99,7 +78,6 @@ public class InstantJump implements ISkillHandler
 		activeChar.broadcastPacket(new FlyToLocation(activeChar, loc.getX(), loc.getY(), loc.getZ(), FlyType.DUMMY));
 		activeChar.abortAttack();
 		activeChar.abortCast();
-		
 		activeChar.setXYZ(loc.getX(), loc.getY(), loc.getZ());
 		activeChar.broadcastPacket(new ValidateLocation(activeChar));
 		

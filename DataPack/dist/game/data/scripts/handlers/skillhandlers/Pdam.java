@@ -162,7 +162,6 @@ public class Pdam implements ISkillHandler
 					
 					// Possibility of a lethal strike
 					Formulas.calcLethalHit(activeChar, target, skill);
-					
 					target.reduceCurrentHp(damage, activeChar, skill);
 					
 					// vengeance reflected damage
