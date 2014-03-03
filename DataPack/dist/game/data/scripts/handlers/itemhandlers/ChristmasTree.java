@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.itemhandlers;
 
 import pk.elfo.gameserver.datatables.NpcTable;
@@ -29,6 +11,10 @@ import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
 import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.gameserver.network.SystemMessageId;
 
+/**
+ * PkElfo
+ */
+ 
 public class ChristmasTree implements IItemHandler
 {
 	@Override
@@ -73,10 +59,8 @@ public class ChristmasTree implements IItemHandler
 			spawn.setInstanceId(activeChar.getInstanceId());
 			L2Npc npc = spawn.spawnOne(false);
 			npc.setSummoner(activeChar);
-			
 			activeChar.destroyItem("Consume", item.getObjectId(), 1, null, false);
-			
-			activeChar.sendMessage("Created " + template1.getName() + " at x: " + spawn.getLocx() + " y: " + spawn.getLocy() + " z: " + spawn.getLocz());
+			activeChar.sendMessage("Criado " + template1.getName() + " em x: " + spawn.getLocx() + " y: " + spawn.getLocy() + " z: " + spawn.getLocz());
 			return true;
 		}
 		catch (Exception e)

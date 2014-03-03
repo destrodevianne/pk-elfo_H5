@@ -1,17 +1,3 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- *
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.itemhandlers;
 
 import pk.elfo.gameserver.datatables.NpcTable;
@@ -26,9 +12,9 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * Custom item handler to allow items to summon NPCs.
- * @author Zoey76
+ * PkElfo
  */
+ 
 public final class SummonNpc implements IItemHandler
 {
 	private static final int[][] _itemIdNpcIdNpcLifeTimes = 
@@ -102,13 +88,11 @@ public final class SummonNpc implements IItemHandler
 					spawn.setLocy(activeChar.getY());
 					spawn.setLocz(activeChar.getZ());
 					spawn.setHeading(activeChar.getHeading());
-					
 					final L2Npc npc = spawn.doSpawn(true);
 					npc.setTitle(activeChar.getName());
 					npc.setIsRunning(false); //Broadcast info
 					npc.scheduleDespawn(lifeTime * 1000L);
-					
-					activeChar.sendMessage("Summoned " + npcTemplate.getName() + ".");
+					activeChar.sendMessage("Convocado " + npcTemplate.getName() + ".");
 				}
 			}
 			catch (Exception e)

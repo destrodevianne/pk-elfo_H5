@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.itemhandlers;
 
 import pk.elfo.gameserver.cache.HtmCache;
@@ -27,6 +9,10 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.ActionFailed;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 
+/**
+ * PkElfo
+ */
+ 
 public class Book implements IItemHandler
 {
 	@Override
@@ -47,7 +33,7 @@ public class Book implements IItemHandler
 		if (content == null)
 		{
 			NpcHtmlMessage html = new NpcHtmlMessage(1);
-			html.setHtml("<html><body>My Text is missing:<br>" + filename + "</body></html>");
+			html.setHtml("<html><body>Meu texto esta faltando:<br>" + filename + "</body></html>");
 			activeChar.sendPacket(html);
 		}
 		else
@@ -57,7 +43,6 @@ public class Book implements IItemHandler
 			itemReply.disableValidation();
 			activeChar.sendPacket(itemReply);
 		}
-		
 		activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 		return true;
 	}

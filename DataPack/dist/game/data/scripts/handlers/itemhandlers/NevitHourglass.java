@@ -6,12 +6,15 @@ import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
+/**
+ * PkElfo
+ */
+ 
 public class NevitHourglass extends ItemSkills {
         
         @Override
         public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
         {
-                
                 if (!(playable instanceof L2PcInstance))
                 {
                         playable.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ITEM_NOT_FOR_PETS));
@@ -26,9 +29,6 @@ public class NevitHourglass extends ItemSkills {
                         activeChar.sendPacket(sm);
                         return false;
                 }
-                
                 return super.useItem(playable, item, forceUse);
         }
-        
-
 }

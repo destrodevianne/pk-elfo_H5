@@ -7,6 +7,10 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.gameserver.network.serverpackets.SocialAction;
 
+/**
+ * PkElfo
+ */
+ 
 public class NobleCustomItem implements IItemHandler
 {
 
@@ -27,18 +31,18 @@ public class NobleCustomItem implements IItemHandler
 
 			if(activeChar.isInOlympiadMode())
 			{
-				activeChar.sendMessage("This Item Cannot Be Used On Olympiad Games.");
+				activeChar.sendMessage("Este item nao pode ser usado nos jogos da Olimpiada.");
 			}
 
 			if(activeChar.isNoble())
 			{
-				activeChar.sendMessage("You Are Already A Noblesse!.");
+				activeChar.sendMessage("Voce ja tem o estatus de Nobre!.");
 			}
 			else
 			{
 				activeChar.broadcastPacket(new SocialAction(activeChar.getObjectId(), 16));
 				activeChar.setNoble(true);
-				activeChar.sendMessage("You Are Now a Noble,You Are Granted With Noblesse Status , And Noblesse Skills.");
+				activeChar.sendMessage("Agora voce e um Nobre,lhe foi condecido o estatus de Nobre e as habilidades de Nobre.");
 				activeChar.broadcastUserInfo();
 				playable.destroyItem("Consume", item.getObjectId(), 1, null, false);
 				activeChar.getInventory().addItem("Tiara", 7694, 1, activeChar, null);

@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.itemhandlers;
 
 import java.util.logging.Logger;
@@ -31,6 +13,10 @@ import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
+/**
+ * PkElfo
+ */
+ 
 public class EventItem implements IItemHandler
 {
 	private static final Logger _log = Logger.getLogger(EventItem.class.getName());
@@ -58,7 +44,7 @@ public class EventItem implements IItemHandler
 				used = useBlockCheckerItem(activeChar, item);
 				break;
 			default:
-				_log.warning("EventItemHandler: Item with id: " + itemId + " is not handled");
+				_log.warning("EventItemHandler: Item com id: " + itemId + " nao e handled");
 		}
 		return used;
 	}
@@ -101,7 +87,7 @@ public class EventItem implements IItemHandler
 			}
 			return true;
 		}
-		_log.warning("Char: " + castor.getName() + "[" + castor.getObjectId() + "] has unknown block checker arena");
+		_log.warning("Char: " + castor.getName() + "[" + castor.getObjectId() + "] tem desconhecido o bloco da arena");
 		return false;
 	}
 }

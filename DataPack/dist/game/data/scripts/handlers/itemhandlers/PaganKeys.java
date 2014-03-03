@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.itemhandlers;
 
 import pk.elfo.gameserver.datatables.DoorTable;
@@ -30,8 +12,9 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.ActionFailed;
 
 /**
- * @author chris
+ * PkElfo
  */
+ 
 public class PaganKeys implements IItemHandler
 {
 	public static final int INTERACTION_DISTANCE = 100;
@@ -59,13 +42,13 @@ public class PaganKeys implements IItemHandler
 		
 		if (!(activeChar.isInsideRadius(door, INTERACTION_DISTANCE, false, false)))
 		{
-			activeChar.sendMessage("Too far.");
+			activeChar.sendMessage("Muito longe.");
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 		if ((activeChar.getAbnormalEffect() > 0) || activeChar.isInCombat())
 		{
-			activeChar.sendMessage("You cannot use the key now.");
+			activeChar.sendMessage("Voce nao pode usar a chave agora.");
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
@@ -96,7 +79,7 @@ public class PaganKeys implements IItemHandler
 				}
 				else
 				{
-					activeChar.sendMessage("Incorrect Door.");
+					activeChar.sendMessage("Porta incorreta.");
 				}
 				break;
 			case 9699:
@@ -117,7 +100,7 @@ public class PaganKeys implements IItemHandler
 				}
 				else
 				{
-					activeChar.sendMessage("Incorrect Door.");
+					activeChar.sendMessage("Porta incorreta.");
 				}
 				break;
 			case 8056:
@@ -128,7 +111,7 @@ public class PaganKeys implements IItemHandler
 				}
 				else
 				{
-					activeChar.sendMessage("Incorrect Door.");
+					activeChar.sendMessage("Porta incorreta.");
 				}
 				break;
 		}

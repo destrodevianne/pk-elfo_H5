@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.itemhandlers;
 
 import java.util.logging.Level;
@@ -41,9 +23,11 @@ import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
 import pk.elfo.gameserver.network.serverpackets.PetItemList;
 import pk.elfo.gameserver.network.serverpackets.SetupGauge;
 import pk.elfo.gameserver.util.Broadcast;
+
 /**
- * UnAfraid: TODO: Rewrite me :D
+ * PkElfo
  */
+ 
 public class SummonItems implements IItemHandler
 {
 	@Override
@@ -162,7 +146,6 @@ public class SummonItems implements IItemHandler
 				activeChar.sendPacket(new SetupGauge(0, 5000));
 				activeChar.sendPacket(SystemMessageId.SUMMON_A_PET);
 				activeChar.setIsCastingNow(true);
-				
 				ThreadPoolManager.getInstance().scheduleGeneral(new PetSummonFinalizer(activeChar, npcTemplate, item), 5000);
 				break;
 			case 2: // wyvern
@@ -213,7 +196,6 @@ public class SummonItems implements IItemHandler
 		private final L2PcInstance _activeChar;
 		private final L2ItemInstance _item;
 		private final L2NpcTemplate _npcTemplate;
-		
 		protected PetSummonFinalizer(L2PcInstance activeChar, L2NpcTemplate npcTemplate, L2ItemInstance item)
 		{
 			_activeChar = activeChar;
@@ -251,7 +233,6 @@ public class SummonItems implements IItemHandler
 					pet.getStat().setExp(pet.getExpForThisLevel());
 					pet.setCurrentFed(pet.getMaxFed());
 				}
-				
 				pet.setRunning();
 				
 				if (!pet.isRespawned())
@@ -276,7 +257,6 @@ public class SummonItems implements IItemHandler
 				}
 				
 				pet.setFollowStatus(true);
-				
 				pet.sendPacket(new PetItemList(pet.getInventory().getItems()));
 				pet.broadcastStatusUpdate();
 			}
