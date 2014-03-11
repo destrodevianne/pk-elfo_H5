@@ -16,7 +16,7 @@ import pk.elfo.gameserver.network.serverpackets.EtcStatusUpdate;
 
 /**
  * Give / Take Status Aio to Player Changes name color and title color if enabled Uses: setaio [<player_name>] [<time_duration in days>] removeaio [<player_name>] If <player_name> is not specified, the current target player is used.
- * @author KhayrusS
+ * PkElfo
  */
 public class AdminAio implements IAdminCommandHandler
 {
@@ -41,9 +41,7 @@ public class AdminAio implements IAdminCommandHandler
 		 * if(!AdminCommandAccessRights.getInstance().hasAccess(command, activeChar.getAccessLevel())){ return false; } if(Config.GMAUDIT) { Logger _logAudit = Logger.getLogger("gmaudit"); LogRecord record = new LogRecord(Level.INFO, command); record.setParameters(new Object[] { "GM: " +
 		 * activeChar.getName(), " to target [" + activeChar.getTarget() + "] " }); _logAudit.log(record); }
 		 */
-		
 		StringTokenizer st = new StringTokenizer(command);
-		
 		CommandEnum comm = CommandEnum.valueOf(st.nextToken());
 		
 		if (comm == null)
@@ -55,70 +53,58 @@ public class AdminAio implements IAdminCommandHandler
 		{
 			case admin_setaio:
 			{
-				
 				boolean no_token = false;
 				
 				if (st.hasMoreTokens())
 				{ // char_name not specified
 				
 					String char_name = st.nextToken();
-				
 					L2PcInstance player = L2World.getInstance().getPlayer(char_name);
 					
 					if (player != null)
 					{
-						
 						if (st.hasMoreTokens()) // time
 						{
 							String time = st.nextToken();
-							
 							try
 							{
 								int value = Integer.parseInt(time);
 								
 								if (value > 0)
 								{
-									
 									doAio(activeChar, player, char_name, time);
 									
 									if (player.isAio())
 									{
 										return true;
 									}
-									
 								}
 								else
 								{
 									activeChar.sendMessage("O tempo deve ser maior que 0!");
 									return false;
 								}
-								
 							}
 							catch (NumberFormatException e)
 							{
 								activeChar.sendMessage("O tempo deve ser um numero!");
 								return false;
 							}
-							
 						}
 						else
 						{
 							no_token = true;
 						}
-						
 					}
 					else
 					{
 						activeChar.sendMessage("O jogador deve estar online para definir o status AIO");
 						no_token = true;
 					}
-					
 				}
 				else
 				{
-					
 					no_token = true;
-					
 				}
 				
 				if (no_token)
@@ -126,38 +112,30 @@ public class AdminAio implements IAdminCommandHandler
 					activeChar.sendMessage("Use o comando: //setaio <char_name> [time](em dias)");
 					return false;
 				}
-				
 			}
 			case admin_removeaio:
 			{
-				
 				boolean no_token = false;
 				
 				if (st.hasMoreTokens())
 				{ // char_name
-				
 					String char_name = st.nextToken();
-					
 					L2PcInstance player = L2World.getInstance().getPlayer(char_name);
 					
 					if (player != null)
 					{
-						
 						removeAio(activeChar, player, char_name);
 						
 						if (!player.isAio())
 						{
 							return true;
 						}
-						
 					}
 					else
 					{
-						
 						activeChar.sendMessage("O jogador deve estar online para remover o status AIO");
 						no_token = true;
 					}
-					
 				}
 				else
 				{
@@ -169,7 +147,6 @@ public class AdminAio implements IAdminCommandHandler
 					activeChar.sendMessage("Use o comando: //removeaio <char_name>");
 					return false;
 				}
-				
 			}
 		}
 		
@@ -180,7 +157,7 @@ public class AdminAio implements IAdminCommandHandler
 		int days = Integer.parseInt(_time);
 		if (_player == null)
 		{
-			activeChar.sendMessage("not found char" + _playername);
+			activeChar.sendMessage("Char nao encontrado" + _playername);
 			return;
 		}
 		
@@ -218,7 +195,6 @@ public class AdminAio implements IAdminCommandHandler
 				}
 				
 				_player.rewardAioSkills();
-				
 				_player.broadcastUserInfo();
 				_player.sendPacket(new EtcStatusUpdate(_player));
 				_player.sendSkillList();
@@ -232,7 +208,6 @@ public class AdminAio implements IAdminCommandHandler
 				{
 					e.printStackTrace();
 				}
-				
 				_log.log(Level.WARNING, "nao foi possivel colocar o char como AIO:", e);
 			}
 		}
@@ -260,9 +235,7 @@ public class AdminAio implements IAdminCommandHandler
 				_player.getInventory().destroyItemByItemId("", Config.AIO_ITEMID, 1, _player, null);
 			}
 			_player.getWarehouse().destroyItemByItemId("", Config.AIO_ITEMID, 1, _player, null);
-			
 			_player.lostAioSkills();
-			
 			_player.getAppearance().setNameColor(0xFFFFFF);
 			_player.getAppearance().setTitleColor(0xFFFFFF);
 			_player.broadcastUserInfo();

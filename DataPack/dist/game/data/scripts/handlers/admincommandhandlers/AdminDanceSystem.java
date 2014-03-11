@@ -9,8 +9,9 @@ import pk.elfo.gameserver.network.serverpackets.ExShowScreenMessage;
 import pk.elfo.gameserver.network.serverpackets.PlaySound;
 
 /**
- * @author NeverMore
+ * PkElfo
  */
+ 
 public class AdminDanceSystem implements IAdminCommandHandler
 {
 	boolean _temp = false;
@@ -34,12 +35,12 @@ public class AdminDanceSystem implements IAdminCommandHandler
 		{
 			if (_temp == true)
 			{
-				ExShowScreenMessage message1 = new ExShowScreenMessage("Ja existe um corredor evento de dança! Tente mais tarde!", 4000);
+				ExShowScreenMessage message1 = new ExShowScreenMessage("Ja existe um evento de danca acontecendo! Tente mais tarde!", 4000);
 				activeChar.sendPacket(message1);
 				return false;
 			}
 			_temp = true;
-			ExShowScreenMessage message1 = new ExShowScreenMessage("Vamos ter um pouco de diversao! Em 30 seg evento de danca comeca!", 4000);
+			ExShowScreenMessage message1 = new ExShowScreenMessage("Vamos ter um pouco de diversao! Em 30 seg o evento de danca comecara!", 4000);
 			activeChar.sendPacket(message1);
 			ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 			{
@@ -52,7 +53,7 @@ public class AdminDanceSystem implements IAdminCommandHandler
 						{
 							PlaySound _song = new PlaySound(1, "Gangnam", 0, 0, 0, 0, 0);
 							player.sendPacket(_song);
-							ExShowScreenMessage message1 = new ExShowScreenMessage("Mostre-me o que você tem, vamos sacudir !", 8000);
+							ExShowScreenMessage message1 = new ExShowScreenMessage("Mostre-me o que voce pode fazer entao vamos sacudir !", 8000);
 							player.sendPacket(message1);
 							player.setIsParalyzed(true);
 							player.setIsInvul(true);
@@ -72,12 +73,12 @@ public class AdminDanceSystem implements IAdminCommandHandler
 		{
 			if (_temp == true)
 			{
-				ExShowScreenMessage message1 = new ExShowScreenMessage("Ja existe um corredor evento de dança! Tente mais tarde!", 4000);
+				ExShowScreenMessage message1 = new ExShowScreenMessage("Ja existe um evento de danca acontecendo! Tente mais tarde!", 4000);
 				activeChar.sendPacket(message1);
 				return false;
 			}
 			_temp = true;
-			ExShowScreenMessage message1 = new ExShowScreenMessage("Vamos ter um pouco de diversao! Em 30 seg evento de danca comeca!", 4000);
+			ExShowScreenMessage message1 = new ExShowScreenMessage("Vamos ter um pouco de diversao! Em 30 seg o evento de danca comecara!", 4000);
 			activeChar.sendPacket(message1);
 			ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 			{
@@ -90,7 +91,7 @@ public class AdminDanceSystem implements IAdminCommandHandler
 						{
 							PlaySound _song = new PlaySound(1, "sexi", 0, 0, 0, 0, 0);
 							player.sendPacket(_song);
-							ExShowScreenMessage message1 = new ExShowScreenMessage("Mostre-me o que você tem, vamos sacudir !", 8000);
+							ExShowScreenMessage message1 = new ExShowScreenMessage("Mostre-me o que voce pode fazer entao vamos sacudir !", 8000);
 							player.sendPacket(message1);
 							player.setIsParalyzed(true);
 							player.setIsInvul(true);

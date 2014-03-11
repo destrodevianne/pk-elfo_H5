@@ -1,17 +1,3 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- * 
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- * 
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.admincommandhandlers;
 
 import java.sql.Connection;
@@ -31,6 +17,10 @@ import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.util.BotPunish;
 import javolution.text.TextBuilder;
 
+/**
+ * PkElfo
+ */
+ 
 public class AdminCheckBot implements IAdminCommandHandler
 {
         private static final String[] ADMIN_COMMANDS = {
@@ -51,7 +41,7 @@ public class AdminCheckBot implements IAdminCommandHandler
         {
                 if (!Config.ENABLE_BOTREPORT)
                 {
-                        activeChar.sendMessage("Bot reporting is not enabled!");
+                        activeChar.sendMessage("Relatorios de Bot nao estao habilitados!");
                         return false;
                 }
                 
@@ -78,7 +68,7 @@ public class AdminCheckBot implements IAdminCommandHandler
                 }
                 else if (command.startsWith("admin_punish_bot"))
                 {
-                        activeChar.sendMessage("Usage: //punish_bot <charName>");
+                        activeChar.sendMessage("Use: //punish_bot <charName>");
                         
                         if (sub != null)
                         {
@@ -139,19 +129,19 @@ public class AdminCheckBot implements IAdminCommandHandler
                                                         target.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.REPORTED_180_MINS_WITHOUT_ACTIONS));
                                                         break;
                                                 default:
-                                                        activeChar.sendMessage("Your target wasnt reported as a bot!");
+                                                        activeChar.sendMessage("Seu alvo nao foi relatado como um bot!");
                                                 }
                                                 // Inserts first time player punish in database, avoiding
                                                 // problems to update punish state in future on log out
                                                 if (punishLevel != 0)
                                                 {
                                                         introduceNewPunishedBotAndClear(target);
-                                                        activeChar.sendMessage(target.getName() + " has been punished");
+                                                        activeChar.sendMessage(target.getName() + " foi punido");
                                                 }
                                         }
                                 }
                                 else
-                                        activeChar.sendMessage("Your target doesnt exist!");
+                                        activeChar.sendMessage("Seu alvo nao existe!");
                         }
                 }
                 return true;
@@ -160,8 +150,8 @@ public class AdminCheckBot implements IAdminCommandHandler
         private static void sendBotPage(L2PcInstance activeChar)
         {
                 TextBuilder tb = new TextBuilder();
-                tb.append("<html><title>Unread Bot List</title><body><center>");
-                tb.append("Here's a list of the current <font color=LEVEL>unread</font><br1>bots!<br>");
+                tb.append("<html><title>Lista Bot nao lida</title><body><center>");
+                tb.append("Aqui esta uma lista do atual, <font color=LEVEL>nao lido</font><br1> de bots!<br>");
                 
                 for (int i : BotManager.getInstance().getUnread().keySet())
                 {
@@ -178,17 +168,15 @@ public class AdminCheckBot implements IAdminCommandHandler
         {
                 String[] report = BotManager.getInstance().getUnread().get(botId);
                 TextBuilder tb = new TextBuilder();
-                
                 tb.append("<html><title>Bot #" + botId + "</title><body><center><br>");
-                tb.append("- Bot report ticket Id: <font color=FF0000>" + botId + "</font><br>");
-                tb.append("- Player reported: <font color=FF0000>" + report[0] + "</font><br>");
-                tb.append("- Reported by: <font color=FF0000>" + report[1] + "</font><br>");
-                tb.append("- Date: <font color=FF0000>" + DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM).format(Long.parseLong(report[2])) + "</font><br>");
-                tb.append("<a action=\"bypass -h admin_markBotReaded " + botId + "\">Mark Report as Read</a>");
-                tb.append("<a action=\"bypass -h admin_punish_bot " + report[0] + "\">Punish " + report[0] + "</a>");
-                tb.append("<a action=\"bypass -h admin_checkBots\">Go Back to bot list</a>");
+                tb.append("- Ticket de reporte de Bot Id: <font color=FF0000>" + botId + "</font><br>");
+                tb.append("- Jogador reportado: <font color=FF0000>" + report[0] + "</font><br>");
+                tb.append("- Reportado por: <font color=FF0000>" + report[1] + "</font><br>");
+                tb.append("- Data: <font color=FF0000>" + DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM).format(Long.parseLong(report[2])) + "</font><br>");
+                tb.append("<a action=\"bypass -h admin_markBotReaded " + botId + "\">Alvo relatar como lido</a>");
+                tb.append("<a action=\"bypass -h admin_punish_bot " + report[0] + "\">Punicao " + report[0] + "</a>");
+                tb.append("<a action=\"bypass -h admin_checkBots\">Voltar a lista de bots</a>");
                 tb.append("</center></body></html>");
-                
                 NpcHtmlMessage nhm = new NpcHtmlMessage(5);
                 nhm.setHtml(tb.toString());
                 activeChar.sendPacket(nhm);

@@ -8,6 +8,10 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.EtcStatusUpdate;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
+/**
+ * PkElfo
+ */
+ 
 public class AdminClanFull implements IAdminCommandHandler
 {
 	private static final String ADMIN_COMMANDS[] =

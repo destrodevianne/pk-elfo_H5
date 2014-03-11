@@ -26,6 +26,10 @@ import pk.elfo.gameserver.util.Broadcast;
 import pk.elfo.util.StringUtil;
 import javolution.util.FastList;
 
+/**
+ * PkElfo
+ */
+  
 public class Announcements
 {
 	private static Logger _log = Logger.getLogger(Announcements.class.getName());
@@ -195,7 +199,7 @@ public class Announcements
 		}
 		catch (IOException e1)
 		{
-			_log.log(Level.SEVERE, "Error reading announcements: ", e1);
+			_log.log(Level.SEVERE, "Erro de anuncios de leitura: ", e1);
 		}
 	}
 	
@@ -226,7 +230,7 @@ public class Announcements
 		}
 		catch (IOException e)
 		{
-			_log.log(Level.SEVERE, "Saving to the announcements file has failed: ", e);
+			_log.log(Level.SEVERE, "O arquivo de Salvar os anuncios falhou: ", e);
 		}
 	}
 	

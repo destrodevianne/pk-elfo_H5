@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.admincommandhandlers;
 
 import java.io.File;
@@ -27,8 +9,9 @@ import pk.elfo.gameserver.handler.IAdminCommandHandler;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 /**
- * @author Layanere
+ * PkElfo
  */
+ 
 public class AdminCache implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =
@@ -55,7 +38,7 @@ public class AdminCache implements IAdminCommandHandler
 		if (command.startsWith("admin_cache_htm_rebuild") || command.equals("admin_cache_htm_reload"))
 		{
 			HtmCache.getInstance().reload(Config.DATAPACK_ROOT);
-			activeChar.sendMessage("Cache[HTML]: " + HtmCache.getInstance().getMemoryUsage() + " MB on " + HtmCache.getInstance().getLoadedFiles() + " file(s) loaded.");
+			activeChar.sendMessage("Cache[HTML]: " + HtmCache.getInstance().getMemoryUsage() + " MB em " + HtmCache.getInstance().getLoadedFiles() + " arquivo(s) lidos.");
 		}
 		else if (command.startsWith("admin_cache_reload_path "))
 		{
@@ -63,11 +46,11 @@ public class AdminCache implements IAdminCommandHandler
 			{
 				String path = command.split(" ")[1];
 				HtmCache.getInstance().reloadPath(new File(Config.DATAPACK_ROOT, path));
-				activeChar.sendMessage("Cache[HTML]: " + HtmCache.getInstance().getMemoryUsage() + " MB in " + HtmCache.getInstance().getLoadedFiles() + " file(s) loaded.");
+				activeChar.sendMessage("Cache[HTML]: " + HtmCache.getInstance().getMemoryUsage() + " MB em " + HtmCache.getInstance().getLoadedFiles() + " arquivo(s) lidos.");
 			}
 			catch (Exception e)
 			{
-				activeChar.sendMessage("Usage: //cache_reload_path <path>");
+				activeChar.sendMessage("Use: //cache_reload_path <path>");
 			}
 		}
 		else if (command.startsWith("admin_cache_reload_file "))
@@ -77,27 +60,27 @@ public class AdminCache implements IAdminCommandHandler
 				String path = command.split(" ")[1];
 				if (HtmCache.getInstance().loadFile(new File(Config.DATAPACK_ROOT, path)) != null)
 				{
-					activeChar.sendMessage("Cache[HTML]: file was loaded");
+					activeChar.sendMessage("Cache[HTML]: arquivo foi carregado");
 				}
 				else
 				{
-					activeChar.sendMessage("Cache[HTML]: file can't be loaded");
+					activeChar.sendMessage("Cache[HTML]: arquivo nao pode ser carregado");
 				}
 			}
 			catch (Exception e)
 			{
-				activeChar.sendMessage("Usage: //cache_reload_file <relative_path/file>");
+				activeChar.sendMessage("Use: //cache_reload_file <relative_path/file>");
 			}
 		}
 		else if (command.startsWith("admin_cache_crest_rebuild") || command.startsWith("admin_cache_crest_reload"))
 		{
 			CrestCache.getInstance().reload();
-			activeChar.sendMessage("Cache[Crest]: " + String.format("%.3f", CrestCache.getInstance().getMemoryUsage()) + " megabytes on " + CrestCache.getInstance().getLoadedFiles() + " files loaded");
+			activeChar.sendMessage("Cache[Crest]: " + String.format("%.3f", CrestCache.getInstance().getMemoryUsage()) + " megabytes em " + CrestCache.getInstance().getLoadedFiles() + " arquivos lidos");
 		}
 		else if (command.startsWith("admin_cache_crest_fix"))
 		{
 			CrestCache.getInstance().convertOldPedgeFiles();
-			activeChar.sendMessage("Cache[Crest]: crests fixed");
+			activeChar.sendMessage("Cache[Crest]: crests fixos");
 		}
 		return true;
 	}

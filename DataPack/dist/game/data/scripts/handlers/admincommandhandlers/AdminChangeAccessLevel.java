@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.admincommandhandlers;
 
 import java.sql.Connection;
@@ -32,7 +14,7 @@ import pk.elfo.gameserver.network.SystemMessageId;
 
 /**
  * This class handles following admin commands: - changelvl = change a character's access level Can be used for character ban (as opposed to regular //ban that affects accounts) or to grant mod/GM privileges ingame
- * @version $Revision: 1.1.2.2.2.3 $ $Date: 2005/04/11 10:06:00 $ con.close() change by Zoey76 24/02/2011
+ * PkElfo
  */
 public class AdminChangeAccessLevel implements IAdminCommandHandler
 {
@@ -78,7 +60,7 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
-				activeChar.sendMessage("Usage: //changelvl <target_new_level> | <player_name> <new_level>");
+				activeChar.sendMessage("Use: //changelvl <target_new_level> | <player_name> <new_level>");
 			}
 		}
 		else if (parts.length == 3)
@@ -102,16 +84,16 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler
 					statement.close();
 					if (count == 0)
 					{
-						activeChar.sendMessage("Character not found or access level unaltered.");
+						activeChar.sendMessage("Personagem nao encontrado ou nivel de acesso inalterado.");
 					}
 					else
 					{
-						activeChar.sendMessage("Character's access level is now set to " + lvl);
+						activeChar.sendMessage("Nivel de acesso do personagem ja esta definido para " + lvl);
 					}
 				}
 				catch (SQLException se)
 				{
-					activeChar.sendMessage("SQLException while changing character's access level");
+					activeChar.sendMessage("SQLException ao alterar o nivel de acesso do personagem");
 					if (Config.DEBUG)
 					{
 						se.printStackTrace();
@@ -133,18 +115,18 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler
 			if (AdminTable.getInstance().hasAccessLevel(lvl))
 			{
 				player.setAccessLevel(lvl);
-				player.sendMessage("Your access level has been changed to " + lvl);
-				activeChar.sendMessage("Character's access level is now set to " + lvl + ". Effects won't be noticeable until next session.");
+				player.sendMessage("Seu nivel de acesso foi alterado para " + lvl);
+				activeChar.sendMessage("Nivel de acesso do personagem ja esta definido para " + lvl + ". Os Efeitos nao serao perceptivels ate a proxima sessao.");
 			}
 			else
 			{
-				activeChar.sendMessage("You are trying to set unexisting access level: " + lvl + " please try again with a valid one!");
+				activeChar.sendMessage("Voce esta tentando definir um nivel de acesso inexistente: " + lvl + " por favor, tente novamente com um valido!");
 			}
 		}
 		else
 		{
 			player.setAccessLevel(lvl);
-			player.sendMessage("Your character has been banned. Bye.");
+			player.sendMessage("Seu personagem foi banido. tchau.");
 			player.logout();
 		}
 	}

@@ -6,6 +6,7 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 /**
  * PkElfo
  */
+
 public class AdminDeport implements IAdminCommandHandler
 {
 	private static String[] _adminCommands =
@@ -16,7 +17,6 @@ public class AdminDeport implements IAdminCommandHandler
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
-		
 		if (activeChar.getTarget() instanceof L2PcInstance)
 		{
 			if (command.startsWith("admin_deport"))
@@ -25,7 +25,6 @@ public class AdminDeport implements IAdminCommandHandler
 			}
 		}
 		return false;
-		
 	}
 	
 	@Override

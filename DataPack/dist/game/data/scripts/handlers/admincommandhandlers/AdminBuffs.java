@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.admincommandhandlers;
 
 import java.util.Collection;
@@ -35,6 +17,10 @@ import pk.elfo.gameserver.network.serverpackets.SkillCoolTime;
 import pk.elfo.gameserver.util.GMAudit;
 import pk.elfo.util.StringUtil;
 
+/**
+ * PkElfo
+ */
+ 
 public class AdminBuffs implements IAdminCommandHandler
 {
 	private final static int PAGE_LIMIT = 20;
@@ -52,7 +38,6 @@ public class AdminBuffs implements IAdminCommandHandler
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
-		
 		if (command.startsWith("admin_getbuffs"))
 		{
 			StringTokenizer st = new StringTokenizer(command, " ");
@@ -81,7 +66,7 @@ public class AdminBuffs implements IAdminCommandHandler
 					showBuffs(activeChar, player, page);
 					return true;
 				}
-				activeChar.sendMessage("The player " + playername + " is not online");
+				activeChar.sendMessage("O jogador " + playername + " nao esta online");
 				return false;
 			}
 			else if ((activeChar.getTarget() != null) && (activeChar.getTarget() instanceof L2Character))
@@ -110,8 +95,8 @@ public class AdminBuffs implements IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
-				activeChar.sendMessage("Failed removing effect: " + e.getMessage());
-				activeChar.sendMessage("Usage: //stopbuff <objectId> <skillId>");
+				activeChar.sendMessage("Falha ao remover o efeito: " + e.getMessage());
+				activeChar.sendMessage("Use: //stopbuff <objectId> <skillId>");
 				return false;
 			}
 		}
@@ -127,8 +112,8 @@ public class AdminBuffs implements IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
-				activeChar.sendMessage("Failed removing all effects: " + e.getMessage());
-				activeChar.sendMessage("Usage: //stopallbuffs <objectId>");
+				activeChar.sendMessage("Falha ao remover todos os efeitos: " + e.getMessage());
+				activeChar.sendMessage("Use: //stopallbuffs <objectId>");
 				return false;
 			}
 		}
@@ -149,12 +134,12 @@ public class AdminBuffs implements IAdminCommandHandler
 					}
 				}
 				
-				activeChar.sendMessage("All effects canceled within raidus " + radius);
+				activeChar.sendMessage("Todos os efeitos canceladas no prazo de raidus " + radius);
 				return true;
 			}
 			catch (NumberFormatException e)
 			{
-				activeChar.sendMessage("Usage: //areacancel <radius>");
+				activeChar.sendMessage("Use: //areacancel <radius>");
 				return false;
 			}
 		}
@@ -162,7 +147,6 @@ public class AdminBuffs implements IAdminCommandHandler
 		{
 			StringTokenizer st = new StringTokenizer(command, " ");
 			command = st.nextToken();
-			
 			L2PcInstance player = null;
 			if (st.hasMoreTokens())
 			{
@@ -178,7 +162,7 @@ public class AdminBuffs implements IAdminCommandHandler
 				
 				if (player == null)
 				{
-					activeChar.sendMessage("The player " + playername + " is not online.");
+					activeChar.sendMessage("O jogador " + playername + " nao esta online.");
 					return false;
 				}
 			}
@@ -197,7 +181,7 @@ public class AdminBuffs implements IAdminCommandHandler
 				player.getSkillReuseTimeStamps().clear();
 				player.getDisabledSkills().clear();
 				player.sendPacket(new SkillCoolTime(player));
-				activeChar.sendMessage("Skill reuse was removed from " + player.getName() + ".");
+				activeChar.sendMessage("Reuso de Skill foi removido " + player.getName() + ".");
 				return true;
 			}
 			catch (NullPointerException e)
@@ -212,10 +196,10 @@ public class AdminBuffs implements IAdminCommandHandler
 				final boolean toAuraSkills = activeChar.getKnownSkill(7041) != null;
 				switchSkills(activeChar, toAuraSkills);
 				activeChar.sendSkillList();
-				activeChar.sendMessage("You have succefully changed to target " + (toAuraSkills ? "aura" : "one") + " special skills.");
+				activeChar.sendMessage("Voce mudou com sucesso para atingir " + (toAuraSkills ? "aura" : "one") + " especial skills.");
 				return true;
 			}
-			activeChar.sendMessage("There is nothing to switch.");
+			activeChar.sendMessage("Nao ha nada para mudar.");
 			return false;
 		}
 		else
@@ -259,7 +243,7 @@ public class AdminBuffs implements IAdminCommandHandler
 			max++;
 		}
 		
-		final StringBuilder html = StringUtil.startAppend(500 + (effects.length * 200), "<html><table width=\"100%\"><tr><td width=45><button value=\"Main\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center><font color=\"LEVEL\">Effects of ", target.getName(), "</font></td><td width=45><button value=\"Back\" action=\"bypass -h admin_current_player\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br><table width=\"100%\"><tr><td width=200>Skill</td><td width=30>Rem. Time</td><td width=70>Action</td></tr>");
+		final StringBuilder html = StringUtil.startAppend(500 + (effects.length * 200), "<html><table width=\"100%\"><tr><td width=45><button value=\"Principal\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center><font color=\"LEVEL\">Efeitos de ", target.getName(), "</font></td><td width=45><button value=\"Back\" action=\"bypass -h admin_current_player\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br><table width=\"100%\"><tr><td width=200>Skill</td><td width=30>Rem. Time</td><td width=70>Action</td></tr>");
 		
 		int start = ((page - 1) * PAGE_LIMIT);
 		int end = Math.min(((page - 1) * PAGE_LIMIT) + PAGE_LIMIT, effects.length);
@@ -354,7 +338,7 @@ public class AdminBuffs implements IAdminCommandHandler
 		if (target != null)
 		{
 			target.stopAllEffects();
-			activeChar.sendMessage("Removed all effects from " + target.getName() + " (" + objId + ")");
+			activeChar.sendMessage("Removido todos os efeitos a partir de " + target.getName() + " (" + objId + ")");
 			showBuffs(activeChar, target, 1);
 			if (Config.GMAUDIT)
 			{

@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.admincommandhandlers;
 
 import java.util.List;
@@ -37,7 +19,7 @@ import javolution.text.TextBuilder;
 /**
  * This class handles following admin commands: - announce text = announces text to all players - list_announcements = show menu - reload_announcements = reloads announcements from txt file - announce_announcements = announce all stored announcements to all players - add_announcement text = adds
  * text to startup announcements - del_announcement id = deletes announcement with respective id
- * @version $Revision: 1.4.4.5 $ $Date: 2005/04/11 10:06:06 $
+ * PkElfo
  */
 public class AdminAnnouncements implements IAdminCommandHandler
 {
@@ -215,49 +197,49 @@ public class AdminAnnouncements implements IAdminCommandHandler
 			
 			if (!st.hasMoreTokens())
 			{
-				activeChar.sendMessage("Not enough parameters for adding autoannounce!");
+				activeChar.sendMessage("Os Parametros nao sao suficientes para a adicao de auto anuncioamento!");
 				return false;
 			}
 			String token = st.nextToken();
 			if (!Util.isDigit(token))
 			{
-				activeChar.sendMessage("Not a valid initial value!");
+				activeChar.sendMessage("Nao e um valor inicial valido!");
 				return false;
 			}
 			long initial = Long.parseLong(token);
 			if (!st.hasMoreTokens())
 			{
-				activeChar.sendMessage("Not enough parameters for adding autoannounce!");
+				activeChar.sendMessage("Os Parametros nao sao suficientes para a adicao de auto anuncioamento!");
 				return false;
 			}
 			token = st.nextToken();
 			if (!Util.isDigit(token))
 			{
-				activeChar.sendMessage("Not a valid delay value!");
+				activeChar.sendMessage("Nao e um valor de atraso valido!");
 				return false;
 			}
 			long delay = Long.parseLong(token);
 			if (!st.hasMoreTokens())
 			{
-				activeChar.sendMessage("Not enough parameters for adding autoannounce!");
+				activeChar.sendMessage("Os Parametros nao sao suficientes para a adicao de auto anuncioamento!");
 				return false;
 			}
 			token = st.nextToken();
 			if (!token.equals("-1") && !Util.isDigit(token))
 			{
-				activeChar.sendMessage("Not a valid repeat value!");
+				activeChar.sendMessage("Nao e um valor de repeticao valido!");
 				return false;
 			}
 			int repeat = Integer.parseInt(token);
 			if (!st.hasMoreTokens())
 			{
-				activeChar.sendMessage("Not enough parameters for adding autoannounce!");
+				activeChar.sendMessage("Os Parametros nao sao suficientes para a adicao de auto anuncioamento!");
 				return false;
 			}
 			boolean isCritical = Boolean.valueOf(st.nextToken());
 			if (!st.hasMoreTokens())
 			{
-				activeChar.sendMessage("Not enough parameters for adding autoannounce!");
+				activeChar.sendMessage("Os Parametros nao sao suficientes para a adicao de auto anuncioamento!");
 				return false;
 			}
 			TextBuilder memo = new TextBuilder();
@@ -278,13 +260,13 @@ public class AdminAnnouncements implements IAdminCommandHandler
 			
 			if (!st.hasMoreTokens())
 			{
-				activeChar.sendMessage("Not enough parameters for deleting autoannounce!");
+				activeChar.sendMessage("Os Parametros nao sao suficientes para deletar o auto anuncioamento!");
 				return false;
 			}
 			String token = st.nextToken();
 			if (!Util.isDigit(token))
 			{
-				activeChar.sendMessage("Not a valid auto announce Id value!");
+				activeChar.sendMessage("Nao e um auto anuncio valido o valor do Id!");
 				return false;
 			}
 			AutoAnnounceTaskManager.getInstance().deleteAutoAnnounce(Integer.parseInt(token));

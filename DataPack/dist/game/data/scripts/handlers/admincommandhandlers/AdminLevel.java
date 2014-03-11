@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
@@ -27,6 +9,10 @@ import pk.elfo.gameserver.model.actor.L2Playable;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.SystemMessageId;
 
+/**
+ * PkElfo
+ */
+ 
 public class AdminLevel implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =
@@ -59,7 +45,7 @@ public class AdminLevel implements IAdminCommandHandler
 			}
 			catch (NumberFormatException e)
 			{
-				activeChar.sendMessage("Wrong Number Format");
+				activeChar.sendMessage("Formato de numero errado");
 			}
 		}
 		else if (actualCommand.equalsIgnoreCase("admin_set_level"))
@@ -90,13 +76,13 @@ public class AdminLevel implements IAdminCommandHandler
 				}
 				else
 				{
-					activeChar.sendMessage("You must specify level between 1 and " + ExperienceTable.getInstance().getMaxLevel() + ".");
+					activeChar.sendMessage("Voce deve especificar o nivel entre 1 e " + ExperienceTable.getInstance().getMaxLevel() + ".");
 					return false;
 				}
 			}
 			catch (NumberFormatException e)
 			{
-				activeChar.sendMessage("You must specify level between 1 and " + ExperienceTable.getInstance().getMaxLevel() + ".");
+				activeChar.sendMessage("Voce deve especificar o nivel entre 1 e " + ExperienceTable.getInstance().getMaxLevel() + ".");
 				return false;
 			}
 		}

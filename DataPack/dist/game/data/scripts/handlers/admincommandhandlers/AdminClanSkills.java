@@ -5,7 +5,11 @@ import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.handler.IAdminCommandHandler;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
-  
+
+/**
+ * PkElfo
+ */
+   
 public class AdminClanSkills implements IAdminCommandHandler
 {
        
@@ -69,13 +73,13 @@ public class AdminClanSkills implements IAdminCommandHandler
                    else
                 	if (!activeChar.isClanLeader())
                 		           {
-                		                activeChar.sendMessage("What are you doing? He's not a clan leader.Action  Failed!");
+                		                activeChar.sendMessage("O que voce esta fazendo? Ele nao e um lider de clan. A acao falhou!");
                 		                return false;
                 		            }
 
                 else
                 {
-                        activeChar.sendMessage("Clan not found");
+                        activeChar.sendMessage("Clan nao encontrado");
                 }
                 return true;
         }
