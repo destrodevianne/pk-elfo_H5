@@ -1477,7 +1477,7 @@ public class L2Npc extends L2Character
 		return (int) (getTemplate().getRewardSp() * Config.SATURDAY_RATE_SP);
 		return (int) (getTemplate().getRewardSp() * Config.RATE_SP);
 	}
-	// ate aui a modificacao
+	// ate aqui a modificacao
 	
 	/**
 	 * Kill the L2NpcInstance (the corpse disappeared after 7 seconds).<br>
