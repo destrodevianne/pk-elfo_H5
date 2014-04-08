@@ -44,10 +44,17 @@ editado NPC de Enchante (agora é possível add elemental)
 Modificações na CommunityPVP e ADD Enchantes até +30
 Adicionado skills: Clan De-Buff Control, Clan Muzzle Control e Clan Mental Control
 Adding missing 'itemConsumeId' for skill 'Open Packaged Book'.
-HP/MP Heal effect fixes.
-HP Heal shouldn't heal through invulnerability state.
-MP Heal shouldn't heal through invulnerability state.
-Using proper effect ManaHealByLevel for Sweeper (42) second enchant route.
+
+###############################################
+#################### FIX BETA TEST ############
+BETA: Attempting to fix multithreading issues.
+BETA: HP/MP Heal effect fixes.
+BETA: HP Heal shouldn't heal through invulnerability state.
+BETA: MP Heal shouldn't heal through invulnerability state.
+BETA: Using proper effect ManaHealByLevel for Sweeper (42) second enchant route.
+BETA: Adding missing synchronized block to setInsideZone to ensure correct usage between different threads.
+* Also fixing non properly used double checked locking approach for AI.
+BETA: Removing local copy of AI within getAI() method
 
 ###############################################
 ################### EVENTOS ###################
