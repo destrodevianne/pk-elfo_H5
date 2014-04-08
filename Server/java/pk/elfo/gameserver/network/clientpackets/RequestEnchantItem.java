@@ -353,7 +353,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 				
 				// announce the success
 				int minEnchantAnnounce = item.isArmor() ? 6 : 7;
-				int maxEnchantAnnounce = item.isArmor() ? 0 : 15;
+				int maxEnchantAnnounce = item.isArmor() ? 0 : 30;
 				if ((item.getEnchantLevel() == minEnchantAnnounce) || (item.getEnchantLevel() == maxEnchantAnnounce))
 				{
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_SUCCESSFULY_ENCHANTED_A_S2_S3);

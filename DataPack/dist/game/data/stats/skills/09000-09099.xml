@@ -918,6 +918,7 @@
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="15716" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
 		<set name="target" val="TARGET_SELF" />

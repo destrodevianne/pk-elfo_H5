@@ -309,7 +309,7 @@ public abstract class AbstractRefinePacket extends L2GameClientPacket
 		{
 			return false;
 		}
-		if (item.isHeroItem())
+		if (item.isHeroItem() && !Config.ALT_ALLOW_REFINE_HERO_ITEM)
 		{
 			return false;
 		}

@@ -284,6 +284,7 @@ public final class Config
 	public static int FAKE_PLAYERS;
 	public static boolean BOSS_STATS;
 	public static boolean ALT_ALLOW_REFINE_PVP_ITEM;
+	public static boolean ALT_ALLOW_REFINE_HERO_ITEM;
 	public static boolean ENABLE_UNSTUCK_PVP;
 	public static boolean USE_CR_ITEM;
 	public static int CR_ITEM_MIN_CLAN_LVL;
@@ -4538,6 +4539,7 @@ public final class Config
 			
 			// --------------------------------------------------------------------------------------------------------//
 			ALT_ALLOW_REFINE_PVP_ITEM = Boolean.parseBoolean(PvPpKSettings.getProperty("AltAllowRefinePVPItem", "False"));
+			ALT_ALLOW_REFINE_HERO_ITEM = Boolean.parseBoolean(PvPpKSettings.getProperty("AltAllowRefineHEROItem", "False"));
 			KARMA_MIN_KARMA = Integer.parseInt(PvPpKSettings.getProperty("MinKarma", "240"));
 			KARMA_MAX_KARMA = Integer.parseInt(PvPpKSettings.getProperty("MaxKarma", "10000"));
 			KARMA_XP_DIVIDER = Integer.parseInt(PvPpKSettings.getProperty("XPDivider", "260"));
