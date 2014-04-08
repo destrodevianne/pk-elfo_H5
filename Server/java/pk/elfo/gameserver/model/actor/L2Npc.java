@@ -2030,6 +2030,25 @@ public class L2Npc extends L2Character
 		return isScriptValue(0, val);
 	}
 	
+	//[JOJO]-------------------------------------------------
+	public boolean compareAndSetScriptValue(int expect, int update)
+	{
+		final NpcVariables npcVariables = getVariables();
+		//TODO//synchronized (npcVariables.getSet()) // atomic
+		{
+			if (npcVariables.getInt("SCRIPT_VAL") == expect)
+			{
+				npcVariables.set("SCRIPT_VAL", update);
+				return true;
+			}
+		else
+			{
+				return false;
+			}
+		}
+	}
+	//-------------------------------------------------------
+	
 	public void clearScriptValues()
 	{
 		if (_scriptVal != null)

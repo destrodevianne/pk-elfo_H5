@@ -54,6 +54,9 @@ BETA: MP Heal shouldn't heal through invulnerability state.
 BETA: Using proper effect ManaHealByLevel for Sweeper (42) second enchant route.
 BETA: Adding missing synchronized block to setInsideZone to ensure correct usage between different threads.
 * Also fixing non properly used double checked locking approach for AI.
+BETA: Removendo reflexão chamada de L2GroupSpawn porque não precisa dele
+BETA: Updated Monastery of Silence AI. 
+BETA: Scarecrow monastery of rework silence
 
 ###############################################
 ################### EVENTOS ###################
