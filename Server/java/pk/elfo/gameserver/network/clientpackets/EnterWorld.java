@@ -848,7 +848,7 @@ public class EnterWorld extends L2GameClientPacket
 		{
 			activeChar.getAppearance().setNameColor(Config.AIO_NCOLOR);
 		}
-		
+
 		if (Config.ALLOW_AIO_TCOLOR && activeChar.isAio())
 		{
 			activeChar.getAppearance().setTitleColor(Config.AIO_TCOLOR);
