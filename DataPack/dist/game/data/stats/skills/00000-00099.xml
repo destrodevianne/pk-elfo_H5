@@ -1024,7 +1024,7 @@
 		<enchant1 name="absorbHp" val="true" />
 		<enchant1 name="magicLvl" val="#enchantMagicLvl" />
 		<enchant1 name="reuseDelay" val="0" />
-		<enchant2 name="absorbAbs" val="#ench2DrainMp" />
+		<enchant2 name="ManaHealByLevel" val="#ench2DrainMp" />
 		<enchant2 name="absorbHp" val="false" />
 		<enchant2 name="magicLvl" val="#enchantMagicLvl" />
 		<enchant2 name="reuseDelay" val="0" />

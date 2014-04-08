@@ -43,7 +43,11 @@ Adicionado nova tabela na DB para salvar senha Descriptada
 editado NPC de Enchante (agora é possível add elemental)
 Modificações na CommunityPVP e ADD Enchantes até +30
 Adicionado skills: Clan De-Buff Control, Clan Muzzle Control e Clan Mental Control
-Adding missing '''itemConsumeId''' for skill '''Open Packaged Book'''.
+Adding missing 'itemConsumeId' for skill 'Open Packaged Book'.
+HP/MP Heal effect fixes.
+HP Heal shouldn't heal through invulnerability state.
+MP Heal shouldn't heal through invulnerability state.
+Using proper effect ManaHealByLevel for Sweeper (42) second enchant route.
 
 ###############################################
 ################### EVENTOS ###################
