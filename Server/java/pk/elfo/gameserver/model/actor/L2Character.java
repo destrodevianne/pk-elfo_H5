@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.model.actor;
 
 import static pk.elfo.gameserver.ai.CtrlIntention.AI_INTENTION_ACTIVE;
@@ -336,16 +318,19 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 	 */
 	public final void setInsideZone(ZoneId zone, final boolean state)
 	{
-		if (state)
+		synchronized (_zones)
 		{
-			_zones[zone.getId()]++;
-		}
-		else
-		{
-			_zones[zone.getId()]--;
-			if (_zones[zone.getId()] < 0)
+			if (state)
 			{
-				_zones[zone.getId()] = 0;
+				_zones[zone.getId()]++;
+			}
+			else
+			{
+				_zones[zone.getId()]--;
+				if (_zones[zone.getId()] < 0)
+				{
+					_zones[zone.getId()] = 0;
+				}
 			}
 		}
 	}
@@ -2689,12 +2674,12 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 	
 	public void setAI(L2CharacterAI newAI)
 	{
-		L2CharacterAI oldAI = getAI();
+		L2CharacterAI oldAI = _ai; //[JOJO] SYNC:L2Character.java@6473 getAI() --> _ai
+		_ai = newAI;
 		if ((oldAI != null) && (oldAI != newAI) && (oldAI instanceof L2AttackableAI))
 		{
 			((L2AttackableAI) oldAI).stopAITask();
 		}
-		_ai = newAI;
 	}
 	
 	/**
@@ -4133,7 +4118,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 				return;
 			}
 			
-			_ai = null;
+			setAI(null); //[JOJO] SYNC:L2Character.java@6473 null --> setAI(null)
 		}
 	}
 	
@@ -4202,7 +4187,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 	/** Table of calculators containing all standard NPC calculator (ex : ACCURACY_COMBAT, EVASION_RATE) */
 	private static final Calculator[] NPC_STD_CALCULATOR = Formulas.getStdNPCCalculators();
 	
-	protected L2CharacterAI _ai;
+	protected volatile L2CharacterAI _ai;
 	
 	/** Future Skill Cast */
 	protected Future<?> _skillCast;
