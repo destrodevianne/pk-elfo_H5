@@ -63,7 +63,8 @@ public class L2ControllableMobInstance extends L2MonsterInstance
 	@Override
 	public L2CharacterAI getAI()
 	{
-		if (_ai == null)
+		L2CharacterAI ai = _ai; // copy handle
+		if (ai == null)
 		{
 			synchronized (this)
 			{
@@ -79,7 +80,7 @@ public class L2ControllableMobInstance extends L2MonsterInstance
 				return _ai;
 			}
 		}
-		return _ai;
+		return ai;
 	}
 	
 	@Override

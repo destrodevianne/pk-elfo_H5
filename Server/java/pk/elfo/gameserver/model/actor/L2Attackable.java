@@ -386,7 +386,8 @@ public class L2Attackable extends L2Npc
 	@Override
 	public L2CharacterAI getAI()
 	{
-		if (_ai == null)
+		L2CharacterAI ai = _ai; // copy handle
+		if (ai == null)
 		{
 			synchronized (this)
 			{
@@ -397,7 +398,7 @@ public class L2Attackable extends L2Npc
 				return _ai;
 			}
 		}
-		return _ai;
+		return ai;
 	}
 	
 	public void useMagic(L2Skill skill)
