@@ -1454,8 +1454,17 @@ public class L2Npc extends L2Character
 	/**
 	 * @return the Exp Reward of this L2NpcInstance contained in the L2NpcTemplate (modified by RATE_XP).
 	 */
+	
+	// teste de aumento de XP e SP aos sabados
+	private int Savvato()
+	{
+		return Calendar.SATURDAY;
+	}
+	
 	public int getExpReward()
 	{
+		if(Savvato() != 0)
+		return (int) (getTemplate().getRewardExp() * Config.SATURDAY_RATE_XP);
 		return (int) (getTemplate().getRewardExp() * Config.RATE_XP);
 	}
 	
@@ -1464,8 +1473,11 @@ public class L2Npc extends L2Character
 	 */
 	public int getSpReward()
 	{
+		if(Savvato() != 0)
+		return (int) (getTemplate().getRewardSp() * Config.SATURDAY_RATE_SP);
 		return (int) (getTemplate().getRewardSp() * Config.RATE_SP);
 	}
+	// ate aui a modificacao
 	
 	/**
 	 * Kill the L2NpcInstance (the corpse disappeared after 7 seconds).<br>

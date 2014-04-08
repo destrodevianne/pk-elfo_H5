@@ -77,6 +77,7 @@ public final class Config
 	public static final String AIO_CONFIG_FILE = "./config/AIOx/Aio.properties";
 	public static final String AUTO_RESTART = "./config/AutoRestart/AutoRestart.properties";
 	public static final String CLANWAR_FILE = "./config/clan/ClanWarZone.properties";
+	public static final String CLANLEADER_FILE = "./config/clan/ClanLider.properties";
 	public static final String CHARACTER_CONFIG_FILE = "./config/Character.properties";
 	public static final String CHAT_FILTER_FILE = "./config/chatfilter.txt";
 	public static final String COMMUNITY_PVP = "./config/CommunityPvP.properties";
@@ -2333,16 +2334,12 @@ public final class Config
 			{
 				PkelfoSettings.load(is);
 				FENCE_MOVIE_BUILDER = Boolean.parseBoolean(PkelfoSettings.getProperty("AllowFenceBuild", "false"));
-				CLAN_LEADER_COLOR_ENABLED = Boolean.parseBoolean(PkelfoSettings.getProperty("ClanLeaderNameColorEnabled", "True"));
-				CLAN_LEADER_COLOR = Integer.decode((new StringBuilder()).append("0x").append(PkelfoSettings.getProperty("ClanLeaderColor", "00FFFF")).toString()).intValue();
-				CLAN_LEADER_COLOR_CLAN_LEVEL = Integer.parseInt(PkelfoSettings.getProperty("ClanLeaderColorAtClanLevel", "1"));
 				//---------------------------------------------------------------------------------------------
 				UnstuckCustom = Boolean.parseBoolean(PkelfoSettings.getProperty("UnstuckCustom", "true"));
 				LocX = Integer.parseInt(PkelfoSettings.getProperty("LocX", "10724"));
 				LocY = Integer.parseInt(PkelfoSettings.getProperty("LocY", "-23729"));
 				LocZ = Integer.parseInt(PkelfoSettings.getProperty("LocZ", "-3650"));
 				//---------------------------------------------------------------------------------------------
-				ANNOUNCE_CASTLE_LORDS = Boolean.parseBoolean(PkelfoSettings.getProperty("AnnounceCastleLords", "True"));
 				ANNOUNCE_NOBLESSE_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("AnnounceNoblesseLogin", "False"));
 				ANNOUNCE_HERO_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("AnnounceHeroLogin", "False"));
 				SHOW_ONLINE_PLAYERS_ON_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("ShowOnlinePlayersOnLogin", "True"));
@@ -2409,10 +2406,6 @@ public final class Config
 				POLE_VS_ROBE = Float.parseFloat(PkelfoSettings.getProperty("PoleVsRobe", "1.00"));
 				PC_BANG_ENABLED = Boolean.parseBoolean(PkelfoSettings.getProperty("Enabled", "false"));
 				ENABLE_UNSTUCK_PVP = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableUnstuckPvP", "True"));
-				USE_CR_ITEM = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableTheClanRepPointsItem", "False"));
-				CR_ITEM_MIN_CLAN_LVL = Integer.parseInt(PkelfoSettings.getProperty("MinClanLevelNeededForCR", "7"));
-				CR_ITEM_REPS_TO_BE_AWARDED = Integer.parseInt(PkelfoSettings.getProperty("HowManyClanRepsToGive", "500"));
-				CR_ITEM_REPS_ITEM_ID = Integer.parseInt(PkelfoSettings.getProperty("CRItemID", "6673"));
 				NOBLE_CUSTOM_ITEMS = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableNobleCustomItem", "true"));
 				NOOBLE_CUSTOM_ITEM_ID = Integer.parseInt(PkelfoSettings.getProperty("NoobleCustomItemId", "6673"));
 				GAME_POINT_ITEM_ID = Integer.parseInt(PkelfoSettings.getProperty("GamePointItemId", "-300"));
@@ -3053,7 +3046,32 @@ public final class Config
 				throw new Error("Falha ao carregar o arquivo " + CLANWAR_FILE + " .");
 			}
 			
+			// ############################ CLANLEADER PROPERTIES ######################################################//
+			// Load Clan Leader L2Properties file (if exists)
+			final File ClanLeader = new File(CLANLEADER_FILE);
+			try (InputStream is = new FileInputStream(ClanLeader))
+			{
+				L2Properties ClanleSettings = new L2Properties();
+				ClanleSettings.load(is);
+				//---------------------------------------------------------------------------------------------
+						CLAN_LEADER_COLOR_ENABLED = Boolean.parseBoolean(ClanleSettings.getProperty("ClanLeaderNameColorEnabled", "True"));
+						CLAN_LEADER_COLOR = Integer.decode((new StringBuilder()).append("0x").append(ClanleSettings.getProperty("ClanLeaderColor", "00FFFF")).toString()).intValue();
+						CLAN_LEADER_COLOR_CLAN_LEVEL = Integer.parseInt(ClanleSettings.getProperty("ClanLeaderColorAtClanLevel", "1"));
+						ANNOUNCE_CASTLE_LORDS = Boolean.parseBoolean(ClanleSettings.getProperty("AnnounceCastleLords", "True"));
+						USE_CR_ITEM = Boolean.parseBoolean(ClanleSettings.getProperty("EnableTheClanRepPointsItem", "False"));
+						CR_ITEM_MIN_CLAN_LVL = Integer.parseInt(ClanleSettings.getProperty("MinClanLevelNeededForCR", "7"));
+						CR_ITEM_REPS_TO_BE_AWARDED = Integer.parseInt(ClanleSettings.getProperty("HowManyClanRepsToGive", "500"));
+						CR_ITEM_REPS_ITEM_ID = Integer.parseInt(ClanleSettings.getProperty("CRItemID", "6673"));
+				//---------------------------------------------------------------------------------------------
+			}
+			catch (Exception e)
+			{
+				_log.warning("Config: " + e.getMessage());
+				throw new Error("Falha ao carregar o arquivo " + CLANLEADER_FILE + " .");
+			}
+						
 			// ########################################################################################################//
+			
 			// Character L2Properties
 			L2Properties Character = new L2Properties();
 			final File chars = new File(CHARACTER_CONFIG_FILE);
