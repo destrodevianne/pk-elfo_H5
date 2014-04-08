@@ -1,16 +1,18 @@
 package ai.group_template;
 
+import static pk.elfo.gameserver.datatables.SkillTable.*;
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.datatables.SpawnTable;
 import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.L2Spawn;
+import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.actor.L2Attackable;
 import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.L2Playable;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.actor.instance.L2MonsterInstance;
 import pk.elfo.gameserver.model.effects.L2EffectType;
-import pk.elfo.gameserver.model.holders.SkillHolder;
 import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.model.skills.L2SkillType;
 import pk.elfo.gameserver.network.NpcStringId;
@@ -29,20 +31,26 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 	private static final int SEEKER = 22790; // Seeker Solina
 	private static final int SAVIOR = 22791; // Savior Solina
 	private static final int ASCETIC = 22793; // Ascetic Solina
+	// ScriptValue
+	private static final int START_TIMER_SCARECROW_TRAINING = 1;
+	private static final int START_TIMER_ASCETIC_DO_CAST = 1;
+	private static final int TRAINING_INTERVAL = 30000; //[JOJO]
+	private static final int MINIMAL_SHOUT_INTERVAL = 90; //[JOJO]
+	
 	private static final int[] DIVINITY_CLAN =
 		{
 			22794, // Divinity Judge
 			22795, // Divinity Manager
 		};
 	// Skills
-	private static final SkillHolder ORDEAL_STRIKE = new SkillHolder(6303, 1); // Trial of the Coup
-	private static final SkillHolder LEADER_STRIKE = new SkillHolder(6304, 1); // Shock
-	private static final SkillHolder SAVER_STRIKE = new SkillHolder(6305, 1); // Sacred Gnosis
-	private static final SkillHolder SAVER_BLEED = new SkillHolder(6306, 1); // Solina Strike
-	private static final SkillHolder LEARNING_MAGIC = new SkillHolder(6308, 1); // Opus of the Wave
-	private static final SkillHolder STUDENT_CANCEL = new SkillHolder(6310, 1); // Loss of Quest
-	private static final SkillHolder WARRIOR_THRUSTING = new SkillHolder(6311, 1); // Solina Thrust
-	private static final SkillHolder KNIGHT_BLESS = new SkillHolder(6313, 1); // Solina Bless
+	private static final int ORDEAL_STRIKE = getSkillHashCode(6303, 1); // Trial of the Coup
+	private static final int LEADER_STRIKE = getSkillHashCode(6304, 1); // Shock
+	private static final int SAVER_STRIKE = getSkillHashCode(6305, 1); // Sacred Gnosis
+	private static final int SAVER_BLEED = getSkillHashCode(6306, 1); // Solina Strike
+	private static final int LEARNING_MAGIC = getSkillHashCode(6308, 1); // Opus of the Wave
+	private static final int STUDENT_CANCEL = getSkillHashCode(6310, 1); // Loss of Quest
+	private static final int WARRIOR_THRUSTING = getSkillHashCode(6311, 1); // Solina Thrust
+	private static final int KNIGHT_BLESS = getSkillHashCode(6313, 1); // Solina Bless
 	// Misc
 	private static final NpcStringId[] DIVINITY_MSG =
 		{
@@ -58,35 +66,65 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 	private MonasteryOfSilence()
 	{
 		super(MonasteryOfSilence.class.getSimpleName(), "ai/group_template");
+		addSeeCreatureId(SCARECROW);
 		addSkillSeeId(DIVINITY_CLAN);
 		addAttackId(KNIGHT, CAPTAIN, GUIDE, SEEKER, ASCETIC);
 		addNpcHateId(GUIDE, SEEKER, SAVIOR, ASCETIC);
 		addAggroRangeEnterId(GUIDE, SEEKER, SAVIOR, ASCETIC);
-		for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(SCARECROW))
-		{
-			spawn.getLastSpawn().setIsInvul(true);
-			spawn.getLastSpawn().disableCoreAI(true);
-			startQuestTimer("TRAINING", 30000, spawn.getLastSpawn(), null, true);
-		}
+		addSpawnId(KNIGHT);
+		addSpawnId(SCARECROW);
+		 if (!pk.elfo.Config.FIX_onSpawn_for_SpawnTable) 
+		 {
+			 {
+				 for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(SCARECROW))
+				 {
+					 onSpawn(spawn.getLastSpawn());
+				 }
+			 }
+		 }
 	}
+	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		switch (event)
 		{
-		case "TRAINING":
+		case "SCARECROW": // SCARECROW
+			startQuestTimer("TRAINING", TRAINING_INTERVAL, npc, null, true);
+			break;
+		case "TRAINING": // SCARECROW
 		{
-			for (L2Character character : npc.getKnownList().getKnownCharactersInRadius(400))
+			final L2MonsterInstance scarecrow = (L2MonsterInstance) npc;
+			if (!scarecrow.hasAI() || !scarecrow.isVisible())
 			{
-				if ((getRandom(100) < 30) && character.isNpc() && !character.isDead() && !character.isInCombat())
+				cancelQuestTimer(event, scarecrow, player);
+				scarecrow.setScriptValue(0);
+				return null;
+			}
+			if (scarecrow.getKnownList().getKnownPlayers().size() == 0)
+			{
+				return null;
+			}
+			for (L2Object obj : scarecrow.getKnownList().getKnownObjects().values())
+			{
+				if (obj instanceof L2MonsterInstance && com.l2jserver.gameserver.util.Util.checkIfInRange(400, scarecrow, obj, true))
+									
 				{
-					if ((character.getId() == CAPTAIN) && (getRandom(100) < 10) && npc.isScriptValue(0))
+					L2MonsterInstance monster = (L2MonsterInstance) obj;
+					if (monster.hasAI() && getRandom(100) < 30 && monster.isVisible() && !monster.isDead() && !monster.isInCombat())
 					{
-						final L2Npc captain = (L2Npc) character;
-						broadcastNpcSay(captain, Say2.NPC_ALL, SOLINA_KNIGHTS_MSG[getRandom(SOLINA_KNIGHTS_MSG.length)]);
-						captain.setScriptValue(1);
-						startQuestTimer("TIMER", 10000, captain, null);
+						if (monster.getId() == CAPTAIN)
+							{
+								final L2MonsterInstance captain = monster;
+								final int now;
+								if (getRandom(100) < 10 && captain.getScriptValue() < (now = currentTime()))
+								{
+									captain.setScriptValue(now + MINIMAL_SHOUT_INTERVAL);
+									captain.broadcastPacket(new NpcSay(captain.getObjectId(), Say2.NPC_ALL, captain.getId(), SOLINA_KNIGHTS_MSG[getRandom(SOLINA_KNIGHTS_MSG.length)]));
+								}
+							}
 					}
+					
 					else if (character.getId() == KNIGHT)
 					{
 						character.setRunning();
@@ -97,27 +135,21 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 			}
 			break;
 		}
-		case "DO_CAST":
+		case "DO_CAST": // ASCETIC
 		{
-			if ((npc != null) && (player != null) && (getRandom(100) < 3))
+			if (npc.isVisible() && !npc.isDead() && player.isVisible() && !player.isDead())
 			{
-				if (npc.checkDoCastConditions(STUDENT_CANCEL.getSkill()))
+				final L2Skill skill;
+				if (npc.checkDoCastConditions(skill = getSkill(STUDENT_CANCEL)))
 				{
 					npc.setTarget(player);
-					npc.doCast(STUDENT_CANCEL.getSkill());
+					npc.doCast(skill);
 				}
 				npc.setScriptValue(0);
 			}
 			break;
 		}
-		case "TIMER":
-		{
-			if (npc != null)
-			{
-				npc.setScriptValue(0);
-			}
-			break;
-		}
+
 		}
 		return super.onAdvEvent(event, npc, player);
 	}
@@ -129,24 +161,27 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 		{
 		case KNIGHT:
 		{
-			if ((getRandom(100) < 10) && (mob.getMostHated() == player) && mob.checkDoCastConditions(WARRIOR_THRUSTING.getSkill()))
+			final L2Skill skill;
+			if ((getRandom(100) < 10) && (mob.getMostHated() == player) && mob.checkDoCastConditions(skill = getSkill(WARRIOR_THRUSTING)))
 			{
 				npc.setTarget(player);
-				npc.doCast(WARRIOR_THRUSTING.getSkill());
+				npc.doCast(skill);
 			}
 			break;
 		}
 		case CAPTAIN:
 		{
-			if ((getRandom(100) < 20) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.5)) && npc.isScriptValue(0))
+			final int now;
+			if ((getRandom(100) < 20) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.5)) && npc.getScriptValue() < (now = currentTime()))
 			{
-				if (npc.checkDoCastConditions(KNIGHT_BLESS.getSkill()))
+				npc.setScriptValue(now + MINIMAL_SHOUT_INTERVAL);
+				final L2Skill skill;
+				if (npc.checkDoCastConditions(skill = getSkill(KNIGHT_BLESS)))
 				{
 					npc.setTarget(npc);
-					npc.doCast(KNIGHT_BLESS.getSkill());
+					npc.doCast(skill);
 				}
-				npc.setScriptValue(1);
-				broadcastNpcSay(npc, Say2.ALL, NpcStringId.FOR_THE_GLORY_OF_SOLINA);
+				npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getId(), NpcStringId.FOR_THE_GLORY_OF_SOLINA));
 				final L2Attackable knight = (L2Attackable) addSpawn(KNIGHT, npc);
 				attackPlayer(knight, player);
 			}
@@ -154,27 +189,28 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 		}
 		case GUIDE:
 		{
-			if ((getRandom(100) < 3) && (mob.getMostHated() == player) && npc.checkDoCastConditions(ORDEAL_STRIKE.getSkill()))
+			final L2Skill skill;
+			if ((getRandom(100) < 3) && (mob.getMostHated() == player) && npc.checkDoCastConditions(skill = getSkill(ORDEAL_STRIKE)))
 			{
 				npc.setTarget(player);
-				npc.doCast(ORDEAL_STRIKE.getSkill());
+				npc.doCast(skill);
 			}
 			break;
 		}
 		case SEEKER:
 		{
-			if ((getRandom(100) < 33) && (mob.getMostHated() == player) && npc.checkDoCastConditions(SAVER_STRIKE.getSkill()))
+			final L2Skill skill;
+			if ((getRandom(100) < 33) && (mob.getMostHated() == player) && npc.checkDoCastConditions(skill = getSkill(SAVER_STRIKE)))
 			{
 				npc.setTarget(npc);
-				npc.doCast(SAVER_STRIKE.getSkill());
+				npc.doCast(skill);
 			}
 			break;
 		}
 		case ASCETIC:
 		{
-			if ((mob.getMostHated() == player) && npc.isScriptValue(0))
+			if (getRandom(100) < 3 && (mob.getMostHated() == player) && npc.compareAndSetScriptValue(0, START_TIMER_ASCETIC_DO_CAST))
 			{
-				npc.setScriptValue(1);
 				startQuestTimer("DO_CAST", 20000, npc, player);
 			}
 			break;
@@ -185,6 +221,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 	@Override
 	public boolean onNpcHate(L2Attackable mob, L2Playable playable)
 	{
+		// GUIDE, SEEKER, SAVIOR, ASCETIC
 		return playable.getActiveWeaponInstance() != null;
 	}
 	@Override
@@ -192,71 +229,97 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 	{
 		if (player.getActiveWeaponInstance() != null)
 		{
-			SkillHolder skill = null;
+			int skillHashCode = 0;
 			switch (npc.getId())
 			{
 			case GUIDE:
 			{
 				if (getRandom(100) < 3)
 				{
-					skill = LEADER_STRIKE;
+					skillHashCode = LEADER_STRIKE;
 				}
 				break;
 			}
 			case SEEKER:
 			{
-				skill = SAVER_BLEED;
+				skillHashCode = SAVER_BLEED;
 				break;
 			}
 			case SAVIOR:
 			{
-				skill = LEARNING_MAGIC;
+				skillHashCode = LEARNING_MAGIC;
 				break;
 			}
 			case ASCETIC:
 			{
 				if (getRandom(100) < 3)
 				{
-					skill = STUDENT_CANCEL;
+					skillHashCode = STUDENT_CANCEL;
 				}
-				if (npc.isScriptValue(0))
+				if (getRandom(100) < 3 && npc.compareAndSetScriptValue(0, START_TIMER_ASCETIC_DO_CAST))
 				{
-					npc.setScriptValue(1);
 					startQuestTimer("DO_CAST", 20000, npc, player);
 				}
 				break;
 			}
 				}
-				if ((skill != null) && npc.checkDoCastConditions(skill.getSkill()))
+			final L2Skill skill;
+			if (skillHashCode != 0 && npc.checkDoCastConditions(skill = getSkill(skillHashCode)))
 				{
 						npc.setTarget(player);
-						npc.doCast(skill.getSkill());
+						npc.doCast(skill);
 				}
 				if (!npc.isInCombat())
 				{
-					broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.YOU_CANNOT_CARRY_A_WEAPON_WITHOUT_AUTHORIZATION);
+					npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getId(), NpcStringId.YOU_CANNOT_CARRY_A_WEAPON_WITHOUT_AUTHORIZATION));
 				}
 					attackPlayer((L2Attackable) npc, player);
 		}
 		return super.onAggroRangeEnter(npc, player, isSummon);
 	}
 	@Override
+	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon)
+		{
+			// SCARECROW
+			if (creature.isPlayer() && npc.compareAndSetScriptValue(0, START_TIMER_SCARECROW_TRAINING))
+			{
+				final long randomDelay = 1 + TRAINING_INTERVAL * (npc.getObjectId() % 4) / 4;
+				startQuestTimer("SCARECROW", randomDelay, npc, null, false);
+			}
+			return super.onSeeCreature(npc, creature, isSummon);
+		}
+
+	@Override
 	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isSummon)
 	{
-		if (skill.hasEffectType(L2EffectType.AGGRESSION) && (targets.length != 0))
+		// DIVINITY_CLAN[]
+		if (skill.hasEffectType(L2EffectType.AGGRESSION) && com.l2jserver.gameserver.util.Util.contains(targets, npc))
 		{
-			for (L2Object obj : targets)
-			{
-				if (obj.equals(npc))
-				{
-					broadcastNpcSay(npc, Say2.NPC_ALL, DIVINITY_MSG[getRandom(DIVINITY_MSG.length)], caster.getName());
-					attackPlayer((L2Attackable) npc, caster);
-					break;
-				}
-			}
+			npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getId(), DIVINITY_MSG[getRandom(DIVINITY_MSG.length)]).addPcName(caster));
+			attackPlayer((L2Attackable) npc, caster);
 		}
 		return super.onSkillSee(npc, caster, skill, targets, isSummon);
 	}
+	
+	@Override
+	public String onSpawn(L2Npc npc)
+		{
+			if (npc.isTeleporting())
+				return null;
+
+			switch (npc.getId())
+			{
+			case KNIGHT:
+				npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getId(), NpcStringId.FOR_THE_GLORY_OF_SOLINA));
+				break;
+			case SCARECROW:
+				npc.setIsInvul(true);
+				npc.disableCoreAI(true);
+				break;
+			}
+			return super.onSpawn(npc);
+		}
+	
 	public static void main(String[] args)
 	{
 		new MonasteryOfSilence();

@@ -1636,6 +1636,7 @@ public final class Config
 	public static float PREMIUM_RATE_DROP_ITEMS;
 	public static float PREMIUM_RATE_DROP_ITEMS_BY_RAID;
 	public static Map<Integer, Float> PREMIUM_RATE_DROP_ITEMS_ID;
+	public static final boolean FIX_onSpawn_for_SpawnTable = true;
 	
 	/**
 	 * This class initializes all global variables for configuration.<br>
