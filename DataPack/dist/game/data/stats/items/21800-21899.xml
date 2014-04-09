@@ -1248,11 +1248,8 @@
 		<set name="material" val="paper" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
 		<set name="is_destroyable" val="false" />
-		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
 	</item>
 	<item id="21876" type="EtcItem" name="Pa'agrio's Christmas Package">
 		<!-- Description: Dimensional item. Gift box containing 1 each of Pa'agrio's Warm Breeze - 4 hour pack, Nevit's Hourglass - 4 hour pack, party cake, and shiny party hat. Cannot be exchanged or dropped. Can be shared between characters within an account through the Dimensional Merchant. Can be stored in a private warehouse. -->
@@ -1441,11 +1438,9 @@
 	<item id="21896" type="EtcItem" name="Jewel of Valakas">
 		<!-- Description: Mysterious jewel that teleports you to Watcher of Valakas Klein in the Hall of Flames. Re-use time is 60 minutes. -->
 		<set name="icon" val="BranchSys2.icon.orb_of_fire_dragon" />
-		<set name="default_action" val="skill_reduce" />
 		<set name="material" val="paper" />
 		<set name="weight" val="10" />
 		<set name="is_stackable" val="true" />
-		<set name="price" val="35000" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="22291-1" />
@@ -1470,11 +1465,9 @@
 	<item id="21898" type="EtcItem" name="Jewel of Antharas">
 		<!-- Description: Mysterious jewel that teleports you to the entrance to Antharas's Lair. Re-use time is 60 minutes. -->
 		<set name="icon" val="BranchSys2.icon.orb_of_earth_dragon" />
-		<set name="default_action" val="skill_reduce" />
 		<set name="material" val="paper" />
 		<set name="weight" val="10" />
 		<set name="is_stackable" val="true" />
-		<set name="price" val="35000" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="22293-1" />
