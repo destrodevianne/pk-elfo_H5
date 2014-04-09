@@ -5,7 +5,6 @@ import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.datatables.SpawnTable;
 import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.L2Spawn;
-import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.actor.L2Attackable;
 import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.L2Npc;
