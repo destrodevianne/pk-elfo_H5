@@ -39,14 +39,11 @@ public class L2PcInstanceActionShift implements IActionHandler
 			
 			// Send a Server->Client packet ValidateLocation to correct the L2PcInstance position and heading on the client
 			if (activeChar != target)
-			{
 				activeChar.sendPacket(new ValidateLocation((L2Character)target));
-			}
+			
 			IAdminCommandHandler ach = AdminCommandHandler.getInstance().getHandler("admin_character_info");
 			if (ach != null)
-			{
 				ach.useAdminCommand("admin_character_info " + target.getName(), activeChar);
-			}
 		}
 		else
 		{
@@ -63,18 +60,18 @@ public class L2PcInstanceActionShift implements IActionHandler
  "<html><head><title>"+
  String.valueOf(((L2Character)target).getName()),
  "</title></head><body>" +
- "<br><center><font color=\"LEVEL\">[Personagem Info]</font></center>" +
+ "<br><center><font color=\"LEVEL\">[Character Info]</font></center>" +
  "<table border=0 width=\"100%\">" +
- "<tr><td>Nome: </td><td>",
+ "<tr><td>Name: </td><td>",
  String.valueOf(((L2Character)target).getName()),
  "</td></tr>" +
  "<tr><td>Clan: </td><td>",
- String.valueOf(((L2PcInstance)target).getClan() != null ? ((L2PcInstance)target).getClan().getName() : "Sem clan"),
+ String.valueOf(((L2PcInstance)target).getClan() != null ? ((L2PcInstance)target).getClan().getName() : "No clan"),
  "</td></tr>" +
  "<tr><td>Level: </td><td>",
  String.valueOf(((L2Character)target).getLevel()),
  "</td></tr>" +
- "<tr><td>Classe: </td><td>",
+ "<tr><td>Class: </td><td>",
  String.valueOf(((L2PcInstance)target).getTemplate().getClassId()),
  "</td></tr>" +
  "<tr><td>CP: </td><td>",
@@ -93,7 +90,7 @@ public class L2PcInstanceActionShift implements IActionHandler
  String.valueOf(((L2PcInstance)target).getMaxMp()),
  "</td><td></td><td></td></tr>" +
  "</table>"+
- "<br><center><font color=\"CC0000\">[PVP Estatus]</font></center>" +
+ "<br><center><font color=\"CC0000\">[PVP Stats]</font></center>" +
  "<table border=0 width=\"100%\">" +
  "<tr><td>PvP Kills: </td><td>",
  String.valueOf(((L2PcInstance)target).getPvpKills()),
@@ -106,7 +103,7 @@ public class L2PcInstanceActionShift implements IActionHandler
  String.valueOf(((L2PcInstance)target).getKarma()),
  "</td></tr>"+
  "</table><br>"+
- "<br><br><center><font color=009900>[Personagem Items]</font></center>" +
+ "<br><br><center><font color=009900>[Character Items]</font></center>" +
 
  "<table><tr><td height=39 width=45>"+
  String.valueOf(((L2PcInstance)target).getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND) != null ? "<img src=" +((L2PcInstance)target).getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND).getItem().getIcon() + " width=32 height=32>" : "None"),

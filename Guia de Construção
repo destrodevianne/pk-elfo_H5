@@ -191,7 +191,7 @@ ADD Comando AdminRecalAll
 ###############################################
 ##################### MOD #####################
 Mod Community Board
-Mod Ao dar Shift+Click em algum char ou npc ou monstro, mostrara todos items e status dele.
+Mod Ao dar Shift+Click em algum char ou npc ou monstro, mostrara todos items e status dele. (Alterado o Mod Shit+Click nos Npc/Mob? para funcionar tambem nos players mostrando alguns status e itens)
 Mod Efeito de enchant rondom em todos os mobs e Npcs
 Mod Efeito para char em modo de shop offline
 Mod Balance Classe
