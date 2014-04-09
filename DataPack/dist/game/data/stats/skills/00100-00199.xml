@@ -255,7 +255,7 @@
 		<set name="saveVs" val="MEN" />
 		<set name="skillType" val="AGGREMOVE" />
 		<set name="operateType" val="A2" />
-		<set name="castRange" val="500" />
+		<set name="castRange" val="600" />
 		<set name="effectRange" val="900" />
 		<set name="pvp" val="true" />
 		<set name="trait" val="DERANGEMENT" />

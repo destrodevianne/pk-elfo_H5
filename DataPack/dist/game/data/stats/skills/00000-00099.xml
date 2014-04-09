@@ -461,6 +461,7 @@
 		<set name="blowChance" val="20" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
+		<set name="offensive" val="true" />
 		<set name="nextActionAttack" val="true" />
 		<set name="power" val="#power" />
 		<set name="target" val="TARGET_ONE" />
@@ -472,7 +473,10 @@
 		<set name="skillType" val="BLOW" />
 		<set name="operateType" val="A1" />
 		<set name="castRange" val="40" />
-		<set name="effectRange" val="400" />
+		<set name="effectLimit" val="6-12" />
+		<set name="effectRange" val="150" />
+		<set name="lvlBonusRate" val="1" />
+		<set name="lvlDepend" val="1" />
 		<cond msgId="113" addName="1">
 			<using kind="Dagger" />
 		</cond>
