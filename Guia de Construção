@@ -60,6 +60,7 @@ BETA: Adding missing synchronized block to setInsideZone to ensure correct usage
 BETA: Removendo reflexão chamada de L2GroupSpawn porque não precisa dele
 BETA: Updated Monastery of Silence AI. 
 BETA: Scarecrow monastery of rework silence
+BETA: Adicionado script em kamaloka
 
 ###############################################
 ################### EVENTOS ###################
