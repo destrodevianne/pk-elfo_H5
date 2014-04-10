@@ -80,6 +80,6 @@ public class SeeThroughSilentMove extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new SeeThroughSilentMove(SeeThroughSilentMove.class.getSimpleName(), "ai");
+		new SeeThroughSilentMove(SeeThroughSilentMove.class.getSimpleName(), "ai/group_template");
 	}
 }

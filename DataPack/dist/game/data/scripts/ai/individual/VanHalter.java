@@ -1,17 +1,3 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- * 
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- * 
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package ai.individual;
 
 import java.util.List;
@@ -46,12 +32,6 @@ import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
 import javolution.util.FastList;
 import javolution.util.FastMap;
-
-/**
- * Van Halter AI
- * control for sequence of fight against "High Priestess van Halter"
- * @author Plim
- */
 
 public class VanHalter extends AbstractNpcAI
 {
@@ -122,13 +102,10 @@ public class VanHalter extends AbstractNpcAI
 	protected List<L2Spawn>	_triolRevelationSpawn = new FastList<>();
 	protected List<L2Spawn>	_triolRevelationAlive = new FastList<>();
 	protected List<L2Spawn>	_guardOfAltarSpawn = new FastList<>();
-
 	protected List<L2Spawn>	_cameraMarkerSpawn = new FastList<>();
-
 	protected L2Spawn _ritualOfferingSpawn = null;
 	protected L2Spawn _ritualSacrificeSpawn = null;
 	protected L2Spawn _vanHalterSpawn = null;
-
 	// instance of monsters
 	protected List<L2MonsterInstance> _monsters = new FastList<>();
 	protected List<L2MonsterInstance> _royalGuard = new FastList<>();
@@ -136,15 +113,12 @@ public class VanHalter extends AbstractNpcAI
 	protected List<L2MonsterInstance> _royalGuardHepler = new FastList<>();
 	protected List<L2MonsterInstance> _triolRevelation = new FastList<>();
 	protected List<L2NpcInstance> _guardOfAltar = new FastList<>();
-
 	protected List<L2NpcInstance> _cameraMarker = new FastList<>();
-
 	protected List<L2DoorInstance> _doorOfAltar = new FastList<>();
 	protected List<L2DoorInstance> _doorOfSacrifice = new FastList<>();
 	protected L2Npc _ritualOffering = null;
 	protected L2Npc _ritualSacrifice = null;
 	protected L2GrandBossInstance _vanHalter = null;
-
 	// Task
 	protected ScheduledFuture<?> _movieTask = null;
 	protected ScheduledFuture<?> _closeDoorOfAltarTask = null;
@@ -155,18 +129,15 @@ public class VanHalter extends AbstractNpcAI
 	protected ScheduledFuture<?> _intervalTask = null;
 	protected ScheduledFuture<?> _halterEscapeTask = null;
 	protected ScheduledFuture<?> _setBleedTask = null;
-
 	// state of High Priestess van Halter
 	boolean _isLocked = false;
 	boolean _isHalterSpawned = false;
 	boolean _isSacrificeSpawned = false;
 	boolean _isCaptainSpawned = false;
 	boolean _isHelperCalled = false;
-
 	private static final byte WAITING = 0;
 	private static final byte FIGHT = 1;
 	private static final byte DEAD = 2;
-	
 	protected L2BossZone _Zone = GrandBossManager.getInstance().getZone(-16373,-53562,-10300);
 
 	// initialize
@@ -181,7 +152,6 @@ public class VanHalter extends AbstractNpcAI
         _doorOfAltar.add(DoorTable.getInstance().getDoor(19160015));
 		_doorOfSacrifice.add(DoorTable.getInstance().getDoor(19160016));
         _doorOfSacrifice.add(DoorTable.getInstance().getDoor(19160017));
-		
 		// load spawn data of monsters.
         loadRoyalGuard();
         loadTriolRevelation();
@@ -191,7 +161,6 @@ public class VanHalter extends AbstractNpcAI
         loadVanHalter();
         loadRitualOffering();
         loadRitualSacrifice();
-
 		StatsSet info = GrandBossManager.getInstance().getStatsSet(29062);
         int _state = GrandBossManager.getInstance().getBossStatus(29062);
 		
@@ -231,7 +200,6 @@ public class VanHalter extends AbstractNpcAI
 			// Dummy npc
         	L2NpcTemplate template1 = NpcTable.getInstance().getTemplate(13014); 
         	L2Spawn tempSpawn;
-        	
         	// Dummy camera marker.
         	tempSpawn = new L2Spawn(template1);
         	tempSpawn.setLocx(-16397);
@@ -241,10 +209,7 @@ public class VanHalter extends AbstractNpcAI
         	tempSpawn.setAmount(1);
         	tempSpawn.setRespawnDelay(60000);
         	SpawnTable.getInstance().addNewSpawn(tempSpawn, false);
-
         	_cameraMarkerSpawn.add(tempSpawn);
-
-			
         	template1 = NpcTable.getInstance().getTemplate(13014);
         	tempSpawn = new L2Spawn(template1);
         	tempSpawn.setLocx(-16397);
@@ -254,10 +219,7 @@ public class VanHalter extends AbstractNpcAI
         	tempSpawn.setAmount(1);
         	tempSpawn.setRespawnDelay(60000);
         	SpawnTable.getInstance().addNewSpawn(tempSpawn, false);
-
         	_cameraMarkerSpawn.add(tempSpawn);
-
-
         	template1 = NpcTable.getInstance().getTemplate(13014);
         	tempSpawn = new L2Spawn(template1);
         	tempSpawn.setLocx(-16397);
@@ -267,10 +229,7 @@ public class VanHalter extends AbstractNpcAI
         	tempSpawn.setAmount(1);
         	tempSpawn.setRespawnDelay(60000);
         	SpawnTable.getInstance().addNewSpawn(tempSpawn, false);
-	
         	_cameraMarkerSpawn.add(tempSpawn);
-
-
         	template1 = NpcTable.getInstance().getTemplate(13014);
         	tempSpawn = new L2Spawn(template1);
 			tempSpawn.setLocx(-16397);
@@ -280,10 +239,7 @@ public class VanHalter extends AbstractNpcAI
 			tempSpawn.setAmount(1);
 			tempSpawn.setRespawnDelay(60000);
 			SpawnTable.getInstance().addNewSpawn(tempSpawn, false);
-
 			_cameraMarkerSpawn.add(tempSpawn);
-
-
 			template1 = NpcTable.getInstance().getTemplate(13014);
 			tempSpawn = new L2Spawn(template1);
 			tempSpawn.setLocx(-16397);
@@ -293,10 +249,7 @@ public class VanHalter extends AbstractNpcAI
 			tempSpawn.setAmount(1);
 			tempSpawn.setRespawnDelay(60000);
 			SpawnTable.getInstance().addNewSpawn(tempSpawn, false);
-
 			_cameraMarkerSpawn.add(tempSpawn);
-			
-			
         }
 		catch (Exception e)
 		{
@@ -316,7 +269,6 @@ public class VanHalter extends AbstractNpcAI
 		{
 			L2Spawn spawnDat;
 			L2NpcTemplate template1;
-
 			template1 = NpcTable.getInstance().getTemplate(22175);
 			if (template1 != null)
 			{
@@ -344,12 +296,10 @@ public class VanHalter extends AbstractNpcAI
 			// problem with initializing spawn, go to next one
 			_log.warning("VanHalterManager: Spawn could not be initialized: " + e);
 		}
-		
 		try
 		{
 			L2Spawn spawnDat;
 			L2NpcTemplate template1;
-
 			template1 = NpcTable.getInstance().getTemplate(22176);
 			if (template1 != null)
 			{
@@ -383,7 +333,6 @@ public class VanHalter extends AbstractNpcAI
 	{
 		if (!_royalGuard.isEmpty())
 			deleteRoyalGuard();
-
 		for (L2Spawn rgs : _royalGuardSpawn)
 		{
 			rgs.startRespawn();
@@ -398,7 +347,6 @@ public class VanHalter extends AbstractNpcAI
 			rg.getSpawn().stopRespawn();
 			rg.deleteMe();
 		}
-
 		_royalGuard.clear();
 	}
 
@@ -406,12 +354,10 @@ public class VanHalter extends AbstractNpcAI
 	protected void loadTriolRevelation()
 	{
 		_triolRevelationSpawn.clear();
-
 		try
 		{
 			L2Spawn spawnDat;
 			L2NpcTemplate template1;
-
 			for(int i=32058;i<=32068;i++)
 			{
 				template1 = NpcTable.getInstance().getTemplate(i);
@@ -434,7 +380,6 @@ public class VanHalter extends AbstractNpcAI
 					_log.warning("VanHalterManager: Data missing in NPC table for ID: " + i + ".");
 				}
 			}
-
 			_log.info("VanHalterManager: Loaded " + _triolRevelationSpawn.size() + " Triol's Revelation spawn locations.");
 		}
 		catch (Exception e)
@@ -448,7 +393,6 @@ public class VanHalter extends AbstractNpcAI
 	{
 		if (!_triolRevelation.isEmpty())
 			deleteTriolRevelation();
-
 		for (L2Spawn trs : _triolRevelationSpawn)
 		{
 			trs.startRespawn();
@@ -472,12 +416,10 @@ public class VanHalter extends AbstractNpcAI
 	protected void loadRoyalGuardCaptain()
 	{
 		_royalGuardCaptainSpawn.clear();
-
 		try
 		{
 			L2Spawn spawnDat;
 			L2NpcTemplate template1;
-
 			template1 = NpcTable.getInstance().getTemplate(22188);
 			if (template1 != null)
 			{
@@ -507,7 +449,6 @@ public class VanHalter extends AbstractNpcAI
 	{
 		if (!_royalGuardCaptain.isEmpty())
 			deleteRoyalGuardCaptain();
-
 		for (L2Spawn trs : _royalGuardCaptainSpawn)
 		{
 			trs.startRespawn();
@@ -523,7 +464,6 @@ public class VanHalter extends AbstractNpcAI
 			tr.getSpawn().stopRespawn();
 			tr.deleteMe();
 		}
-
 		_royalGuardCaptain.clear();
 	}
 
@@ -531,12 +471,10 @@ public class VanHalter extends AbstractNpcAI
 	protected void loadRoyalGuardHelper()
 	{
 		_royalGuardHelperSpawn.clear();
-
 		try
 		{
 			L2Spawn spawnDat;
 			L2NpcTemplate template1;
-
 			template1 = NpcTable.getInstance().getTemplate(22191);
 			if (template1 != null)
 			{
@@ -586,12 +524,10 @@ public class VanHalter extends AbstractNpcAI
 	protected void loadGuardOfAltar()
 	{
 		_guardOfAltarSpawn.clear();
-
 		try
 		{
 			L2Spawn spawnDat;
 			L2NpcTemplate template1;
-
 			template1 = NpcTable.getInstance().getTemplate(32051);
 			if (template1 != null)
 			{
@@ -639,7 +575,6 @@ public class VanHalter extends AbstractNpcAI
 			tr.getSpawn().stopRespawn();
 			tr.deleteMe();
 		}
-
 		_guardOfAltar.clear();
 	}
 
@@ -699,12 +634,10 @@ public class VanHalter extends AbstractNpcAI
 	protected void loadRitualOffering()
 	{
 		_ritualOfferingSpawn = null;
-
 		try
 		{
 			L2Spawn spawnDat;
 			L2NpcTemplate template1;
-
 			template1 = NpcTable.getInstance().getTemplate(32038);
 			if (template1 != null)
 			{
@@ -722,7 +655,6 @@ public class VanHalter extends AbstractNpcAI
 			{
 				_log.warning("VanHalterManager: Data missing in NPC table for ID: " + 32038 + ".");
 			}
-
 			_log.info("VanHalterManager: Loaded Ritual Offering spawn locations.");
 		}
 		catch (Exception e)
@@ -752,12 +684,10 @@ public class VanHalter extends AbstractNpcAI
 	protected void loadRitualSacrifice()
 	{
 		_ritualSacrificeSpawn = null;
-
 		try
 		{
 			L2Spawn spawnDat;
 			L2NpcTemplate template1;
-
 			template1 = NpcTable.getInstance().getTemplate(22195);
 			if (template1 != null)
 			{
@@ -796,7 +726,6 @@ public class VanHalter extends AbstractNpcAI
 	{
 		if (!_isSacrificeSpawned)
 			return;
-
 		_ritualSacrifice.getSpawn().stopRespawn();
 		_ritualSacrifice.deleteMe();
 		_isSacrificeSpawned = false;
@@ -804,14 +733,11 @@ public class VanHalter extends AbstractNpcAI
 
 	protected void spawnCameraMarker()
 	{
-
 		if (!_cameraMarker.isEmpty())
 			deleteCameraMarker();
-
 		for (int i = 0; i < _cameraMarkerSpawn.size(); i++)
 		{
 			_cameraMarker.add((L2NpcInstance) _cameraMarkerSpawn.get(i).doSpawn());
-
 			_cameraMarker.get(i).getSpawn().stopRespawn();
 			_cameraMarker.get(i).setIsImmobilized(true);
 		}
@@ -821,9 +747,7 @@ public class VanHalter extends AbstractNpcAI
 	{
 		if (_cameraMarker.isEmpty())
 			return;
-
 		for (int i = 0; i < _cameraMarker.size(); i++)
-
 		{
 			_cameraMarker.get(i).deleteMe();
 		}
@@ -831,7 +755,6 @@ public class VanHalter extends AbstractNpcAI
 	}
 
 	// door control.
-
 	/* Puerta de entrada a la zona del altar
 	 * si loop==true inicia schedule para cerrar la puerta pasados 3 min (180000 millis, no?)
 	 */
@@ -942,14 +865,12 @@ public class VanHalter extends AbstractNpcAI
 	{
 		if (_isCaptainSpawned)
 			return;
-
 		boolean isTriolRevelationDestroyed = true;
 		for (L2Spawn tra : _triolRevelationAlive)
 		{
 			if (!tra.getLastSpawn().isDead())
 				isTriolRevelationDestroyed = false;
 		}
-
 		if (isTriolRevelationDestroyed)
 		{
 			spawnRoyalGuardCaptain();
@@ -960,26 +881,21 @@ public class VanHalter extends AbstractNpcAI
 	{
 		if (!_isHalterSpawned)
 			return;
-
 		deleteRoyalGuard();
 		deleteRoyalGuardCaptain();
 		spawnGuardOfAltar();
 		openDoorOfSacrifice();
-
 		CreatureSay cs = new CreatureSay(0, 1, "Altar's Gatekeeper", "The door of the 3rd floor in the altar has opened.");
 		for (L2PcInstance pc : getPlayersInside())
 		{
 			pc.sendPacket(cs);
 		}
-
 		_vanHalter.setIsImmobilized(true);
 		_vanHalter.setIsInvul(true);
 		spawnCameraMarker();
-
 		if (_timeUpTask != null)
 			_timeUpTask.cancel(false);
 		_timeUpTask = null;
-
 		_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(1), 20000);
 	}
 
@@ -1125,7 +1041,6 @@ public class VanHalter extends AbstractNpcAI
 		deleteRitualOffering();
 		deleteRitualSacrifice();
 		deleteGuardOfAltar();
-
 		// set interval end.
 		if (_intervalTask != null)
 			_intervalTask.cancel(false);
@@ -1215,17 +1130,14 @@ public class VanHalter extends AbstractNpcAI
 		deleteRitualOffering();
 		deleteGuardOfAltar();
 		deleteCameraMarker();
-
 		// clear flag.
 		_isLocked = false;
 		_isCaptainSpawned = false;
 		_isHelperCalled = false;
 		_isHalterSpawned = false;
-
 		// set door state
 		closeDoorOfSacrifice();
 		openDoorOfAltar(true);
-
 		// respawn monsters.
 		spawnTriolRevelation();
 		spawnRoyalGuard();
@@ -1251,7 +1163,6 @@ public class VanHalter extends AbstractNpcAI
 					}
 				}
 			},100L);
-			
 			if (_timeUpTask != null)
 				_timeUpTask.cancel(false);
 			//6 hours
@@ -1275,7 +1186,6 @@ public class VanHalter extends AbstractNpcAI
 		private int _distance = 6502500;
 		private int _taskId;
 		private List<L2PcInstance> _players = getPlayersInside();
-
 		public Movie(int taskId)
 		{
 			_taskId = taskId;
@@ -1286,7 +1196,6 @@ public class VanHalter extends AbstractNpcAI
 		{
 			_vanHalter.setHeading(16384);
 			_vanHalter.setTarget(_ritualOffering);
-
 			switch (_taskId)
 			{
 			case 1:
@@ -1311,7 +1220,6 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask.cancel(false);
 				_movieTask = null;
 				_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(2), 16);
-
 				break;
 
 			case 2:
@@ -1334,7 +1242,6 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask.cancel(false);
 				_movieTask = null;
 				_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(3), 1);
-
 				break;
 
 			case 3:
@@ -1357,7 +1264,6 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask.cancel(false);
 				_movieTask = null;
 				_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(4), 1500);
-
 				break;
 
 			case 4:
@@ -1374,13 +1280,11 @@ public class VanHalter extends AbstractNpcAI
 						leaveMovieMode(pc);
 					}
 				}
-
 				// set next task.
 				if (_movieTask != null)
 					_movieTask.cancel(false);
 				_movieTask = null;
 				_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(5), 1);
-
 				break;
 
 			case 5:
@@ -1403,7 +1307,6 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask.cancel(false);
 				_movieTask = null;
 				_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(6), 1500);
-
 				break;
 
 			case 6:
@@ -1420,13 +1323,11 @@ public class VanHalter extends AbstractNpcAI
 						leaveMovieMode(pc);
 					}
 				}
-
 				// set next task.
 				if (_movieTask != null)
 					_movieTask.cancel(false);
 				_movieTask = null;
 				_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(7), 1);
-
 				break;
 
 			case 7:
@@ -1443,13 +1344,11 @@ public class VanHalter extends AbstractNpcAI
 						leaveMovieMode(pc);
 					}
 				}
-
 				// set next task.
 				if (_movieTask != null)
 					_movieTask.cancel(false);
 				_movieTask = null;
 				_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(8), 1500);
-
 				break;
 
 			case 8:
@@ -1466,13 +1365,11 @@ public class VanHalter extends AbstractNpcAI
 						leaveMovieMode(pc);
 					}
 				}
-
 				// set next task.
 				if (_movieTask != null)
 					_movieTask.cancel(false);
 				_movieTask = null;
 				_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(9), 1);
-
 				break;
 
 			case 9:
@@ -1489,13 +1386,11 @@ public class VanHalter extends AbstractNpcAI
 						leaveMovieMode(pc);
 					}
 				}
-
 				// set next task.
 				if (_movieTask != null)
 					_movieTask.cancel(false);
 				_movieTask = null;
 				_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(10), 1500);
-
 				break;
 
 			case 10:
@@ -1512,13 +1407,11 @@ public class VanHalter extends AbstractNpcAI
 						leaveMovieMode(pc);
 					}
 				}
-
 				// set next task.
 				if (_movieTask != null)
 					_movieTask.cancel(false);
 				_movieTask = null;
 				_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(11), 1);
-
 				break;
 
 			case 11:
@@ -1535,13 +1428,11 @@ public class VanHalter extends AbstractNpcAI
 						leaveMovieMode(pc);
 					}
 				}
-
 				// set next task.
 				if (_movieTask != null)
 					_movieTask.cancel(false);
 				_movieTask = null;
 				_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(12), 2000);
-
 				break;
 
 			case 12:
@@ -1558,13 +1449,11 @@ public class VanHalter extends AbstractNpcAI
 						leaveMovieMode(pc);
 					}
 				}
-
 				// set next task.
 				if (_movieTask != null)
 					_movieTask.cancel(false);
 				_movieTask = null;
 				_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(13), 1000);
-
 				break;
 
 			case 13:
@@ -1575,31 +1464,26 @@ public class VanHalter extends AbstractNpcAI
 				_vanHalter.setIsImmobilized(false);
 				_vanHalter.doCast(skill);
 				_vanHalter.setIsImmobilized(true);
-
 				// set next task.
 				if (_movieTask != null)
 					_movieTask.cancel(false);
 				_movieTask = null;
 				_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(14), 4700);
-
 				break;
 
 			case 14:
 				_ritualOffering.setIsInvul(false);
 				_ritualOffering.reduceCurrentHp(_ritualOffering.getMaxHp() + 1, _vanHalter, null);
-
 				// set next task.
 				if (_movieTask != null)
 					_movieTask.cancel(false);
 				_movieTask = null;
 				_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(15), 4300);
-
 				break;
 
 			case 15:
 				spawnRitualSacrifice();
 				deleteRitualOffering();
-
 				// set camera.
 				for (L2PcInstance pc : _players)
 				{
@@ -1613,13 +1497,11 @@ public class VanHalter extends AbstractNpcAI
 						leaveMovieMode(pc);
 					}
 				}
-
 				// set next task.
 				if (_movieTask != null)
 					_movieTask.cancel(false);
 				_movieTask = null;
 				_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(16), 2000);
-
 				break;
 
 			case 16:
@@ -1636,13 +1518,11 @@ public class VanHalter extends AbstractNpcAI
 						leaveMovieMode(pc);
 					}
 				}
-
 				// set next task.
 				if (_movieTask != null)
 					_movieTask.cancel(false);
 				_movieTask = null;
 				_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(17), 6000);
-
 				break;
 
 			case 17:
@@ -1655,12 +1535,10 @@ public class VanHalter extends AbstractNpcAI
 				deleteCameraMarker();
 				_vanHalter.setIsImmobilized(false);
 				_vanHalter.setIsInvul(false);
-
 				if (_movieTask != null)
 					_movieTask.cancel(false);
 				_movieTask = null;
 				_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(18), 1000);
-
 				break;
 
 			case 18:
@@ -1707,12 +1585,10 @@ public class VanHalter extends AbstractNpcAI
 	{
 		player.sendPacket(new SpecialCamera(l2NpcInstance.getObjectId(), dist, yaw, pitch, time, duration));
 	}
-
 	public void specialCamera(L2PcInstance player, L2GrandBossInstance l2NpcInstance, int dist, int yaw, int pitch, int time, int duration)
 	{
 		player.sendPacket(new SpecialCamera(l2NpcInstance.getObjectId(), dist, yaw, pitch, time, duration));
 	}
-	
 	protected List<L2PcInstance> getPlayersInside()
 	{
 		List<L2PcInstance> lst = new FastList<>();

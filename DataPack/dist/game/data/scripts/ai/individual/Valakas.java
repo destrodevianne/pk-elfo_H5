@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package ai.individual;
 
 import java.util.ArrayList;
@@ -44,10 +26,6 @@ import pk.elfo.gameserver.network.serverpackets.SpecialCamera;
 import pk.elfo.gameserver.util.Util;
 import ai.npc.AbstractNpcAI;
 
-/**
- * Valakas' AI.
- * @author Tryskell
- */
 public class Valakas extends AbstractNpcAI
 {
 	// NPC
@@ -107,7 +85,6 @@ public class Valakas extends AbstractNpcAI
 	private long _timeTracker = 0; // Time tracker for last attack on Valakas.
 	private L2Playable _actualVictim; // Actual target of Valakas.
 	private static L2BossZone ZONE;
-	
 	private Valakas(String name, String descr)
 	{
 		super(name, descr);
@@ -151,10 +128,8 @@ public class Valakas extends AbstractNpcAI
 			
 			final L2Npc valakas = addSpawn(VALAKAS, loc_x, loc_y, loc_z, heading, false, 0);
 			GrandBossManager.getInstance().addBoss((L2GrandBossInstance) valakas);
-			
 			valakas.setCurrentHpMp(hp, mp);
 			valakas.setRunning();
-			
 			// Start timers.
 			if (status == FIGHTING)
 			{
@@ -197,7 +172,6 @@ public class Valakas extends AbstractNpcAI
 					plyr.sendPacket(new PlaySound(1, "B03_A", 0, 0, 0, 0, 0));
 					plyr.sendPacket(new SocialAction(npc.getObjectId(), 3));
 				}
-				
 				// Launch the cinematic, and tasks (regen + skill).
 				startQuestTimer("spawn_1", 1700, npc, null); // 1700
 				startQuestTimer("spawn_2", 3200, npc, null); // 1500
@@ -429,10 +403,8 @@ public class Valakas extends AbstractNpcAI
 		// Cancel skill_task and regen_task.
 		cancelQuestTimer("regen_task", npc, null);
 		cancelQuestTimer("skill_task", npc, null);
-		
 		// Launch death animation.
 		ZONE.broadcastPacket(new PlaySound(1, "B03_D", 0, 0, 0, 0, 0));
-		
 		startQuestTimer("die_1", 300, npc, null); // 300
 		startQuestTimer("die_2", 600, npc, null); // 300
 		startQuestTimer("die_3", 3800, npc, null); // 3200
@@ -441,7 +413,6 @@ public class Valakas extends AbstractNpcAI
 		startQuestTimer("die_6", 13300, npc, null); // 4600
 		startQuestTimer("die_7", 14000, npc, null); // 700
 		startQuestTimer("die_8", 16500, npc, null); // 2500
-		
 		GrandBossManager.getInstance().setBossStatus(VALAKAS, DEAD);
 		// Calculate Min and Max respawn times randomly.
 		long respawnTime = getRandom((Config.Interval_Of_Valakas_Spawn - Config.Random_Of_Valakas_Spawn), (Config.Interval_Of_Valakas_Spawn + Config.Random_Of_Valakas_Spawn));
@@ -450,7 +421,6 @@ public class Valakas extends AbstractNpcAI
 		StatsSet info = GrandBossManager.getInstance().getStatsSet(VALAKAS);
 		info.set("respawn_time", (System.currentTimeMillis() + respawnTime));
 		GrandBossManager.getInstance().setStatsSet(VALAKAS, info);
-		
 		return super.onKill(npc, killer, isSummon);
 	}
 	
@@ -466,13 +436,11 @@ public class Valakas extends AbstractNpcAI
 		{
 			return;
 		}
-		
 		// Pickup a target if no or dead victim. 10% luck he decides to reconsiders his target.
 		if ((_actualVictim == null) || _actualVictim.isDead() || !(npc.getKnownList().knowsObject(_actualVictim)) || (getRandom(10) == 0))
 		{
 			_actualVictim = getRandomTarget(npc);
 		}
-		
 		// If result is still null, Valakas will roam. Don't go deeper in skill AI.
 		if (_actualVictim == null)
 		{
@@ -481,7 +449,6 @@ public class Valakas extends AbstractNpcAI
 				int x = npc.getX();
 				int y = npc.getY();
 				int z = npc.getZ();
-				
 				int posX = x + getRandom(-1400, 1400);
 				int posY = y + getRandom(-1400, 1400);
 				

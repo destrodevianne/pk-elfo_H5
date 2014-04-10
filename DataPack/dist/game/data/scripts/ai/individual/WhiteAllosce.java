@@ -1,17 +1,3 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- * 
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- * 
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package ai.individual;
 
 import pk.elfo.gameserver.model.actor.L2Npc;
@@ -19,12 +5,10 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
 import ai.npc.AbstractNpcAI;
 
-
 public class WhiteAllosce extends AbstractNpcAI
 {
 	private static final int ALLOSCE = 18577;
 	private static final int GUARD   = 18578;
-
 	boolean _isLock = false;
 
 	public WhiteAllosce(String name, String descr)
@@ -45,7 +29,6 @@ public class WhiteAllosce extends AbstractNpcAI
 			addSpawn(GUARD, x + 100, y + 50, npc.getZ(), 0, false, 0, false, npc.getInstanceId());
 			_isLock = false;
 		}
-
 		return "";
 	}
 
@@ -64,7 +47,6 @@ public class WhiteAllosce extends AbstractNpcAI
 			else
 				return "";
 		}
-
 		return "";
 	}
 
@@ -75,7 +57,6 @@ public class WhiteAllosce extends AbstractNpcAI
 
 		if (npcId == ALLOSCE)
 			cancelQuestTimer("time_to_spawn", npc, player);
-
 		return "";
 	}
 

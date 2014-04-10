@@ -153,7 +153,7 @@ public class AdminCheckBot implements IAdminCommandHandler
                 tb.append("<html><title>Lista Bot nao lida</title><body><center>");
                 tb.append("Aqui esta uma lista do atual, <font color=LEVEL>nao lido</font><br1> de bots!<br>");
                 
-                for (int i : BotManager.getInstance().getUnread().keySet())
+                for(int i : BotManager.getInstance().getUnread().keySet())
                 {
                         tb.append("<a action=\"bypass -h admin_readBot " + i + "\">Ticket #" + i + "</a><br1>");
                 }

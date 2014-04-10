@@ -103,6 +103,7 @@ public final class Config
 	public static final String PKELFO_FILE = "./config/Pkelfo.properties";
 	public static final String PREMIUM_CONFIG_FILE = "./config/Premium.properties";
 	public static final String PVPPK_CONFIG_FILE = "./config/PvPpK/PvpPk.properties";
+	public static final String PVPESCAPE_CONFIG_FILE = "./config/PvPpK/Escape.properties";
 	public static final String RATES_CONFIG_FILE = "./config/Rates.properties";
 	public static final String RESTRICTIONS_CONFIG_FILE = "./config/Restrictions.properties";
 	public static final String SECURITY_CONFIG_FILE = "./config/GM/Security.properties";
@@ -268,6 +269,9 @@ public final class Config
 	public static String PVP_MESSAGE;
 	public static String VICTIM_PK_MESSAGE;
 	public static String VICTIM_PVP_MESSAGE;
+	/** Pvp No Escape **/
+	public static boolean PVP_NO_ESCAPE;
+
 	// ----------------------------------------------------------------------------------------------------//
 	// PC bang points
 	// ----------------------------------------------------------------------------------------------------//
@@ -4585,6 +4589,32 @@ public final class Config
 			VICTIM_PK_MESSAGE = PvPpKSettings.getProperty("VictimPkMessage", "LOL? Ele te matou e voc� nao faz nada???");
 			VICTIM_PVP_MESSAGE = PvPpKSettings.getProperty("VictimPvpMessage", "Noob. Vai ficar mais forte antes de ir a um PvP.");
 			
+			// PVP Chat Shoutem e Hero
+			CHAT_SHOUT_NEED_PVPS = Boolean.parseBoolean(PvPpKSettings.getProperty("ChatShoutNeedPvps", "False"));
+			PVPS_TO_USE_CHAT_SHOUT = Integer.parseInt(PvPpKSettings.getProperty("PvpsToUseChatShout", "0"));
+			CHAT_TRADE_NEED_PVPS = Boolean.parseBoolean(PvPpKSettings.getProperty("ChatTradeNeedPvps", "False"));
+			PVPS_TO_USE_CHAT_TRADE = Integer.parseInt(PvPpKSettings.getProperty("PvpsToUseChatTrade", "0"));
+			CHAT_HERO_NEED_PVPS = Boolean.parseBoolean(PvPpKSettings.getProperty("ChatHeroNeedPvps", "False"));
+			PVPS_TO_USE_CHAT_HERO = Integer.parseInt(PvPpKSettings.getProperty("PvpsToUseChatHero", "0"));
+			
+			// #########################################################################################################//
+			
+			// ############################ PVPESCAPE PROPERTIES #######################################################//
+			
+			final File pvpescape = new File(PVPESCAPE_CONFIG_FILE);
+			L2Properties PvPescapeSettings = new L2Properties();
+			try (InputStream is = new FileInputStream(pvpescape))
+			{
+				PvPescapeSettings.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Erro ao ler o arquivo PvPescape Properties!", e);
+			}
+			
+			/** No escape in PvP **/
+			PVP_NO_ESCAPE = Boolean.parseBoolean(PvPescapeSettings.getProperty("UseEscapeInPvP", "False"));
+			
 			// #########################################################################################################//
 			
 			// Load Olympiad L2Properties file (if exists)
@@ -4749,15 +4779,7 @@ public final class Config
 			BLOCK_DATE_FORMAT = SecuritySettings.getProperty("BlockDateFormat", "dd.MM.yy");
 			BLOCK_HOUR_FORMAT = SecuritySettings.getProperty("BlockHourFormat", "HH:mm");
 			
-			// PVP Chat Shoutem e Hero
-			CHAT_SHOUT_NEED_PVPS = Boolean.parseBoolean(SecuritySettings.getProperty("ChatShoutNeedPvps", "False"));
-			PVPS_TO_USE_CHAT_SHOUT = Integer.parseInt(SecuritySettings.getProperty("PvpsToUseChatShout", "0"));
-			CHAT_TRADE_NEED_PVPS = Boolean.parseBoolean(SecuritySettings.getProperty("ChatTradeNeedPvps", "False"));
-			PVPS_TO_USE_CHAT_TRADE = Integer.parseInt(SecuritySettings.getProperty("PvpsToUseChatTrade", "0"));
-			CHAT_HERO_NEED_PVPS = Boolean.parseBoolean(SecuritySettings.getProperty("ChatHeroNeedPvps", "False"));
-			PVPS_TO_USE_CHAT_HERO = Integer.parseInt(SecuritySettings.getProperty("PvpsToUseChatHero", "0"));			
-			
-			
+	
 			L2Properties ClanHallSiege = new L2Properties();
 			final File ch_siege = new File(CH_SIEGE_FILE);
 			try (InputStream is = new FileInputStream(ch_siege))
