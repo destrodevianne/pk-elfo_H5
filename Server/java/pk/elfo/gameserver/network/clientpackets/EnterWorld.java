@@ -301,7 +301,7 @@ public class EnterWorld extends L2GameClientPacket
 			
 			if (Config.GM_SUPER_HASTE)
 			{
-				SkillTable.getInstance().getInfo(7029, 3).getEffects(activeChar, activeChar);
+				SkillTable.getInstance().getInfo(7029, 4).getEffects(activeChar, activeChar);
 			}
 			
 			if (Config.GM_STARTUP_INVISIBLE && AdminTable.getInstance().hasAccess("admin_invisible", activeChar.getAccessLevel()))

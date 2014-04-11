@@ -109,6 +109,7 @@ public final class Config
 	public static final String RATES_CONFIG_FILE = "./config/Rates.properties";
 	public static final String RESTRICTIONS_CONFIG_FILE = "./config/Restrictions.properties";
 	public static final String SECURITY_CONFIG_FILE = "./config/GM/Security.properties";
+	public static final String GMADM_CONFIG = "./config/GM/GmAdm.properties";
 	public static final String CONFIGURATION_FILE = "./config/Server.properties";
 	public static final String SIEGE_CONFIGURATION_FILE = "./config/Siege.properties";
 	public static final String TELNET_FILE = "./config/Telnet.properties";
@@ -2364,6 +2365,38 @@ public final class Config
 			CLAN_LEVEL_11_REQUIREMENT = Integer.parseInt(Feature.getProperty("ClanLevel11Requirement", "170"));
 			ALLOW_WYVERN_DURING_SIEGE = Boolean.parseBoolean(Feature.getProperty("AllowRideWyvernDuringSiege", "True"));
 			
+			// ########################################################################################################//
+			// GMADM PROPERTIES
+			// ########################################################################################################//
+			
+			L2Properties GmSettings = new L2Properties();
+			final File Gm = new File(GMADM_CONFIG);
+			try (InputStream is = new FileInputStream(Gm))
+			{
+				GmSettings.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Erro ao ler o arquivo GmAdm Properties!", e);
+			}
+
+			GM_HERO_AURA = Boolean.parseBoolean(GmSettings.getProperty("GMHeroAura", "True"));
+			GM_STARTUP_INVULNERABLE = Boolean.parseBoolean(GmSettings.getProperty("GMStartupInvulnerable", "True"));
+			GM_SUPER_HASTE = Boolean.parseBoolean(GmSettings.getProperty("GMStartupSuperHaste", "True"));
+			GM_STARTUP_INVISIBLE = Boolean.parseBoolean(GmSettings.getProperty("GMStartupInvisible", "True"));
+			GM_STARTUP_SILENCE = Boolean.parseBoolean(GmSettings.getProperty("GMStartupSilence", "False"));
+			GM_STARTUP_AUTO_LIST = Boolean.parseBoolean(GmSettings.getProperty("GMStartupAutoList", "False"));
+			GM_STARTUP_DIET_MODE = Boolean.parseBoolean(GmSettings.getProperty("GMStartupDietMode", "False"));
+			GM_ADMIN_MENU_STYLE = GmSettings.getProperty("GMAdminMenuStyle", "modern");
+			GM_ITEM_RESTRICTION = Boolean.parseBoolean(GmSettings.getProperty("GMItemRestriction", "True"));
+			GM_SKILL_RESTRICTION = Boolean.parseBoolean(GmSettings.getProperty("GMSkillRestriction", "True"));
+			GM_TRADE_RESTRICTED_ITEMS = Boolean.parseBoolean(GmSettings.getProperty("GMTradeRestrictedItems", "False"));
+			GM_RESTART_FIGHTING = Boolean.parseBoolean(GmSettings.getProperty("GMRestartFighting", "True"));
+			GM_ANNOUNCER_NAME = Boolean.parseBoolean(GmSettings.getProperty("GMShowAnnouncerName", "True"));
+			GM_CRITANNOUNCER_NAME = Boolean.parseBoolean(GmSettings.getProperty("GMShowCritAnnouncerName", "False"));
+			GM_GIVE_SPECIAL_SKILLS = Boolean.parseBoolean(GmSettings.getProperty("GMGiveSpecialSkills", "False"));
+			GM_GIVE_SPECIAL_AURA_SKILLS = Boolean.parseBoolean(GmSettings.getProperty("GMGiveSpecialAuraSkills", "False"));
+			
  			// ########################################################################################################//
 			// EnterWorld Properties //
 			// ########################################################################################################//
@@ -3697,22 +3730,6 @@ public final class Config
 			SERVER_LIST_TYPE = getServerTypeId(General.getProperty("ServerListType", "Normal").split(","));
 			SERVER_LIST_AGE = Integer.parseInt(General.getProperty("ServerListAge", "0"));
 			SERVER_GMONLY = Boolean.parseBoolean(General.getProperty("ServerGMOnly", "false"));
-			GM_HERO_AURA = Boolean.parseBoolean(General.getProperty("GMHeroAura", "True"));
-			GM_STARTUP_INVULNERABLE = Boolean.parseBoolean(General.getProperty("GMStartupInvulnerable", "True"));
-			GM_SUPER_HASTE = Boolean.parseBoolean(General.getProperty("GMStartupSuperHaste", "True"));
-			GM_STARTUP_INVISIBLE = Boolean.parseBoolean(General.getProperty("GMStartupInvisible", "True"));
-			GM_STARTUP_SILENCE = Boolean.parseBoolean(General.getProperty("GMStartupSilence", "False"));
-			GM_STARTUP_AUTO_LIST = Boolean.parseBoolean(General.getProperty("GMStartupAutoList", "False"));
-			GM_STARTUP_DIET_MODE = Boolean.parseBoolean(General.getProperty("GMStartupDietMode", "False"));
-			GM_ADMIN_MENU_STYLE = General.getProperty("GMAdminMenuStyle", "modern");
-			GM_ITEM_RESTRICTION = Boolean.parseBoolean(General.getProperty("GMItemRestriction", "True"));
-			GM_SKILL_RESTRICTION = Boolean.parseBoolean(General.getProperty("GMSkillRestriction", "True"));
-			GM_TRADE_RESTRICTED_ITEMS = Boolean.parseBoolean(General.getProperty("GMTradeRestrictedItems", "False"));
-			GM_RESTART_FIGHTING = Boolean.parseBoolean(General.getProperty("GMRestartFighting", "True"));
-			GM_ANNOUNCER_NAME = Boolean.parseBoolean(General.getProperty("GMShowAnnouncerName", "True"));
-			GM_CRITANNOUNCER_NAME = Boolean.parseBoolean(General.getProperty("GMShowCritAnnouncerName", "False"));
-			GM_GIVE_SPECIAL_SKILLS = Boolean.parseBoolean(General.getProperty("GMGiveSpecialSkills", "False"));
-			GM_GIVE_SPECIAL_AURA_SKILLS = Boolean.parseBoolean(General.getProperty("GMGiveSpecialAuraSkills", "False"));
 			BYPASS_VALIDATION = Boolean.parseBoolean(General.getProperty("BypassValidation", "True"));
 			GAMEGUARD_ENFORCE = Boolean.parseBoolean(General.getProperty("GameGuardEnforce", "False"));
 			GAMEGUARD_PROHIBITACTION = Boolean.parseBoolean(General.getProperty("GameGuardProhibitAction", "False"));
