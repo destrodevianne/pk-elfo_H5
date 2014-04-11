@@ -58,6 +58,7 @@ public class AdminDanceSystem implements IAdminCommandHandler
 							player.setIsParalyzed(true);
 							player.setIsInvul(true);
 							player.broadcastSocialAction(10);
+							player.startAbnormalEffect(AbnormalEffect.FLAME);
 							ThreadPoolManager.getInstance().scheduleGeneral(new MyTask(), 3500);
 							ThreadPoolManager.getInstance().scheduleGeneral(new MyTask2(), 40000);
 						}
@@ -96,6 +97,7 @@ public class AdminDanceSystem implements IAdminCommandHandler
 							player.setIsParalyzed(true);
 							player.setIsInvul(true);
 							player.broadcastSocialAction(10);
+							player.startAbnormalEffect(AbnormalEffect.FLAME);
 							ThreadPoolManager.getInstance().scheduleGeneral(new MyTask(), 3500);
 							ThreadPoolManager.getInstance().scheduleGeneral(new MyTask2(), 43000);
 						}
@@ -139,7 +141,7 @@ public class AdminDanceSystem implements IAdminCommandHandler
 				player.setIsInvul(false);
 				player.broadcastSocialAction(10);
 				player.broadcastSocialAction(11);
-				player.stopAbnormalEffect(AbnormalEffect.MAGIC_CIRCLE);
+				player.stopAbnormalEffect(AbnormalEffect.FLAME);
 			}
 		}
 	}

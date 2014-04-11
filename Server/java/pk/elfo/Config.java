@@ -2368,7 +2368,7 @@ public final class Config
 
 			//ONENTERMESSAGES
 			ON_ENTER_DELAY_MESSAGES_ENABLE = Boolean.parseBoolean(PlayerSettings.getProperty("OnEnterMessagesShow", "False"));
-			ON_ENTER_DELAY_TO_START = Integer.parseInt(PlayerSettings.getProperty("OnEnterDelayToStart", "5"));
+			ON_ENTER_DELAY_TO_START = Integer.parseInt(PlayerSettings.getProperty("OnEnterDelayToStart", "15"));
 			
 			ON_ENTER_TEXT1_ENABLE = Boolean.parseBoolean(PlayerSettings.getProperty("OnEnterEnableText1", "False"));
 			ON_ENTER_TEXT2_ENABLE = Boolean.parseBoolean(PlayerSettings.getProperty("OnEnterEnableText2", "False"));
