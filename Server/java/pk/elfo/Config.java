@@ -101,7 +101,8 @@ public final class Config
 	public static final String NPC_CONFIG_FILE = "./config/NPC.properties";
 	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olympiad.properties";
 	public static final String PKELFO_FILE = "./config/Pkelfo.properties";
-	public static final String PLAYER_CONFIG_FILE = "./config/Player/EnterWorld.properties";	
+	public static final String PLAYER_CONFIG_FILE = "./config/Player/EnterWorld.properties";
+	public static final String RENAME_CONFIG_FILE = "./config/Player/Rename.properties";
 	public static final String PREMIUM_CONFIG_FILE = "./config/Premium.properties";
 	public static final String PVPPK_CONFIG_FILE = "./config/PvPpK/PvpPk.properties";
 	public static final String PVPESCAPE_CONFIG_FILE = "./config/PvPpK/Escape.properties";
@@ -214,6 +215,12 @@ public final class Config
 	public static String ON_ENTER_TEXT3_TYPE;
 	public static String ON_ENTER_TEXT4_TYPE;
 	public static String ON_ENTER_TEXT5_TYPE;
+	// ########################################################################################################//
+	// RENAME PROPERTIES
+	// ########################################################################################################//
+	public static int RENAME_NPC_ID;
+	public static int RENAME_NPC_MIN_LEVEL;
+	public static String RENAME_NPC_FEE;	
 	// ########################################################################################################//
 	// PKELFO PROPERTIES
 	// ########################################################################################################//
@@ -2399,6 +2406,25 @@ public final class Config
 			catch (Exception e)
 			{
 				_log.log(Level.SEVERE, "Error while loading Player settings!", e);
+			}
+			
+ 			// ########################################################################################################//
+			// Rename Properties //
+			// ########################################################################################################//
+			
+			L2Properties RenameSettings = new L2Properties();
+			final File Rename = new File(RENAME_CONFIG_FILE);
+			try (InputStream is = new FileInputStream(Rename))
+			{
+				RenameSettings.load(is);
+				RENAME_NPC_ID = Integer.parseInt(RenameSettings.getProperty("RenameNpcID", "36602"));
+				RENAME_NPC_MIN_LEVEL = Integer.parseInt(RenameSettings.getProperty("RenameNpcMinLevel", "75"));
+				RENAME_NPC_FEE = RenameSettings.getProperty("RenameNpcFee", "57,250000");
+			}
+			
+				catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Error while loading Rename settings!", e);
 			}
 			
 			// ########################################################################################################//
