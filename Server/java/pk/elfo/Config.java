@@ -4560,7 +4560,6 @@ public final class Config
 				}
 			}
 			
-			L2WALKER_PROTECTION = Boolean.parseBoolean(L2JModSettings.getProperty("L2WalkerProtection", "True"));
 			L2JMOD_DEBUG_VOICE_COMMAND = Boolean.parseBoolean(L2JModSettings.getProperty("DebugVoiceCommand", "False"));
 			
 			L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP = Integer.parseInt(L2JModSettings.getProperty("DualboxCheckMaxPlayersPerIP", "0"));
@@ -4862,6 +4861,7 @@ public final class Config
 				_log.log(Level.SEVERE, "Error while loading Security settings!", e);
 			}
 			
+			L2WALKER_PROTECTION = Boolean.parseBoolean(SecuritySettings.getProperty("L2WalkerProtection", "True"));
 			// Second Auth Settings
 			SECOND_AUTH_ENABLED = Boolean.parseBoolean(SecuritySettings.getProperty("SecondAuthEnabled", "false"));
 			SECOND_AUTH_MAX_ATTEMPTS = Integer.parseInt(SecuritySettings.getProperty("SecondAuthMaxAttempts", "5"));
