@@ -23,6 +23,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 import pk.elfo.Config;
+import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.model.MessagesOnEnter;
 import pk.elfo.gameserver.Announcements;
 import pk.elfo.gameserver.LoginServerThread;
 import pk.elfo.gameserver.SevenSigns;
@@ -170,6 +172,11 @@ public class EnterWorld extends L2GameClientPacket
 		LoginServerThread.getInstance().sendClientTracert(activeChar.getAccountName(), adress);
 		
 		getClient().setClientTracert(tracert);
+		
+		if(Config.ON_ENTER_DELAY_MESSAGES_ENABLE)
+		{
+			ThreadPoolManager.getInstance().scheduleGeneral(new MessagesOnEnter(activeChar,0), Config.ON_ENTER_DELAY_TO_START * 1000); // Delay in seconds to initiate.
+		}
 		
 		// cor para cada raca
 		if (Config.RACES_COLOR_ENABLE)

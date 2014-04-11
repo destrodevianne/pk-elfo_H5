@@ -101,6 +101,7 @@ public final class Config
 	public static final String NPC_CONFIG_FILE = "./config/NPC.properties";
 	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olympiad.properties";
 	public static final String PKELFO_FILE = "./config/Pkelfo.properties";
+	public static final String PLAYER_CONFIG_FILE = "./config/Player/EnterWorld.properties";	
 	public static final String PREMIUM_CONFIG_FILE = "./config/Premium.properties";
 	public static final String PVPPK_CONFIG_FILE = "./config/PvPpK/PvpPk.properties";
 	public static final String PVPESCAPE_CONFIG_FILE = "./config/PvPpK/Escape.properties";
@@ -174,7 +175,6 @@ public final class Config
 	public static boolean ANNOUNCE_HERO_CONECT;
 	public static boolean ANNOUNCE_HERO_DESCONECT;
 	public static boolean ENABLE_HERO_MESSAGE;
-	
 	// ########################################################################################################//
 	// AUTORESTART PROPERTIES
 	// ########################################################################################################//
@@ -189,6 +189,31 @@ public final class Config
 	public static int CLANWAR_REWARD_COUNT;
 	public static boolean ALLOW_CLANWAR_REP;
 	public static int CLANWAR_ADD_REP;
+	// ########################################################################################################//
+	// Mensagens automaticas de tempos em tempos
+	// ########################################################################################################//
+	public static boolean ON_ENTER_DELAY_MESSAGES_ENABLE;
+	public static int ON_ENTER_DELAY_TO_START;
+	public static boolean ON_ENTER_TEXT1_ENABLE;
+	public static boolean ON_ENTER_TEXT2_ENABLE;
+	public static boolean ON_ENTER_TEXT3_ENABLE;
+	public static boolean ON_ENTER_TEXT4_ENABLE;
+	public static boolean ON_ENTER_TEXT5_ENABLE; 
+	public static int ON_ENTER_TEXT1_DELAY;
+	public static int ON_ENTER_TEXT2_DELAY;
+	public static int ON_ENTER_TEXT3_DELAY;
+	public static int ON_ENTER_TEXT4_DELAY;
+	public static int ON_ENTER_TEXT5_DELAY;
+	public static String ON_ENTER_TEXT1;
+	public static String ON_ENTER_TEXT2;
+	public static String ON_ENTER_TEXT3;
+	public static String ON_ENTER_TEXT4;
+	public static String ON_ENTER_TEXT5;
+	public static String ON_ENTER_TEXT1_TYPE;
+	public static String ON_ENTER_TEXT2_TYPE;
+	public static String ON_ENTER_TEXT3_TYPE;
+	public static String ON_ENTER_TEXT4_TYPE;
+	public static String ON_ENTER_TEXT5_TYPE;
 	// ########################################################################################################//
 	// PKELFO PROPERTIES
 	// ########################################################################################################//
@@ -2331,6 +2356,50 @@ public final class Config
 			CLAN_LEVEL_10_REQUIREMENT = Integer.parseInt(Feature.getProperty("ClanLevel10Requirement", "140"));
 			CLAN_LEVEL_11_REQUIREMENT = Integer.parseInt(Feature.getProperty("ClanLevel11Requirement", "170"));
 			ALLOW_WYVERN_DURING_SIEGE = Boolean.parseBoolean(Feature.getProperty("AllowRideWyvernDuringSiege", "True"));
+			
+ 			// ########################################################################################################//
+			// EnterWorld Properties //
+			// ########################################################################################################//
+			L2Properties PlayerSettings = new L2Properties();
+			final File Player = new File(PLAYER_CONFIG_FILE);
+			try (InputStream is = new FileInputStream(Player))
+			{
+				PlayerSettings.load(is);
+
+			//ONENTERMESSAGES
+			ON_ENTER_DELAY_MESSAGES_ENABLE = Boolean.parseBoolean(PlayerSettings.getProperty("OnEnterMessagesShow", "False"));
+			ON_ENTER_DELAY_TO_START = Integer.parseInt(PlayerSettings.getProperty("OnEnterDelayToStart", "5"));
+			
+			ON_ENTER_TEXT1_ENABLE = Boolean.parseBoolean(PlayerSettings.getProperty("OnEnterEnableText1", "False"));
+			ON_ENTER_TEXT2_ENABLE = Boolean.parseBoolean(PlayerSettings.getProperty("OnEnterEnableText2", "False"));
+			ON_ENTER_TEXT3_ENABLE = Boolean.parseBoolean(PlayerSettings.getProperty("OnEnterEnableText3", "False"));
+			ON_ENTER_TEXT4_ENABLE = Boolean.parseBoolean(PlayerSettings.getProperty("OnEnterEnableText4", "False"));
+			ON_ENTER_TEXT5_ENABLE = Boolean.parseBoolean(PlayerSettings.getProperty("OnEnterEnableText5", "False"));
+			
+			ON_ENTER_TEXT1_TYPE = PlayerSettings.getProperty("OnEnterText1Type", "exshow");
+			ON_ENTER_TEXT2_TYPE = PlayerSettings.getProperty("OnEnterText2Type", "exshow");
+			ON_ENTER_TEXT3_TYPE = PlayerSettings.getProperty("OnEnterText3Type", "exshow");
+			ON_ENTER_TEXT4_TYPE = PlayerSettings.getProperty("OnEnterText4Type", "exshow");
+			ON_ENTER_TEXT5_TYPE = PlayerSettings.getProperty("OnEnterText5Type", "exshow");
+			
+			ON_ENTER_TEXT1_DELAY = Integer.parseInt(PlayerSettings.getProperty("OnEnterDelayText1", "5"));
+			ON_ENTER_TEXT2_DELAY = Integer.parseInt(PlayerSettings.getProperty("OnEnterDelayText2", "5"));
+			ON_ENTER_TEXT3_DELAY = Integer.parseInt(PlayerSettings.getProperty("OnEnterDelayText3", "5"));
+			ON_ENTER_TEXT4_DELAY = Integer.parseInt(PlayerSettings.getProperty("OnEnterDelayText4", "5"));
+			ON_ENTER_TEXT5_DELAY = Integer.parseInt(PlayerSettings.getProperty("OnEnterDelayText5", "5"));
+			
+			ON_ENTER_TEXT1 = PlayerSettings.getProperty("OnEnterText1", "Text");
+			ON_ENTER_TEXT2 = PlayerSettings.getProperty("OnEnterText2", "Text");
+			ON_ENTER_TEXT3 = PlayerSettings.getProperty("OnEnterText3", "Text");
+			ON_ENTER_TEXT4 = PlayerSettings.getProperty("OnEnterText4", "Text");
+			ON_ENTER_TEXT5 = PlayerSettings.getProperty("OnEnterText5", "Text");
+			
+			}
+			
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Error while loading Player settings!", e);
+			}
 			
 			// ########################################################################################################//
 			// PkElfo Properties //
