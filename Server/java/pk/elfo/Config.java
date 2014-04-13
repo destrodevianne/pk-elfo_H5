@@ -2450,7 +2450,7 @@ public final class Config
 			try (InputStream is = new FileInputStream(Rename))
 			{
 				RenameSettings.load(is);
-				RENAME_NPC_ID = Integer.parseInt(RenameSettings.getProperty("RenameNpcID", "36602"));
+				RENAME_NPC_ID = Integer.parseInt(RenameSettings.getProperty("RenameNpcID", "40001"));
 				RENAME_NPC_MIN_LEVEL = Integer.parseInt(RenameSettings.getProperty("RenameNpcMinLevel", "75"));
 				RENAME_NPC_FEE = RenameSettings.getProperty("RenameNpcFee", "57,250000");
 			}

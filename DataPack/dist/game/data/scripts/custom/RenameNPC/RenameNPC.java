@@ -29,7 +29,7 @@ public class RenameNPC extends Quest
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		String htmltext = "New Name:<br1><edit var=\"newname\" width=120 height=18>";
+		String htmltext = "Novo Nome:<br1><edit var=\"newname\" width=120 height=18>";
 		String eventSplit[] = event.split(" ");
 		QuestState st = player.getQuestState(getName());
 		
@@ -37,17 +37,17 @@ public class RenameNPC extends Quest
 		{
 			st.getPlayer().setTarget(st.getPlayer());
 			if (eventSplit.length != 2)
-				htmltext = "Enter a new name or remove the space between the names.";			
+				htmltext = "Digite um novo nome ou remova o espaco entre os nomes.";			
 			else if (st.getPlayer().getLevel() < Config.RENAME_NPC_MIN_LEVEL)
-				htmltext = "Minimum Level is: " + String.valueOf(Config.RENAME_NPC_MIN_LEVEL);
+				htmltext = "Level minimo: " + String.valueOf(Config.RENAME_NPC_MIN_LEVEL);
 			else if (validItemFee(st))
-				htmltext = "You do not have enough items for exchange.";
+				htmltext = "Voce nao tem moedas suficientes para trocar seu nome.";
 			else if (eventSplit[1].length() < 1 || eventSplit[1].length() > 16)
-				htmltext = "Maximum number of characters: 16";
+				htmltext = "Numero maximo de caracteres: 16";
 			else if (!Util.isAlphaNumeric(eventSplit[1]))
-				htmltext = "The name must only contain alpha-numeric characters.";
+				htmltext = "O nome deve conter apenas caracteres alfanumericos.";
 			else if (CharNameTable.getInstance().doesCharNameExist(eventSplit[1]))
-				htmltext = "The name chosen is already in use. Choose another name.";
+				htmltext = "O nome escolhido ja esta em uso. Escolha outro nome.";
 			else
 			{
 				try
@@ -56,7 +56,7 @@ public class RenameNPC extends Quest
 					player.setName(eventSplit[1]);
 					player.store();
 					L2World.getInstance().addToAllPlayers(player);
-					htmltext = "Your name has been changed successfully.";
+					htmltext = "Seu nome foi alterado com sucesso.";
 					player.broadcastUserInfo();
 					
 					String itemFeeSplit[] = Config.RENAME_NPC_FEE.split("\\;");
@@ -81,7 +81,7 @@ public class RenameNPC extends Quest
 				}
 				catch (StringIndexOutOfBoundsException e)
 				{ 
-					htmltext = "Service unavailable!";
+					htmltext = "Servico nao disponivel!";
 				}
 			}
 			return (page(htmltext,1));
@@ -99,7 +99,7 @@ public class RenameNPC extends Quest
 			Quest q = QuestManager.getInstance().getQuest(getName());
 			st = q.newQuestState(player);
 		}
-		htmltext = page("New Name:<br1><edit var=\"newname\" width=70 height=10>",0);
+		htmltext = page("Novo Nome:<br1><edit var=\"newname\" width=70 height=10>",0);
 		return htmltext;
 	}
 	
@@ -107,7 +107,7 @@ public class RenameNPC extends Quest
 	{
 		String htmltext = "";
 		htmltext += htmlPage("Title");
-		htmltext += "Hello I'm here to help you change your name.<br>" + "Enter your new name, but make sure you have items for exchange:<br1>";
+		htmltext += "Ola eu estou aqui para ajuda-lo a mudar o seu nome.<br>" + "Digite o novo nome, mas certifique-se que voce tem moedas suficiente para a troca:<br1>";
 		String itemFeeSplit[] = Config.RENAME_NPC_FEE.split("\\;");
         for (String anItemFeeSplit : itemFeeSplit)
         {
@@ -144,7 +144,7 @@ public class RenameNPC extends Quest
 		String texto = "";
 		if (op.equals("Title"))
 		{
-			texto += "<html><body><title>Rename Manager</title><center><br>" + "<b><font color=ffcc00>Rename Manager Information</font></b>" + "<br><img src=\"L2UI_CH3.herotower_deco\" width=\"256\" height=\"32\"><br></center>";
+			texto += "<html><body><title>Gerente do servico</title><center><br>" + "<b><font color=ffcc00>Informacao sobre o servico</font></b>" + "<br><img src=\"L2UI_CH3.herotower_deco\" width=\"256\" height=\"32\"><br></center>";
 		}
 		else if (op.equals("Footer"))
 		{
@@ -152,7 +152,7 @@ public class RenameNPC extends Quest
 		}
 		else
 		{
-			texto = "Not Found!";
+			texto = "Nao encontrado!";
 		}
 		return texto;
 	}
