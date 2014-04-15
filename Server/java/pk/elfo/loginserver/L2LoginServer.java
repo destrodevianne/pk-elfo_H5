@@ -1,5 +1,12 @@
 package pk.elfo.loginserver;
 
+import pk.elfo.Config;
+import pk.elfo.L2DatabaseFactory;
+import pk.elfo.Server;
+import pk.elfo.loginserver.mail.MailSystem;
+import pk.elfo.loginserver.network.L2LoginClient;
+import pk.elfo.loginserver.network.L2LoginPacketHandler;
+import pk.elfo.status.Status;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -13,17 +20,8 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
-
 import org.mmocore.network.SelectorConfig;
 import org.mmocore.network.SelectorThread;
-
-import pk.elfo.Config;
-import pk.elfo.L2DatabaseFactory;
-import pk.elfo.Server;
-import pk.elfo.loginserver.mail.MailSystem;
-import pk.elfo.loginserver.network.L2LoginClient;
-import pk.elfo.loginserver.network.L2LoginPacketHandler;
-import pk.elfo.status.Status;
 
 /**
  * PkElfo
@@ -73,9 +71,6 @@ public final class L2LoginServer
 		}
 		// Load Config
 		Config.load();
-		
-		// L2 PkElfo Team
-		L2PkElfo.L2PkElfoInfo();
 		
 		// Prepare Database
 		try

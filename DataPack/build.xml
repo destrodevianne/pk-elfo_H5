@@ -40,7 +40,7 @@
 	</target>
 
 	<target name="build" depends="dist">
-		<zip destfile="${build}/PkElfo_DataPack.zip" basedir="${build.dist}" level="9" />
+		<zip destfile="${build}/PkElfo_DP.zip" basedir="${build.dist}" level="9" />
 	</target>
 
 	<target name="checkRequirements" description="Check Requirements.">

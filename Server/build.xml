@@ -65,19 +65,13 @@
 	</target>
 
 	<target name="jar" depends="compile" description="Create the jar files.">
-		<jar destfile="${build.dist.login}/Pk_Elfo_login.jar" level="9">
+		<jar destfile="${build.dist.login}/L2J_Pk_Elfo_login.jar" level="9">
 			<fileset dir="${build.bin}">
 				<exclude name="**/dbinstaller/**" />
 				<exclude name="**/gameserver/**" />
 			</fileset>
-			<manifest>
-				<attribute name="Built-By" value="${user.name}" />
-				<attribute name="Built-Date" value="${build.tstamp}" />
-				<attribute name="Implementation-URL" value="http://www.PkElfo.com/" />
-				<attribute name="Implementation-Version" value="${l2j.version}" />
-			</manifest>
 		</jar>
-		<jar destfile="${build.dist.login}/Pk_Elfo_Config.jar" level="9">
+		<jar destfile="${build.dist.login}/L2J_Pk_Elfo_Config.jar" level="9">
 			<fileset dir="${build.bin}">
 				<include name="**/configurator/**" />
 				<include name="**/i18n/**" />
@@ -94,30 +88,16 @@
 				<exclude name="**/L2DatabaseFactory/**" />
 				<exclude name="**/Server/**" />
 			</fileset>
-			<manifest>
-				<attribute name="Built-By" value="${user.name}" />
-				<attribute name="Built-Date" value="${build.tstamp}" />
-				<attribute name="Class-Path" value="${manifest.libs}" />
-				<attribute name="Implementation-URL" value="http://www.PkElfo.com/" />
-				<attribute name="Implementation-Version" value="${l2j.version}" />
-				<attribute name="Main-Class" value="pk.elfo.tools.configurator.ConfigUserInterface" />
-			</manifest>
 		</jar>
-		<jar destfile="${build.dist.game}/Pk_Elfo.jar" level="9">
+		<jar destfile="${build.dist.game}/L2J_Pk_Elfo_server.jar" level="9">
 			<fileset dir="${build.bin}">
 				<exclude name="**/dbinstaller/**" />
 				<exclude name="**/loginserver/**" />
 				<exclude name="**/accountmanager/**" />
 				<exclude name="**/gsregistering/**" />
 			</fileset>
-			<manifest>
-				<attribute name="Built-By" value="${user.name}" />
-				<attribute name="Built-Date" value="${build.tstamp}" />
-				<attribute name="Implementation-URL" value="http://www.PkElfo.com/" />
-				<attribute name="Implementation-Version" value="${l2j.version}" />
-			</manifest>
 		</jar>
-		<jar destfile="${build.dist.game}/Pk_Elfo_Config.jar" level="9">
+		<jar destfile="${build.dist.game}/L2J_Pk_Elfo_Config.jar" level="9">
 			<fileset dir="${build.bin}">
 				<include name="**/configurator/**" />
 				<include name="**/i18n/**" />
@@ -134,14 +114,6 @@
 				<exclude name="**/L2DatabaseFactory/**" />
 				<exclude name="**/Server/**" />
 			</fileset>
-			<manifest>
-				<attribute name="Built-By" value="${user.name}" />
-				<attribute name="Built-Date" value="${build.tstamp}" />
-				<attribute name="Class-Path" value="${manifest.libs}" />
-				<attribute name="Implementation-URL" value="http://www.PkElfo.com/" />
-				<attribute name="Implementation-Version" value="${l2j.version}" />
-				<attribute name="Main-Class" value="pk.elfo.tools.configurator.ConfigUserInterface" />
-			</manifest>
 		</jar>
 		<jar destfile="${build.dist.tools}/dbinst_cs.jar" level="9">
 			<fileset dir="${build.bin}">
@@ -151,14 +123,6 @@
 				<exclude name="**/LauncherGS*" />
 				<exclude name="**/LauncherLS*" />
 			</fileset>
-			<manifest>
-				<attribute name="Built-By" value="${user.name}" />
-				<attribute name="Built-Date" value="${build.tstamp}" />
-				<attribute name="Class-Path" value="${manifest.libs}" />
-				<attribute name="Implementation-URL" value="http://www.PkElfo.com/" />
-				<attribute name="Implementation-Version" value="${l2j.version}" />
-				<attribute name="Main-Class" value="pk.elfo.tools.dbinstaller.LauncherCS" />
-			</manifest>
 		</jar>
 		<jar destfile="${build.dist.tools}/dbinst_gs.jar" level="9">
 			<fileset dir="${build.bin}">
@@ -168,14 +132,6 @@
 				<exclude name="**/LauncherCS*" />
 				<exclude name="**/LauncherLS*" />
 			</fileset>
-			<manifest>
-				<attribute name="Built-By" value="${user.name}" />
-				<attribute name="Built-Date" value="${build.tstamp}" />
-				<attribute name="Class-Path" value="${manifest.libs}" />
-				<attribute name="Implementation-URL" value="http://www.PkElfo.com/" />
-				<attribute name="Implementation-Version" value="${l2j.version}" />
-				<attribute name="Main-Class" value="pk.elfo.tools.dbinstaller.LauncherGS" />
-			</manifest>
 		</jar>
 		<jar destfile="${build.dist.tools}/dbinst_ls.jar" level="9">
 			<fileset dir="${build.bin}">
@@ -185,19 +141,11 @@
 				<exclude name="**/LauncherCS*" />
 				<exclude name="**/LauncherGS*" />
 			</fileset>
-			<manifest>
-				<attribute name="Built-By" value="${user.name}" />
-				<attribute name="Built-Date" value="${build.tstamp}" />
-				<attribute name="Class-Path" value="${manifest.libs}" />
-				<attribute name="Implementation-URL" value="http://www.PkElfo.com/" />
-				<attribute name="Implementation-Version" value="${l2j.version}" />
-				<attribute name="Main-Class" value="pk.elfo.tools.dbinstaller.LauncherLS" />
-			</manifest>
 		</jar>
 	</target>
 
 	<target name="build" depends="jar" description="Create the Zip file.">
-		<zip destfile="${build}/PkElfo_Server.zip" basedir="${build.dist}" level="9" />
+		<zip destfile="${build}/PkElfo_GS.zip" basedir="${build.dist}" level="9" />
 	</target>
 
 	<target name="checkRequirements" description="Check Requirements.">

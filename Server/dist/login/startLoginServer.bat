@@ -5,7 +5,7 @@ color 02
 echo Iniciando Pkelfo Login Server.
 echo.
 
-java -Xms128m -Xmx128m -cp ./../libs/*;Pk_Elfo_login.jar pk.elfo.loginserver.L2LoginServer
+java -Xms128m -Xmx128m -cp ./../libs/*;L2J_Pk_Elfo_login.jar pk.elfo.loginserver.L2LoginServer
 
 if ERRORLEVEL 2 goto restart
 if ERRORLEVEL 1 goto error

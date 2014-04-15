@@ -5,7 +5,7 @@ color 02
 echo Iniciando PkElfo Game Server.
 echo.
 
-java -server -Xmx1024m -Xms1024m -Xmn512m -XX:PermSize=256m -XX:SurvivorRatio=8 -Xnoclassgc -XX:+AggressiveOpts -cp ./../libs/*;Pk_Elfo.jar pk.elfo.gameserver.GameServer
+java -server -Xmx1024m -Xms1024m -Xmn512m -XX:PermSize=256m -XX:SurvivorRatio=8 -Xnoclassgc -XX:+AggressiveOpts -cp ./../libs/*;L2J_Pk_Elfo_server.jar pk.elfo.gameserver.GameServer
 
 REM NOTE: If you have a powerful machine, you could modify/add some extra parameters for performance, like:
 REM -Xms1536m
