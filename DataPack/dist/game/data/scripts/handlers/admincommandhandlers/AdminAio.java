@@ -188,7 +188,7 @@ public class AdminAio implements IAdminCommandHandler
 				
 				if (Config.AIO_CUSTOM_TITLE_AD && activeChar.isAio())
 		         {
-		            player.setTitle(Config.AIO_CUSTOM_TITLE_AD);
+		            _player.setTitle(Config.AIO_CUSTOM_TITLE_AD);
 		         }
 				
 				if (Config.ALLOW_AIO_TCOLOR && activeChar.isAio())
