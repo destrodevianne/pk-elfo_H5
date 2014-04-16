@@ -12,6 +12,7 @@ import pk.elfo.gameserver.GmListTable;
 import pk.elfo.gameserver.handler.IAdminCommandHandler;
 import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.network.serverpackets.EtcStatusUpdate;
 
 /**
@@ -185,11 +186,6 @@ public class AdminAio implements IAdminCommandHandler
 				{
 					_player.getAppearance().setNameColor(Config.AIO_NCOLOR);
 				}
-				
-				if (Config.AIO_CUSTOM_TITLE_AD && activeChar.isAio())
-		         {
-		            _player.setTitle(Config.AIO_CUSTOM_TITLE_AD);
-		         }
 				
 				if (Config.ALLOW_AIO_TCOLOR && activeChar.isAio())
 				{

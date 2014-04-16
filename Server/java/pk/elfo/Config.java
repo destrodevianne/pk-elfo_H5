@@ -168,7 +168,6 @@ public final class Config
 	public static Map<Integer, Integer> AIO_SKILLS;
 	public static boolean ALLOW_AIO_NCOLOR;
 	public static int AIO_NCOLOR;
-	public static boolean AIO_CUSTOM_TITLE_AD;
 	public static boolean ALLOW_AIO_TCOLOR;
 	public static int AIO_TCOLOR;
 	public static boolean ALLOW_AIO_ITEM;
@@ -3107,7 +3106,6 @@ public final class Config
 			ENABLE_AIO_SYSTEM = Boolean.parseBoolean(AioSettings.getProperty("EnableAioSystem", "true"));
 			ALLOW_AIO_NCOLOR = Boolean.parseBoolean(AioSettings.getProperty("AllowAioNameColor", "true"));
 			AIO_NCOLOR = Integer.decode("0x" + AioSettings.getProperty("AioNameColor", "000000"));
-			AIO_CUSTOM_TITLE_AD = Boolean.parseBoolean(AioSettings.getProperty("CustomTitle", "True"));
 			ALLOW_AIO_TCOLOR = Boolean.parseBoolean(AioSettings.getProperty("AllowAioTitleColor", "true"));
 			AIO_TCOLOR = Integer.decode("0x" + AioSettings.getProperty("AioTitleColor", "000000"));
 			AIO_ITEMID = Integer.parseInt(AioSettings.getProperty("ItemIdAio", "2523"));
