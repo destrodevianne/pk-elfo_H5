@@ -20,22 +20,22 @@
 		<property name="showEscapeEffect" value="True" />
 		<property name="enableMiniEvents" value="True" />
 		<property name="npcBufferId" value="555" />
-		<restriction type="item" ids="0" />
-		<restriction type="skill" ids="0" />
-		<!-- ENABLE/DISABLE EVENTS -->
+			<restriction type="item" ids="0" />
+			<restriction type="skill" ids="0" />
+				<!-- ENABLE/DISABLE EVENTS -->
 		<property name="eventEnabled_1" value="True" /> 	<!-- Deathmatch -->
 		<property name="eventEnabled_2" value="True" /> 	<!-- Domination -->
 		<property name="eventEnabled_3" value="True" /> 	<!-- Double Domination -->
 		<property name="eventEnabled_4" value="True" /> 	<!-- Last Man Standing -->
-		<property name="eventEnabled_5" value="True" />	<!-- Lucky Chest -->
-		<property name="eventEnabled_6" value="True" />	<!-- Simon Says -->
-		<property name="eventEnabled_7" value="True" />	<!-- Team vs Team -->
+		<property name="eventEnabled_5" value="True" />		<!-- Lucky Chest -->
+		<property name="eventEnabled_6" value="True" />		<!-- Simon Says -->
+		<property name="eventEnabled_7" value="True" />		<!-- Team vs Team -->
 		<property name="eventEnabled_8" value="False" />	<!-- VIP Team vs Team -->
-		<property name="eventEnabled_9" value="True" />	<!-- Zombie -->
+		<property name="eventEnabled_9" value="True" />		<!-- Zombie -->
 		<property name="eventEnabled_10" value="True" />	<!-- Capture the Flag -->
 		<property name="eventEnabled_11" value="True" />	<!-- Russian Roulette -->
 		<property name="eventEnabled_12" value="True" />	<!-- Bomb Fight -->
 		<property name="eventEnabled_13" value="True" />	<!-- Mutant -->
 		<property name="eventEnabled_14" value="True" />	<!-- Battlefield -->
-     </event>
+	</event>
 </events>
