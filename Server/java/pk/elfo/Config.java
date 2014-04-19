@@ -99,6 +99,7 @@ public final class Config
 	public static final String L2JMOD_CONFIG_FILE = "./config/L2JMods.properties";
 	public static final String MMO_CONFIG_FILE = "./config/MMO.properties";
 	public static final String NPC_CONFIG_FILE = "./config/NPCs/NPC.properties";
+	public static final String MOBS_CONFIG_FILE = "./config/NPCs/MOBS.properties";
 	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olympiad.properties";
 	public static final String PKELFO_FILE = "./config/Pkelfo.properties";
 	public static final String PLAYER_CONFIG_FILE = "./config/Player/EnterWorld.properties";
@@ -3999,6 +4000,9 @@ public final class Config
 			}
 			loadFloodProtectorConfigs(FloodProtectors);
 			
+			// #########################################################################################################//
+			
+			
 			// Load NPC L2Properties file (if exists)
 			L2Properties NPC = new L2Properties();
 			final File npc = new File(NPC_CONFIG_FILE);
@@ -4012,12 +4016,8 @@ public final class Config
 			}
 			
 			ANNOUNCE_MAMMON_SPAWN = Boolean.parseBoolean(NPC.getProperty("AnnounceMammonSpawn", "True"));
-			ALT_MOB_AGRO_IN_PEACEZONE = Boolean.parseBoolean(NPC.getProperty("AltMobAgroInPeaceZone", "True"));
 			ALT_ATTACKABLE_NPCS = Boolean.parseBoolean(NPC.getProperty("AltAttackableNpcs", "True"));
 			ALT_GAME_VIEWNPC = Boolean.parseBoolean(NPC.getProperty("AltGameViewNpc", "True"));
-			MAX_DRIFT_RANGE = Integer.parseInt(NPC.getProperty("MaxDriftRange", "300"));
-			DEEPBLUE_DROP_RULES = Boolean.parseBoolean(NPC.getProperty("UseDeepBlueDropRules", "True"));
-			DEEPBLUE_DROP_RULES_RAID = Boolean.parseBoolean(NPC.getProperty("UseDeepBlueDropRulesRaid", "True"));
 			SHOW_NPC_LVL = Boolean.parseBoolean(NPC.getProperty("ShowNpcLevel", "True"));
 			SHOW_CREST_WITHOUT_QUEST = Boolean.parseBoolean(NPC.getProperty("ShowCrestWithoutQuest", "True"));
 			ENABLE_RANDOM_ENCHANT_EFFECT = Boolean.parseBoolean(NPC.getProperty("EnableRandomEnchantEffect", "False"));
@@ -4029,11 +4029,6 @@ public final class Config
 			NPC_SKILL_CHANCE_PENALTY = parseConfigLine(NPC.getProperty("SkillChancePenaltyForLvLDifferences", "2.5, 3.0, 3.25, 3.5"));
 			TOPDEBUG = Boolean.parseBoolean(NPC.getProperty("TopNpcDebug", "false"));
 			TOPID = Integer.parseInt(NPC.getProperty("TopNpcID", "36602"));
-			DECAY_TIME_TASK = Integer.parseInt(NPC.getProperty("DecayTimeTask", "5000"));
-			NPC_DECAY_TIME = Integer.parseInt(NPC.getProperty("NpcDecayTime", "8500"));
-			RAID_BOSS_DECAY_TIME = Integer.parseInt(NPC.getProperty("RaidBossDecayTime", "30000"));
-			SPOILED_DECAY_TIME = Integer.parseInt(NPC.getProperty("SpoiledDecayTime", "18500"));
-			ENABLE_DROP_VITALITY_HERBS = Boolean.parseBoolean(NPC.getProperty("EnableVitalityHerbs", "True"));
 			GUARD_ATTACK_AGGRO_MOB = Boolean.parseBoolean(NPC.getProperty("GuardAttackAggroMob", "True"));
 			GUARD_ID = Integer.parseInt(NPC.getProperty("GuardId", "36602"));
 			ALLOW_WYVERN_UPGRADER = Boolean.parseBoolean(NPC.getProperty("AllowWyvernUpgrader", "False"));
@@ -4098,6 +4093,33 @@ public final class Config
 					}
 				}
 			}
+			
+			// #########################################################################################################//
+			
+			// ############################ MOBS PROPERTIES ############################################################//
+			
+			L2Properties MOBS = new L2Properties();
+			final File mobs = new File(MOBS_CONFIG_FILE);
+			try (InputStream is = new FileInputStream(mobs))
+			{
+				MOBS.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Error while loading MOBS settings!", e);
+			}
+	
+			ALT_MOB_AGRO_IN_PEACEZONE = Boolean.parseBoolean(MOBS.getProperty("AltMobAgroInPeaceZone", "True"));
+			MAX_DRIFT_RANGE = Integer.parseInt(MOBS.getProperty("MaxDriftRange", "300"));
+			DEEPBLUE_DROP_RULES = Boolean.parseBoolean(MOBS.getProperty("UseDeepBlueDropRules", "True"));
+			DEEPBLUE_DROP_RULES_RAID = Boolean.parseBoolean(MOBS.getProperty("UseDeepBlueDropRulesRaid", "True"));
+			ENABLE_DROP_VITALITY_HERBS = Boolean.parseBoolean(MOBS.getProperty("EnableVitalityHerbs", "True"));
+			DECAY_TIME_TASK = Integer.parseInt(MOBS.getProperty("DecayTimeTask", "5000"));
+			NPC_DECAY_TIME = Integer.parseInt(MOBS.getProperty("NpcDecayTime", "8500"));
+			RAID_BOSS_DECAY_TIME = Integer.parseInt(MOBS.getProperty("RaidBossDecayTime", "30000"));
+			SPOILED_DECAY_TIME = Integer.parseInt(MOBS.getProperty("SpoiledDecayTime", "18500"));
+			
+			// #########################################################################################################//
 			
 			// Load Rates L2Properties file (if exists)
 			final File rates = new File(RATES_CONFIG_FILE);
