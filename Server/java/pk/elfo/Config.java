@@ -80,8 +80,8 @@ public final class Config
 	public static final String CLANLEADER_FILE = "./config/Clan/ClanLider.properties";
 	public static final String CHARACTER_CONFIG_FILE = "./config/Character.properties";
 	public static final String CHAT_FILTER_FILE = "./config/chatfilter.txt";
-	public static final String COMMUNITY_PVP = "./config/CommunityPvP.properties";
-	public static final String COMMUNITY_CONFIGURATION_FILE = "./config/CommunityServer.properties";
+	public static final String COMMUNITY_PVP = "./config/CommunityServer/CommunityPvP.properties";
+	public static final String COMMUNITY_CONFIGURATION_FILE = "./config/CommunityServer/CommunityServer.properties";
 	public static final String CH_SIEGE_FILE = "./config/ConquerableHallSiege.properties";
 	public static final String EMAIL_CONFIG_FILE = "./config/Email.properties";
 	public static final String EVENT_FILE = "./config/Event.properties";
