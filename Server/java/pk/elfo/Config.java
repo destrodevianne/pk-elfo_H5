@@ -98,11 +98,14 @@ public final class Config
 	public static final String DATAPACK_VERSION_FILE = "./config/l2jdp-version.properties";
 	public static final String L2JMOD_CONFIG_FILE = "./config/L2JMods.properties";
 	public static final String MMO_CONFIG_FILE = "./config/MMO.properties";
+	// ----------------------------------------------------------------------------------------------------//
 	public static final String GUARDAS_CONFIG_FILE = "./config/NPCs/GUARDAS.properties";
 	public static final String MOBS_CONFIG_FILE = "./config/NPCs/MOBS.properties";
 	public static final String NPC_CONFIG_FILE = "./config/NPCs/NPC.properties";
 	public static final String PETS_CONFIG_FILE = "./config/NPCs/PETS.properties";
 	public static final String TOPNPC_CONFIG_FILE = "./config/NPCs/TOPNPC.properties";
+	public static final String RAIDBOSSES_CONFIG_FILE = "./config/NPCs/RAIDBOSSES.properties";
+	// ----------------------------------------------------------------------------------------------------//
 	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olympiad.properties";
 	public static final String PKELFO_FILE = "./config/Pkelfo.properties";
 	public static final String PLAYER_CONFIG_FILE = "./config/Player/EnterWorld.properties";
@@ -4030,58 +4033,6 @@ public final class Config
 			NPC_SKILL_DMG_PENALTY = parseConfigLine(NPC.getProperty("SkillDmgPenaltyForLvLDifferences", "0.8, 0.7, 0.65, 0.62"));
 			MIN_NPC_LVL_MAGIC_PENALTY = Integer.parseInt(NPC.getProperty("MinNPCLevelForMagicPenalty", "78"));
 			NPC_SKILL_CHANCE_PENALTY = parseConfigLine(NPC.getProperty("SkillChancePenaltyForLvLDifferences", "2.5, 3.0, 3.25, 3.5"));
-			RAID_HP_REGEN_MULTIPLIER = Double.parseDouble(NPC.getProperty("RaidHpRegenMultiplier", "100")) / 100;
-			RAID_MP_REGEN_MULTIPLIER = Double.parseDouble(NPC.getProperty("RaidMpRegenMultiplier", "100")) / 100;
-			RAID_PDEFENCE_MULTIPLIER = Double.parseDouble(NPC.getProperty("RaidPDefenceMultiplier", "100")) / 100;
-			RAID_MDEFENCE_MULTIPLIER = Double.parseDouble(NPC.getProperty("RaidMDefenceMultiplier", "100")) / 100;
-			RAID_PATTACK_MULTIPLIER = Double.parseDouble(NPC.getProperty("RaidPAttackMultiplier", "100")) / 100;
-			RAID_MATTACK_MULTIPLIER = Double.parseDouble(NPC.getProperty("RaidMAttackMultiplier", "100")) / 100;
-			RAID_MIN_RESPAWN_MULTIPLIER = Float.parseFloat(NPC.getProperty("RaidMinRespawnMultiplier", "1.0"));
-			RAID_MAX_RESPAWN_MULTIPLIER = Float.parseFloat(NPC.getProperty("RaidMaxRespawnMultiplier", "1.0"));
-			RAID_MINION_RESPAWN_TIMER = Integer.parseInt(NPC.getProperty("RaidMinionRespawnTime", "300000"));
-			String[] propertySplit = NPC.getProperty("CustomMinionsRespawnTime", "").split(";");
-			MINIONS_RESPAWN_TIME = new HashMap<>(propertySplit.length);
-			for (String prop : propertySplit)
-			{
-				String[] propSplit = prop.split(",");
-				if (propSplit.length != 2)
-				{
-					_log.warning(StringUtil.concat("[CustomMinionsRespawnTime]: invalid config property -> CustomMinionsRespawnTime \"", prop, "\""));
-				}
-				
-				try
-				{
-					MINIONS_RESPAWN_TIME.put(Integer.valueOf(propSplit[0]), Integer.valueOf(propSplit[1]));
-				}
-				catch (NumberFormatException nfe)
-				{
-					if (!prop.isEmpty())
-					{
-						_log.warning(StringUtil.concat("[CustomMinionsRespawnTime]: invalid config property -> CustomMinionsRespawnTime \"", propSplit[0], "\"", propSplit[1]));
-					}
-				}
-			}
-			
-			RAID_DISABLE_CURSE = Boolean.parseBoolean(NPC.getProperty("DisableRaidCurse", "False"));
-			RAID_CHAOS_TIME = Integer.parseInt(NPC.getProperty("RaidChaosTime", "10"));
-			GRAND_CHAOS_TIME = Integer.parseInt(NPC.getProperty("GrandChaosTime", "10"));
-			MINION_CHAOS_TIME = Integer.parseInt(NPC.getProperty("MinionChaosTime", "10"));
-			split = NPC.getProperty("NonTalkingNpcs", "18684,18685,18686,18687,18688,18689,18690,19691,18692,31557,31606,31671,31672,31673,31674,32026,32030,32031,32032,32306,32619,32620,32621").split(",");
-			NON_TALKING_NPCS = new ArrayList<>(split.length);
-			for (String npcId : split)
-			{
-				try
-				{
-					NON_TALKING_NPCS.add(Integer.parseInt(npcId));
-				}
-				catch (NumberFormatException nfe)
-				{
-					if (!npcId.isEmpty())
-					{
-						_log.warning("Could not parse " + npcId + " id for NonTalkingNpcs. Please check that all values are digits and coma separated.");
-					}
-				}
-			}
 			
 			// #########################################################################################################//
 			
@@ -4169,9 +4120,78 @@ public final class Config
 			INVENTORY_MAXIMUM_PET = Integer.parseInt(PETS.getProperty("MaximumSlotsForPet", "12"));
 			PET_HP_REGEN_MULTIPLIER = Double.parseDouble(PETS.getProperty("PetHpRegenMultiplier", "100")) / 100;
 			PET_MP_REGEN_MULTIPLIER = Double.parseDouble(PETS.getProperty("PetMpRegenMultiplier", "100")) / 100;
+
 			
-			// #########################################################################################################//	
+			// #########################################################################################################//
+
+			// ############################ RAIDBOSSES PROPERTIES ######################################################//
 			
+			L2Properties RAIDBOSSES = new L2Properties();
+			final File raidbosses = new File(RAIDBOSSES_CONFIG_FILE);
+			try (InputStream is = new FileInputStream(raidbosses))
+			{
+				RAIDBOSSES.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Error while loading RAIDBOSSES settings!", e);
+			}
+			
+			RAID_HP_REGEN_MULTIPLIER = Double.parseDouble(RAIDBOSSES.getProperty("RaidHpRegenMultiplier", "100")) / 100;
+			RAID_MP_REGEN_MULTIPLIER = Double.parseDouble(RAIDBOSSES.getProperty("RaidMpRegenMultiplier", "100")) / 100;
+			RAID_PDEFENCE_MULTIPLIER = Double.parseDouble(RAIDBOSSES.getProperty("RaidPDefenceMultiplier", "100")) / 100;
+			RAID_MDEFENCE_MULTIPLIER = Double.parseDouble(RAIDBOSSES.getProperty("RaidMDefenceMultiplier", "100")) / 100;
+			RAID_PATTACK_MULTIPLIER = Double.parseDouble(RAIDBOSSES.getProperty("RaidPAttackMultiplier", "100")) / 100;
+			RAID_MATTACK_MULTIPLIER = Double.parseDouble(RAIDBOSSES.getProperty("RaidMAttackMultiplier", "100")) / 100;
+			RAID_MIN_RESPAWN_MULTIPLIER = Float.parseFloat(RAIDBOSSES.getProperty("RaidMinRespawnMultiplier", "1.0"));
+			RAID_MAX_RESPAWN_MULTIPLIER = Float.parseFloat(RAIDBOSSES.getProperty("RaidMaxRespawnMultiplier", "1.0"));
+			RAID_MINION_RESPAWN_TIMER = Integer.parseInt(RAIDBOSSES.getProperty("RaidMinionRespawnTime", "300000"));
+			String[] propertySplit = RAIDBOSSES.getProperty("CustomMinionsRespawnTime", "").split(";");
+			MINIONS_RESPAWN_TIME = new HashMap<>(propertySplit.length);
+			for (String prop : propertySplit)
+			{
+				String[] propSplit = prop.split(",");
+				if (propSplit.length != 2)
+				{
+					_log.warning(StringUtil.concat("[CustomMinionsRespawnTime]: invalid config property -> CustomMinionsRespawnTime \"", prop, "\""));
+				}
+				
+				try
+				{
+					MINIONS_RESPAWN_TIME.put(Integer.valueOf(propSplit[0]), Integer.valueOf(propSplit[1]));
+				}
+				catch (NumberFormatException nfe)
+				{
+					if (!prop.isEmpty())
+					{
+						_log.warning(StringUtil.concat("[CustomMinionsRespawnTime]: invalid config property -> CustomMinionsRespawnTime \"", propSplit[0], "\"", propSplit[1]));
+					}
+				}
+			}
+			
+			RAID_DISABLE_CURSE = Boolean.parseBoolean(RAIDBOSSES.getProperty("DisableRaidCurse", "False"));
+			RAID_CHAOS_TIME = Integer.parseInt(RAIDBOSSES.getProperty("RaidChaosTime", "10"));
+			GRAND_CHAOS_TIME = Integer.parseInt(RAIDBOSSES.getProperty("GrandChaosTime", "10"));
+			MINION_CHAOS_TIME = Integer.parseInt(RAIDBOSSES.getProperty("MinionChaosTime", "10"));
+			split = RAIDBOSSES.getProperty("NonTalkingNpcs", "18684,18685,18686,18687,18688,18689,18690,19691,18692,31557,31606,31671,31672,31673,31674,32026,32030,32031,32032,32306,32619,32620,32621").split(",");
+			NON_TALKING_NPCS = new ArrayList<>(split.length);
+			for (String npcId : split)
+			{
+				try
+				{
+					NON_TALKING_NPCS.add(Integer.parseInt(npcId));
+				}
+				catch (NumberFormatException nfe)
+				{
+					if (!npcId.isEmpty())
+					{
+						_log.warning("Could not parse " + npcId + " id for NonTalkingNpcs. Please check that all values are digits and coma separated.");
+					}
+				}
+			}
+			
+			// #########################################################################################################//
+
 			
 			// Load Rates L2Properties file (if exists)
 			final File rates = new File(RATES_CONFIG_FILE);
