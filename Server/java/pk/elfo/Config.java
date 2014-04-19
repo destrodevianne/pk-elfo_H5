@@ -98,7 +98,7 @@ public final class Config
 	public static final String DATAPACK_VERSION_FILE = "./config/l2jdp-version.properties";
 	public static final String L2JMOD_CONFIG_FILE = "./config/L2JMods.properties";
 	public static final String MMO_CONFIG_FILE = "./config/MMO.properties";
-	public static final String NPC_CONFIG_FILE = "./config/NPC.properties";
+	public static final String NPC_CONFIG_FILE = "./config/NPCs/NPC.properties";
 	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olympiad.properties";
 	public static final String PKELFO_FILE = "./config/Pkelfo.properties";
 	public static final String PLAYER_CONFIG_FILE = "./config/Player/EnterWorld.properties";
