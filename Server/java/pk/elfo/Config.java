@@ -112,6 +112,7 @@ public final class Config
 	public static final String PKELFO_FILE = "./config/Pkelfo.properties";
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String BALANCECLASSE_FILE = "./config/Player/BalanceClass.properties";
+	public static final String COMANDOSPLAYER_FILE = "./config/Player/Comandos.properties";
 	public static final String PLAYER_CONFIG_FILE = "./config/Player/EnterWorld.properties";
 	public static final String ITEMSS_FILE = "./config/Player/Item.properties";
 	public static final String RENAME_CONFIG_FILE = "./config/Player/Rename.properties";
@@ -2492,6 +2493,37 @@ public final class Config
 			
 			// #########################################################################################################//
 				
+			// ############################ COMANDOS PROPERTIES ########################################################//
+				
+			L2Properties COMANDOSPLAYER = new L2Properties();
+			final File comandosplayer = new File(COMANDOSPLAYER_FILE);
+			try (InputStream is = new FileInputStream(comandosplayer))
+				{
+					COMANDOSPLAYER.load(is);
+				}
+			catch (Exception e)
+				{
+					_log.log(Level.SEVERE, "Error while loading COMANDOSPLAYER settings!", e);
+				}
+
+			Boost_EXP_COMMAND = Boolean.parseBoolean(COMANDOSPLAYER.getProperty("SpExpCommand", "false"));
+			CMD_ONLINE = Boolean.parseBoolean(COMANDOSPLAYER.getProperty("CommandOnline", "false"));
+			CANCELAR_ONLINE = Boolean.parseBoolean(COMANDOSPLAYER.getProperty("CommandCancel", "false"));
+			CMD_FAKE = Boolean.parseBoolean(COMANDOSPLAYER.getProperty("CommandFakePlayer", "false"));
+			FAKE_PLAYERS = Integer.parseInt(COMANDOSPLAYER.getProperty("NumberOfFakes", "1"));
+			BOSS_STATS = Boolean.parseBoolean(COMANDOSPLAYER.getProperty("GrandBossStats", "false"));
+			ALLOW_REFUSE_BUFF = Boolean.parseBoolean(COMANDOSPLAYER.getProperty("AllowRefuseBuff", "True"));
+			ENABLE_UNSTUCK_PVP = Boolean.parseBoolean(COMANDOSPLAYER.getProperty("EnableUnstuckPvP", "True"));
+			// Comando de Teleporte para areas de UpLevel
+			ALLOW_TELEPORT_VOICECOMMAND = Boolean.parseBoolean(COMANDOSPLAYER.getProperty("UpLevel", "True"));
+			//---------------------------------------------------------------------------------------------
+			UnstuckCustom = Boolean.parseBoolean(COMANDOSPLAYER.getProperty("UnstuckCustom", "true"));
+			LocX = Integer.parseInt(COMANDOSPLAYER.getProperty("LocX", "10724"));
+			LocY = Integer.parseInt(COMANDOSPLAYER.getProperty("LocY", "-23729"));
+			LocZ = Integer.parseInt(COMANDOSPLAYER.getProperty("LocZ", "-3650"));
+				
+			// #########################################################################################################//
+								
 			// ############################ ITEMS PROPERTIES ###########################################################//
 				
 				L2Properties ITEMSS = new L2Properties();
@@ -2541,18 +2573,11 @@ public final class Config
 			{
 				PkelfoSettings.load(is);
 				FENCE_MOVIE_BUILDER = Boolean.parseBoolean(PkelfoSettings.getProperty("AllowFenceBuild", "false"));
-				//---------------------------------------------------------------------------------------------
-				UnstuckCustom = Boolean.parseBoolean(PkelfoSettings.getProperty("UnstuckCustom", "true"));
-				LocX = Integer.parseInt(PkelfoSettings.getProperty("LocX", "10724"));
-				LocY = Integer.parseInt(PkelfoSettings.getProperty("LocY", "-23729"));
-				LocZ = Integer.parseInt(PkelfoSettings.getProperty("LocZ", "-3650"));
-				//---------------------------------------------------------------------------------------------
 				ANNOUNCE_NOBLESSE_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("AnnounceNoblesseLogin", "False"));
 				ANNOUNCE_HERO_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("AnnounceHeroLogin", "False"));
 				MAX_PARTY_MEMBERS = Integer.parseInt(PkelfoSettings.getProperty("MaxPartyMembers", "12"));
 				// Shots Infinitos: SS, BSS e flechas
 				PC_BANG_ENABLED = Boolean.parseBoolean(PkelfoSettings.getProperty("Enabled", "false"));
-				ENABLE_UNSTUCK_PVP = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableUnstuckPvP", "True"));
 				NpcBuffer_Reload = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableReloadScript", "False"));
 				NpcBuffer_SmartWindow = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableSmartWindow", "True"));
 				NpcBuffer_VIP = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableVIP", "False"));
@@ -2599,7 +2624,6 @@ public final class Config
 				VOTE_SYSTEM_CHECK_TIME = Integer.parseInt(PkelfoSettings.getProperty("VoteSystemRunCheckTime", "120"));
 				VOTE_SYSTEM_ITEM_ID = PkelfoSettings.getProperty("VoteSystemItemID", "57, 1000");
 				VOTE_SYSTEM_ITEM_COUNT = PkelfoSettings.getProperty("VoteSystemItemCount", "1000, 1");
-				ALLOW_REFUSE_BUFF = Boolean.parseBoolean(PkelfoSettings.getProperty("AllowRefuseBuff", "True"));
 				MAX_PC_BANG_POINTS = Integer.parseInt(PkelfoSettings.getProperty("MaxPcBangPoints", "1000000000"));
 				if (MAX_PC_BANG_POINTS < 0)
 				{
@@ -2617,12 +2641,7 @@ public final class Config
 					PC_BANG_POINT_RATE = 1;
 				}
 				RANDOM_PC_BANG_POINT = Boolean.parseBoolean(PkelfoSettings.getProperty("AcquisitionPointsRandom", "false"));
-				Boost_EXP_COMMAND = Boolean.parseBoolean(PkelfoSettings.getProperty("SpExpCommand", "false"));
-				CMD_ONLINE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandOnline", "false"));
-				CANCELAR_ONLINE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandCancel", "false"));
-				CMD_FAKE = Boolean.parseBoolean(PkelfoSettings.getProperty("CommandFakePlayer", "false"));
-				FAKE_PLAYERS = Integer.parseInt(PkelfoSettings.getProperty("NumberOfFakes", "1"));
-				BOSS_STATS = Boolean.parseBoolean(PkelfoSettings.getProperty("GrandBossStats", "false"));
+
 				
 			}
 			
@@ -3736,8 +3755,6 @@ public final class Config
 			
 			IS_TELNET_ENABLED = Boolean.parseBoolean(telnetSettings.getProperty("EnableTelnet", "false"));
 			
-			// Comando de Teleporte para areas de UpLevel
-			ALLOW_TELEPORT_VOICECOMMAND = Boolean.parseBoolean(PkelfoSettings.getProperty("UpLevel", "True"));
 			// Enchant protect
 			PROTECT_ENCHANT_ENABLE = Boolean.parseBoolean(PkelfoSettings.getProperty("EnchantProtectEnable", "true"));
 			MAX_ENCHANT_LEVEL_PROTECT = Integer.parseInt(PkelfoSettings.getProperty("MaxEnchantLevelProtect", "30"));
