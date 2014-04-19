@@ -76,6 +76,7 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String AIO_CONFIG_FILE = "./config/AIOx/Aio.properties";
 	public static final String AUTO_RESTART = "./config/AutoRestart/AutoRestart.properties";
+	public static final String CLANFULLCOMANDO_FILE = "./config/Clan/ClanFullComando.properties";
 	public static final String CLANWAR_FILE = "./config/Clan/ClanWarZone.properties";
 	public static final String CLANLEADER_FILE = "./config/Clan/ClanLider.properties";
 	public static final String CHARACTER_CONFIG_FILE = "./config/Character.properties";
@@ -98,6 +99,7 @@ public final class Config
 	public static final String DATAPACK_VERSION_FILE = "./config/l2jdp-version.properties";
 	public static final String L2JMOD_CONFIG_FILE = "./config/L2JMods.properties";
 	public static final String MMO_CONFIG_FILE = "./config/MMO.properties";
+	public static final String PRIME_CONFIG_FILE = "./config/Moedas/PrimeShop.properties";
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String GUARDAS_CONFIG_FILE = "./config/NPCs/GUARDAS.properties";
 	public static final String MOBS_CONFIG_FILE = "./config/NPCs/MOBS.properties";
@@ -2485,40 +2487,6 @@ public final class Config
 				ANNOUNCE_HERO_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("AnnounceHeroLogin", "False"));
 				SHOW_ONLINE_PLAYERS_ON_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("ShowOnlinePlayersOnLogin", "True"));
 				MAX_PARTY_MEMBERS = Integer.parseInt(PkelfoSettings.getProperty("MaxPartyMembers", "12"));
-				
-				// Clan Full
-				ENABLE_CLAN_SYSTEM = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableClanSystem", "True"));
-				if (ENABLE_CLAN_SYSTEM)
-				{
-					String AioSkillsSplit[] = PkelfoSettings.getProperty("ClanSkills", "").split(";");
-					CLAN_SKILLS = new FastMap<>(AioSkillsSplit.length);
-					String arr[] = AioSkillsSplit;
-					int len = arr.length;
-					for (int i = 0; i < len; i++)
-					{
-						String skill = arr[i];
-						String skillSplit[] = skill.split(",");
-						if (skillSplit.length != 2)
-						{
-							System.out.println((new StringBuilder()).append("[Clan System]: invalid config property in custom/custom.properties -> ClanSkills \"").append(skill).append("\"").toString());
-							continue;
-						}
-						try
-						{
-							CLAN_SKILLS.put(Integer.valueOf(Integer.parseInt(skillSplit[0])), Integer.valueOf(Integer.parseInt(skillSplit[1])));
-							continue;
-						}
-						catch (NumberFormatException nfe)
-						{
-						}
-						if (!skill.equals(""))
-						{
-							System.out.println((new StringBuilder()).append("[Clan System]: invalid config property in custom/custom.properties -> ClanSkills \"").append(skillSplit[0]).append("\"").append(skillSplit[1]).toString());
-						}
-					}
-				}
-				CLAN_LEVEL = Byte.parseByte(PkelfoSettings.getProperty("ClanSetLevel", "8"));
-				REPUTATION_QUANTITY = Integer.parseInt(PkelfoSettings.getProperty("ReputationScore", "10000"));
 				// Shots Infinitos: SS, BSS e flechas
 				INFINITE_SOUL_SHOT = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteSoulShot", "False"));
 				INFINITE_SPIRIT_SHOT = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteSpiritShot", "False"));
@@ -2549,7 +2517,6 @@ public final class Config
 				ENABLE_UNSTUCK_PVP = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableUnstuckPvP", "True"));
 				NOBLE_CUSTOM_ITEMS = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableNobleCustomItem", "true"));
 				NOOBLE_CUSTOM_ITEM_ID = Integer.parseInt(PkelfoSettings.getProperty("NoobleCustomItemId", "6673"));
-				GAME_POINT_ITEM_ID = Integer.parseInt(PkelfoSettings.getProperty("GamePointItemId", "-300"));
 				NpcBuffer_Reload = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableReloadScript", "False"));
 				NpcBuffer_SmartWindow = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableSmartWindow", "True"));
 				NpcBuffer_VIP = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableVIP", "False"));
@@ -3168,8 +3135,61 @@ public final class Config
 				throw new Error("Falha ao carregar o arquivo " + AUTO_RESTART + " .");
 			}
 			
+			
+			// #########################################################################################################//
+			
+			// ############################ CLAN FULL COMANDO PROPERTIES ###############################################//
+			
+			L2Properties CLANFULL = new L2Properties();
+			final File clanfull = new File(CLANFULLCOMANDO_FILE);
+			try (InputStream is = new FileInputStream(clanfull))
+			{
+				CLANFULL.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Error while loading CLAN FULL COMANDO settings!", e);
+			}
+			
+				// Clan Full
+				ENABLE_CLAN_SYSTEM = Boolean.parseBoolean(CLANFULL.getProperty("EnableClanSystem", "False"));
+				if (ENABLE_CLAN_SYSTEM)
+				{
+					String AioSkillsSplit[] = CLANFULL.getProperty("ClanSkills", "").split(";");
+					CLAN_SKILLS = new FastMap<>(AioSkillsSplit.length);
+					String arr[] = AioSkillsSplit;
+					int len = arr.length;
+					for (int i = 0; i < len; i++)
+					{
+						String skill = arr[i];
+						String skillSplit[] = skill.split(",");
+						if (skillSplit.length != 2)
+						{
+							System.out.println((new StringBuilder()).append("[Clan System]: invalid config property in Config/Clan/ClanFullComando.properties -> ClanSkills \"").append(skill).append("\"").toString());
+							continue;
+						}
+						try
+						{
+							CLAN_SKILLS.put(Integer.valueOf(Integer.parseInt(skillSplit[0])), Integer.valueOf(Integer.parseInt(skillSplit[1])));
+							continue;
+						}
+						catch (NumberFormatException nfe)
+						{
+						}
+						if (!skill.equals(""))
+						{
+							System.out.println((new StringBuilder()).append("[Clan System]: invalid config property in Config/Clan/ClanFullComando.properties -> ClanSkills \"").append(skillSplit[0]).append("\"").append(skillSplit[1]).toString());
+						}
+					}
+				}
+				CLAN_LEVEL = Byte.parseByte(CLANFULL.getProperty("ClanSetLevel", "8"));
+				REPUTATION_QUANTITY = Integer.parseInt(CLANFULL.getProperty("ReputationScore", "10000"));
+			
+			// #########################################################################################################//
+			
 			// ############################ CLANWARZONE PROPERTIES ####################################################//
-			// Load Clan War Zone L2Properties file (if exists)
+				
+				
 			final File clanwarzone = new File(CLANWAR_FILE);
 			try (InputStream is = new FileInputStream(clanwarzone))
 			{
@@ -3187,8 +3207,11 @@ public final class Config
 				throw new Error("Falha ao carregar o arquivo " + CLANWAR_FILE + " .");
 			}
 			
+			// #########################################################################################################//
+			
 			// ############################ CLANLEADER PROPERTIES ######################################################//
-			// Load Clan Leader L2Properties file (if exists)
+			
+
 			final File ClanLeader = new File(CLANLEADER_FILE);
 			try (InputStream is = new FileInputStream(ClanLeader))
 			{
@@ -4033,6 +4056,23 @@ public final class Config
 			NPC_SKILL_DMG_PENALTY = parseConfigLine(NPC.getProperty("SkillDmgPenaltyForLvLDifferences", "0.8, 0.7, 0.65, 0.62"));
 			MIN_NPC_LVL_MAGIC_PENALTY = Integer.parseInt(NPC.getProperty("MinNPCLevelForMagicPenalty", "78"));
 			NPC_SKILL_CHANCE_PENALTY = parseConfigLine(NPC.getProperty("SkillChancePenaltyForLvLDifferences", "2.5, 3.0, 3.25, 3.5"));
+			
+			// #########################################################################################################//
+			
+			// ############################ PRIME SHOP PROPERTIES ######################################################//
+			
+			L2Properties PRIME = new L2Properties();
+			final File prime = new File(PRIME_CONFIG_FILE);
+			try (InputStream is = new FileInputStream(prime))
+			{
+				PRIME.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Error while loading PRIME settings!", e);
+			}
+			
+			GAME_POINT_ITEM_ID = Integer.parseInt(PRIME.getProperty("GamePointItemId", "-300"));
 			
 			// #########################################################################################################//
 			
