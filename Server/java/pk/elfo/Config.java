@@ -110,8 +110,11 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olympiad.properties";
 	public static final String PKELFO_FILE = "./config/Pkelfo.properties";
+	// ----------------------------------------------------------------------------------------------------//
+	public static final String BALANCECLASSE_FILE = "./config/Player/BalanceClass.properties";
 	public static final String PLAYER_CONFIG_FILE = "./config/Player/EnterWorld.properties";
 	public static final String RENAME_CONFIG_FILE = "./config/Player/Rename.properties";
+	// ----------------------------------------------------------------------------------------------------//
 	public static final String PREMIUM_CONFIG_FILE = "./config/Premium.properties";
 	public static final String PVPPK_CONFIG_FILE = "./config/PvPpK/PvpPk.properties";
 	public static final String PVPESCAPE_CONFIG_FILE = "./config/PvPpK/Escape.properties";
@@ -2449,9 +2452,46 @@ public final class Config
 				_log.log(Level.SEVERE, "Error while loading Player settings!", e);
 			}
 			
- 			// ########################################################################################################//
-			// Rename Properties //
-			// ########################################################################################################//
+			// #########################################################################################################//
+			
+			// ############################ BALANCO DE CLASSE PROPERTIES ###############################################//
+			
+			L2Properties BALANCECLASS = new L2Properties();
+			final File balanceclass = new File(BALANCECLASSE_FILE);
+			try (InputStream is = new FileInputStream(balanceclass))
+			{
+				BALANCECLASS.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Error while loading BALANCECLASS settings!", e);
+			}
+
+				DAGGER_VS_HEAVY = Float.parseFloat(BALANCECLASS.getProperty("DaggerVsHeavy", "1.00"));
+				DAGGER_VS_LIGHT = Float.parseFloat(BALANCECLASS.getProperty("DaggerVsLight", "1.00"));
+				DAGGER_VS_ROBE = Float.parseFloat(BALANCECLASS.getProperty("DaggerVsRobe", "1.00"));
+				ARCHER_VS_HEAVY = Float.parseFloat(BALANCECLASS.getProperty("ArcherVsHeavy", "1.00"));
+				ARCHER_VS_LIGHT = Float.parseFloat(BALANCECLASS.getProperty("ArcherVsLight", "1.00"));
+				ARCHER_VS_ROBE = Float.parseFloat(BALANCECLASS.getProperty("ArcherVsRobe", "1.00"));
+				BLUNT_VS_HEAVY = Float.parseFloat(BALANCECLASS.getProperty("BluntVsHeavy", "1.00"));
+				BLUNT_VS_LIGHT = Float.parseFloat(BALANCECLASS.getProperty("BluntVsLight", "1.00"));
+				BLUNT_VS_ROBE = Float.parseFloat(BALANCECLASS.getProperty("BluntVsRobe", "1.00"));
+				FIST_VS_HEAVY = Float.parseFloat(BALANCECLASS.getProperty("FistVsHeavy", "1.00"));
+				FIST_VS_LIGHT = Float.parseFloat(BALANCECLASS.getProperty("FistVsLight", "1.00"));
+				FIST_VS_ROBE = Float.parseFloat(BALANCECLASS.getProperty("FistVsRobe", "1.00"));
+				DUAL_VS_HEAVY = Float.parseFloat(BALANCECLASS.getProperty("DualVsHeavy", "1.00"));
+				DUAL_VS_LIGHT = Float.parseFloat(BALANCECLASS.getProperty("DualVsLight", "1.00"));
+				DUAL_VS_ROBE = Float.parseFloat(BALANCECLASS.getProperty("DualVsRobe", "1.00"));
+				SWORD_VS_HEAVY = Float.parseFloat(BALANCECLASS.getProperty("SwordVsHeavy", "1.00"));
+				SWORD_VS_LIGHT = Float.parseFloat(BALANCECLASS.getProperty("SwordVsLight", "1.00"));
+				SWORD_VS_ROBE = Float.parseFloat(BALANCECLASS.getProperty("SwordVsRobe", "1.00"));
+				POLE_VS_HEAVY = Float.parseFloat(BALANCECLASS.getProperty("PoleVsHeavy", "1.00"));
+				POLE_VS_LIGHT = Float.parseFloat(BALANCECLASS.getProperty("PoleVsLight", "1.00"));
+				POLE_VS_ROBE = Float.parseFloat(BALANCECLASS.getProperty("PoleVsRobe", "1.00"));
+			
+			// #########################################################################################################//
+				
+			// ############################ RENAME NPC PROPERTIES ######################################################//
 			
 			L2Properties RenameSettings = new L2Properties();
 			final File Rename = new File(RENAME_CONFIG_FILE);
@@ -2492,27 +2532,6 @@ public final class Config
 				INFINITE_SPIRIT_SHOT = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteSpiritShot", "False"));
 				INFINITE_BLESSED_SPIRIT_SHOT = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteBlessedSpiritShot", "False"));
 				INFINITE_ARROWS = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteArrows", "false"));
-				DAGGER_VS_HEAVY = Float.parseFloat(PkelfoSettings.getProperty("DaggerVsHeavy", "1.00"));
-				DAGGER_VS_LIGHT = Float.parseFloat(PkelfoSettings.getProperty("DaggerVsLight", "1.00"));
-				DAGGER_VS_ROBE = Float.parseFloat(PkelfoSettings.getProperty("DaggerVsRobe", "1.00"));
-				ARCHER_VS_HEAVY = Float.parseFloat(PkelfoSettings.getProperty("ArcherVsHeavy", "1.00"));
-				ARCHER_VS_LIGHT = Float.parseFloat(PkelfoSettings.getProperty("ArcherVsLight", "1.00"));
-				ARCHER_VS_ROBE = Float.parseFloat(PkelfoSettings.getProperty("ArcherVsRobe", "1.00"));
-				BLUNT_VS_HEAVY = Float.parseFloat(PkelfoSettings.getProperty("BluntVsHeavy", "1.00"));
-				BLUNT_VS_LIGHT = Float.parseFloat(PkelfoSettings.getProperty("BluntVsLight", "1.00"));
-				BLUNT_VS_ROBE = Float.parseFloat(PkelfoSettings.getProperty("BluntVsRobe", "1.00"));
-				FIST_VS_HEAVY = Float.parseFloat(PkelfoSettings.getProperty("FistVsHeavy", "1.00"));
-				FIST_VS_LIGHT = Float.parseFloat(PkelfoSettings.getProperty("FistVsLight", "1.00"));
-				FIST_VS_ROBE = Float.parseFloat(PkelfoSettings.getProperty("FistVsRobe", "1.00"));
-				DUAL_VS_HEAVY = Float.parseFloat(PkelfoSettings.getProperty("DualVsHeavy", "1.00"));
-				DUAL_VS_LIGHT = Float.parseFloat(PkelfoSettings.getProperty("DualVsLight", "1.00"));
-				DUAL_VS_ROBE = Float.parseFloat(PkelfoSettings.getProperty("DualVsRobe", "1.00"));
-				SWORD_VS_HEAVY = Float.parseFloat(PkelfoSettings.getProperty("SwordVsHeavy", "1.00"));
-				SWORD_VS_LIGHT = Float.parseFloat(PkelfoSettings.getProperty("SwordVsLight", "1.00"));
-				SWORD_VS_ROBE = Float.parseFloat(PkelfoSettings.getProperty("SwordVsRobe", "1.00"));
-				POLE_VS_HEAVY = Float.parseFloat(PkelfoSettings.getProperty("PoleVsHeavy", "1.00"));
-				POLE_VS_LIGHT = Float.parseFloat(PkelfoSettings.getProperty("PoleVsLight", "1.00"));
-				POLE_VS_ROBE = Float.parseFloat(PkelfoSettings.getProperty("PoleVsRobe", "1.00"));
 				PC_BANG_ENABLED = Boolean.parseBoolean(PkelfoSettings.getProperty("Enabled", "false"));
 				ENABLE_UNSTUCK_PVP = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableUnstuckPvP", "True"));
 				NOBLE_CUSTOM_ITEMS = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableNobleCustomItem", "true"));
