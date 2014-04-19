@@ -98,8 +98,11 @@ public final class Config
 	public static final String DATAPACK_VERSION_FILE = "./config/l2jdp-version.properties";
 	public static final String L2JMOD_CONFIG_FILE = "./config/L2JMods.properties";
 	public static final String MMO_CONFIG_FILE = "./config/MMO.properties";
-	public static final String NPC_CONFIG_FILE = "./config/NPCs/NPC.properties";
+	public static final String GUARDAS_CONFIG_FILE = "./config/NPCs/GUARDAS.properties";
 	public static final String MOBS_CONFIG_FILE = "./config/NPCs/MOBS.properties";
+	public static final String NPC_CONFIG_FILE = "./config/NPCs/NPC.properties";
+	public static final String PETS_CONFIG_FILE = "./config/NPCs/PETS.properties";
+	public static final String TOPNPC_CONFIG_FILE = "./config/NPCs/TOPNPC.properties";
 	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olympiad.properties";
 	public static final String PKELFO_FILE = "./config/Pkelfo.properties";
 	public static final String PLAYER_CONFIG_FILE = "./config/Player/EnterWorld.properties";
@@ -4027,17 +4030,6 @@ public final class Config
 			NPC_SKILL_DMG_PENALTY = parseConfigLine(NPC.getProperty("SkillDmgPenaltyForLvLDifferences", "0.8, 0.7, 0.65, 0.62"));
 			MIN_NPC_LVL_MAGIC_PENALTY = Integer.parseInt(NPC.getProperty("MinNPCLevelForMagicPenalty", "78"));
 			NPC_SKILL_CHANCE_PENALTY = parseConfigLine(NPC.getProperty("SkillChancePenaltyForLvLDifferences", "2.5, 3.0, 3.25, 3.5"));
-			TOPDEBUG = Boolean.parseBoolean(NPC.getProperty("TopNpcDebug", "false"));
-			TOPID = Integer.parseInt(NPC.getProperty("TopNpcID", "36602"));
-			GUARD_ATTACK_AGGRO_MOB = Boolean.parseBoolean(NPC.getProperty("GuardAttackAggroMob", "True"));
-			GUARD_ID = Integer.parseInt(NPC.getProperty("GuardId", "36602"));
-			ALLOW_WYVERN_UPGRADER = Boolean.parseBoolean(NPC.getProperty("AllowWyvernUpgrader", "False"));
-			String[] listPetRentNpc = NPC.getProperty("ListPetRentNpc", "30827").split(",");
-			LIST_PET_RENT_NPC = new ArrayList<>(listPetRentNpc.length);
-			for (String id : listPetRentNpc)
-			{
-				LIST_PET_RENT_NPC.add(Integer.valueOf(id));
-			}
 			RAID_HP_REGEN_MULTIPLIER = Double.parseDouble(NPC.getProperty("RaidHpRegenMultiplier", "100")) / 100;
 			RAID_MP_REGEN_MULTIPLIER = Double.parseDouble(NPC.getProperty("RaidMpRegenMultiplier", "100")) / 100;
 			RAID_PDEFENCE_MULTIPLIER = Double.parseDouble(NPC.getProperty("RaidPDefenceMultiplier", "100")) / 100;
@@ -4074,9 +4066,6 @@ public final class Config
 			RAID_CHAOS_TIME = Integer.parseInt(NPC.getProperty("RaidChaosTime", "10"));
 			GRAND_CHAOS_TIME = Integer.parseInt(NPC.getProperty("GrandChaosTime", "10"));
 			MINION_CHAOS_TIME = Integer.parseInt(NPC.getProperty("MinionChaosTime", "10"));
-			INVENTORY_MAXIMUM_PET = Integer.parseInt(NPC.getProperty("MaximumSlotsForPet", "12"));
-			PET_HP_REGEN_MULTIPLIER = Double.parseDouble(NPC.getProperty("PetHpRegenMultiplier", "100")) / 100;
-			PET_MP_REGEN_MULTIPLIER = Double.parseDouble(NPC.getProperty("PetMpRegenMultiplier", "100")) / 100;
 			split = NPC.getProperty("NonTalkingNpcs", "18684,18685,18686,18687,18688,18689,18690,19691,18692,31557,31606,31671,31672,31673,31674,32026,32030,32031,32032,32306,32619,32620,32621").split(",");
 			NON_TALKING_NPCS = new ArrayList<>(split.length);
 			for (String npcId : split)
@@ -4120,6 +4109,69 @@ public final class Config
 			SPOILED_DECAY_TIME = Integer.parseInt(MOBS.getProperty("SpoiledDecayTime", "18500"));
 			
 			// #########################################################################################################//
+
+			// ############################ TOPNPC PROPERTIES ##########################################################//
+			
+			L2Properties TOPNPC = new L2Properties();
+			final File topnpc = new File(TOPNPC_CONFIG_FILE);
+			try (InputStream is = new FileInputStream(topnpc))
+			{
+				TOPNPC.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Error while loading TOPNPC settings!", e);
+			}
+			
+			TOPDEBUG = Boolean.parseBoolean(TOPNPC.getProperty("TopNpcDebug", "false"));
+			TOPID = Integer.parseInt(TOPNPC.getProperty("TopNpcID", "36602"));
+			
+			// #########################################################################################################//
+		
+			// ############################ GUARDAS PROPERTIES #########################################################//
+			
+			L2Properties GUARDAS = new L2Properties();
+			final File guardas = new File(GUARDAS_CONFIG_FILE);
+			try (InputStream is = new FileInputStream(guardas))
+			{
+				GUARDAS.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Error while loading GUARDAS settings!", e);
+			}
+			
+			GUARD_ATTACK_AGGRO_MOB = Boolean.parseBoolean(GUARDAS.getProperty("GuardAttackAggroMob", "True"));
+			GUARD_ID = Integer.parseInt(GUARDAS.getProperty("GuardId", "36602"));
+			
+			// #########################################################################################################//
+			
+			// ############################ PETS PROPERTIES ############################################################//
+			
+			L2Properties PETS = new L2Properties();
+			final File pets = new File(PETS_CONFIG_FILE);
+			try (InputStream is = new FileInputStream(pets))
+			{
+				PETS.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Error while loading PETS settings!", e);
+			}
+
+			ALLOW_WYVERN_UPGRADER = Boolean.parseBoolean(PETS.getProperty("AllowWyvernUpgrader", "False"));
+			String[] listPetRentNpc = PETS.getProperty("ListPetRentNpc", "30827").split(",");
+			LIST_PET_RENT_NPC = new ArrayList<>(listPetRentNpc.length);
+			for (String id : listPetRentNpc)
+			{
+				LIST_PET_RENT_NPC.add(Integer.valueOf(id));
+			}
+			INVENTORY_MAXIMUM_PET = Integer.parseInt(PETS.getProperty("MaximumSlotsForPet", "12"));
+			PET_HP_REGEN_MULTIPLIER = Double.parseDouble(PETS.getProperty("PetHpRegenMultiplier", "100")) / 100;
+			PET_MP_REGEN_MULTIPLIER = Double.parseDouble(PETS.getProperty("PetMpRegenMultiplier", "100")) / 100;
+			
+			// #########################################################################################################//	
+			
 			
 			// Load Rates L2Properties file (if exists)
 			final File rates = new File(RATES_CONFIG_FILE);
