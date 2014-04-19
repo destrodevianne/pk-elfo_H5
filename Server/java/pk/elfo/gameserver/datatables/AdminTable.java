@@ -43,9 +43,9 @@ public class AdminTable extends DocumentParser
 	{
 		_accessLevels.clear();
 		_adminCommandAccessRights.clear();
-		parseDatapackFile("config/accessLevels.xml");
+		parseDatapackFile("config/GM/accessLevels.xml");
 		_log.log(Level.INFO, getClass().getSimpleName() + ": " + _accessLevels.size() + " Access Levels");
-		parseDatapackFile("config/adminCommands.xml");
+		parseDatapackFile("config/GM/adminCommands.xml");
 		_log.log(Level.INFO, getClass().getSimpleName() + ": " + _adminCommandAccessRights.size() + " Access Commands");
 	}
 	

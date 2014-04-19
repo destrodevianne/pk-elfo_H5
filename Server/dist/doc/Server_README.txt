@@ -146,10 +146,10 @@ Change the value of the 'accessLevel' column to one of the following:
 
 For characters take a look into the 'characters' table(gameserver database).
 Change the value of the 'accessLevel' column to one of the access levels
-described in the 'game/config/accessLevels.xml' table.
+described in the 'game/config/GM/accessLevels.xml' table.
 
 To adjust the allowed admin commands for an access level take a look into
-'game/config/adminCommands.xml'.  
+'game/config/GM/adminCommands.xml'.  
  
 More info can be found in the community wiki.
  
