@@ -76,8 +76,8 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String AIO_CONFIG_FILE = "./config/AIOx/Aio.properties";
 	public static final String AUTO_RESTART = "./config/AutoRestart/AutoRestart.properties";
-	public static final String CLANWAR_FILE = "./config/clan/ClanWarZone.properties";
-	public static final String CLANLEADER_FILE = "./config/clan/ClanLider.properties";
+	public static final String CLANWAR_FILE = "./config/Clan/ClanWarZone.properties";
+	public static final String CLANLEADER_FILE = "./config/Clan/ClanLider.properties";
 	public static final String CHARACTER_CONFIG_FILE = "./config/Character.properties";
 	public static final String CHAT_FILTER_FILE = "./config/chatfilter.txt";
 	public static final String COMMUNITY_PVP = "./config/CommunityPvP.properties";
