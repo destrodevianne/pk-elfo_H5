@@ -113,6 +113,7 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String BALANCECLASSE_FILE = "./config/Player/BalanceClass.properties";
 	public static final String PLAYER_CONFIG_FILE = "./config/Player/EnterWorld.properties";
+	public static final String ITEMSS_FILE = "./config/Player/Item.properties";
 	public static final String RENAME_CONFIG_FILE = "./config/Player/Rename.properties";
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String PREMIUM_CONFIG_FILE = "./config/Premium.properties";
@@ -2491,6 +2492,29 @@ public final class Config
 			
 			// #########################################################################################################//
 				
+			// ############################ ITEMS PROPERTIES ###########################################################//
+				
+				L2Properties ITEMSS = new L2Properties();
+				final File itemss = new File(ITEMSS_FILE);
+				try (InputStream is = new FileInputStream(itemss))
+				{
+					ITEMSS.load(is);
+				}
+				catch (Exception e)
+				{
+					_log.log(Level.SEVERE, "Error while loading ITEMSS settings!", e);
+				}
+
+				SHOW_ONLINE_PLAYERS_ON_LOGIN = Boolean.parseBoolean(ITEMSS.getProperty("ShowOnlinePlayersOnLogin", "True"));
+				NOBLE_CUSTOM_ITEMS = Boolean.parseBoolean(ITEMSS.getProperty("EnableNobleCustomItem", "true"));
+				NOOBLE_CUSTOM_ITEM_ID = Integer.parseInt(ITEMSS.getProperty("NoobleCustomItemId", "6673"));	
+				INFINITE_SOUL_SHOT = Boolean.parseBoolean(ITEMSS.getProperty("InfiniteSoulShot", "False"));
+				INFINITE_SPIRIT_SHOT = Boolean.parseBoolean(ITEMSS.getProperty("InfiniteSpiritShot", "False"));
+				INFINITE_BLESSED_SPIRIT_SHOT = Boolean.parseBoolean(ITEMSS.getProperty("InfiniteBlessedSpiritShot", "False"));
+				INFINITE_ARROWS = Boolean.parseBoolean(ITEMSS.getProperty("InfiniteArrows", "false"));
+					
+			// #########################################################################################################//
+
 			// ############################ RENAME NPC PROPERTIES ######################################################//
 			
 			L2Properties RenameSettings = new L2Properties();
@@ -2525,17 +2549,10 @@ public final class Config
 				//---------------------------------------------------------------------------------------------
 				ANNOUNCE_NOBLESSE_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("AnnounceNoblesseLogin", "False"));
 				ANNOUNCE_HERO_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("AnnounceHeroLogin", "False"));
-				SHOW_ONLINE_PLAYERS_ON_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("ShowOnlinePlayersOnLogin", "True"));
 				MAX_PARTY_MEMBERS = Integer.parseInt(PkelfoSettings.getProperty("MaxPartyMembers", "12"));
 				// Shots Infinitos: SS, BSS e flechas
-				INFINITE_SOUL_SHOT = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteSoulShot", "False"));
-				INFINITE_SPIRIT_SHOT = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteSpiritShot", "False"));
-				INFINITE_BLESSED_SPIRIT_SHOT = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteBlessedSpiritShot", "False"));
-				INFINITE_ARROWS = Boolean.parseBoolean(PkelfoSettings.getProperty("InfiniteArrows", "false"));
 				PC_BANG_ENABLED = Boolean.parseBoolean(PkelfoSettings.getProperty("Enabled", "false"));
 				ENABLE_UNSTUCK_PVP = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableUnstuckPvP", "True"));
-				NOBLE_CUSTOM_ITEMS = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableNobleCustomItem", "true"));
-				NOOBLE_CUSTOM_ITEM_ID = Integer.parseInt(PkelfoSettings.getProperty("NoobleCustomItemId", "6673"));
 				NpcBuffer_Reload = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableReloadScript", "False"));
 				NpcBuffer_SmartWindow = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableSmartWindow", "True"));
 				NpcBuffer_VIP = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableVIP", "False"));
