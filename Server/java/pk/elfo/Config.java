@@ -113,6 +113,7 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String BALANCECLASSE_FILE = "./config/Player/BalanceClass.properties";
 	public static final String COMANDOSPLAYER_FILE = "./config/Player/Comandos.properties";
+	public static final String ENCHANT_PROTECTOR_FILE = "./config/Player/EnchantProtector.properties";
 	public static final String PLAYER_CONFIG_FILE = "./config/Player/EnterWorld.properties";
 	public static final String ITEMSS_FILE = "./config/Player/Item.properties";
 	public static final String RENAME_CONFIG_FILE = "./config/Player/Rename.properties";
@@ -2523,6 +2524,27 @@ public final class Config
 			LocZ = Integer.parseInt(COMANDOSPLAYER.getProperty("LocZ", "-3650"));
 				
 			// #########################################################################################################//
+			
+			// ############################ ENCHANT PROTECTOR PROPERTIES ###############################################//
+			
+			L2Properties ENCHANTPROTECTOR = new L2Properties();
+			final File enchantprotector = new File(ENCHANT_PROTECTOR_FILE);
+			try (InputStream is = new FileInputStream(enchantprotector))
+			{
+				ENCHANTPROTECTOR.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Error while loading ENCHANTPROTECTOR settings!", e);
+			}
+
+			// Enchant protect
+			PROTECT_ENCHANT_ENABLE = Boolean.parseBoolean(ENCHANTPROTECTOR.getProperty("EnchantProtectEnable", "true"));
+			MAX_ENCHANT_LEVEL_PROTECT = Integer.parseInt(ENCHANTPROTECTOR.getProperty("MaxEnchantLevelProtect", "30"));
+			ENCHANT_PROTECT_PUNISH = Integer.parseInt(ENCHANTPROTECTOR.getProperty("EnchantProtectPunish", "60"));
+			
+			// #########################################################################################################//
+			
 								
 			// ############################ ITEMS PROPERTIES ###########################################################//
 				
@@ -3755,10 +3777,6 @@ public final class Config
 			
 			IS_TELNET_ENABLED = Boolean.parseBoolean(telnetSettings.getProperty("EnableTelnet", "false"));
 			
-			// Enchant protect
-			PROTECT_ENCHANT_ENABLE = Boolean.parseBoolean(PkelfoSettings.getProperty("EnchantProtectEnable", "true"));
-			MAX_ENCHANT_LEVEL_PROTECT = Integer.parseInt(PkelfoSettings.getProperty("MaxEnchantLevelProtect", "30"));
-			ENCHANT_PROTECT_PUNISH = Integer.parseInt(PkelfoSettings.getProperty("EnchantProtectPunish", "60"));
 			CLAN_NAME_AS_TITLE = Boolean.parseBoolean(Character.getProperty("ClanTitle", "True"));
 			// MMO
 			L2Properties mmoSettings = new L2Properties();
