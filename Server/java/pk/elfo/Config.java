@@ -96,7 +96,6 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String GENERAL_CONFIG_FILE = "./config/General.properties";
 	public static final String HEXID_FILE = "./config/hexid.txt";
-	public static final String ID_CONFIG_FILE = "./config/IdFactory.properties";
 	public static final String IP_CONFIG_FILE = "./config/ipconfig.xml";
 	public static final String LOGIN_CONFIGURATION_FILE = "./config/LoginServer.properties";
 	public static final String SERVER_VERSION_FILE = "./config/l2j-version.properties";
@@ -115,6 +114,7 @@ public final class Config
 	public static final String FEATURE_CONFIG_FILE = "./config/Outros/Feature.properties";
 	public static final String FLOOD_PROTECTOR_FILE = "./config/Outros/FloodProtector.properties";
 	public static final String GRACIASEEDS_CONFIG_FILE = "./config/Outros/GraciaSeeds.properties";
+	public static final String ID_CONFIG_FILE = "./config/Outros/IdFactory.properties";
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olympiad.properties";
 	// ------------------------PLAYER----------------------------------------------------------------------//
