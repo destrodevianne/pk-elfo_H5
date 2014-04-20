@@ -88,6 +88,7 @@ public final class Config
 	public static final String COMMUNITY_CONFIGURATION_FILE = "./config/CommunityServer/CommunityServer.properties";
 	public static final String EMAIL_CONFIG_FILE = "./config/Email.properties";
 	// ------------------------EVENTOS---------------------------------------------------------------------//
+	public static final String DIASSIEGE_FILE = "./config/Eventos/ModDiasParaSiege.properties";
 	public static final String EVENT_FILE = "./config/Eventos/Event.properties";
 	public static final String FORTSIEGE_CONFIGURATION_FILE = "./config/Eventos/FortSiege.properties";
 	public static final String SEVENSIGNS_CONFIG_FILE = "./config/Eventos/SevenSigns.properties";
@@ -116,7 +117,7 @@ public final class Config
 	public static final String GRACIASEEDS_CONFIG_FILE = "./config/Outros/GraciaSeeds.properties";
 	public static final String ID_CONFIG_FILE = "./config/Outros/IdFactory.properties";
 	// ----------------------------------------------------------------------------------------------------//
-	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olympiad.properties";
+	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olimpiadas/Olympiad.properties";
 	// ------------------------PLAYER----------------------------------------------------------------------//
 	public static final String BALANCECLASSE_FILE = "./config/Player/BalanceClass.properties";
 	public static final String COMANDOSPLAYER_FILE = "./config/Player/Comandos.properties";
@@ -2795,6 +2796,25 @@ public final class Config
 				throw new Error("Failed to Load " + COMMUNITY_PVP + " File.");
 			}
 			
+			// #########################################################################################################//
+			
+			// ############################ DIAS SIEGE PROPERTIES ######################################################//
+			
+			L2Properties DIASSIEGE = new L2Properties();
+			final File diassiege = new File(DIASSIEGE_FILE);
+			try (InputStream is = new FileInputStream(diassiege))
+			{
+				DIASSIEGE.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Error while loading DIASSIEGE settings!", e);
+			}
+			
+			DAY_TO_SIEGE = Integer.parseInt(DIASSIEGE.getProperty("DayToSiege", "7"));
+			
+			// #########################################################################################################//
+						
 			// Event Custom Config
 			L2Properties Event = new L2Properties();
 			final File Events = new File(EVENT_FILE);
@@ -3903,7 +3923,6 @@ public final class Config
 			ALT_DEV_NO_HANDLERS = Boolean.parseBoolean(General.getProperty("AltDevNoHandlers", "False"));
 			ALT_DEV_NO_QUESTS = Boolean.parseBoolean(General.getProperty("AltDevNoQuests", "False"));
 			ALT_DEV_NO_SPAWNS = Boolean.parseBoolean(General.getProperty("AltDevNoSpawns", "False"));
-			DAY_TO_SIEGE = Integer.parseInt(General.getProperty("DayToSiege", "7"));
 			THREAD_P_EFFECTS = Integer.parseInt(General.getProperty("ThreadPoolSizeEffects", "10"));
 			THREAD_P_GENERAL = Integer.parseInt(General.getProperty("ThreadPoolSizeGeneral", "13"));
 			IO_PACKET_THREAD_CORE_SIZE = Integer.parseInt(General.getProperty("UrgentPacketThreadCoreSize", "2"));
@@ -5035,15 +5054,14 @@ public final class Config
 			{
 				_log.log(Level.SEVERE, "Error while loading Olympiad settings!", e);
 			}
-			
+
 			ALT_OLY_START_TIME = Integer.parseInt(Olympiad.getProperty("AltOlyStartTime", "18"));
 			ALT_OLY_MIN = Integer.parseInt(Olympiad.getProperty("AltOlyMin", "00"));
 			ALT_OLY_CPERIOD = Long.parseLong(Olympiad.getProperty("AltOlyCPeriod", "21600000"));
+			ENABLE_CUSTOM_PERIOD = Boolean.parseBoolean(Olympiad.getProperty("EnableCustomPeriod", "false"));
 			ALT_OLY_BATTLE = Long.parseLong(Olympiad.getProperty("AltOlyBattle", "300000"));
 			ALT_OLY_WPERIOD = Long.parseLong(Olympiad.getProperty("AltOlyWPeriod", "604800000"));
 			ALT_OLY_VPERIOD = Long.parseLong(Olympiad.getProperty("AltOlyVPeriod", "86400000"));
-			
-			ENABLE_CUSTOM_PERIOD = Boolean.parseBoolean(Olympiad.getProperty("EnableCustomPeriod", "false"));
 			propertySplit = Olympiad.getProperty("AltOlyEndDate", "1").split(",");
 			ALT_OLY_END_DATE = new int[propertySplit.length];
 			for (int i = 0; i < propertySplit.length; i++)
@@ -5074,13 +5092,6 @@ public final class Config
 			ALT_OLY_RANK4_POINTS = Integer.parseInt(Olympiad.getProperty("AltOlyRank4Points", "40"));
 			ALT_OLY_RANK5_POINTS = Integer.parseInt(Olympiad.getProperty("AltOlyRank5Points", "30"));
 			ALT_OLY_MAX_POINTS = Integer.parseInt(Olympiad.getProperty("AltOlyMaxPoints", "10"));
-			ALT_OLY_DIVIDER_CLASSED = Integer.parseInt(Olympiad.getProperty("AltOlyDividerClassed", "5"));
-			ALT_OLY_DIVIDER_NON_CLASSED = Integer.parseInt(Olympiad.getProperty("AltOlyDividerNonClassed", "5"));
-			ALT_OLY_MAX_WEEKLY_MATCHES = Integer.parseInt(Olympiad.getProperty("AltOlyMaxWeeklyMatches", "70"));
-			ALT_OLY_MAX_WEEKLY_MATCHES_NON_CLASSED = Integer.parseInt(Olympiad.getProperty("AltOlyMaxWeeklyMatchesNonClassed", "60"));
-			ALT_OLY_MAX_WEEKLY_MATCHES_CLASSED = Integer.parseInt(Olympiad.getProperty("AltOlyMaxWeeklyMatchesClassed", "30"));
-			ALT_OLY_MAX_WEEKLY_MATCHES_TEAM = Integer.parseInt(Olympiad.getProperty("AltOlyMaxWeeklyMatchesTeam", "10"));
-			ALT_OLY_LOG_FIGHTS = Boolean.parseBoolean(Olympiad.getProperty("AltOlyLogFights", "false"));
 			ALT_OLY_SHOW_MONTHLY_WINNERS = Boolean.parseBoolean(Olympiad.getProperty("AltOlyShowMonthlyWinners", "true"));
 			ALT_OLY_ANNOUNCE_GAMES = Boolean.parseBoolean(Olympiad.getProperty("AltOlyAnnounceGames", "true"));
 			String[] olyRestrictedItems = Olympiad.getProperty("AltOlyRestrictedItems", "6611,6612,6613,6614,6615,6616,6617,6618,6619,6620,6621,9388,9389,9390,17049,17050,17051,17052,17053,17054,17055,17056,17057,17058,17059,17060,17061,20759,20775,20776,20777,20778,14774").split(",");
@@ -5090,8 +5101,15 @@ public final class Config
 				LIST_OLY_RESTRICTED_ITEMS.add(Integer.parseInt(id));
 			}
 			ALT_OLY_ENCHANT_LIMIT = Integer.parseInt(Olympiad.getProperty("LimiteEnchantOlly", "-1"));
+			ALT_OLY_LOG_FIGHTS = Boolean.parseBoolean(Olympiad.getProperty("AltOlyLogFights", "false"));
 			ALT_OLY_WAIT_TIME = Integer.parseInt(Olympiad.getProperty("AltOlyWaitTime", "120"));
-			
+			ALT_OLY_DIVIDER_CLASSED = Integer.parseInt(Olympiad.getProperty("AltOlyDividerClassed", "5"));
+			ALT_OLY_DIVIDER_NON_CLASSED = Integer.parseInt(Olympiad.getProperty("AltOlyDividerNonClassed", "5"));
+			ALT_OLY_MAX_WEEKLY_MATCHES = Integer.parseInt(Olympiad.getProperty("AltOlyMaxWeeklyMatches", "70"));
+			ALT_OLY_MAX_WEEKLY_MATCHES_NON_CLASSED = Integer.parseInt(Olympiad.getProperty("AltOlyMaxWeeklyMatchesNonClassed", "60"));
+			ALT_OLY_MAX_WEEKLY_MATCHES_CLASSED = Integer.parseInt(Olympiad.getProperty("AltOlyMaxWeeklyMatchesClassed", "30"));
+			ALT_OLY_MAX_WEEKLY_MATCHES_TEAM = Integer.parseInt(Olympiad.getProperty("AltOlyMaxWeeklyMatchesTeam", "10"));
+
 			final File hex = new File(HEXID_FILE);
 			try (InputStream is = new FileInputStream(hex))
 			{
