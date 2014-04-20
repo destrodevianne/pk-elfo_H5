@@ -88,8 +88,11 @@ public final class Config
 	public static final String COMMUNITY_CONFIGURATION_FILE = "./config/CommunityServer/CommunityServer.properties";
 	public static final String CH_SIEGE_FILE = "./config/ConquerableHallSiege.properties";
 	public static final String EMAIL_CONFIG_FILE = "./config/Email.properties";
+	// ----------------------------------------------------------------------------------------------------//
 	public static final String TW_CONFIGURATION_FILE = "./config/Eventos/TerritoryWar.properties";
+	public static final String SIEGE_CONFIGURATION_FILE = "./config/Eventos/Siege.properties";
 	public static final String EVENT_FILE = "./config/Eventos/Event.properties";
+	// ----------------------------------------------------------------------------------------------------//
 	public static final String FEATURE_CONFIG_FILE = "./config/Feature.properties";
 	public static final String FLOOD_PROTECTOR_FILE = "./config/FloodProtector.properties";
 	public static final String FORTSIEGE_CONFIGURATION_FILE = "./config/FortSiege.properties";
@@ -135,7 +138,6 @@ public final class Config
 	public static final String SECURITY_CONFIG_FILE = "./config/GM/Security.properties";
 	public static final String GMADM_CONFIG = "./config/GM/GmAdm.properties";
 	public static final String CONFIGURATION_FILE = "./config/Server.properties";
-	public static final String SIEGE_CONFIGURATION_FILE = "./config/Siege.properties";
 	public static final String TELNET_FILE = "./config/Telnet.properties";
 	public static final String VIP_CONFIG_FILE = "./config/VIP/Vip.properties";
 	//======================================================================================//
