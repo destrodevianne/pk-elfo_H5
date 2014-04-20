@@ -37,7 +37,7 @@ public class MultiSell
 	
 	public static final int PAGE_SIZE = 40;
 	
-	public static final int PC_BANG_POINTS = -100;
+	public static final int PC_BANG_POINTS = Config.PCBANG_POINT_ITEM_ID;
 	public static final int CLAN_REPUTATION = -200;
 	public static final int FAME = -300;
 	

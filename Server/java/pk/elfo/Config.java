@@ -349,6 +349,7 @@ public final class Config
 	public static boolean NOBLE_CUSTOM_ITEMS;
 	public static int NOOBLE_CUSTOM_ITEM_ID;
 	public static int GAME_POINT_ITEM_ID;
+	public static int PCBANG_POINT_ITEM_ID
 	// ----------------------------------------------------------------------------------------------------//
 	// Npc Buffer
 	// ----------------------------------------------------------------------------------------------------//
@@ -2650,7 +2651,6 @@ public final class Config
 				ANNOUNCE_HERO_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("AnnounceHeroLogin", "False"));
 				MAX_PARTY_MEMBERS = Integer.parseInt(PkelfoSettings.getProperty("MaxPartyMembers", "12"));
 				// Shots Infinitos: SS, BSS e flechas
-				PC_BANG_ENABLED = Boolean.parseBoolean(PkelfoSettings.getProperty("Enabled", "false"));
 				NpcBuffer_Reload = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableReloadScript", "False"));
 				NpcBuffer_SmartWindow = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableSmartWindow", "True"));
 				NpcBuffer_VIP = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableVIP", "False"));
@@ -2697,24 +2697,6 @@ public final class Config
 				VOTE_SYSTEM_CHECK_TIME = Integer.parseInt(PkelfoSettings.getProperty("VoteSystemRunCheckTime", "120"));
 				VOTE_SYSTEM_ITEM_ID = PkelfoSettings.getProperty("VoteSystemItemID", "57, 1000");
 				VOTE_SYSTEM_ITEM_COUNT = PkelfoSettings.getProperty("VoteSystemItemCount", "1000, 1");
-				MAX_PC_BANG_POINTS = Integer.parseInt(PkelfoSettings.getProperty("MaxPcBangPoints", "1000000000"));
-				if (MAX_PC_BANG_POINTS < 0)
-				{
-					MAX_PC_BANG_POINTS = 0;
-				}
-				ENABLE_DOUBLE_PC_BANG_POINTS = Boolean.parseBoolean(PkelfoSettings.getProperty("DoublingAcquisitionPoints", "false"));
-				DOUBLE_PC_BANG_POINTS_CHANCE = Integer.parseInt(PkelfoSettings.getProperty("DoublingAcquisitionPointsChance", "1"));
-				if ((DOUBLE_PC_BANG_POINTS_CHANCE < 0) || (DOUBLE_PC_BANG_POINTS_CHANCE > 100))
-				{
-					DOUBLE_PC_BANG_POINTS_CHANCE = 1;
-				}
-				PC_BANG_POINT_RATE = Double.parseDouble(PkelfoSettings.getProperty("AcquisitionPointsRate", "1.0"));
-				if (PC_BANG_POINT_RATE < 0)
-				{
-					PC_BANG_POINT_RATE = 1;
-				}
-				RANDOM_PC_BANG_POINT = Boolean.parseBoolean(PkelfoSettings.getProperty("AcquisitionPointsRandom", "false"));
-
 				
 			}
 			
@@ -2786,6 +2768,27 @@ public final class Config
 			{
 				Event.load(is);
 				
+				// inicio do evento Pc Bang Points
+				PC_BANG_ENABLED = Boolean.parseBoolean(Event.getProperty("Enabled", "false"));
+				MAX_PC_BANG_POINTS = Integer.parseInt(Event.getProperty("MaxPcBangPoints", "1000000000"));
+					if (MAX_PC_BANG_POINTS < 0)
+					{
+						MAX_PC_BANG_POINTS = 0;
+					}
+					ENABLE_DOUBLE_PC_BANG_POINTS = Boolean.parseBoolean(Event.getProperty("DoublingAcquisitionPoints", "false"));
+					DOUBLE_PC_BANG_POINTS_CHANCE = Integer.parseInt(Event.getProperty("DoublingAcquisitionPointsChance", "1"));
+					if ((DOUBLE_PC_BANG_POINTS_CHANCE < 0) || (DOUBLE_PC_BANG_POINTS_CHANCE > 100))
+					{
+						DOUBLE_PC_BANG_POINTS_CHANCE = 1;
+					}
+					PC_BANG_POINT_RATE = Double.parseDouble(Event.getProperty("AcquisitionPointsRate", "1.0"));
+					if (PC_BANG_POINT_RATE < 0)
+					{
+						PC_BANG_POINT_RATE = 1;
+					}
+					RANDOM_PC_BANG_POINT = Boolean.parseBoolean(Event.getProperty("AcquisitionPointsRandom", "false"));
+				// fim do evento Pc Bang Points
+					
 				TW_TOWN_ID = Integer.parseInt(Event.getProperty("TownWarTownId", "9"));
 				TW_TOWN_NAME = Event.getProperty("TownWarTownName", "Giran Town");
 				TW_ALL_TOWNS = Boolean.parseBoolean(Event.getProperty("TownWarAllTowns", "False"));
@@ -4190,7 +4193,8 @@ public final class Config
 				_log.log(Level.SEVERE, "Error while loading PRIME settings!", e);
 			}
 			
-			GAME_POINT_ITEM_ID = Integer.parseInt(PRIME.getProperty("GamePointItemId", "-300"));
+			GAME_POINT_ITEM_ID = Integer.parseInt(PRIME.getProperty("GamePointItemId", "-400"));
+			PCBANG_POINT_ITEM_ID = Integer.parseInt(PRIME.getProperty("PcBangPointItemId", "-100"));
 			
 			// #########################################################################################################//
 			
