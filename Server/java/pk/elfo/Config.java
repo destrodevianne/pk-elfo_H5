@@ -89,13 +89,13 @@ public final class Config
 	public static final String CH_SIEGE_FILE = "./config/ConquerableHallSiege.properties";
 	public static final String EMAIL_CONFIG_FILE = "./config/Email.properties";
 	// ----------------------------------------------------------------------------------------------------//
+	public static final String FORTSIEGE_CONFIGURATION_FILE = "./config/Eventos/FortSiege.properties";
 	public static final String TW_CONFIGURATION_FILE = "./config/Eventos/TerritoryWar.properties";
 	public static final String SIEGE_CONFIGURATION_FILE = "./config/Eventos/Siege.properties";
 	public static final String EVENT_FILE = "./config/Eventos/Event.properties";
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String FEATURE_CONFIG_FILE = "./config/Feature.properties";
 	public static final String FLOOD_PROTECTOR_FILE = "./config/FloodProtector.properties";
-	public static final String FORTSIEGE_CONFIGURATION_FILE = "./config/FortSiege.properties";
 	public static final String GENERAL_CONFIG_FILE = "./config/General.properties";
 	public static final String GRACIASEEDS_CONFIG_FILE = "./config/GraciaSeeds.properties";
 	public static final String HEXID_FILE = "./config/hexid.txt";
