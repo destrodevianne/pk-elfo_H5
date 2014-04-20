@@ -122,6 +122,7 @@ public final class Config
 	public static final String PKELFO_FILE = "./config/Player/Pkelfo.properties";
 	public static final String RACACONFIG_FILE = "./config/Player/RacaConfig.properties";
 	public static final String RENAME_CONFIG_FILE = "./config/Player/Rename.properties";
+	public static final String CUSTOMSPAWN_CONFIG_FILE = "./config/Player/SpawnCustom.properties";
 	public static final String USER_CONFIG_FILE = "./config/Player/UserPainel.properties";
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String PREMIUM_CONFIG_FILE = "./config/Premium.properties";
@@ -2426,6 +2427,14 @@ public final class Config
 			{
 				PlayerSettings.load(is);
 
+			COLOR_NEW_CHAR_NAME = Boolean.parseBoolean(PlayerSettings.getProperty("ColorStartName", "False"));
+			NAME_COLOR = Integer.decode("0x" + PlayerSettings.getProperty("NameColor", "00FF00"));
+			ADD_HERO = Boolean.parseBoolean(PlayerSettings.getProperty("NewHeroesCharacter", "False"));
+			ADD_NOBLESSE = Boolean.parseBoolean(PlayerSettings.getProperty("NoblesseAtNewChars", "False"));
+			CHAR_TITLE = Boolean.parseBoolean(PlayerSettings.getProperty("CharTitle", "False"));
+			ADD_CHAR_TITLE = PlayerSettings.getProperty("CharAddTitle", "PkElfo");
+			TITLE_COLOR = Integer.decode("0x" + PlayerSettings.getProperty("TitleColor", "00FF00"));
+			
 			//ONENTERMESSAGES
 			ON_ENTER_DELAY_MESSAGES_ENABLE = Boolean.parseBoolean(PlayerSettings.getProperty("OnEnterMessagesShow", "False"));
 			ON_ENTER_DELAY_TO_START = Integer.parseInt(PlayerSettings.getProperty("OnEnterDelayToStart", "15"));
@@ -2576,6 +2585,7 @@ public final class Config
 				STARTING_ITEMS = Boolean.parseBoolean(ITEMSS.getProperty("StartingItems", "False"));
 				STARTING_ITEMS_ID = Integer.parseInt(ITEMSS.getProperty("StartingItemId", "3470"));
 				STARTING_ITEMS_COUNT = Long.parseLong(ITEMSS.getProperty("StartingItemCount", "0"));
+				INITIAL_EQUIPMENT_EVENT = Boolean.parseBoolean(ITEMSS.getProperty("InitialEquipmentEvent", "True"));
 
 			// #########################################################################################################//
 				
@@ -2639,8 +2649,29 @@ public final class Config
 			}
 			
 			// ########################################################################################################//
-			// PkElfo Properties //
-			// ########################################################################################################//
+			
+			// ############################ CUSTOM SPAWN PROPERTIES ####################################################//
+			
+			L2Properties CUSTOMSPAWN = new L2Properties();
+			final File customspawn = new File(CUSTOMSPAWN_CONFIG_FILE);
+			try (InputStream is = new FileInputStream(customspawn))
+			{
+				CUSTOMSPAWN.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Error while loading CUSTOM SPAWN settings!", e);
+			}
+			
+			SPAWN_CHAR = Boolean.parseBoolean(CUSTOMSPAWN.getProperty("CustomSpawn", "false"));
+			SPAWN_X = Integer.parseInt(CUSTOMSPAWN.getProperty("SpawnX", ""));
+			SPAWN_Y = Integer.parseInt(CUSTOMSPAWN.getProperty("SpawnY", ""));
+			SPAWN_Z = Integer.parseInt(CUSTOMSPAWN.getProperty("SpawnZ", ""));
+
+			// #########################################################################################################//
+			
+			// ############################ PKELFO PROPERTIES ##########################################################//
+			
 			L2Properties PkelfoSettings = new L2Properties();
 			final File PkElfo = new File(PKELFO_FILE);
 			try (InputStream is = new FileInputStream(PkElfo))
@@ -3588,33 +3619,9 @@ public final class Config
 			ALT_PARTY_RANGE = Integer.parseInt(Character.getProperty("AltPartyRange", "1600"));
 			ALT_PARTY_RANGE2 = Integer.parseInt(Character.getProperty("AltPartyRange2", "1400"));
 			ALT_LEAVE_PARTY_LEADER = Boolean.parseBoolean(Character.getProperty("AltLeavePartyLeader", "False"));
-			INITIAL_EQUIPMENT_EVENT = Boolean.parseBoolean(Character.getProperty("InitialEquipmentEvent", "True"));
 			STARTING_ADENA = Long.parseLong(Character.getProperty("StartingAdena", "0"));
 			STARTING_LEVEL = Byte.parseByte(Character.getProperty("StartingLevel", "1"));
 			STARTING_SP = Integer.parseInt(Character.getProperty("StartingSP", "0"));
-
-			// #################### CUSTOM SPAWN PARA NOVOS CHAR ######################################################//
-			SPAWN_CHAR = Boolean.parseBoolean(Character.getProperty("CustomSpawn", "false"));
-			SPAWN_X = Integer.parseInt(Character.getProperty("SpawnX", ""));
-			SPAWN_Y = Integer.parseInt(Character.getProperty("SpawnY", ""));
-			SPAWN_Z = Integer.parseInt(Character.getProperty("SpawnZ", ""));
-			
-			// #################### TITULO PARA NOVOS CHAR ############################################################//
-			CHAR_TITLE = Boolean.parseBoolean(Character.getProperty("CharTitle", "False"));
-			ADD_CHAR_TITLE = Character.getProperty("CharAddTitle", "PkElfo");
-			TITLE_COLOR = Integer.decode("0x" + Character.getProperty("TitleColor", "00FF00"));
-			
-			// #################### COR DO NOME DOS NOVOS CHAR #######################################################//
-			COLOR_NEW_CHAR_NAME = Boolean.parseBoolean(Character.getProperty("ColorStartName", "False"));
-			NAME_COLOR = Integer.decode("0x" + Character.getProperty("NameColor", "00FF00"));
-			
-			// #################### NOVOS CHAR HERO ###################################################################//
-			ADD_HERO = Boolean.parseBoolean(Character.getProperty("NewHeroesCharacter", "False"));
-			
-			// #################### NOVOS CHAR NOBRE ##################################################################//
-			ADD_NOBLESSE = Boolean.parseBoolean(Character.getProperty("NoblesseAtNewChars", "False"));
-			// ########################################################################################################//
-			
 			MAX_ADENA = Long.parseLong(Character.getProperty("MaxAdena", "99900000000"));
 			if (MAX_ADENA < 0)
 			{
