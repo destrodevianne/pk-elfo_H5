@@ -58,8 +58,8 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	// Lineage II PkElfo arquivos de definicoes de propriedades //
 	// ----------------------------------------------------------------------------------------------------//
-	// BIG BOSSES //
-	// ----------------------------------------------------------------------------------------------------//
+
+	// ------------------------BIG BOSSES------------------------------------------------------------------//
 	public static final String ANTHARAS_CONFIG = "./config/BigBosses/Antharas.properties";
 	public static final String BAIUM_CONFIG = "./config/BigBosses/Baium.properties";
 	public static final String BELETH_CONFIG = "./config/BigBosses/Beleth.properties";
@@ -76,7 +76,7 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String AIO_CONFIG_FILE = "./config/AIOx/Aio.properties";
 	public static final String AUTO_RESTART = "./config/AutoRestart/AutoRestart.properties";
-	// ----------------------------------------------------------------------------------------------------//
+	// ------------------------CLAN------------------------------------------------------------------------//
 	public static final String CLANCONFIG_FILE = "./config/Clan/ClanConfig.properties";
 	public static final String CLANFULLCOMANDO_FILE = "./config/Clan/ClanFullComando.properties";
 	public static final String CLANWAR_FILE = "./config/Clan/ClanWarZone.properties";
@@ -87,17 +87,14 @@ public final class Config
 	public static final String COMMUNITY_PVP = "./config/CommunityServer/CommunityPvP.properties";
 	public static final String COMMUNITY_CONFIGURATION_FILE = "./config/CommunityServer/CommunityServer.properties";
 	public static final String EMAIL_CONFIG_FILE = "./config/Email.properties";
-	// ----------------------------------------------------------------------------------------------------//
+	// ------------------------EVENTOS---------------------------------------------------------------------//
 	public static final String EVENT_FILE = "./config/Eventos/Event.properties";
 	public static final String FORTSIEGE_CONFIGURATION_FILE = "./config/Eventos/FortSiege.properties";
 	public static final String SEVENSIGNS_CONFIG_FILE = "./config/Eventos/SevenSigns.properties";
 	public static final String SIEGE_CONFIGURATION_FILE = "./config/Eventos/Siege.properties";
 	public static final String TW_CONFIGURATION_FILE = "./config/Eventos/TerritoryWar.properties";
 	// ----------------------------------------------------------------------------------------------------//
-	public static final String FEATURE_CONFIG_FILE = "./config/Feature.properties";
-	public static final String FLOOD_PROTECTOR_FILE = "./config/FloodProtector.properties";
 	public static final String GENERAL_CONFIG_FILE = "./config/General.properties";
-	public static final String GRACIASEEDS_CONFIG_FILE = "./config/GraciaSeeds.properties";
 	public static final String HEXID_FILE = "./config/hexid.txt";
 	public static final String ID_CONFIG_FILE = "./config/IdFactory.properties";
 	public static final String IP_CONFIG_FILE = "./config/ipconfig.xml";
@@ -107,16 +104,20 @@ public final class Config
 	public static final String L2JMOD_CONFIG_FILE = "./config/L2JMods.properties";
 	public static final String MMO_CONFIG_FILE = "./config/MMO.properties";
 	public static final String PRIME_CONFIG_FILE = "./config/Moedas/PrimeShop.properties";
-	// ----------------------------------------------------------------------------------------------------//
+	// ------------------------NPCs------------------------------------------------------------------------//
 	public static final String GUARDAS_CONFIG_FILE = "./config/NPCs/GUARDAS.properties";
 	public static final String MOBS_CONFIG_FILE = "./config/NPCs/MOBS.properties";
 	public static final String NPC_CONFIG_FILE = "./config/NPCs/NPC.properties";
 	public static final String PETS_CONFIG_FILE = "./config/NPCs/PETS.properties";
 	public static final String TOPNPC_CONFIG_FILE = "./config/NPCs/TOPNPC.properties";
 	public static final String RAIDBOSSES_CONFIG_FILE = "./config/NPCs/RAIDBOSSES.properties";
+	// ------------------------OUTROS----------------------------------------------------------------------//
+	public static final String FEATURE_CONFIG_FILE = "./config/Outros/Feature.properties";
+	public static final String FLOOD_PROTECTOR_FILE = "./config/Outros/FloodProtector.properties";
+	public static final String GRACIASEEDS_CONFIG_FILE = "./config/Outros/GraciaSeeds.properties";
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olympiad.properties";
-	// ----------------------------------------------------------------------------------------------------//
+	// ------------------------PLAYER----------------------------------------------------------------------//
 	public static final String BALANCECLASSE_FILE = "./config/Player/BalanceClass.properties";
 	public static final String COMANDOSPLAYER_FILE = "./config/Player/Comandos.properties";
 	public static final String CH_SIEGE_FILE = "./config/Eventos/ConquerableHallSiege.properties";
@@ -134,7 +135,7 @@ public final class Config
 	public static final String PVPESCAPE_CONFIG_FILE = "./config/PvPpK/Escape.properties";
 	public static final String SECURITY_CONFIG_FILE = "./config/GM/Security.properties";
 	public static final String GMADM_CONFIG = "./config/GM/GmAdm.properties";
-	// ----------------------------------------------------------------------------------------------------//
+	// ------------------------SERVICES--------------------------------------------------------------------//
 	public static final String PKELFO_FILE = "./config/Player/Services/Pkelfo.properties";
 	public static final String PREMIUM_CONFIG_FILE = "./config/Services/Premium.properties";
 	public static final String RATES_CONFIG_FILE = "./config/Services/Rates.properties";
