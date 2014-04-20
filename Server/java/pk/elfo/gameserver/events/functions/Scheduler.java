@@ -91,7 +91,7 @@ public class Scheduler
 		try
 		{
 			@SuppressWarnings("resource")
-			BufferedReader bf = new BufferedReader(new FileReader("config/Events/EventScheduler.txt"));
+			BufferedReader bf = new BufferedReader(new FileReader("config/Eventos/Events/EventScheduler.txt"));
 			while ((str = bf.readLine()) != null)
 			{
 				beolvasott += str;

@@ -287,7 +287,7 @@ public class Config extends DocumentParser
 		restrictions.clear();
 		messages.clear();
 		rewards.clear();
-		parseDirectory(new File("./config/Events"));
+		parseDirectory(new File("./config/Eventos/Events"));
 		_log.info("PHOENIX Engine 2.0: Sistema de eventos iniciado.");
 	}
 	

@@ -51,7 +51,7 @@ public class SystemMessages
 	{
 		try
 		{
-			BufferedReader in = new BufferedReader(new FileReader("config/Events/EventMessages.txt"));
+			BufferedReader in = new BufferedReader(new FileReader("config/Eventos/Events/EventMessages.txt"));
 			String str;
 			while ((str = in.readLine()) != null)
 			{
