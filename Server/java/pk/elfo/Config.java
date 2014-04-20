@@ -112,7 +112,6 @@ public final class Config
 	public static final String RAIDBOSSES_CONFIG_FILE = "./config/NPCs/RAIDBOSSES.properties";
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olympiad.properties";
-	public static final String PKELFO_FILE = "./config/Pkelfo.properties";
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String BALANCECLASSE_FILE = "./config/Player/BalanceClass.properties";
 	public static final String COMANDOSPLAYER_FILE = "./config/Player/Comandos.properties";
@@ -120,6 +119,7 @@ public final class Config
 	public static final String PLAYER_CONFIG_FILE = "./config/Player/EnterWorld.properties";
 	public static final String ITEMSS_FILE = "./config/Player/Item.properties";
 	public static final String TECLADO_FILE = "./config/Player/MovimentoTeclado.properties";
+	public static final String PKELFO_FILE = "./config/Player/Pkelfo.properties";
 	public static final String RACACONFIG_FILE = "./config/Player/RacaConfig.properties";
 	public static final String RENAME_CONFIG_FILE = "./config/Player/Rename.properties";
 	public static final String USER_CONFIG_FILE = "./config/Player/UserPainel.properties";
