@@ -127,6 +127,7 @@ public final class Config
 	public static final String PKELFO_FILE = "./config/Player/Pkelfo.properties";
 	public static final String RACACONFIG_FILE = "./config/Player/RacaConfig.properties";
 	public static final String RENAME_CONFIG_FILE = "./config/Player/Rename.properties";
+	public static final String RESTRICTIONS_CONFIG_FILE = "./config/Player/Restrictions.properties";
 	public static final String CUSTOMSPAWN_CONFIG_FILE = "./config/Player/SpawnCustom.properties";
 	public static final String USER_CONFIG_FILE = "./config/Player/UserPainel.properties";
 	// ----------------------------------------------------------------------------------------------------//
@@ -134,7 +135,6 @@ public final class Config
 	public static final String PVPPK_CONFIG_FILE = "./config/PvPpK/PvpPk.properties";
 	public static final String PVPESCAPE_CONFIG_FILE = "./config/PvPpK/Escape.properties";
 	public static final String RATES_CONFIG_FILE = "./config/Rates.properties";
-	public static final String RESTRICTIONS_CONFIG_FILE = "./config/Restrictions.properties";
 	public static final String SECURITY_CONFIG_FILE = "./config/GM/Security.properties";
 	public static final String GMADM_CONFIG = "./config/GM/GmAdm.properties";
 	public static final String CONFIGURATION_FILE = "./config/Server.properties";
