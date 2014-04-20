@@ -119,6 +119,7 @@ public final class Config
 	public static final String ENCHANT_PROTECTOR_FILE = "./config/Player/EnchantProtector.properties";
 	public static final String PLAYER_CONFIG_FILE = "./config/Player/EnterWorld.properties";
 	public static final String ITEMSS_FILE = "./config/Player/Item.properties";
+	public static final String TECLADO_FILE = "./config/Player/MovimentoTeclado.properties";
 	public static final String RACACONFIG_FILE = "./config/Player/RacaConfig.properties";
 	public static final String RENAME_CONFIG_FILE = "./config/Player/Rename.properties";
 	public static final String USER_CONFIG_FILE = "./config/Player/UserPainel.properties";
@@ -2551,7 +2552,6 @@ public final class Config
 			
 			// #########################################################################################################//
 			
-								
 			// ############################ ITEMS PROPERTIES ###########################################################//
 				
 				L2Properties ITEMSS = new L2Properties();
@@ -2572,13 +2572,33 @@ public final class Config
 				INFINITE_SPIRIT_SHOT = Boolean.parseBoolean(ITEMSS.getProperty("InfiniteSpiritShot", "False"));
 				INFINITE_BLESSED_SPIRIT_SHOT = Boolean.parseBoolean(ITEMSS.getProperty("InfiniteBlessedSpiritShot", "False"));
 				INFINITE_ARROWS = Boolean.parseBoolean(ITEMSS.getProperty("InfiniteArrows", "false"));
-					
+				STARTING_ITEMS = Boolean.parseBoolean(ITEMSS.getProperty("StartingItems", "False"));
+				STARTING_ITEMS_ID = Integer.parseInt(ITEMSS.getProperty("StartingItemId", "3470"));
+				STARTING_ITEMS_COUNT = Long.parseLong(ITEMSS.getProperty("StartingItemCount", "0"));
+
+			// #########################################################################################################//
+				
+			// ############################ TECLADO PROPERTIES #########################################################//
+				
+			L2Properties TECLADOCONFIG = new L2Properties();
+			final File tecladoconfig = new File(TECLADO_FILE);
+			try (InputStream is = new FileInputStream(tecladoconfig))
+				{
+					TECLADOCONFIG.load(is);
+				}
+			catch (Exception e)
+				{
+					_log.log(Level.SEVERE, "Error while loading TECLADOCONFIG settings!", e);
+				}
+
+			ALLOW_KEYBOARD_MOVEMENT = Boolean.parseBoolean(TECLADOCONFIG.getProperty("AllowKeyboardMovement", "false"));
+				
 			// #########################################################################################################//
 				
 			// ############################ RACAS CONFIGS PROPERTIES ###################################################//
 				
 			L2Properties RACACONFIG = new L2Properties();
-			final File racaconfig = new File(CLANCONFIG_FILE);
+			final File racaconfig = new File(RACACONFIG_FILE);
 			try (InputStream is = new FileInputStream(racaconfig))
 				{
 					RACACONFIG.load(is);
@@ -3074,9 +3094,6 @@ public final class Config
 			ENABLE_EXP_REFUSAL = Boolean.parseBoolean(UserSettings.getProperty("AllowExpRefusal", "true"));
 			
 
-			// ########################### Movimento pelas teclas do teclado ##########################################//
-			ALLOW_KEYBOARD_MOVEMENT = Boolean.parseBoolean(UserSettings.getProperty("AllowKeyboardMovement", "false"));
-			
 			// ########################### XP e SP diferenciado para char abaixo do lv40 e acima do lv41 ##############//
 			ENABLE_LOWLEVEL_XPSP = Boolean.parseBoolean(UserSettings.getProperty("EnableLowLevelXpSp", "True"));
 			LOWLEVEL_LVL = Integer.parseInt(UserSettings.getProperty("LowLevelLvl", "40"));
@@ -3090,11 +3107,7 @@ public final class Config
 			// ########################### comando debuf do painel de usuario ########################################//
 			ENABLE_BUFF_REFUSAL = Boolean.parseBoolean(UserSettings.getProperty("AllowDeBuffCommand","False"));
 			
-			// ############################ itens na bag ao criar novo char ##########################################//
-			STARTING_ITEMS = Boolean.parseBoolean(UserSettings.getProperty("StartingItems", "False"));
-			STARTING_ITEMS_ID = Integer.parseInt(UserSettings.getProperty("StartingItemId", "3470"));
-			STARTING_ITEMS_COUNT = Long.parseLong(UserSettings.getProperty("StartingItemCount", "0"));			
-			
+		
 			// ############################ VIP PROPERTIES ###########################################################//
 			
 			L2Properties VipSettings = new L2Properties();
