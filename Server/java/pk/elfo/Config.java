@@ -88,10 +88,11 @@ public final class Config
 	public static final String COMMUNITY_CONFIGURATION_FILE = "./config/CommunityServer/CommunityServer.properties";
 	public static final String EMAIL_CONFIG_FILE = "./config/Email.properties";
 	// ----------------------------------------------------------------------------------------------------//
-	public static final String FORTSIEGE_CONFIGURATION_FILE = "./config/Eventos/FortSiege.properties";
-	public static final String TW_CONFIGURATION_FILE = "./config/Eventos/TerritoryWar.properties";
-	public static final String SIEGE_CONFIGURATION_FILE = "./config/Eventos/Siege.properties";
 	public static final String EVENT_FILE = "./config/Eventos/Event.properties";
+	public static final String FORTSIEGE_CONFIGURATION_FILE = "./config/Eventos/FortSiege.properties";
+	public static final String SEVENSIGNS_CONFIG_FILE = "./config/Eventos/SevenSigns.properties";
+	public static final String SIEGE_CONFIGURATION_FILE = "./config/Eventos/Siege.properties";
+	public static final String TW_CONFIGURATION_FILE = "./config/Eventos/TerritoryWar.properties";
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String FEATURE_CONFIG_FILE = "./config/Feature.properties";
 	public static final String FLOOD_PROTECTOR_FILE = "./config/FloodProtector.properties";
@@ -2320,33 +2321,6 @@ public final class Config
 			FS_MAX_SUPPLY_LEVEL = Integer.parseInt(Feature.getProperty("FortressMaxSupplyLevel", "6"));
 			FS_FEE_FOR_CASTLE = Integer.parseInt(Feature.getProperty("FortressFeeForCastle", "25000"));
 			FS_MAX_OWN_TIME = Integer.parseInt(Feature.getProperty("FortressMaximumOwnTime", "168"));
-			
-			ALT_GAME_CASTLE_DAWN = Boolean.parseBoolean(Feature.getProperty("AltCastleForDawn", "True"));
-			ALT_GAME_CASTLE_DUSK = Boolean.parseBoolean(Feature.getProperty("AltCastleForDusk", "True"));
-			ALT_GAME_REQUIRE_CLAN_CASTLE = Boolean.parseBoolean(Feature.getProperty("AltRequireClanCastle", "False"));
-			ALT_FESTIVAL_MIN_PLAYER = Integer.parseInt(Feature.getProperty("AltFestivalMinPlayer", "5"));
-			ALT_MAXIMUM_PLAYER_CONTRIB = Integer.parseInt(Feature.getProperty("AltMaxPlayerContrib", "1000000"));
-			ALT_FESTIVAL_MANAGER_START = Long.parseLong(Feature.getProperty("AltFestivalManagerStart", "120000"));
-			ALT_FESTIVAL_LENGTH = Long.parseLong(Feature.getProperty("AltFestivalLength", "1080000"));
-			ALT_FESTIVAL_CYCLE_LENGTH = Long.parseLong(Feature.getProperty("AltFestivalCycleLength", "2280000"));
-			ALT_FESTIVAL_FIRST_SPAWN = Long.parseLong(Feature.getProperty("AltFestivalFirstSpawn", "120000"));
-			ALT_FESTIVAL_FIRST_SWARM = Long.parseLong(Feature.getProperty("AltFestivalFirstSwarm", "300000"));
-			ALT_FESTIVAL_SECOND_SPAWN = Long.parseLong(Feature.getProperty("AltFestivalSecondSpawn", "540000"));
-			ALT_FESTIVAL_SECOND_SWARM = Long.parseLong(Feature.getProperty("AltFestivalSecondSwarm", "720000"));
-			ALT_FESTIVAL_CHEST_SPAWN = Long.parseLong(Feature.getProperty("AltFestivalChestSpawn", "900000"));
-			ALT_SIEGE_DAWN_GATES_PDEF_MULT = Double.parseDouble(Feature.getProperty("AltDawnGatesPdefMult", "1.1"));
-			ALT_SIEGE_DUSK_GATES_PDEF_MULT = Double.parseDouble(Feature.getProperty("AltDuskGatesPdefMult", "0.8"));
-			ALT_SIEGE_DAWN_GATES_MDEF_MULT = Double.parseDouble(Feature.getProperty("AltDawnGatesMdefMult", "1.1"));
-			ALT_SIEGE_DUSK_GATES_MDEF_MULT = Double.parseDouble(Feature.getProperty("AltDuskGatesMdefMult", "0.8"));
-			ALT_STRICT_SEVENSIGNS = Boolean.parseBoolean(Feature.getProperty("StrictSevenSigns", "True"));
-			ALT_SEVENSIGNS_LAZY_UPDATE = Boolean.parseBoolean(Feature.getProperty("AltSevenSignsLazyUpdate", "True"));
-			
-			SSQ_DAWN_TICKET_QUANTITY = Integer.parseInt(Feature.getProperty("SevenSignsDawnTicketQuantity", "300"));
-			SSQ_DAWN_TICKET_PRICE = Integer.parseInt(Feature.getProperty("SevenSignsDawnTicketPrice", "1000"));
-			SSQ_DAWN_TICKET_BUNDLE = Integer.parseInt(Feature.getProperty("SevenSignsDawnTicketBundle", "10"));
-			SSQ_MANORS_AGREEMENT_ID = Integer.parseInt(Feature.getProperty("SevenSignsManorsAgreementId", "6388"));
-			SSQ_JOIN_DAWN_ADENA_FEE = Integer.parseInt(Feature.getProperty("SevenSignsJoinDawnFee", "50000"));
-			
 			TAKE_FORT_POINTS = Integer.parseInt(Feature.getProperty("TakeFortPoints", "200"));
 			LOOSE_FORT_POINTS = Integer.parseInt(Feature.getProperty("LooseFortPoints", "0"));
 			TAKE_CASTLE_POINTS = Integer.parseInt(Feature.getProperty("TakeCastlePoints", "1500"));
@@ -4207,6 +4181,46 @@ public final class Config
 			
 			// #########################################################################################################//
 			
+			// ############################ SEVENSIGNS PROPERTIES ######################################################//
+				
+			L2Properties SEVENSIGNS = new L2Properties();
+			final File sevensigns = new File(SEVENSIGNS_CONFIG_FILE);
+			try (InputStream is = new FileInputStream(sevensigns))
+				{
+					SEVENSIGNS.load(is);
+				}
+			catch (Exception e)
+				{
+					_log.log(Level.SEVERE, "Error while loading SEVENSIGNS settings!", e);
+				}
+				
+			ALT_GAME_REQUIRE_CLAN_CASTLE = Boolean.parseBoolean(SEVENSIGNS.getProperty("AltRequireClanCastle", "False"));
+			ALT_GAME_CASTLE_DAWN = Boolean.parseBoolean(SEVENSIGNS.getProperty("AltCastleForDawn", "True"));
+			ALT_GAME_CASTLE_DUSK = Boolean.parseBoolean(SEVENSIGNS.getProperty("AltCastleForDusk", "True"));
+			ALT_FESTIVAL_MIN_PLAYER = Integer.parseInt(SEVENSIGNS.getProperty("AltFestivalMinPlayer", "5"));
+			ALT_MAXIMUM_PLAYER_CONTRIB = Integer.parseInt(SEVENSIGNS.getProperty("AltMaxPlayerContrib", "1000000"));
+			ALT_FESTIVAL_MANAGER_START = Long.parseLong(SEVENSIGNS.getProperty("AltFestivalManagerStart", "120000"));
+			ALT_FESTIVAL_LENGTH = Long.parseLong(SEVENSIGNS.getProperty("AltFestivalLength", "1080000"));
+			ALT_FESTIVAL_CYCLE_LENGTH = Long.parseLong(SEVENSIGNS.getProperty("AltFestivalCycleLength", "2280000"));
+			ALT_FESTIVAL_FIRST_SPAWN = Long.parseLong(SEVENSIGNS.getProperty("AltFestivalFirstSpawn", "120000"));
+			ALT_FESTIVAL_FIRST_SWARM = Long.parseLong(SEVENSIGNS.getProperty("AltFestivalFirstSwarm", "300000"));
+			ALT_FESTIVAL_SECOND_SPAWN = Long.parseLong(SEVENSIGNS.getProperty("AltFestivalSecondSpawn", "540000"));
+			ALT_FESTIVAL_SECOND_SWARM = Long.parseLong(SEVENSIGNS.getProperty("AltFestivalSecondSwarm", "720000"));
+			ALT_FESTIVAL_CHEST_SPAWN = Long.parseLong(SEVENSIGNS.getProperty("AltFestivalChestSpawn", "900000"));
+			ALT_SIEGE_DAWN_GATES_PDEF_MULT = Double.parseDouble(SEVENSIGNS.getProperty("AltDawnGatesPdefMult", "1.1"));
+			ALT_SIEGE_DUSK_GATES_PDEF_MULT = Double.parseDouble(SEVENSIGNS.getProperty("AltDuskGatesPdefMult", "0.8"));
+			ALT_SIEGE_DAWN_GATES_MDEF_MULT = Double.parseDouble(SEVENSIGNS.getProperty("AltDawnGatesMdefMult", "1.1"));
+			ALT_SIEGE_DUSK_GATES_MDEF_MULT = Double.parseDouble(SEVENSIGNS.getProperty("AltDuskGatesMdefMult", "0.8"));
+			ALT_STRICT_SEVENSIGNS = Boolean.parseBoolean(SEVENSIGNS.getProperty("StrictSevenSigns", "True"));
+			ALT_SEVENSIGNS_LAZY_UPDATE = Boolean.parseBoolean(SEVENSIGNS.getProperty("AltSevenSignsLazyUpdate", "True"));
+			SSQ_DAWN_TICKET_QUANTITY = Integer.parseInt(SEVENSIGNS.getProperty("SevenSignsDawnTicketQuantity", "300"));
+			SSQ_DAWN_TICKET_PRICE = Integer.parseInt(SEVENSIGNS.getProperty("SevenSignsDawnTicketPrice", "1000"));
+			SSQ_DAWN_TICKET_BUNDLE = Integer.parseInt(SEVENSIGNS.getProperty("SevenSignsDawnTicketBundle", "10"));
+			SSQ_MANORS_AGREEMENT_ID = Integer.parseInt(SEVENSIGNS.getProperty("SevenSignsManorsAgreementId", "6388"));
+			SSQ_JOIN_DAWN_ADENA_FEE = Integer.parseInt(SEVENSIGNS.getProperty("SevenSignsJoinDawnFee", "50000"));
+				
+			// #########################################################################################################//
+							
 			// ############################ PRIME SHOP PROPERTIES ######################################################//
 			
 			L2Properties PRIME = new L2Properties();
