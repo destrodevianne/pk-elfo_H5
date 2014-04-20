@@ -76,9 +76,12 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String AIO_CONFIG_FILE = "./config/AIOx/Aio.properties";
 	public static final String AUTO_RESTART = "./config/AutoRestart/AutoRestart.properties";
+	// ----------------------------------------------------------------------------------------------------//
+	public static final String CLANCONFIG_FILE = "./config/Clan/ClanConfig.properties";
 	public static final String CLANFULLCOMANDO_FILE = "./config/Clan/ClanFullComando.properties";
 	public static final String CLANWAR_FILE = "./config/Clan/ClanWarZone.properties";
 	public static final String CLANLEADER_FILE = "./config/Clan/ClanLider.properties";
+	// ----------------------------------------------------------------------------------------------------//
 	public static final String CHARACTER_CONFIG_FILE = "./config/Character.properties";
 	public static final String CHAT_FILTER_FILE = "./config/chatfilter.txt";
 	public static final String COMMUNITY_PVP = "./config/CommunityServer/CommunityPvP.properties";
@@ -116,7 +119,9 @@ public final class Config
 	public static final String ENCHANT_PROTECTOR_FILE = "./config/Player/EnchantProtector.properties";
 	public static final String PLAYER_CONFIG_FILE = "./config/Player/EnterWorld.properties";
 	public static final String ITEMSS_FILE = "./config/Player/Item.properties";
+	public static final String RACACONFIG_FILE = "./config/Player/RacaConfig.properties";
 	public static final String RENAME_CONFIG_FILE = "./config/Player/Rename.properties";
+	public static final String USER_CONFIG_FILE = "./config/Player/UserPainel.properties";
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String PREMIUM_CONFIG_FILE = "./config/Premium.properties";
 	public static final String PVPPK_CONFIG_FILE = "./config/PvPpK/PvpPk.properties";
@@ -129,7 +134,6 @@ public final class Config
 	public static final String SIEGE_CONFIGURATION_FILE = "./config/Siege.properties";
 	public static final String TELNET_FILE = "./config/Telnet.properties";
 	public static final String TW_CONFIGURATION_FILE = "./config/TerritoryWar.properties";
-	public static final String USER_CONFIG_FILE = "./config/User.properties";
 	public static final String VIP_CONFIG_FILE = "./config/VIP/Vip.properties";
 	//======================================================================================//
 	//                               CommunityPVP 
@@ -2522,7 +2526,9 @@ public final class Config
 			LocX = Integer.parseInt(COMANDOSPLAYER.getProperty("LocX", "10724"));
 			LocY = Integer.parseInt(COMANDOSPLAYER.getProperty("LocY", "-23729"));
 			LocZ = Integer.parseInt(COMANDOSPLAYER.getProperty("LocZ", "-3650"));
-				
+			COMMAND_LIDER = Boolean.parseBoolean(COMANDOSPLAYER.getProperty("CommandLider", "False"));
+			COMMAND_LOGOUT = Boolean.parseBoolean(COMANDOSPLAYER.getProperty("CommandLogout", "False"));
+
 			// #########################################################################################################//
 			
 			// ############################ ENCHANT PROTECTOR PROPERTIES ###############################################//
@@ -2568,6 +2574,31 @@ public final class Config
 				INFINITE_ARROWS = Boolean.parseBoolean(ITEMSS.getProperty("InfiniteArrows", "false"));
 					
 			// #########################################################################################################//
+				
+			// ############################ RACAS CONFIGS PROPERTIES ###################################################//
+				
+			L2Properties RACACONFIG = new L2Properties();
+			final File racaconfig = new File(CLANCONFIG_FILE);
+			try (InputStream is = new FileInputStream(racaconfig))
+				{
+					RACACONFIG.load(is);
+				}
+			catch (Exception e)
+				{
+					_log.log(Level.SEVERE, "Error while loading RACACONFIG settings!", e);
+				}
+
+				RACES_COLOR_ENABLE = Boolean.parseBoolean(RACACONFIG.getProperty("RacesColorEnable", "False"));
+				HUMAN_COLOR = Integer.decode("0x" + RACACONFIG.getProperty("HumanNameColor", "FFFFFF"));
+				ELF_COLOR = Integer.decode("0x" + RACACONFIG.getProperty("ElfNameColor", "FFFFFF"));
+				DARKELF_COLOR = Integer.decode("0x" + RACACONFIG.getProperty("DarkElfNameColor", "FFFFFF"));
+				ORC_COLOR = Integer.decode("0x" + RACACONFIG.getProperty("OrcNameColor", "FFFFFF"));
+				DWARF_COLOR = Integer.decode("0x" + RACACONFIG.getProperty("DwarfNameColor", "FFFFFF"));
+				KAMAEL_COLOR = Integer.decode("0x" + RACACONFIG.getProperty("KamaelNameColor", "FFFFFF"));
+				ENABLE_RACE_MESSAGE = Boolean.parseBoolean(RACACONFIG.getProperty("EnableRaceMessage", "False"));	
+			
+			// #########################################################################################################//
+			
 
 			// ############################ RENAME NPC PROPERTIES ######################################################//
 			
@@ -3042,20 +3073,7 @@ public final class Config
 			ENABLE_SPECIAL_EFFECT = Boolean.parseBoolean(UserSettings.getProperty("AllowSpecialEffect", "False"));
 			ENABLE_EXP_REFUSAL = Boolean.parseBoolean(UserSettings.getProperty("AllowExpRefusal", "true"));
 			
-			// ############################ CONFIGURACOES ESPECIAIS RELACIONADAS AS RACAS ############################//
-			RACES_COLOR_ENABLE = Boolean.parseBoolean(UserSettings.getProperty("RacesColorEnable", "False"));
-			HUMAN_COLOR = Integer.decode("0x" + UserSettings.getProperty("HumanNameColor", "FFFFFF"));
-			ELF_COLOR = Integer.decode("0x" + UserSettings.getProperty("ElfNameColor", "FFFFFF"));
-			DARKELF_COLOR = Integer.decode("0x" + UserSettings.getProperty("DarkElfNameColor", "FFFFFF"));
-			ORC_COLOR = Integer.decode("0x" + UserSettings.getProperty("OrcNameColor", "FFFFFF"));
-			DWARF_COLOR = Integer.decode("0x" + UserSettings.getProperty("DwarfNameColor", "FFFFFF"));
-			KAMAEL_COLOR = Integer.decode("0x" + UserSettings.getProperty("KamaelNameColor", "FFFFFF"));
-			ENABLE_RACE_MESSAGE = Boolean.parseBoolean(UserSettings.getProperty("EnableRaceMessage", "False"));
-			
-			// ########################### Comandos ##################################################################//
-			COMMAND_LIDER = Boolean.parseBoolean(UserSettings.getProperty("CommandLider", "False"));
-			COMMAND_LOGOUT = Boolean.parseBoolean(UserSettings.getProperty("CommandLogout", "False"));
-			
+
 			// ########################### Movimento pelas teclas do teclado ##########################################//
 			ALLOW_KEYBOARD_MOVEMENT = Boolean.parseBoolean(UserSettings.getProperty("AllowKeyboardMovement", "false"));
 			
@@ -3215,6 +3233,34 @@ public final class Config
 			
 			// #########################################################################################################//
 			
+			// ############################ CLAN CONFIGS PROPERTIES ####################################################//
+			
+			L2Properties CLANCONFIG = new L2Properties();
+			final File clanconfig = new File(CLANCONFIG_FILE);
+			try (InputStream is = new FileInputStream(clanconfig))
+			{
+				CLANCONFIG.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Error while loading CLANCONFIG settings!", e);
+			}
+
+			ALT_CLAN_JOIN_DAYS = Integer.parseInt(CLANCONFIG.getProperty("DaysBeforeJoinAClan", "1"));
+			ALT_CLAN_CREATE_DAYS = Integer.parseInt(CLANCONFIG.getProperty("DaysBeforeCreateAClan", "10"));
+			ALT_CLAN_DISSOLVE_DAYS = Integer.parseInt(CLANCONFIG.getProperty("DaysToPassToDissolveAClan", "7"));
+			ALT_ALLY_JOIN_DAYS_WHEN_LEAVED = Integer.parseInt(CLANCONFIG.getProperty("DaysBeforeJoinAllyWhenLeaved", "1"));
+			ALT_ALLY_JOIN_DAYS_WHEN_DISMISSED = Integer.parseInt(CLANCONFIG.getProperty("DaysBeforeJoinAllyWhenDismissed", "1"));
+			ALT_ACCEPT_CLAN_DAYS_WHEN_DISMISSED = Integer.parseInt(CLANCONFIG.getProperty("DaysBeforeAcceptNewClanWhenDismissed", "1"));
+			ALT_CREATE_ALLY_DAYS_WHEN_DISSOLVED = Integer.parseInt(CLANCONFIG.getProperty("DaysBeforeCreateNewAllyWhenDissolved", "1"));
+			ALT_MAX_NUM_OF_CLANS_IN_ALLY = Integer.parseInt(CLANCONFIG.getProperty("AltMaxNumOfClansInAlly", "3"));
+			ALT_CLAN_MEMBERS_FOR_WAR = Integer.parseInt(CLANCONFIG.getProperty("AltClanMembersForWar", "15"));
+			ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH = Boolean.parseBoolean(CLANCONFIG.getProperty("AltMembersCanWithdrawFromClanWH", "false"));
+			REMOVE_CASTLE_CIRCLETS = Boolean.parseBoolean(CLANCONFIG.getProperty("RemoveCastleCirclets", "true"));
+			CLAN_NAME_AS_TITLE = Boolean.parseBoolean(CLANCONFIG.getProperty("ClanTitle", "True"));
+						
+			// #########################################################################################################//
+				
 			// ############################ CLAN FULL COMANDO PROPERTIES ###############################################//
 			
 			L2Properties CLANFULL = new L2Properties();
@@ -3523,17 +3569,6 @@ public final class Config
 			ALT_GAME_CREATION_SP_RATE = Double.parseDouble(Character.getProperty("AltGameCreationSpRate", "1"));
 			ALT_GAME_CREATION_RARE_XPSP_RATE = Double.parseDouble(Character.getProperty("AltGameCreationRareXpSpRate", "2"));
 			ALT_BLACKSMITH_USE_RECIPES = Boolean.parseBoolean(Character.getProperty("AltBlacksmithUseRecipes", "true"));
-			ALT_CLAN_JOIN_DAYS = Integer.parseInt(Character.getProperty("DaysBeforeJoinAClan", "1"));
-			ALT_CLAN_CREATE_DAYS = Integer.parseInt(Character.getProperty("DaysBeforeCreateAClan", "10"));
-			ALT_CLAN_DISSOLVE_DAYS = Integer.parseInt(Character.getProperty("DaysToPassToDissolveAClan", "7"));
-			ALT_ALLY_JOIN_DAYS_WHEN_LEAVED = Integer.parseInt(Character.getProperty("DaysBeforeJoinAllyWhenLeaved", "1"));
-			ALT_ALLY_JOIN_DAYS_WHEN_DISMISSED = Integer.parseInt(Character.getProperty("DaysBeforeJoinAllyWhenDismissed", "1"));
-			ALT_ACCEPT_CLAN_DAYS_WHEN_DISMISSED = Integer.parseInt(Character.getProperty("DaysBeforeAcceptNewClanWhenDismissed", "1"));
-			ALT_CREATE_ALLY_DAYS_WHEN_DISSOLVED = Integer.parseInt(Character.getProperty("DaysBeforeCreateNewAllyWhenDissolved", "1"));
-			ALT_MAX_NUM_OF_CLANS_IN_ALLY = Integer.parseInt(Character.getProperty("AltMaxNumOfClansInAlly", "3"));
-			ALT_CLAN_MEMBERS_FOR_WAR = Integer.parseInt(Character.getProperty("AltClanMembersForWar", "15"));
-			ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH = Boolean.parseBoolean(Character.getProperty("AltMembersCanWithdrawFromClanWH", "false"));
-			REMOVE_CASTLE_CIRCLETS = Boolean.parseBoolean(Character.getProperty("RemoveCastleCirclets", "true"));
 			ALT_PARTY_RANGE = Integer.parseInt(Character.getProperty("AltPartyRange", "1600"));
 			ALT_PARTY_RANGE2 = Integer.parseInt(Character.getProperty("AltPartyRange2", "1400"));
 			ALT_LEAVE_PARTY_LEADER = Boolean.parseBoolean(Character.getProperty("AltLeavePartyLeader", "False"));
@@ -3777,7 +3812,6 @@ public final class Config
 			
 			IS_TELNET_ENABLED = Boolean.parseBoolean(telnetSettings.getProperty("EnableTelnet", "false"));
 			
-			CLAN_NAME_AS_TITLE = Boolean.parseBoolean(Character.getProperty("ClanTitle", "True"));
 			// MMO
 			L2Properties mmoSettings = new L2Properties();
 			final File mmo = new File(MMO_CONFIG_FILE);
