@@ -86,7 +86,6 @@ public final class Config
 	public static final String CHAT_FILTER_FILE = "./config/chatfilter.txt";
 	public static final String COMMUNITY_PVP = "./config/CommunityServer/CommunityPvP.properties";
 	public static final String COMMUNITY_CONFIGURATION_FILE = "./config/CommunityServer/CommunityServer.properties";
-	public static final String CH_SIEGE_FILE = "./config/ConquerableHallSiege.properties";
 	public static final String EMAIL_CONFIG_FILE = "./config/Email.properties";
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String FORTSIEGE_CONFIGURATION_FILE = "./config/Eventos/FortSiege.properties";
@@ -119,6 +118,7 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String BALANCECLASSE_FILE = "./config/Player/BalanceClass.properties";
 	public static final String COMANDOSPLAYER_FILE = "./config/Player/Comandos.properties";
+	public static final String CH_SIEGE_FILE = "./config/Eventos/ConquerableHallSiege.properties";
 	public static final String CUSTOMADENA_CONFIG_FILE = "./config/Player/CustomAdenaLevelSp.properties";
 	public static final String ENCHANT_PROTECTOR_FILE = "./config/Player/EnchantProtector.properties";
 	public static final String PLAYER_CONFIG_FILE = "./config/Player/EnterWorld.properties";
