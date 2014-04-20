@@ -115,6 +115,7 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String BALANCECLASSE_FILE = "./config/Player/BalanceClass.properties";
 	public static final String COMANDOSPLAYER_FILE = "./config/Player/Comandos.properties";
+	public static final String CUSTOMADENA_CONFIG_FILE = "./config/Player/CustomAdenaLevelSp.properties";
 	public static final String ENCHANT_PROTECTOR_FILE = "./config/Player/EnchantProtector.properties";
 	public static final String PLAYER_CONFIG_FILE = "./config/Player/EnterWorld.properties";
 	public static final String ITEMSS_FILE = "./config/Player/Item.properties";
@@ -2541,7 +2542,31 @@ public final class Config
 			COMMAND_LOGOUT = Boolean.parseBoolean(COMANDOSPLAYER.getProperty("CommandLogout", "False"));
 
 			// #########################################################################################################//
+
+			// ############################ CUSTOM ADENA LEVEL E SP PROPERTIES #########################################//
 			
+			L2Properties CUSTOMADENA = new L2Properties();
+			final File customadena = new File(CUSTOMADENA_CONFIG_FILE);
+			try (InputStream is = new FileInputStream(customadena))
+			{
+				CUSTOMADENA.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.SEVERE, "Error while loading CUSTOM ADENA LEVEL E SP settings!", e);
+			}
+			
+			STARTING_ADENA = Long.parseLong(CUSTOMADENA.getProperty("StartingAdena", "0"));
+			STARTING_LEVEL = Byte.parseByte(CUSTOMADENA.getProperty("StartingLevel", "1"));
+			STARTING_SP = Integer.parseInt(CUSTOMADENA.getProperty("StartingSP", "0"));
+			MAX_ADENA = Long.parseLong(CUSTOMADENA.getProperty("MaxAdena", "99900000000"));
+			if (MAX_ADENA < 0)
+			{
+				MAX_ADENA = Long.MAX_VALUE;
+			}
+
+			// #########################################################################################################//
+
 			// ############################ ENCHANT PROTECTOR PROPERTIES ###############################################//
 			
 			L2Properties ENCHANTPROTECTOR = new L2Properties();
@@ -3619,14 +3644,6 @@ public final class Config
 			ALT_PARTY_RANGE = Integer.parseInt(Character.getProperty("AltPartyRange", "1600"));
 			ALT_PARTY_RANGE2 = Integer.parseInt(Character.getProperty("AltPartyRange2", "1400"));
 			ALT_LEAVE_PARTY_LEADER = Boolean.parseBoolean(Character.getProperty("AltLeavePartyLeader", "False"));
-			STARTING_ADENA = Long.parseLong(Character.getProperty("StartingAdena", "0"));
-			STARTING_LEVEL = Byte.parseByte(Character.getProperty("StartingLevel", "1"));
-			STARTING_SP = Integer.parseInt(Character.getProperty("StartingSP", "0"));
-			MAX_ADENA = Long.parseLong(Character.getProperty("MaxAdena", "99900000000"));
-			if (MAX_ADENA < 0)
-			{
-				MAX_ADENA = Long.MAX_VALUE;
-			}
 			AUTO_LOOT = Boolean.parseBoolean(Character.getProperty("AutoLoot", "false"));
 			AUTO_LOOT_RAIDS = Boolean.parseBoolean(Character.getProperty("AutoLootRaids", "false"));
 			LOOT_RAIDS_PRIVILEGE_INTERVAL = Integer.parseInt(Character.getProperty("RaidLootRightsInterval", "900")) * 1000;
