@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.cache;
 
 import javolution.context.ObjectFactory;
@@ -26,7 +8,7 @@ import javolution.util.FastList;
 import javolution.util.FastMap;
 
 /**
- * @author Layane
+ * @author PkElfo
  * @param <K>
  * @param <V>
  */
@@ -36,7 +18,6 @@ public class FastMRUCache<K, V> extends FastCollection implements Reusable
 	private static final long serialVersionUID = 1L;
 	private static final int DEFAULT_CAPACITY = 50;
 	private static final int DEFAULT_FORGET_TIME = 300000; // 5 Minutes
-	
 	private final FastMap<K, CacheNode> _cache = new FastMap<K, CacheNode>().setKeyComparator(FastComparator.DIRECT);
 	private FastMap<K, V> _map;
 	private final FastList<K> _mruList = new FastList<>();
@@ -66,7 +47,6 @@ public class FastMRUCache<K, V> extends FastCollection implements Reusable
 	 */
 	private static final ObjectFactory FACTORY = new ObjectFactory()
 	{
-		
 		@Override
 		public Object create()
 		{
@@ -157,7 +137,6 @@ public class FastMRUCache<K, V> extends FastCollection implements Reusable
 			
 			result = current._node;
 		}
-		
 		return result;
 	}
 	

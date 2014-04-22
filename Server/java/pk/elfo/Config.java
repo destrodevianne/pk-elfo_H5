@@ -357,7 +357,6 @@ public final class Config
 	public static boolean NOBLE_CUSTOM_ITEMS;
 	public static int NOOBLE_CUSTOM_ITEM_ID;
 	public static int GAME_POINT_ITEM_ID;
-	public static int PCBANG_POINT_ITEM_ID
 	// ----------------------------------------------------------------------------------------------------//
 	// Npc Buffer
 	// ----------------------------------------------------------------------------------------------------//
@@ -4255,7 +4254,6 @@ public final class Config
 			}
 			
 			GAME_POINT_ITEM_ID = Integer.parseInt(PRIME.getProperty("GamePointItemId", "-400"));
-			PCBANG_POINT_ITEM_ID = Integer.parseInt(PRIME.getProperty("PcBangPointItemId", "-100"));
 			
 			// #########################################################################################################//
 			

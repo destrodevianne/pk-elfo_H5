@@ -651,7 +651,6 @@ public class L2CharacterAI extends AbstractAI
 		
 		// Launch actions corresponding to the Event onAttacked
 		onEvtAttacked(attacker);
-		
 	}
 	
 	/**
@@ -1372,7 +1371,6 @@ public class L2CharacterAI extends AbstractAI
 				{
 					maxCastRange = castRange;
 				}
-				
 			}
 			// Because of missing skills, some mages/balanced cannot play like mages
 			if (!hasLongRangeDamageSkills && isMage)
