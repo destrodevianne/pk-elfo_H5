@@ -22,13 +22,13 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import javolution.util.FastList;
 import pk.elfo.Config;
-import pk.elfo.gameserver.ThreadPoolManager;
-import pk.elfo.gameserver.model.MessagesOnEnter;
 import pk.elfo.gameserver.Announcements;
 import pk.elfo.gameserver.LoginServerThread;
 import pk.elfo.gameserver.SevenSigns;
 import pk.elfo.gameserver.TaskPriority;
+import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.cache.HtmCache;
 import pk.elfo.gameserver.communitybbs.Manager.RegionBBSManager;
 import pk.elfo.gameserver.datatables.AdminTable;
@@ -53,6 +53,7 @@ import pk.elfo.gameserver.instancemanager.TerritoryWarManager;
 import pk.elfo.gameserver.model.L2Clan;
 import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.MessagesOnEnter;
 import pk.elfo.gameserver.model.PcCondOverride;
 import pk.elfo.gameserver.model.actor.instance.L2ClassMasterInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
@@ -154,7 +155,7 @@ public class EnterWorld extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance activeChar = getClient().getActiveChar();		
+		L2PcInstance activeChar = getClient().getActiveChar();
 		
 		if (activeChar == null)
 		{
@@ -173,9 +174,9 @@ public class EnterWorld extends L2GameClientPacket
 		
 		getClient().setClientTracert(tracert);
 		
-		if(Config.ON_ENTER_DELAY_MESSAGES_ENABLE)
+		if (Config.ON_ENTER_DELAY_MESSAGES_ENABLE)
 		{
-			ThreadPoolManager.getInstance().scheduleGeneral(new MessagesOnEnter(activeChar,0), Config.ON_ENTER_DELAY_TO_START * 1000); // Delay in seconds to initiate.
+			ThreadPoolManager.getInstance().scheduleGeneral(new MessagesOnEnter(activeChar, 0), Config.ON_ENTER_DELAY_TO_START * 1000); // Delay in seconds to initiate.
 		}
 		
 		// cor para cada raca
@@ -278,7 +279,7 @@ public class EnterWorld extends L2GameClientPacket
 		{
 			if (Config.ENABLE_SAFE_ADMIN_PROTECTION)
 			{
-				if(Config.SAFE_ADMIN_NAMES.contains(activeChar.getName()))
+				if (Config.SAFE_ADMIN_NAMES.contains(activeChar.getName()))
 				{
 					activeChar.getPcAdmin().setIsSafeAdmin(true);
 					if (Config.SAFE_ADMIN_SHOW_ADMIN_ENTER)
@@ -293,7 +294,7 @@ public class EnterWorld extends L2GameClientPacket
 					_log.warning("A punicao configurada foi executada.");
 				}
 			}
-						
+			
 			if (Config.GM_STARTUP_INVULNERABLE && AdminTable.getInstance().hasAccess("admin_invul", activeChar.getAccessLevel()))
 			{
 				activeChar.setIsInvul(true);
@@ -353,7 +354,7 @@ public class EnterWorld extends L2GameClientPacket
 			PlaySound death_music = new PlaySound(1, "Game_Over", 0, 0, 0, 0, 0);
 			sendPacket(death_music);
 		}
-
+		
 		if (Config.ANNOUNCE_NOBLESSE_LOGIN && activeChar.isNoble())
 		{
 			Announcements.getInstance().announceToAll("Noblesse: " + activeChar.getName() + " is now online!");
@@ -363,7 +364,7 @@ public class EnterWorld extends L2GameClientPacket
 		{
 			Announcements.getInstance().announceToAll("Hero: " + activeChar.getName() + "Class: " + activeChar.getClassId() + " is now online!");
 		}
-				
+		
 		boolean showClanNotice = false;
 		
 		// Clan related checks are here
@@ -618,9 +619,6 @@ public class EnterWorld extends L2GameClientPacket
 		
 		if (Config.ENABLE_AIOX_MESSAGE)
 		{
-			;
-		}
-		{
 			if (activeChar.isAio())
 			{
 				activeChar.sendPacket(new ExShowScreenMessage("Voce possui Status de AIOx ", 10000));
@@ -640,9 +638,6 @@ public class EnterWorld extends L2GameClientPacket
 		
 		if (Config.ENABLE_HERO_MESSAGE)
 		{
-			;
-		}
-		{
 			if (activeChar.isHero())
 			{
 				activeChar.sendPacket(new ExShowScreenMessage("Seja bem vindo Heroi ", 10000));
@@ -650,9 +645,6 @@ public class EnterWorld extends L2GameClientPacket
 		}
 		
 		if (Config.ENABLE_RACE_MESSAGE)
-		{
-			;
-		}
 		{
 			if (activeChar.getLevel() == 1)
 			{
@@ -855,7 +847,7 @@ public class EnterWorld extends L2GameClientPacket
 		{
 			activeChar.getAppearance().setNameColor(Config.AIO_NCOLOR);
 		}
-
+		
 		if (Config.ALLOW_AIO_TCOLOR && activeChar.isAio())
 		{
 			activeChar.getAppearance().setTitleColor(Config.AIO_TCOLOR);

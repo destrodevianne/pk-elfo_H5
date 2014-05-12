@@ -6,7 +6,6 @@ import java.util.logging.Logger;
 
 import pk.elfo.gameserver.handler.EffectHandler;
 import handlers.effecthandlers.AbortCast;
-import handlers.effecthandlers.RebalanceHP;
 import handlers.effecthandlers.Betray;
 import handlers.effecthandlers.BigHead;
 import handlers.effecthandlers.BlockResurrection;
@@ -65,6 +64,7 @@ import handlers.effecthandlers.PhysicalAttackMute;
 import handlers.effecthandlers.PhysicalMute;
 import handlers.effecthandlers.ProtectionBlessing;
 import handlers.effecthandlers.RandomizeHate;
+import handlers.effecthandlers.RebalanceHP;
 import handlers.effecthandlers.RecoBonus;
 import handlers.effecthandlers.Recovery;
 import handlers.effecthandlers.Relax;
@@ -221,8 +221,7 @@ public final class EffectMasterHandler
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "Falha no manipulador de efeito de carga" + ((c == null) ? "!" : ":" + c.getSimpleName()), e);
-				continue;
+				_log.log(Level.WARNING, "Failed invoking size method for handler: " + EffectMasterHandler.class.getSimpleName(), e);
 			}
 		}
 		

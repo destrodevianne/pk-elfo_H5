@@ -19,6 +19,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.model.L2CharPosition;
 import pk.elfo.gameserver.model.L2Object;
@@ -30,13 +32,10 @@ import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.Rnd;
-import javolution.util.FastList;
-import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
 
 /**
  * @author TeMeRuT
- *
  */
 public class LuckyPig extends AbstractNpcAI
 {
@@ -46,10 +45,11 @@ public class LuckyPig extends AbstractNpcAI
 	
 	private final Map<Integer, List<Long>> _ADENAS;
 	
-	private final int[] _MOBS = 
+	private final int[] _MOBS =
 	{
-	   // TODO: Add Correct Monsters
-	   22862, 22823,
+		// TODO: Add Correct Monsters
+		22862,
+		22823,
 	};
 	
 	public LuckyPig(int questId, String name, String descr)
@@ -62,6 +62,7 @@ public class LuckyPig extends AbstractNpcAI
 		
 	}
 	
+	@SuppressWarnings("null")
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
@@ -72,9 +73,11 @@ public class LuckyPig extends AbstractNpcAI
 				for (L2Object object : L2World.getInstance().getVisibleObjects(npc, 500))
 				{
 					if (!(object instanceof L2ItemInstance))
+					{
 						continue;
+					}
 					L2ItemInstance item = (L2ItemInstance) object;
-					if (item != null && item.getItemId() == PcInventory.ADENA_ID)
+					if ((item != null) && (item.getItemId() == PcInventory.ADENA_ID))
 					{
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(item.getX(), item.getY(), item.getZ(), 0));
 						L2World.getInstance().removeVisibleObject(item, item.getWorldRegion());
@@ -87,7 +90,9 @@ public class LuckyPig extends AbstractNpcAI
 							{
 								long totalAdena = 0;
 								for (long adena : _ADENAS.get(npc.getObjectId()))
+								{
 									totalAdena += adena;
+								}
 								
 								if (totalAdena < 10000000)
 								{
@@ -107,7 +112,7 @@ public class LuckyPig extends AbstractNpcAI
 									int y = npc.getY();
 									int z = npc.getZ();
 									npc.deleteMe();
-									 addSpawn(LUCKY_PIG_MOB_YELLOW, x, y, z, 0, true, 5 * 60 * 1000, true);
+									addSpawn(LUCKY_PIG_MOB_YELLOW, x, y, z, 0, true, 5 * 60 * 1000, true);
 								}
 								
 								cancelQuestTimer("checkForAdena", npc, null);
@@ -140,7 +145,7 @@ public class LuckyPig extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn (L2Npc npc)
+	public String onSpawn(L2Npc npc)
 	{
 		switch (npc.getNpcId())
 		{

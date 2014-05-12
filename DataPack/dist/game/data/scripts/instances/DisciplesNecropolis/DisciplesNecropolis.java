@@ -18,6 +18,7 @@
  */
 package instances.DisciplesNecropolis;
 
+import javolution.util.FastList;
 import pk.elfo.gameserver.GeoData;
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.datatables.SkillTable;
@@ -39,12 +40,9 @@ import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.Rnd;
 import quests.Q196_SevenSignsSealOfTheEmperor.Q196_SevenSignsSealOfTheEmperor;
-import javolution.util.FastList;
 
 /**
- ** @author Gnacik
- **
- ** 2010-12-10 Based on official server Naia
+ ** @author Gnacik 2010-12-10 Based on official server Naia
  */
 public class DisciplesNecropolis extends Quest
 {
@@ -57,24 +55,38 @@ public class DisciplesNecropolis extends Quest
 	private static final int _finalgk = 32657;
 	private static final int _device = 27384;
 	
-	private static final int[] _on_kill = { 27371, 27372, 27373, 27374, 27375, 27376, 27377, 27378, 27379 };
+	private static final int[] _on_kill =
+	{
+		27371,
+		27372,
+		27373,
+		27374,
+		27375,
+		27376,
+		27377,
+		27378,
+		27379
+	};
 	// Itms
 	private static final int _sword = 15310;
 	private static final int _seal_of_binding = 13846;
 	// Strings
-	private static final String[] _txt_anakim = {
+	private static final String[] _txt_anakim =
+	{
 		"For the eternity of Einhasad!!!",
 		"Dear Shillien's offspring! You are not capable of confronting us!",
 		"I'll show you the real power of Einhasad!",
 		"Dear Military Force of Light! Go destroy the offspring of Shillien!!!"
 	};
-	private static final String[] _txt_lilith = {
+	private static final String[] _txt_lilith =
+	{
 		"You, such a fool! The victory over this war belongs to Shilien!!!",
 		"Anakim! In the name of Great Shilien, I will cut your throat!",
 		"How dare you try to contend against me in strength? Ridiculous.",
 		"You cannot be the match of Lilith. I'll teach you a lesson!"
 	};
-	private static final String[] _priv_anakim = {
+	private static final String[] _priv_anakim =
+	{
 		"My power's weakening.. Hurry and turn on the sealing device!!!",
 		"All 4 sealing devices must be turned on!!!",
 		"Lilith's attack is getting stronger! Go ahead and turn it on!",
@@ -84,9 +96,18 @@ public class DisciplesNecropolis extends Quest
 	// Other
 	private static final int ENTER = 0;
 	private static final int EXIT = 1;
-	private static final int[][] TELEPORTS = {
-		{ -89553, 216087, -7488 },
-		{ 171854, -17476, -4896 }
+	private static final int[][] TELEPORTS =
+	{
+		{
+			-89553,
+			216087,
+			-7488
+		},
+		{
+			171854,
+			-17476,
+			-4896
+		}
 	};
 	// Doors
 	private static final int DOOR_1 = 17240102;
@@ -96,81 +117,418 @@ public class DisciplesNecropolis extends Quest
 	private static final int DOOR_5 = 17240110;
 	private static final int DOOR_LAST = 17240111;
 	
-	private static final int[][] _room_1_spawns =  {
-		{ 27371, -89629, 217918, -7490, 1722 },
-		{ 27372, -89442, 217915, -7493, 47429 },
-		{ 27373, -89067, 217917, -7490, 32333 },
-		{ 27374, -88839, 217920, -7490, 31924 }
+	private static final int[][] _room_1_spawns =
+	{
+		{
+			27371,
+			-89629,
+			217918,
+			-7490,
+			1722
+		},
+		{
+			27372,
+			-89442,
+			217915,
+			-7493,
+			47429
+		},
+		{
+			27373,
+			-89067,
+			217917,
+			-7490,
+			32333
+		},
+		{
+			27374,
+			-88839,
+			217920,
+			-7490,
+			31924
+		}
 	};
-	private static final int[][] _room_2_spawns = {
-		{ 27371, -88599, 220762, -7490, 48815 },
-		{ 27373, -88605, 220581, -7490, 34065 },
-		{ 27374, -88848, 220389, -7492, 14325 },
-		{ 27372, -88594, 220295, -7490, 14903 },
-		{ 27373, -88603, 220095, -7490, 15086 },
-		{ 27371, -88597, 219798, -7490, 16126 }
+	private static final int[][] _room_2_spawns =
+	{
+		{
+			27371,
+			-88599,
+			220762,
+			-7490,
+			48815
+		},
+		{
+			27373,
+			-88605,
+			220581,
+			-7490,
+			34065
+		},
+		{
+			27374,
+			-88848,
+			220389,
+			-7492,
+			14325
+		},
+		{
+			27372,
+			-88594,
+			220295,
+			-7490,
+			14903
+		},
+		{
+			27373,
+			-88603,
+			220095,
+			-7490,
+			15086
+		},
+		{
+			27371,
+			-88597,
+			219798,
+			-7490,
+			16126
+		}
 	};
-	private static final int[][] _room_3_spawns = {
-		{ 27373, -86945, 220374, -7492, 31385 },
-		{ 27373, -86813, 220636, -7490, 32663 },
-		{ 27374, -86613, 220634, -7490, 32263 },
-		{ 27374, -87060, 220498, -7492, 32767 },
-		{ 27371, -87317, 220628, -7490, 45514 },
-		{ 27372, -87169, 220637, -7490, 32708 },
-		{ 27371, -87745, 220638, -7493, 65287 },
-		{ 27372, -87721, 220786, -7492, 58176 }
+	private static final int[][] _room_3_spawns =
+	{
+		{
+			27373,
+			-86945,
+			220374,
+			-7492,
+			31385
+		},
+		{
+			27373,
+			-86813,
+			220636,
+			-7490,
+			32663
+		},
+		{
+			27374,
+			-86613,
+			220634,
+			-7490,
+			32263
+		},
+		{
+			27374,
+			-87060,
+			220498,
+			-7492,
+			32767
+		},
+		{
+			27371,
+			-87317,
+			220628,
+			-7490,
+			45514
+		},
+		{
+			27372,
+			-87169,
+			220637,
+			-7490,
+			32708
+		},
+		{
+			27371,
+			-87745,
+			220638,
+			-7493,
+			65287
+		},
+		{
+			27372,
+			-87721,
+			220786,
+			-7492,
+			58176
+		}
 	};
-	private static final int[][] _room_4_spawns = {
-		{ 27373, -84991, 219061, -7492, 16756 },
-		{ 27378, -85333, 219246, -7490, 737 },
-		{ 27371, -85060, 219232, -7493, 8191 },
-		{ 27374, -85155, 219436, -7492, 64692 },
-		{ 27379, -85222, 219269, -7490, 4482 },
-		{ 27372, -84858, 219316, -7490, 17459 },
-		{ 27374, -85280, 219066, -7492, 4934 },
-		{ 27377, -85547, 219301, -7490, 65359 },
-		{ 27373, -85635, 219137, -7490, 1369 },
-		{ 27375, -85557, 219108, -7492, 65238 }
+	private static final int[][] _room_4_spawns =
+	{
+		{
+			27373,
+			-84991,
+			219061,
+			-7492,
+			16756
+		},
+		{
+			27378,
+			-85333,
+			219246,
+			-7490,
+			737
+		},
+		{
+			27371,
+			-85060,
+			219232,
+			-7493,
+			8191
+		},
+		{
+			27374,
+			-85155,
+			219436,
+			-7492,
+			64692
+		},
+		{
+			27379,
+			-85222,
+			219269,
+			-7490,
+			4482
+		},
+		{
+			27372,
+			-84858,
+			219316,
+			-7490,
+			17459
+		},
+		{
+			27374,
+			-85280,
+			219066,
+			-7492,
+			4934
+		},
+		{
+			27377,
+			-85547,
+			219301,
+			-7490,
+			65359
+		},
+		{
+			27373,
+			-85635,
+			219137,
+			-7490,
+			1369
+		},
+		{
+			27375,
+			-85557,
+			219108,
+			-7492,
+			65238
+		}
 	};
-	private static final int[][] _room_5_spawns = {
-		{ 27379, -87437, 216648, -7490, 15955 },
-		{ 27377, -87544, 216970, -7495, 11485 },
-		{ 27375, -87286, 217005, -7495, 8578 },
-		{ 27378, -87459, 217163, -7490, 9569 },
-		{ 27377, -87347, 217384, -7490, 2091 },
-		{ 27375, -87534, 217346, -7490, 64433 },
-		{ 27379, -87701, 217469, -7495, 1835 },
-		{ 27372, -87457, 217731, -7490, 48371 },
-		{ 27378, -87445, 217486, -7490, 51622 },
-		{ 27371, -87651, 217697, -7492, 54262 },
-		{ 27373, -87563, 217952, -7492, 50734 },
-		{ 27374, -87276, 217878, -7492, 46304 }
+	private static final int[][] _room_5_spawns =
+	{
+		{
+			27379,
+			-87437,
+			216648,
+			-7490,
+			15955
+		},
+		{
+			27377,
+			-87544,
+			216970,
+			-7495,
+			11485
+		},
+		{
+			27375,
+			-87286,
+			217005,
+			-7495,
+			8578
+		},
+		{
+			27378,
+			-87459,
+			217163,
+			-7490,
+			9569
+		},
+		{
+			27377,
+			-87347,
+			217384,
+			-7490,
+			2091
+		},
+		{
+			27375,
+			-87534,
+			217346,
+			-7490,
+			64433
+		},
+		{
+			27379,
+			-87701,
+			217469,
+			-7495,
+			1835
+		},
+		{
+			27372,
+			-87457,
+			217731,
+			-7490,
+			48371
+		},
+		{
+			27378,
+			-87445,
+			217486,
+			-7490,
+			51622
+		},
+		{
+			27371,
+			-87651,
+			217697,
+			-7492,
+			54262
+		},
+		{
+			27373,
+			-87563,
+			217952,
+			-7492,
+			50734
+		},
+		{
+			27374,
+			-87276,
+			217878,
+			-7492,
+			46304
+		}
 	};
-	private static final int[][] _devices_spawns = {
-		{ 27384, -83177, 216137, -7520, 32768 },
-		{ 27384, -82588, 216754, -7520, 32768 },
-		{ 27384, -83177, 217353, -7520, 32768 },
-		{ 27384, -83804, 216754, -7520, 32768 }
+	private static final int[][] _devices_spawns =
+	{
+		{
+			27384,
+			-83177,
+			216137,
+			-7520,
+			32768
+		},
+		{
+			27384,
+			-82588,
+			216754,
+			-7520,
+			32768
+		},
+		{
+			27384,
+			-83177,
+			217353,
+			-7520,
+			32768
+		},
+		{
+			27384,
+			-83804,
+			216754,
+			-7520,
+			32768
+		}
 	};
-	private static final int[][] _anakim_spawns = {
-		{ 32718, -83179, 216479, -7504, 16384 },
-		{ 32719, -83321, 216507, -7492, 16166 },
-		{ 32720, -83086, 216519, -7495, 15910 },
-		{ 32721, -83031, 216604, -7492, 17071 }
+	private static final int[][] _anakim_spawns =
+	{
+		{
+			32718,
+			-83179,
+			216479,
+			-7504,
+			16384
+		},
+		{
+			32719,
+			-83321,
+			216507,
+			-7492,
+			16166
+		},
+		{
+			32720,
+			-83086,
+			216519,
+			-7495,
+			15910
+		},
+		{
+			32721,
+			-83031,
+			216604,
+			-7492,
+			17071
+		}
 	};
-	private static final int[][] _lilith_spawns = {
-		{ 32715, -83175, 217021, -7504, 49151 },
-		{ 32717, -83003, 216909, -7492, 48274 },
-		{ 32716, -83327, 216938, -7492, 50768 }
+	private static final int[][] _lilith_spawns =
+	{
+		{
+			32715,
+			-83175,
+			217021,
+			-7504,
+			49151
+		},
+		{
+			32717,
+			-83003,
+			216909,
+			-7492,
+			48274
+		},
+		{
+			32716,
+			-83327,
+			216938,
+			-7492,
+			50768
+		}
 	};
-	private static final int[][] _skills = {
-		{ 32715, 6187 },	// Lilith
-		{ 32716, 6188 },	// Lilith's Steward
-		{ 32717, 6190 },	// Lilith's Elite
-		{ 32718, 6191 },	// Anakim
-		{ 32719, 6192 },	// Anakim's Guardian
-		{ 32720, 6194 },	// Anakim's Guard
-		{ 32721, 6195 }		// Anakim's Executor
+	private static final int[][] _skills =
+	{
+		{
+			32715,
+			6187
+		}, // Lilith
+		{
+			32716,
+			6188
+		}, // Lilith's Steward
+		{
+			32717,
+			6190
+		}, // Lilith's Elite
+		{
+			32718,
+			6191
+		}, // Anakim
+		{
+			32719,
+			6192
+		}, // Anakim's Guardian
+		{
+			32720,
+			6194
+		}, // Anakim's Guard
+		{
+			32721,
+			6195
+		}
+	// Anakim's Executor
 	};
 	
 	private class DiscipleWorld extends InstanceWorld
@@ -210,38 +568,38 @@ public class DisciplesNecropolis extends Quest
 	
 	protected void spawnNPC(DiscipleWorld world)
 	{
-		for(int[] spawn : _room_1_spawns)
+		for (int[] spawn : _room_1_spawns)
 		{
 			L2Npc npc = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false, world.getInstanceId());
 			world.room_1.add(npc);
 		}
-		for(int[] spawn : _room_2_spawns)
+		for (int[] spawn : _room_2_spawns)
 		{
 			L2Npc npc = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false, world.getInstanceId());
 			world.room_2.add(npc);
 		}
-		for(int[] spawn : _room_3_spawns)
+		for (int[] spawn : _room_3_spawns)
 		{
 			L2Npc npc = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false, world.getInstanceId());
 			world.room_3.add(npc);
 		}
-		for(int[] spawn : _room_4_spawns)
+		for (int[] spawn : _room_4_spawns)
 		{
 			L2Npc npc = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false, world.getInstanceId());
 			world.room_4.add(npc);
 		}
-		for(int[] spawn : _room_5_spawns)
+		for (int[] spawn : _room_5_spawns)
 		{
 			L2Npc npc = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false, world.getInstanceId());
 			world.room_5.add(npc);
 		}
-		for(int[] spawn : _lilith_spawns)
+		for (int[] spawn : _lilith_spawns)
 		{
 			L2Npc npc = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false, world.getInstanceId());
 			npc.isShowName();
 			world.lilith_group.add(npc);
 		}
-		for(int[] spawn : _devices_spawns)
+		for (int[] spawn : _devices_spawns)
 		{
 			L2Npc npc = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false, world.getInstanceId());
 			world.devices.add(npc);
@@ -266,58 +624,69 @@ public class DisciplesNecropolis extends Quest
 			return;
 		}
 		final int instanceId = InstanceManager.getInstance().createDynamicInstance("DisciplesNecropolis.xml");
-
+		
 		world = new DiscipleWorld();
 		world.setInstanceId(instanceId);
 		world.setTemplateId(INSTANCE_ID);
 		world.setStatus(0);
 		InstanceManager.getInstance().addWorld(world);
-		spawnNPC((DiscipleWorld)world);
+		spawnNPC((DiscipleWorld) world);
 		
 		world.addAllowed(player.getObjectId());
 		teleportPlayer(player, TELEPORTS[ENTER], instanceId);
-
+		
 		_log.info("DisciplesNecropolis instance started: " + instanceId + " created by player: " + player.getName());
 		return;
 	}
-
+	
+	@SuppressWarnings("null")
 	@Override
-	public String onAdvEvent (String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
 		if (!(tmpworld instanceof DiscipleWorld))
+		{
 			return "";
-
+		}
+		
 		DiscipleWorld world = (DiscipleWorld) tmpworld;
-
+		
 		if (event.equalsIgnoreCase("teleport_player"))
 		{
 			world.fight = false;
-
+			
 			if (player != null)
+			{
 				teleportPlayer(player, TELEPORTS[ENTER], world.getInstanceId());
+			}
 			
 			for (L2Npc np : world.anakim_group)
 			{
-				if(np != null)
+				if (np != null)
+				{
 					np.deleteMe();
+				}
 			}
 			for (L2Npc np : world.lilith_group)
 			{
-				if(np != null)
+				if (np != null)
+				{
 					np.deleteMe();
+				}
 			}
 			for (L2Npc np : world.devices)
 			{
-				if(np != null)
+				if (np != null)
+				{
 					np.deleteMe();
+				}
 			}
 		}
 		else if (event.equalsIgnoreCase("start_fight"))
 		{
 			world.fight = true;
 			openDoor(world, DOOR_LAST);
-			for(int[] spawn : _anakim_spawns)
+			for (int[] spawn : _anakim_spawns)
 			{
 				L2Npc enpc = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false, world.getInstanceId());
 				enpc.isShowName();
@@ -328,29 +697,41 @@ public class DisciplesNecropolis extends Quest
 		}
 		else if (event.equalsIgnoreCase("fighting"))
 		{
-			if(world.fight)
+			if (world.fight)
 			{
-				for(L2Npc caster : world.anakim_group)
+				for (L2Npc caster : world.anakim_group)
 				{
-					if(caster != null && !caster.isCastingNow() && Rnd.get(3) == 0)
+					if ((caster != null) && !caster.isCastingNow() && (Rnd.get(3) == 0))
+					{
 						makeCast(caster, world.lilith_group);
-					if(caster.getNpcId() == 32718 && Rnd.get(20) == 0)
-						player.sendPacket(new NpcSay(caster.getObjectId(), Say2.SHOUT, caster.getNpcId(), _txt_anakim[Rnd.get(0, _txt_anakim.length-1)]));					
-					if(caster.getNpcId() == 32718 && Rnd.get(20) == 0)
-						player.sendPacket(new NpcSay(caster.getObjectId(), Say2.TELL, caster.getNpcId(), _priv_anakim[Rnd.get(0, _priv_anakim.length-1)].replaceAll("%", player.getName())));					
+					}
+					if ((caster.getNpcId() == 32718) && (Rnd.get(20) == 0))
+					{
+						player.sendPacket(new NpcSay(caster.getObjectId(), Say2.SHOUT, caster.getNpcId(), _txt_anakim[Rnd.get(0, _txt_anakim.length - 1)]));
+					}
+					if ((caster.getNpcId() == 32718) && (Rnd.get(20) == 0))
+					{
+						player.sendPacket(new NpcSay(caster.getObjectId(), Say2.TELL, caster.getNpcId(), _priv_anakim[Rnd.get(0, _priv_anakim.length - 1)].replaceAll("%", player.getName())));
+					}
 				}
-				for(L2Npc caster : world.lilith_group)
+				for (L2Npc caster : world.lilith_group)
 				{
-					if(caster != null && !caster.isCastingNow() && Rnd.get(3) == 0)
+					if ((caster != null) && !caster.isCastingNow() && (Rnd.get(3) == 0))
+					{
 						makeCast(caster, world.anakim_group);
-					if(caster.getNpcId() == 32715 && Rnd.get(20) == 0)
-						player.sendPacket(new NpcSay(caster.getObjectId(), Say2.SHOUT, caster.getNpcId(), _txt_lilith[Rnd.get(0, _txt_lilith.length-1)]));
+					}
+					if ((caster.getNpcId() == 32715) && (Rnd.get(20) == 0))
+					{
+						player.sendPacket(new NpcSay(caster.getObjectId(), Say2.SHOUT, caster.getNpcId(), _txt_lilith[Rnd.get(0, _txt_lilith.length - 1)]));
+					}
 				}
-				for(L2Npc caster : world.devices)
+				for (L2Npc caster : world.devices)
 				{
-					if(caster != null && !caster.isCastingNow() && Rnd.get(3) == 0)
-						caster.doCast(SkillTable.getInstance().getInfo(5980, Rnd.get(1,4)));
-				}			
+					if ((caster != null) && !caster.isCastingNow() && (Rnd.get(3) == 0))
+					{
+						caster.doCast(SkillTable.getInstance().getInfo(5980, Rnd.get(1, 4)));
+					}
+				}
 				startQuestTimer("fighting", 500, null, player);
 			}
 		}
@@ -359,9 +740,9 @@ public class DisciplesNecropolis extends Quest
 	
 	private void makeCast(L2Npc npc, FastList<L2Npc> targets)
 	{
-		L2Npc rnd_target = targets.get(Rnd.get(0, targets.size()-1));
+		L2Npc rnd_target = targets.get(Rnd.get(0, targets.size() - 1));
 		npc.setTarget(rnd_target);
-		for(int[] skill : _skills)
+		for (int[] skill : _skills)
 		{
 			if (skill[0] == npc.getNpcId())
 			{
@@ -378,10 +759,12 @@ public class DisciplesNecropolis extends Quest
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
 		if (st == null)
+		{
 			st = newQuestState(player);
-
+		}
+		
 		int npcId = npc.getNpcId();
-	
+		
 		if (npcId == _promise)
 		{
 			if (player.isGM())
@@ -391,17 +774,19 @@ public class DisciplesNecropolis extends Quest
 			}
 			
 			QuestState qst = player.getQuestState(Q196_SevenSignsSealOfTheEmperor.class.getSimpleName());
-			if(qst == null)
+			if (qst == null)
+			{
 				return null;
+			}
 			
-			if(player.getLevel() < 79)
+			if (player.getLevel() < 79)
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_LEVEL_REQUIREMENT_NOT_SUFFICIENT);
 				sm.addPcName(player);
 				player.sendPacket(sm);
 				return null;
 			}
-			else if (qst.getInt("cond") == 3 || qst.getInt("cond") == 4)
+			else if ((qst.getInt("cond") == 3) || (qst.getInt("cond") == 4))
 			{
 				enterInstance(player);
 				return null;
@@ -410,44 +795,52 @@ public class DisciplesNecropolis extends Quest
 		else if (npcId == _leon)
 		{
 			st.takeItems(_sword, -1);
-			teleportPlayer(player,TELEPORTS[EXIT],0);
+			teleportPlayer(player, TELEPORTS[EXIT], 0);
 			return "exit.htm";
 		}
 		else if (npcId == _finalgk)
 		{
 			InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
 			if (!(tmpworld instanceof DiscipleWorld))
+			{
 				return null;
+			}
 			DiscipleWorld world = (DiscipleWorld) tmpworld;
 			if (!world.fight)
 			{
 				startQuestTimer("start_fight", 30000, npc, player);
-				player.showQuestMovie(12);				
+				player.showQuestMovie(12);
 			}
 			return null;
 		}
 		return htmltext;
 	}
-
+	
 	@Override
 	public final String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
 		QuestState st = player.getQuestState(qn);
 		if (st == null)
+		{
 			st = newQuestState(player);
+		}
 		
 		InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
 		if (!(tmpworld instanceof DiscipleWorld))
+		{
 			return "";
-
+		}
+		
 		DiscipleWorld world = (DiscipleWorld) tmpworld;
-
+		
 		checkDoors(npc, world);
-	
+		
 		if (npc.getNpcId() == _device)
 		{
 			if (world.devices.contains(npc))
+			{
 				world.devices.remove(npc);
+			}
 			
 			if (world.devices.isEmpty())
 			{
@@ -463,7 +856,7 @@ public class DisciplesNecropolis extends Quest
 			st.giveItems(_seal_of_binding, 1);
 		}
 		String txt = null;
-		switch(npc.getNpcId())
+		switch (npc.getNpcId())
 		{
 			case 27372:
 			case 27378:
@@ -476,10 +869,12 @@ public class DisciplesNecropolis extends Quest
 				break;
 			case 27377:
 				txt = "For Shilen!";
-				break;			
+				break;
 		}
-		if(txt != null)
+		if (txt != null)
+		{
 			player.sendPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), txt));
+		}
 		
 		return super.onKill(npc, player, isPet);
 	}
@@ -488,26 +883,46 @@ public class DisciplesNecropolis extends Quest
 	{
 		// Remove NPC's
 		if (world.room_1.contains(npc))
+		{
 			world.room_1.remove(npc);
+		}
 		if (world.room_2.contains(npc))
+		{
 			world.room_2.remove(npc);
+		}
 		if (world.room_3.contains(npc))
+		{
 			world.room_3.remove(npc);
+		}
 		if (world.room_4.contains(npc))
+		{
 			world.room_4.remove(npc);
+		}
 		if (world.room_5.contains(npc))
+		{
 			world.room_5.remove(npc);
+		}
 		
-		if (world.room_1.isEmpty() || world.room_1.size() == 0)
+		if (world.room_1.isEmpty() || (world.room_1.size() == 0))
+		{
 			openDoor(world, DOOR_1);
-		if (world.room_2.isEmpty()  || world.room_2.size() == 0)
+		}
+		if (world.room_2.isEmpty() || (world.room_2.size() == 0))
+		{
 			openDoor(world, DOOR_2);
-		if (world.room_3.isEmpty()  || world.room_3.size() == 0)
+		}
+		if (world.room_3.isEmpty() || (world.room_3.size() == 0))
+		{
 			openDoor(world, DOOR_3);
-		if (world.room_4.isEmpty()  || world.room_4.size() == 0)
+		}
+		if (world.room_4.isEmpty() || (world.room_4.size() == 0))
+		{
 			openDoor(world, DOOR_4);
-		if (world.room_5.isEmpty()  || world.room_5.size() == 0)
+		}
+		if (world.room_5.isEmpty() || (world.room_5.size() == 0))
+		{
 			openDoor(world, DOOR_5);
+		}
 	}
 	
 	@Override
@@ -524,16 +939,25 @@ public class DisciplesNecropolis extends Quest
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
 			}
 			String txt = null;
-			switch(npc.getNpcId())
+			switch (npc.getNpcId())
 			{
 				case 27379:
-				case 27371: txt = "This place once belonged to Lord Shilen"; break;
-				case 27372: txt = "Who dares enter this place?"; break;
-				case 27373: txt = "Those who are afraid should get away and those who are brave should fight!"; break;
-				case 27377: txt = "Leave now!";
+				case 27371:
+					txt = "This place once belonged to Lord Shilen";
+					break;
+				case 27372:
+					txt = "Who dares enter this place?";
+					break;
+				case 27373:
+					txt = "Those who are afraid should get away and those who are brave should fight!";
+					break;
+				case 27377:
+					txt = "Leave now!";
 			}
-			if(txt != null)
+			if (txt != null)
+			{
 				player.sendPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), txt));
+			}
 		}
 		return super.onAggroRangeEnter(npc, player, isPet);
 	}
@@ -542,7 +966,9 @@ public class DisciplesNecropolis extends Quest
 	{
 		L2DoorInstance door = InstanceManager.getInstance().getInstance(world.getInstanceId()).getDoor(number);
 		if (door != null)
+		{
 			door.openMe();
+		}
 	}
 	
 	@Override
@@ -550,7 +976,9 @@ public class DisciplesNecropolis extends Quest
 	{
 		QuestState st = player.getQuestState(qn);
 		if (st == null)
+		{
 			st = newQuestState(player);
+		}
 		
 		st.takeItems(_sword, -1);
 		return null;
@@ -565,14 +993,14 @@ public class DisciplesNecropolis extends Quest
 		addStartNpc(_promise);
 		addTalkId(_promise);
 		addTalkId(_leon);
-		for(int mob : _on_kill)
+		for (int mob : _on_kill)
 		{
 			addKillId(mob);
 			addAggroRangeEnterId(mob);
 		}
 		addKillId(_device);
 	}
-
+	
 	public static void main(String[] args)
 	{
 		new DisciplesNecropolis(-1, qn, "instances");

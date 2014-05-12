@@ -23,6 +23,8 @@ import static pk.elfo.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
 import java.util.Calendar;
 import java.util.List;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
 import pk.elfo.Config;
 import pk.elfo.gameserver.GeoEngine;
 import pk.elfo.gameserver.datatables.SkillTable;
@@ -50,8 +52,6 @@ import pk.elfo.gameserver.network.serverpackets.PlaySound;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.Rnd;
-import javolution.util.FastList;
-import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
 
 public class Zaken extends AbstractNpcAI

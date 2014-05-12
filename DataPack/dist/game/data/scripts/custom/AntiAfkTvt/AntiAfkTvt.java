@@ -10,21 +10,21 @@ import pk.elfo.gameserver.model.entity.TvTEventTeam;
 public class AntiAfkTvt
 {
     // Debug
-    private static boolean debug = false;
+	public static boolean debug = false;
     // Delay between location checks , Default 60000 ms (1 minute)
     private final int CheckDelay = 60000;
 
-    private static ArrayList<String> TvTPlayerList = new ArrayList<>();
+    public static ArrayList<String> TvTPlayerList = new ArrayList<>();
     private static String[] Splitter;
     private static int xx,yy,zz,SameLoc;
-    private static L2PcInstance _player;
+    public static L2PcInstance _player;
 
     private AntiAfkTvt()
     {
         ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new AntiAfk(), 60000, CheckDelay);
     }
 
-    private class AntiAfk implements Runnable
+    public class AntiAfk implements Runnable
     {
         @Override
         public void run()
@@ -56,7 +56,7 @@ public class AntiAfkTvt
         }
     }
 
-    private static void AddTvTSpawnInfo(String name, int _x, int _y, int _z)
+    public static void AddTvTSpawnInfo(String name, int _x, int _y, int _z)
     {
         if(!CheckTvTSpawnInfo(name))
         {

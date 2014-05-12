@@ -960,12 +960,7 @@ public class PailakaInjuredDragon extends Quest
 		{
 			return null;
 		}
-		
-		if ((player == null) || isPet)
-		{
-			return null;
-		}
-		
+
 		switch (npc.getNpcId())
 		{
 			case LATANA:

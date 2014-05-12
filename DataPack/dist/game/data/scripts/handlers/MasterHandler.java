@@ -35,14 +35,14 @@ import handlers.actionhandlers.L2TrapAction;
 import handlers.admincommandhandlers.AdminAdmin;
 import handlers.admincommandhandlers.AdminAio;
 import handlers.admincommandhandlers.AdminAnnouncements;
-import handlers.admincommandhandlers.AdminBan;
 import handlers.admincommandhandlers.AdminBBS;
+import handlers.admincommandhandlers.AdminBan;
 import handlers.admincommandhandlers.AdminBuffs;
+import handlers.admincommandhandlers.AdminCHSiege;
 import handlers.admincommandhandlers.AdminCache;
 import handlers.admincommandhandlers.AdminCamera;
 import handlers.admincommandhandlers.AdminChangeAccessLevel;
 import handlers.admincommandhandlers.AdminCheckBot;
-import handlers.admincommandhandlers.AdminCHSiege;
 import handlers.admincommandhandlers.AdminClan;
 import handlers.admincommandhandlers.AdminClanFull;
 import handlers.admincommandhandlers.AdminClanSkills;
@@ -66,11 +66,12 @@ import handlers.admincommandhandlers.AdminExpSp;
 import handlers.admincommandhandlers.AdminFence;
 import handlers.admincommandhandlers.AdminFightCalculator;
 import handlers.admincommandhandlers.AdminFortSiege;
-import handlers.admincommandhandlers.AdminGeodata;
 import handlers.admincommandhandlers.AdminGeoEditor;
+import handlers.admincommandhandlers.AdminGeodata;
 import handlers.admincommandhandlers.AdminGm;
 import handlers.admincommandhandlers.AdminGmChat;
 import handlers.admincommandhandlers.AdminGraciaSeeds;
+import handlers.admincommandhandlers.AdminHappyHour;
 import handlers.admincommandhandlers.AdminHeal;
 import handlers.admincommandhandlers.AdminHellbound;
 import handlers.admincommandhandlers.AdminHelpPage;
@@ -84,16 +85,17 @@ import handlers.admincommandhandlers.AdminLogin;
 import handlers.admincommandhandlers.AdminMammon;
 import handlers.admincommandhandlers.AdminManor;
 import handlers.admincommandhandlers.AdminMassHero;
+import handlers.admincommandhandlers.AdminMensagem;
 import handlers.admincommandhandlers.AdminMenu;
 import handlers.admincommandhandlers.AdminMessages;
 import handlers.admincommandhandlers.AdminMobGroup;
 import handlers.admincommandhandlers.AdminMonsterRace;
 import handlers.admincommandhandlers.AdminMovieMaker;
 import handlers.admincommandhandlers.AdminOlympiad;
+import handlers.admincommandhandlers.AdminPForge;
 import handlers.admincommandhandlers.AdminPathNode;
 import handlers.admincommandhandlers.AdminPcCondOverride;
 import handlers.admincommandhandlers.AdminPetition;
-import handlers.admincommandhandlers.AdminPForge;
 import handlers.admincommandhandlers.AdminPledge;
 import handlers.admincommandhandlers.AdminPolymorph;
 import handlers.admincommandhandlers.AdminPremium;
@@ -123,8 +125,6 @@ import handlers.admincommandhandlers.AdminUnblockIp;
 import handlers.admincommandhandlers.AdminVip;
 import handlers.admincommandhandlers.AdminVitality;
 import handlers.admincommandhandlers.AdminZone;
-import handlers.admincommandhandlers.AdminMensagem;
-import handlers.admincommandhandlers.AdminHappyHour;
 import handlers.bypasshandlers.ArenaBuff;
 import handlers.bypasshandlers.Augment;
 import handlers.bypasshandlers.BloodAlliance;
@@ -316,32 +316,32 @@ import handlers.usercommandhandlers.Time;
 import handlers.usercommandhandlers.Unstuck;
 import handlers.voicedcommandhandlers.BadBuffShield;
 import handlers.voicedcommandhandlers.Banking;
+import handlers.voicedcommandhandlers.Cancelar;
 //import handlers.voicedcommandhandlers.CastleVCmd; - Precisa de revisao e testes
 import handlers.voicedcommandhandlers.ChangePassword;
 import handlers.voicedcommandhandlers.ChatAdmin;
+import handlers.voicedcommandhandlers.ClanMensagem;
 import handlers.voicedcommandhandlers.Debug;
 import handlers.voicedcommandhandlers.Hellbound;
 import handlers.voicedcommandhandlers.Lang;
-import handlers.voicedcommandhandlers.OpenAtod;
+import handlers.voicedcommandhandlers.Lider;
+import handlers.voicedcommandhandlers.Logout;
 import handlers.voicedcommandhandlers.Online;
+import handlers.voicedcommandhandlers.OpenAtod;
 import handlers.voicedcommandhandlers.Premium;
 import handlers.voicedcommandhandlers.RaidBoosStatus;
 import handlers.voicedcommandhandlers.RefuseBuff;
 import handlers.voicedcommandhandlers.Repair;
 import handlers.voicedcommandhandlers.Siege;
-import handlers.voicedcommandhandlers.Teleport;
 import handlers.voicedcommandhandlers.StatsVCmd;
 import handlers.voicedcommandhandlers.TWGm;
+import handlers.voicedcommandhandlers.Teleport;
 import handlers.voicedcommandhandlers.TvTRoundVoicedInfo;
 import handlers.voicedcommandhandlers.TvTVoiced;
+import handlers.voicedcommandhandlers.User;
+import handlers.voicedcommandhandlers.UserActions;
 import handlers.voicedcommandhandlers.VoiceInfo;
 import handlers.voicedcommandhandlers.Wedding;
-import handlers.voicedcommandhandlers.UserActions;
-import handlers.voicedcommandhandlers.User;
-import handlers.voicedcommandhandlers.Lider;
-import handlers.voicedcommandhandlers.Logout;
-import handlers.voicedcommandhandlers.Cancelar;
-import handlers.voicedcommandhandlers.ClanMensagem;
 
 /**
  * PkElfo
@@ -782,7 +782,7 @@ public class MasterHandler
 				}
 				catch (Exception e)
 				{
-					_log.log(Level.WARNING, "Manipulador de carga falhou" + ((c == null) ? "!" : ":" + c.getSimpleName()), e);
+					_log.log(Level.WARNING, "Failed loading handler: " + c.getSimpleName(), e);
 					continue;
 				}
 			}

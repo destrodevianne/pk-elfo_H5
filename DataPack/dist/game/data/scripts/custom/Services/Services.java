@@ -107,7 +107,8 @@ public class Services extends Quest
         new Services(-1, Services.class.getSimpleName(), "custom");
     }
 
-    public String onFirstTalk(L2Npc npc, L2PcInstance player)
+    @Override
+	public String onFirstTalk(L2Npc npc, L2PcInstance player)
     {
         if (player.getQuestState(getName()) == null)
         {
@@ -133,7 +134,8 @@ public class Services extends Quest
         return "Services.htm";
     }
 
-    public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+    @Override
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
         String htmlText = event;
         QuestState st = player.getQuestState(getName());
@@ -151,15 +153,9 @@ public class Services extends Quest
                     player.broadcastUserInfo();
                     return "NoblesseServices-Success.htm";
                 }
-                else
-                {
-                    return "NoblesseServices-NoItems.htm";
-                }
+				return "NoblesseServices-NoItems.htm";
             }
-            else
-            {
-                return "NoblesseServices-AlredyNoble.htm";
-            }
+			return "NoblesseServices-AlredyNoble.htm";
         }
         else if (event.equals("levelUpClan"))
         {
@@ -167,143 +163,119 @@ public class Services extends Quest
             {
                 return "ClanLevelUp-NoLeader.htm";
             }
-            else
-            {
-                if (player.getClan().getLevel() == 11)
-                {
-                    return "ClanLevelUp-MaxLevel.htm";
-                }
-                else
-                {
-                    if (((player.getClan().getLevel() <= 1) || (player.getClan().getLevel() == 2) || (player.getClan().getLevel() == 3) || (player.getClan().getLevel() == 4)))
-                    {
-                        player.getClan().setLevel(player.getClan().getLevel() + 1);
-                        player.getClan().broadcastClanStatus();
-                        player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
-                        player.setTarget(player);
-                        player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
-                        return "ClanLevelUp.htm";
-                    }
-                    else if (player.getClan().getLevel() == 5)
-                    {
-                        if (st.getQuestItemsCount(clanLevelItemsId[0]) >= clanLevelItemsCount[0])
-                        {
-                            st.takeItems(clanLevelItemsId[0], clanLevelItemsCount[0]);
-                            player.getClan().setLevel(player.getClan().getLevel() + 1);
-                            player.getClan().broadcastClanStatus();
-                            player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
-                            player.setTarget(player);
-                            player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
-                            return "ClanLevelUp.htm";
-                        }
-                        else
-                        {
-                            return "ClanLevelUp-NoItems.htm";
-                        }
-                    }
-                    else if (player.getClan().getLevel() == 6)
-                    {
-                        if (st.getQuestItemsCount(clanLevelItemsId[1]) >= clanLevelItemsCount[1])
-                        {
-                            st.takeItems(clanLevelItemsId[1], clanLevelItemsCount[1]);
-                            player.getClan().setLevel(player.getClan().getLevel() + 1);
-                            player.getClan().broadcastClanStatus();
-                            player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
-                            player.setTarget(player);
-                            player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
-                            return "ClanLevelUp.htm";
-                        }
-                        else
-                        {
-                            return "ClanLevelUp-NoItems.htm";
-                        }
-                    }
-                    else if (player.getClan().getLevel() == 7)
-                    {
-                        if (st.getQuestItemsCount(clanLevelItemsId[2]) >= clanLevelItemsCount[2])
-                        {
-                            st.takeItems(clanLevelItemsId[2], clanLevelItemsCount[2]);
-                            player.getClan().setLevel(player.getClan().getLevel() + 1);
-                            player.getClan().broadcastClanStatus();
-                            player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
-                            player.setTarget(player);
-                            player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
-                            return "ClanLevelUp.htm";
-                        }
-                        else
-                        {
-                            return "ClanLevelUp-NoItems.htm";
-                        }
-                    }
-                    else if (player.getClan().getLevel() == 8)
-                    {
-                        if (st.getQuestItemsCount(clanLevelItemsId[3]) >= clanLevelItemsCount[3])
-                        {
-                            st.takeItems(clanLevelItemsId[3], clanLevelItemsCount[3]);
-                            player.getClan().setLevel(player.getClan().getLevel() + 1);
-                            player.getClan().broadcastClanStatus();
-                            player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
-                            player.setTarget(player);
-                            player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
-                            return "ClanLevelUp.htm";
-                        }
-                        else
-                        {
-                            return "ClanLevelUp-NoItems.htm";
-                        }
-                    }
-                    else if (player.getClan().getLevel() == 9)
-                    {
-                        if (st.getQuestItemsCount(clanLevelItemsId[4]) >= clanLevelItemsCount[4])
-                        {
-                            st.takeItems(clanLevelItemsId[4], clanLevelItemsCount[4]);
-                            player.getClan().setLevel(player.getClan().getLevel() + 1);
-                            player.getClan().broadcastClanStatus();
-                            player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
-                            player.setTarget(player);
-                            player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
-                            return "ClanLevelUp.htm";
-                        }
-                        else
-                        {
-                            return "ClanLevelUp-NoItems.htm";
-                        }
-                    }
-                    else if (player.getClan().getLevel() == 10)
-                    {
-                        if (st.getQuestItemsCount(clanLevelItemsId[5]) >= clanLevelItemsCount[5])
-                        {
-                            st.takeItems(clanLevelItemsId[5], clanLevelItemsCount[5]);
-                            player.getClan().setLevel(player.getClan().getLevel() + 1);
-                            player.getClan().broadcastClanStatus();
-                            player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
-                            player.setTarget(player);
-                            player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
-                            return "ClanLevelUp.htm";
-                        }
-                        else
-                        {
-                            return "ClanLevelUp-NoItems.htm";
-                        }
-                    }
+			if (player.getClan().getLevel() == 11)
+			{
+			    return "ClanLevelUp-MaxLevel.htm";
+			}
+			if (((player.getClan().getLevel() <= 1) || (player.getClan().getLevel() == 2) || (player.getClan().getLevel() == 3) || (player.getClan().getLevel() == 4)))
+			{
+			    player.getClan().setLevel(player.getClan().getLevel() + 1);
+			    player.getClan().broadcastClanStatus();
+			    player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
+			    player.setTarget(player);
+			    player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
+			    return "ClanLevelUp.htm";
+			}
+			else if (player.getClan().getLevel() == 5)
+			{
+			    if (st.getQuestItemsCount(clanLevelItemsId[0]) >= clanLevelItemsCount[0])
+			    {
+			        st.takeItems(clanLevelItemsId[0], clanLevelItemsCount[0]);
+			        player.getClan().setLevel(player.getClan().getLevel() + 1);
+			        player.getClan().broadcastClanStatus();
+			        player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
+			        player.setTarget(player);
+			        player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
+			        return "ClanLevelUp.htm";
+			    }
+				return "ClanLevelUp-NoItems.htm";
+			}
+			else if (player.getClan().getLevel() == 6)
+			{
+			    if (st.getQuestItemsCount(clanLevelItemsId[1]) >= clanLevelItemsCount[1])
+			    {
+			        st.takeItems(clanLevelItemsId[1], clanLevelItemsCount[1]);
+			        player.getClan().setLevel(player.getClan().getLevel() + 1);
+			        player.getClan().broadcastClanStatus();
+			        player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
+			        player.setTarget(player);
+			        player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
+			        return "ClanLevelUp.htm";
+			    }
+				return "ClanLevelUp-NoItems.htm";
+			}
+			else if (player.getClan().getLevel() == 7)
+			{
+			    if (st.getQuestItemsCount(clanLevelItemsId[2]) >= clanLevelItemsCount[2])
+			    {
+			        st.takeItems(clanLevelItemsId[2], clanLevelItemsCount[2]);
+			        player.getClan().setLevel(player.getClan().getLevel() + 1);
+			        player.getClan().broadcastClanStatus();
+			        player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
+			        player.setTarget(player);
+			        player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
+			        return "ClanLevelUp.htm";
+			    }
+				return "ClanLevelUp-NoItems.htm";
+			}
+			else if (player.getClan().getLevel() == 8)
+			{
+			    if (st.getQuestItemsCount(clanLevelItemsId[3]) >= clanLevelItemsCount[3])
+			    {
+			        st.takeItems(clanLevelItemsId[3], clanLevelItemsCount[3]);
+			        player.getClan().setLevel(player.getClan().getLevel() + 1);
+			        player.getClan().broadcastClanStatus();
+			        player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
+			        player.setTarget(player);
+			        player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
+			        return "ClanLevelUp.htm";
+			    }
+				return "ClanLevelUp-NoItems.htm";
+			}
+			else if (player.getClan().getLevel() == 9)
+			{
+			    if (st.getQuestItemsCount(clanLevelItemsId[4]) >= clanLevelItemsCount[4])
+			    {
+			        st.takeItems(clanLevelItemsId[4], clanLevelItemsCount[4]);
+			        player.getClan().setLevel(player.getClan().getLevel() + 1);
+			        player.getClan().broadcastClanStatus();
+			        player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
+			        player.setTarget(player);
+			        player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
+			        return "ClanLevelUp.htm";
+			    }
+				return "ClanLevelUp-NoItems.htm";
+			}
+			else if (player.getClan().getLevel() == 10)
+			{
+			    if (st.getQuestItemsCount(clanLevelItemsId[5]) >= clanLevelItemsCount[5])
+			    {
+			        st.takeItems(clanLevelItemsId[5], clanLevelItemsCount[5]);
+			        player.getClan().setLevel(player.getClan().getLevel() + 1);
+			        player.getClan().broadcastClanStatus();
+			        player.sendMessage("Your clan is now level " + player.getClan().getLevel() + ".");
+			        player.setTarget(player);
+			        player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 1000, 0));
+			        return "ClanLevelUp.htm";
+			    }
+				return "ClanLevelUp-NoItems.htm";
+			}
 
-                    try (Connection con = L2DatabaseFactory.getInstance().getConnection();
-                        PreparedStatement statement = con.prepareStatement("UPDATE clan_data SET clan_level=? WHERE clan_id=?"))
-                    {
-                        statement.setInt(1, player.getClan().getLevel());
-                        statement.setInt(2, player.getClan().getClanId());
-                        statement.execute();
-                        statement.close();
-                    }
-                    catch (Exception e)
-                    {
-                        _log.info("Error updating clan level for player " + player.getName() + ". Error: " + e);
-                    }
+			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			    PreparedStatement statement = con.prepareStatement("UPDATE clan_data SET clan_level=? WHERE clan_id=?"))
+			{
+			    statement.setInt(1, player.getClan().getLevel());
+			    statement.setInt(2, player.getClan().getClanId());
+			    statement.execute();
+			    statement.close();
+			}
+			catch (Exception e)
+			{
+			    _log.info("Error updating clan level for player " + player.getName() + ". Error: " + e);
+			}
 
-                    player.getClan().broadcastClanStatus();
-                    return "ClanLevelUp.htm";
-                }
-            }
+			player.getClan().broadcastClanStatus();
+			return "ClanLevelUp.htm";
         }
         else if (event.equals("changeGender"))
         {
@@ -316,10 +288,7 @@ public class Services extends Quest
                 player.broadcastUserInfo();
                 return "ChangeGender-Success.htm";
             }
-            else
-            {
-                return "ChangeGender-NoItems.htm";
-            }
+			return "ChangeGender-NoItems.htm";
         }
         else if (event.startsWith("changeName"))
         {
@@ -333,48 +302,42 @@ public class Services extends Quest
                     {
                         return "ChangeName.htm";
                     }
-                    else
-                    {
-                        if (!newName.matches("^[a-zA-Z0-9]+$"))
-                        {
-                            player.sendMessage("Incorrect name. Please try again.");
-                            return "ChangeName.htm";
-                        }
-                        else if (newName.equals(player.getName()))
-                        {
-                            player.sendMessage("Please, choose a different name.");
-                            return "ChangeName.htm";
-                        }
-                        else if (CharNameTable.getInstance().doesCharNameExist(newName))
-                        {
-                            player.sendMessage("The name " + newName + " already exists.");
-                            return "ChangeName.htm";
-                        }
-                        else
-                        {
-                            if (logNameChanges)
-                            {
-                                String fileName = "log/Services/Name Change - " + player.getName() + ".txt";
-                                new File(fileName);
-                                FileWriter fileText = new FileWriter(fileName);
-                                BufferedWriter fileContent = new BufferedWriter(fileText);
-                                fileContent.write("Character name change info:\r\n\r\nCharacter original name: " + player.getName() + "\r\nCharacter new name: " + newName);
-                                fileContent.close();
-                            }
+					if (!newName.matches("^[a-zA-Z0-9]+$"))
+					{
+					    player.sendMessage("Incorrect name. Please try again.");
+					    return "ChangeName.htm";
+					}
+					else if (newName.equals(player.getName()))
+					{
+					    player.sendMessage("Please, choose a different name.");
+					    return "ChangeName.htm";
+					}
+					else if (CharNameTable.getInstance().doesCharNameExist(newName))
+					{
+					    player.sendMessage("The name " + newName + " already exists.");
+					    return "ChangeName.htm";
+					}
+					else
+					{
+					    if (logNameChanges)
+					    {
+					        String fileName = "log/Services/Name Change - " + player.getName() + ".txt";
+					        new File(fileName);
+					        FileWriter fileText = new FileWriter(fileName);
+					        BufferedWriter fileContent = new BufferedWriter(fileText);
+					        fileContent.write("Character name change info:\r\n\r\nCharacter original name: " + player.getName() + "\r\nCharacter new name: " + newName);
+					        fileContent.close();
+					    }
 
-                            st.takeItems(changeNameItemId, changeNameItemCount);
-                            player.setName(newName);
-                            player.store();
-                            player.sendMessage("Your new character name is " + newName);
-                            player.broadcastUserInfo();
-                            return "ChangeName-Success.htm";
-                        }
-                    }
+					    st.takeItems(changeNameItemId, changeNameItemCount);
+					    player.setName(newName);
+					    player.store();
+					    player.sendMessage("Your new character name is " + newName);
+					    player.broadcastUserInfo();
+					    return "ChangeName-Success.htm";
+					}
                 }
-                else
-                {
-                    return "ChangeName-NoItems.htm";
-                }
+				return "ChangeName-NoItems.htm";
             }
             catch (Exception e)
             {
@@ -396,26 +359,17 @@ public class Services extends Quest
                         player.sendMessage("Please, put a higher value.");
                         return "PkServices.htm";
                     }
-                    else
-                    {
-                        if (st.getQuestItemsCount(pkReduceItemId) >= pkReduceItemCount)
-                        {
-                            st.takeItems(pkReduceItemId, pkReduceItemCount * pkReduceCount);
-                            player.setPkKills(player.getPkKills() - pkReduceCount);
-                            player.sendMessage("You have successfuly cleaned " + pkReduceCount + " PKs.");
-                            player.broadcastUserInfo();
-                            return "PkServices-Success.htm";
-                        }
-                        else
-                        {
-                            return "PkServices-NoItems.htm";
-                        }
-                    }
+					if (st.getQuestItemsCount(pkReduceItemId) >= pkReduceItemCount)
+					{
+					    st.takeItems(pkReduceItemId, pkReduceItemCount * pkReduceCount);
+					    player.setPkKills(player.getPkKills() - pkReduceCount);
+					    player.sendMessage("You have successfuly cleaned " + pkReduceCount + " PKs.");
+					    player.broadcastUserInfo();
+					    return "PkServices-Success.htm";
+					}
+					return "PkServices-NoItems.htm";
                 }
-                else
-                {
-                    return "PkServices-NoPks.htm";
-                }
+				return "PkServices-NoPks.htm";
             }
             catch (Exception e)
             {
@@ -429,90 +383,81 @@ public class Services extends Quest
             {
                 return "ChangeClanName-NoClan.htm";
             }
-            else
-            {
-                try
-                {
-                    String newClanName = event.substring(15);
+			try
+			{
+			    String newClanName = event.substring(15);
 
-                    if (st.getQuestItemsCount(changeClanNameItemId) >= changeClanNameItemCount)
-                    {
-                        if (newClanName == null)
-                        {
-                            return "ChangeClanName.htm";
-                        }
-                        else
-                        {
-                            if (!player.isClanLeader())
-                            {
-                                player.sendMessage("Only the clan leader can change the clan name.");
-                                return "ChangeClanName.htm";
-                            }
-                            else if (player.getClan().getLevel() < clanMinLevel)
-                            {
-                                player.sendMessage("Your clan must be at least level " + clanMinLevel + " to change the name.");
-                                return "ChangeClanName.htm";
-                            }
-                            else if (!newClanName.matches("^[a-zA-Z0-9]+$"))
-                            {
-                                player.sendMessage("Incorrect name. Please try again.");
-                                return "ChangeClanName.htm";
-                            }
-                            else if (newClanName.equals(player.getClan().getName()))
-                            {
-                                player.sendMessage("Please, choose a different name.");
-                                return "ChangeClanName.htm";
-                            }
-                            else if (null != ClanTable.getInstance().getClanByName(newClanName))
-                            {
-                                player.sendMessage("The name " + newClanName + " already exists.");
-                                return "ChangeClanName.htm";
-                            }
-                            else
-                            {
-                                if (logClanNameChanges)
-                                {
-                                    String fileName = "log/Services/Clan Name Change - " + player.getClan().getName() + ".txt";
-                                    new File(fileName);
-                                    FileWriter fileText = new FileWriter(fileName);
-                                    BufferedWriter fileContent = new BufferedWriter(fileText);
-                                    fileContent.write("Clan name change info:\r\n\r\nClan original name: " + player.getClan().getName() + "\r\nClan new name: " + newClanName + "\r\nClan Leader: " + player.getName());
-                                    fileContent.close();
-                                }
+			    if (st.getQuestItemsCount(changeClanNameItemId) >= changeClanNameItemCount)
+			    {
+			        if (newClanName == null)
+			        {
+			            return "ChangeClanName.htm";
+			        }
+					if (!player.isClanLeader())
+					{
+					    player.sendMessage("Only the clan leader can change the clan name.");
+					    return "ChangeClanName.htm";
+					}
+					else if (player.getClan().getLevel() < clanMinLevel)
+					{
+					    player.sendMessage("Your clan must be at least level " + clanMinLevel + " to change the name.");
+					    return "ChangeClanName.htm";
+					}
+					else if (!newClanName.matches("^[a-zA-Z0-9]+$"))
+					{
+					    player.sendMessage("Incorrect name. Please try again.");
+					    return "ChangeClanName.htm";
+					}
+					else if (newClanName.equals(player.getClan().getName()))
+					{
+					    player.sendMessage("Please, choose a different name.");
+					    return "ChangeClanName.htm";
+					}
+					else if (null != ClanTable.getInstance().getClanByName(newClanName))
+					{
+					    player.sendMessage("The name " + newClanName + " already exists.");
+					    return "ChangeClanName.htm";
+					}
+					else
+					{
+					    if (logClanNameChanges)
+					    {
+					        String fileName = "log/Services/Clan Name Change - " + player.getClan().getName() + ".txt";
+					        new File(fileName);
+					        FileWriter fileText = new FileWriter(fileName);
+					        BufferedWriter fileContent = new BufferedWriter(fileText);
+					        fileContent.write("Clan name change info:\r\n\r\nClan original name: " + player.getClan().getName() + "\r\nClan new name: " + newClanName + "\r\nClan Leader: " + player.getName());
+					        fileContent.close();
+					    }
 
-                                st.takeItems(changeNameItemId, changeNameItemCount);
-                                player.getClan().setName(newClanName);
+					    st.takeItems(changeNameItemId, changeNameItemCount);
+					    player.getClan().setName(newClanName);
 
-                                try (Connection con = L2DatabaseFactory.getInstance().getConnection();
-                                    PreparedStatement statement = con.prepareStatement("UPDATE clan_data SET clan_name=? WHERE clan_id=?"))
-                                {
-                                    statement.setString(1, newClanName);
-                                    statement.setInt(2, player.getClan().getClanId());
-                                    statement.execute();
-                                    statement.close();
-                                }
-                                catch (Exception e)
-                                {
-                                    _log.info("Error updating clan name for player " + player.getName() + ". Error: " + e);
-                                }
+					    try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+					        PreparedStatement statement = con.prepareStatement("UPDATE clan_data SET clan_name=? WHERE clan_id=?"))
+					    {
+					        statement.setString(1, newClanName);
+					        statement.setInt(2, player.getClan().getClanId());
+					        statement.execute();
+					        statement.close();
+					    }
+					    catch (Exception e)
+					    {
+					        _log.info("Error updating clan name for player " + player.getName() + ". Error: " + e);
+					    }
 
-                                player.sendMessage("Your new clan name is " + newClanName);
-                                player.getClan().broadcastClanStatus();
-                                return "ChangeClanName-Success.htm";
-                            }
-                        }
-                    }
-                    else
-                    {
-                        return "ChangeClanName-NoItems.htm";
-                    }
-                }
-                catch (Exception e)
-                {
-                    player.sendMessage("Please, insert a correct name.");
-                    return "ChangeClanName.htm";
-                }
-            }
+					    player.sendMessage("Your new clan name is " + newClanName);
+					    player.getClan().broadcastClanStatus();
+					    return "ChangeClanName-Success.htm";
+					}
+			    }
+				return "ChangeClanName-NoItems.htm";
+			}
+			catch (Exception e)
+			{
+			    player.sendMessage("Please, insert a correct name.");
+			    return "ChangeClanName.htm";
+			}
         }
         else if (event.startsWith("setReputationPoints"))
         {
@@ -536,20 +481,14 @@ public class Services extends Quest
                         player.sendMessage("Please, put a higher value.");
                         return "ClanReputationPoints.htm";
                     }
-                    else
-                    {
-                        if (st.getQuestItemsCount(clanReputationPointsItemId) >= clanReputationPointsItemCount)
-                        {
-                            st.takeItems(clanReputationPointsItemId, clanReputationPointsItemCount * reputationPointsCount);
-                            player.getClan().addReputationScore(player.getClan().getReputationScore() + reputationPointsCount, true);
-                            player.getClan().broadcastClanStatus();
-                            return "ClanReputationPoints-Success.htm";
-                        }
-                        else
-                        {
-                            return "ClanReputationPoints-NoItems.htm";
-                        }
-                    }
+					if (st.getQuestItemsCount(clanReputationPointsItemId) >= clanReputationPointsItemCount)
+					{
+					    st.takeItems(clanReputationPointsItemId, clanReputationPointsItemCount * reputationPointsCount);
+					    player.getClan().addReputationScore(player.getClan().getReputationScore() + reputationPointsCount, true);
+					    player.getClan().broadcastClanStatus();
+					    return "ClanReputationPoints-Success.htm";
+					}
+					return "ClanReputationPoints-NoItems.htm";
                 }
             }
             catch (Exception e)

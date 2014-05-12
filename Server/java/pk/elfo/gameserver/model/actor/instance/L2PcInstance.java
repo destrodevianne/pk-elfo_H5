@@ -18,8 +18,6 @@
  */
 package pk.elfo.gameserver.model.actor.instance;
 
-import gnu.trove.list.array.TIntArrayList;
-
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -41,6 +39,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
+import javolution.util.FastSet;
 import pk.elfo.Config;
 import pk.elfo.L2DatabaseFactory;
 import pk.elfo.gameserver.Announcements;
@@ -93,6 +94,7 @@ import pk.elfo.gameserver.instancemanager.CursedWeaponsManager;
 import pk.elfo.gameserver.instancemanager.DimensionalRiftManager;
 import pk.elfo.gameserver.instancemanager.DuelManager;
 import pk.elfo.gameserver.instancemanager.ExpirableServicesManager;
+import pk.elfo.gameserver.instancemanager.ExpirableServicesManager.ServiceType;
 import pk.elfo.gameserver.instancemanager.FortManager;
 import pk.elfo.gameserver.instancemanager.FortSiegeManager;
 import pk.elfo.gameserver.instancemanager.GlobalVariablesManager;
@@ -103,10 +105,9 @@ import pk.elfo.gameserver.instancemanager.ItemsOnGroundManager;
 import pk.elfo.gameserver.instancemanager.MapRegionManager;
 import pk.elfo.gameserver.instancemanager.QuestManager;
 import pk.elfo.gameserver.instancemanager.SiegeManager;
+import pk.elfo.gameserver.instancemanager.SoundManager.Versus;
 import pk.elfo.gameserver.instancemanager.TerritoryWarManager;
 import pk.elfo.gameserver.instancemanager.ZoneManager;
-import pk.elfo.gameserver.instancemanager.ExpirableServicesManager.ServiceType;
-import pk.elfo.gameserver.instancemanager.SoundManager.Versus;
 import pk.elfo.gameserver.instancemanager.leaderboards.ArenaLeaderboard;
 import pk.elfo.gameserver.instancemanager.leaderboards.TvTLeaderboard;
 import pk.elfo.gameserver.model.BlockList;
@@ -144,7 +145,6 @@ import pk.elfo.gameserver.model.ShotType;
 import pk.elfo.gameserver.model.TerritoryWard;
 import pk.elfo.gameserver.model.TimeStamp;
 import pk.elfo.gameserver.model.TradeList;
-import pk.elfo.gameserver.model.L2Party.messageType;
 import pk.elfo.gameserver.model.actor.L2Attackable;
 import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.L2Decoy;
@@ -204,9 +204,9 @@ import pk.elfo.gameserver.model.olympiad.OlympiadGameManager;
 import pk.elfo.gameserver.model.olympiad.OlympiadGameTask;
 import pk.elfo.gameserver.model.olympiad.OlympiadManager;
 import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.quest.Quest.QuestEventType;
 import pk.elfo.gameserver.model.quest.QuestState;
 import pk.elfo.gameserver.model.quest.State;
-import pk.elfo.gameserver.model.quest.Quest.QuestEventType;
 import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.model.skills.L2SkillType;
 import pk.elfo.gameserver.model.skills.l2skills.L2SkillSiegeFlag;
@@ -226,7 +226,6 @@ import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone2;
 import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone3;
 import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone4;
 import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone5;
-import pk.elfo.gameserver.model.zone.type.L2ClanWarZone;
 import pk.elfo.gameserver.model.zone.type.L2NoRestartZone;
 import pk.elfo.gameserver.network.DialogId;
 import pk.elfo.gameserver.network.L2GameClient;
@@ -324,9 +323,7 @@ import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.L2FastList;
 import pk.elfo.util.Rnd;
 import pk.elfo.util.TimeConstant;
-import javolution.util.FastList;
-import javolution.util.FastMap;
-import javolution.util.FastSet;
+import gnu.trove.list.array.TIntArrayList;
 
 /**
  * This class represents all player characters in the world.<br>
@@ -443,12 +440,12 @@ public final class L2PcInstance extends L2Playable
 			getPlayer().setRecentFakeDeath(false);
 		}
 	}
-
+	
 	// addons anuncios pvp and pk
 	private int consecutiveKillCount = 0;
 	private int consecutivepkCount = 0;
 	
-	private int abnormal = AbnormalEffect.VITALITY.getMask();
+	private final int abnormal = AbnormalEffect.VITALITY.getMask();
 	private L2GameClient _client;
 	
 	private String _accountName;
@@ -1063,11 +1060,6 @@ public final class L2PcInstance extends L2Playable
 		@Override
 		public void run()
 		{
-			if (L2PcInstance.this == null)
-			{
-				return;
-			}
-			
 			L2PcInstance.this.sendPacket(new ShortBuffStatusUpdate(0, 0, 0));
 			setShortBuffTaskSkillId(0);
 		}
@@ -4910,75 +4902,77 @@ public final class L2PcInstance extends L2Playable
 	}
 	
 	// addons PVP name and color - START
-		public void updatePvPColor(int pvpKillAmount)
+	public void updatePvPColor(int pvpKillAmount)
+	{
+		if (Config.PVP_COLOR_SYSTEM_ENABLED)
 		{
-			if (Config.PVP_COLOR_SYSTEM_ENABLED)
+			// Check if the character has GM access and if so, let them be.
+			if (isGM())
 			{
-				// Check if the character has GM access and if so, let them be.
-				if (isGM())
-				{
-					return;
-				}
-
-				if ((pvpKillAmount >= (Config.PVP_AMOUNT1)) && (pvpKillAmount <= (Config.PVP_AMOUNT2)))
-				{
-					getAppearance().setNameColor(Config.NAME_COLOR_FOR_PVP_AMOUNT1);
-				}
-				else if ((pvpKillAmount >= (Config.PVP_AMOUNT2)) && (pvpKillAmount <= (Config.PVP_AMOUNT3)))
-				{
-					getAppearance().setNameColor(Config.NAME_COLOR_FOR_PVP_AMOUNT2);
-				}
-				else if ((pvpKillAmount >= (Config.PVP_AMOUNT3)) && (pvpKillAmount <= (Config.PVP_AMOUNT4)))
-				{
-					getAppearance().setNameColor(Config.NAME_COLOR_FOR_PVP_AMOUNT3);
-				}
-				else if ((pvpKillAmount >= (Config.PVP_AMOUNT4)) && (pvpKillAmount <= (Config.PVP_AMOUNT5)))
-				{
-					getAppearance().setNameColor(Config.NAME_COLOR_FOR_PVP_AMOUNT4);
-				}
-				else if (pvpKillAmount >= (Config.PVP_AMOUNT5))
-				{
-					getAppearance().setNameColor(Config.NAME_COLOR_FOR_PVP_AMOUNT5);
-				}
+				return;
+			}
+			
+			if ((pvpKillAmount >= (Config.PVP_AMOUNT1)) && (pvpKillAmount <= (Config.PVP_AMOUNT2)))
+			{
+				getAppearance().setNameColor(Config.NAME_COLOR_FOR_PVP_AMOUNT1);
+			}
+			else if ((pvpKillAmount >= (Config.PVP_AMOUNT2)) && (pvpKillAmount <= (Config.PVP_AMOUNT3)))
+			{
+				getAppearance().setNameColor(Config.NAME_COLOR_FOR_PVP_AMOUNT2);
+			}
+			else if ((pvpKillAmount >= (Config.PVP_AMOUNT3)) && (pvpKillAmount <= (Config.PVP_AMOUNT4)))
+			{
+				getAppearance().setNameColor(Config.NAME_COLOR_FOR_PVP_AMOUNT3);
+			}
+			else if ((pvpKillAmount >= (Config.PVP_AMOUNT4)) && (pvpKillAmount <= (Config.PVP_AMOUNT5)))
+			{
+				getAppearance().setNameColor(Config.NAME_COLOR_FOR_PVP_AMOUNT4);
+			}
+			else if (pvpKillAmount >= (Config.PVP_AMOUNT5))
+			{
+				getAppearance().setNameColor(Config.NAME_COLOR_FOR_PVP_AMOUNT5);
 			}
 		}
-		// addons PVP Color System - End
-
-		// addons Pk Color System - Start
-		public void updatePkColor(int pkKillAmount)
+	}
+	
+	// addons PVP Color System - End
+	
+	// addons Pk Color System - Start
+	public void updatePkColor(int pkKillAmount)
+	{
+		if (Config.PK_COLOR_SYSTEM_ENABLED)
 		{
-			if (Config.PK_COLOR_SYSTEM_ENABLED)
+			// Check if the character has GM access and if so, let them be, like above.
+			if (isGM())
 			{
-				// Check if the character has GM access and if so, let them be, like above.
-				if (isGM())
-				{
-					return;
-				}
-
-				if ((pkKillAmount >= (Config.PK_AMOUNT1)) && (pkKillAmount <= (Config.PVP_AMOUNT2)))
-				{
-					getAppearance().setTitleColor(Config.TITLE_COLOR_FOR_PK_AMOUNT1);
-				}
-				else if ((pkKillAmount >= (Config.PK_AMOUNT2)) && (pkKillAmount <= (Config.PVP_AMOUNT3)))
-				{
-					getAppearance().setTitleColor(Config.TITLE_COLOR_FOR_PK_AMOUNT2);
-				}
-				else if ((pkKillAmount >= (Config.PK_AMOUNT3)) && (pkKillAmount <= (Config.PVP_AMOUNT4)))
-				{
-					getAppearance().setTitleColor(Config.TITLE_COLOR_FOR_PK_AMOUNT3);
-				}
-				else if ((pkKillAmount >= (Config.PK_AMOUNT4)) && (pkKillAmount <= (Config.PVP_AMOUNT5)))
-				{
-					getAppearance().setTitleColor(Config.TITLE_COLOR_FOR_PK_AMOUNT4);
-				}
-				else if (pkKillAmount >= (Config.PK_AMOUNT5))
-				{
-					getAppearance().setTitleColor(Config.TITLE_COLOR_FOR_PK_AMOUNT5);
-				}
- 	
+				return;
 			}
+			
+			if ((pkKillAmount >= (Config.PK_AMOUNT1)) && (pkKillAmount <= (Config.PVP_AMOUNT2)))
+			{
+				getAppearance().setTitleColor(Config.TITLE_COLOR_FOR_PK_AMOUNT1);
+			}
+			else if ((pkKillAmount >= (Config.PK_AMOUNT2)) && (pkKillAmount <= (Config.PVP_AMOUNT3)))
+			{
+				getAppearance().setTitleColor(Config.TITLE_COLOR_FOR_PK_AMOUNT2);
+			}
+			else if ((pkKillAmount >= (Config.PK_AMOUNT3)) && (pkKillAmount <= (Config.PVP_AMOUNT4)))
+			{
+				getAppearance().setTitleColor(Config.TITLE_COLOR_FOR_PK_AMOUNT3);
+			}
+			else if ((pkKillAmount >= (Config.PK_AMOUNT4)) && (pkKillAmount <= (Config.PVP_AMOUNT5)))
+			{
+				getAppearance().setTitleColor(Config.TITLE_COLOR_FOR_PK_AMOUNT4);
+			}
+			else if (pkKillAmount >= (Config.PK_AMOUNT5))
+			{
+				getAppearance().setTitleColor(Config.TITLE_COLOR_FOR_PK_AMOUNT5);
+			}
+			
 		}
-			// Custom Pk Color System - END
+	}
+	
+	// Custom Pk Color System - END
 	
 	/**
 	 * Send a Server->Client packet UserInfo to this L2PcInstance and CharInfo to all L2PcInstance in its _KnownPlayers. <B><U> Concept</U> :</B> Others L2PcInstance in the detection area of the L2PcInstance are identified in <B>_knownPlayers</B>. In order to inform other players of this
@@ -5970,30 +5964,38 @@ public final class L2PcInstance extends L2Playable
 		// Kill the L2PcInstance
 		if (KILL_STEAK > 0)
 		{
-			if (KILL_STEAK >= 5 && KILL_STEAK < 20)
-				Announcements.getInstance().announceToAll(killer.getName()+" parou "+getName()+"'s killing spree of "+KILL_STEAK+" mortes!!");
+			if ((KILL_STEAK >= 5) && (KILL_STEAK < 20))
+			{
+				Announcements.getInstance().announceToAll(killer.getName() + " parou " + getName() + "'s killing spree of " + KILL_STEAK + " mortes!!");
+			}
 			else if (KILL_STEAK < 40)
 			{
-				sendMessage(killer.getName()+" parou "+getName()+"'s killing spree of "+KILL_STEAK+" mortes!!");
+				sendMessage(killer.getName() + " parou " + getName() + "'s killing spree of " + KILL_STEAK + " mortes!!");
 				if (!hadHero)
+				{
 					setHero(false);
+				}
 			}
 			else if (KILL_STEAK < 60)
 			{
-				sendMessage(killer.getName()+" terminou "+getName()+"'s rampage of "+KILL_STEAK+" strait kills!");
+				sendMessage(killer.getName() + " terminou " + getName() + "'s rampage of " + KILL_STEAK + " strait kills!");
 				stopAbnormalEffect(AbnormalEffect.VITALITY);
 				if (!hadHero)
-				setHero(false);
+				{
+					setHero(false);
+				}
 			}
 			else if (KILL_STEAK > 60)
 			{
-				sendMessage(killer.getName()+" deu um fim ao reinado de terror de "+getName()+"acabando com "+KILL_STEAK+" mortes!!!");
+				sendMessage(killer.getName() + " deu um fim ao reinado de terror de " + getName() + "acabando com " + KILL_STEAK + " mortes!!!");
 				stopAbnormalEffect(AbnormalEffect.VITALITY);
 				if (!hadHero)
+				{
 					setHero(false);
+				}
 			}
-			KILL_STEAK=0;
-		}		
+			KILL_STEAK = 0;
+		}
 		if (!super.doDie(killer))
 		{
 			return false;
@@ -6461,9 +6463,11 @@ public final class L2PcInstance extends L2Playable
 			}
 		}
 	}
+	
 	Versus vs;
-	private int KILL_STEAK=0;
-	final boolean hadHero=Hero.getInstance().isHero(getObjectId());	
+	private int KILL_STEAK = 0;
+	final boolean hadHero = Hero.getInstance().isHero(getObjectId());
+	
 	/**
 	 * Increase the pvp kills count and send the info to the player
 	 * @param target
@@ -6498,10 +6502,10 @@ public final class L2PcInstance extends L2Playable
 				// pvp color
 				updatePvPColor(getPvpKills());
 				broadcastUserInfo();
-	
+				
 				// addons consecutive pvp
 				consecutiveKillCount++;
-
+				
 				if (consecutiveKillCount == 1)
 				{
 					Announcements.getInstance().announceToAll(getName() + " voce matou um inimigo!");
@@ -6510,30 +6514,30 @@ public final class L2PcInstance extends L2Playable
 				{
 					Announcements.getInstance().announceToAll(getName() + " Morte dupla");
 				}
-	
+				
 				else if (consecutiveKillCount == 3)
 				{
 					Announcements.getInstance().announceToAll(getName() + " Morte tripla");
 				}
-
+				
 				else if (consecutiveKillCount == 4)
 				{
 					Announcements.getInstance().announceToAll(getName() + " Morte quadrupla");
 				}
-
+				
 				else if (consecutiveKillCount == 5)
 				{
 					Announcements.getInstance().announceToAll(getName() + " Morte quindupla");
 				}
-
+				
 				else if (consecutiveKillCount > 5)
 				{
 					Announcements.getInstance().announceToAll(getName() + " Lendario!");
 				}
-
+				
 				// muy bonito verdad? jajaja
 				broadcastPacket(new MagicSkillUse(this, target, 721, 1, 1, 0));// efecto sobre el char q muere by fissban
-
+				
 				L2PcInstance player_target = target.getActingPlayer();
 				// custom anuncio para cuando muere un heroe
 				if (player_target.isHero())
@@ -6542,56 +6546,56 @@ public final class L2PcInstance extends L2Playable
 					final String texto = "O heroi " + target.getName() + " caiu nas maos de " + getName(); // final??
 					cs = new ExShowScreenMessage(texto, 1500);
 					Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().valueCollection();
-
+					
 					for (L2PcInstance playersOnline : pls)
 					{
 						if (playersOnline == null)
 						{
 							continue;
 						}
-
+						
 						playersOnline.sendPacket(cs);// envio del msj
 					}
 				}
 				
 				L2PcInstance targetPlayer = target.getActingPlayer();
-				if(isInsideZone(ZoneId.CLANWAR) & targetPlayer.isInsideZone(ZoneId.CLANWAR) && (getClanId() != targetPlayer.getClanId()) && getClan() != null && targetPlayer.getClan() != null)
+				if ((isInsideZone(ZoneId.CLANWAR) & targetPlayer.isInsideZone(ZoneId.CLANWAR)) && (getClanId() != targetPlayer.getClanId()) && (getClan() != null) && (targetPlayer.getClan() != null))
 				{
-					if(Config.ALLOW_CLANWAR_REP)
+					if (Config.ALLOW_CLANWAR_REP)
 					{
 						getClan().addReputationScore(Config.CLANWAR_ADD_REP, true);
-					}        
+					}
 					sendMessage("Voce matou alguem de um clan inimigo. Seu clan sera recompensado com 50 pontos de reputacao!");
-					if(Config.ALLOW_CLANWAR_REWARD)
+					if (Config.ALLOW_CLANWAR_REWARD)
 					{
 						// Item Reward system
 						addItem("Loot", Config.CLANWAR_REWARD_ITEM, Config.CLANWAR_REWARD_COUNT, this, true);
 						sendMessage("Voce sera recompensado por matar um mebro de um clan inimigo!");
 					}
 				}
-
-			KILL_STEAK++;
-			switch (KILL_STEAK)
-			{
-				case 15:
-					sendMessage("Falta 5 PVP para virar Spree!!!");
-					break;
-				case 20:
-					Announcements.getInstance().announceToAll(getName()+" Virou Spree!");
-					setHero(true);
-					break;
-				case 40:
-					Announcements.getInstance().announceToAll(getName()+" Virou Rampage!!");
-					startAbnormalEffect(AbnormalEffect.VITALITY);
-					break;
-				case 60:
-					Announcements.getInstance().announceToAll(getName()+" Virou um Legendary!");
-					for (L2PcInstance players : L2World.getInstance().getAllPlayersArray())
-					{
-						players.sendPacket(new ExRedSky(10));
-					}
-					break;
-			}				
+				
+				KILL_STEAK++;
+				switch (KILL_STEAK)
+				{
+					case 15:
+						sendMessage("Falta 5 PVP para virar Spree!!!");
+						break;
+					case 20:
+						Announcements.getInstance().announceToAll(getName() + " Virou Spree!");
+						setHero(true);
+						break;
+					case 40:
+						Announcements.getInstance().announceToAll(getName() + " Virou Rampage!!");
+						startAbnormalEffect(AbnormalEffect.VITALITY);
+						break;
+					case 60:
+						Announcements.getInstance().announceToAll(getName() + " Virou um Legendary!");
+						for (L2PcInstance players : L2World.getInstance().getAllPlayersArray())
+						{
+							players.sendPacket(new ExRedSky(10));
+						}
+						break;
+				}
 				// Send a Server->Client UserInfo packet to attacker with its Karma and PK Counter
 				sendPacket(new UserInfo(this));
 				sendPacket(new ExBrExtraUserInfo(this));
@@ -6681,7 +6685,7 @@ public final class L2PcInstance extends L2Playable
 		// addons pk color
 		updatePkColor(getPvpKills());
 		broadcastUserInfo();
-	
+		
 		// addons consecutive pk
 		consecutivepkCount++;
 		if (consecutivepkCount == 1)
@@ -15785,7 +15789,7 @@ public final class L2PcInstance extends L2Playable
 	
 	public void teleportBookmarkGo(int Id)
 	{
-		if (!teleportBookmarkCondition(0) || (this == null))
+		if (!teleportBookmarkCondition(0))
 		{
 			return;
 		}
@@ -15887,11 +15891,6 @@ public final class L2PcInstance extends L2Playable
 	
 	public void teleportBookmarkAdd(int x, int y, int z, int icon, String tag, String name)
 	{
-		if (this == null)
-		{
-			return;
-		}
-		
 		if (!teleportBookmarkCondition(1))
 		{
 			return;
@@ -16984,11 +16983,6 @@ public final class L2PcInstance extends L2Playable
 		@Override
 		public void run()
 		{
-			if (L2PcInstance.this == null)
-			{
-				// stopRecoGiveTask(); why is this here? it will lead to NPE
-				return;
-			}
 			int reco_to_give;
 			// 10 recommendations to give out after 2 hours of being logged in
 			// 1 more recommendation to give out every hour after that.
@@ -17017,11 +17011,6 @@ public final class L2PcInstance extends L2Playable
 		@Override
 		public void run()
 		{
-			if (L2PcInstance.this == null)
-			{
-				return;
-			}
-			
 			setRecoBonusActive(false);
 		}
 	}
@@ -17041,9 +17030,9 @@ public final class L2PcInstance extends L2Playable
 		// Maintain = 1, nomal 0
 		return _recoBonusMode;
 	}
-
+	
 	private PcAdmin _PcAdmin = null;
- 	
+	
 	public PcAdmin getPcAdmin()
 	{
 		if (_PcAdmin == null)
@@ -17052,7 +17041,7 @@ public final class L2PcInstance extends L2Playable
 		}
 		return _PcAdmin;
 	}
-		
+	
 	public short getScore()
 	{
 		return points;

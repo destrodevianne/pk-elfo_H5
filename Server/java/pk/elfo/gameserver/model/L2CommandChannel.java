@@ -205,13 +205,7 @@ public class L2CommandChannel extends AbstractPlayerGroup
 	{
 		_commandLeader = leader;
 	}
-	
-	/**
-	 * @return the leader of the Command Channel
-	 * @deprecated
-	 * @see L2CommandChannel#getLeader()
-	 */
-	@Deprecated
+
 	public L2PcInstance getChannelLeader()
 	{
 		return getLeader();

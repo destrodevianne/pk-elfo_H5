@@ -68,7 +68,7 @@ public class JiniasHideout extends Quest
 		-5413
 	};
 	
-	private class teleCoord
+	public class teleCoord
 	{
 		int instanceId;
 		int x;

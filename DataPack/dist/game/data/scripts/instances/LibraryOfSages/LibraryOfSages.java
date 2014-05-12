@@ -14,6 +14,8 @@
  */
 package instances.LibraryOfSages;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.instancemanager.InstanceManager;
 import pk.elfo.gameserver.model.actor.L2Npc;
@@ -28,8 +30,6 @@ import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.util.Rnd;
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 public class LibraryOfSages extends Quest
 {
@@ -45,10 +45,28 @@ public class LibraryOfSages extends Quest
 	private static final int ENTER = 0;
 	private static final int EXIT = 1;
 	private static final int HidenRoom = 2;
-	private static final int[][] TELEPORTS = { { 37063, -49813, -1128 }, { 37063, -49813, -1128 }, { 37355, -50065, -1127 } // books
+	private static final int[][] TELEPORTS =
+	{
+		{
+			37063,
+			-49813,
+			-1128
+		},
+		{
+			37063,
+			-49813,
+			-1128
+		},
+		{
+			37355,
+			-50065,
+			-1127
+		}
+	// books
 	};
 	
-	private static final NpcStringId[] spam = {
+	private static final NpcStringId[] spam =
+	{
 		NpcStringId.I_MUST_ASK_LIBRARIAN_SOPHIA_ABOUT_THE_BOOK,
 		NpcStringId.THIS_LIBRARY_ITS_HUGE_BUT_THERE_ARENT_MANY_USEFUL_BOOKS_RIGHT,
 		NpcStringId.AN_UNDERGROUND_LIBRARY_I_HATE_DAMP_AND_SMELLY_PLACES,
@@ -68,10 +86,11 @@ public class LibraryOfSages extends Quest
 		}
 	}
 	
+	@SuppressWarnings("null")
 	private void teleportPlayer(L2Npc npc, L2PcInstance player, int[] coords, int instanceId)
 	{
 		InstanceHolder holder = instanceWorlds.get(instanceId);
-		if (holder == null && instanceId > 0)
+		if ((holder == null) && (instanceId > 0))
 		{
 			holder = new InstanceHolder();
 			instanceWorlds.put(instanceId, holder);
@@ -83,7 +102,7 @@ public class LibraryOfSages extends Quest
 		cancelQuestTimer("check_follow", npc, player);
 		if (holder != null)
 		{
-			for(L2Npc h : holder.mobs)
+			for (L2Npc h : holder.mobs)
 			{
 				h.deleteMe();
 			}
@@ -91,7 +110,7 @@ public class LibraryOfSages extends Quest
 		}
 		if (instanceId > 0)
 		{
-			L2Npc support = addSpawn(Elcadia_Support, player.getX(), player.getY(),player.getZ(), 0, false, 0, false, player.getInstanceId());
+			L2Npc support = addSpawn(Elcadia_Support, player.getX(), player.getY(), player.getZ(), 0, false, 0, false, player.getInstanceId());
 			holder.mobs.add(support);
 			startQuestTimer("check_follow", 3000, support, player);
 		}
@@ -130,11 +149,13 @@ public class LibraryOfSages extends Quest
 	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{		
+	{
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
 		if (st == null)
+		{
 			st = newQuestState(player);
+		}
 		
 		if (event.equalsIgnoreCase("check_follow"))
 		{
@@ -166,7 +187,7 @@ public class LibraryOfSages extends Quest
 				InstanceHolder holder = instanceWorlds.get(player.getInstanceId());
 				if (holder != null)
 				{
-					for(L2Npc h : holder.mobs)
+					for (L2Npc h : holder.mobs)
 					{
 						h.deleteMe();
 					}
