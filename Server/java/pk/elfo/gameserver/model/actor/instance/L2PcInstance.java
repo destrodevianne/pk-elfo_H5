@@ -122,6 +122,7 @@ import pk.elfo.gameserver.model.L2ManufactureItem;
 import pk.elfo.gameserver.model.L2ManufactureList;
 import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.L2Party;
+import pk.elfo.gameserver.model.L2Party.messageType;
 import pk.elfo.gameserver.model.L2PetData;
 import pk.elfo.gameserver.model.L2PetLevelData;
 import pk.elfo.gameserver.model.L2PremiumItem;

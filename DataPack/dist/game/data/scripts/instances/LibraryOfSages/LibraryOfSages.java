@@ -86,7 +86,6 @@ public class LibraryOfSages extends Quest
 		}
 	}
 	
-	@SuppressWarnings("null")
 	private void teleportPlayer(L2Npc npc, L2PcInstance player, int[] coords, int instanceId)
 	{
 		InstanceHolder holder = instanceWorlds.get(instanceId);

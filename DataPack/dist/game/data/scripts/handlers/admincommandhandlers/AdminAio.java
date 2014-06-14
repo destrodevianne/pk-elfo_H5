@@ -12,7 +12,6 @@ import pk.elfo.gameserver.GmListTable;
 import pk.elfo.gameserver.handler.IAdminCommandHandler;
 import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
-import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.network.serverpackets.EtcStatusUpdate;
 
 /**

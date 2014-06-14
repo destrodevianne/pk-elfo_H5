@@ -352,7 +352,6 @@ public class HideAndSeek extends Quest
 		}
 	}
 	
-	@SuppressWarnings("null")
 	private static void scheduleEventStart()
 	{
 		try

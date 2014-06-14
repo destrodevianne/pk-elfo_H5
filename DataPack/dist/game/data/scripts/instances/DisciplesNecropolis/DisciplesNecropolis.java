@@ -639,7 +639,6 @@ public class DisciplesNecropolis extends Quest
 		return;
 	}
 	
-	@SuppressWarnings("null")
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{

@@ -62,7 +62,6 @@ public class LuckyPig extends AbstractNpcAI
 		
 	}
 	
-	@SuppressWarnings("null")
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
