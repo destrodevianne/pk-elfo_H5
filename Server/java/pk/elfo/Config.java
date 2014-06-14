@@ -136,12 +136,13 @@ public final class Config
 	public static final String PVPESCAPE_CONFIG_FILE = "./config/PvPpK/Escape.properties";
 	public static final String SECURITY_CONFIG_FILE = "./config/GM/Security.properties";
 	public static final String GMADM_CONFIG = "./config/GM/GmAdm.properties";
+	// ------------------------SERVER-CONFIGS--------------------------------------------------------------//
+	public static final String CONFIGURATION_FILE = "./config/Server-IP-Password/Server.properties";
 	// ------------------------SERVICES--------------------------------------------------------------------//
 	public static final String PKELFO_FILE = "./config/Player/Services/Pkelfo.properties";
 	public static final String PREMIUM_CONFIG_FILE = "./config/Services/Premium.properties";
 	public static final String RATES_CONFIG_FILE = "./config/Services/Rates.properties";
 	// ----------------------------------------------------------------------------------------------------//
-	public static final String CONFIGURATION_FILE = "./config/Server.properties";
 	public static final String TELNET_FILE = "./config/Telnet.properties";
 	public static final String VIP_CONFIG_FILE = "./config/VIP/Vip.properties";
 	//======================================================================================//
