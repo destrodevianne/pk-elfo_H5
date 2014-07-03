@@ -99,8 +99,6 @@ public final class Config
 	public static final String HEXID_FILE = "./config/hexid.txt";
 	public static final String IP_CONFIG_FILE = "./config/ipconfig.xml";
 	public static final String LOGIN_CONFIGURATION_FILE = "./config/LoginServer.properties";
-	public static final String SERVER_VERSION_FILE = "./config/l2j-version.properties";
-	public static final String DATAPACK_VERSION_FILE = "./config/l2jdp-version.properties";
 	public static final String L2JMOD_CONFIG_FILE = "./config/L2JMods.properties";
 	public static final String MMO_CONFIG_FILE = "./config/MMO.properties";
 	public static final String PRIME_CONFIG_FILE = "./config/Moedas/PrimeShop.properties";
@@ -112,9 +110,11 @@ public final class Config
 	public static final String TOPNPC_CONFIG_FILE = "./config/NPCs/TOPNPC.properties";
 	public static final String RAIDBOSSES_CONFIG_FILE = "./config/NPCs/RAIDBOSSES.properties";
 	// ------------------------OUTROS----------------------------------------------------------------------//
+	public static final String DATAPACK_VERSION_FILE = "./config/Outros/DP-version.properties";
 	public static final String FEATURE_CONFIG_FILE = "./config/Outros/Feature.properties";
 	public static final String FLOOD_PROTECTOR_FILE = "./config/Outros/FloodProtector.properties";
 	public static final String GRACIASEEDS_CONFIG_FILE = "./config/Outros/GraciaSeeds.properties";
+	public static final String SERVER_VERSION_FILE = "./config/Outros/GS-version.properties";
 	public static final String ID_CONFIG_FILE = "./config/Outros/IdFactory.properties";
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String OLYMPIAD_CONFIG_FILE = "./config/Olimpiadas/Olympiad.properties";
@@ -1515,7 +1515,6 @@ public final class Config
 	public static List<String> GAME_SERVER_SUBNETS;
 	public static List<String> GAME_SERVER_HOSTS;
 	public static String SERVER_VERSION;
-	public static String SERVER_BUILD_DATE;
 	public static String DATAPACK_VERSION;
 	public static int PVP_NORMAL_TIME;
 	public static int PVP_PVP_TIME;
@@ -3820,7 +3819,6 @@ public final class Config
 			}
 			
 			SERVER_VERSION = serverVersion.getProperty("version", "Unsupported Custom Version.");
-			SERVER_BUILD_DATE = serverVersion.getProperty("builddate", "Undefined Date.");
 			
 			// Load L2J Datapack Version L2Properties file (if exists)
 			L2Properties dpVersion = new L2Properties();

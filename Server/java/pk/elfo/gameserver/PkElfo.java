@@ -16,7 +16,7 @@ public class PkElfo
 		_log.info("                                                                               ");
 		_log.info("                                 Team - PkElfo                                 ");
 		_log.info("                                                                               ");
-		_log.info("                       Developer by Mamute05 & Pressao                         ");
+		_log.info("                             Developer by Mamute05                             ");
 		_log.info("                                                                               ");
 		_log.info("                               Client: High Five                               ");
 		_log.info("_______________________________________________________________________________");
