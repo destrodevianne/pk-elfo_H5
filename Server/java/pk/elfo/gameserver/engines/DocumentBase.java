@@ -1,28 +1,12 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.engines;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,6 +23,7 @@ import pk.elfo.Config;
 import pk.elfo.gameserver.datatables.ItemTable;
 import pk.elfo.gameserver.model.ChanceCondition;
 import pk.elfo.gameserver.model.StatsSet;
+import pk.elfo.gameserver.model.base.NpcRace;
 import pk.elfo.gameserver.model.L2Object.InstanceType;
 import pk.elfo.gameserver.model.base.PlayerState;
 import pk.elfo.gameserver.model.base.Race;
@@ -106,6 +91,7 @@ import pk.elfo.gameserver.model.conditions.ConditionTargetNpcType;
 import pk.elfo.gameserver.model.conditions.ConditionTargetPlayable;
 import pk.elfo.gameserver.model.conditions.ConditionTargetRace;
 import pk.elfo.gameserver.model.conditions.ConditionTargetRaceId;
+import pk.elfo.gameserver.model.conditions.ConditionTargetSummonRace;
 import pk.elfo.gameserver.model.conditions.ConditionTargetUsesWeaponKind;
 import pk.elfo.gameserver.model.conditions.ConditionTargetWeight;
 import pk.elfo.gameserver.model.conditions.ConditionUsingItemType;
@@ -1021,6 +1007,18 @@ public abstract class DocumentBase
 					array.add(Integer.decode(getValue(item, null)));
 				}
 				cond = joinAnd(cond, new ConditionTargetRaceId(array));
+			}
+			// used for summon race
+			else if ("summonrace".equalsIgnoreCase(a.getNodeName()))
+			{
+				final String[] values = a.getNodeValue().split(",");
+				final Set<NpcRace> array = new HashSet<>(values.length);
+				for (String value : values)
+				{
+					array.add(NpcRace.valueOf(getValue(value, null)));
+				}
+				cond = joinAnd(cond, new ConditionTargetSummonRace(array));
+				break;
 			}
 			// used for pc race
 			else if ("races".equalsIgnoreCase(a.getNodeName()))
