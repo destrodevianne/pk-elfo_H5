@@ -289,6 +289,8 @@ public final class Config
 	public static boolean CLAN_LEADER_COLOR_ENABLED;
 	public static int CLAN_LEADER_COLOR;
 	public static int CLAN_LEADER_COLOR_CLAN_LEVEL;
+	// ----Level maximo em Queen Ant-----------------------------------------------------------------------//
+	public static int MAX_LEVEL_FOR_AQ_ZONE;
 	// ----------------------------------------------------------------------------------------------------//
 	// Teleporte custom para o comando unstuck
 	// ----------------------------------------------------------------------------------------------------//
@@ -2761,6 +2763,8 @@ public final class Config
 				Random_Of_QueenAnt_Spawn = 17;
 			}
 			Random_Of_QueenAnt_Spawn = Random_Of_QueenAnt_Spawn * 3600000;
+			
+			MAX_LEVEL_FOR_AQ_ZONE = Integer.parseInt(QueenSettings.getProperty("MaxLevelToEnter", "50"));
 			
 			// ########################################################################################################//
 			// SAILREN PROPERTIES

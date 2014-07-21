@@ -48,6 +48,9 @@ Modificações na CommunityPVP e ADD Enchantes até +30
 Adicionado skills: Clan De-Buff Control, Clan Muzzle Control e Clan Mental Control
 Adding missing 'itemConsumeId' for skill 'Open Packaged Book'.
 Fixed Premium System
+Revive Like OFF
+Adicionado Level maximo em AntQueen configuravel em Configs
+Soulshots/Spiritshots = Retail Like
 
 ###############################################
 #################### FIX BETA TEST ############
@@ -335,4 +338,5 @@ Adcionado pasta ScreenShots com imagens das novas texturas
 Colocado Banner no GS
 Personalizacao do NPC de encantamento com texturas novas e coloracao das letras
 Adicionado Dragao Voador Custom
-
+Adicionado Zona MultiFunctionZone em Zone.xml
+Adicionado Comparators.java

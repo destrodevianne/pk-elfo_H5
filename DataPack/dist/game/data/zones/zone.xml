@@ -213,4 +213,10 @@
 		<zone name="Sailren's Den" id="12016" type="BossZone" shape="Cylinder" minZ="-2000" maxZ="-200" rad="1650">
 		<node X="10468" Y="-24569" />
 	</zone>
+	<zone name="Custom" type="MultiFunctionZone" shape="NPoly" minZ="-15000" maxZ="-10000">
+        <node X="130000" Y="160000" />
+        <node X="130000" Y="130000" />
+        <node X="160000" Y="130000" />
+        <node X="160000" Y="160000" />
+    </zone>
 </list>

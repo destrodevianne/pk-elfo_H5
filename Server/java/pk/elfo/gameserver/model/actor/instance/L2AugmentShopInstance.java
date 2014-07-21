@@ -105,15 +105,15 @@ public class L2AugmentShopInstance extends L2NpcInstance
 			_log.log(Level.WARNING, "[L2AugmentShopIntance] AddAug() : " + e.getMessage(), e);
 		}
 		
-		if (color.equalsIgnoreCase("red"))
+		if (color.equalsIgnoreCase("Red"))
 		{
 			color = "FF0000";
 		}
-		else if (color.equalsIgnoreCase("blue"))
+		else if (color.equalsIgnoreCase("Blue"))
 		{
 			color = "0000FF";
 		}
-		else if (color.equalsIgnoreCase("purple"))
+		else if (color.equalsIgnoreCase("Purple"))
 		{
 			color = "CC00CC";
 		}

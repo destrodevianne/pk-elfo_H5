@@ -22,6 +22,7 @@ import gnu.trove.procedure.TObjectProcedure;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
@@ -691,4 +692,13 @@ public final class L2World
 	{
 		protected static final L2World _instance = new L2World();
 	}
+	
+	/**
+     * @return
+     */
+    @SuppressWarnings("javadoc")
+    public L2PcInstance[] getPlayersSortedBy(Comparator<L2PcInstance> comparator)
+    {
+        return null;
+    }
 }

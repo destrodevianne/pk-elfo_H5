@@ -18,6 +18,8 @@
  */
 package pk.elfo.log.formatter;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
 
@@ -31,16 +33,15 @@ import pk.elfo.util.Util;
  */
 public class ConsoleLogFormatter extends Formatter
 {
+	private final SimpleDateFormat dateFmt = new SimpleDateFormat("HH:mm:ss");
+	
 	@Override
 	public String format(LogRecord record)
 	{
 		final StringBuilder output = new StringBuilder(500);
-		// output.append(record.getLevel().getName());
-		// output.append(_);
-		// output.append(record.getLoggerName());
-		// output.append(_);
-		StringUtil.append(output, record.getMessage(), Config.EOL);
-		
+
+		StringUtil.append(output, "[", dateFmt.format(new Date(record.getMillis())), "] INFO: " + record.getMessage(), Config.EOL);
+
 		if (record.getThrown() != null)
 		{
 			try

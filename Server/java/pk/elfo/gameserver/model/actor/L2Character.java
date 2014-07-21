@@ -534,10 +534,6 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		{
 			_teleportLock.unlock();
 		}
-		if (_isPendingRevive)
-		{
-			doRevive();
-		}
 	}
 	
 	/**
@@ -777,6 +773,12 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 			y = newCoords[1];
 			z = newCoords[2];
 		}
+		
+		if (_isPendingRevive)
+		{
+			doRevive();
+		}
+		
 		teleToLocation(x, y, z, getHeading(), randomOffset);
 	}
 	
@@ -1116,9 +1118,6 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		{
 			setCurrentCp(getCurrentCp() - 10);
 		}
-		
-		// Recharge any active auto soulshot tasks for current L2Character instance.
-		rechargeShots(true, false);
 		
 		// Verify if soulshots are charged.
 		final boolean wasSSCharged = isChargedShot(ShotType.SOULSHOTS);
@@ -1821,9 +1820,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		}
 		
 		stopEffectsOnAction();
-		
-		rechargeShots(skill.useSoulShot(), skill.useSpiritShot());
-		
+
 		// Set the target of the skill in function of Skill Type and Target Type
 		L2Character target = null;
 		// Get all possible targets of the skill in a table in function of the skill target type
@@ -5938,7 +5935,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 			{
 				activeWeapon.getSkillEffects(this, target, crit);
 			}
-			return;
+			rechargeShots(true, false);
 		}
 		
 		if (!isCastingNow() && !isCastingSimultaneouslyNow())
@@ -6756,6 +6753,8 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 				}
 			}
 			
+			rechargeShots(skill.useSoulShot(), skill.useSpiritShot());
+			
 			StatusUpdate su = new StatusUpdate(this);
 			boolean isSendStatus = false;
 			
@@ -6841,24 +6840,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 					EventsInterface.onHit(getObjectId(), _target.getObjectId());
 				}
 			}
-			
-			// On each repeat restore shots before cast
-			if (mut.count > 0)
-			{
-				final L2ItemInstance weaponInst = getActiveWeaponInstance();
-				if (weaponInst != null)
-				{
-					if (mut.skill.useSoulShot())
-					{
-						setChargedShot(ShotType.SOULSHOTS, true);
-					}
-					else if (mut.skill.useSpiritShot())
-					{
-						setChargedShot(ShotType.SPIRITSHOTS, true);
-					}
-				}
-			}
-			
+
 			// Launch the magic skill in order to calculate its effects
 			callSkill(mut.skill, mut.targets);
 		}
@@ -6930,6 +6912,23 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		final L2Skill skill = mut.skill;
 		final L2Object target = mut.targets.length > 0 ? mut.targets[0] : null;
 		
+		// On each repeat restore shots before cast
+		if (mut.count > 0)
+		{
+			final L2ItemInstance weaponInst = getActiveWeaponInstance();
+			if (weaponInst != null)
+			{
+				if (mut.skill.useSoulShot())
+				{
+					setChargedShot(ShotType.SOULSHOTS, true);
+				}
+				else if (mut.skill.useSpiritShot())
+				{
+					setChargedShot(ShotType.SPIRITSHOTS, true);
+				}
+			}
+		}
+					
 		// Attack target after skill use
 		if ((skill.nextActionIsAttack()) && (getTarget() instanceof L2Character) && (getTarget() != this) && (target != null) && (getTarget() == target) && target.isAttackable())
 		{
