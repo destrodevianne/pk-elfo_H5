@@ -30,6 +30,7 @@ public class Multisell implements IBypassHandler
 		
 		try
 		{
+			activeChar.setIsUsingAIOItemMultisell(false);
 			int listId;
 			if (command.toLowerCase().startsWith(COMMANDS[0])) // multisell
 			{

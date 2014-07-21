@@ -1,0 +1,42 @@
+DROP TABLE IF EXISTS `aio_teleports`;
+CREATE TABLE IF NOT EXISTS `aio_teleports` (
+  `id` int(10) DEFAULT NULL,
+  `category` varchar(45) DEFAULT NULL,
+  `tpname` varchar(45) DEFAULT NULL,
+  `x` int(10) DEFAULT NULL,
+  `y` int(10) DEFAULT NULL,
+  `z` int(10) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+INSERT INTO aio_teleports VALUES 
+	(1, 'Towns', 'Giran', 83400, 147943, -3404),
+	(2, 'Towns', 'Aden', 146331, 25762, -2018),
+	(3, 'Towns', 'Oren', 82956,53162,-1495),
+	(4, 'Towns', 'Dion', 15670,142983,-2705),
+	(5, 'Towns', 'Floran', 17430,170103,-3496),
+	(6, 'Towns', 'Hunters', 117110,76883,-2695),
+	(7, 'Towns', 'Goddard', 147978,-55408,-2728),
+	(8, 'Towns', 'Rune', 43799,-47727,-798),
+	(9, 'Towns', 'Schuttgart', 87386,-143246,-1293),
+	(1, 'Starting Vilalge', 'Talking Island', -84318,244579,-3730),
+	(2, 'Starting Village', 'Dark Elf Village', 9745,15606,-4574),
+	(3, 'Starting Village', 'Elven Village', 46934,51467,-2977),
+	(4, 'Starting Village', 'Dwarven Village', 115113,-178212,-901),
+	(5, 'Starting Village', 'Orc Village', -44836,-112524,-235),
+	(6, 'Starting Village', 'Kamael Vilalge', -117251,46771,360),
+	(1, 'Hunting Grounds [10-20]', 'Ruins of Despair', -20057,137618,-3897),
+	(2, 'Hunting Grounds [10-20]', 'Cave of Trials', 9340,-112509,-2536),
+	(1, 'Hunting Grounds [20-30]', 'Execution Grounds', 51055,141959,-2869),
+	(2, 'Hunting Grounds [20-30]', 'Death Pass', 70000,126636,-3804),
+	(1, 'Hunting Grounds [30-40]', 'The Cemetary', 172136,20325,-3326),
+	(2, 'Hunting Grounds [30-40]', 'Alligator Island', 113708,178387,-3232),
+	(1, 'Hunting Grounds [40-50]', 'Forbidden Gateway', 185395,20359,-3270),
+	(2, 'Hunting Grounds [40-50]', 'Dragon Valley', 122824,110836,-3720),
+	(1, 'Hunting Grounds [50-60]', 'Lair of Antharas', 132828,114421,-3725),
+	(2, 'Hunting Grounds [50-60]', 'Giants Cave', 174528,52683,-4369),
+	(1, 'Hunting Grounds [60-70]', 'Wall of Argos', 164564,-48145,-3536),
+	(2, 'Hunting Grounds [60-70]', 'Tower of Insolence', 114649,11115,-5120),
+	(1, 'Hunting Grounds [70-80]', 'Ketra Orc Outpost', 146954,-67390,-3660),
+	(2, 'Hunting Grounds [70-80]', 'Varka Silenos', 125543,-40953,-3724),
+	(1, 'Hunting Grounds [80-85]', 'Forge of Gods', 169178,-116244,-2421),
+	(2, 'Hunting Grounds [80-85]', 'Monastery of Silence', 106414,-87799,-2920);

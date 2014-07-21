@@ -3,8 +3,10 @@ package pk.elfo.gameserver.datatables;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
@@ -28,6 +30,8 @@ public class PremiumTable
 	public static float PREMIUM_BONUS_EXP = 1;
 	public static float PREMIUM_BONUS_SP = 1;
 	
+	public static List<TimeConstant> AVAILABLE_BASE_PERIODS = new ArrayList<>();
+	
 	private Map<L2PcInstance, String> _requesters;
 	
 	// SQL DEFINITIONS
@@ -44,6 +48,18 @@ public class PremiumTable
 			PREMIUM_BONUS_EXP = Math.max((Config.PREMIUM_RATE_XP / Config.RATE_XP), 1);
 			PREMIUM_BONUS_SP = Math.max((Config.PREMIUM_RATE_SP / Config.RATE_SP), 1);
 			_requesters = new HashMap<>();
+			
+			// let's make it static
+		if (Config.PREMIUM_SMART_PRICING)
+			{
+				for (TimeConstant tc : TimeConstant.values())
+				{
+					if (Config.PREMIUM_PRICE.containsKey(("1" + tc.getShortName())))
+					{
+						AVAILABLE_BASE_PERIODS.add(tc);
+					}
+				}
+			}
 		}
 	}
 	
@@ -73,11 +89,11 @@ public class PremiumTable
 						Date testDate = new Date(ExpirableServicesManager.getInstance().getExpirationDate(ServiceType.PREMIUM, player));
 						if (Util.isToday(testDate))
 						{
-							player.sendMessage("Warning! Premium service will expire today");
+							player.sendMessage("Aviso! O servico Premium will expire today");
 						}
 						else if (Util.isTomorrow(testDate))
 						{
-							player.sendMessage("Warning! Premium service will expire tomorrow");
+							player.sendMessage("Aviso! O servico Premium will expire tomorrow");
 						}
 					}
 				}
@@ -206,7 +222,7 @@ public class PremiumTable
 			}
 			
 			// Send text message
-			player.sendMessage("Premium Service is activated");
+			player.sendMessage("O servico Premium esta ativado");
 		}
 		
 		return success;

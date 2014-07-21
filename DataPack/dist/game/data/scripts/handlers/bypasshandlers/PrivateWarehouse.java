@@ -43,6 +43,7 @@ public class PrivateWarehouse implements IBypassHandler
 		
 		try
 		{
+			activeChar.setIsUsingAIOItemWareHouse(false);
 			if (command.toLowerCase().startsWith(COMMANDS[0])) // WithdrawP
 			{
 				if (Config.L2JMOD_ENABLE_WAREHOUSESORTING_PRIVATE)

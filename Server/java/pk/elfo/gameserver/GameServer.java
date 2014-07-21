@@ -519,6 +519,7 @@ public class GameServer
 		_log.info("Servidor carregado em " + ((serverLoadEnd - serverLoadStart) / 1000) + " segundos");
 		
 		AutoAnnounceTaskManager.getInstance();
+		pk.elfo.gameserver.datatables.AIOItemTable.getInstance().loadAioItemData();
 	}
 	
 	public static void main(String[] args) throws Exception
@@ -541,6 +542,7 @@ public class GameServer
 		
 		// Initialize config
 		Config.load();
+		pk.elfo.AIOItem_Config.load();
 				
 		printSection("Database");
 		L2DatabaseFactory.getInstance();

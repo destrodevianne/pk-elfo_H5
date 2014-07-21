@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.network.clientpackets;
 
 import java.util.List;
@@ -26,6 +8,7 @@ import pk.elfo.Config;
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.communitybbs.CommunityBoard;
 import pk.elfo.gameserver.datatables.AdminTable;
+import pk.elfo.gameserver.datatables.AIOItemTable;
 import pk.elfo.gameserver.events.EventsInterface;
 import pk.elfo.gameserver.handler.AdminCommandHandler;
 import pk.elfo.gameserver.handler.BypassHandler;
@@ -52,9 +35,9 @@ import pk.elfo.gameserver.util.Util;
 import javolution.util.FastList;
 
 /**
- * This class ...
- * @version $Revision: 1.12.4.5 $ $Date: 2005/04/11 10:06:11 $
+ * PkElfo
  */
+
 public final class RequestBypassToServer extends L2GameClientPacket
 {
 	private static final String _C__23_REQUESTBYPASSTOSERVER = "[C] 23 RequestBypassToServer";
@@ -333,6 +316,10 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				{
 					handler.useBypass("arenachange " + (arenaId - 1), activeChar, null);
 				}
+			}
+			else if (_command.startsWith("Aioitem"))
+			{
+				AIOItemTable.getInstance().handleBypass(activeChar, _command);
 			}
 			else
 			{

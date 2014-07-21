@@ -14,7 +14,7 @@ public interface IItemHandler
 	 * @param playable the non-NPC character using the item
 	 * @param item L2ItemInstance designating the item to use
 	 * @param forceUse ctrl hold on item use
-	 * @return {@code true} if the item all conditions are met and the item is used, {@code false} otherwise.
+	 * @return 
 	 */
 	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse);
 }

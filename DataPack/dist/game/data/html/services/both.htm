@@ -1,0 +1,30 @@
+﻿<html>
+	<title>Premium Service</title>
+	<body>
+		<table width=270 cellpadding="4">
+			<tr>
+				<td>Prices are:</td>
+			</tr>
+			%price_list%
+		</table>
+		<table width=270 cellpadding="4">
+			<tr>
+				<td>Period:</td>
+				<td><combobox width=120 height=17 var="period" list=%period_list%></td>
+			</tr>
+			<tr>
+				<td>Count:</td>
+				<td><edit var="count" width=120 height=12 type=number></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><button value="Give" action="bypass -h premiumShowChoice $count $period" width=140 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+			</tr>
+		</table>
+		<tr>
+			<center>
+				%list%
+			</center>
+ 		</tr>
+	</body>
+</html>

@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.model.actor.instance;
 
 import java.sql.Connection;
@@ -43,6 +25,7 @@ import javolution.util.FastList;
 import javolution.util.FastMap;
 import javolution.util.FastSet;
 import pk.elfo.Config;
+import pk.elfo.AIOItem_Config;
 import pk.elfo.L2DatabaseFactory;
 import pk.elfo.gameserver.Announcements;
 import pk.elfo.gameserver.GameTimeController;
@@ -64,6 +47,7 @@ import pk.elfo.gameserver.communitybbs.Manager.ForumsBBSManager;
 import pk.elfo.gameserver.communitybbs.Manager.RegionBBSManager;
 import pk.elfo.gameserver.datatables.AdminTable;
 import pk.elfo.gameserver.datatables.AdventBonus;
+import pk.elfo.gameserver.datatables.AIOItemTable;
 import pk.elfo.gameserver.datatables.ArmorSetsData;
 import pk.elfo.gameserver.datatables.CharNameTable;
 import pk.elfo.gameserver.datatables.CharSummonTable;
@@ -338,12 +322,18 @@ public final class L2PcInstance extends L2Playable
 	public static boolean _istraderefusal = false;
 	public static boolean _isexpsprefusal = false;
 	public static boolean _isbuffrefusal = false;
+	
 	// Character Skill SQL String Definitions:
 	private static final String RESTORE_SKILLS_FOR_CHAR = "SELECT skill_id,skill_level FROM character_skills WHERE charId=? AND class_index=?";
 	private static final String ADD_NEW_SKILL = "INSERT INTO character_skills (charId,skill_id,skill_level,class_index) VALUES (?,?,?,?)";
 	private static final String UPDATE_CHARACTER_SKILL_LEVEL = "UPDATE character_skills SET skill_level=? WHERE skill_id=? AND charId=? AND class_index=?";
 	private static final String DELETE_SKILL_FROM_CHAR = "DELETE FROM character_skills WHERE skill_id=? AND charId=? AND class_index=?";
 	private static final String DELETE_CHAR_SKILLS = "DELETE FROM character_skills WHERE charId=? AND class_index=?";
+	
+	// Character PremiumService String Definitions:
+	private static final String INSERT_PREMIUMSERVICE = "INSERT INTO character_premium (account_name,premium_service,enddate) values(?,?,?) ON DUPLICATE KEY UPDATE premium_service = ?, enddate = ?";
+	private static final String RESTORE_PREMIUMSERVICE = "SELECT premium_service,enddate FROM character_premium WHERE account_name=?";
+	private static final String UPDATE_PREMIUMSERVICE = "INSERT INTO character_premium (account_name,premium_service,enddate) values(?,?,?) ON DUPLICATE KEY UPDATE premium_service = ?, enddate = ?";
 	
 	// Character Skill Save SQL String Definitions:
 	private static final String ADD_SKILL_SAVE = "INSERT INTO character_skills_save (charId,skill_id,skill_level,effect_count,effect_cur_time,reuse_delay,systime,restore_type,class_index,buff_index) VALUES (?,?,?,?,?,?,?,?,?,?)";
@@ -849,6 +839,13 @@ public final class L2PcInstance extends L2Playable
 	
 	/** Event parameters */
 	private PlayerEventStatus eventStatus = null;
+	
+	/** Aio Item */
+	private boolean _isAioWh = false;
+	private boolean _isAioMultisell = false;
+	private final FastMap<String, FastList<L2Skill>> _schemeSets = new FastMap<>();
+	private boolean _needSave = false;
+	private String _lastCategory = "";
 	
 	private byte _handysBlockCheckerEventArena = -1;
 	
@@ -1704,6 +1701,88 @@ public final class L2PcInstance extends L2Playable
 			{
 				_log.log(Level.SEVERE, "SQL exception while inserting recipe: " + recipeId + " from character " + getObjectId(), e);
 			}
+		}
+	}
+	
+	private void createPSdb()
+	{
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		{
+			PreparedStatement statement = con.prepareStatement(INSERT_PREMIUMSERVICE);
+			statement.setString(1, _accountName);
+			statement.setInt(2, 0);
+			statement.setLong(3, 0);
+			statement.setInt(4, 0);
+			statement.setLong(5, 0);
+			statement.executeUpdate();
+			statement.close();
+		}
+		catch (Exception e)
+		{
+			_log.warning("Could not insert char data: " + e);
+			e.printStackTrace();
+			return;
+		}
+	}
+	
+	private static void PStimeOver(String account)
+	{
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		{
+			PreparedStatement statement = con.prepareStatement(UPDATE_PREMIUMSERVICE);
+			statement.setString(1, account);
+			statement.setInt(2, 0);
+			statement.setLong(3, 0);
+			statement.setInt(4, 0);
+			statement.setLong(5, 0);
+			statement.execute();
+			statement.close();
+		}
+		catch (SQLException e)
+		{
+			_log.warning("PremiumService:  Could not increase data");
+		}
+	}
+	
+	private static void restorePremServiceData(L2PcInstance player, String account)
+	{
+		boolean sucess = false;
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		{
+			PreparedStatement statement = con.prepareStatement(RESTORE_PREMIUMSERVICE);
+			statement.setString(1, account);
+			ResultSet rset = statement.executeQuery();
+			while (rset.next())
+			{
+				sucess = true;
+				if (Config.PREMIUM_SERVICE_ENABLED)
+				{
+					if (rset.getLong("enddate") <= System.currentTimeMillis())
+					{
+						PStimeOver(account);
+						player.setPremiumService(0);
+					}
+					else
+					{
+						player.setPremiumService(rset.getInt("premium_service"));
+					}
+				}
+				else
+				{
+					player.setPremiumService(0);
+				}
+			}
+			statement.close();
+		}
+		catch (Exception e)
+		{
+			_log.warning("PremiumService: Could not restore PremiumService data for:" + account + "." + e);
+			e.printStackTrace();
+		}
+		if (sucess == false)
+		{
+			player.createPSdb();
+			player.setPremiumService(0);
 		}
 	}
 	
@@ -8107,6 +8186,7 @@ public final class L2PcInstance extends L2Playable
 					PcAppearance app = new PcAppearance(rset.getByte("face"), rset.getByte("hairColor"), rset.getByte("hairStyle"), female);
 					
 					player = new L2PcInstance(objectId, template, rset.getString("account_name"), app);
+					restorePremServiceData(player,rset.getString("account_name"));
 					player.setName(rset.getString("char_name"));
 					player._lastAccess = rset.getLong("lastAccess");
 					
@@ -17091,6 +17171,173 @@ public final class L2PcInstance extends L2Playable
 		sendMessage((new StringBuilder()).append("Administrador te deu ").append(Config.REPUTATION_QUANTITY).append(" Pontos de Reputacao.").toString());
 		sendMessage("GM te deu todas as skills de clan");
 	}
+	
+	public boolean isUsingAIOItemWarehouse()
+	{
+		return _isAioWh;
+	}
+	
+	public void setIsUsingAIOItemWareHouse(boolean b)
+	{
+		_isAioWh = b;
+	}
+	
+	public boolean isUsingAIOItemMultisell()
+	{
+		return _isAioMultisell;
+	}
+	
+	public void setIsUsingAIOItemMultisell(boolean b)
+	{
+		_isAioMultisell = b;
+	}
+	
+	public Set<String> getProfileNames()
+	{
+		return _schemeSets.keySet();
+	}
+	
+	public FastList<L2Skill> getProfileBuffs(String set)
+	{
+		return _schemeSets.get(set);
+	}
+	
+	public void needSaveSchemes()
+	{
+		_needSave = true;
+	}
+	
+	public void addNewProfile(String profile)
+	{
+		FastList<L2Skill> temp = new FastList<>(AIOItem_Config.AIOITEM_SCHEME_MAX_PROFILES);
+		_schemeSets.put(profile, temp);
+	}
+	
+	public void addNewBuff(String profile, L2Skill buff)
+	{
+		_schemeSets.get(profile).add(buff);
+	}
+	
+	public void deleteProfile(String profile)
+	{
+		_schemeSets.remove(profile);
+	}
+	
+	public void deleteBuff(String profile, L2Skill buff)
+	{
+		_schemeSets.get(profile).remove(buff);
+	}
+	
+	public void loadSchemesFromDatabase()
+	{
+		if (!AIOItem_Config.AIOITEM_ENABLEME || !AIOItem_Config.AIOITEM_ENABLESCHEMEBUFF)
+		{
+			return;
+		}
+		
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		{
+			PreparedStatement profile = con.prepareStatement("SELECT profile FROM aio_scheme_profiles WHERE charId = ?");
+			profile.setInt(1, getObjectId());
+			
+			FastList<String> tempProfiles = new FastList<>(AIOItem_Config.AIOITEM_SCHEME_MAX_PROFILES);
+			ResultSet rset = profile.executeQuery();
+			while (rset.next())
+			{
+				tempProfiles.add(rset.getString("profile"));
+			}
+			rset.close();
+			profile.close();
+			
+			PreparedStatement buffs = con.prepareStatement("SELECT buff_id FROM aio_scheme_profiles_buffs WHERE charId = ? AND profile = ?");
+			for (String profiles : tempProfiles)
+			{
+				FastList<L2Skill> tempSkill = new FastList<>(AIOItem_Config.AIOITEM_SCHEME_MAX_PROFILE_BUFFS);
+				buffs.setInt(1, getObjectId());
+				buffs.setString(2, profiles);
+				ResultSet tempSet = buffs.executeQuery();
+				while (tempSet.next())
+				{
+					L2Skill buff = AIOItemTable.getInstance().getBuff(tempSet.getInt("buff_id"));
+					tempSkill.add(buff);
+				}
+				tempSet.close();
+				_schemeSets.put(profiles, tempSkill);
+			}
+			buffs.close();
+			con.close();
+		}
+		catch (Exception e)
+		{
+			_log.severe("Couldnt load AIOItem Schemes for: " + getName() + " " + getObjectId());
+			e.printStackTrace();
+		}
+	}
+	
+	@SuppressWarnings("unused")
+	private void saveSchemesToDatabase()
+	{
+		if (!AIOItem_Config.AIOITEM_ENABLEME || !AIOItem_Config.AIOITEM_ENABLESCHEMEBUFF)
+		{
+			return;
+		}
+		
+		if (_schemeSets.isEmpty() || !_needSave)
+		{
+			return;
+		}
+		
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		{
+			PreparedStatement statement = con.prepareStatement("DELETE FROM aio_scheme_profiles WHERE charId =?");
+			statement.setInt(1, getObjectId());
+			statement.execute();
+			statement.close();
+			PreparedStatement statement2 = con.prepareStatement("DELETE FROM aio_scheme_profiles_buffs WHERE charId =?");
+			statement2.setInt(1, getObjectId());
+			statement2.close();
+			
+			PreparedStatement insert1 = con.prepareStatement("INSERT INTO aio_scheme_profiles VALUES(?,?)");
+			for (String prof : getProfileNames())
+			{
+				insert1.setInt(1, getObjectId());
+				insert1.setString(2, prof);
+				insert1.execute();
+			}
+			insert1.close();
+			
+			PreparedStatement insert2 = con.prepareStatement("INSERT INTO aio_scheme_profiles_buffs VALUES(?,?,?)");
+			for (String prof : _schemeSets.keySet())
+			{
+				for (L2Skill sk : _schemeSets.get(prof))
+				{
+					insert2.setInt(1, getObjectId());
+					insert2.setString(2, prof);
+					insert2.setInt(3, sk.getId());
+					insert2.execute();
+				}
+			}
+			insert2.close();
+			con.close();
+		}
+		catch (Exception e)
+		{
+			_log.severe("Couldnt save AIO Item scheme profile buffs for char: " + getName() + " " + getObjectId());
+			e.printStackTrace();
+		}
+	}
+	
+	public void setLastAIOBufferCategory(String cat)
+	{
+		_lastCategory = cat;
+	}
+	
+	public String getLastCategory()
+	{
+		return _lastCategory;
+	}
+	
+
 	
 	public void setLastPetitionGmName(String gmName)
 	{

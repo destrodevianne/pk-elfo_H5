@@ -57,7 +57,7 @@ public class Time implements IUserCommandHandler
 			sm.addString(m);
 		}
 		activeChar.sendPacket(sm);
-		if (Config.L2JMOD_DISPLAY_SERVER_TIME)
+		if (Config.CUSTOMMOD_DISPLAY_SERVER_TIME)
 		{
 			activeChar.sendMessage("Hora do servidor e " + fmt.format(new Date(System.currentTimeMillis())));
 		}

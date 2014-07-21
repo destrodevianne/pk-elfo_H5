@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.network.clientpackets;
 
 import java.text.SimpleDateFormat;
@@ -73,12 +55,14 @@ import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.gameserver.model.quest.Quest;
 import pk.elfo.gameserver.model.quest.QuestState;
 import pk.elfo.gameserver.model.zone.ZoneId;
+import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.communityserver.CommunityServerThread;
 import pk.elfo.gameserver.network.communityserver.writepackets.WorldInfo;
 import pk.elfo.gameserver.network.serverpackets.Die;
 import pk.elfo.gameserver.network.serverpackets.EtcStatusUpdate;
 import pk.elfo.gameserver.network.serverpackets.ExBasicActionList;
+import pk.elfo.gameserver.network.serverpackets.ExBrPremiumState;
 import pk.elfo.gameserver.network.serverpackets.ExGetBookMarkInfoPacket;
 import pk.elfo.gameserver.network.serverpackets.ExNevitAdventEffect;
 import pk.elfo.gameserver.network.serverpackets.ExNevitAdventPointInfoPacket;
@@ -100,6 +84,7 @@ import pk.elfo.gameserver.network.serverpackets.PledgeShowMemberListAll;
 import pk.elfo.gameserver.network.serverpackets.PledgeShowMemberListUpdate;
 import pk.elfo.gameserver.network.serverpackets.PledgeSkillList;
 import pk.elfo.gameserver.network.serverpackets.PledgeStatusChanged;
+import pk.elfo.gameserver.network.serverpackets.PremiumState;
 import pk.elfo.gameserver.network.serverpackets.QuestList;
 import pk.elfo.gameserver.network.serverpackets.ShortCutInit;
 import pk.elfo.gameserver.network.serverpackets.SkillCoolTime;
@@ -617,6 +602,32 @@ public class EnterWorld extends L2GameClientPacket
 			activeChar.sendMessage("==================================");
 		}
 		
+		// teste de buffs para novos chars
+		if(Config.NEW_PLAYER_BUFFS)
+		{
+			if(activeChar.isMageClass())
+			{
+				for(Integer skillid : Config.MAGE_BUFF_LIST.keySet())
+				{
+					int skilllvl = Config.MAGE_BUFF_LIST.get(skillid);
+					L2Skill skill = SkillTable.getInstance().getInfo(skillid, skilllvl);
+					if(skill != null)
+						skill.getEffects(activeChar, activeChar);
+				}
+			}
+			else
+			{
+				for(Integer skillid : Config.FIGHTER_BUFF_LIST.keySet())
+				{
+					int skilllvl = Config.FIGHTER_BUFF_LIST.get(skillid);
+					L2Skill skill = SkillTable.getInstance().getInfo(skillid, skilllvl);
+					if(skill != null)
+						skill.getEffects(activeChar, activeChar);
+				}
+			}
+		}
+		// fim teste de buffs para novos chars
+		
 		if (Config.ENABLE_AIOX_MESSAGE)
 		{
 			if (activeChar.isAio())
@@ -752,6 +763,17 @@ public class EnterWorld extends L2GameClientPacket
 		{
 			// no broadcast needed since the player will already spawn dead to others
 			sendPacket(new Die(activeChar));
+		}
+		
+		if (activeChar.getPremiumService() == 1)
+		{
+			activeChar.sendPacket(new ExBrPremiumState(activeChar.getObjectId(), 1));
+			activeChar.sendMessage("Conta Premium: now active");
+		}
+		else
+		{
+			activeChar.sendPacket(new ExBrPremiumState(activeChar.getObjectId(), 0));
+			activeChar.sendMessage("Conta Premium: now inactive");
 		}
 		
 		activeChar.onPlayerEnter();
@@ -1087,6 +1109,15 @@ public class EnterWorld extends L2GameClientPacket
 	public static void removeSpawnListener(PlayerSpawnListener listener)
 	{
 		listeners.remove(listener);
+	}
+	
+	protected void PremiumServiceIcon(L2PcInstance activeChar)
+	{
+		if (activeChar.getPremiumService() == 1)
+		{
+			activeChar.sendPacket(new PremiumState(activeChar.getObjectId(), 1));
+			activeChar.sendMessage("Conta Premium: now active");
+		}
 	}
 	
 	private void notifyCastleOwner(L2PcInstance activeChar)

@@ -14,7 +14,7 @@ public class ManaPotion extends ItemSkills
 	@Override
 	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
 	{
-		if (!Config.L2JMOD_ENABLE_MANA_POTIONS_SUPPORT)
+		if (!Config.CUSTOMMOD_ENABLE_MANA_POTIONS_SUPPORT)
 		{
 			playable.sendPacket(SystemMessageId.NOTHING_HAPPENED);
 			return false;

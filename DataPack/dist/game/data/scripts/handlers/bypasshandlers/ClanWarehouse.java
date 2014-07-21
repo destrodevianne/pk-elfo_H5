@@ -58,6 +58,7 @@ public class ClanWarehouse implements IBypassHandler
 		
 		try
 		{
+			activeChar.setIsUsingAIOItemWareHouse(false);
 			if (command.toLowerCase().startsWith(COMMANDS[0])) // WithdrawC
 			{
 				if (Config.L2JMOD_ENABLE_WAREHOUSESORTING_CLAN)

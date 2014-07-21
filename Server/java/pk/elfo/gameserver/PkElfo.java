@@ -32,7 +32,7 @@ public class PkElfo
 		_log.info("                                                                               ");
 		_log.info("                              ALL RIGHTS RESERVED                              ");
 		_log.info("                                                                               ");
-        _log.info("                       Copyright 2013-2013 Team - PkElfo                       ");
+        _log.info("                       Copyright 2013-2014 Team - PkElfo                       ");
 		_log.info("_______________________________________________________________________________");
 	}
 }

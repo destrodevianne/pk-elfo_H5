@@ -5,6 +5,8 @@ import java.util.Date;
 import pk.elfo.Config;
 import pk.elfo.gameserver.datatables.ItemTable;
 import pk.elfo.gameserver.datatables.PremiumTable;
+import pk.elfo.gameserver.handler.BypassHandler;
+import pk.elfo.gameserver.handler.IBypassHandler;
 import pk.elfo.gameserver.handler.IVoicedCommandHandler;
 import pk.elfo.gameserver.instancemanager.ExpirableServicesManager;
 import pk.elfo.gameserver.instancemanager.ExpirableServicesManager.ServiceType;
@@ -65,36 +67,9 @@ public class Premium implements IVoicedCommandHandler
 			}
 			else
 			{
-				String[] cmdSplit = command.split("_");
-				if (cmdSplit.length != 2)
-				{
-					activeChar.sendMessage("Parametro invalido");
-				}
-				else
-				{
-					ItemHolder payItem = PremiumTable.getPrice(cmdSplit[1]);
-					if (payItem == null)
-					{
-						activeChar.sendMessage("Parametro invalido");
-					}
-					else
-					{
-						if (payItem.getCount() > 0)
-						{
-							ConfirmDlg confirmation = new ConfirmDlg(SystemMessageId.S1.getId()).addString("Vai custar " + Long.toString(payItem.getCount()) +  " pcs. " + ItemTable.getInstance().getTemplate(payItem.getId()).getName() + ". Are you agreed?");
-							activeChar.sendPacket(confirmation);
-							activeChar.setDialogId(DialogId.PREMIUM);
-							PremiumTable.getInstance().addRequest(activeChar, cmdSplit[1]);
-						}
-						else
-						{
-							PremiumTable.givePremium(activeChar, cmdSplit[1], activeChar);
-						}
-					}				
-				}
+				IBypassHandler handler = BypassHandler.getInstance().getHandler("premiumShowList");
+				handler.useBypass("premiumShowList", activeChar, null);
 			}
-
-
 		} 	
 		return true;
 	}

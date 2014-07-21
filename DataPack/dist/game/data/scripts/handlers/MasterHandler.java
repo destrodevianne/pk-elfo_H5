@@ -4,10 +4,12 @@ import java.lang.reflect.Method;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import pk.elfo.AIOItem_Config;
 import pk.elfo.Config;
 import pk.elfo.gameserver.handler.ActionHandler;
 import pk.elfo.gameserver.handler.ActionShiftHandler;
 import pk.elfo.gameserver.handler.AdminCommandHandler;
+import pk.elfo.gameserver.handler.AIOItemHandler;
 import pk.elfo.gameserver.handler.BypassHandler;
 import pk.elfo.gameserver.handler.ChatHandler;
 import pk.elfo.gameserver.handler.ItemHandler;
@@ -16,6 +18,19 @@ import pk.elfo.gameserver.handler.TargetHandler;
 import pk.elfo.gameserver.handler.TelnetHandler;
 import pk.elfo.gameserver.handler.UserCommandHandler;
 import pk.elfo.gameserver.handler.VoicedCommandHandler;
+import pk.elfo.gameserver.handler.custom.Cancelar;
+import pk.elfo.gameserver.handler.custom.ChangePassword;
+import pk.elfo.gameserver.handler.custom.ChatAdmin;
+import pk.elfo.gameserver.handler.custom.ClanMensagem;
+import pk.elfo.gameserver.handler.custom.Lider;
+import pk.elfo.gameserver.handler.custom.Logout;
+import pk.elfo.gameserver.handler.custom.Online;
+import pk.elfo.gameserver.handler.custom.RaidBoosStatus;
+import pk.elfo.gameserver.handler.custom.BuyRec;
+import pk.elfo.gameserver.handler.custom.RefuseBuff;
+import pk.elfo.gameserver.handler.custom.Repair;
+import pk.elfo.gameserver.handler.custom.Res;
+import pk.elfo.gameserver.handler.custom.Teleport;
 import handlers.actionhandlers.L2ArtefactInstanceAction;
 import handlers.actionhandlers.L2DecoyAction;
 import handlers.actionhandlers.L2DoorInstanceAction;
@@ -125,6 +140,16 @@ import handlers.admincommandhandlers.AdminUnblockIp;
 import handlers.admincommandhandlers.AdminVip;
 import handlers.admincommandhandlers.AdminVitality;
 import handlers.admincommandhandlers.AdminZone;
+import handlers.aioitemhandler.AIOBufferHandler;
+import handlers.aioitemhandler.AIOChatHandler;
+import handlers.aioitemhandler.AIOSchemeHandler;
+import handlers.aioitemhandler.AIOServiceHandler;
+import handlers.aioitemhandler.AIOShopHandler;
+import handlers.aioitemhandler.AIOSiegeHandler;
+import handlers.aioitemhandler.AIOSubclassHandler;
+import handlers.aioitemhandler.AIOTeleportHandler;
+import handlers.aioitemhandler.AIOTopList;
+import handlers.aioitemhandler.AIOWarehouseHandler;
 import handlers.bypasshandlers.ArenaBuff;
 import handlers.bypasshandlers.Augment;
 import handlers.bypasshandlers.BloodAlliance;
@@ -133,6 +158,7 @@ import handlers.bypasshandlers.BuyShadowItem;
 import handlers.bypasshandlers.ChatLink;
 import handlers.bypasshandlers.ClanWarehouse;
 import handlers.bypasshandlers.CustomLinks;
+import handlers.bypasshandlers.DropInfo;
 import handlers.bypasshandlers.EventEngine;
 import handlers.bypasshandlers.Festival;
 import handlers.bypasshandlers.FortSiege;
@@ -177,6 +203,7 @@ import handlers.chathandlers.ChatPetition;
 import handlers.chathandlers.ChatShout;
 import handlers.chathandlers.ChatTell;
 import handlers.chathandlers.ChatTrade;
+import handlers.itemhandlers.AIOItem;
 import handlers.itemhandlers.BeastSoulShot;
 import handlers.itemhandlers.BeastSpice;
 import handlers.itemhandlers.BeastSpiritShot;
@@ -316,26 +343,15 @@ import handlers.usercommandhandlers.Time;
 import handlers.usercommandhandlers.Unstuck;
 import handlers.voicedcommandhandlers.BadBuffShield;
 import handlers.voicedcommandhandlers.Banking;
-import handlers.voicedcommandhandlers.Cancelar;
 //import handlers.voicedcommandhandlers.CastleVCmd; - Precisa de revisao e testes
-import handlers.voicedcommandhandlers.ChangePassword;
-import handlers.voicedcommandhandlers.ChatAdmin;
-import handlers.voicedcommandhandlers.ClanMensagem;
 import handlers.voicedcommandhandlers.Debug;
 import handlers.voicedcommandhandlers.Hellbound;
 import handlers.voicedcommandhandlers.Lang;
-import handlers.voicedcommandhandlers.Lider;
-import handlers.voicedcommandhandlers.Logout;
-import handlers.voicedcommandhandlers.Online;
 import handlers.voicedcommandhandlers.OpenAtod;
 import handlers.voicedcommandhandlers.Premium;
-import handlers.voicedcommandhandlers.RaidBoosStatus;
-import handlers.voicedcommandhandlers.RefuseBuff;
-import handlers.voicedcommandhandlers.Repair;
 import handlers.voicedcommandhandlers.Siege;
 import handlers.voicedcommandhandlers.StatsVCmd;
 import handlers.voicedcommandhandlers.TWGm;
-import handlers.voicedcommandhandlers.Teleport;
 import handlers.voicedcommandhandlers.TvTRoundVoicedInfo;
 import handlers.voicedcommandhandlers.TvTVoiced;
 import handlers.voicedcommandhandlers.User;
@@ -356,6 +372,7 @@ public class MasterHandler
 		ActionHandler.class,
 		ActionShiftHandler.class,
 		AdminCommandHandler.class,
+		AIOItemHandler.class,
 		BypassHandler.class,
 		ChatHandler.class,
 		ItemHandler.class,
@@ -487,6 +504,18 @@ public class MasterHandler
 			AdminHappyHour.class,
 		},
 		{
+			(AIOItem_Config.AIOITEM_ENABLEME ? AIOChatHandler.class : null),
+			(AIOItem_Config.AIOITEM_ENABLEBUFF ? AIOBufferHandler.class : null),
+			(AIOItem_Config.AIOITEM_ENABLEGK ? AIOTeleportHandler.class : null),
+			(AIOItem_Config.AIOITEM_ENABLESCHEMEBUFF ? AIOSchemeHandler.class : null),
+			(AIOItem_Config.AIOITEM_ENABLESERVICES ? AIOServiceHandler.class : null),
+			(AIOItem_Config.AIOITEM_ENABLESHOP ? AIOShopHandler.class : null),
+			(AIOItem_Config.AIOITEM_ENABLESIEGEREG ? AIOSiegeHandler.class : null),
+			(AIOItem_Config.AIOITEM_ENABLESUBCLASS ? AIOSubclassHandler.class : null),
+			(AIOItem_Config.AIOITEM_ENABLETOPLIST ? AIOTopList.class : null),
+			(AIOItem_Config.AIOITEM_ENABLEWH ? AIOWarehouseHandler.class : null),
+		},
+		{
 			// Bypass Handlers
 			Augment.class,
 			ArenaBuff.class,
@@ -526,6 +555,7 @@ public class MasterHandler
 			VoiceCommand.class,
 			Wear.class,
 			CustomLinks.class,
+			DropInfo.class,
 			Leaderboard.class,
 		},
 		{
@@ -546,6 +576,7 @@ public class MasterHandler
 		},
 		{
 			// Item Handlers
+			(AIOItem_Config.AIOITEM_ENABLEME ? AIOItem.class : null),
 			ScrollOfResurrection.class,
 			SoulShots.class,
 			SpiritShot.class,
@@ -659,6 +690,7 @@ public class MasterHandler
 			OpenAtod.class,
 			TWGm.class,
 			Repair.class,
+			Res.class,
 			BadBuffShield.class,
 			Siege.class,
 			Teleport.class,
@@ -667,6 +699,7 @@ public class MasterHandler
 			UserActions.class,
 			Lider.class,
 			Logout.class,
+			BuyRec.class,
 			ClanMensagem.class,
 			(Config.CANCELAR_ONLINE ? Cancelar.class : null),
 			(Config.CMD_ONLINE ? Online.class : null),

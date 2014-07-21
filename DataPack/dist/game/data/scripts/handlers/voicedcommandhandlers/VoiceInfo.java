@@ -15,7 +15,7 @@ public class VoiceInfo implements IVoicedCommandHandler
 {
 	private static String[]	VOICED_COMMANDS	=
 		{ 
-		"info"
+		"infos"
 		};
 
 

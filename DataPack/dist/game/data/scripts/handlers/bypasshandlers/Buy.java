@@ -29,6 +29,7 @@ public class Buy implements IBypassHandler
 		
 		try
 		{
+			activeChar.setIsUsingAIOItemMultisell(false);
 			StringTokenizer st = new StringTokenizer(command, " ");
 			st.nextToken();
 			

@@ -223,6 +223,9 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 	protected final String COND_EXCEPTIONS = "COND_EX_" + getObjectId();
 	
 	private L2PcInstance _activeChar;
+	
+	private int _PremiumService;
+	
 	/**
 	 * @return True if debugging is enabled for this L2Character
 	 */
@@ -6898,6 +6901,16 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 				_skillCast = ThreadPoolManager.getInstance().scheduleEffect(mut, 0);
 			}
 		}
+	}
+
+    public void setPremiumService(int PS)
+	{
+    	_PremiumService=PS;
+	}     
+		  
+	public int getPremiumService()
+	{
+		return _PremiumService;
 	}
 	
 	// Runs after skillTime
