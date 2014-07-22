@@ -53,6 +53,7 @@ Adicionado Level maximo em AntQueen configuravel em Configs
 Soulshots/Spiritshots = Retail Like
 Gollen Buffs Fixed
 New Condition - "summonRace"
+Don't allow flying transformations outside Gracia Area! (ao teleportar de gracia tranformado em passaro nao buga mais)
 
 ###############################################
 #################### FIX BETA TEST ############
