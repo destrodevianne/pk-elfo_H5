@@ -57,6 +57,9 @@ Don't allow flying transformations outside Gracia Area! (ao teleportar de gracia
 Added VarkaKetra AI
 Updated Varka Silenos Support
 Updated Ketra Orc Support
+Fixado o tempo para invocar um summon, caso não tenha buffs!
+BUG FIX: Quando um item com tempo para expirar era colocado na ClanWarehouse, o mesmo não sumia!
+Fixado: Mostrar nome das Cursed Weapons 
 
 ###############################################
 #################### FIX BETA TEST ############
@@ -301,6 +304,7 @@ Mod Adicionado Mod de Restart
 ***Mod AIOItem
 ***Mod Buffs para novos jogadores Magos no primeiro Loguin
 ***Mod Buffs para novos jogadores Fighters no primeiro loguin
+***Mod Advertência na tentativa de encantar itens que estão no limite máximo de enchant..!
 
 ###############################################
 ################## PROTECOES ##################

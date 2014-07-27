@@ -1568,6 +1568,7 @@ public final class Config
 	public static int ENCHANT_SAFE_MAX;
 	public static int ENCHANT_SAFE_MAX_FULL;
 	public static int[] ENCHANT_BLACKLIST;
+	public static boolean DISABLE_OVER_ENCHANTING;
 	public static int AUGMENTATION_NG_SKILL_CHANCE;
 	public static int AUGMENTATION_NG_GLOW_CHANCE;
 	public static int AUGMENTATION_MID_SKILL_CHANCE;
@@ -3815,6 +3816,7 @@ public final class Config
 			}
 			Arrays.sort(ENCHANT_BLACKLIST);
 			
+			DISABLE_OVER_ENCHANTING = Boolean.parseBoolean(Character.getProperty("DisableOverEnchanting", "True"));
 			AUGMENTATION_NG_SKILL_CHANCE = Integer.parseInt(Character.getProperty("AugmentationNGSkillChance", "15"));
 			AUGMENTATION_NG_GLOW_CHANCE = Integer.parseInt(Character.getProperty("AugmentationNGGlowChance", "0"));
 			AUGMENTATION_MID_SKILL_CHANCE = Integer.parseInt(Character.getProperty("AugmentationMidSkillChance", "30"));

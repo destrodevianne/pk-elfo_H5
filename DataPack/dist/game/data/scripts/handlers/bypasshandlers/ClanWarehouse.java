@@ -10,6 +10,7 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2ClanHallManagerInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.actor.instance.L2WarehouseInstance;
+import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.ActionFailed;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -132,6 +133,14 @@ public class ClanWarehouse implements IBypassHandler
 		{
 			player.sendPacket(SystemMessageId.NO_ITEM_DEPOSITED_IN_WH);
 			return;
+		}
+		
+		for (L2ItemInstance i : player.getActiveWarehouse().getItems())
+		{
+			if (i.isTimeLimitedItem() && (i.getRemainingTime() <= 0))
+			{
+				player.getActiveWarehouse().destroyItem("L2ItemInstance", i, player, null);
+			}
 		}
 		
 		if (itemtype != null)
