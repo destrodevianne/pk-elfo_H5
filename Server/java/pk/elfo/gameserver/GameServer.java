@@ -116,6 +116,7 @@ import pk.elfo.gameserver.instancemanager.leaderboards.ArenaLeaderboard;
 import pk.elfo.gameserver.instancemanager.leaderboards.CraftLeaderboard;
 import pk.elfo.gameserver.instancemanager.leaderboards.FishermanLeaderboard;
 import pk.elfo.gameserver.instancemanager.leaderboards.TvTLeaderboard;
+import pk.elfo.gameserver.masteriopack.rankpvpsystem.RPSConfig;
 import pk.elfo.gameserver.model.AutoSpawnHandler;
 import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.PartyMatchRoomList;
@@ -330,6 +331,7 @@ public class GameServer
 		PetitionManager.getInstance();
 		AugmentationData.getInstance();
 		CursedWeaponsManager.getInstance();
+		RPSConfig.load();
 		
 		printSection("Scripts");
 		QuestManager.getInstance();

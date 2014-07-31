@@ -43,6 +43,10 @@ public class RegionBBSManager extends BaseBBSManager
 		}
 	};
 	
+	private RegionBBSManager()
+	{
+	}
+	
 	@Override
 	public void parsecmd(String command, L2PcInstance activeChar)
 	{
@@ -568,6 +572,7 @@ public class RegionBBSManager extends BaseBBSManager
 		return null;
 	}
 	
+	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
 		protected static final RegionBBSManager _instance = new RegionBBSManager();

@@ -3,6 +3,9 @@ package pk.elfo.gameserver.handler;
 import java.util.HashMap;
 import java.util.Map;
 
+import pk.elfo.gameserver.masteriopack.rankpvpsystem.RPSConfig;
+import pk.elfo.gameserver.masteriopack.rankpvpsystem.VoicedCommandHandlerPvpInfo;
+
 public class VoicedCommandHandler implements IHandler<IVoicedCommandHandler, String>
 {
 	private final Map<String, IVoicedCommandHandler> _datatable;
@@ -10,6 +13,10 @@ public class VoicedCommandHandler implements IHandler<IVoicedCommandHandler, Str
 	protected VoicedCommandHandler()
 	{
 		_datatable = new HashMap<>();
+		if (RPSConfig.RANK_PVP_SYSTEM_ENABLED && RPSConfig.PVP_INFO_COMMAND_ENABLED && RPSConfig.RANK_PVP_SYSTEM_ENABLED && !RPSConfig.PVP_INFO_USER_COMMAND_ENABLED)
+		{
+			registerHandler(new VoicedCommandHandlerPvpInfo());
+		}
 	}
 	
 	@Override

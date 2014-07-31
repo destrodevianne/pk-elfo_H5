@@ -3,6 +3,9 @@ package pk.elfo.gameserver.handler;
 import java.util.HashMap;
 import java.util.Map;
 
+import pk.elfo.gameserver.masteriopack.rankpvpsystem.RPSConfig;
+import pk.elfo.gameserver.masteriopack.rankpvpsystem.UserCommandHandlerPvpInfo;
+
 public class UserCommandHandler implements IHandler<IUserCommandHandler, Integer>
 {
 	private final Map<Integer, IUserCommandHandler> _datatable;
@@ -10,6 +13,10 @@ public class UserCommandHandler implements IHandler<IUserCommandHandler, Integer
 	protected UserCommandHandler()
 	{
 		_datatable = new HashMap<>();
+		if (RPSConfig.RANK_PVP_SYSTEM_ENABLED && RPSConfig.PVP_INFO_USER_COMMAND_ENABLED && RPSConfig.PVP_INFO_COMMAND_ENABLED)
+		{
+			registerHandler(new UserCommandHandlerPvpInfo());
+		}
 	}
 	
 	@Override

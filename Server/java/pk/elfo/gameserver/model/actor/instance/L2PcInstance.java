@@ -94,6 +94,8 @@ import pk.elfo.gameserver.instancemanager.TerritoryWarManager;
 import pk.elfo.gameserver.instancemanager.ZoneManager;
 import pk.elfo.gameserver.instancemanager.leaderboards.ArenaLeaderboard;
 import pk.elfo.gameserver.instancemanager.leaderboards.TvTLeaderboard;
+import pk.elfo.gameserver.masteriopack.rankpvpsystem.RPSConfig;
+import pk.elfo.gameserver.masteriopack.rankpvpsystem.RPSCookie;
 import pk.elfo.gameserver.model.BlockList;
 import pk.elfo.gameserver.model.L2AccessLevel;
 import pk.elfo.gameserver.model.L2Account;
@@ -938,6 +940,13 @@ public final class L2PcInstance extends L2Playable
 	private long _pvpFlagLasts;
 	
 	private long _notMoveUntil = 0;
+	
+	private final RPSCookie _RPSCookie = new RPSCookie();
+	
+	public RPSCookie getRPSCookie()
+	{
+		return _RPSCookie;
+	}
 	
 	public void setPvpFlagLasts(long time)
 	{
@@ -6440,6 +6449,8 @@ public final class L2PcInstance extends L2Playable
 	
 	public void onKillUpdatePvPKarma(L2Character target)
 	{
+		_RPSCookie.runPvpTask(this, target);
+		
 		if (target == null)
 		{
 			return;

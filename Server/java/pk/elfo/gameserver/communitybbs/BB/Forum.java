@@ -234,7 +234,7 @@ public class Forum
 	
 	public void vload()
 	{
-		if (!_loaded)
+		if (_loaded == false)
 		{
 			load();
 			getChildren();

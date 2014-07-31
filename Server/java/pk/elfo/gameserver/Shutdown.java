@@ -25,6 +25,8 @@ import pk.elfo.gameserver.instancemanager.leaderboards.ArenaLeaderboard;
 import pk.elfo.gameserver.instancemanager.leaderboards.CraftLeaderboard;
 import pk.elfo.gameserver.instancemanager.leaderboards.FishermanLeaderboard;
 import pk.elfo.gameserver.instancemanager.leaderboards.TvTLeaderboard;
+import pk.elfo.gameserver.masteriopack.rankpvpsystem.PvpTable;
+import pk.elfo.gameserver.masteriopack.rankpvpsystem.RPSConfig;
 import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.entity.Hero;
@@ -582,6 +584,24 @@ public class Shutdown extends Thread
 			_log.info("Items On Ground Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 			ItemsOnGroundManager.getInstance().cleanUp();
 			_log.info("Items On Ground Manager: Cleaned up(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+			
+			if (RPSConfig.RANK_PVP_SYSTEM_ENABLED)
+			{
+				int[] up = PvpTable.getInstance().updateDB();
+				if (up[0] == 0)
+				{
+					_log.info("PvpTable: Data saved [" + up[1] + " inserts and " + up[2] + " updates].");
+				}
+			}
+			try
+			{
+				int delay = 5000;
+				Thread.sleep(delay);
+			}
+			catch (InterruptedException e)
+			{
+				// never happens :p
+			}
 		}
 		
 		try

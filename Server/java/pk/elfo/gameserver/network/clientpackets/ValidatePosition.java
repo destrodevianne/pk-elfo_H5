@@ -130,7 +130,7 @@ public class ValidatePosition extends L2GameClientPacket
 			}
 		}
 		
-		// Don't allow flying transformations outside gracia area!
+		// Nao permite usar tranformacao de voo fora de gracia area!
 		if (activeChar.isFlyingMounted() && (_x > L2World.GRACIA_MAX_X))
 		{
 			activeChar.untransform();

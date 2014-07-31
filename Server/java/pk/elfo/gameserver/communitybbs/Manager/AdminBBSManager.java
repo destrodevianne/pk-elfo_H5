@@ -20,6 +20,9 @@ public class AdminBBSManager extends BaseBBSManager
 	{
 	}
 	
+	/**
+	 * @see com.l2jserver.gameserver.communitybbs.Manager.BaseBBSManager#parsecmd(java.lang.String, com.l2jserver.gameserver.model.actor.instance.L2PcInstance)
+	 */
 	@Override
 	public void parsecmd(String command, L2PcInstance activeChar)
 	{

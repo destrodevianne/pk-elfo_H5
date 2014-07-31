@@ -60,6 +60,8 @@ Updated Ketra Orc Support
 Fixado o tempo para invocar um summon, caso não tenha buffs!
 BUG FIX: Quando um item com tempo para expirar era colocado na ClanWarehouse, o mesmo não sumia!
 Fixado: Mostrar nome das Cursed Weapons 
+Fixado Comunity Board
+More Fix 
 
 ###############################################
 #################### FIX BETA TEST ############
@@ -105,6 +107,7 @@ LuckyPig
 ***Happy Hour (pelo comando //happyhour)
 ***Evento RaidSpawn (a cada 30 minutos um raid e spawnado em determinado lugar, o tempo, raid, lugar de spawn e recompensa podem ser configurados no arquivo java do evento).
 BloodShed 
+Event RPS
 
 ############### PHOENIX ENGINE:################
 Battlefield
@@ -351,6 +354,7 @@ Adicionado Dragao Voador Custom
 Adicionado Zona MultiFunctionZone em Zone.xml
 Adicionado Comparators.java
 Adicionado NPC com aparência da nova raça Ertheia
+Clan Hall minor change!
 
 ###############################################
 ############## QUESTS #########################
