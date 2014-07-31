@@ -62,7 +62,7 @@ public class L2AugmentShopInstance extends L2NpcInstance
 		replyMSG.append("<font color=\"LEVEL\">" + headtext + "</font></center><br>");
 		replyMSG.append(text);
 		replyMSG.append("<center><img src=\"L2UI_CH3.herotower_deco\" width=256 height=32><br>");
-		replyMSG.append("<center><font color=\"A2A0A2\">Augmentation Shop</font> (c) <font color=\"B09878\">Mentor</font></center><br>");
+		replyMSG.append("<center><font color=\"A2A0A2\">Augmentation System</font> (c) <font color=\"B09878\">Mentor</font></center><br>");
 		replyMSG.append("</body></html>");
 		NpcHtmlMessage html = new NpcHtmlMessage(5);
 		html.setHtml(replyMSG.toString());
@@ -455,7 +455,7 @@ public class L2AugmentShopInstance extends L2NpcInstance
 			{
 				page = Integer.parseInt(st.nextToken());
 			}
-			ListAugs(player, "blue", SType, page);
+			ListAugs(player, "Blue", SType, page);
 		}
 		else if (Command.equalsIgnoreCase("PurpleList"))
 		{
@@ -464,7 +464,7 @@ public class L2AugmentShopInstance extends L2NpcInstance
 			{
 				page = Integer.parseInt(st.nextToken());
 			}
-			ListAugs(player, "purple", SType, page);
+			ListAugs(player, "Purple", SType, page);
 		}
 		else if (Command.equalsIgnoreCase("RedList"))
 		{
@@ -473,7 +473,7 @@ public class L2AugmentShopInstance extends L2NpcInstance
 			{
 				page = Integer.parseInt(st.nextToken());
 			}
-			ListAugs(player, "red", SType, page);
+			ListAugs(player, "Red", SType, page);
 		}
 		else if (Command.equalsIgnoreCase("ListByColor"))
 		{

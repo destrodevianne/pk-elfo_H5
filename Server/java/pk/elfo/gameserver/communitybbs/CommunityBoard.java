@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.communitybbs;
 
 import java.util.StringTokenizer;
@@ -25,6 +7,7 @@ import pk.elfo.gameserver.communitybbs.Manager.BuffBBSManager;
 import pk.elfo.gameserver.communitybbs.Manager.ClanBBSManager;
 import pk.elfo.gameserver.communitybbs.Manager.ClassBBSManager;
 import pk.elfo.gameserver.communitybbs.Manager.EnchantBBSManager;
+import pk.elfo.gameserver.communitybbs.Manager.HomeBBSManager;
 import pk.elfo.gameserver.communitybbs.Manager.PostBBSManager;
 import pk.elfo.gameserver.communitybbs.Manager.RegionBBSManager;
 import pk.elfo.gameserver.communitybbs.Manager.ServiceBBSManager;
@@ -44,6 +27,10 @@ import pk.elfo.gameserver.network.serverpackets.ShowBoard;
 
 public class CommunityBoard
 {
+	private CommunityBoard()
+	{
+	}
+	
 	public static CommunityBoard getInstance()
 	{
 		return SingletonHolder._instance;
@@ -158,6 +145,10 @@ public class CommunityBoard
 				else if (command.startsWith("_bbsposts"))
 				{
 					PostBBSManager.getInstance().parsecmd(command, activeChar);
+				}
+				else if (command.startsWith("_bbslink"))
+				{
+					HomeBBSManager.getInstance().parsecmd(command, activeChar);
 				}
 				else if (command.startsWith("_bbstop"))
 				{
@@ -304,7 +295,7 @@ public class CommunityBoard
 				}
 				else
 				{
-					ShowBoard sb = new ShowBoard("<html><body><br><br><center>the command: " + command + " is not implemented yet</center><br><br></body></html>", "101");
+					ShowBoard sb = new ShowBoard("<html><body><br><br><center>Coming Soon!</center><br><br></body></html>", "101");
 					activeChar.sendPacket(sb);
 					activeChar.sendPacket(new ShowBoard(null, "102"));
 					activeChar.sendPacket(new ShowBoard(null, "103"));
@@ -351,7 +342,7 @@ public class CommunityBoard
 				}
 				else
 				{
-					ShowBoard sb = new ShowBoard("<html><body><br><br><center>the command: " + url + " is not implemented yet</center><br><br></body></html>", "101");
+					ShowBoard sb = new ShowBoard("<html><body><br><br><center>Coming Soon!</center><br><br></body></html>", "101");
 					activeChar.sendPacket(sb);
 					activeChar.sendPacket(new ShowBoard(null, "102"));
 					activeChar.sendPacket(new ShowBoard(null, "103"));
@@ -362,7 +353,7 @@ public class CommunityBoard
 				break;
 			default:
 			case 0:
-				ShowBoard sb = new ShowBoard("<html><body><br><br><center>The Community board is currently disabled</center><br><br></body></html>", "101");
+				ShowBoard sb = new ShowBoard("<html><body><br><br><center>Server is temporarily unavailable.</center><br><br></body></html>", "101");
 				activeChar.sendPacket(sb);
 				activeChar.sendPacket(new ShowBoard(null, "102"));
 				activeChar.sendPacket(new ShowBoard(null, "103"));
@@ -370,6 +361,7 @@ public class CommunityBoard
 		}
 	}
 	
+	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
 		protected static final CommunityBoard _instance = new CommunityBoard();

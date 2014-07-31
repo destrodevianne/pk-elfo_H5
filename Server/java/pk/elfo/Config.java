@@ -70,7 +70,6 @@ public final class Config
 	public static final String CHAT_FILTER_FILE = "./config/ChatFilter/chatfilter.txt";
 	public static final String COMMUNITY_PVP = "./config/CommunityServer/CommunityPvP.properties";
 	public static final String COMMUNITY_CONFIGURATION_FILE = "./config/CommunityServer/CommunityServer.properties";
-	public static final String EMAIL_CONFIG_FILE = "./config/Email.properties";
 	// ------------------------AIO-------------------------------------------------------------------------//
 	public static final String AIO_CONFIG_FILE = "./config/AIOx/Aio.properties";
 	// ------------------------AUTO RESTART----------------------------------------------------------------//
@@ -147,6 +146,7 @@ public final class Config
 	public static final String CONFIGURATION_FILE = "./config/Server-IP-Password/Server.properties";
 	// ------------------------SERVICES--------------------------------------------------------------------//
 	public static final String BANKING_SYSTEM = "./config/Services/Banking.properties";
+	public static final String EMAIL_CONFIG_FILE = "./config/Services/Email.properties";
 	public static final String PKELFO_FILE = "./config/Services/Pkelfo.properties";
 	public static final String PREMIUM_CONFIG_FILE = "./config/Services/Premium/Premium.properties";
 	public static final String RATES_CONFIG_FILE = "./config/Services/Rates.properties";
@@ -3520,6 +3520,12 @@ public final class Config
 				}
 				CLASS_MASTERS_PRICE_ITEMCB = Integer.parseInt(pvp_com.getProperty("ClassMastersPriceItemCB", "57"));
 				
+				TOP_PLAYER_ROW_HEIGHT = Integer.parseInt(pvp_com.getProperty("TopPlayerRowHeight", "19"));
+				TOP_PLAYER_RESULTS = Integer.parseInt(pvp_com.getProperty("TopPlayerResults", "20"));
+				RAID_LIST_ROW_HEIGHT = Integer.parseInt(pvp_com.getProperty("RaidListRowHeight", "18"));
+				RAID_LIST_RESULTS = Integer.parseInt(pvp_com.getProperty("RaidListResults", "20"));
+				RAID_LIST_SORT_ASC = Boolean.parseBoolean(pvp_com.getProperty("RaidListSortAsc", "true"));
+				ALLOW_REAL_ONLINE_STATS = Boolean.parseBoolean(pvp_com.getProperty("AllowRealOnlineStats", "true"));
 				ALLOW_COMMUNITY_MULTISELL = Boolean.parseBoolean(pvp_com.getProperty("AllowCommunityMultisell", "false"));
 				ALLOW_COMMUNITY_STATS = Boolean.parseBoolean(pvp_com.getProperty("AllowCommunityStats", "false"));
 				ALLOW_COMMUNITY_TELEPORT = Boolean.parseBoolean(pvp_com.getProperty("AllowCommunityTeleport", "false"));

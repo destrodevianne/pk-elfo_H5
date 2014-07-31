@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.communitybbs.Manager;
 
 import java.util.StringTokenizer;
@@ -28,6 +10,10 @@ import pk.elfo.util.StringUtil;
 
 public class ClanBBSManager extends BaseBBSManager
 {
+	private ClanBBSManager()
+	{
+	}
+	
 	public static ClanBBSManager getInstance()
 	{
 		return SingletonHolder._instance;
@@ -116,18 +102,18 @@ public class ClanBBSManager extends BaseBBSManager
 			}
 			else
 			{
-				final StringBuilder html = StringUtil.startAppend(2000, "<html><body><br><br><table border=0 width=610><tr><td width=10></td><td width=600 align=left><a action=\"bypass _bbshome\">HOME</a> &gt; <a action=\"bypass _bbsclan_clanlist\"> CLAN COMMUNITY </a>  &gt; <a action=\"bypass _bbsclan_clanhome;", String.valueOf(clanId), "\"> &amp;$802; </a></td></tr></table>");
+				final StringBuilder html = StringUtil.startAppend(2000, "<html><body><br><br><table border=0 width=610><tr><td width=10></td><td width=600 align=left><a action=\"bypass _bbshome\">Back</a> &gt; <a action=\"bypass _bbsclan_clanlist\"> CLAN COMMUNITY </a>  &gt; <a action=\"bypass _bbsclan_clanhome;", String.valueOf(clanId), "\"> &amp;$802; </a></td></tr></table>");
 				if (activeChar.isClanLeader())
 				{
 					StringUtil.append(html, "<br><br><center><table width=610 border=0 cellspacing=0 cellpadding=0><tr><td fixwidth=610><font color=\"AAAAAA\">The Clan Notice function allows the clan leader to send messages through a pop-up window to clan members at login.</font> </td></tr><tr><td height=20></td></tr>");
 					
 					if (activeChar.getClan().isNoticeEnabled())
 					{
-						StringUtil.append(html, "<tr><td fixwidth=610> Clan Notice Function:&nbsp;&nbsp;&nbsp;on&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;<a action=\"bypass _bbsclan_clannotice_disable\">off</a>");
+						StringUtil.append(html, "<tr><td fixwidth=610> Function alert Clan:&nbsp;&nbsp;&nbsp;on&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;<a action=\"bypass _bbsclan_clannotice_disable\">off</a>");
 					}
 					else
 					{
-						StringUtil.append(html, "<tr><td fixwidth=610> Clan Notice Function:&nbsp;&nbsp;&nbsp;<a action=\"bypass _bbsclan_clannotice_enable\">on</a>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;off");
+						StringUtil.append(html, "<tr><td fixwidth=610> Function alert Clan:&nbsp;&nbsp;&nbsp;<a action=\"bypass _bbsclan_clannotice_enable\">on</a>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;off");
 					}
 					
 					StringUtil.append(html, "</td></tr></table><img src=\"L2UI.Squaregray\" width=\"610\" height=\"1\"><br> <br><table width=610 border=0 cellspacing=2 cellpadding=0><tr><td>Edit Notice: </td></tr><tr><td height=5></td></tr><tr><td><MultiEdit var =\"Content\" width=610 height=100></td></tr></table><br><table width=610 border=0 cellspacing=0 cellpadding=0><tr><td height=5></td></tr><tr><td align=center FIXWIDTH=65><button value=\"&$140;\" action=\"Write Notice Set _ Content Content Content\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\" ></td><td align=center FIXWIDTH=45></td><td align=center FIXWIDTH=500></td></tr></table></center></body></html>");
@@ -139,7 +125,7 @@ public class ClanBBSManager extends BaseBBSManager
 					StringUtil.append(html, "<img src=\"L2UI.squareblank\" width=\"1\" height=\"10\"><center><table border=0 cellspacing=0 cellpadding=0><tr><td>You are not your clan's leader, and therefore cannot change the clan notice</td></tr></table>");
 					if (activeChar.getClan().isNoticeEnabled())
 					{
-						StringUtil.append(html, "<table border=0 cellspacing=0 cellpadding=0><tr><td>The current clan notice:</td></tr><tr><td fixwidth=5></td><td FIXWIDTH=600 align=left>" + activeChar.getClan().getNotice() + "</td><td fixqqwidth=5></td></tr></table>");
+						StringUtil.append(html, "<table border=0 cellspacing=0 cellpadding=0><tr><td>Текущее уведомление о клане:</td></tr><tr><td fixwidth=5></td><td FIXWIDTH=600 align=left>" + activeChar.getClan().getNotice() + "</td><td fixqqwidth=5></td></tr></table>");
 					}
 					StringUtil.append(html, "</center></body></html>");
 					separateAndSend(html.toString(), activeChar);
@@ -228,6 +214,7 @@ public class ClanBBSManager extends BaseBBSManager
 		clanhome(activeChar, activeChar.getClan().getClanId());
 	}
 	
+	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
 		protected static final ClanBBSManager _instance = new ClanBBSManager();

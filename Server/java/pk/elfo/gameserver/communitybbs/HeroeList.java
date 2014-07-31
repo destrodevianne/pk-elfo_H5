@@ -1,4 +1,4 @@
-package pk.elfo.gameserver.communitybbs.Manager;
+package pk.elfo.gameserver.communitybbs;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,6 +9,9 @@ import javolution.util.FastMap;
 
 import pk.elfo.L2DatabaseFactory;
 
+/**
+ * PkElfo
+ */
 public class HeroeList
 {
 	private int _posId;

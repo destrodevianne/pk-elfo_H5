@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.communitybbs.Manager;
 
 import java.io.File;
@@ -24,12 +6,26 @@ import java.util.StringTokenizer;
 import pk.elfo.Config;
 import pk.elfo.gameserver.GameTimeController;
 import pk.elfo.gameserver.cache.HtmCache;
+import pk.elfo.gameserver.communitybbs.CastleStatus;
+import pk.elfo.gameserver.communitybbs.ClanList;
+import pk.elfo.gameserver.communitybbs.GrandBossList;
+import pk.elfo.gameserver.communitybbs.HeroeList;
+import pk.elfo.gameserver.communitybbs.RaidList;
+import pk.elfo.gameserver.communitybbs.TopPlayers;
+import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.serverpackets.ShowBoard;
 
+/**
+ * PkElfo
+ */
 public class TopBBSManager extends BaseBBSManager
 {
+	private TopBBSManager()
+	{
+	}
+	
 	@Override
 	public void parsecmd(String command, L2PcInstance activeChar)
 	{
@@ -66,33 +62,53 @@ public class TopBBSManager extends BaseBBSManager
 			
 			switch (file)
 			{
-				case "heroes":
-					HeroeList hr = new HeroeList();
-					content = content.replaceAll("%heroelist%", hr.loadHeroeList());
-					break;
-				case "castle":
-					CastleStatus status = new CastleStatus();
-					content = content.replaceAll("%castle%", status.loadCastleList());
-					break;
-				case "boss":
-					GrandBossList gb = new GrandBossList();
-					content = content.replaceAll("%gboss%", gb.loadGrandBossList());
-					break;
-				case "stats":
-					content = content.replace("%online%", Integer.toString(L2World.getInstance().getAllPlayersCount()));
-					content = content.replace("%servercapacity%", Integer.toString(Config.MAXIMUM_ONLINE_USERS));
-					content = content.replace("%serverruntime%", getServerRunTime());
-					if (Config.ALLOW_REAL_ONLINE_STATS)
-					{
-						content = content.replace("%serveronline%", getRealOnline());
-					}
-					else
-					{
-						content = content.replace("%serveronline%", "");
-					}
-					break;
-				default:
-					break;
+			case "toppvp":
+                TopPlayers pvp = new TopPlayers(file);
+                content = content.replaceAll("%toppvp%", pvp.loadTopList());
+                break;
+            case "toppk":
+                TopPlayers pk = new TopPlayers(file);
+                content = content.replaceAll("%toppk%", pk.loadTopList());
+                break;
+            case "toprbrank":
+                TopPlayers raid = new TopPlayers(file);
+                content = content.replaceAll("%toprbrank%", raid.loadTopList());
+                break;
+            case "topadena":
+                TopPlayers adena = new TopPlayers(file);
+                content = content.replaceAll("%topadena%", adena.loadTopList());
+                break;
+            case "toponline":
+                TopPlayers online = new TopPlayers(file);
+                content = content.replaceAll("%toponline%", online.loadTopList());
+                break;
+            case "heroes":
+                HeroeList hr = new HeroeList();
+                content = content.replaceAll("%heroelist%", hr.loadHeroeList());
+                break;
+            case "castle":
+                CastleStatus status = new CastleStatus();
+                content = content.replaceAll("%castle%", status.loadCastleList());
+                break;
+            case "boss":
+                GrandBossList gb = new GrandBossList();
+                content = content.replaceAll("%gboss%", gb.loadGrandBossList());
+                break;
+            case "stats":
+                content = content.replace("%online%", Integer.toString(L2World.getInstance().getAllPlayersCount()));
+                content = content.replace("%servercapacity%", Integer.toString(Config.MAXIMUM_ONLINE_USERS));
+                content = content.replace("%serverruntime%", getServerRunTime());
+                if (Config.ALLOW_REAL_ONLINE_STATS)
+                {
+                    content = content.replace("%serveronline%", getRealOnline());
+                }
+                else
+                {
+                    content = content.replace("%serveronline%", "");
+                }
+                break;
+            default:
+                break;
 			
 			}
 			if (file.startsWith("clan"))
@@ -100,6 +116,12 @@ public class TopBBSManager extends BaseBBSManager
 				int cid = Integer.parseInt(file.substring(4));
 				ClanList cl = new ClanList(cid);
 				content = content.replaceAll("%clanlist%", cl.loadClanList());
+			}
+			if (file.startsWith("raid"))
+			{
+				String rfid = file.substring(4);
+				RaidList rd = new RaidList(rfid);
+				content = content.replaceAll("%raidlist%", rd.loadRaidList());
 			}
 			if (content.isEmpty())
 			{
@@ -160,6 +182,7 @@ public class TopBBSManager extends BaseBBSManager
 	
 	public String getServerRunTime()
 	{
+		GameTimeController.getInstance();
 		int timeSeconds = (GameTimeController.getGameTicks() - 36000) / 10;
 		String timeResult = "";
 		if (timeSeconds >= 86400)
@@ -187,6 +210,7 @@ public class TopBBSManager extends BaseBBSManager
 		return realOnline;
 	}
 	
+	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
 		protected static final TopBBSManager _instance = new TopBBSManager();

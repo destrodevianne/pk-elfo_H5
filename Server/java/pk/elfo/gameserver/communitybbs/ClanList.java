@@ -1,4 +1,4 @@
-package pk.elfo.gameserver.communitybbs.Manager;
+package pk.elfo.gameserver.communitybbs;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,6 +8,9 @@ import javolution.text.TextBuilder;
 
 import pk.elfo.L2DatabaseFactory;
 
+/**
+ * PkElfo
+ */
 public class ClanList
 {
 	private final TextBuilder _clanList = new TextBuilder();
