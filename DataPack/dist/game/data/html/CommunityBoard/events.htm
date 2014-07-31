@@ -1,70 +1,95 @@
-<html><body>
-<center>
-<br><br><br1><br1>
-<table border=0 cellspacing=0 cellpadding=0>
-<tr>
-<td width=80><img src=l2ui.bbs_lineage2 height=16 width=80></td>
-</tr>
-<tr>
-<td height=20></td>
-</tr>
-</table>
-<img src="L2UI.SquareGray" width=770 height=1>
+<html><body><center><br>
+<table cellpadding=0>
+
 <table>
-<tr>
-<td><button value="MAIN" action="bypass -h _bbstop" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-<td><button value="SHOP" action="bypass -h _bbstop;6" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-<td><button value="BUFFER" action="bypass -h _bbstop;3" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-
-<td><button value="SERVICES" action="bypass -h _bbsservice" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-<td><button value="PROFESSION" action="bypass -h _bbsclass;" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-<td><button value="STATISTICS" action="bypass -h _bbsstat;" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-<td><button value="TELEPORT" action="bypass -h _bbsteleport;" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-</tr>
+<tr><td><font color=EBDF6C></font></td></tr>
 </table>
-<img src="L2UI.SquareGray" width=770 height=1>
-<br1><table cellpadding=2><tr><td>
-<button value="Home" width=70 height=24 action="bypass _bbstop" fore="L2UI_CT1.Button_DF_Calculator" back="L2UI_CT1.Button_DF_Calculator_Over"></td>
-<td align=right><img src="L2UI_CH3.next1_down" width=16 height=16></td>
-<td><button value="Events" width=110 height=24 action="" fore="L2UI_CT1.Button_DF_Calculator" back="L2UI_CT1.Button_DF_Calculator_Over"></td>
+
+<br>
+<img src="l2ui.squaregray" width="735" height="1">
+<table background="L2UI_CT1.Windows_DF_Drawer_Bg_Darker">
+<tr><td width=40 height=40><img src="L2UI.MainQuest_large" width=32 height=32></td>
+<td fixwidth=650><font name="hs12">Announcements & News.</font></td>
+<td><button action="bypass _bbstop;announcements" width=32 height=32 back="L2UI_CT1.MiniMap_DF_PlusBtn_Red_Down" fore="L2UI_CT1.MiniMap_DF_PlusBtn_Red"></td>
 </tr></table>
-<img src="l2ui.squaregray" width="770" height="1"><center>
-<table bgcolor=303030 width=750>
-<tr><td align="center" fixwidth=750>General Rates</td></tr>
+<table cellspacing=4 cellpadding=2 bgcolor=111111><tr><td fixwidth=729><font color=ae9977>
+- Here you can find useful info about upcoming changes like new events, updates, fixes and other news. Its strongly recommended to check those pserver daily, stay informed all the time, it may be important!</font></td></tr>
 </table>
-<table bgcolor=404040 width=750>
-<tr><td align="center" fixwidth=750>Exp: <font color="3293F3">%rate_xp%</font></td></tr>
-<tr><td align="center" fixwidth=750>Sp: <font color="3293F3">%rate_sp%</font></td></tr>
-<tr><td align="center" fixwidth=750>Party Exp: <font color="3293F3">%rate_party_xp%</font></td></tr>
-<tr><td align="center" fixwidth=750>Party Sp: <font color="3293F3">%rate_party_sp%</font></td></tr>
-<tr><td align="center" fixwidth=750>Adena Rate: <font color="3293F3">%rate_adena%</font></td></tr>
-<tr><td align="center" fixwidth=750>Drop: <font color="3293F3">%rate_items%</font></td></tr>
-<tr><td align="center" fixwidth=750>Spoil: <font color="3293F3">%rate_spoil%</font></td></tr>
-<tr><td align="center" fixwidth=750>Manor: <font color="3293F3">%rate_drop_manor%</font></td></tr>
-</table>
+<img src="l2ui.squaregray" width="735" height="1">
 
-<table bgcolor=201020 width=750>
-<tr><td align="center" fixwidth=750>Enchant Rates</td></tr></table>
-<table bgcolor=302030 width=750>
-<tr><td align="center" fixwidth=750>Safe: <font color="3293F3">%safe_max_full%</font> Max: <font color="3293F3">%Enchant_Max%</font></td></tr>
+<br>
+<img src="l2ui.squaregray" width="735" height="1">
+<table background="L2UI_CT1.Windows_DF_Drawer_Bg_Darker">
+<tr><td width=40 height=40><img src="L2UI.MainSkill_large" width=32 height=32></td>
+<td fixwidth=650><font name="hs12">Server Information.</font></td>
+<td><button action="bypass _bbshome" width=32 height=32 back="L2UI_CT1.MiniMap_DF_MinusBtn_Red_Over" fore="L2UI_CT1.MiniMap_DF_MinusBtn_Red"></td>
+</tr></table>
+<table cellspacing=4 cellpadding=2 bgcolor=111111><tr><td fixwidth=729><font color=ae9977>
+- Here you can find all the informations about server like rates, detailed server features, all our event list and their reward as well some other gameplay informations so make sure to check here for more server details.</font></td></tr>
+</table><img src="l2ui.squaregray" width="735" height="1"><br>
+<table border=0 cellspacing=0 cellpadding=0 bgcolor=111111><tr>
+<td><button value="Information" width=110 height=30 action="bypass _bbstop;info" fore="L2UI_CT1.Tab_DF_Tab_Unselected" back="L2UI_CT1.Tab_DF_Tab_Selected"></td>
+<td><button value="Rates" width=110 height=30 action="bypass _bbstop;rates" fore="L2UI_CT1.Tab_DF_Tab_Unselected" back="L2UI_CT1.Tab_DF_Tab_Selected"></td>
+<td><table width=110 border=0 cellspacing=0 cellpadding=0 background="L2UI_CT1.Tab_DF_Tab_Selected"><tr><td fixwidth=30 height=14></td></tr><tr><td height=28 align=center>Events</td></tr></table></td>
+<td><button value="Staff" width=110 height=30 action="bypass _bbstop;staff" fore="L2UI_CT1.Tab_DF_Tab_Unselected" back="L2UI_CT1.Tab_DF_Tab_Selected"></td>
+</tr></table><img src="l2ui.squaregray" width="735" height="1"><br1>
+<table cellspacing=4 cellpadding=2 background="L2UI_CT1.Windows_DF_Drawer_Bg_Darker"><tr><td fixwidth=729><font color=ae9977>
+<font name="hs12">Eros-War Events</font><br1>We have implemented any events engine!! There will be an automated event every 1 hour and get gifts when Wins or Loses our events. Some of our main events are:<br>
+ </font>
+- Battlefield <br1>
+- Bomb <br1>
+- Capture the Flag <br1>
+- Death Match <br1>
+- Domination <br1>
+- Double Domination <br1>
+- Last Man Standing <br1>
+- Luck Chests <br1>
+- Mutant <br1>
+- Russian Roulete <br1> 
+- Simon Says <br1> 
+- Team Vs Team <br1>
+- Zombie<br1> 
+- Special Events & Much More.. <br1>
+ </td></tr>
+</table><img src="l2ui.squaregray" width="735" height="1"><br>
+<br>
+<img src="l2ui.squaregray" width="735" height="1">
+<table background="L2UI_CT1.Windows_DF_Drawer_Bg_Darker">
+<tr><td width=40 height=40><img src="L2UI.MainAction_large" width=32 height=32></td>
+<td fixwidth=650><font name="hs12">Server Statistics.</font></td>
+<td><button action="bypass _bbstop;toppvp" width=32 height=32 back="L2UI_CT1.MiniMap_DF_PlusBtn_Red_Down" fore="L2UI_CT1.MiniMap_DF_PlusBtn_Red"></td>
+</tr></table>
+<table cellspacing=4 cellpadding=2 bgcolor=111111><tr><td fixwidth=729><font color=ae9977>
+- Here you can check various server statistics like TOP PVP or PK, Clan Status, Top Online and others. You can also check raid status and to see if they are alive or not.</font></td></tr>
 </table>
+<img src="l2ui.squaregray" width="735" height="1">
 
-<table bgcolor=302030 width=750>
-<tr><td>Scroll</td><td>Rate</td><td>Break</td><td>Safe</td><td>Max</td></tr>
-<tr><td>Normal:</td><td><font color="3293F3">%Enchant_Chance%</font></font><font color="3293F3">%</font></td><td>Yes</td><td>No</td><td><font color="3293F3">%Enchant_Max%</font></td></tr>
-<tr><td>Blessed:</td><td><font color="3293F3">%Enchant_Chance%</font></font><font color="3293F3">%</font></td><td>No</td><td>No</td><td><font color="3293F3">%Enchant_Max%</font></td></tr>
+<br>
+<img src="l2ui.squaregray" width="735" height="1">
+<table background="L2UI_CT1.Windows_DF_Drawer_Bg_Darker">
+<tr><td width=40 height=40><img src="L2UI.MainSystem_large" width=32 height=32></td>
+<td fixwidth=650><font name="hs12">Support & Donations.</font></td>
+<td><button action="bypass _bbstop;support" width=32 height=32 back="L2UI_CT1.MiniMap_DF_PlusBtn_Red_Down" fore="L2UI_CT1.MiniMap_DF_PlusBtn_Red"></td>
+</tr></table>
+<table cellspacing=4 cellpadding=2 bgcolor=111111><tr><td fixwidth=729><font color=ae9977>
+- Here you can find informations regarding our support for in-game problems or client related, you can find also informations on how to contact us and detailed Donate info as well.</font></td></tr>
 </table>
+<img src="l2ui.squaregray" width="735" height="1">
 
-<table bgcolor=102010 width=750>
-<tr><td align="center" fixwidth=750>General Configs</td></tr>
+<br>
+<img src="l2ui.squaregray" width="735" height="1">
+<table background="L2UI_CT1.Windows_DF_Drawer_Bg_Darker">
+<tr><td width=40 height=40><img src="L2UI.MainStatus_large" width=32 height=32></td>
+<td fixwidth=650><font name="hs12">Player Commands.</font></td>
+<td><button action="bypass _bbstop;commands" width=32 height=32 back="L2UI_CT1.MiniMap_DF_PlusBtn_Red_Down" fore="L2UI_CT1.MiniMap_DF_PlusBtn_Red"></td>
+</tr></table>
+<table cellspacing=4 cellpadding=2 bgcolor=111111><tr><td fixwidth=729><font color=ae9977>
+- Here you can find informations regarding our support for in-game problems or client related, you can find also informations on how to contact us and detailed Donate info as well.</font></td></tr>
 </table>
-<table bgcolor=203020 width=750>
-<tr><td align="center" fixwidth=750>Max Buffs: <font color="3293F3">%Buffs_max%</font></td></tr>
-<tr><td align="center" fixwidth=750>Max Dance/Songs: <font color="3293F3">%Dance_max%</font></td></tr>
-<tr><td align="center" fixwidth=750>Max Tringer Buffs: <font color="3293F3">%Buffs_max_tringer%</font></td></tr>
-<tr><td align="center" fixwidth=750>Max Alliance: <font color="3293F3">%Ally_max_clans%</font></td></tr>
-<tr><td align="center" fixwidth=750>Subs: <font color="3293F3">%Max_Subs%</font></td></tr>
-<tr><td align="center" fixwidth=750>Subclass max level: <font color="3293F3">%Max_Sub_Lv%</font></td></tr>
+<img src="l2ui.squaregray" width="735" height="1">
+<BR><BR><BR><BR>
+<table border=0 cellspacing=0 cellpadding=0 width=755>
+<tr><td WIDTH=755 align=center valign=top><font name="hs12">Lineage 2 Eros-War Team.</font></td></tr>
 </table>
-<br><td FIXWIDTH=60 align=center><br><font color="00FF00">..:: Lineage II - Community PkElfo ::..</font></td>
+<BR><BR><BR>
 </center></body></html>
