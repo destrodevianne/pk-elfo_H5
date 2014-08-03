@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<instance name="Disciple's Necropolis (past)">
+<instance name="Disciple's Necropolis (past)" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
 	<activityTime val="60" />
-	<emptyDestroyTime val="1" />
 	<allowSummon val="false" />
+	<emptyDestroyTime val="1" />	
 	<spawnPoint spawnX="171854" spawnY="-17476" spawnZ="-4896" />
+	<doorlist>
+		<door doorId="17240101" />
+		<door doorId="17240102" />
+		<door doorId="17240103" />
+		<door doorId="17240104" />
+		<door doorId="17240105" />
+		<door doorId="17240106" />
+		<door doorId="17240107" />
+		<door doorId="17240108" />
+		<door doorId="17240109" />
+		<door doorId="17240110" />
+		<door doorId="17240111" />
+	</doorlist>
 	<spawnlist>
 		<group name="general">
 		<!-- Leon -->
@@ -19,17 +32,4 @@
 	    <spawn npcId="32592" x="-83177" y="216752" z="-7518" heading="0" respawn="0" />
 		</group>
 	</spawnlist>
-	<doorlist>
-		<door doorId="17240101" />
-		<door doorId="17240102" />
-		<door doorId="17240103" />
-		<door doorId="17240104" />
-		<door doorId="17240105" />
-		<door doorId="17240106" />
-		<door doorId="17240107" />
-		<door doorId="17240108" />
-		<door doorId="17240109" />
-		<door doorId="17240110" />
-		<door doorId="17240111" />
-	</doorlist>
 </instance>
