@@ -62,6 +62,8 @@ BUG FIX: Quando um item com tempo para expirar era colocado na ClanWarehouse, o 
 Fixado: Mostrar nome das Cursed Weapons 
 Fixado Comunity Board
 More Fix 
+Fix Divine Inspiration AutoLearn
+Adicionado Efeito correto para Seed of Annihilation
 
 ###############################################
 #################### FIX BETA TEST ############
