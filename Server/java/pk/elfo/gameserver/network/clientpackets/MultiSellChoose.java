@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.network.clientpackets;
 
 import java.util.ArrayList;
@@ -137,6 +119,8 @@ public class MultiSellChoose extends L2GameClientPacket
 				
 				final PcInventory inv = player.getInventory();
 				
+				boolean maintainItemFound = false;
+				
 				int slots = 0;
 				int weight = 0;
 				for (Ingredient e : entry.getProducts())
@@ -200,8 +184,20 @@ public class MultiSellChoose extends L2GameClientPacket
 					}
 					if (newIng)
 					{
+						if (maintainEnchantment && e.getMantainIngredient())
+						{
+							maintainItemFound = true;
+						}
 						// if it's a new ingredient, just store its info directly (item id, count, enchantment)
 						ingredientsList.add(e);
+					}
+				}
+				
+				if (!maintainItemFound)
+				{
+					for (MultiSellIngredient product : entry.getProducts())
+					{
+						product.setEnchantmentLevel(0);
 					}
 				}
 				
