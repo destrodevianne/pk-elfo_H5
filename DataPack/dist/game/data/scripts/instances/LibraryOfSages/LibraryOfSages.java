@@ -1,21 +1,5 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- *
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.LibraryOfSages;
 
-import javolution.util.FastList;
-import javolution.util.FastMap;
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.instancemanager.InstanceManager;
 import pk.elfo.gameserver.model.actor.L2Npc;
@@ -31,6 +15,9 @@ import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.util.Rnd;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
+
 public class LibraryOfSages extends Quest
 {
 	private static final String qn = "LibraryOfSages";
@@ -45,38 +32,20 @@ public class LibraryOfSages extends Quest
 	private static final int ENTER = 0;
 	private static final int EXIT = 1;
 	private static final int HidenRoom = 2;
-	private static final int[][] TELEPORTS =
-	{
-		{
-			37063,
-			-49813,
-			-1128
-		},
-		{
-			37063,
-			-49813,
-			-1128
-		},
-		{
-			37355,
-			-50065,
-			-1127
-		}
-	// books
+	private static final int[][] TELEPORTS = { { 37063, -49813, -1128 }, { 37063, -49813, -1128 }, { 37355, -50065, -1127 } // books
 	};
 	
-	private static final NpcStringId[] spam =
-	{
+	private static final NpcStringId[] spam = {
 		NpcStringId.I_MUST_ASK_LIBRARIAN_SOPHIA_ABOUT_THE_BOOK,
 		NpcStringId.THIS_LIBRARY_ITS_HUGE_BUT_THERE_ARENT_MANY_USEFUL_BOOKS_RIGHT,
 		NpcStringId.AN_UNDERGROUND_LIBRARY_I_HATE_DAMP_AND_SMELLY_PLACES,
 		NpcStringId.THE_BOOK_THAT_WE_SEEK_IS_CERTAINLY_HERE_SEARCH_INCH_BY_INCH
 	};
-	private final FastMap<Integer, InstanceHolder> instanceWorlds = new FastMap<>();
+	private final FastMap<Integer, InstanceHolder> instanceWorlds = new FastMap<Integer, InstanceHolder>();
 	
-	public static class InstanceHolder
+	private static class InstanceHolder
 	{
-		FastList<L2Npc> mobs = new FastList<>();
+		FastList<L2Npc> mobs = new FastList<L2Npc>();
 	}
 	
 	private class LibraryOfSagesWorld extends InstanceWorld
@@ -89,7 +58,7 @@ public class LibraryOfSages extends Quest
 	private void teleportPlayer(L2Npc npc, L2PcInstance player, int[] coords, int instanceId)
 	{
 		InstanceHolder holder = instanceWorlds.get(instanceId);
-		if ((holder == null) && (instanceId > 0))
+		if (holder == null && instanceId > 0)
 		{
 			holder = new InstanceHolder();
 			instanceWorlds.put(instanceId, holder);
@@ -101,7 +70,7 @@ public class LibraryOfSages extends Quest
 		cancelQuestTimer("check_follow", npc, player);
 		if (holder != null)
 		{
-			for (L2Npc h : holder.mobs)
+			for(L2Npc h : holder.mobs)
 			{
 				h.deleteMe();
 			}
@@ -109,7 +78,7 @@ public class LibraryOfSages extends Quest
 		}
 		if (instanceId > 0)
 		{
-			L2Npc support = addSpawn(Elcadia_Support, player.getX(), player.getY(), player.getZ(), 0, false, 0, false, player.getInstanceId());
+			L2Npc support = addSpawn(Elcadia_Support, player.getX(), player.getY(),player.getZ(), 0, false, 0, false, player.getInstanceId());
 			holder.mobs.add(support);
 			startQuestTimer("check_follow", 3000, support, player);
 		}
@@ -132,7 +101,7 @@ public class LibraryOfSages extends Quest
 			}
 			return;
 		}
-		final int instanceId = InstanceManager.getInstance().createDynamicInstance("LibraryOfSages.xml");
+		final int instanceId = InstanceManager.getInstance().createDynamicInstance("[020] Library Of Sages.xml");
 		
 		world = new LibraryOfSagesWorld();
 		world.setInstanceId(instanceId);
@@ -148,13 +117,11 @@ public class LibraryOfSages extends Quest
 	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	{		
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
 		if (st == null)
-		{
 			st = newQuestState(player);
-		}
 		
 		if (event.equalsIgnoreCase("check_follow"))
 		{
@@ -186,7 +153,7 @@ public class LibraryOfSages extends Quest
 				InstanceHolder holder = instanceWorlds.get(player.getInstanceId());
 				if (holder != null)
 				{
-					for (L2Npc h : holder.mobs)
+					for(L2Npc h : holder.mobs)
 					{
 						h.deleteMe();
 					}

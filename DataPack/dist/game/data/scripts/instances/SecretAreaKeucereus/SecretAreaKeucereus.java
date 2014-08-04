@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.SecretAreaKeucereus;
 
 import pk.elfo.gameserver.ai.CtrlIntention;
@@ -46,11 +28,11 @@ public class SecretAreaKeucereus extends Quest
 	{
 		if (event.equalsIgnoreCase("enter"))
 		{
-			enterInstance(player, "SecretAreaKeucereus.xml");
+			enterInstance(player, "[029] Secret Area in the Keucereus Fortress.xml");
 		}
 		else if (event.equalsIgnoreCase("enter_118"))
 		{
-			enterInstance118(player, "SecretAreaKeucereus.xml");
+			enterInstance118(player, "[029] Secret Area in the Keucereus Fortress.xml");
 		}
 		else if (event.equalsIgnoreCase("exit"))
 		{
@@ -84,18 +66,21 @@ public class SecretAreaKeucereus extends Quest
 			return;
 		}
 		//New instance
-		if (!checkCond(player))
-			return;
-		instanceId = InstanceManager.getInstance().createDynamicInstance(template);
-		world = new KSAWorld();
-		
-		world.setInstanceId(instanceId);
-		world.setTemplateId(117);
-		world.setStatus(0);
-		
-		InstanceManager.getInstance().addWorld(world);
-		_log.info("SecretAreaKeucereus started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
-		teleportPlayer(player, (KSAWorld)world);
+		else
+		{
+			if (!checkCond(player))
+				return;
+			instanceId = InstanceManager.getInstance().createDynamicInstance(template);
+			world = new KSAWorld();
+			
+			world.setInstanceId(instanceId);
+			world.setTemplateId(117);
+			world.setStatus(0);
+			
+			InstanceManager.getInstance().addWorld(world);
+			_log.info("SecretAreaKeucereus started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
+			teleportPlayer(player, (KSAWorld)world);
+		}
 	}
 	
 	private void enterInstance118(L2PcInstance player, String template)
@@ -115,18 +100,21 @@ public class SecretAreaKeucereus extends Quest
 			return;
 		}
 		//New instance
-		if (!checkCond118(player))
-			return;
-		instanceId = InstanceManager.getInstance().createDynamicInstance(template);
-		world = new KSAWorld();
-		
-		world.setInstanceId(instanceId);
-		world.setTemplateId(118);
-		world.setStatus(0);
-		
-		InstanceManager.getInstance().addWorld(world);
-		_log.info("SecretAreaKeucereus started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
-		teleportPlayer(player, (KSAWorld)world);
+		else
+		{
+			if (!checkCond118(player))
+				return;
+			instanceId = InstanceManager.getInstance().createDynamicInstance(template);
+			world = new KSAWorld();
+			
+			world.setInstanceId(instanceId);
+			world.setTemplateId(118);
+			world.setStatus(0);
+			
+			InstanceManager.getInstance().addWorld(world);
+			_log.info("SecretAreaKeucereus started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
+			teleportPlayer(player, (KSAWorld)world);
+		}
 	}
 	
 	private void teleportPlayer(L2PcInstance player, KSAWorld world)

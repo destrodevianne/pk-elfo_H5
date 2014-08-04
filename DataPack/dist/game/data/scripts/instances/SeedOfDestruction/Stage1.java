@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.SeedOfDestruction;
 
 import java.io.File;
@@ -43,11 +25,11 @@ import pk.elfo.gameserver.instancemanager.GraciaSeedsManager;
 import pk.elfo.gameserver.instancemanager.InstanceManager;
 import pk.elfo.gameserver.model.L2CharPosition;
 import pk.elfo.gameserver.model.L2CommandChannel;
+import pk.elfo.gameserver.model.L2Object.InstanceType;
 import pk.elfo.gameserver.model.L2Party;
 import pk.elfo.gameserver.model.L2Territory;
 import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.Location;
-import pk.elfo.gameserver.model.L2Object.InstanceType;
 import pk.elfo.gameserver.model.actor.L2Attackable;
 import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.L2Npc;
@@ -75,7 +57,6 @@ import pk.elfo.gameserver.util.Util;
  * <li>Use proper zone spawn system.</li>
  * </ul>
  * Please maintain consistency between the Seed scripts.
- * @author Gigiikun
  */
 public class Stage1 extends Quest
 {
@@ -1002,7 +983,7 @@ public class Stage1 extends Quest
 			InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 			if ((GraciaSeedsManager.getInstance().getSoDState() == 1) || ((world != null) && (world instanceof SOD1World)))
 			{
-				enterInstance(player, "SeedOfDestructionStage1.xml", ENTER_TELEPORT_1);
+				enterInstance(player, "[030] Seed Of Destruction Stage_1.xml", ENTER_TELEPORT_1);
 			}
 			else if (GraciaSeedsManager.getInstance().getSoDState() == 2)
 			{

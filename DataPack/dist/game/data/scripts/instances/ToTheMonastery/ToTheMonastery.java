@@ -1,27 +1,13 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.ToTheMonastery;
 
 import java.util.List;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
+import quests.Q10294_SevenSignToTheMonastery.Q10294_SevenSignToTheMonastery;
+import quests.Q10295_SevenSignSolinasTomb.Q10295_SevenSignSolinasTomb;
+import quests.Q10296_SevenSignPoweroftheSeal.Q10296_SevenSignPoweroftheSeal;
+
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.datatables.SkillTable;
@@ -40,14 +26,11 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.util.Rnd;
-import quests.Q10294_SevenSignToTheMonastery.Q10294_SevenSignToTheMonastery;
-import quests.Q10295_SevenSignSolinasTomb.Q10295_SevenSignSolinasTomb;
-import quests.Q10296_SevenSignPoweroftheSeal.Q10296_SevenSignPoweroftheSeal;
 
 public class ToTheMonastery extends Quest
 {
 	private static final String qn = "ToTheMonastery";
-	private final FastMap<Integer, InstanceHolder> instanceWorlds = new FastMap<>();
+	private final FastMap<Integer, InstanceHolder> instanceWorlds = new FastMap<Integer, InstanceHolder>();
 	private static final int INSTANCE_ID = 151;
 	private boolean progress1 = false;
 	private boolean progress2 = false;
@@ -905,7 +888,7 @@ public class ToTheMonastery extends Quest
 			return;
 		}
 		
-		int instanceId = InstanceManager.getInstance().createDynamicInstance("ToTheMonastery.xml");
+		int instanceId = InstanceManager.getInstance().createDynamicInstance("[033] To The Monastery.xml");
 		Instance inst = InstanceManager.getInstance().getInstance(instanceId);
 		inst.setSpawnLoc(new Location(player));
 		
@@ -935,7 +918,7 @@ public class ToTheMonastery extends Quest
 		openDoor(21100016, world.getInstanceId());
 	}
 	
-	public void teleportPlayer(L2Npc npc, L2PcInstance player, int[] coords, int instanceId)
+	private void teleportPlayer(L2Npc npc, L2PcInstance player, int[] coords, int instanceId)
 	{
 		InstanceHolder holder = this.instanceWorlds.get(Integer.valueOf(instanceId));
 		if ((holder == null) && (instanceId > 0))
@@ -1042,9 +1025,9 @@ public class ToTheMonastery extends Quest
 		}
 	}
 	
-	public static class InstanceHolder
+	private static class InstanceHolder
 	{
-		FastList<L2Npc> mobs = new FastList<>();
+		FastList<L2Npc> mobs = new FastList<L2Npc>();
 	}
 	
 	private class ToTheMonasteryWorld extends InstanceWorld

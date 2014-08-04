@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.Disciple;
 
 import pk.elfo.gameserver.instancemanager.InstanceManager;
@@ -29,9 +11,6 @@ import pk.elfo.gameserver.model.quest.QuestState;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
-/**
- * @author Synerge & knoxville TODO: Lilith and Anakim Attack.
- */
 public class Disciple extends Quest
 {
 	private class DiSWorld extends InstanceWorld
@@ -69,17 +48,20 @@ public class Disciple extends Quest
 			teleportPlayer(player, loc, world.getInstanceId());
 			return world.getInstanceId();
 		}
-		instanceId = InstanceManager.getInstance().createDynamicInstance(template);
-		world = new DiSWorld();
-		world.setInstanceId(instanceId);
-		world.setTemplateId(INSTANCEID);
-		world.setStatus(0);
-		((DiSWorld) world).storeTime[0] = System.currentTimeMillis();
-		InstanceManager.getInstance().addWorld(world);
-		_log.info("Disciple started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
-		teleportPlayer(player, loc, world.getInstanceId());
-		world.addAllowed(player.getObjectId());
-		return instanceId;
+		else
+		{
+			instanceId = InstanceManager.getInstance().createDynamicInstance(template);
+			world = new DiSWorld();
+			world.setInstanceId(instanceId);
+			world.setTemplateId(INSTANCEID);
+			world.setStatus(0);
+			((DiSWorld) world).storeTime[0] = System.currentTimeMillis();
+			InstanceManager.getInstance().addWorld(world);
+			_log.info("Disciple started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
+			teleportPlayer(player, loc, world.getInstanceId());
+			world.addAllowed(player.getObjectId());
+			return instanceId;
+		}
 	}
 	
 	@Override
@@ -94,7 +76,7 @@ public class Disciple extends Quest
 		switch (npc.getNpcId())
 		{
 			case PROMISE:
-				enterInstance(player, "Disciple.xml", new Location(-89559, 216030, -7488));
+				enterInstance(player, "[011] Disciple.xml", new Location(-89559, 216030, -7488));
 				break;
 			case LEON:
 				InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);

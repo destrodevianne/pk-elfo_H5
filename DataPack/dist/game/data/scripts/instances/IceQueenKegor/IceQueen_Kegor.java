@@ -1,24 +1,10 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.IceQueenKegor;
 
 import java.util.List;
+
+import quests.Q10284_AcquisitionOfDivineSword.Q10284_AcquisitionOfDivineSword;
+
+import javolution.util.FastList;
 
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.datatables.SkillTable;
@@ -40,8 +26,6 @@ import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.util.Util;
-import quests.Q10284_AcquisitionOfDivineSword.Q10284_AcquisitionOfDivineSword;
-import javolution.util.FastList;
 
 public class IceQueen_Kegor extends Quest
 {
@@ -80,7 +64,7 @@ public class IceQueen_Kegor extends Quest
 	
 	private static final int[] ENTRY_POINT = { 186852, -173492, -3763 };
 	
-	public class teleCoord {int instanceId; int x; int y; int z;}
+	private class teleCoord {int instanceId; int x; int y; int z;}
 	
 	private void teleportplayer(L2PcInstance player, teleCoord teleto)
 	{
@@ -154,13 +138,13 @@ public class IceQueen_Kegor extends Quest
 		if (npc.getNpcId() == KEGOR_IN_CAVE)
 		{
 			InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-			if (tmpworld != null && tmpworld instanceof KegorWorld)
+			if (tmpworld != null && tmpworld instanceof KegorWorld);
 			{
 				KegorWorld world = (KegorWorld) tmpworld;
 
 				if (event.equalsIgnoreCase("spawn"))
 				{
-					world.liveMobs = new FastList<>();
+					world.liveMobs = new FastList<L2Attackable>();
 					for(int[] spawn : MOB_SPAWNS)
 					{
 						L2Attackable spawnedMob = 	(L2Attackable) addSpawn(MONSTER, spawn[0], spawn[1], spawn[2], spawn[3], false, 0, false, world.getInstanceId());
@@ -251,7 +235,7 @@ public String onTalk ( L2Npc npc, L2PcInstance player)
 			tele.z = ENTRY_POINT[2];
 
 			htmltext = npcId == KROON ? "32653-07.htm" : "32654-07.htm";
-			if (enterInstance(player, "IceQueen_Kegor.xml", tele) > 0)
+			if (enterInstance(player, "[018] Ice Queen Kegor.xml", tele) > 0)
 			{
 				htmltext = "";
 				if (hostQuest.getInt("progress") == 2 && hostQuest.getQuestItemsCount(ANTIDOTE) == 0)
@@ -266,7 +250,7 @@ public String onTalk ( L2Npc npc, L2PcInstance player)
 		else if (npc.getNpcId() == KEGOR_IN_CAVE)
 		{
 			InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(player.getInstanceId());
-			if (tmpworld != null && tmpworld instanceof KegorWorld)
+			if (tmpworld != null && tmpworld instanceof KegorWorld);
 			{
 				KegorWorld world = (KegorWorld) tmpworld;
 				if (hostQuest.getInt("progress") == 2 && hostQuest.getQuestItemsCount(ANTIDOTE) > 0 && !world.underAttack)
@@ -310,7 +294,7 @@ public String onTalk ( L2Npc npc, L2PcInstance player)
 		if (npc.getNpcId() == KEGOR_IN_CAVE)
 		{
 			InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(player.getInstanceId());
-			if (tmpworld != null && tmpworld instanceof KegorWorld)
+			if (tmpworld != null && tmpworld instanceof KegorWorld);
 			{
 				KegorWorld world = (KegorWorld) tmpworld;
 				
@@ -348,7 +332,7 @@ public String onTalk ( L2Npc npc, L2PcInstance player)
 			return null;
 
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-		if (tmpworld != null && tmpworld instanceof KegorWorld)
+		if (tmpworld != null && tmpworld instanceof KegorWorld);
 		{
 			KegorWorld world = (KegorWorld) tmpworld;
 

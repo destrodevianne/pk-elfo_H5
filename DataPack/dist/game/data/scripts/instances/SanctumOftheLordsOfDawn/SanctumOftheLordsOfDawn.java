@@ -1,22 +1,6 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.SanctumOftheLordsOfDawn;
+
+import quests.Q00195_SevenSignsSecretRitualOfThePriests.Q00195_SevenSignsSecretRitualOfThePriests;
 
 import pk.elfo.gameserver.instancemanager.InstanceManager;
 import pk.elfo.gameserver.model.L2World;
@@ -32,12 +16,7 @@ import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
-import quests.Q00195_SevenSignsSecretRitualOfThePriests.Q00195_SevenSignsSecretRitualOfThePriests;
 
-/**
- * Sanctum of the Lords of Dawn instance zone.
- * @author Adry_85
- */
 public class SanctumOftheLordsOfDawn extends Quest
 {
 	protected class HSWorld extends InstanceWorld
@@ -162,7 +141,7 @@ public class SanctumOftheLordsOfDawn extends Quest
 				final QuestState qs = talker.getQuestState(Q00195_SevenSignsSecretRitualOfThePriests.class.getSimpleName());
 				if ((qs != null) && qs.isCond(3) && hasQuestItems(talker, IDENTITY_CARD) && (talker.getTransformationId() == 113))
 				{
-					enterInstance(talker, "SanctumoftheLordsofDawn.xml", ENTER);
+					enterInstance(talker, "[027] Sanctum of the Lords of Dawn.xml", ENTER);
 					return "32575-01.html";
 				}
 				return "32575-02.html";

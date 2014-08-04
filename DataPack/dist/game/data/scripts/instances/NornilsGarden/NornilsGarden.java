@@ -1,22 +1,6 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.NornilsGarden;
+
+import quests.Q00179_IntoTheLargeCavern.Q00179_IntoTheLargeCavern;
 
 import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.instancemanager.InstanceManager;
@@ -38,13 +22,7 @@ import pk.elfo.gameserver.model.zone.L2ZoneType;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.util.Util;
-import quests.Q00179_IntoTheLargeCavern.Q00179_IntoTheLargeCavern;
 
-/**
- * Nornil's Garden instance zone.
- * @author Gnacik
- * @version 2010-10-15 Based on official server Naia
- */
 public class NornilsGarden extends Quest
 {
 	protected class NornilsWorld extends InstanceWorld
@@ -292,7 +270,7 @@ public class NornilsGarden extends Quest
 			return result;
 		}
 		
-		final int instanceId = InstanceManager.getInstance().createDynamicInstance("NornilsGarden.xml");
+		final int instanceId = InstanceManager.getInstance().createDynamicInstance("[022] Nornils Garden.xml");
 		final Instance inst = InstanceManager.getInstance().getInstance(instanceId);
 		
 		inst.setName(InstanceManager.getInstance().getInstanceIdName(INSTANCE_ID));

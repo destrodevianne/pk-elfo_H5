@@ -1,20 +1,10 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- * 
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- * 
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.SeerUgoros;
 
 import java.util.concurrent.ScheduledFuture;
+
+import quests.Q00288_HandleWithCare.Q00288_HandleWithCare;
+import quests.Q00423_TakeYourBestShot.Q00423_TakeYourBestShot;
+import ai.npc.AbstractNpcAI;
 
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.ai.CtrlIntention;
@@ -34,9 +24,6 @@ import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.Rnd;
-import quests.Q00288_HandleWithCare.Q00288_HandleWithCare;
-import quests.Q00423_TakeYourBestShot.Q00423_TakeYourBestShot;
-import ai.npc.AbstractNpcAI;
 
 public class SeerUgoros extends AbstractNpcAI
 {
@@ -66,9 +53,7 @@ public class SeerUgoros extends AbstractNpcAI
 		
 		addStartNpc(_batracos);
 		addTalkId(_batracos);
-		
 		addAttackId(_weed_id);
-		
 		addKillId(_seer_ugoros);
 		
 		startQuestTimer("ugoros_respawn", 60000, null, null);

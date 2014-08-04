@@ -1,25 +1,10 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.SeedOfInfinity;
 
 import java.util.Calendar;
 import java.util.Map;
+
+import javolution.util.FastList;
+import javolution.util.FastMap;
 
 import pk.elfo.gameserver.ai.CtrlEvent;
 import pk.elfo.gameserver.ai.CtrlIntention;
@@ -47,8 +32,6 @@ import pk.elfo.gameserver.network.serverpackets.L2GameServerPacket;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.Rnd;
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 public class DefenceHallOfSuffering extends Quest
 {
@@ -900,7 +883,7 @@ public class DefenceHallOfSuffering extends Quest
 			tele.x = -174701;
 			tele.y = 218109;
 			tele.z = -9592;
-			enterInstance(player, "SufferingHallDefence.xml", tele);
+			enterInstance(player, "[031] Hall Of Suffering - Defence.xml", tele);
 			return null;
 		}
 		return "";

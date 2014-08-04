@@ -1,46 +1,28 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.ChamberOfDelusion.West;
-
-import java.util.List;
 
 import pk.elfo.Config;
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.cache.HtmCache;
 import pk.elfo.gameserver.instancemanager.InstanceManager;
 import pk.elfo.gameserver.model.L2Party;
+import pk.elfo.gameserver.model.skills.L2Skill;
+import pk.elfo.gameserver.model.actor.L2Attackable.RewardItem;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.L2Summon;
-import pk.elfo.gameserver.model.actor.L2Attackable.RewardItem;
 import pk.elfo.gameserver.model.actor.instance.L2MonsterInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.entity.Instance;
-import pk.elfo.gameserver.model.holders.SkillHolder;
-import pk.elfo.gameserver.model.instancezone.InstanceWorld;
 import pk.elfo.gameserver.model.quest.Quest;
 import pk.elfo.gameserver.model.quest.QuestState;
-import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.Earthquake;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
+import pk.elfo.gameserver.model.holders.SkillHolder;
+import pk.elfo.gameserver.model.instancezone.InstanceWorld;
 import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.Rnd;
+
+import java.util.List;
 import javolution.util.FastList;
 
 public class West extends Quest
@@ -58,7 +40,7 @@ public class West extends Quest
 		{
 			super();
 			partyInside = party;
-			rewardedBoxes = new FastList<>();
+			rewardedBoxes = new FastList<Integer>();
 		}
 		
 		protected L2Party getPartyInside()
@@ -120,7 +102,7 @@ public class West extends Quest
 	private static final long ROOM_CHANGE_INTERVAL = 480000; //8 min
 	private static final int ROOM_CHANGE_RANDOM_TIME = 120; //2 min
 
-	public class TeleCoord
+	private class TeleCoord
 	{
 		int instanceId;
 		int x;
@@ -571,7 +553,7 @@ public class West extends Quest
 
 		if (npcId == ENTRANCE_GATEKEEPER)
 		{
-			enterInstance(player, "West.xml");
+			enterInstance(player, "[006] Delusion Chamber, Western Seal.xml");
 		}
 
 		return "";

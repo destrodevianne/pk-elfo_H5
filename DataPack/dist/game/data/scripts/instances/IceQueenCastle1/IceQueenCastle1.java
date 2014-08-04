@@ -1,31 +1,14 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.IceQueenCastle1;
 
 import java.util.Arrays;
+
+import quests.Q10285_MeetingSirra.Q10285_MeetingSirra;
 
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.instancemanager.InstanceManager;
 import pk.elfo.gameserver.model.L2CharPosition;
 import pk.elfo.gameserver.model.L2World;
-import pk.elfo.gameserver.model.Location;
 import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2DoorInstance;
@@ -41,11 +24,6 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
-import quests.Q10285_MeetingSirra.Q10285_MeetingSirra;
-
-/**
- ** @author GKR 2011-03-24
- */
 
 public class IceQueenCastle1 extends Quest
 {
@@ -64,6 +42,7 @@ public class IceQueenCastle1 extends Quest
 		}
 	}
 	
+	private static final String qn = "IceQueenCastle1";
 	private static final int INSTANCEID = 137;
 	
 	// NPC's, mobs
@@ -94,6 +73,22 @@ public class IceQueenCastle1 extends Quest
 		-848
 	};
 	
+	private class teleCoord
+	{
+		int instanceId;
+		int x;
+		int y;
+		int z;
+	}
+	
+	private void teleportplayer(L2PcInstance player, teleCoord teleto)
+	{
+		player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+		player.setInstanceId(teleto.instanceId);
+		player.teleToLocation(teleto.x, teleto.y, teleto.z);
+		return;
+	}
+	
 	private boolean checkConditions(L2PcInstance player)
 	{
 		if ((player.getLevel() < 82) || (player.getLevel() > 85))
@@ -107,7 +102,13 @@ public class IceQueenCastle1 extends Quest
 		return true;
 	}
 	
-	protected int enterInstance(L2PcInstance player, String template, Location loc)
+	protected void exitInstance(L2PcInstance player, teleCoord tele)
+	{
+		player.setInstanceId(0);
+		player.teleToLocation(tele.x, tele.y, tele.z);
+	}
+	
+	protected int enterInstance(L2PcInstance player, String template, teleCoord teleto)
 	{
 		int instanceId = 0;
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
@@ -120,33 +121,39 @@ public class IceQueenCastle1 extends Quest
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
 				return 0;
 			}
-			teleportPlayer(player, loc, world.getInstanceId());
+			teleto.instanceId = world.getInstanceId();
+			teleportplayer(player, teleto);
 			return instanceId;
 		}
-		
-		if (!checkConditions(player))
+		else
 		{
-			return 0;
+			// New instance
+			if (!checkConditions(player))
+			{
+				return 0;
+			}
+			
+			instanceId = InstanceManager.getInstance().createDynamicInstance(template);
+			world = new IQWorld();
+			world.setInstanceId(instanceId);
+			world.setTemplateId(INSTANCEID);
+			world.setStatus(0);
+			((IQWorld) world).storeTime[0] = System.currentTimeMillis();
+			InstanceManager.getInstance().addWorld(world);
+			_log.info("IQWorld started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
+			teleto.instanceId = instanceId;
+			teleportplayer(player, teleto);
+			world.addAllowed(player.getObjectId());
+			
+			// Open door
+			L2DoorInstance door = InstanceManager.getInstance().getInstance(instanceId).getDoor(23140101);
+			if (door != null)
+			{
+				door.openMe();
+			}
+			
+			return instanceId;
 		}
-		
-		instanceId = InstanceManager.getInstance().createDynamicInstance(template);
-		world = new IQWorld();
-		world.setInstanceId(instanceId);
-		world.setTemplateId(INSTANCEID);
-		world.setStatus(0);
-		((IQWorld) world).storeTime[0] = System.currentTimeMillis();
-		InstanceManager.getInstance().addWorld(world);
-		_log.info("IQWorld started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
-		teleportPlayer(player, loc, world.getInstanceId());
-		world.addAllowed(player.getObjectId());
-		// Open door
-		L2DoorInstance door = InstanceManager.getInstance().getInstance(instanceId).getDoor(23140101);
-		if (door != null)
-		{
-			door.openMe();
-		}
-		
-		return instanceId;
 	}
 	
 	@Override
@@ -204,10 +211,12 @@ public class IceQueenCastle1 extends Quest
 					
 					// Leave instance
 					world.removeAllowed(pl.getObjectId());
-					int x = RETURN_POINT[0];
-					int y = RETURN_POINT[1];
-					int z = RETURN_POINT[2];
-					teleportPlayer(pl, new Location(x, y, z), 0);
+					teleCoord tele = new teleCoord();
+					tele.instanceId = 0;
+					tele.x = RETURN_POINT[0];
+					tele.y = RETURN_POINT[1];
+					tele.z = RETURN_POINT[2];
+					exitInstance(pl, tele);
 					
 					// destroy instance after 1 min
 					Instance inst = InstanceManager.getInstance().getInstance(npc.getInstanceId());
@@ -229,7 +238,7 @@ public class IceQueenCastle1 extends Quest
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		int npcId = npc.getNpcId();
-		QuestState st = player.getQuestState(getName());
+		QuestState st = player.getQuestState(qn);
 		if (st == null)
 		{
 			st = newQuestState(player);
@@ -237,9 +246,10 @@ public class IceQueenCastle1 extends Quest
 		
 		if (npcId == JINIA2)
 		{
-			int x = ENTRY_POINT[0];
-			int y = ENTRY_POINT[1];
-			int z = ENTRY_POINT[2];
+			teleCoord tele = new teleCoord();
+			tele.x = ENTRY_POINT[0];
+			tele.y = ENTRY_POINT[1];
+			tele.z = ENTRY_POINT[2];
 			
 			QuestState hostQuest = player.getQuestState(Q10285_MeetingSirra.class.getSimpleName());
 			
@@ -249,7 +259,7 @@ public class IceQueenCastle1 extends Quest
 				hostQuest.playSound("ItemSound.quest_middle");
 			}
 			
-			if (enterInstance(player, "IceQueenCastle1.xml", new Location(x, y, z)) <= 0)
+			if (enterInstance(player, "[016] Ice Queen Castle - Single Use.xml", tele) <= 0)
 			{
 				return "32781-10.htm";
 			}
@@ -263,6 +273,9 @@ public class IceQueenCastle1 extends Quest
 	{
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(character.getInstanceId());
 		if ((tmpworld != null) && (tmpworld instanceof IQWorld) && (tmpworld.getTemplateId() == 137))
+		{
+			;
+		}
 		{
 			IQWorld world = (IQWorld) tmpworld;
 			if (!world.showIsInProgress && (character instanceof L2PcInstance)) // triggers show begin
@@ -331,6 +344,6 @@ public class IceQueenCastle1 extends Quest
 	
 	public static void main(String[] args)
 	{
-		new IceQueenCastle1(-1, IceQueenCastle1.class.getSimpleName(), "instances");
+		new IceQueenCastle1(-1, qn, "instances");
 	}
 }

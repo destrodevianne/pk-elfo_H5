@@ -1,26 +1,11 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.Pailaka;
 
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
+
+import javolution.util.FastList;
+import javolution.util.FastMap;
 
 import pk.elfo.Config;
 import pk.elfo.gameserver.ai.CtrlEvent;
@@ -45,8 +30,6 @@ import pk.elfo.gameserver.network.serverpackets.SpecialCamera;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.Rnd;
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 public class PailakaInjuredDragon extends Quest
 {
@@ -115,7 +98,7 @@ public class PailakaInjuredDragon extends Quest
 			-41562,
 			-2332
 		});
-	}
+	};
 	
 	// NPCS
 	private static final int KETRA_ORC_SHAMAN = 32499;
@@ -285,7 +268,7 @@ public class PailakaInjuredDragon extends Quest
 	{
 		DROPLIST.add(new PailakaDrop(HEAL_POTION, 80));
 		DROPLIST.add(new PailakaDrop(SHIELD_POTION, 30));
-	}
+	};
 	
 	private static final int[][] HP_HERBS_DROPLIST =
 	{
@@ -427,7 +410,7 @@ public class PailakaInjuredDragon extends Quest
 				return;
 			}
 			
-			final int instanceId = InstanceManager.getInstance().createDynamicInstance("PailakaInjuredDragon.xml");
+			final int instanceId = InstanceManager.getInstance().createDynamicInstance("[024] Pailaka Injured Dragon.xml");
 			
 			world = new InstanceWorld();
 			world.setInstanceId(instanceId);
@@ -578,7 +561,10 @@ public class PailakaInjuredDragon extends Quest
 				giveBuff(npc, player, BUFFS[nr - 1][0], BUFFS[nr - 1][1]);
 				return "32509-06.htm";
 			}
-			return "32509-05.htm";
+			else
+			{
+				return "32509-05.htm";
+			}
 		}
 		else if (event.equalsIgnoreCase("latana_animation"))
 		{
@@ -666,7 +652,10 @@ public class PailakaInjuredDragon extends Quest
 				{
 					return "32502-05.htm";
 				}
-				return "32502-01.htm";
+				else
+				{
+					return "32502-01.htm";
+				}
 			case KETRA_ORC_INTELIGENCE_OFFICER:
 				return "32509-00.htm";
 			case KETRA_ORC_SUPPORTER2:
@@ -960,7 +949,12 @@ public class PailakaInjuredDragon extends Quest
 		{
 			return null;
 		}
-
+		
+		if ((player == null) || isPet)
+		{
+			return null;
+		}
+		
 		switch (npc.getNpcId())
 		{
 			case LATANA:

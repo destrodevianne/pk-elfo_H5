@@ -1,27 +1,13 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.MonasteryGrandLibrary;
 
 import java.util.List;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
+import quests.Q10294_SevenSignToTheMonastery.Q10294_SevenSignToTheMonastery;
+import quests.Q10295_SevenSignSolinasTomb.Q10295_SevenSignSolinasTomb;
+import quests.Q10296_SevenSignPoweroftheSeal.Q10296_SevenSignPoweroftheSeal;
+
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.instancemanager.InstanceManager;
@@ -37,9 +23,6 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.util.Rnd;
-import quests.Q10294_SevenSignToTheMonastery.Q10294_SevenSignToTheMonastery;
-import quests.Q10295_SevenSignSolinasTomb.Q10295_SevenSignSolinasTomb;
-import quests.Q10296_SevenSignPoweroftheSeal.Q10296_SevenSignPoweroftheSeal;
 
 public class MonasteryGrandLibrary extends Quest
 {
@@ -255,7 +238,7 @@ public class MonasteryGrandLibrary extends Quest
 			}
 			return;
 		}
-		final int instanceId = InstanceManager.getInstance().createDynamicInstance("MonasteryGrandLibrary.xml");
+		final int instanceId = InstanceManager.getInstance().createDynamicInstance("[021] Monastery Grand Library.xml");
 		
 		world = new MonasteryGrandLibraryWorld();
 		world.setInstanceId(instanceId);
@@ -501,7 +484,10 @@ public class MonasteryGrandLibrary extends Quest
 				enterInstance(npc, player);
 				return null;
 			}
-			htmltext = "<html><body>Odd Globe:<br>The huge mechanism in the form of the globe. Around silent cottons are heard and in air presence of any unknown energy, which which in a way doesn't come under to your influence is felt.</body></html>";
+			else
+			{
+				htmltext = "<html><body>Odd Globe:<br>The huge mechanism in the form of the globe. Around silent cottons are heard and in air presence of any unknown energy, which which in a way doesn't come under to your influence is felt.</body></html>";
+			}
 		}
 		return htmltext;
 	}

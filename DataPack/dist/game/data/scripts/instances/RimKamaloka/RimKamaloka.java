@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.RimKamaloka;
 
 import java.util.Calendar;
@@ -23,6 +5,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
+
+import javolution.util.FastList;
+import javolution.util.FastMap;
 
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.ai.CtrlIntention;
@@ -44,8 +29,6 @@ import pk.elfo.gameserver.model.quest.Quest;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.util.Rnd;
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 public class RimKamaloka extends Quest
 {
@@ -483,7 +466,7 @@ public class RimKamaloka extends Quest
 		}
 	};
 	
-	public static final int[][] REWARDERS =
+	private static final int[][] REWARDERS =
 	{
 		{
 			9261,
@@ -932,8 +915,8 @@ public class RimKamaloka extends Quest
 		public ScheduledFuture<?> lockTask = null;
 		public ScheduledFuture<?> finishTask = null;
 		
-		public List<L2MonsterInstance> spawnedMobs = new FastList<>();
-		public Map<Integer, Long> lastAttack = new FastMap<>();
+		public List<L2MonsterInstance> spawnedMobs = new FastList<L2MonsterInstance>();
+		public Map<Integer, Long> lastAttack = new FastMap<Integer, Long>();
 		public ScheduledFuture<?> despawnTask = null;
 		
 		public RimKamaWorld()

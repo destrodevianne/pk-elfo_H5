@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.RankuFloor;
 
 import java.util.Calendar;
@@ -33,10 +15,6 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.util.Util;
 
-/**
- * Tower of Infinitum (10th Floor) instance zone.
- * @author GKR
- */
 public class RankuFloor extends Quest
 {
 	private static final int INSTANCEID = 143; // this is the client number
@@ -75,7 +53,7 @@ public class RankuFloor extends Quest
 			
 			if (htmltext == null)
 			{
-				enterInstance(player, "Ranku.xml");
+				enterInstance(player, "[026] Ranku.xml");
 			}
 		}
 		else if (npc.getNpcId() == CUBE)

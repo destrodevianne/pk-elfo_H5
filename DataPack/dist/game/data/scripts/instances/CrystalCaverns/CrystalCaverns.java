@@ -1,25 +1,10 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.CrystalCaverns;
 
 import java.util.List;
 import java.util.Map;
+
+import javolution.util.FastList;
+import javolution.util.FastMap;
 
 import pk.elfo.Config;
 import pk.elfo.gameserver.GeoData;
@@ -52,15 +37,13 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.ActionFailed;
 import pk.elfo.gameserver.network.serverpackets.CreatureSay;
 import pk.elfo.gameserver.network.serverpackets.FlyToLocation;
+import pk.elfo.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
 import pk.elfo.gameserver.network.serverpackets.PlaySound;
 import pk.elfo.gameserver.network.serverpackets.SpecialCamera;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.network.serverpackets.ValidateLocation;
-import pk.elfo.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import pk.elfo.gameserver.util.Util;
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 /**
  * Crystal Caverns instance zone.<br>
@@ -2725,7 +2708,7 @@ public class CrystalCaverns extends Quest
 		}
 		if (npcId == ORACLE_GUIDE_1)
 		{
-			enterInstance(player, "CrystalCaverns.xml", new Location(143348, 148707, -11972));
+			enterInstance(player, "[007] CrystalCaverns.xml", new Location(143348, 148707, -11972));
 			return "";
 		}
 		

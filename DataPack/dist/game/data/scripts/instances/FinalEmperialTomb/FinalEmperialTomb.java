@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.FinalEmperialTomb;
 
 import java.io.File;
@@ -44,12 +26,12 @@ import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.instancemanager.InstanceManager;
 import pk.elfo.gameserver.model.L2CharPosition;
 import pk.elfo.gameserver.model.L2CommandChannel;
+import pk.elfo.gameserver.model.L2Object.InstanceType;
 import pk.elfo.gameserver.model.L2Party;
 import pk.elfo.gameserver.model.L2Territory;
 import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.Location;
 import pk.elfo.gameserver.model.PcCondOverride;
-import pk.elfo.gameserver.model.L2Object.InstanceType;
 import pk.elfo.gameserver.model.actor.L2Attackable;
 import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.L2Npc;
@@ -64,6 +46,7 @@ import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.model.skills.L2SkillType;
 import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.AbstractNpcInfo.NpcInfo;
 import pk.elfo.gameserver.network.serverpackets.Earthquake;
 import pk.elfo.gameserver.network.serverpackets.ExShowScreenMessage;
 import pk.elfo.gameserver.network.serverpackets.L2GameServerPacket;
@@ -72,7 +55,6 @@ import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
 import pk.elfo.gameserver.network.serverpackets.SocialAction;
 import pk.elfo.gameserver.network.serverpackets.SpecialCamera;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
-import pk.elfo.gameserver.network.serverpackets.AbstractNpcInfo.NpcInfo;
 import pk.elfo.gameserver.util.Util;
 
 /**
@@ -80,7 +62,6 @@ import pk.elfo.gameserver.util.Util;
  * Test when Frintezza song use 5008 effect skill.<br>
  * Test deeply Scarlet van Halisha's AI.<br>
  * Use proper zone spawn system.
- * @author Gigiikun
  */
 public class FinalEmperialTomb extends Quest
 {
@@ -1564,7 +1545,7 @@ public class FinalEmperialTomb extends Quest
 		}
 		if (npcId == GUIDE)
 		{
-			enterInstance(player, "FinalEmperialTomb.xml", ENTER_TELEPORT);
+			enterInstance(player, "[014] FinalEmperialTomb.xml", ENTER_TELEPORT);
 		}
 		else if (npc.getNpcId() == CUBE)
 		{

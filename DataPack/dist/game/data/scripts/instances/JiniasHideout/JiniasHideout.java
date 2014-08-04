@@ -1,22 +1,9 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.JiniasHideout;
+
+import quests.Q10284_AcquisitionOfDivineSword.Q10284_AcquisitionOfDivineSword;
+import quests.Q10285_MeetingSirra.Q10285_MeetingSirra;
+import quests.Q10286_ReunionWithSirra.Q10286_ReunionWithSirra;
+import quests.Q10287_StoryOfThoseLeft.Q10287_StoryOfThoseLeft;
 
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.instancemanager.InstanceManager;
@@ -33,10 +20,6 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
-import quests.Q10284_AcquisitionOfDivineSword.Q10284_AcquisitionOfDivineSword;
-import quests.Q10285_MeetingSirra.Q10285_MeetingSirra;
-import quests.Q10286_ReunionWithSirra.Q10286_ReunionWithSirra;
-import quests.Q10287_StoryOfThoseLeft.Q10287_StoryOfThoseLeft;
 
 public class JiniasHideout extends Quest
 {
@@ -68,7 +51,7 @@ public class JiniasHideout extends Quest
 		-5413
 	};
 	
-	public class teleCoord
+	private class teleCoord
 	{
 		int instanceId;
 		int x;
@@ -186,22 +169,22 @@ public class JiniasHideout extends Quest
 				{
 					case 10284:
 						hostQuest = player.getQuestState(Q10284_AcquisitionOfDivineSword.class.getSimpleName());
-						tmpl = "JiniasHideout1.xml";
+						tmpl = "[019A] Jinias Hideout_1.xml";
 						htmltext = "10284_failed.htm";
 						break;
 					case 10285:
 						hostQuest = player.getQuestState(Q10285_MeetingSirra.class.getSimpleName());
-						tmpl = "JiniasHideout2.xml";
+						tmpl = "[019B] Jinias Hideout_2.xml";
 						htmltext = "10285_failed.htm";
 						break;
 					case 10286:
 						hostQuest = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
-						tmpl = "JiniasHideout2.xml";
+						tmpl = "[019B] Jinias Hideout_2.xml";
 						htmltext = "10286_failed.htm";
 						break;
 					case 10287:
 						hostQuest = player.getQuestState(Q10287_StoryOfThoseLeft.class.getSimpleName());
-						tmpl = "JiniasHideout2.xml";
+						tmpl = "[019B] Jinias Hideout_2.xml";
 						htmltext = "10287_failed.htm";
 						break;
 				}
@@ -256,18 +239,18 @@ public class JiniasHideout extends Quest
 			{
 				switch (((JiniasWorld) world).questId)
 				{
-				case 10285:
-					htmltext = "";
-					break;
-				case 10286:
-					htmltext = "";
-					hostQuest.playSound("ItemSound.quest_middle");
-					hostQuest.set("cond", "5");
-					break;
-				case 10287:
-					htmltext = "";
-					hostQuest.playSound("ItemSound.quest_middle");
-					hostQuest.set("cond", "5");
+					case 10285:
+						htmltext = "";
+						break;
+					case 10286:
+						htmltext = "";
+						hostQuest.playSound("ItemSound.quest_middle");
+						hostQuest.set("cond", "5");
+						break;
+					case 10287:
+						htmltext = "";
+						hostQuest.playSound("ItemSound.quest_middle");
+						hostQuest.set("cond", "5");
 				}
 			}
 		}
