@@ -1112,6 +1112,9 @@ public final class Config
 	public static List<Integer> LIST_OLY_RESTRICTED_ITEMS;
 	public static int ALT_OLY_ENCHANT_LIMIT;
 	public static int ALT_OLY_WAIT_TIME;
+	public static boolean ALT_OLY_USE_CUSTOM_PERIOD_SETTINGS;
+	public static String ALT_OLY_PERIOD;
+	public static int ALT_OLY_PERIOD_MULTIPLIER;
 	public static int ALT_MANOR_REFRESH_TIME;
 	public static int ALT_MANOR_REFRESH_MIN;
 	public static int ALT_MANOR_APPROVE_TIME;
@@ -5299,7 +5302,10 @@ public final class Config
 			ALT_OLY_MAX_WEEKLY_MATCHES_NON_CLASSED = Integer.parseInt(Olympiad.getProperty("AltOlyMaxWeeklyMatchesNonClassed", "60"));
 			ALT_OLY_MAX_WEEKLY_MATCHES_CLASSED = Integer.parseInt(Olympiad.getProperty("AltOlyMaxWeeklyMatchesClassed", "30"));
 			ALT_OLY_MAX_WEEKLY_MATCHES_TEAM = Integer.parseInt(Olympiad.getProperty("AltOlyMaxWeeklyMatchesTeam", "10"));
-
+			ALT_OLY_USE_CUSTOM_PERIOD_SETTINGS = Boolean.parseBoolean(Olympiad.getProperty("AltOlyUseCustomPeriodSettings", "false"));
+			ALT_OLY_PERIOD = Olympiad.getString("AltOlyPeriod", "MONTH");
+			ALT_OLY_PERIOD_MULTIPLIER = Integer.parseInt(Olympiad.getProperty("AltOlyPeriodMultiplier", "1"));
+			
 			final File hex = new File(HEXID_FILE);
 			try (InputStream is = new FileInputStream(hex))
 			{

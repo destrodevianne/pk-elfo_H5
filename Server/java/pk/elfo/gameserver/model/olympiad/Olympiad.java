@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.model.olympiad;
 
 import gnu.trove.map.hash.TIntIntHashMap;
@@ -50,8 +32,9 @@ import pk.elfo.util.L2FastList;
 import javolution.util.FastMap;
 
 /**
- * @author godson
+ * PkElfo
  */
+
 public class Olympiad
 {
 	protected static final Logger _log = Logger.getLogger(Olympiad.class.getName());
@@ -583,6 +566,11 @@ public class Olympiad
 	
 	protected void setNewOlympiadEnd()
 	{
+		if (Config.ALT_OLY_USE_CUSTOM_PERIOD_SETTINGS)
+		{
+			setNewOlympiadEndCustom();
+			return;
+		}
 		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.OLYMPIAD_PERIOD_S1_HAS_STARTED);
 		sm.addNumber(_currentCycle);
 		
@@ -630,6 +618,70 @@ public class Olympiad
 		_nextWeeklyChange = nextChange.getTimeInMillis() + WEEKLY_PERIOD;
 		scheduleWeeklyChange();
 	}
+	
+	protected void setNewOlympiadEndCustom()
+    {
+        SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.OLYMPIAD_PERIOD_S1_HAS_STARTED);
+        sm.addInt(_currentCycle);
+
+        Announcements.getInstance().announceToAll(sm);
+
+        Calendar currentTime = Calendar.getInstance();
+        currentTime.set(Calendar.AM_PM, Calendar.AM);
+        currentTime.set(Calendar.HOUR, 12);
+        currentTime.set(Calendar.MINUTE, 0);
+        currentTime.set(Calendar.SECOND, 0);
+
+        Calendar nextChange = Calendar.getInstance();
+
+        switch (Config.ALT_OLY_PERIOD)
+        {
+            case "DAY":
+            {
+                currentTime.add(Calendar.DAY_OF_MONTH, Config.ALT_OLY_PERIOD_MULTIPLIER);
+                currentTime.add(Calendar.DAY_OF_MONTH, -1); // last day is for validation
+
+                if (Config.ALT_OLY_PERIOD_MULTIPLIER >= 14)
+                {
+                    _nextWeeklyChange = nextChange.getTimeInMillis() + WEEKLY_PERIOD;
+                }
+                else if (Config.ALT_OLY_PERIOD_MULTIPLIER >= 7)
+                {
+                    _nextWeeklyChange = nextChange.getTimeInMillis() + (WEEKLY_PERIOD / 2);
+                }
+                else
+                {
+                    _log.warning("Invalid config value for Config.ALT_OLY_PERIOD_MULTIPLIER, must be >= 7");
+                }
+                break;
+            }
+            case "WEEK":
+            {
+                currentTime.add(Calendar.WEEK_OF_MONTH, Config.ALT_OLY_PERIOD_MULTIPLIER);
+                currentTime.add(Calendar.DAY_OF_MONTH, -1); // last day is for validation
+
+                if (Config.ALT_OLY_PERIOD_MULTIPLIER > 1)
+                {
+                    _nextWeeklyChange = nextChange.getTimeInMillis() + WEEKLY_PERIOD;
+                }
+                else
+                {
+                    _nextWeeklyChange = nextChange.getTimeInMillis() + (WEEKLY_PERIOD / 2);
+                }
+                break;
+            }
+            case "MONTH":
+            {
+                currentTime.add(Calendar.MONTH, Config.ALT_OLY_PERIOD_MULTIPLIER);
+                currentTime.add(Calendar.DAY_OF_MONTH, -1); // last day is for validation
+
+                _nextWeeklyChange = nextChange.getTimeInMillis() + WEEKLY_PERIOD;
+                break;
+            }
+        }
+        _olympiadEnd = currentTime.getTimeInMillis();
+        scheduleWeeklyChange();
+    }
 	
 	public boolean inCompPeriod()
 	{

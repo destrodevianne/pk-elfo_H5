@@ -122,4 +122,15 @@ public final class L2Properties extends Properties
 		
 		return property.trim();
 	}
+	
+	public String getString(String key, String defaultValue)
+	{
+		String value = getProperty(key);
+		if (value == null)
+		{
+			_log.warning("Faltando propriedade para a chave: " + key + " usando o valor padrao: " + defaultValue);
+			return defaultValue;
+		}
+		return value;
+	}
 }
