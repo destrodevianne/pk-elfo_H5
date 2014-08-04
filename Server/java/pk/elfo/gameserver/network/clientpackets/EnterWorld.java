@@ -32,6 +32,8 @@ import pk.elfo.gameserver.instancemanager.PetitionManager;
 import pk.elfo.gameserver.instancemanager.QuestManager;
 import pk.elfo.gameserver.instancemanager.SiegeManager;
 import pk.elfo.gameserver.instancemanager.TerritoryWarManager;
+import pk.elfo.gameserver.masteriopack.rankpvpsystem.RPSConfig;
+import pk.elfo.gameserver.masteriopack.rankpvpsystem.RankPvpSystem;
 import pk.elfo.gameserver.model.L2Clan;
 import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.L2World;
@@ -926,6 +928,11 @@ public class EnterWorld extends L2GameClientPacket
 		for (PlayerSpawnListener listener : listeners)
 		{
 			listener.onSpawn(activeChar);
+		}
+		
+		if (RPSConfig.RANK_PVP_SYSTEM_ENABLED)
+		{
+			RankPvpSystem.updateNickAndTitleColor(activeChar, null);
 		}
 	}
 	

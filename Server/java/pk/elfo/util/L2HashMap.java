@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.util;
 
 import java.util.HashMap;
@@ -28,7 +10,6 @@ import pk.elfo.gameserver.model.interfaces.IL2Procedure;
  * A custom version of HashMap: Extension for iterating without using temporary collection<br>
  * Note that this implementation is not synchronized. If multiple threads access a hash map concurrently, and at least one of the threads modifies the map structurally, it must be synchronized externally. This is typically accomplished by synchronizing on some object that naturally encapsulates the
  * map. If no such object exists, the map should be "wrapped" using the {@link L2FastMap}. This is best done at creation time, to prevent accidental unsynchronized access.
- * @author UnAfraid
  * @param <K>
  * @param <V>
  */

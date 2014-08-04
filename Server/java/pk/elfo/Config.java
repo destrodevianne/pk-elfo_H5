@@ -102,6 +102,7 @@ public final class Config
 	public static final String SEVENSIGNS_CONFIG_FILE = "./config/Eventos/SevenSigns.properties";
 	public static final String SIEGE_CONFIGURATION_FILE = "./config/Eventos/Siege.properties";
 	public static final String TW_CONFIGURATION_FILE = "./config/Eventos/TerritoryWar.properties";
+	public static final String EVENT_ACHIEVEMENT = "./config/Eventos/Achievement.properties";
 	// ------------------------GM-ADM----------------------------------------------------------------------//
 	public static final String SECURITY_CONFIG_FILE = "./config/GM/Security.properties";
 	public static final String GMADM_CONFIG = "./config/GM/GmAdm.properties";
@@ -191,6 +192,8 @@ public final class Config
 	public static int RecoveryVitalityItemCount;
 	public static int SPItemId;
 	public static int SPItemCount;
+	// Achievements Engine
+	public static boolean ENABLE_EVENT_ACHIEVEMENT;
 	// ########################################################################################################//
 	// RECOMEND PROPERTIES
 	// ########################################################################################################//
@@ -2526,6 +2529,20 @@ public final class Config
 					_log.log(Level.SEVERE, "Error while loading SEVENSIGNS settings!", e);
 				}
 				
+			// ############################ ACHIEVEMENT PROPERTIES ######################################################//
+			
+			L2Properties achievement = new L2Properties();
+			final File achievement = new File(EVENT_ACHIEVEMENT);
+			try (InputStream is = new FileInputStream(achievement))
+				{
+					achievement.load(is);
+					
+				ENABLE_EVENT_ACHIEVEMENT = Boolean.parseBoolean(achievement.getProperty("AllowAchievement", "False"));
+				}
+			catch (Exception e)
+				{
+					_log.log(Level.SEVERE, "Error while loading ACHIEVEMENT settings!", e);
+				}
 			
 			// ########################################################################################################//
 			// ANTHARAS PROPERTIES

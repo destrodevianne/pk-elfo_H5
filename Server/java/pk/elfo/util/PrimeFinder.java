@@ -1,14 +1,3 @@
-/*
- * Copyright (c) 1999 CERN - European Organization for Nuclear Research.
- * 
- * Permission to use, copy, modify, distribute and sell this software
- * and its documentation for any purpose is hereby granted without fee,
- * provided that the above copyright notice appear in all copies and
- * that both that copyright notice and this permission notice appear in
- * supporting documentation. CERN makes no representations about the
- * suitability of this software for any purpose. It is provided "as is"
- * without expressed or implied warranty.
- */
 package pk.elfo.util;
 
 import java.util.Arrays;
@@ -27,7 +16,6 @@ import java.util.Arrays;
  * <p>
  * Choosing a prime is <tt>O(log 300)</tt> (binary search in a list of 300 ints).<br>
  * Memory requirements: 1 KB static memory.<br>
- * @author wolfgang.hoschek@cern.ch
  * @version 1.0, 09/24/99
  */
 public final class PrimeFinder

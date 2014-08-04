@@ -112,6 +112,7 @@ import pk.elfo.gameserver.instancemanager.TerritoryWarManager;
 import pk.elfo.gameserver.instancemanager.TransformationManager;
 import pk.elfo.gameserver.instancemanager.WalkingManager;
 import pk.elfo.gameserver.instancemanager.ZoneManager;
+import pk.elfo.gameserver.instancemanager.achievments_engine.AchievementsManager;
 import pk.elfo.gameserver.instancemanager.leaderboards.ArenaLeaderboard;
 import pk.elfo.gameserver.instancemanager.leaderboards.CraftLeaderboard;
 import pk.elfo.gameserver.instancemanager.leaderboards.FishermanLeaderboard;
@@ -205,6 +206,10 @@ public class GameServer
 		// load script engines
 		printSection("Mecanismos");
 		L2ScriptEngineManager.getInstance();
+		if (Config.ENABLE_EVENT_ACHIEVEMENT)
+		{
+			AchievementsManager.getInstance();
+		}
 		
 		printSection("Mundo");
 		

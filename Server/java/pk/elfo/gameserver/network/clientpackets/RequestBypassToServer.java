@@ -14,6 +14,7 @@ import pk.elfo.gameserver.handler.AdminCommandHandler;
 import pk.elfo.gameserver.handler.BypassHandler;
 import pk.elfo.gameserver.handler.IAdminCommandHandler;
 import pk.elfo.gameserver.handler.IBypassHandler;
+import pk.elfo.gameserver.masteriopack.rankpvpsystem.RPSBypass;
 import pk.elfo.gameserver.model.L2CharPosition;
 import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.L2World;
@@ -317,6 +318,12 @@ public final class RequestBypassToServer extends L2GameClientPacket
 					handler.useBypass("arenachange " + (arenaId - 1), activeChar, null);
 				}
 			}
+			
+			else if (_command.startsWith("RPS."))
+			{
+				RPSBypass.executeCommand(activeChar, _command);
+			}
+			
 			else if (_command.startsWith("Aioitem"))
 			{
 				AIOItemTable.getInstance().handleBypass(activeChar, _command);

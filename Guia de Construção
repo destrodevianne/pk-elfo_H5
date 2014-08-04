@@ -68,6 +68,7 @@ Adicionado MercenaryCaptain Instance
 Adicionado Seyo Instance
 Adicionado Tunatun Instance
 Adicionado Fame Manager
+[BUG] Fantasy Isle Buff Zone fix!
 
 ###############################################
 #################### FIX BETA TEST ############
@@ -114,6 +115,7 @@ LuckyPig
 ***Evento RaidSpawn (a cada 30 minutos um raid e spawnado em determinado lugar, o tempo, raid, lugar de spawn e recompensa podem ser configurados no arquivo java do evento).
 BloodShed 
 Event RPS
+Adicionado Achievements Engine
 
 ############### PHOENIX ENGINE:################
 Battlefield
