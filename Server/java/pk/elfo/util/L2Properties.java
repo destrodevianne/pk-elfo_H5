@@ -123,6 +123,7 @@ public final class L2Properties extends Properties
 		return property.trim();
 	}
 	
+	// getString
 	public String getString(String key, String defaultValue)
 	{
 		String value = getProperty(key);
@@ -133,4 +134,49 @@ public final class L2Properties extends Properties
 		}
 		return value;
 	}
+	
+    // getBoolean
+    public boolean getBoolean(String key, boolean defaultValue)
+    {
+        String value = getProperty(key);
+        if (value == null)
+        {
+            _log.warning("Missing property for key: " + key + " using default value: " + defaultValue);
+            return defaultValue;
+        }
+
+        if (value.equalsIgnoreCase("true"))
+        {
+            return true;
+        }
+        else if (value.equalsIgnoreCase("false"))
+        {
+            return false;
+        }
+        else
+        {
+            _log.warning("Invalid value specified for key: " + key + " specified value: " + value + " should be \"boolean\" using default value: " + defaultValue);
+            return defaultValue;
+        }
+    }
+
+    public int getInt(String key, int defaultValue)
+    {
+        String value = getProperty(key);
+        if (value == null)
+        {
+            _log.warning("Missing property for key: " + key + " using default value: " + defaultValue);
+            return defaultValue;
+        }
+
+        try
+        {
+            return Integer.parseInt(value);
+        }
+        catch (NumberFormatException e)
+        {
+            _log.warning("Invalid value specified for key: " + key + " specified value: " + value + " should be \"int\" using default value: " + defaultValue);
+            return defaultValue;
+        }
+    }
 }

@@ -1,7 +1,9 @@
 package handlers.itemhandlers;
 
+import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.L2Playable;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.PkHunterEvent;
 import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.gameserver.network.SystemMessageId;
 
@@ -20,6 +22,11 @@ public class ItemSkills extends ItemSkillsTemplate
 			activeChar.sendPacket(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT);
 			return false;
 		}
+	       else if((activeChar != null) && PkHunterEvent.isPk(activeChar))
+	        {
+	           activeChar.sendMessage("You cannot use this item while in this zone.");
+	            return false;
+	        }
 		return super.useItem(playable, item, forceUse);
 	}
 }

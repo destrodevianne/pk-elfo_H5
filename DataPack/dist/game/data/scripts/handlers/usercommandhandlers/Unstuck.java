@@ -8,6 +8,7 @@ import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.handler.IUserCommandHandler;
 import pk.elfo.gameserver.instancemanager.MapRegionManager;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.PkHunterEvent;
 import pk.elfo.gameserver.model.entity.TvTEvent;
 import pk.elfo.gameserver.model.entity.TvTRoundEvent;
 import pk.elfo.gameserver.model.skills.L2Skill;
@@ -49,6 +50,11 @@ public class Unstuck implements IUserCommandHandler
 			return false;
 		}
 		
+		if (PkHunterEvent.isPk(activeChar))
+		{
+			activeChar.sendMessage("Voce nao pode usar escape durante o evento.");
+			return false;
+		}
 		int unstuckTimer = (activeChar.getAccessLevel().isGm() ? 1000 : Config.UNSTUCK_INTERVAL * 1000);
 		
 		if (activeChar.isCastingNow() || activeChar.isMovementDisabled() || activeChar.isMuted() || activeChar.isAlikeDead() || activeChar.isInOlympiadMode() || activeChar.inObserverMode() || activeChar.isCombatFlagEquipped())

@@ -7,6 +7,7 @@ import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.L2Party;
 import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.entity.PkHunterEvent;
 import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.model.skills.L2SkillType;
 import pk.elfo.gameserver.network.SystemMessageId;
@@ -88,6 +89,11 @@ public class SummonFriend implements ISkillHandler
 						
 						if (skill.getId() == 1403) // Summon Friend
 						{
+							if (PkHunterEvent.isPk(activePlayer) || PkHunterEvent.isPk(targetPlayer))
+							{
+								activeChar.sendMessage("Os jogadores nao podem ser convocados, enquanto estiverem no evento.");
+								return;
+							}
 							// Send message
 							final ConfirmDlg confirm = new ConfirmDlg(SystemMessageId.C1_WISHES_TO_SUMMON_YOU_FROM_S2_DO_YOU_ACCEPT.getId());
 							confirm.addCharName(activeChar);

@@ -416,7 +416,7 @@ public abstract class AbstractEvent
 				player.abortCast();
 			}
 			player.setIsParalyzed(true);
-			player.sendPacket(new ExShowScreenMessage("Aguarde ate o inicio do evento...", 10000));
+			player.sendPacket(new ExShowScreenMessage("Aguarde ate o inicio do evento!", 100000));
 		}
 	}
 	
@@ -425,7 +425,7 @@ public abstract class AbstractEvent
 		for (EventPlayer player : players)
 		{
 			player.setIsParalyzed(false);
-			player.sendPacket(new ExShowScreenMessage("Voce pode comecar agora!", 2000));
+			player.sendPacket(new ExShowScreenMessage("Voce pode comecar agora!", 200000));
 			player.setTitle("Score: 0");
 		}
 	}

@@ -4187,6 +4187,8 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 	/** Table of calculators containing all standard NPC calculator (ex : ACCURACY_COMBAT, EVASION_RATE) */
 	private static final Calculator[] NPC_STD_CALCULATOR = Formulas.getStdNPCCalculators();
 	
+	public static final ZoneId MASS_ZONE = null;
+	
 	protected volatile L2CharacterAI _ai;
 	
 	/** Future Skill Cast */

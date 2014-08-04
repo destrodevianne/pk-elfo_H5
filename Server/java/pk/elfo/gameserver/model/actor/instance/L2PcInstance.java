@@ -166,6 +166,8 @@ import pk.elfo.gameserver.model.entity.Hero;
 import pk.elfo.gameserver.model.entity.Hitman;
 import pk.elfo.gameserver.model.entity.Instance;
 import pk.elfo.gameserver.model.entity.L2Event;
+import pk.elfo.gameserver.model.entity.PkHunterEvent;
+import pk.elfo.gameserver.model.entity.PkHunterEventConditions;
 import pk.elfo.gameserver.model.entity.Siege;
 import pk.elfo.gameserver.model.entity.TvTEvent;
 import pk.elfo.gameserver.model.entity.TvTRoundEvent;
@@ -6112,6 +6114,7 @@ public final class L2PcInstance extends L2Playable
 			
 			TvTEvent.onKill(killer, this);
 			TvTRoundEvent.onKill(killer, this);
+			PkHunterEventConditions.checkDie(killer, this);
 			
 			if (pk != null)
 			{
@@ -6339,6 +6342,11 @@ public final class L2PcInstance extends L2Playable
 		if ((getKarma() <= 0) && (pk != null) && (pk.getClan() != null) && (getClan() != null) && (pk.getClan().isAtWarWith(getClanId())
 		// || getClan().isAtWarWith(((L2PcInstance)killer).getClanId())
 		))
+		{
+			return;
+		}
+		
+		if (PkHunterEvent.isPk(killer) && !Config.DROP_PKHUNTEREVENT)
 		{
 			return;
 		}
@@ -6776,6 +6784,8 @@ public final class L2PcInstance extends L2Playable
 		{
 			setPkKills(getPkKills() + 1);
 		}
+		
+		PkHunterEventConditions.checkPk(this, target);
 		
 		// addons pk color
 		updatePkColor(getPvpKills());
