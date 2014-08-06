@@ -1,0 +1,24 @@
+What is Survey panel?
+
+Every player can write .survey into the game and the survey panel will pop up ! Using the survey panel, 
+player is able to request a survey from all online players ! Everyone can vote for the survey with .yes or .no ! 
+After 3 minutes (by config) survey stops and results are announced to everyone !
+
+
+Information :
+
+    Playes can vote only once
+    The player who created the survey have the right to vote (once)
+    Gm's have the right to vote fot the survey (once) (editable by config)
+    Every playes is able to make a survey once every 12 hours ( to avoid spam)
+    When a survey is running none is able to start another survey at the same time!
+
+
+    I use this feature in my server as an extra privilege for the donators or vip's
+    Includes database part
+    Coded for latest H5 rev (I can adapt it to IL tho)
+    
+    
+    
+    
+SERA ADICIONADO EM BREVE!!!
