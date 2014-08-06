@@ -539,6 +539,9 @@ public final class L2PcInstance extends L2Playable
 	private boolean _isInSiege;
 	private boolean _isInHideoutSiege = false;
 	
+	//SlotMachine Event
+	public boolean win = false;
+	
 	public enum PunishLevel
 	{
 		NONE(0, ""),
