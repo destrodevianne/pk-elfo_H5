@@ -1,0 +1,11 @@
+Como funciona?
+
+Primeiro de tudo voce pode configura-lo via arquivo .properties por isso e facil para iniciantes.
+
+O NPC consome quantidade X de itens por cada tentativa (tipo um caca-niqueis), quando voce tenta uma vez,
+o NPC comeca a mostrar-lhe um html com 3 icones, cada slot tem 3 possiveis itens, o NPC altera aleatoriamente 
+os premios dos slots a cada X vezes.
+
+Os precos e as recompensas sao facilmente configurados no arquivo config/Eventos/SlotMachine.properties
+Tambem o ID do NPC utilizado, bem como o nome do servidor que ira aparecer na HTML do evento, sao 
+configurados neste arquivo.
