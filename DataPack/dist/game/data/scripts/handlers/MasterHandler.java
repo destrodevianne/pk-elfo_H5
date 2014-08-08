@@ -31,6 +31,7 @@ import pk.elfo.gameserver.handler.custom.RefuseBuff;
 import pk.elfo.gameserver.handler.custom.Repair;
 import pk.elfo.gameserver.handler.custom.Res;
 import pk.elfo.gameserver.handler.custom.Teleport;
+import pk.elfo.gameserver.handler.custom.VipTeleport;
 import handlers.actionhandlers.L2ArtefactInstanceAction;
 import handlers.actionhandlers.L2DecoyAction;
 import handlers.actionhandlers.L2DoorInstanceAction;
@@ -695,6 +696,7 @@ public class MasterHandler
 			BadBuffShield.class,
 			Siege.class,
 			Teleport.class,
+			VipTeleport.class,
 			VoiceInfo.class,
 			User.class,
 			UserActions.class,

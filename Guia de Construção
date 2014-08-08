@@ -212,6 +212,7 @@ ADD Comando AdminRecalAll
 .user (abre painel de usuario que contem, informacoes do servidor, rates e comandos de habilitar/desabilitar pm, trade e ganho de xp/sp - adicionado opcao de desabilitar debuf)
 .cancel (cancela todos os buffs das barras de buff)
 .buyrec (troca determinado item por recomend, configuravel o item, quant. de item e quant. de recomend)
+.teleport <x> <y> <z> (comando de teleporte para VIP)
 
 -----------------------------------------------------------------------------------------------------------
 # Os seguintes comandos foram transferidos para o painel do usuario acessivel atraves do comando .user :  #
