@@ -118,9 +118,7 @@ public class MultiSellChoose extends L2GameClientPacket
 				}
 				
 				final PcInventory inv = player.getInventory();
-				
-				boolean maintainItemFound = false;
-				
+	
 				int slots = 0;
 				int weight = 0;
 				for (Ingredient e : entry.getProducts())
@@ -184,23 +182,11 @@ public class MultiSellChoose extends L2GameClientPacket
 					}
 					if (newIng)
 					{
-						if (maintainEnchantment && e.getMantainIngredient())
-						{
-							maintainItemFound = true;
-						}
 						// if it's a new ingredient, just store its info directly (item id, count, enchantment)
 						ingredientsList.add(e);
 					}
 				}
-				
-				if (!maintainItemFound)
-				{
-					for (MultiSellIngredient product : entry.getProducts())
-					{
-						product.setEnchantmentLevel(0);
-					}
-				}
-				
+
 				// now check if the player has sufficient items in the inventory to cover the ingredients' expences
 				for (Ingredient e : ingredientsList)
 				{

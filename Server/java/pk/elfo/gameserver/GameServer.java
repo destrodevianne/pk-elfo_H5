@@ -206,6 +206,7 @@ public class GameServer
 		// load script engines
 		printSection("Mecanismos");
 		L2ScriptEngineManager.getInstance();
+
 		if (Config.ENABLE_EVENT_ACHIEVEMENT)
 		{
 			AchievementsManager.getInstance();

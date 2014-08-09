@@ -192,7 +192,9 @@ public final class Config
 	public static int RecoveryVitalityItemCount;
 	public static int SPItemId;
 	public static int SPItemCount;
-	// Achievements Engine
+	// ########################################################################################################//
+	// Achievements Engine PROPERTIES
+	// ########################################################################################################//
 	public static boolean ENABLE_EVENT_ACHIEVEMENT;
 	// ########################################################################################################//
 	// RECOMEND PROPERTIES
@@ -2532,7 +2534,7 @@ public final class Config
 				{
 					_log.log(Level.SEVERE, "Error while loading SEVENSIGNS settings!", e);
 				}
-				
+
 			// ############################ ACHIEVEMENT PROPERTIES ######################################################//
 			
 			L2Properties AchievementSettings = new L2Properties();
@@ -2545,9 +2547,8 @@ public final class Config
 			{
 				_log.log(Level.SEVERE, "Erro ao ler o arquivo ACHIEVEMENT Properties!", e);
 			}
-				
+							
 			ENABLE_EVENT_ACHIEVEMENT = Boolean.parseBoolean(AchievementSettings.getProperty("AllowAchievement", "False"));
-
 
 			// ########################################################################################################//
 			// ANTHARAS PROPERTIES
