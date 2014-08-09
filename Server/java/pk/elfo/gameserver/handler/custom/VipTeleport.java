@@ -27,11 +27,6 @@ public class VipTeleport implements IVoicedCommandHandler
             {
                 return false;
             }
-            else if(activeChar.atEvent)
-            {
-                activeChar.sendMessage("Voce nao pode teleportar estando em um evento.");
-                return false;
-            }
             else if(activeChar.isInDuel())
             {
                 activeChar.sendMessage("Voce nao pode teleportar estando em um Duelo.");

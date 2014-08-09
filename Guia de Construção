@@ -73,6 +73,7 @@ Adicionado Seyo Instance
 Adicionado Tunatun Instance
 Adicionado Fame Manager
 [BUG] Fantasy Isle Buff Zone fix!
+Added Mutated Elpy in FleeNpc.java
 
 ###############################################
 #################### FIX BETA TEST ############
@@ -120,7 +121,6 @@ LuckyPig
 BloodShed 
 Adicionado Event RPS (Rank PvP System)
 Adicionado Achievements Engine
-Adicionado Event PkHunter
 Adicionado Event SlotMachine (tipo uma caca-niqueis)
 
 ############### PHOENIX ENGINE:################

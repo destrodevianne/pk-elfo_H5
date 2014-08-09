@@ -11,7 +11,6 @@ import pk.elfo.gameserver.events.EventsInterface;
 import pk.elfo.gameserver.instancemanager.AntiFeedManager;
 import pk.elfo.gameserver.model.L2Party;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
-import pk.elfo.gameserver.model.entity.PkHunterEvent;
 import pk.elfo.gameserver.model.zone.ZoneId;
 import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone;
 import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone1;
@@ -22,7 +21,6 @@ import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone5;
 import pk.elfo.gameserver.network.L2GameClient;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.L2GameClient.GameClientState;
-import pk.elfo.gameserver.network.serverpackets.ActionFailed;
 import pk.elfo.gameserver.network.serverpackets.CharSelectionInfo;
 import pk.elfo.gameserver.network.serverpackets.RestartResponse;
 import pk.elfo.gameserver.scripting.scriptengine.listeners.player.PlayerDespawnListener;
@@ -84,14 +82,7 @@ public final class RequestRestart extends L2GameClientPacket
 		{
 			L2PcInstance._isbuffrefusal = false;
 		}
-		
-		if (PkHunterEvent.isPk(player))
-		{
-			player.sendPacket(ActionFailed.STATIC_PACKET);
-			sendPacket(RestartResponse.valueOf(false));
-			return;
-		}
-		
+
 		if (player.isLocked())
 		{
 			_log.warning("Player " + player.getName() + " tried to restart during class change.");

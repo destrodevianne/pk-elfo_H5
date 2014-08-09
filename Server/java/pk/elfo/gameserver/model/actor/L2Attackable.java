@@ -38,7 +38,6 @@ import pk.elfo.gameserver.model.actor.instance.L2ServitorInstance;
 import pk.elfo.gameserver.model.actor.knownlist.AttackableKnownList;
 import pk.elfo.gameserver.model.actor.status.AttackableStatus;
 import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
-import pk.elfo.gameserver.model.entity.PkHunterEventConditions;
 import pk.elfo.gameserver.model.itemcontainer.PcInventory;
 import pk.elfo.gameserver.model.items.L2Item;
 import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
@@ -561,7 +560,6 @@ public class L2Attackable extends L2Npc
 			
 			if (player != null)
 			{
-				PkHunterEventConditions.checkFinishByMobs(player);
 				if (getTemplate().getEventQuests(Quest.QuestEventType.ON_KILL) != null)
 				{
 					for (Quest quest : getTemplate().getEventQuests(Quest.QuestEventType.ON_KILL))

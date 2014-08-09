@@ -349,7 +349,6 @@ import handlers.voicedcommandhandlers.Debug;
 import handlers.voicedcommandhandlers.Hellbound;
 import handlers.voicedcommandhandlers.Lang;
 import handlers.voicedcommandhandlers.OpenAtod;
-import handlers.voicedcommandhandlers.PkHunter;
 import handlers.voicedcommandhandlers.Premium;
 import handlers.voicedcommandhandlers.Siege;
 import handlers.voicedcommandhandlers.StatsVCmd;
@@ -718,7 +717,6 @@ public class MasterHandler
 			(Config.L2JMOD_DEBUG_VOICE_COMMAND ? Debug.class : null),
 			(Config.L2JMOD_ALLOW_CHANGE_PASSWORD ? ChangePassword.class : null),
 			(Config.L2JMOD_HELLBOUND_STATUS ? Hellbound.class : null),
-			(Config.ENABLE_PKHUNTEREVENT ? PkHunter.class : null),
 		},
 		{
 			// Target Handlers

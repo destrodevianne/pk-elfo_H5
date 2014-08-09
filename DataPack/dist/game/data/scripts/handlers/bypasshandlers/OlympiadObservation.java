@@ -7,7 +7,6 @@ import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2OlympiadManagerInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
-import pk.elfo.gameserver.model.entity.PkHunterEvent;
 import pk.elfo.gameserver.model.entity.TvTEvent;
 import pk.elfo.gameserver.model.olympiad.Olympiad;
 import pk.elfo.gameserver.model.olympiad.OlympiadGameManager;
@@ -68,13 +67,7 @@ public class OlympiadObservation implements IBypassHandler
 					activeChar.sendMessage("Voce nao pode observar os jogos, enquanto estiver registrado para o TvT");
 					return false;
 				}
-				
-				if (PkHunterEvent.isPk(activeChar))
-				{
-					activeChar.sendMessage("Voce nao pode observar jogos, durante o evento.");
-					return false;
-				}
-				
+
 				final int arenaId = Integer.parseInt(command.substring(12).trim());
 				final OlympiadGameTask nextArena = OlympiadGameManager.getInstance().getOlympiadTask(arenaId);
 				if (nextArena != null)

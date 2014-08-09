@@ -48,7 +48,6 @@ import pk.elfo.gameserver.model.entity.Fort;
 import pk.elfo.gameserver.model.entity.FortSiege;
 import pk.elfo.gameserver.model.entity.Hitman;
 import pk.elfo.gameserver.model.entity.L2Event;
-import pk.elfo.gameserver.model.entity.PkHunterEventConditions;
 import pk.elfo.gameserver.model.entity.Siege;
 import pk.elfo.gameserver.model.entity.TvTEvent;
 import pk.elfo.gameserver.model.entity.TvTRoundEvent;
@@ -328,15 +327,7 @@ public class EnterWorld extends L2GameClientPacket
 				SkillTreesData.getInstance().addSkills(activeChar, true);
 			}
 		}
-		
-		else
-		{
-			if ((activeChar.getKarma() >= 500000) && !activeChar.isCursedWeaponEquipped() && Config.ENABLE_PKHUNTEREVENT)
-			{
-				PkHunterEventConditions.endCoward(activeChar);
-			}
-		}
-		
+
 		// Set dead status if applies
 		if (activeChar.getCurrentHp() < 0.5)
 		{

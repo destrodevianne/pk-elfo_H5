@@ -12,7 +12,6 @@ import pk.elfo.gameserver.model.L2Party;
 import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.StatsSet;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
-import pk.elfo.gameserver.model.entity.PkHunterEvent;
 import pk.elfo.gameserver.model.entity.TvTEvent;
 import pk.elfo.gameserver.model.entity.TvTRoundEvent;
 import pk.elfo.gameserver.network.SystemMessageId;
@@ -481,13 +480,7 @@ public class OlympiadManager
 			player.sendPacket(sm);
 			return false;
 		}
-		
-		if (PkHunterEvent.isPk(player))
-		{
-			player.sendMessage("Voce nao pode participar de Olimpiadas, durante o evento PK Hunter.");
-			return false;
-		}
-		
+
 		final int charId = noble.getObjectId();
 		if (TvTEvent.isPlayerParticipant(charId))
 		{

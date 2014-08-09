@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package ai.individual;
 
 import pk.elfo.gameserver.ai.CtrlIntention;
@@ -24,20 +6,25 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
 
+/**
+ * PkElfo
+ */
+
 public class FleeNpc extends AbstractNpcAI
 {
 	private static final int[] MOBS =
 	{
-		20432,
-		22228,
-		18150,
-		18151,
-		18152,
-		18153,
-		18154,
-		18155,
-		18156,
-		18157
+		25604, // Mutated Elpy
+		20432, // Elpy
+		22228, // Grey Elpy
+		18150, // Victim
+		18151, // Victim
+		18152, // Victim
+		18153, // Victim
+		18154, // Victim
+		18155, // Victim
+		18156, // Victim
+		18157 // Victim
 	};
 	
 	private FleeNpc(String name, String descr)
@@ -55,7 +42,7 @@ public class FleeNpc extends AbstractNpcAI
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null, null);
 			return null;
 		}
-		else if ((npc.getNpcId() == 20432) || (npc.getNpcId() == 22228))
+		else if ((npc.getNpcId() == 20432) || (npc.getNpcId() == 22228) || (npc.getNpcId() == 25604))
 		{
 			if (getRandom(3) == 2)
 			{

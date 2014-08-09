@@ -100,7 +100,6 @@ public final class Config
 	public static final String EVENT_FILE = "./config/Eventos/Event.properties";
 	public static final String FORTSIEGE_CONFIGURATION_FILE = "./config/Eventos/FortSiege.properties";
 	public static final String DIASSIEGE_FILE = "./config/Eventos/ModDiasParaSiege.properties";
-	public static final String EVENT_PKHUNTER = "./config/Eventos/PkHunter.properties";
 	public static final String SEVENSIGNS_CONFIG_FILE = "./config/Eventos/SevenSigns.properties";
 	public static final String SIEGE_CONFIGURATION_FILE = "./config/Eventos/Siege.properties";
 	public static final String TW_CONFIGURATION_FILE = "./config/Eventos/TerritoryWar.properties";
@@ -1306,15 +1305,6 @@ public final class Config
 	public static boolean L2JMOD_ALLOW_CHANGE_PASSWORD;
 	public static boolean CHAR_IS_DEAD = false;
 	// ########################################################################################################//
-	// EVENTO PKHUNTER PROPERTIES
-	// ########################################################################################################//
-	public static boolean ENABLE_PKHUNTEREVENT;
-	public static boolean DROP_PKHUNTEREVENT;
-	public static int PKHUNTEREVENT_CHANCE;
-	public static int TIME_PKHUNTEREVENT;
-	public static List<int[]> PKHUNTEREVENT_REWARD;
-	public static List<int[]> PKHUNTEREVENT_PK_REWARD;
-	// ########################################################################################################//
 	// USERS PROPERTIES
 	// ########################################################################################################//
 	public static boolean ENABLE_TRADE_REFUSAL;
@@ -1356,6 +1346,7 @@ public final class Config
 	public static int VIP_SP;
 	public static boolean ENABLE_VIP_SYSTEM;
 	public static Map<Integer, Integer> VIP_SKILLS;
+	public static boolean ENABLE_VIP_TELEPORT;
 	// ########################################################################################################//
 	// NPC PROPERTIES
 	// ########################################################################################################//
@@ -2544,101 +2535,20 @@ public final class Config
 				
 			// ############################ ACHIEVEMENT PROPERTIES ######################################################//
 			
-			L2Properties achievement = new L2Properties();
+			L2Properties AchievementSettings = new L2Properties();
 			final File achievement = new File(EVENT_ACHIEVEMENT);
 			try (InputStream is = new FileInputStream(achievement))
-				{
-					achievement.load(is);
-					
-				ENABLE_EVENT_ACHIEVEMENT = Boolean.parseBoolean(achievement.getProperty("AllowAchievement", "False"));
-				}
+			{
+				AchievementSettings.load(is);
+			}
 			catch (Exception e)
-				{
-					_log.log(Level.SEVERE, "Error while loading ACHIEVEMENT settings!", e);
-				}
-			
-			// ############################ EVENT_PKHUNTER PROPERTIES ######################################################//
-			
-			L2Properties PkHunter = new L2Properties();
-			final File PkHunter = new File(EVENT_PKHUNTER);
-			try (InputStream is = new FileInputStream(PkHunter))
-				{
-					PkHunter.load(is);
-					
-			ENABLE_PKHUNTEREVENT = Boolean.parseBoolean(PkHunter.getProperty("EnablePKHunterEvent", "true"));
-			DROP_PKHUNTEREVENT = Boolean.parseBoolean(PkHunter.getProperty("PKHunterEventDrop", "false"));
-			PKHUNTEREVENT_CHANCE = Integer.parseInt(PkHunter.getProperty("PKHunterEventChance", "20"));
-			TIME_PKHUNTEREVENT = Integer.parseInt(PkHunter.getProperty("PKHunterEventTime", "5"));
-			
-			if (PKHUNTEREVENT_CHANCE < 1)
 			{
-				PKHUNTEREVENT_CHANCE = 1;
-			}
-			PKHUNTEREVENT_REWARD = new ArrayList<>();
-			propertySplit = PkHunter.getProperty("PKHunterEventRewards", "14720,5;14721,2").split(";");
-			
-			for (String reward : propertySplit)
-			{
-				String[] rewardSplit = reward.split(",");
-				if (rewardSplit.length != 2)
-				{
-					_log.warning(StringUtil.concat("Evento Pk Hunter: propriedade de configuracao invalido ->PkHunterEventRewards \"", reward, "\""));
-				}
-				else
-				{
-					try
-					{
-						PKHUNTEREVENT_REWARD.add(new int[]
-						{
-							Integer.parseInt(rewardSplit[0]),
-							Integer.parseInt(rewardSplit[1])
-						});
-					}
-					catch (NumberFormatException nfe)
-					{
-						if (!reward.isEmpty())
-						{
-							_log.warning(StringUtil.concat("Evento Pk Hunter: propriedade de configuracao invalido -> PkHunterEventRewards \"", reward, "\""));
-						}
-					}
-				}
-			}
-			PKHUNTEREVENT_PK_REWARD = new ArrayList<>();
-			propertySplit = PkHunter.getProperty("PKHunterEventPkRewards", "14720,5;14721,2").split(";");
-			
-			for (String reward : propertySplit)
-			{
-				String[] rewardSplit = reward.split(",");
-				if (rewardSplit.length != 2)
-				{
-					_log.warning(StringUtil.concat("Evento Pk Hunter: propriedade de configuracao invalido ->PkHunterEventPkRewards \"", reward, "\""));
-				}
-				else
-				{
-					try
-					{
-						PKHUNTEREVENT_PK_REWARD.add(new int[]
-						{
-							Integer.parseInt(rewardSplit[0]),
-							Integer.parseInt(rewardSplit[1])
-						});
-					}
-					catch (NumberFormatException nfe)
-					{
-						if (!reward.isEmpty())
-						{
-							_log.warning(StringUtil.concat("Evento Pk Hunter: propriedade de configuracao invalido -> PkHunterEventPkRewards \"", reward, "\""));
-						}
-					}
-				}
+				_log.log(Level.SEVERE, "Erro ao ler o arquivo ACHIEVEMENT Properties!", e);
 			}
 				
-			catch (Exception e)
-				{
-					_log.log(Level.SEVERE, "Error while loading PKHUNTER settings!", e);
-				}
-			
-			
+			ENABLE_EVENT_ACHIEVEMENT = Boolean.parseBoolean(AchievementSettings.getProperty("AllowAchievement", "False"));
+
+
 			// ########################################################################################################//
 			// ANTHARAS PROPERTIES
 			// ########################################################################################################//
@@ -3718,14 +3628,15 @@ public final class Config
 			}
 			
 			// ############################ SISTEMA DE VIP ############################################################//
-			ALLOW_VIP_NCOLOR = Boolean.parseBoolean(VipSettings.getProperty("AllowVipNameColor", "True"));
+			ALLOW_VIP_NCOLOR = Boolean.parseBoolean(VipSettings.getProperty("AllowVipNameColor", "False"));
 			VIP_NCOLOR = Integer.decode("0x" + VipSettings.getProperty("VipNameColor", "0088FF"));
-			ALLOW_VIP_TCOLOR = Boolean.parseBoolean(VipSettings.getProperty("AllowVipTitleColor", "True"));
+			ALLOW_VIP_TCOLOR = Boolean.parseBoolean(VipSettings.getProperty("AllowVipTitleColor", "False"));
 			VIP_TCOLOR = Integer.decode("0x" + VipSettings.getProperty("VipTitleColor", "0088FF"));
-			ALLOW_VIP_XPSP = Boolean.parseBoolean(VipSettings.getProperty("AllowVipMulXpSp", "True"));
+			ALLOW_VIP_XPSP = Boolean.parseBoolean(VipSettings.getProperty("AllowVipMulXpSp", "False"));
 			VIP_XP = Integer.parseInt(VipSettings.getProperty("VipMulXp", "2"));
 			VIP_SP = Integer.parseInt(VipSettings.getProperty("VipMulSp", "2"));
-			ENABLE_VIP_SYSTEM = Boolean.parseBoolean(VipSettings.getProperty("EnableVipSystem", "True"));
+			ENABLE_VIP_SYSTEM = Boolean.parseBoolean(VipSettings.getProperty("EnableVipSystem", "False"));
+			ENABLE_VIP_TELEPORT = Boolean.parseBoolean(VipSettings.getProperty("EnableVipTeleport", "False"));
 			if (ENABLE_VIP_SYSTEM) // create map if system is enabled
 			{
 				String[] VipSkillsSplit = VipSettings.getProperty("VipSkills", "").split(";");
@@ -5394,9 +5305,9 @@ public final class Config
 			ALT_OLY_MAX_WEEKLY_MATCHES_NON_CLASSED = Integer.parseInt(Olympiad.getProperty("AltOlyMaxWeeklyMatchesNonClassed", "60"));
 			ALT_OLY_MAX_WEEKLY_MATCHES_CLASSED = Integer.parseInt(Olympiad.getProperty("AltOlyMaxWeeklyMatchesClassed", "30"));
 			ALT_OLY_MAX_WEEKLY_MATCHES_TEAM = Integer.parseInt(Olympiad.getProperty("AltOlyMaxWeeklyMatchesTeam", "10"));
-			ALT_OLY_USE_CUSTOM_PERIOD_SETTINGS = Olympiad.getBoolean("AltOlyUseCustomPeriodSettings", "false");
+			ALT_OLY_USE_CUSTOM_PERIOD_SETTINGS = Boolean.parseBoolean(Olympiad.getProperty("AltOlyUseCustomPeriodSettings", "false"));
 			ALT_OLY_PERIOD = Olympiad.getString("AltOlyPeriod", "MONTH");
-			ALT_OLY_PERIOD_MULTIPLIER = Olympiad.getInt("AltOlyPeriodMultiplier", "1");
+			ALT_OLY_PERIOD_MULTIPLIER = Integer.parseInt(Olympiad.getProperty("AltOlyPeriodMultiplier", "1"));
 			
 			final File hex = new File(HEXID_FILE);
 			try (InputStream is = new FileInputStream(hex))
@@ -5613,7 +5524,7 @@ public final class Config
 				}
 			}
 		}
-		// #######################################################################################################//
+
 		else if (Server.serverMode == Server.MODE_LOGINSERVER)
 		{
 			L2Properties ServerSettings = new L2Properties();

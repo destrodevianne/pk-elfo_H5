@@ -12,7 +12,6 @@ import pk.elfo.gameserver.model.ShotType;
 import pk.elfo.gameserver.model.StatsSet;
 import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
-import pk.elfo.gameserver.model.entity.PkHunterEvent;
 import pk.elfo.gameserver.model.entity.TvTEvent;
 import pk.elfo.gameserver.model.entity.TvTRoundEvent;
 import pk.elfo.gameserver.model.skills.L2Skill;
@@ -67,13 +66,7 @@ public class L2SkillTeleport extends L2Skill
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
-			
-			if (PkHunterEvent.isPk(activeChar))
-			{
-				activeChar.sendMessage("Voce nao pode usar habilidades de fuga, durante o evento.");
-				return;
-			}
-			
+
 			if (activeChar.isAfraid())
 			{
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);

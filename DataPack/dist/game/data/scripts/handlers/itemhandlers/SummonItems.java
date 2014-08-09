@@ -14,7 +14,6 @@ import pk.elfo.gameserver.model.actor.L2Playable;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PetInstance;
 import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
-import pk.elfo.gameserver.model.entity.PkHunterEvent;
 import pk.elfo.gameserver.model.entity.TvTEvent;
 import pk.elfo.gameserver.model.entity.TvTRoundEvent;
 import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
@@ -51,11 +50,7 @@ public class SummonItems implements IItemHandler
 		}
 		
 		final L2PcInstance activeChar = playable.getActingPlayer();
-		if (PkHunterEvent.isPk(activeChar))
-		{
-			activeChar.sendMessage("Voce nao pode usar este item, durante o evento.");
-			return false;
-		}
+
 		if (!activeChar.getFloodProtectors().getItemPetSummon().tryPerformAction("summon items"))
 		{
 			return false;

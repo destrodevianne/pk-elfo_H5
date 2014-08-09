@@ -11,7 +11,6 @@ import pk.elfo.gameserver.events.EventsInterface;
 import pk.elfo.gameserver.model.L2Party;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.entity.L2Event;
-import pk.elfo.gameserver.model.entity.PkHunterEvent;
 import pk.elfo.gameserver.model.zone.ZoneId;
 import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone;
 import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone1;
@@ -80,14 +79,7 @@ public final class Logout extends L2GameClientPacket
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		
-		if (PkHunterEvent.isPk(player))
-		{
-			player.sendPacket(ActionFailed.STATIC_PACKET);
-			player.sendMessage("Voce nao pode sair durante o evento.");
-			return;
-		}
-		
+
 		if (player.isLocked())
 		{
 			_log.warning("Player " + player.getName() + " tried to logout during class change.");
