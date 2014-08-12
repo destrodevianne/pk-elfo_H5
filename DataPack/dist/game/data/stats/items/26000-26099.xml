@@ -941,7 +941,7 @@
 		<set name="material" val="steel" />
 		<set name="weight" val="20" />
 		<set name="price" val="2000" />
-		<set name="time" val="10080"
+		<set name="time" val="10080" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="item_skill" val="2046-1" />
@@ -959,7 +959,7 @@
 		<set name="material" val="steel" />
 		<set name="weight" val="20" />
 		<set name="price" val="2000" />
-		<set name="time" val="43200"
+		<set name="time" val="43200" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="item_skill" val="2046-1" />
