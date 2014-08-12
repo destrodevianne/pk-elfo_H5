@@ -160,7 +160,7 @@ public final class RPSConfig
 	 */
 	public static void load()
 	{
-		log.info("Starting Rank PvP System (" + RANK_PVP_SYSTEM_VERSION + "):");
+		log.info("Iniciando o Rank PvP System (" + RANK_PVP_SYSTEM_VERSION + "):");
 
 		try
 		{
@@ -172,7 +172,7 @@ public final class RPSConfig
 			RANK_PVP_SYSTEM_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RankPvpSystemEnabled", "false"));
 			if (!RANK_PVP_SYSTEM_ENABLED)
 			{
-				log.info(" - Rank PvP System: Disabled");
+				log.info(" - Rank PvP System: Desabilitado");
 				return;
 			}
 
@@ -200,21 +200,21 @@ public final class RPSConfig
 			PVP_REWARD_AMOUNT = Integer.parseInt(ccSettings.getProperty("PvpRewardAmount", "1"));
 			PVP_REWARD_MIN_LVL = Integer.parseInt(ccSettings.getProperty("PvpRewardMinLvl", "76"));
 
-			REWARD_FOR_PK_KILLER_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RewardForPkKillerEnabled", "true"));
+			REWARD_FOR_PK_KILLER_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RewardForPkKillerEnabled", "false"));
 			RANK_PVP_REWARD_MIN_LVL = Integer.parseInt(ccSettings.getProperty("RankPvpRewardMinLvl", "76"));
 			REWARD_FOR_INNOCENT_KILL_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RewardForInnocentKillEnabled", "false"));
 
-			RANK_PVP_REWARD_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RankPvpRewardEnabled", "true"));
-			REWARD_LEGAL_KILL_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RewardLegalKillEnabled", "true"));
-			RANK_LEVEL_REWARD_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RankLevelRewardEnabled", "true"));
-			RANK_SKILL_REWARD_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RankSkillRewardEnabled", "true"));
+			RANK_PVP_REWARD_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RankPvpRewardEnabled", "false"));
+			REWARD_LEGAL_KILL_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RewardLegalKillEnabled", "false"));
+			RANK_LEVEL_REWARD_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RankLevelRewardEnabled", "false"));
+			RANK_SKILL_REWARD_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RankSkillRewardEnabled", "false"));
 
 			RANKS_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RanksEnabled", "false"));
 			RANK_POINTS_MIN_LVL = Integer.parseInt(ccSettings.getProperty("RankPointsMinLvl", "76"));
-			RANK_POINTS_CUT_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RankPointsCutEnabled", "true"));
+			RANK_POINTS_CUT_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RankPointsCutEnabled", "false"));
 
 			RANK_RPC_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RankRpcEnabled", "false"));
-			RANK_RPC_CUT_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RankRpcCutEnabled", "true"));
+			RANK_RPC_CUT_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RankRpcCutEnabled", "false"));
 
 			// set rank's:
 			String id1[] = ccSettings.getProperty("RankNames", "").split(",");
@@ -228,7 +228,7 @@ public final class RPSConfig
 			{
 				if ((id1.length != id2.length) || (id1.length != id3.length) || (id1.length != id5.length) || (id1.length != id6.length) || (id1.length != id7.length))
 				{
-					log.info("[RankPvpSystemConfig]: Arrays sizes should be the same!");
+					log.info("[RankPvpSystemConfig]: Tamanhos das matrizes devem iguais!");
 
 					log.info("RANK_NAMES         		 :" + id1.length);
 					log.info("RANK_MIN_POINTS    		 :" + id2.length);
@@ -239,7 +239,7 @@ public final class RPSConfig
 				}
 				else if ((id1.length == 0) || (id2.length == 0) || (id3.length == 0) || (id5.length == 0) || (id6.length == 0) || (id7.length == 0))
 				{
-					log.info("[RankPvpSystemConfig]: Arrays sizes must be greater than 0!");
+					log.info("[RankPvpSystemConfig]: Tamanhos das matrizes devem ser maiores que 0!");
 
 					log.info("RANK_NAMES         		 :" + id1.length);
 					log.info("RANK_MIN_POINTS    		 :" + id2.length);
@@ -250,7 +250,7 @@ public final class RPSConfig
 				}
 				else if ((id2.length > 0) && (Integer.parseInt(id2[id2.length - 1]) != 0))
 				{
-					log.info("[RankMinPoints]: Last value must equal 0! Example: ...,6,5,4,3,2,1,0");
+					log.info("[RankMinPoints]: Ultima valor deve ser igual a 0! Exemplo: ...,6,5,4,3,2,1,0");
 				}
 				else
 				{
@@ -318,7 +318,7 @@ public final class RPSConfig
 				PVP_EXP_DECREASE_FRACTION = 1.0;
 			}
 
-			PVP_EXP_DECREASE_ON_LEGAL_KILL_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("PvpExpDecreaseOnLegalKillEnabled", "true"));
+			PVP_EXP_DECREASE_ON_LEGAL_KILL_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("PvpExpDecreaseOnLegalKillEnabled", "false"));
 
 			String propertyValue = ccSettings.getProperty("ComboKillLocalAreaMessages");
 			if ((propertyValue != null) && (propertyValue.length() > 0))
@@ -386,7 +386,7 @@ public final class RPSConfig
 			COMBO_KILL_ALT_MESSAGE = ccSettings.getProperty("ComboKillAltMessage", "%killer% have %combo_level% Combo kills!");
 			COMBO_KILL_ALT_GLOBAL_MESSAGE_LVL = Integer.parseInt(ccSettings.getProperty("ComboKillAltGlobalMessageMinLvl", "0"));
 
-			COMBO_KILL_DEFEAT_MESSAGE_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("ComboKillDefeatMessageEnabled", "true"));
+			COMBO_KILL_DEFEAT_MESSAGE_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("ComboKillDefeatMessageEnabled", "false"));
 			COMBO_KILL_DEFEAT_MESSAGE_MIN_LVL = Integer.parseInt(ccSettings.getProperty("ComboKillDefeatMessageMinComboLvl", "0"));
 			COMBO_KILL_DEFEAT_MESSAGE = ccSettings.getProperty("ComboKillDefeatMessage", "%killer% is defeated with %combo_level% combo lvl!!!");
 
@@ -466,7 +466,7 @@ public final class RPSConfig
 				}
 			}
 			LEGAL_KILL_MIN_LVL = Integer.parseInt(ccSettings.getProperty("LegalKillMinLvl", "1"));
-			LEGAL_KILL_FOR_PK_KILLER_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("LegalKillForPkKillerEnabled", "true"));
+			LEGAL_KILL_FOR_PK_KILLER_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("LegalKillForPkKillerEnabled", "false"));
 			LEGAL_KILL_FOR_INNOCENT_KILL_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("LegalKillForInnocentKillEnabled", "false"));
 			PROTECTION_TIME_RESET = Integer.parseInt(ccSettings.getProperty("ProtectionTimeReset", "0"));
 			if (PROTECTION_TIME_RESET > 0)
@@ -481,15 +481,15 @@ public final class RPSConfig
 			LEGAL_KILL_PROTECTION = Integer.parseInt(ccSettings.getProperty("LegalKillProtection", "0"));
 			DAILY_LEGAL_KILL_PROTECTION = Integer.parseInt(ccSettings.getProperty("DailyLegalKillProtection", "0"));
 
-			GM_IGNORE_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("GMIgnoreEnabled", "true"));
+			GM_IGNORE_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("GMIgnoreEnabled", "false"));
 
-			PVP_INFO_COMMAND_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("PvpInfoCommandEnabled", "true"));
+			PVP_INFO_COMMAND_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("PvpInfoCommandEnabled", "false"));
 			PVP_INFO_USER_COMMAND_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("PvpInfoUserCommandEnabled", "false"));
 			PVP_INFO_USER_COMMAND_ID = Integer.parseInt(ccSettings.getProperty("PvpInfoUserCommandId", "114"));
 
-			PVP_INFO_COMMAND_ON_DEATH_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("PvpInfoCommandShowOnDeathEnabled", "true"));
-			DEATH_MANAGER_DETAILS_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("DeathManagerDetailsEnabled", "true"));
-			DEATH_MANAGER_SHOW_ITEMS_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("DeathManagerShowItemsEnabled", "true"));
+			PVP_INFO_COMMAND_ON_DEATH_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("PvpInfoCommandShowOnDeathEnabled", "false"));
+			DEATH_MANAGER_DETAILS_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("DeathManagerDetailsEnabled", "false"));
+			DEATH_MANAGER_SHOW_ITEMS_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("DeathManagerShowItemsEnabled", "false"));
 
 			i = 0;
 			tempStr = ccSettings.getProperty("DeathManagerRestrictedZonesIds");
@@ -540,17 +540,17 @@ public final class RPSConfig
 				}
 			}
 
-			TOTAL_KILLS_IN_SHOUT_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("TotalKillsInShoutEnabled", "true"));
-			TOTAL_KILLS_IN_PVPINFO_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("TotalKillsInPvpInfoEnabled", "true"));
-			TOTAL_KILLS_ON_ME_IN_PVPINFO_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("TotalKillsOnMeInPvpInfoEnabled", "true"));
-			SHOW_PLAYER_LEVEL_IN_PVPINFO_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("ShowPlayerLevelInPvpInfoEnabled", "true"));
+			TOTAL_KILLS_IN_SHOUT_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("TotalKillsInShoutEnabled", "false"));
+			TOTAL_KILLS_IN_PVPINFO_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("TotalKillsInPvpInfoEnabled", "false"));
+			TOTAL_KILLS_ON_ME_IN_PVPINFO_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("TotalKillsOnMeInPvpInfoEnabled", "false"));
+			SHOW_PLAYER_LEVEL_IN_PVPINFO_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("ShowPlayerLevelInPvpInfoEnabled", "false"));
 
-			RPC_EXCHANGE_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RpcExchangeEnabled", "true"));
-			RPC_EXCHANGE_CONFIRM_BOX_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RpcExchangeConfirmBoxEnabled", "true"));
+			RPC_EXCHANGE_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RpcExchangeEnabled", "false"));
+			RPC_EXCHANGE_CONFIRM_BOX_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RpcExchangeConfirmBoxEnabled", "false"));
 
-			ANTI_FARM_CLAN_ALLY_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("AntiFarmClanAllyEnabled", "true"));
-			ANTI_FARM_PARTY_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("AntiFarmPartyEnabled", "true"));
-			ANTI_FARM_IP_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("AntiFarmIpEnabled", "true"));
+			ANTI_FARM_CLAN_ALLY_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("AntiFarmClanAllyEnabled", "false"));
+			ANTI_FARM_PARTY_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("AntiFarmPartyEnabled", "false"));
+			ANTI_FARM_IP_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("AntiFarmIpEnabled", "false"));
 
 			PVP_TABLE_UPDATE_INTERVAL = (Integer.parseInt(ccSettings.getProperty("PvpTableUpdateInterval", "1")) * 60000);
 			if (PVP_TABLE_UPDATE_INTERVAL < 1)
@@ -558,7 +558,7 @@ public final class RPSConfig
 				log.warning(StringUtil.concat("[PvpTableUpdateInterval]: invalid config property -> \"", Long.toString(PVP_TABLE_UPDATE_INTERVAL), "\""));
 				PVP_TABLE_UPDATE_INTERVAL = 60000;
 			}
-			RPC_TABLE_FORCE_UPDATE_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RpcTableForceUpdate", "true"));
+			RPC_TABLE_FORCE_UPDATE_ENABLED = Boolean.parseBoolean(ccSettings.getProperty("RpcTableForceUpdate", "false"));
 
 			// top table update times:
 			propertyValue = ccSettings.getProperty("TopTableUpdateTimes", "3:00");
@@ -676,7 +676,7 @@ public final class RPSConfig
 		catch (Exception e)
 		{
 			log.warning("Config: " + e.getMessage());
-			throw new Error("Failed to Load " + RANK_PVP_SYSTEM_CONFIG_FILE + " File.");
+			throw new Error("Falha ao ler " + RANK_PVP_SYSTEM_CONFIG_FILE + " arquivo.");
 		}
 
 		// initializing system
@@ -688,7 +688,7 @@ public final class RPSConfig
 		}
 		else
 		{
-			log.info(" - RPCTable: Disabled, players RPC will be not updated!");
+			log.info(" - RPCTable: Desabilitado, jogadores no RPC nao serao atualizados!");
 		}
 
 		if (RPC_REWARD_ENABLED || RPC_EXCHANGE_ENABLED)
@@ -697,7 +697,7 @@ public final class RPSConfig
 		}
 		else
 		{
-			log.info(" - RPCRewardTable: Disabled.");
+			log.info(" - RPCRewardTable: Desabilitado.");
 		}
 
 		if (PVP_REWARD_ENABLED || RANK_PVP_REWARD_ENABLED)
@@ -706,7 +706,7 @@ public final class RPSConfig
 		}
 		else
 		{
-			log.info(" - RewardTable: Disabled.");
+			log.info(" - RewardTable: Desabilitado.");
 		}
 
 		if (TOP_LIST_ENABLED)
@@ -715,7 +715,7 @@ public final class RPSConfig
 		}
 		else
 		{
-			log.info(" - TopTable: Disabled.");
+			log.info(" - TopTable: Desabilitado.");
 		}
 
 		ServerSideImage.getInstance();
@@ -724,7 +724,7 @@ public final class RPSConfig
 	// --------------------------------------------------
 	// Constants - not placed in configuration file
 	// --------------------------------------------------
-	public static final String RANK_PVP_SYSTEM_CONFIG_FILE = "./config/Mods/RankPvpSystemConfig.properties";
+	public static final String RANK_PVP_SYSTEM_CONFIG_FILE = "./config/PvPpK/RankPvpSystemConfig.properties";
 
 	public static final String RANK_PVP_SYSTEM_VERSION = "3.8.9";
 
