@@ -75,6 +75,17 @@ Adicionado Fame Manager
 [BUG] Fantasy Isle Buff Zone fix!
 Added Mutated Elpy in FleeNpc.java
 Dorian Fix
+Minor Packets Fix in PlayableStat.java, RequestFortressMapInfo.java and UserInfo.java
+#--------------------------#
+# Modify The Lord's Crown: #
+# 9% de Max. Mp 		   #
+# 9% de Max. Hp 		   #
+# 9% de Max. Cp 		   #
+# +3 de Acurracy) 		   #
+#--------------------------#
+[Fix]: External Ip Check!
+Minor refactor in Clientpackets in RequestFriendInvite.java
+Implement: Condition to Take Castle
 
 ###############################################
 #################### FIX BETA TEST ############

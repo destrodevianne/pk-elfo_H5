@@ -12,18 +12,17 @@ import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
 import pk.elfo.gameserver.model.effects.AbnormalEffect;
 import pk.elfo.gameserver.model.itemcontainer.Inventory;
 
+/**
+ * PkElfo
+ */
+
 public final class UserInfo extends L2GameServerPacket
 {
 	private final L2PcInstance _activeChar;
-	
-	/**
-	 * Run speed, swimming run speed and flying run speed
-	 */
-	private final int _runSpd;
 	/**
 	 * Walking speed, swimming walking speed and flying walking speed
 	 */
-	private final int _walkSpd;
+	private final int _runSpd, _walkSpd;
 	private int _relation;
 	private final float _moveMultiplier;
 	// private int _territoryId;

@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.model.actor.stat;
 
 import java.util.logging.Logger;
@@ -31,6 +13,10 @@ import pk.elfo.gameserver.model.zone.ZoneId;
 import pk.elfo.gameserver.model.zone.type.L2SwampZone;
 import pk.elfo.gameserver.network.communityserver.CommunityServerThread;
 import pk.elfo.gameserver.network.communityserver.writepackets.WorldInfo;
+
+/**
+ * PkElfo
+ */
 
 public class PlayableStat extends CharStat
 {
@@ -231,21 +217,30 @@ public class PlayableStat extends CharStat
 	@Override
 	public int getRunSpeed()
 	{
-		int val = super.getRunSpeed();
-		if (getActiveChar().isInsideZone(ZoneId.WATER))
-		{
-			val /= 2;
-		}
-		
 		if (getActiveChar().isInsideZone(ZoneId.SWAMP))
 		{
-			L2SwampZone zone = ZoneManager.getInstance().getZone(getActiveChar(), L2SwampZone.class);
-			int bonus = zone == null ? 0 : zone.getMoveBonus();
-			double dbonus = bonus / 100.0; // %
-			val += val * dbonus;
+			final L2SwampZone zone = ZoneManager.getInstance().getZone(getActiveChar(), L2SwampZone.class);
+			if (zone != null)
+			{
+				return super.getRunSpeed() * zone.getMoveBonus();
+			}
 		}
-		
-		return val;
+
+		return super.getRunSpeed();
+	}
+	
+	@Override
+	public int getWalkSpeed()
+	{
+		if (getActiveChar().isInsideZone(ZoneId.SWAMP))
+		{
+			final L2SwampZone zone = ZoneManager.getInstance().getZone(getActiveChar(), L2SwampZone.class);
+			if (zone != null)
+			{
+				return super.getWalkSpeed() * zone.getMoveBonus();
+			}
+		}
+		return super.getWalkSpeed();
 	}
 	
 	@Override

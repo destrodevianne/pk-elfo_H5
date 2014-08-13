@@ -2716,7 +2716,11 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 	@Override
 	protected void onEvtAttacked(L2Character attacker)
 	{
-		L2Attackable me = getActiveChar();
+		final L2Attackable me = getActiveChar();
+		if (me.isDead())
+		{
+			return;
+		}
 		
 		// Calculate the attack timeout
 		_attackTimeout = MAX_ATTACK_TIMEOUT + GameTimeController.getGameTicks();

@@ -316,8 +316,8 @@ import pk.elfo.util.TimeConstant;
 import gnu.trove.list.array.TIntArrayList;
 
 /**
- * This class represents all player characters in the world.<br>
- * There is always a client-thread connected to this (except if a player-store is activated upon logout).
+ * Esta classe representa todos os personagens dos jogadores no mundo de Lineage II.<br>
+ * Ha sempre um segmento do cliente conectado a este (exceto se uma loja de jogador for ativada apos o logout).
  */
 public final class L2PcInstance extends L2Playable
 {
@@ -423,7 +423,6 @@ public final class L2PcInstance extends L2Playable
 		public void doAttack(L2Character target)
 		{
 			super.doAttack(target);
-			
 			// cancel the recent fake-death protection instantly if the player attacks or casts spells
 			getPlayer().setRecentFakeDeath(false);
 		}
@@ -432,33 +431,27 @@ public final class L2PcInstance extends L2Playable
 		public void doCast(L2Skill skill)
 		{
 			super.doCast(skill);
-			
 			// cancel the recent fake-death protection instantly if the player attacks or casts spells
 			getPlayer().setRecentFakeDeath(false);
 		}
 	}
-	
-	// addons anuncios pvp and pk
-	private int consecutiveKillCount = 0;
+
+	private int consecutiveKillCount = 0; // addons anuncios pvp e pk
 	private int consecutivepkCount = 0;
 	
 	private final int abnormal = AbnormalEffect.VITALITY.getMask();
 	private L2GameClient _client;
-	
 	private String _accountName;
 	private long _deleteTimer;
 	private Calendar _createDate = Calendar.getInstance();
-	
 	private String _lang = null;
 	private String _htmlPrefix = null;
-	
 	private volatile boolean _isOnline = false;
 	private long _onlineTime;
 	private long _onlineBeginTime;
 	private long _lastAccess;
 	private long _uptime;
 	private long _zoneRestartLimitTime = 0;
-	
 	private final ReentrantLock _subclassLock = new ReentrantLock();
 	protected int _baseClass;
 	protected int _activeClass;
@@ -472,73 +465,42 @@ public final class L2PcInstance extends L2Playable
 	protected Future<?> _mountFeedTask;
 	private ScheduledFuture<?> _dismountTask;
 	private boolean _petItems = false;
-	
-	/** The list of sub-classes this character has. */
-	private Map<Integer, SubClass> _subClasses;
-	
+	private Map<Integer, SubClass> _subClasses; // The list of sub-classes this character has.
 	private PcAppearance _appearance;
-	
-	/** The Identifier of the L2PcInstance */
+
 	@Deprecated
-	private int _charId = 0x00030b7a;
-	
-	/** The Experience of the L2PcInstance before the last Death Penalty */
-	private long _expBeforeDeath;
-	
-	/** The Karma of the L2PcInstance (if higher than 0, the name of the L2PcInstance appears in red) */
-	private int _karma;
-	
-	/** The number of player killed during a PvP (the player killed was PvP Flagged) */
-	private int _pvpKills;
-	
-	/** The PK counter of the L2PcInstance (= Number of non PvP Flagged player killed) */
-	private int _pkKills;
-	
-	/** The player's bot punishment */
-	private BotPunish _botPunish = null;
+	private int _charId = 0x00030b7a; // The Identifier of the L2PcInstance
+
+	private long _expBeforeDeath; // The Experience of the L2PcInstance before the last Death Penalty
+	private int _karma; // The Karma of the L2PcInstance (if higher than 0, the name of the L2PcInstance appears in red)
+	private int _pvpKills; // The number of player killed during a PvP (the player killed was PvP Flagged)
+	private int _pkKills; // The PK counter of the L2PcInstance (= Number of non PvP Flagged player killed)
+	private BotPunish _botPunish = null; // The player's bot punishment
 	public L2Account _account = null;
-	
-	/** The PvP Flag state of the L2PcInstance (0=White, 1=Purple) */
-	private byte _pvpFlag;
-	
-	/** The Fame of this L2PcInstance */
-	private int _fame;
+
+	private byte _pvpFlag; // The PvP Flag state of the L2PcInstance (0=White, 1=Purple)
+	private int _fame; // The Fame of this L2PcInstance
 	private ScheduledFuture<?> _fameTask;
-	
-	/** Vitality recovery task */
-	private ScheduledFuture<?> _vitalityTask;
-	
+
+	private ScheduledFuture<?> _vitalityTask; // Vitality recovery task
 	private volatile ScheduledFuture<?> _teleportWatchdog;
-	
-	/** The Siege state of the L2PcInstance */
-	private byte _siegeState = 0;
-	
-	/** The id of castle/fort which the L2PcInstance is registered for siege */
-	private int _siegeSide = 0;
+	private byte _siegeState = 0; // The Siege state of the L2PcInstance
+	private int _siegeSide = 0; // The id of castle/fort which the L2PcInstance is registered for siege 
 	
 	private int _curWeightPenalty = 0;
-	
 	private int _lastCompassZone; // the last compass zone update send to the client
-	
 	private boolean _isIn7sDungeon = false;
-	
 	private final L2ContactList _contactList = new L2ContactList(this);
-	
 	private int _bookmarkslot = 0; // The Teleport Bookmark Slot
-	
 	private List<TeleportBookmark> tpbookmark = new FastList<>();
-	
 	private PunishLevel _punishLevel = PunishLevel.NONE;
 	private long _punishTimer = 0;
 	private ScheduledFuture<?> _punishTask;
-	
 	private boolean _canFeed;
 	private int _eventEffectId = 0;
 	private boolean _isInSiege;
 	private boolean _isInHideoutSiege = false;
-	
-	//SlotMachine Event
-	public boolean win = false;
+	public boolean win = false; //SlotMachine Event
 	
 	public enum PunishLevel
 	{
@@ -567,9 +529,8 @@ public final class L2PcInstance extends L2Playable
 			return punString;
 		}
 	}
-	
-	// Cancel return back buffs
-	private final FastList<L2Effect> cancelbuffs = new FastList<>();
+
+	private final FastList<L2Effect> cancelbuffs = new FastList<>(); // Cancel return back buffs
 	public boolean isoncanceltask = false;
 	
 	public FastList<L2Effect> getcancelbuffs()
@@ -610,14 +571,10 @@ public final class L2PcInstance extends L2Playable
 	private int _mountLevel;
 	/** Store object used to summon the strider you are mounting **/
 	private int _mountObjectID = 0;
-	
 	public int _telemode = 0;
-	
 	private boolean _inCrystallize;
 	private boolean _inCraftMode;
-	
 	private long _offlineShopStart = 0;
-	
 	private L2Transformation _transformation;
 	private int _transformationId = 0;
 	
@@ -669,13 +626,11 @@ public final class L2PcInstance extends L2Playable
 	private L2ManufactureList _createList;
 	private TradeList _sellList;
 	private TradeList _buyList;
-	
-	// Multisell
-	private PreparedListContainer _currentMultiSell = null;
+
+	private PreparedListContainer _currentMultiSell = null; // Multisell
 	
 	/** Bitmask used to keep track of one-time/newbie quest rewards */
 	private int _newbie;
-	
 	private boolean _noble = false;
 	private boolean _hero = false;
 	
@@ -703,7 +658,6 @@ public final class L2PcInstance extends L2Playable
 	 * The list containing all macros of this L2PcInstance.
 	 */
 	private final MacroList _macros = new MacroList(this);
-	
 	private final List<L2PcInstance> _snoopListener = new FastList<>();
 	private final List<L2PcInstance> _snoopedPlayer = new FastList<>();
 	
@@ -715,19 +669,15 @@ public final class L2PcInstance extends L2Playable
 	private int _hennaMEN;
 	private int _hennaWIT;
 	private int _hennaCON;
+
+	private L2Summon _summon = null; // The L2Summon of the L2PcInstance
+	private L2Decoy _decoy = null; // The L2Decoy of the L2PcInstance
+	private L2Trap _trap = null; // The L2Trap of the L2PcInstance
+	private int _agathionId = 0; // The L2Agathion of the L2PcInstance
 	
-	/** The L2Summon of the L2PcInstance */
-	private L2Summon _summon = null;
-	/** The L2Decoy of the L2PcInstance */
-	private L2Decoy _decoy = null;
-	/** The L2Trap of the L2PcInstance */
-	private L2Trap _trap = null;
-	/** The L2Agathion of the L2PcInstance */
-	private int _agathionId = 0;
 	// apparently, a L2PcInstance CAN have both a summon AND a tamed beast at the same time!!
 	// after Freya players can control more than one tamed beast
 	private List<L2TamedBeastInstance> _tamedBeast = null;
-	
 	private boolean _minimapAllowed = false;
 	
 	// client radar
@@ -737,6 +687,7 @@ public final class L2PcInstance extends L2Playable
 	// Party matching
 	// private int _partymatching = 0;
 	private int _partyroom = 0;
+	
 	// private int _partywait = 0;
 	
 	// Clan related attributes
@@ -749,10 +700,8 @@ public final class L2PcInstance extends L2Playable
 	/** Apprentice and Sponsor IDs */
 	private int _apprentice = 0;
 	private int _sponsor = 0;
-	
 	private long _clanJoinExpiryTime;
 	private long _clanCreateExpiryTime;
-	
 	private int _powerGrade = 0;
 	private int _clanPrivileges = 0;
 	
@@ -762,7 +711,6 @@ public final class L2PcInstance extends L2Playable
 	
 	/** Level at which the player joined the clan as an academy member */
 	private int _lvlJoinedAcademy = 0;
-	
 	private int _wantsPeace = 0;
 	
 	// Death Penalty Buff Level
@@ -778,19 +726,14 @@ public final class L2PcInstance extends L2Playable
 	
 	// WorldPosition used by TARGET_SIGNET_GROUND
 	private Point3D _currentSkillWorldPosition;
-	
 	private L2AccessLevel _accessLevel;
-	
 	private boolean _addXpSp = true;
-	
 	private boolean _messageRefusal = false; // message refusal mode
-	
 	private boolean _silenceMode = false; // silence mode
 	private final TIntArrayList _silenceModeExcluded = new TIntArrayList(); // silence mode
 	private boolean _dietMode = false; // ignore weight penalty
 	private boolean _tradeRefusal = false; // Trade refusal
 	private boolean _exchangeRefusal = false; // Exchange refusal
-	
 	private L2Party _party;
 	
 	// this is needed to find the inviting player for Party response
@@ -822,7 +765,6 @@ public final class L2PcInstance extends L2Playable
 	
 	/** The fists L2Weapon of the L2PcInstance (used when no weapon is equiped) */
 	private L2Weapon _fistsWeaponItem;
-	
 	private final Map<Integer, String> _chars = new FastMap<>();
 	
 	// private byte _updateKnownCounter = 0;
@@ -830,13 +772,11 @@ public final class L2PcInstance extends L2Playable
 	private int _expertiseArmorPenalty = 0;
 	private int _expertiseWeaponPenalty = 0;
 	private int _expertisePenaltyBonus = 0;
-	
 	private boolean _isEnchanting = false;
 	private L2ItemInstance _activeEnchantItem = null;
 	private L2ItemInstance _activeEnchantSupportItem = null;
 	private L2ItemInstance _activeEnchantAttrItem = null;
 	private long _activeEnchantTimestamp = 0;
-	
 	protected boolean _inventoryDisable = false;
 	
 	private final FastMap<Integer, L2CubicInstance> _cubics = new FastMap<>();
@@ -876,9 +816,7 @@ public final class L2PcInstance extends L2Playable
 	private int _fishx = 0;
 	private int _fishy = 0;
 	private int _fishz = 0;
-	
 	private short points = 0;
-	
 	private int[] _transformAllowedSkills = {};
 	private ScheduledFuture<?> _taskRentPet;
 	private ScheduledFuture<?> _taskWater;
@@ -886,7 +824,6 @@ public final class L2PcInstance extends L2Playable
 	/** Bypass validations */
 	private final List<String> _validBypass = new L2FastList<>(true);
 	private final List<String> _validBypass2 = new L2FastList<>(true);
-	
 	private Forum _forumMail;
 	private Forum _forumMemo;
 	
@@ -896,10 +833,8 @@ public final class L2PcInstance extends L2Playable
 	
 	/** Skills queued because a skill is already in progress */
 	private SkillDat _queuedSkill;
-	
 	private int _cursedWeaponEquippedId = 0;
 	private boolean _combatFlagEquippedId = false;
-	
 	private int _reviveRequested = 0;
 	private double _revivePower = 0;
 	private boolean _revivePet = false;
@@ -931,23 +866,14 @@ public final class L2PcInstance extends L2Playable
 	
 	private int _multiSocialTarget = 0;
 	private int _multiSociaAction = 0;
-	
 	private long _gamePoints;
-	
 	private int _movieId = 0;
-	
 	private String _adminConfirmCmd = null;
-	
 	private DialogId _currentDialogId = DialogId.NONE;
-	
 	private volatile long _lastItemAuctionInfoRequest = 0;
-	
 	private Future<?> _PvPRegTask;
-	
 	private long _pvpFlagLasts;
-	
 	private long _notMoveUntil = 0;
-	
 	private final RPSCookie _RPSCookie = new RPSCookie();
 	
 	public RPSCookie getRPSCookie()
@@ -998,7 +924,6 @@ public final class L2PcInstance extends L2Playable
 	{
 		public PvPFlag()
 		{
-			
 		}
 		
 		@Override
@@ -1189,10 +1114,8 @@ public final class L2PcInstance extends L2Playable
 		L2PcInstance player = new L2PcInstance(IdFactory.getInstance().getNextId(), template, accountName, app);
 		// Set the name of the L2PcInstance
 		player.setName(name);
-		
 		// Set Character's create time
 		player.setCreateDate(Calendar.getInstance());
-		
 		// Set the base class ID to that of the actual class ID.
 		player.setBaseClass(player.getClassId());
 		// Kept for backwards compatibility.
@@ -1213,7 +1136,6 @@ public final class L2PcInstance extends L2Playable
 		// Create a new L2PcInstance with an account name
 		L2PcInstance player = new L2PcInstance(objectId);
 		player.setName(name);
-		
 		return player;
 	}
 	
@@ -1398,10 +1320,8 @@ public final class L2PcInstance extends L2Playable
 		_accountName = accountName;
 		app.setOwner(this);
 		_appearance = app;
-		
 		// Create an AI
 		_ai = new L2PlayerAI(new L2PcInstance.AIAccessor());
-		
 		// Create a L2Radar object
 		_radar = new L2Radar(this);
 		
@@ -1969,7 +1889,6 @@ public final class L2PcInstance extends L2Playable
 				}
 			}
 		}
-		
 		// Return a table containing all QuestState to modify
 		return states;
 	}
@@ -2009,7 +1928,6 @@ public final class L2PcInstance extends L2Playable
 				}
 			}
 		}
-		
 		// Return a table containing all QuestState to modify
 		return states;
 	}
@@ -2063,7 +1981,6 @@ public final class L2PcInstance extends L2Playable
 				}
 			}
 		}
-		
 		return retval;
 	}
 	
@@ -2078,7 +1995,6 @@ public final class L2PcInstance extends L2Playable
 			npcReply.setHtml(content);
 			sendPacket(npcReply);
 		}
-		
 		sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
@@ -2275,7 +2191,6 @@ public final class L2PcInstance extends L2Playable
 			return;
 		}
 		setPvpFlag(value);
-		
 		sendPacket(new UserInfo(this));
 		sendPacket(new ExBrExtraUserInfo(this));
 		
@@ -2596,7 +2511,6 @@ public final class L2PcInstance extends L2Playable
 			// Send a Server->Client StatusUpdate packet with Karma and PvP Flag to the L2PcInstance and all L2PcInstance to inform (broadcast)
 			setKarmaFlag(0);
 		}
-		
 		_karma = karma;
 		broadcastKarma();
 	}
@@ -2767,7 +2681,6 @@ public final class L2PcInstance extends L2Playable
 			}
 			changed = true;
 		}
-		
 		if (changed)
 		{
 			sendPacket(new EtcStatusUpdate(this));
@@ -2805,7 +2718,6 @@ public final class L2PcInstance extends L2Playable
 					currenteffect.exit();
 				}
 			}
-			
 			continue;
 		}
 	}
@@ -3192,7 +3104,6 @@ public final class L2PcInstance extends L2Playable
 			L2Item temp = ItemTable.getInstance().getTemplate(247);
 			weaponItem = (L2Weapon) temp;
 		}
-		
 		return weaponItem;
 	}
 	
@@ -3210,7 +3121,6 @@ public final class L2PcInstance extends L2Playable
 		{
 			giveAvailableAutoGetSkills();
 		}
-		
 		checkPlayerSkills();
 		checkItemRestriction();
 		sendSkillList();
@@ -3335,7 +3245,6 @@ public final class L2PcInstance extends L2Playable
 		{
 			exp = 0;
 		}
-		
 		getStat().setExp(exp);
 	}
 	
@@ -3386,7 +3295,6 @@ public final class L2PcInstance extends L2Playable
 		{
 			sp = 0;
 		}
-		
 		super.getStat().setSp(sp);
 	}
 	
@@ -3408,7 +3316,6 @@ public final class L2PcInstance extends L2Playable
 				return true;
 			}
 		}
-		
 		return false;
 	}
 	
@@ -3429,7 +3336,6 @@ public final class L2PcInstance extends L2Playable
 		{
 			return _clan.getCrestId();
 		}
-		
 		return 0;
 	}
 	
@@ -3442,7 +3348,6 @@ public final class L2PcInstance extends L2Playable
 		{
 			return _clan.getCrestLargeId();
 		}
-		
 		return 0;
 	}
 	
@@ -8607,48 +8512,48 @@ public final class L2PcInstance extends L2Playable
        boolean getVitalityEffect = false;
        try
        {
-           if ( ArmorSetsData.getInstance().getSet(9417).isEnchanted(30, this)
-                   || ArmorSetsData.getInstance().getSet(9418).isEnchanted(30, this)
-                   || ArmorSetsData.getInstance().getSet(9419).isEnchanted(30, this)
-                   || ArmorSetsData.getInstance().getSet(9420).isEnchanted(30, this)
-                   || ArmorSetsData.getInstance().getSet(9426).isEnchanted(30, this)
-                   || ArmorSetsData.getInstance().getSet(9427).isEnchanted(30, this)
-                   || ArmorSetsData.getInstance().getSet(10126).isEnchanted(30, this)
-                   || ArmorSetsData.getInstance().getSet(10127).isEnchanted(30, this)
-                   || ArmorSetsData.getInstance().getSet(9433).isEnchanted(30, this)
-                   || ArmorSetsData.getInstance().getSet(9434).isEnchanted(30, this)
-                   || ArmorSetsData.getInstance().getSet(9435).isEnchanted(30, this)
-                   || ArmorSetsData.getInstance().getSet(9436).isEnchanted(30, this)
-            	   || ArmorSetsData.getInstance().getSet(13432).isEnchanted(30, this)
-   		    	   || ArmorSetsData.getInstance().getSet(13433).isEnchanted(30, this)
-		 		   || ArmorSetsData.getInstance().getSet(13434).isEnchanted(30, this)
-	  			   || ArmorSetsData.getInstance().getSet(13435).isEnchanted(30, this)
-				   || ArmorSetsData.getInstance().getSet(13436).isEnchanted(30, this)
-				   || ArmorSetsData.getInstance().getSet(13437).isEnchanted(30, this)
-				   || ArmorSetsData.getInstance().getSet(14520).isEnchanted(30, this)
-				   || ArmorSetsData.getInstance().getSet(14521).isEnchanted(30, this)
-				   || ArmorSetsData.getInstance().getSet(14522).isEnchanted(30, this)
-			 	   || ArmorSetsData.getInstance().getSet(14523).isEnchanted(30, this)
-				   || ArmorSetsData.getInstance().getSet(14524).isEnchanted(30, this)
-				   || ArmorSetsData.getInstance().getSet(14525).isEnchanted(30, this)
-				   || ArmorSetsData.getInstance().getSet(15575).isEnchanted(30, this)
-				   || ArmorSetsData.getInstance().getSet(15576).isEnchanted(30, this)
-			  	   || ArmorSetsData.getInstance().getSet(15577).isEnchanted(30, this)
-			  	   || ArmorSetsData.getInstance().getSet(15592).isEnchanted(30, this)
-			  	   || ArmorSetsData.getInstance().getSet(15593).isEnchanted(30, this)
-			   	   || ArmorSetsData.getInstance().getSet(15594).isEnchanted(30, this)
-     	   	 	   || ArmorSetsData.getInstance().getSet(15609).isEnchanted(30, this)
-				   || ArmorSetsData.getInstance().getSet(15610).isEnchanted(30, this)
-			 	   || ArmorSetsData.getInstance().getSet(15611).isEnchanted(30, this)
-			  	   || ArmorSetsData.getInstance().getSet(16168).isEnchanted(30, this)
-			  	   || ArmorSetsData.getInstance().getSet(16169).isEnchanted(30, this)
-	    	  	   || ArmorSetsData.getInstance().getSet(16170).isEnchanted(30, this)
-			  	   || ArmorSetsData.getInstance().getSet(16171).isEnchanted(30, this)
-			   	   || ArmorSetsData.getInstance().getSet(16172).isEnchanted(30, this)
-			   	   || ArmorSetsData.getInstance().getSet(16173).isEnchanted(30, this)
-			  	   || ArmorSetsData.getInstance().getSet(16174).isEnchanted(30, this)
-			   	   || ArmorSetsData.getInstance().getSet(16175).isEnchanted(30, this)
-			  	   || ArmorSetsData.getInstance().getSet(16176).isEnchanted(30, this)                   
+           if ( ArmorSetsData.getInstance().getSet(9417).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(9418).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(9419).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(9420).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(9426).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(9427).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(10126).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(10127).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(9433).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(9434).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(9435).isEnchanted(20, this)
+                   || ArmorSetsData.getInstance().getSet(9436).isEnchanted(20, this)
+            	   || ArmorSetsData.getInstance().getSet(13432).isEnchanted(20, this)
+   		    	   || ArmorSetsData.getInstance().getSet(13433).isEnchanted(20, this)
+		 		   || ArmorSetsData.getInstance().getSet(13434).isEnchanted(20, this)
+	  			   || ArmorSetsData.getInstance().getSet(13435).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(13436).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(13437).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(14520).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(14521).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(14522).isEnchanted(20, this)
+			 	   || ArmorSetsData.getInstance().getSet(14523).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(14524).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(14525).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(15575).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(15576).isEnchanted(20, this)
+			  	   || ArmorSetsData.getInstance().getSet(15577).isEnchanted(20, this)
+			  	   || ArmorSetsData.getInstance().getSet(15592).isEnchanted(20, this)
+			  	   || ArmorSetsData.getInstance().getSet(15593).isEnchanted(20, this)
+			   	   || ArmorSetsData.getInstance().getSet(15594).isEnchanted(20, this)
+     	   	 	   || ArmorSetsData.getInstance().getSet(15609).isEnchanted(20, this)
+				   || ArmorSetsData.getInstance().getSet(15610).isEnchanted(20, this)
+			 	   || ArmorSetsData.getInstance().getSet(15611).isEnchanted(20, this)
+			  	   || ArmorSetsData.getInstance().getSet(16168).isEnchanted(20, this)
+			  	   || ArmorSetsData.getInstance().getSet(16169).isEnchanted(20, this)
+	    	  	   || ArmorSetsData.getInstance().getSet(16170).isEnchanted(20, this)
+			  	   || ArmorSetsData.getInstance().getSet(16171).isEnchanted(20, this)
+			   	   || ArmorSetsData.getInstance().getSet(16172).isEnchanted(20, this)
+			   	   || ArmorSetsData.getInstance().getSet(16173).isEnchanted(20, this)
+			  	   || ArmorSetsData.getInstance().getSet(16174).isEnchanted(20, this)
+			   	   || ArmorSetsData.getInstance().getSet(16175).isEnchanted(20, this)
+			  	   || ArmorSetsData.getInstance().getSet(16176).isEnchanted(20, this)                   
                )
            {
                getVitalityEffect = true;

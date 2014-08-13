@@ -23,6 +23,7 @@ import javolution.util.FastList;
 /**
  * PkElfo
  */
+
 public abstract class ItemContainer
 {
 	protected static final Logger _log = Logger.getLogger(ItemContainer.class.getName());

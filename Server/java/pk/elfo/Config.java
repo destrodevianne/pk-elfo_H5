@@ -46,6 +46,10 @@ import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.L2Properties;
 import pk.elfo.util.StringUtil;
 
+/**
+ * PkElfo
+ */
+
 public final class Config
 {
 	private static final Logger _log = Logger.getLogger(Config.class.getName());
@@ -6863,7 +6867,7 @@ public final class Config
 			String externalIp = "127.0.0.1";
 			try
 			{
-				URL autoIp = new URL("http://api.externalip.net/ip/");
+				URL autoIp = new URL("http://ip1.dynupdate.no-ip.com:8245/");
 				try (BufferedReader in = new BufferedReader(new InputStreamReader(autoIp.openStream())))
 				{
 					externalIp = in.readLine();
