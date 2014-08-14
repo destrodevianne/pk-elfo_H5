@@ -21,7 +21,8 @@ public class RandomFight
        state = State.REGISTER;
        Broadcast.announceToOnlinePlayers("O Evento Random Fight vai comecar em 1 minute.");
        Broadcast.announceToOnlinePlayers("Para se registrar digite: ?register");
-       ThreadPoolManager.getInstance().scheduleGeneral(new checkRegist(), 60000 );
+       Broadcast.announceToOnlinePlayers("Para cancelar digite: ?unregister a qualquer momento.");
+       ThreadPoolManager.getInstance().scheduleGeneral(new checkRegist(), 300000 );
    }
 
    protected void checkRegistrations()
@@ -35,8 +36,8 @@ public class RandomFight
            return;
        }
        Broadcast.announceToOnlinePlayers("Quantidade de registrados: "+players.size());
-       Broadcast.announceToOnlinePlayers("2 Jogadores aleatorios serao escolhidos em 30 segundos!");
-       ThreadPoolManager.getInstance().scheduleGeneral(new pickPlayers(), 30000 );
+       Broadcast.announceToOnlinePlayers("2 Jogadores aleatorios serao escolhidos em 60 segundos!");
+       ThreadPoolManager.getInstance().scheduleGeneral(new pickPlayers(), 60000 );
     }
 
    protected void pickPlayers()
@@ -66,9 +67,9 @@ public class RandomFight
            if(player != players.get(rnd1) && player != players.get(rnd2))
                players.remove(player);
        }
-       Broadcast.announceToOnlinePlayers("Jogadores selecionados: "+players.firstElement().getName()+" || "+players.lastElement().getName());
-       Broadcast.announceToOnlinePlayers("Os jogadores vao ser teletransportados em 15 segundos");
-       ThreadPoolManager.getInstance().scheduleGeneral(new teleportPlayers(), 15000);
+       Broadcast.announceToOnlinePlayers("Jogadores selecionados: "+players.firstElement().getName()+" VS "+players.lastElement().getName());
+       Broadcast.announceToOnlinePlayers("Os jogadores vao ser teletransportados em 30 segundos");
+       ThreadPoolManager.getInstance().scheduleGeneral(new teleportPlayers(), 30000);
     }
 
    protected void teleport()
