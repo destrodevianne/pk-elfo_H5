@@ -4,6 +4,10 @@ import pk.elfo.gameserver.fence.FenceBuilderManager;
 import pk.elfo.gameserver.handler.IAdminCommandHandler;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
+/**
+ * PkElfo
+ */
+
 public class AdminFence implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =

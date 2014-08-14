@@ -99,7 +99,6 @@ public class InstantJump implements ISkillHandler
 				skill.getEffects(activeChar, target);
 			}
 		}
-		
 	}
 	
 	@Override

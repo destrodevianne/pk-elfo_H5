@@ -22,6 +22,10 @@ import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.StringUtil;
 import pk.elfo.util.TimeConstant;
 
+/**
+ * PkElfo
+ */
+
 public class Premium implements IBypassHandler
 {
 	private static final String[] COMMANDS =

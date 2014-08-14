@@ -15,6 +15,10 @@ import pk.elfo.gameserver.model.items.L2Item;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.util.StringUtil;
 
+/**
+ * PkElfo
+ */
+
 public class DropInfo implements IBypassHandler
 {
 	private static final String[] COMMANDS =

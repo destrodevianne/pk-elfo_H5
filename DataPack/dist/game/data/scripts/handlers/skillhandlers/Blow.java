@@ -32,7 +32,6 @@ public class Blow implements ISkillHandler
 		L2SkillType.BLOW
 	};
 
-	
 	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{

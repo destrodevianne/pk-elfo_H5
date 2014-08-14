@@ -44,7 +44,6 @@ public class ShiftTarget implements ISkillHandler
 				continue;
 			}
 			hater.addDamageHate(target, 0, hater.getHating(activeChar));
-			
 		}
 	}
 	

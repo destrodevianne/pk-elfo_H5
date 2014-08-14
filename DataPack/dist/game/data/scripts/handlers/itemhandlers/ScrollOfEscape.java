@@ -18,6 +18,10 @@ import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
 import pk.elfo.gameserver.network.serverpackets.SetupGauge;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
+/**
+ * PkElfo
+ */
+
 public class ScrollOfEscape implements IItemHandler
 {
 	// all the items ids that this handler knowns

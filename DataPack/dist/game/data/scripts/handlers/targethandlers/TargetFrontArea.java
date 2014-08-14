@@ -85,7 +85,6 @@ public class TargetFrontArea implements ITargetTypeHandler
 				{
 					break;
 				}
-				
 				targetList.add(obj);
 			}
 		}
@@ -94,7 +93,6 @@ public class TargetFrontArea implements ITargetTypeHandler
 		{
 			return _emptyTargetList;
 		}
-		
 		return targetList.toArray(new L2Character[targetList.size()]);
 	}
 	

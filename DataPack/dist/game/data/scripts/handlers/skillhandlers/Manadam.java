@@ -116,7 +116,6 @@ public class Manadam implements ISkillHandler
 			// cast self effect if any
 			skill.getEffectsSelf(activeChar);
 		}
-		
 		activeChar.setChargedShot(bss ? ShotType.BLESSED_SPIRITSHOTS : ShotType.SPIRITSHOTS, false);
 	}
 	

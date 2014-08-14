@@ -27,7 +27,6 @@ public class StrSiegeAssault implements ISkillHandler
 	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
-		
 		if (!activeChar.isPlayer())
 		{
 			return;
@@ -102,14 +101,12 @@ public class StrSiegeAssault implements ISkillHandler
 					target.reduceCurrentHp(damage, activeChar, skill);
 					
 					activeChar.sendDamageMessage(target, damage, false, false, false);
-					
 				}
 				else
 				{
 					activeChar.sendMessage(skill.getName() + " falhou.");
 				}
 			}
-			
 			activeChar.setChargedShot(ShotType.SOULSHOTS, false);
 		}
 		catch (Exception e)

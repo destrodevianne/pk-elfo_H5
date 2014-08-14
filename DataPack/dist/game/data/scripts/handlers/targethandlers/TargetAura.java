@@ -51,7 +51,6 @@ public class TargetAura implements ITargetTypeHandler
 				{
 					break;
 				}
-				
 				targetList.add(obj);
 			}
 		}

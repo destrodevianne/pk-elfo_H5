@@ -90,7 +90,6 @@ public class ManaHeal implements ISkillHandler
 							mp = 0; // 0mp recharged
 						}
 					}
-					
 			}
 			
 			// from CT2 u will receive exact MP, u can't go over it, if u have full MP and u get MP buff, u will receive 0MP restored message
@@ -144,7 +143,6 @@ public class ManaHeal implements ISkillHandler
 			// cast self effect if any
 			skill.getEffectsSelf(activeChar);
 		}
-		
 		activeChar.setChargedShot(activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS) ? ShotType.BLESSED_SPIRITSHOTS : ShotType.SPIRITSHOTS, false);
 	}
 	

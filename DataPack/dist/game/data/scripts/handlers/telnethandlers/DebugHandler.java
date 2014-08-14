@@ -89,7 +89,6 @@ public class DebugHandler implements ITelnetHandler
 							sp.addPart("C".getBytes()[0], "0x" + b);
 						}
 					}
-					
 					targetPlayer.sendPacket(sp);
 					_print.println("Packet enviado para o jogador " + charName);
 				}
@@ -175,7 +174,6 @@ public class DebugHandler implements ITelnetHandler
 					sb.append("\nCorrnte Free Heap Size: " + (Runtime.getRuntime().freeMemory() / 1024 / 1024) + " mb");
 					sb.append("\nCorrnte Heap Size: " + (Runtime.getRuntime().totalMemory() / 1024 / 1024) + " mb");
 					sb.append("\nMaximo Heap Size: " + (Runtime.getRuntime().maxMemory() / 1024 / 1024) + " mb");
-					
 					sb.append('\n');
 					sb.append("\n## Class Path Informacao ##\n");
 					String cp = System.getProperty("java.class.path");
@@ -185,7 +183,6 @@ public class DebugHandler implements ITelnetHandler
 						sb.append(lib);
 						sb.append('\n');
 					}
-					
 					sb.append('\n');
 					sb.append("## Threads Informacao ##\n");
 					Map<Thread, StackTraceElement[]> allThread = Thread.getAllStackTraces();
@@ -193,7 +190,6 @@ public class DebugHandler implements ITelnetHandler
 					FastTable<Entry<Thread, StackTraceElement[]>> entries = new FastTable<>();
 					entries.setValueComparator(new FastComparator<Entry<Thread, StackTraceElement[]>>()
 					{
-						
 						/**
 						 * 
 						 */
@@ -216,7 +212,6 @@ public class DebugHandler implements ITelnetHandler
 						{
 							return e.hashCode();
 						}
-						
 					});
 					entries.addAll(allThread.entrySet());
 					entries.sort();

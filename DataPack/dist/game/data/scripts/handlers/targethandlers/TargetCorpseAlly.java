@@ -119,7 +119,6 @@ public class TargetCorpseAlly implements ITargetTypeHandler
 						{
 							break;
 						}
-						
 						targetList.add(obj);
 					}
 				}

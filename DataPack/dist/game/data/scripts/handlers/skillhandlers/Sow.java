@@ -141,7 +141,6 @@ public class Sow implements ISkillHandler
 		{
 			basicSuccess = 1;
 		}
-		
 		return Rnd.nextInt(99) < basicSuccess;
 	}
 	

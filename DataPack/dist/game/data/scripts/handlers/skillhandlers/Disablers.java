@@ -610,7 +610,6 @@ public class Disablers implements ISkillHandler
 			}
 			skill.getEffectsSelf(activeChar);
 		}
-		
 		activeChar.setChargedShot(bss ? ShotType.BLESSED_SPIRITSHOTS : ShotType.SPIRITSHOTS, false);
 	}
 	
@@ -704,7 +703,6 @@ public class Disablers implements ISkillHandler
 				}
 			}
 		}
-		
 		return (maxRemoved <= 0) ? count + 2 : count;
 	}
 	
@@ -729,7 +727,6 @@ public class Disablers implements ISkillHandler
 			initial[i] = initial[index];
 			initial[index] = pom;
 		}
-		
 		return initial;
 	}
 	

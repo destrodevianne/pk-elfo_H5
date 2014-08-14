@@ -5,9 +5,9 @@ import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 /**
- * 
- * @author Elfocrash
+ * PkElfo
  */
+
 public class AdminSetTeam implements IAdminCommandHandler
 {
 	private static String[] _adminCommands =

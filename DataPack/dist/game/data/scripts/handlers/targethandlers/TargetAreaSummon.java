@@ -74,7 +74,6 @@ public class TargetAreaSummon implements ITargetTypeHandler
 		{
 			return _emptyTargetList;
 		}
-		
 		return targetList.toArray(new L2Character[targetList.size()]);
 	}
 	

@@ -57,7 +57,6 @@ public class CpDamPercent implements ISkillHandler
 			activeChar.sendDamageMessage(target, damage, false, false, false);
 			target.setCurrentCp(target.getCurrentCp() - damage);
 		}
-		
 		activeChar.setChargedShot(bss ? ShotType.BLESSED_SPIRITSHOTS : ShotType.SPIRITSHOTS, false);
 	}
 	

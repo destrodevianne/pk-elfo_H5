@@ -47,7 +47,6 @@ public class TargetBehindArea implements ITargetTypeHandler
 					target
 				};
 			}
-			
 			origin = target;
 			targetList.add(origin); // Add target to target list
 		}
@@ -85,7 +84,6 @@ public class TargetBehindArea implements ITargetTypeHandler
 				{
 					break;
 				}
-				
 				targetList.add(obj);
 			}
 		}

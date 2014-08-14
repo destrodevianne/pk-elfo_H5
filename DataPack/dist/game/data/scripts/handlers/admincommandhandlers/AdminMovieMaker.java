@@ -4,6 +4,10 @@ import pk.elfo.gameserver.fence.MovieMakerManager;
 import pk.elfo.gameserver.handler.IAdminCommandHandler;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
+/**
+ * PkElfo
+ */
+
 public class AdminMovieMaker implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =

@@ -38,7 +38,6 @@ public class TargetFrontAura implements ITargetTypeHandler
 					activeChar
 				};
 			}
-			
 			targetList.add(activeChar);
 			for (L2Character obj : objs)
 			{

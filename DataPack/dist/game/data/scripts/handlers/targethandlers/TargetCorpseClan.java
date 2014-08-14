@@ -119,7 +119,6 @@ public class TargetCorpseClan implements ITargetTypeHandler
 					{
 						break;
 					}
-					
 					targetList.add(obj);
 				}
 			}
@@ -135,7 +134,6 @@ public class TargetCorpseClan implements ITargetTypeHandler
 					activeChar
 				};
 			}
-			
 			targetList.add(activeChar);
 			
 			final Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
@@ -153,7 +151,6 @@ public class TargetCorpseClan implements ITargetTypeHandler
 					{
 						break;
 					}
-					
 					targetList.add((L2Npc) newTarget);
 				}
 			}

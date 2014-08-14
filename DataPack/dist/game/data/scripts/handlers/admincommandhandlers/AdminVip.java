@@ -17,6 +17,10 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.EtcStatusUpdate;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
+/**
+ * PkElfo
+ */
+
 public class AdminVip implements IAdminCommandHandler
 {
        private static String[] _adminCommands = { "admin_setvip", "admin_removevip" };

@@ -98,7 +98,6 @@ public class StealBuffs implements ISkillHandler
 			}
 			skill.getEffectsSelf(activeChar);
 		}
-		
 		activeChar.setChargedShot(activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS) ? ShotType.BLESSED_SPIRITSHOTS : ShotType.SPIRITSHOTS, false);
 	}
 	

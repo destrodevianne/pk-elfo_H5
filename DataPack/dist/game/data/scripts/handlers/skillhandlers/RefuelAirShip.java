@@ -32,7 +32,6 @@ public class RefuelAirShip implements ISkillHandler
 		{
 			return;
 		}
-		
 		ship.setFuel(ship.getFuel() + (int) skill.getPower());
 		ship.updateAbnormalEffect(); // broadcast new fuel
 	}

@@ -92,7 +92,6 @@ public class Cancel implements ISkillHandler
                 {
                     resMod = 1 + (0.02 * res);
                 }
-
                 rate *= resMod;
             }
 
@@ -126,7 +125,6 @@ public class Cancel implements ISkillHandler
                     {
                         continue;
                     }
-
                     for (String negateAbnormalType : skill.getNegateAbnormals().keySet())
                     {
                         if (negateAbnormalType.equalsIgnoreCase(eff.getAbnormalType()) && (skill.getNegateAbnormals().get(negateAbnormalType) >= eff.getAbnormalLvl()))
@@ -278,7 +276,6 @@ public class Cancel implements ISkillHandler
         {
             rate = maxRate;
         }
-
         return Rnd.get(100) < rate;
     }
 

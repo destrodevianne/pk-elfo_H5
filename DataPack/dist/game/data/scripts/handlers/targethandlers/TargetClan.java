@@ -152,12 +152,10 @@ public class TargetClan implements ITargetTypeHandler
 					{
 						break;
 					}
-					
 					targetList.add((L2Npc) newTarget);
 				}
 			}
 		}
-		
 		return targetList.toArray(new L2Character[targetList.size()]);
 	}
 	

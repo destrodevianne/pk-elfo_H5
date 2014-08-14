@@ -38,7 +38,6 @@ public class TargetAuraCorpseMob implements ITargetTypeHandler
 				{
 					break;
 				}
-				
 				targetList.add(obj);
 			}
 		}

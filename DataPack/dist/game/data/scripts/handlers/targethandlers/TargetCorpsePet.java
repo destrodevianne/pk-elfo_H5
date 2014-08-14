@@ -26,7 +26,6 @@ public class TargetCorpsePet implements ITargetTypeHandler
 				};
 			}
 		}
-		
 		return _emptyTargetList;
 	}
 	

@@ -8,6 +8,9 @@ import pk.elfo.gameserver.handler.IAdminCommandHandler;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.entity.CrazyRates;
 
+/**
+ * PkElfo
+ */
 
 public class AdminCrazy implements IAdminCommandHandler
 {
