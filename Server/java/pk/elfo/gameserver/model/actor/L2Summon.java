@@ -999,7 +999,7 @@ public abstract class L2Summon extends L2Playable
 	 * @param ctrlPressed
 	 * @return
 	 */
-	public boolean canAttack(boolean ctrlPressed)
+	public final boolean canAttack(boolean ctrlPressed)
 	{
 		if (getOwner() == null)
 		{
@@ -1086,8 +1086,8 @@ public abstract class L2Summon extends L2Playable
 		}
 		
 		// TODO: Unhardcode it.
-		// Siege golems AI doesn't support attacking other than doors at the moment.
-		if ((!target.isDoor() && (npcId == L2SiegeSummonInstance.SWOOP_CANNON_ID)) || (npcId == L2SiegeSummonInstance.SIEGE_GOLEM_ID))
+		// Os Siege golems AI nao suportam atacar, exceto as portas / paredes, no momento.
+		if (!target.isDoor() && ((npcId == L2SiegeSummonInstance.SWOOP_CANNON_ID) || (npcId == L2SiegeSummonInstance.SIEGE_GOLEM_ID)))
 		{
 			return false;
 		}

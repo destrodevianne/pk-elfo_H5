@@ -157,17 +157,16 @@ public class SiegeGuardManager
 	/**
 	 * Unspawn guards.
 	 */
+	// Fix for SiegeGuardManager
 	public void unspawnSiegeGuard()
 	{
 		for (L2Spawn spawn : getSiegeGuardSpawn())
 		{
-			if (spawn == null)
+			if ((spawn != null) && (spawn.getLastSpawn() != null))
 			{
-				continue;
+				spawn.stopRespawn();
+				spawn.getLastSpawn().doDie(spawn.getLastSpawn());
 			}
-			
-			spawn.stopRespawn();
-			spawn.getLastSpawn().doDie(spawn.getLastSpawn());
 		}
 		
 		getSiegeGuardSpawn().clear();
