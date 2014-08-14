@@ -10,6 +10,7 @@ import pk.elfo.gameserver.SevenSignsFestival;
 import pk.elfo.gameserver.events.EventsInterface;
 import pk.elfo.gameserver.instancemanager.AntiFeedManager;
 import pk.elfo.gameserver.model.L2Party;
+import pk.elfo.gameserver.model.RandomFight;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.zone.ZoneId;
 import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone;
@@ -20,6 +21,7 @@ import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone4;
 import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone5;
 import pk.elfo.gameserver.network.L2GameClient;
 import pk.elfo.gameserver.network.SystemMessageId;
+import pk.elfo.gameserver.network.serverpackets.ActionFailed;
 import pk.elfo.gameserver.network.L2GameClient.GameClientState;
 import pk.elfo.gameserver.network.serverpackets.CharSelectionInfo;
 import pk.elfo.gameserver.network.serverpackets.RestartResponse;
@@ -94,6 +96,14 @@ public final class RequestRestart extends L2GameClientPacket
 		{
 			player.sendMessage("Cannot restart while trading");
 			sendPacket(RestartResponse.valueOf(false));
+			return;
+		}
+		
+		// Random Fight: Block restart if player is in Event.
+		if (RandomFight.players.contains(player))
+		{
+			player.sendMessage("Voce nao pode reiniciar estando no Evento Random Fight.");
+			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		

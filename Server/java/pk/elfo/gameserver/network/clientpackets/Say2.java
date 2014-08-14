@@ -28,6 +28,7 @@ import pk.elfo.gameserver.handler.ChatHandler;
 import pk.elfo.gameserver.handler.IChatHandler;
 import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.L2World;
+import pk.elfo.gameserver.model.RandomFight;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.gameserver.network.SystemMessageId;
@@ -253,6 +254,11 @@ public final class Say2 extends L2GameClientPacket
 			EventsInterface.onSay(_type, activeChar.getObjectId(), _text);
 		}
 		
+		// Random Fight: ?register check condition.
+		checkRandomFight(_text,activeChar);
+		if(_text.equalsIgnoreCase("?register") || _text.equalsIgnoreCase("?unregister"))
+			return;
+		
 		if ((_type == PETITION_PLAYER) && activeChar.isGM())
 		{
 			_type = PETITION_GM;
@@ -381,6 +387,46 @@ public final class Say2 extends L2GameClientPacket
 	{
 		return _C__49_SAY2;
 	}
+	
+	// Random Fight: Implement checkRandomFight.
+	   void checkRandomFight(String text,L2PcInstance player)
+	   {
+	       if(text.equalsIgnoreCase("?register"))
+	       {
+	           if(RandomFight.players.contains(player))
+	           {
+	               player.sendMessage("Voce ja esta registrado para o evento.");
+	               return;
+	           }
+	           if(RandomFight.state == RandomFight.State.INACTIVE)
+	               return;
+	           if(RandomFight.state != RandomFight.State.REGISTER)
+	           {
+	               player.sendMessage("O evento ja comecou.");
+	               return;
+	           }
+	           RandomFight.players.add(player);
+	           player.sendMessage("Voce se registrou para o evento!!");
+	           return;
+	       }
+	       if(text.equalsIgnoreCase("?unregister"))
+	       {
+	           if(!RandomFight.players.contains(player))
+	           {
+	               player.sendMessage("Voce tirou seu registro do evento.");
+	               return;
+	           }
+	           if(RandomFight.state == RandomFight.State.INACTIVE)
+	               return;
+	           if(RandomFight.state != RandomFight.State.REGISTER)
+	           {
+	               player.sendMessage("O evento ja comecou.");
+	               return;
+	           }
+	           RandomFight.players.remove(player);
+	           player.sendMessage("Voce cancelou seu registro!!");
+	       }
+	   }
 	
 	@Override
 	protected boolean triggersOnActionRequest()

@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 import pk.elfo.Config;
 import pk.elfo.L2DatabaseFactory;
+import pk.elfo.UPnPService;
 import pk.elfo.gameserver.custom.AutoVoteRewardManager;
 import pk.elfo.gameserver.datatables.ClanTable;
 import pk.elfo.gameserver.datatables.OfflineTradersTable;
@@ -176,6 +177,16 @@ public class Shutdown extends Thread
 		{
 			TimeCounter tc = new TimeCounter();
 			TimeCounter tc1 = new TimeCounter();
+			try
+			{
+				UPnPService.getInstance().removeAllPorts();
+				_log.info("UPnP Service: All ports mappings deleted (" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+			}
+			catch (Throwable t)
+			{
+				_log.log(Level.WARNING, "Error while removing UPnP port mappings: ", t);
+			}
+			
 			try
 			{
 				if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS)

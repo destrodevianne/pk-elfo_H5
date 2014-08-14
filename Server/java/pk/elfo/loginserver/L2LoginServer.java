@@ -3,6 +3,7 @@ package pk.elfo.loginserver;
 import pk.elfo.Config;
 import pk.elfo.L2DatabaseFactory;
 import pk.elfo.Server;
+import pk.elfo.UPnPService;
 import pk.elfo.loginserver.mail.MailSystem;
 import pk.elfo.loginserver.network.L2LoginClient;
 import pk.elfo.loginserver.network.L2LoginPacketHandler;
@@ -26,6 +27,7 @@ import org.mmocore.network.SelectorThread;
 /**
  * PkElfo
  */
+
 public final class L2LoginServer
 {
 	private final Logger _log = Logger.getLogger(L2LoginServer.class.getName());
@@ -165,15 +167,15 @@ public final class L2LoginServer
 		try
 		{
 			_selectorThread.openServerSocket(bindAddress, Config.PORT_LOGIN);
+			_selectorThread.start();
+			_log.log(Level.INFO, getClass().getSimpleName() + ": is now listening on: " + Config.LOGIN_BIND_ADDRESS + ":" + Config.PORT_LOGIN);
 		}
 		catch (IOException e)
 		{
 			_log.log(Level.SEVERE, "FATAL: Failed to open server socket. Reason: " + e.getMessage(), e);
 			System.exit(1);
 		}
-		_selectorThread.start();
-		
-		_log.info("Login Server ready on " + (bindAddress == null ? "*" : bindAddress.getHostAddress()) + ":" + Config.PORT_LOGIN);
+		UPnPService.getInstance();
 	}
 	
 	public Status getStatusServer()

@@ -1490,6 +1490,7 @@ public final class Config
 	// ########################################################################################################//
 	// SERVER PROPERTIES
 	// ########################################################################################################//
+	public static boolean ENABLE_UPNP;
 	public static int PORT_GAME;
 	public static int PORT_LOGIN;
 	public static String LOGIN_BIND_ADDRESS;
@@ -1783,6 +1784,7 @@ public final class Config
 				_log.log(Level.SEVERE, "Error while loading Server settings!", e);
 			}
 			
+			ENABLE_UPNP = serverSettings.getBoolean("EnableUPnP", true);
 			GAMESERVER_HOSTNAME = serverSettings.getProperty("GameserverHostname", "*");
 			PORT_GAME = Integer.parseInt(serverSettings.getProperty("GameserverPort", "7777"));
 			
@@ -5543,6 +5545,7 @@ public final class Config
 				_log.log(Level.SEVERE, "Error while loading Login Server settings!", e);
 			}
 			
+			ENABLE_UPNP = ServerSettings.getBoolean("EnableUPnP", true);
 			GAME_SERVER_LOGIN_HOST = ServerSettings.getProperty("LoginHostname", "127.0.0.1");
 			GAME_SERVER_LOGIN_PORT = Integer.parseInt(ServerSettings.getProperty("LoginPort", "9013"));
 			

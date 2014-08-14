@@ -9,6 +9,7 @@ import pk.elfo.gameserver.Announcements;
 import pk.elfo.gameserver.SevenSignsFestival;
 import pk.elfo.gameserver.events.EventsInterface;
 import pk.elfo.gameserver.model.L2Party;
+import pk.elfo.gameserver.model.RandomFight;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.entity.L2Event;
 import pk.elfo.gameserver.model.zone.ZoneId;
@@ -83,6 +84,14 @@ public final class Logout extends L2GameClientPacket
 		if (player.isLocked())
 		{
 			_log.warning("Player " + player.getName() + " tried to logout during class change.");
+			player.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+		
+		// Random Fight Event
+		if(RandomFight.players.contains(player))
+		{
+			player.sendMessage("Voce nao pode sair estando participando do Evento Random Fight.");
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}

@@ -129,6 +129,7 @@ import pk.elfo.gameserver.model.PartyMatchRoom;
 import pk.elfo.gameserver.model.PartyMatchRoomList;
 import pk.elfo.gameserver.model.PartyMatchWaitingList;
 import pk.elfo.gameserver.model.PcCondOverride;
+import pk.elfo.gameserver.model.RandomFight;
 import pk.elfo.gameserver.model.ShortCuts;
 import pk.elfo.gameserver.model.ShotType;
 import pk.elfo.gameserver.model.TerritoryWard;
@@ -306,6 +307,7 @@ import pk.elfo.gameserver.scripting.scriptengine.listeners.player.ProfessionChan
 import pk.elfo.gameserver.scripting.scriptengine.listeners.player.TransformListener;
 import pk.elfo.gameserver.taskmanager.AttackStanceTaskManager;
 import pk.elfo.gameserver.util.BotPunish;
+import pk.elfo.gameserver.util.Broadcast;
 import pk.elfo.gameserver.util.FloodProtectors;
 import pk.elfo.gameserver.util.PlayerEventStatus;
 import pk.elfo.gameserver.util.Point3D;
@@ -6106,6 +6108,19 @@ public final class L2PcInstance extends L2Playable
 			if ((pk != null) && Config.ALLOW_HITMAN_GDE)
 			{
 				Hitman.getInstance().onDeath(pk, this);
+			}
+			
+			if(RandomFight.state == RandomFight.State.FIGHT)
+			{
+				if(RandomFight.players.contains(this) && RandomFight.players.contains(pk))
+				{
+					pk.sendMessage("Voce venceu!!!");
+					Announcements.getInstance().announceToAll("Random Fight Resultados: "+pk.getName()+" e o vencedor.");
+					Announcements.getInstance().announceToAll("Event terminado.");
+					pk.addItem("",PkElfo_Config.RANDOM_FIGHT_REWARD_ID, PkElfo_Config.RANDOM_FIGHT_REWARD_COUNT, null, true);
+					RandomFight.revert();
+					RandomFight.clean();
+				}
 			}
 			// Clear resurrect xp calculation
 			setExpBeforeDeath(0);
