@@ -107,6 +107,8 @@ public class RandomFight
 
        state = State.FIGHT;
        Broadcast.announceToOnlinePlayers("FIGHT STARTED!");
+       players.firstElement().updatePvPFlag(1);
+       players.lastElement().updatePvPFlag(1);
        players.firstElement().sendMessage("Start Fight!!");
        players.lastElement().sendMessage("Start Fight!");
        ThreadPoolManager.getInstance().scheduleGeneral(new checkLast(), 120000 );
