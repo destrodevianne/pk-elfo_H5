@@ -86,6 +86,12 @@ Minor Packets Fix in PlayableStat.java, RequestFortressMapInfo.java and UserInfo
 [Fix]: External Ip Check!
 Minor refactor in Clientpackets in RequestFriendInvite.java
 Implement: Condition to Take Castle
+Implement: Condition to Player Call Pc
+Implement: Condition to Player Can Create Base
+Implement: Condition to Player Can Untransform
+Implement: Condition to Player Can Summon Siege Golem
+Implement: Condition to Player Can Refuel Airship
+Implement: Condition to Player Can Create Base
 
 ###############################################
 #################### FIX BETA TEST ############
