@@ -55,7 +55,7 @@ public class MapRegionManager extends DocumentParser
 	{
 		_regions.clear();
 		parseDirectory(new File(Config.DATAPACK_ROOT, "data/mapregion/"));
-		_log.info(getClass().getSimpleName() + ": " + _regions.size() + " map regions.");
+		_log.info(getClass().getSimpleName() + ": " + _regions.size() + " regioes do mapa.");
 	}
 	
 	@Override
@@ -324,7 +324,7 @@ public class MapRegionManager extends DocumentParser
 					castle = CastleManager.getInstance().getCastle(player);
 					fort = FortManager.getInstance().getFort(player);
 					clanhall = ClanHallManager.getInstance().getNearbyAbstractHall(activeChar.getX(), activeChar.getY(), 10000);
-					L2SiegeFlagInstance tw_flag = TerritoryWarManager.getInstance().getFlagForClan(player.getClan());
+					L2SiegeFlagInstance tw_flag = TerritoryWarManager.getInstance().getHQForClan(player.getClan());
 					if (tw_flag != null)
 					{
 						return new Location(tw_flag.getX(), tw_flag.getY(), tw_flag.getZ());
