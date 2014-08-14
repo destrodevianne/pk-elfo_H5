@@ -13,11 +13,12 @@ import java.util.logging.Logger;
 import pk.elfo.Config;
 import pk.elfo.L2DatabaseFactory;
 import pk.elfo.gameserver.Announcements;
-import pk.elfo.gameserver.SevenSigns;
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.datatables.ClanTable;
 import pk.elfo.gameserver.datatables.NpcTable;
+import pk.elfo.gameserver.datatables.SiegeScheduleData;
 import pk.elfo.gameserver.idfactory.IdFactory;
+import pk.elfo.gameserver.instancemanager.CastleManager;
 import pk.elfo.gameserver.instancemanager.MapRegionManager;
 import pk.elfo.gameserver.instancemanager.MercTicketManager;
 import pk.elfo.gameserver.instancemanager.SiegeGuardManager;
@@ -29,6 +30,7 @@ import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.L2SiegeClan;
 import pk.elfo.gameserver.model.L2Spawn;
 import pk.elfo.gameserver.model.PcCondOverride;
+import pk.elfo.gameserver.model.SiegeScheduleDate;
 import pk.elfo.gameserver.model.L2SiegeClan.SiegeClanType;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2ControlTowerInstance;
@@ -44,6 +46,7 @@ import pk.elfo.gameserver.network.serverpackets.UserInfo;
 import pk.elfo.gameserver.scripting.scriptengine.events.SiegeEvent;
 import pk.elfo.gameserver.scripting.scriptengine.impl.L2Script.EventStage;
 import pk.elfo.gameserver.scripting.scriptengine.listeners.events.SiegeListener;
+import pk.elfo.gameserver.util.Broadcast;
 import javolution.util.FastList;
 
 public class Siege implements Siegable
@@ -1214,14 +1217,6 @@ public class Siege implements Siegable
 			setNextSiegeDate();
 		}
 		
-		if (!SevenSigns.getInstance().isDateInSealValidPeriod(getCastle().getSiegeDate()))
-		{
-			// no sieges in Quest period! reschedule it to the next SealValidationPeriod
-			// This is usually caused by server being down
-			corrected = true;
-			setNextSiegeDate();
-		}
-		
 		if (corrected)
 		{
 			saveSiegeDate();
@@ -1465,30 +1460,32 @@ public class Siege implements Siegable
 	/** Set the date for the next siege. */
 	private void setNextSiegeDate()
 	{
-		while (getCastle().getSiegeDate().getTimeInMillis() < Calendar.getInstance().getTimeInMillis())
-		{
-			if ((getCastle().getSiegeDate().get(Calendar.DAY_OF_WEEK) != Calendar.SATURDAY) && (getCastle().getSiegeDate().get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY))
-			{
-				getCastle().getSiegeDate().set(Calendar.DAY_OF_WEEK, Calendar.SATURDAY);
-			}
-			// from CT2.3 Castle sieges are on Sunday, but if server admins allow to set day of the siege
-			// than sieges can occur on Saturdays as well
-			if ((getCastle().getSiegeDate().get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY) && !Config.CL_SET_SIEGE_TIME_LIST.contains("day"))
-			{
-				getCastle().getSiegeDate().set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
-			}
-			// set the next siege day to the next weekend
-			getCastle().getSiegeDate().add(Calendar.DAY_OF_MONTH, Config.DAY_TO_SIEGE);
-		}
+		final Calendar cal = getCastle().getSiegeDate();
 		
-		if (!SevenSigns.getInstance().isDateInSealValidPeriod(getCastle().getSiegeDate()))
-		{
-			getCastle().getSiegeDate().add(Calendar.DAY_OF_MONTH, Config.DAY_TO_SIEGE);
-		}
-		
+			if (cal.getTimeInMillis() < System.currentTimeMillis())
+			{
+				cal.setTimeInMillis(System.currentTimeMillis());
+			}
+			for (SiegeScheduleDate holder : SiegeScheduleData.getInstance().getScheduleDates())
+			{
+				cal.set(Calendar.DAY_OF_WEEK, holder.getDay());
+				cal.set(Calendar.HOUR_OF_DAY, holder.getHour());
+				cal.set(Calendar.MINUTE, 0);
+				cal.set(Calendar.SECOND, 0);
+				if (cal.before(Calendar.getInstance()))
+				{
+					cal.add(Calendar.WEEK_OF_YEAR, 2);
+				}
+				if (CastleManager.getInstance().getSiegeDates(cal.getTimeInMillis()) < holder.getMaxConcurrent())
+				{
+					CastleManager.getInstance().registerSiegeDate(getCastle().getCastleId(), cal.getTimeInMillis());
+					break;
+				}
+			}
+
 		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_ANNOUNCED_SIEGE_TIME);
 		sm.addCastleId(getCastle().getCastleId());
-		Announcements.getInstance().announceToAll(sm);
+		Broadcast.toAllOnlinePlayers(sm);
 		
 		_isRegistrationOver = false; // Allow registration for next siege
 	}

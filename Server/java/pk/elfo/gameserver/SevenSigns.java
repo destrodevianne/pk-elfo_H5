@@ -19,15 +19,12 @@ import pk.elfo.L2DatabaseFactory;
 import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.instancemanager.CastleManager;
 import pk.elfo.gameserver.instancemanager.MapRegionManager;
-import pk.elfo.gameserver.instancemanager.QuestManager;
-import pk.elfo.gameserver.instancemanager.TerritoryWarManager;
 import pk.elfo.gameserver.model.AutoSpawnHandler;
 import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.StatsSet;
 import pk.elfo.gameserver.model.AutoSpawnHandler.AutoSpawnInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.entity.Castle;
-import pk.elfo.gameserver.model.quest.Quest;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.SSQInfo;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
@@ -1516,13 +1513,6 @@ public class SevenSigns
 					giveCPMult(getSealOwner(SEAL_STRIFE));
 					// Send message that Seal Validation has begun.
 					sendMessageToAll(SystemMessageId.SEAL_VALIDATION_PERIOD_BEGUN);
-					
-					// Change next Territory War date
-					Quest twQuest = QuestManager.getInstance().getQuest(TerritoryWarManager.qn);
-					if (twQuest != null)
-					{
-						twQuest.startQuestTimer("setNextTWDate", 30000, null, null);
-					}
 					
 					_log.info("SevenSigns: The " + getCabalName(_previousWinner) + " have won the competition with " + getCurrentScore(_previousWinner) + " points!");
 					break;

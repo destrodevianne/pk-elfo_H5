@@ -94,6 +94,7 @@ Implement: Condition to Player Can Refuel Airship
 Implement: Condition to Player Can Create Base
 [FIX] Territory War minor fix!
 UPnP Service Implemented (facilita logar o servidor local e externamente)
+Castle/Territory War Siege date & time picking to retail like L2OFF
 
 ###############################################
 #################### FIX BETA TEST ############
@@ -142,6 +143,7 @@ BloodShed
 Adicionado Event RPS (Rank PvP System)
 Adicionado Achievements Engine
 Adicionado Event SlotMachine (tipo uma caca-niqueis)
+Adicionado Random Fight Event Engine
 
 ############### PHOENIX ENGINE:################
 Battlefield

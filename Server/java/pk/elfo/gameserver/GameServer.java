@@ -60,6 +60,7 @@ import pk.elfo.gameserver.datatables.PetDataTable;
 import pk.elfo.gameserver.datatables.PremiumTable;
 import pk.elfo.gameserver.datatables.ProductItemTable;
 import pk.elfo.gameserver.datatables.RecipeData;
+import pk.elfo.gameserver.SiegeScheduleData;
 import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.datatables.SkillTreesData;
 import pk.elfo.gameserver.datatables.SpawnTable;
@@ -316,6 +317,7 @@ public class GameServer
 		EventDroplist.getInstance();
 		
 		printSection("Siege");
+		SiegeScheduleData.getInstance();
 		SiegeManager.getInstance().getSieges();
 		FortSiegeManager.getInstance();
 		TerritoryWarManager.getInstance();
@@ -334,6 +336,8 @@ public class GameServer
 		{
 			RandomFight.getInstance();
 		}
+		
+		SevenSigns.getInstance();
 		
 		// Call to load caches
 		printSection("Cache");
