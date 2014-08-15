@@ -27,6 +27,7 @@ import javolution.util.FastMap;
 import javolution.util.FastSet;
 import pk.elfo.Config;
 import pk.elfo.AIOItem_Config;
+import pk.elfo.PkElfo_Config;
 import pk.elfo.L2DatabaseFactory;
 import pk.elfo.gameserver.Announcements;
 import pk.elfo.gameserver.GameTimeController;
