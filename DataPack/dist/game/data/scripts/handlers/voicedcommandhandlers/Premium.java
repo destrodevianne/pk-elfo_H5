@@ -3,18 +3,12 @@ package handlers.voicedcommandhandlers;
 import java.util.Date;
 
 import pk.elfo.Config;
-import pk.elfo.gameserver.datatables.ItemTable;
-import pk.elfo.gameserver.datatables.PremiumTable;
 import pk.elfo.gameserver.handler.BypassHandler;
 import pk.elfo.gameserver.handler.IBypassHandler;
 import pk.elfo.gameserver.handler.IVoicedCommandHandler;
 import pk.elfo.gameserver.instancemanager.ExpirableServicesManager;
 import pk.elfo.gameserver.instancemanager.ExpirableServicesManager.ServiceType;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
-import pk.elfo.gameserver.model.holders.ItemHolder;
-import pk.elfo.gameserver.network.DialogId;
-import pk.elfo.gameserver.network.SystemMessageId;
-import pk.elfo.gameserver.network.serverpackets.ConfirmDlg;
 import pk.elfo.gameserver.util.Util;
 
 /**
