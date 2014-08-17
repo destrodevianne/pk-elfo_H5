@@ -22,7 +22,7 @@ public class ConsoleLogFormatter extends Formatter
 	{
 		final StringBuilder output = new StringBuilder(500);
 
-		StringUtil.append(output, "[", dateFmt.format(new Date(record.getMillis())), "] INFO: " + record.getMessage(), Config.EOL);
+		StringUtil.append(output, " PKELFO: " + record.getMessage(), Config.EOL);
 
 		if (record.getThrown() != null)
 		{
