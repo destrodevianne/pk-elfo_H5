@@ -187,11 +187,11 @@ public class GameServer
 		
 		if (Config.SERVER_VERSION != null)
 		{
-			_log.info(getClass().getSimpleName() + ": PkElfo Server Versao:    " + Config.SERVER_VERSION);
+			_log.info(getClass().getSimpleName() + ": PkElfo Versao do CORE:    " + Config.SERVER_VERSION);
 		}
 		if (Config.DATAPACK_VERSION != null)
 		{
-			_log.info(getClass().getSimpleName() + ": PkElfo Datapack Versao:  " + Config.DATAPACK_VERSION);
+			_log.info(getClass().getSimpleName() + ": PkElfo Versao do DP:  " + Config.DATAPACK_VERSION);
 		}
 		
 		_idFactory = IdFactory.getInstance();
@@ -332,7 +332,7 @@ public class GameServer
 		Hero.getInstance();
 		
 		// Random Fight: Call Event
-		printSection("Carregando Evento: Random Fight!");
+		printSection("Random Fight!");
 		if (PkElfo_Config.ALLOW_RANDOM_FIGHT)
 		{
 			RandomFight.getInstance();
@@ -537,8 +537,8 @@ public class GameServer
 			_log.log(Level.SEVERE, getClass().getSimpleName() + ": FATAL: Falha ao abrir o socket do servidor. Razao: " + e.getMessage(), e);
 			System.exit(1);
 		}
-		_log.log(Level.INFO, getClass().getSimpleName() + ": Maximum numbers of connected players: " + Config.MAXIMUM_ONLINE_USERS);
-		_log.log(Level.INFO, getClass().getSimpleName() + ": Server loaded in " + ((System.currentTimeMillis() - serverLoadStart) / 1000) + " seconds.");
+		_log.log(Level.INFO, getClass().getSimpleName() + ": Numero maximo de jogadores online: " + Config.MAXIMUM_ONLINE_USERS);
+		_log.log(Level.INFO, getClass().getSimpleName() + ": Server lido em " + ((System.currentTimeMillis() - serverLoadStart) / 1000) + " segundos.");
 		printSection("UPnP");
 		UPnPService.getInstance();
 		
@@ -592,5 +592,4 @@ public class GameServer
 			s = "-" + s;
 		}
 		_log.info(s);
-	}
-}
+	}}
