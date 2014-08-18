@@ -2203,7 +2203,7 @@ public class TheLastImperialTomb extends AbstractNpcAI
 					{
 						continue;
 					}
-					for (L2PcInstance member : party.getPartyMembers())
+					for (L2PcInstance member : party.getMembers())
 					{
 						if ((member == null) || (member.getLevel() < 74))
 						{
