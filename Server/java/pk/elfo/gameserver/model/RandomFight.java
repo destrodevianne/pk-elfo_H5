@@ -3,6 +3,7 @@ package pk.elfo.gameserver.model;
 import java.util.Vector;
 
 import pk.elfo.PkElfo_Config;
+import pk.elfo.gameserver.Announcements;
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.olympiad.OlympiadManager;
@@ -31,7 +32,8 @@ public class RandomFight
 
        if(players.isEmpty() || players.size() < 2)
        {
-           Broadcast.announceToOnlinePlayers("O Evento Random Fight nao sera iniciado por falta de participantes.");
+    	   Announcements.getInstance().announceToAll("O Evento Random Fight nao sera iniciado por falta de participantes.");
+    	   Announcements.getInstance().announceToAll("Next Event in: "+PkElfo_Config.EVERY_MINUTES+" Minutes");
            clean();
            return;
        }
@@ -50,7 +52,7 @@ public class RandomFight
        }
 
        for(L2PcInstance p : players)
-           if(p.isInOlympiadMode() || OlympiadManager.getInstance().isRegistered(p))
+    	   if(p.isInOlympiadMode() || OlympiadManager.getInstance().isRegistered(p))
            {
                players.remove(p);
                p.sendMessage("Voce automaticamente deixou o evento por causa de suas obrigacoes com as Olimpiadas.");
@@ -67,8 +69,8 @@ public class RandomFight
            if(player != players.get(rnd1) && player != players.get(rnd2))
                players.remove(player);
        }
-       Broadcast.announceToOnlinePlayers("Jogadores selecionados: "+players.firstElement().getName()+" VS "+players.lastElement().getName());
-       Broadcast.announceToOnlinePlayers("Os jogadores vao ser teletransportados em 30 segundos");
+       Announcements.getInstance().announceToAll("Jogadores selecionados: "+players.firstElement().getName()+" VS "+players.lastElement().getName());
+       Announcements.getInstance().announceToAll("Os jogadores vao ser teletransportados em 30 segundos");
        ThreadPoolManager.getInstance().scheduleGeneral(new teleportPlayers(), 30000);
     }
 
@@ -82,8 +84,8 @@ public class RandomFight
        }
        Broadcast.announceToOnlinePlayers("Jogadores teleportados!");
 
-       players.firstElement().teleToLocation(113474,15552,3968,0);
-       players.lastElement().teleToLocation(112990,15489,3968,0);
+       players.firstElement().teleToLocation(PkElfo_Config.TELEPORT_P1X,PkElfo_Config.TELEPORT_P1Y,PkElfo_Config.TELEPORT_P1Z);
+       players.lastElement().teleToLocation(PkElfo_Config.TELEPORT_P2X,PkElfo_Config.TELEPORT_P2Y,PkElfo_Config.TELEPORT_P2Z);
        players.firstElement().setTeam(1);
        players.lastElement().setTeam(2);
 

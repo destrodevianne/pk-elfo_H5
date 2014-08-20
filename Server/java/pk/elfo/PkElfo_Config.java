@@ -28,6 +28,12 @@ public final class PkElfo_Config
 	public static int EVERY_MINUTES;
 	public static int RANDOM_FIGHT_REWARD_ID;
 	public static int RANDOM_FIGHT_REWARD_COUNT;
+	public static int TELEPORT_P1X;
+	public static int TELEPORT_P1Y;
+	public static int TELEPORT_P1Z;
+	public static int TELEPORT_P2X;
+	public static int TELEPORT_P2Y;
+	public static int TELEPORT_P2Z;
 	
 	public static void load()
 	{
@@ -45,6 +51,12 @@ public final class PkElfo_Config
 				EVERY_MINUTES = Integer.parseInt(rfSettings.getProperty("EveryMinutes", "3"));
 				RANDOM_FIGHT_REWARD_ID = Integer.parseInt(rfSettings.getProperty("RewardId", "8762"));
 				RANDOM_FIGHT_REWARD_COUNT = Integer.parseInt(rfSettings.getProperty("RewardCount", "5"));
+				TELEPORT_P1X = Integer.parseInt(rfSettings.getProperty("Teleport1X", ""));
+				TELEPORT_P1Y = Integer.parseInt(rfSettings.getProperty("Teleport1Y", ""));
+				TELEPORT_P1Z = Integer.parseInt(rfSettings.getProperty("Teleport1Z", ""));
+				TELEPORT_P2X = Integer.parseInt(rfSettings.getProperty("Teleport2X", ""));
+				TELEPORT_P2Y = Integer.parseInt(rfSettings.getProperty("Teleport2Y", ""));
+				TELEPORT_P2Z = Integer.parseInt(rfSettings.getProperty("Teleport2Z", ""));
 			}
 			catch (Exception e)
 			{

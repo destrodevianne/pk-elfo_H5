@@ -1086,7 +1086,7 @@ public class VanHalter extends AbstractNpcAI
 
 	/**
 	 * Carga los spawns y programa el timeup 
-	 * si el boss est√° siendo atacado
+	 * si el boss est· siendo atacado
 	 * @param isFighting
 	 */
 	public void setupAltar(boolean isFighting)
