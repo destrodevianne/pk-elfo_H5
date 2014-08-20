@@ -15,6 +15,8 @@ import pk.elfo.gameserver.network.serverpackets.ShowBoard;
 
 public class CommunityBoard
 {
+	private static String _val = "85";
+	
     private CommunityBoard()
     {
     }

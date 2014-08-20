@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package mods.eventmodRace;
 
 import java.util.List;
@@ -36,8 +18,9 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import javolution.util.FastList;
 
 /**
- * @author Gnacik
+ * PkElfo
  */
+
 public class eventmodRace extends Event
 {
 	// Event NPC's list
@@ -112,7 +95,6 @@ public class eventmodRace extends Event
 		addStartNpc(_start_npc);
 		addFirstTalkId(_start_npc);
 		addTalkId(_start_npc);
-		
 		addStartNpc(_stop_npc);
 		addFirstTalkId(_stop_npc);
 		addTalkId(_stop_npc);
@@ -153,9 +135,7 @@ public class eventmodRace extends Event
 				StartRace();
 			}
 		}, _time_register * 60 * 1000);
-		
 		return true;
-		
 	}
 	
 	protected void StartRace()
@@ -252,7 +232,6 @@ public class eventmodRace extends Event
 		_players.clear();
 		// Announce event end
 		Announcements.getInstance().announceToAll("* Race Event finished *");
-		
 		return true;
 	}
 	
@@ -280,7 +259,6 @@ public class eventmodRace extends Event
 					activeChar.sendMessage("Error while changing transform skill");
 				}
 			}
-			
 		}
 		else if (bypass.startsWith("tele"))
 		{
@@ -421,7 +399,6 @@ public class eventmodRace extends Event
 				e.exit();
 			}
 		}
-		
 		SkillTable.getInstance().getInfo(_skill, 1).getEffects(player, player);
 	}
 	

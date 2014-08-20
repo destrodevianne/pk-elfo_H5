@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package mods.eventmodElpies;
 
 import java.util.List;
@@ -31,6 +13,10 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.quest.Event;
 import javolution.util.FastList;
 
+/**
+ * PkElfo
+ */
+
 public class eventmodElpies extends Event
 {
 	// Event NPC's list
@@ -43,7 +29,6 @@ public class eventmodElpies extends Event
 	private static boolean _isactive = false;
 	
 	// EVENT VARIABLES
-	
 	// NPc's
 	private static final int _elpy = 900100;
 	// How much Elpy's
@@ -137,7 +122,6 @@ public class eventmodElpies extends Event
 				eventStop();
 			}
 		}
-		
 		return super.onKill(npc, killer, isSummon);
 	}
 	
@@ -177,7 +161,6 @@ public class eventmodElpies extends Event
 			recordSpawn(_elpy, x, y, _spawndata[4], 0, true, _event_time * 60 * 1000);
 			_elpies_count++;
 		}
-		
 		// Announce event start
 		Announcements.getInstance().announceToAll("*Squeak Squeak*");
 		Announcements.getInstance().announceToAll("Elpy invasion in " + _locations[location]);
@@ -193,7 +176,6 @@ public class eventmodElpies extends Event
 				timeUp();
 			}
 		}, _event_time * 60 * 1000);
-		
 		return true;
 	}
 	
