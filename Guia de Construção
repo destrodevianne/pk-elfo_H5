@@ -96,7 +96,6 @@ Implement: Condition to Player Can Create Base
 UPnP Service Implemented (facilita logar o servidor local e externamente)
 Castle/Territory War Siege date & time picking to retail like L2OFF
 Fix related in Siege/Summon
-Flexible location to RandomFight Event + Fix
 Fix no sistema de bloquear o AIOx de sair da cidade
 
 ###############################################
@@ -146,7 +145,6 @@ BloodShed
 Adicionado Event RPS (Rank PvP System)
 Adicionado Achievements Engine
 Adicionado Event SlotMachine (tipo uma caca-niqueis)
-Adicionado Random Fight Event Engine
 
 ############### PHOENIX ENGINE:################
 Battlefield
