@@ -662,7 +662,6 @@ public final class Config
 	public static boolean ALT_GAME_KARMA_PLAYER_CAN_TELEPORT;
 	public static boolean ALT_GAME_KARMA_PLAYER_CAN_USE_GK;
 	public static boolean ALT_GAME_PVP_CAN_USE_GK;
-	public static boolean ALLOW_AIO_USE_GK;
 	public static boolean ALT_GAME_KARMA_PLAYER_CAN_TRADE;
 	public static boolean ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE;
 	public static int MAX_PERSONAL_FAME_POINTS;
@@ -1999,9 +1998,6 @@ public final class Config
 			
 			// ############################ CHAT ESPECIAL PARA AIOX #################################################//
 			ENABLE_AIO_CHAT = Boolean.parseBoolean(AioSettings.getProperty("EnableAIOChat", "True"));
-			
-			// ############################ PROIBIR AIOX USAR GATEKEEPER ############################################//
-			ALLOW_AIO_USE_GK = Boolean.parseBoolean(AioSettings.getProperty("AllowAioUseGk", "false"));
 
 			}
 			catch (Exception e)

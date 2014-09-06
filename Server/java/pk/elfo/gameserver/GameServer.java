@@ -17,7 +17,6 @@ import org.mmocore.network.SelectorThread;
 
 import pk.elfo.Config;
 import pk.elfo.L2DatabaseFactory;
-import pk.elfo.PkElfo_Config;
 import pk.elfo.Server;
 import pk.elfo.UPnPService;
 import pk.elfo.gameserver.cache.CrestCache;
@@ -125,7 +124,6 @@ import pk.elfo.gameserver.model.AutoSpawnHandler;
 import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.PartyMatchRoomList;
 import pk.elfo.gameserver.model.PartyMatchWaitingList;
-import pk.elfo.gameserver.model.RandomFight;
 import pk.elfo.gameserver.model.entity.Hero;
 import pk.elfo.gameserver.model.entity.Hitman;
 import pk.elfo.gameserver.model.entity.TownWarManager;
@@ -330,14 +328,7 @@ public class GameServer
 		printSection("Olimpiadas");
 		Olympiad.getInstance();
 		Hero.getInstance();
-		
-		// Random Fight: Call Event
-		printSection("Random Fight!");
-		if (PkElfo_Config.ALLOW_RANDOM_FIGHT)
-		{
-			RandomFight.getInstance();
-		}
-		
+	
 		SevenSigns.getInstance();
 		
 		// Call to load caches
@@ -567,7 +558,6 @@ public class GameServer
 		// Initialize config
 		Config.load();
 		pk.elfo.AIOItem_Config.load();
-		pk.elfo.PkElfo_Config.load();
 				
 		printSection("Database");
 		L2DatabaseFactory.getInstance();

@@ -35,7 +35,7 @@ public class UPnPService
     {
         if (!Config.ENABLE_UPNP)
         {
-            _log.log(Level.WARNING, "UPnP Service is disabled.");
+            _log.log(Level.WARNING, "UPnP Service esta desabilitado.");
             return;
         }
 

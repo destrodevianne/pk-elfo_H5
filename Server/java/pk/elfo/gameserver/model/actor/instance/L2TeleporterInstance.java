@@ -269,7 +269,7 @@ public final class L2TeleporterInstance extends L2Npc
 				player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_WHILE_IN_POSSESSION_OF_A_WARD);
 				return;
 			}
-			else if (!Config.ALLOW_AIO_USE_GK && (player.isAio()))
+			else if (player.isAio())
 			{
 				player.sendMessage("Aio buffers nao estao autorizados a utilizar GateKeepers.");
 				return;

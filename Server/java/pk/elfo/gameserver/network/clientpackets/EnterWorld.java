@@ -693,7 +693,7 @@ public class EnterWorld extends L2GameClientPacket
 		{
 			if (activeChar.isAio())
 			{
-				Announcements.getInstance().announceToAll("O AIOx " + activeChar.getName() + " acabou de logar.");
+				sendPacket(new ExShowScreenMessage("O AIOx "+activeChar.getName()+" acabou de logar.", 5000));
 			}
 		}
 		
@@ -701,7 +701,7 @@ public class EnterWorld extends L2GameClientPacket
 		{
 			if (activeChar.isVip())
 			{
-				Announcements.getInstance().announceToAll("O jogador VIP " + activeChar.getName() + " acabou de logar.");
+				sendPacket(new ExShowScreenMessage("O jogador VIP " + activeChar.getName() + " acabou de logar.", 5000));
 			}
 		}
 		
@@ -709,7 +709,7 @@ public class EnterWorld extends L2GameClientPacket
 		{
 			if (activeChar.isHero())
 			{
-				Announcements.getInstance().announceToAll("O Heroi " + activeChar.getName() + " acabou de logar.");
+				sendPacket(new ExShowScreenMessage("O Heroi " + activeChar.getName() + " acabou de logar.", 5000));
 			}
 		}
 		

@@ -1,6 +1,8 @@
 package pk.elfo.gameserver.model.zone.type;
 
+import pk.elfo.gameserver.instancemanager.MapRegionManager;
 import pk.elfo.gameserver.model.actor.L2Character;
+import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.zone.L2ZoneType;
 import pk.elfo.gameserver.model.zone.ZoneId;
 
@@ -58,6 +60,15 @@ public class L2TownZone extends L2ZoneType
 			character.sendMessage("Voce deixou uma zona do evento Town War.");
 		}
 		
+		if (((L2PcInstance) character).isAio())
+		{
+			((L2PcInstance) character).teleToLocation(MapRegionManager.TeleportWhereType.Town);
+			((L2PcInstance) character).sendMessage("AIOx nao pode sair de " + _townId + ". Voce foi teleportado para a vila mais proxima.");
+		}
+		else
+		{
+			((L2PcInstance) character).sendMessage("Voce deixou " + _townId + ".");
+		}
 		character.setInsideZone(ZoneId.TOWN, false);
 	}
 	

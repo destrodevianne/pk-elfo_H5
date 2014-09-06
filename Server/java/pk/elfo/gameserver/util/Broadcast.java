@@ -186,14 +186,7 @@ public final class Broadcast
 		
 		toAllOnlinePlayers(cs);
 	}
-	
-	// Send a packet to all L2PcInstance present in the world.
-	public static void announceToOnlinePlayers(String text)
-	{
-		CreatureSay cs = new CreatureSay(0, Say2.ANNOUNCEMENT, "", text);
-		toAllOnlinePlayers(cs);
-	}
-	
+
 	// Multilingual announces
 	public static void announceToOnlinePlayers(MultilingualBroadcast mb)
 	{

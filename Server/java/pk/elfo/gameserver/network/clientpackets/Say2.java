@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.network.clientpackets;
 
 import java.util.logging.Level;
@@ -28,7 +10,6 @@ import pk.elfo.gameserver.handler.ChatHandler;
 import pk.elfo.gameserver.handler.IChatHandler;
 import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.L2World;
-import pk.elfo.gameserver.model.RandomFight;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.gameserver.network.SystemMessageId;
@@ -253,12 +234,7 @@ public final class Say2 extends L2GameClientPacket
 		{
 			EventsInterface.onSay(_type, activeChar.getObjectId(), _text);
 		}
-		
-		// Random Fight: ?register check condition.
-		checkRandomFight(_text,activeChar);
-		if(_text.equalsIgnoreCase("?register") || _text.equalsIgnoreCase("?unregister"))
-			return;
-		
+
 		if ((_type == PETITION_PLAYER) && activeChar.isGM())
 		{
 			_type = PETITION_GM;
@@ -387,46 +363,6 @@ public final class Say2 extends L2GameClientPacket
 	{
 		return _C__49_SAY2;
 	}
-	
-	// Random Fight: Implement checkRandomFight.
-	   void checkRandomFight(String text,L2PcInstance player)
-	   {
-	       if(text.equalsIgnoreCase("?register"))
-	       {
-	           if(RandomFight.players.contains(player))
-	           {
-	               player.sendMessage("Voce ja esta registrado para o evento.");
-	               return;
-	           }
-	           if(RandomFight.state == RandomFight.State.INACTIVE)
-	               return;
-	           if(RandomFight.state != RandomFight.State.REGISTER)
-	           {
-	               player.sendMessage("O evento ja comecou.");
-	               return;
-	           }
-	           RandomFight.players.add(player);
-	           player.sendMessage("Voce se registrou para o evento!!");
-	           return;
-	       }
-	       if(text.equalsIgnoreCase("?unregister"))
-	       {
-	           if(!RandomFight.players.contains(player))
-	           {
-	               player.sendMessage("Voce tirou seu registro do evento.");
-	               return;
-	           }
-	           if(RandomFight.state == RandomFight.State.INACTIVE)
-	               return;
-	           if(RandomFight.state != RandomFight.State.REGISTER)
-	           {
-	               player.sendMessage("O evento ja comecou.");
-	               return;
-	           }
-	           RandomFight.players.remove(player);
-	           player.sendMessage("Voce cancelou seu registro!!");
-	       }
-	   }
 	
 	@Override
 	protected boolean triggersOnActionRequest()

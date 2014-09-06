@@ -231,11 +231,11 @@ public class OlympiadManager
 				}
 				
 				// restricao de olimpiadas para os chars AIO
-				if (player.isAio())
-				{
-					player.sendMessage("Um Char AIO nao pode participar das olimpiadas!");
-					return false;
-				}
+                if (player.isAio())
+                {
+                    player.sendMessage("Um Char AIO nao pode participar das olimpiadas!");
+                    return false;
+                }
 				
 				if (Olympiad.getInstance().getRemainingWeeklyMatchesClassed(charId) < 1)
 				{
