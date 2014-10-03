@@ -28,7 +28,7 @@ public class BaylorChest extends AbstractNpcAI
 			{	
 				dropItem(npc,9470,1);
 			}
-			else if (chance >= 2 && chance <= 32)
+			else if ((chance >= 2) && (chance <= 32))
 			{
 				dropItem(npc,6578,2);
 			}

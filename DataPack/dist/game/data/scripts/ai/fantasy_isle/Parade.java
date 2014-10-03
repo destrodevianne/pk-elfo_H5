@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package ai.fantasy_isle;
 
 import java.text.SimpleDateFormat;
@@ -33,7 +15,6 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Fantasy Isle Parade
- * @author JOJO
  */
 public class Parade extends AbstractNpcAI
 {
@@ -179,7 +160,9 @@ public class Parade extends AbstractNpcAI
 		int now = GameTimeController.getGameTicks() * 60 / 100;
 		int dd = (hh * 3600 + mm * 60 + ss) - (now % 86400);
 		if (dd < 0)
-			dd += 86400;
+			(
+					dd += 86400;
+			)
 		
 		return dd * 1000L / 6L;
 	}
@@ -210,7 +193,9 @@ public class Parade extends AbstractNpcAI
 				}
 				int npcId = ACTORS[npcIndex++];
 				if (npcId == 0)
-					continue;
+					(
+							continue;
+					)
 				for (int route = 0; route < 5; ++route)
 				{ // TODO:Provisional
 					int[] start = START[route][i];
@@ -246,7 +231,9 @@ public class Parade extends AbstractNpcAI
 					}
 				}
 				if (spawns.size() == 0)
-					deleteTask.cancel(false);// TODO:NPE
+					(
+							deleteTask.cancel(false);// TODO:NPE
+					)
 			}
 		}
 	}

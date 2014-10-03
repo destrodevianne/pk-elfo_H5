@@ -12,7 +12,7 @@ from pk.elfo.gameserver.network.serverpackets import CreatureSay
 from pk.elfo.gameserver.network.serverpackets import MagicSkillUse
 from pk.elfo.util                             import Rnd
 
-npcid     = 32328  # ¤τ΄Ή°�±[
+npcid = 32328
 crystalid = 9693
 
 def autochat(npc,text):
