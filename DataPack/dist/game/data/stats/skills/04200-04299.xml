@@ -1264,9 +1264,13 @@
 		</for>
 	</skill>
 	<skill id="4275" levels="5" name="Sacred Attack Weak Point">
-		<!-- Freya retail confirmed -->
+		<table name="#Vuln"> 10 20 30 40 50 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="operateType" val="P" />
+			<for>
+				<sub order="0x40" stat="holyRes" val="#Vuln" />
+				<add order="0x40" stat="darkRes" val="#Vuln" />
+			</for>
 	</skill>
 	<skill id="4276" levels="5" name="Archery Attack Weak Point">
 		<!-- Freya retail confirmed -->
@@ -1294,26 +1298,42 @@
 			<add order="0x40" stat="darkPower" val="20" />
 		</for>
 	</skill>
-	<skill id="4279" levels="5" name="Fire Attack Weak Point">
-		<!-- Freya retail confirmed -->
-		<set name="target" val="TARGET_SELF" />
-		<set name="operateType" val="P" />
-	</skill>
-	<skill id="4280" levels="5" name="Water Attack Weak Point">
-		<!-- Freya retail confirmed -->
-		<set name="target" val="TARGET_SELF" />
-		<set name="operateType" val="P" />
-	</skill>
-	<skill id="4281" levels="5" name="Wind Attack Weak Point">
-		<!-- Freya retail confirmed -->
-		<set name="target" val="TARGET_SELF" />
-		<set name="operateType" val="P" />
-	</skill>
-	<skill id="4282" levels="5" name="Earth Attack Weak Point">
-		<!-- Freya retail confirmed -->
-		<set name="target" val="TARGET_SELF" />
-		<set name="operateType" val="P" />
-	</skill>
+   <skill id="4279" levels="5" name="Fire Attack Weak Point">
+        <table name="#Vuln"> 10 20 30 40 50 </table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="operateType" val="P" />
+        <for>
+            <sub order="0x40" stat="fireRes" val="#Vuln" />
+            <add order="0x40" stat="waterRes" val="#Vuln" />
+        </for>
+    </skill>
+    <skill id="4280" levels="5" name="Water Attack Weak Point">
+        <table name="#Vuln"> 10 20 30 40 50 </table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="operateType" val="P" />
+        <for>
+            <sub order="0x40" stat="waterRes" val="#Vuln" />
+            <add order="0x40" stat="fireRes" val="#Vuln" />
+        </for>
+    </skill>
+    <skill id="4281" levels="5" name="Wind Attack Weak Point">
+        <table name="#Vuln"> 10 20 30 40 50 </table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="operateType" val="P" />
+        <for>
+            <sub order="0x40" stat="windRes" val="#Vuln" />
+            <add order="0x40" stat="earthRes" val="#Vuln" />
+        </for>
+    </skill>
+    <skill id="4282" levels="5" name="Earth Attack Weak Point">
+        <table name="#Vuln"> 10 20 30 40 50 </table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="operateType" val="P" />
+        <for>
+            <sub order="0x40" stat="earthRes" val="#Vuln" />
+            <add order="0x40" stat="windRes" val="#Vuln" />
+        </for>
+    </skill>
 	<skill id="4283" levels="1" name="Greater Resist Magic Attack">
 		<!-- Freya retail confirmed -->
 		<set name="target" val="TARGET_SELF" />

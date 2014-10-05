@@ -46,6 +46,7 @@ FIX Skill Beginner Adventurer's Treasure Sack
 FIX Skill Experienced Adventurer's Treasure Sack
 FIX Skill Great Adventurer's Treasure Sack
 FIX Skill Flame Icon
+FIX Skill 4275, 4279, 4280, 4281 e 4282
 Adicionado nova tabela na DB para salvar senha Descriptada
 editado NPC de Enchante (agora é possível add elemental)
 Modificações na CommunityPVP e ADD Enchantes até +30
@@ -97,6 +98,11 @@ UPnP Service Implemented (facilita logar o servidor local e externamente)
 Castle/Territory War Siege date & time picking to retail like L2OFF
 Fix related in Siege/Summon
 Fix no sistema de bloquear o AIOx de sair da cidade
+Pavel Archaic Updated
+Fix LUCK PIG
+FIX Skill 6921 - Penetration Attack
+FIX Skill 21875
+Mudado Scripts: ErosionHallAttack.java, ErosionHallDefence.java, HeartInfinityAttack.java, HeartInfinityDefence.java e DragonValley.java
 
 ###############################################
 #################### FIX BETA TEST ############

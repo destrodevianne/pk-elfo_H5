@@ -175,10 +175,21 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="6921" levels="1" name="Penetration Attack">
-		<!-- P. Def. is decreased momentarily. -->
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="P" />
-	</skill>
+    <skill id="6921" levels="1" name="Penetration Attack">
+        <!-- P. Def. is decreased momentarily. -->
+        <set name="icon" val="icon.skill0122"/>
+        <set name="reuseDelay" val="30000"/>
+        <set name="magicLevel" val="80"/>
+        <set name="hitTime" val="1500"/>
+        <set name="hitCancelTime" val="500"/>
+        <set name="mpConsume2" val="43"/>
+        <set name="target" val="TARGET_ONE"/>
+        <set name="skillType" val="DEBUFF"/>
+        <set name="operateType" val="A2"/> <!-- Fix me -->
+        <for>
+            <effect count="1" name="Debuff" time="30" val="0">
+                <mul order="0x30" stat="pDef" val="0.77"/>
+            </effect>
+        </for>
+    </skill>
 </list>

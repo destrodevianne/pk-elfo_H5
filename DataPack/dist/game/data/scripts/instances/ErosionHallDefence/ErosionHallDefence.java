@@ -1,7 +1,9 @@
-package pk.elfo.gameserver.scripts.data;
+package instances.ErosionHallDefence;
 
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
+
+import javolution.util.FastList;
 
 import pk.elfo.Config;
 import pk.elfo.gameserver.ThreadPoolManager;
@@ -27,7 +29,6 @@ import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.Rnd;
-import javolution.util.FastList;
 
 public class ErosionHallDefence extends Quest
 {

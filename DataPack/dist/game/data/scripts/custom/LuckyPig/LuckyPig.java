@@ -1,18 +1,3 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- *
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- */
-
 package custom.LuckyPig;
 
 import java.util.List;
@@ -35,8 +20,9 @@ import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
 
 /**
- * @author TeMeRuT
+ * PkElfo
  */
+
 public class LuckyPig extends AbstractNpcAI
 {
 	private final int LUCKY_PIG_NPC = 18666;
@@ -133,9 +119,9 @@ public class LuckyPig extends AbstractNpcAI
 	{
 		if (Util.contains(_MOBS, npc.getNpcId()))
 		{
-			if (Rnd.getChance(50))
+			if (Rnd.getChance(18))
 			{
-				L2Npc mob = addSpawn(LUCKY_PIG_NPC, npc.getX() + 50, npc.getY() + 50, npc.getZ(), npc.getHeading(), true, 10 * 60 * 1000, true);
+				L2Npc mob = addSpawn(LUCKY_PIG_NPC, npc.getX() + 18, npc.getY() + 18, npc.getZ(), npc.getHeading(), true, 10 * 60 * 1000, true);
 				onSpawn(mob);
 			}
 		}
