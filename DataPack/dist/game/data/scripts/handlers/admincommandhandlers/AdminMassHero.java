@@ -13,41 +13,43 @@ import pk.elfo.gameserver.network.serverpackets.SocialAction;
  
 public class AdminMassHero implements IAdminCommandHandler
 {
- protected static final Logger _log = Logger.getLogger(AdminMassHero.class.getName());
+    protected static final Logger _log = Logger.getLogger(AdminMassHero.class.getName());
 
- @Override
- public String[] getAdminCommandList()
- {
-  return ADMIN_COMMANDS;
- }
-
- @SuppressWarnings("cast")
-@Override
- public boolean useAdminCommand(String command, L2PcInstance activeChar)
- {
-  if(activeChar == null)
-   return false;
-
-  if(command.startsWith("admin_masshero"))
-  {
-   for(L2PcInstance player : L2World.getInstance().getAllPlayers().valueCollection())
-   {
-    if(player instanceof L2PcInstance)
+    @Override
+    public String[] getAdminCommandList()
     {
-     /* Check to see if the player already is Hero */
-     if(!player.isHero())
-     {
-      player.setHero(true);
-      player.sendMessage("Admin vai colocar todos online como hero.");
-      player.broadcastPacket(new SocialAction(player.getObjectId(), 16));
-      player.broadcastUserInfo();
-     }
-     player = null;
+        return ADMIN_COMMANDS;
     }
-   }
-  }
-  return true;
- }
 
- private static String[] ADMIN_COMMANDS = { "admin_masshero" };
+    @SuppressWarnings("cast")
+    @Override
+    public boolean useAdminCommand(String command, L2PcInstance activeChar)
+    {
+        if(activeChar == null)
+        {
+            return false;
+        }
+
+        if(command.startsWith("admin_masshero"))
+        {
+            for(L2PcInstance player : L2World.getInstance().getAllPlayers().valueCollection())
+            {
+                if(player instanceof L2PcInstance)
+                {
+                    /* Check to see if the player already is Hero */
+                    if(!player.isHero())
+                    {
+                        player.setHero(true);
+                        player.sendMessage("Admin is rewarding all online players with Hero Status.");
+                        player.broadcastPacket(new SocialAction(player.getObjectId(), 16));
+                        player.broadcastUserInfo();
+                    }
+                    player = null;
+                }
+            }
+        }
+        return true;
+    }
+
+    private static String[] ADMIN_COMMANDS = { "admin_masshero" };
 }

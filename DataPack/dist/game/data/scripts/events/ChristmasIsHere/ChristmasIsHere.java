@@ -8,7 +8,6 @@ import events.EventsConfig;
 
 /**
  * PkElfo
- *
  */
 
 public class ChristmasIsHere extends Quest
@@ -49,10 +48,7 @@ public class ChristmasIsHere extends Quest
 		7022,
 		7023
 	};
-	
-	/**
-	 * Na primeira conversa Script
-	 */
+
 	@Override
 	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{

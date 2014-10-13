@@ -95,9 +95,7 @@ import handlers.effecthandlers.Warp;
 public final class EffectMasterHandler
 {
 	private static final Logger _log = Logger.getLogger(EffectMasterHandler.class.getName());
-	
 	private static final Class<?> _loadInstances = EffectHandler.class;
-	
 	private static final Class<?>[] _effects =
 	{
 		AbortCast.class,
@@ -215,9 +213,7 @@ public final class EffectMasterHandler
 				{
 					method = loadInstance.getClass().getMethod("registerHandler", Class.class);
 				}
-				
 				method.invoke(loadInstance, c);
-				
 			}
 			catch (Exception e)
 			{

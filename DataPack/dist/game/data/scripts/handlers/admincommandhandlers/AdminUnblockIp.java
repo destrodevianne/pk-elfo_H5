@@ -15,7 +15,6 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 public class AdminUnblockIp implements IAdminCommandHandler
 {
 	private static final Logger _log = Logger.getLogger(AdminUnblockIp.class.getName());
-	
 	private static final String[] ADMIN_COMMANDS =
 	{
 		"admin_unblockip"
@@ -24,7 +23,6 @@ public class AdminUnblockIp implements IAdminCommandHandler
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
-		
 		if (command.startsWith("admin_unblockip "))
 		{
 			try
@@ -40,7 +38,6 @@ public class AdminUnblockIp implements IAdminCommandHandler
 				activeChar.sendMessage("Usage: //unblockip <ip>");
 			}
 		}
-		
 		return true;
 	}
 	

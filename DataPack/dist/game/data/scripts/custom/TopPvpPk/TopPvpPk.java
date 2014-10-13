@@ -1,18 +1,3 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- *
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- */
-
 package custom.TopPvpPk;
 
 import java.sql.Connection;
@@ -65,9 +50,13 @@ public class TopPvpPk extends Quest
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		if (event.equalsIgnoreCase("toppvp"))
-			sendTopPVP(player);
+			(
+				sendTopPVP(player);
+			)
 		else if (event.equalsIgnoreCase("toppk"))
-			sendTopPK(player);
+			(
+				sendTopPK(player);
+			)
 		return null;
 	}
 
@@ -115,7 +104,6 @@ public class TopPvpPk extends Quest
 		@SuppressWarnings("synthetic-access")
 		public void run()
 		{
-
 			TOP_PK.clear();
 			TOP_PVP.clear();
 
@@ -130,7 +118,6 @@ public class TopPvpPk extends Quest
 					pvp.setTopPvp(rset.getString("char_name"), rset.getInt("pvpkills"));
 					TOP_PVP.add(pvp);
 				}
-
 				rset.close();
 			}
 			catch (Exception e)
@@ -150,7 +137,6 @@ public class TopPvpPk extends Quest
 					pk.setTopPk(rset.getString("char_name"), rset.getInt("pkkills"));
 					TOP_PK.add(pk);
 				}
-
 				rset.close();
 				statement.close();
 			}

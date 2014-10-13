@@ -10,7 +10,6 @@ import events.EventsConfig;
 
 /**
  * PkElfo
- *
  */
 
 public class AprilFoolsDay extends Quest
@@ -125,7 +124,7 @@ public class AprilFoolsDay extends Quest
 					}
 				}
 			}
-			else if (randomGet >5 && randomGet <=32)
+			else if ((randomGet > 5) && (randomGet <= 32))
 			{
 				if (st.getQuestItemsCount(20099) < 1)
 				{
@@ -136,7 +135,7 @@ public class AprilFoolsDay extends Quest
 					st.giveAdena(5000, true);
 				}
 			}
-			else if (randomGet > 32 && randomGet <=47)
+			else if ((randomGet > 32) && (randomGet <= 47))
 			{
 				if(Rnd.get(2) == 2)
 				{
@@ -176,11 +175,11 @@ public class AprilFoolsDay extends Quest
 		}
 		else
 		{			
-			if (randomGet > 50 && randomGet <= 65)
+			if ((randomGet > 50) && (randomGet <= 65))
 			{
 				player.setKarma(player.getKarma() + 5000);
 			}
-			else if (randomGet > 65 && randomGet <= 68)
+			else if ((randomGet > 65) && (randomGet <= 68))
 			{
 				if (st.getQuestItemsCount(57) < 150000)
 				{
@@ -194,7 +193,7 @@ public class AprilFoolsDay extends Quest
 					st.takeItems(57,150000);
 				}
 			}
-			else if(randomGet > 68 && randomGet <= 75)
+			else if ((randomGet > 68) && (randomGet <= 75))
 			{
 				SkillTable.getInstance().getInfo(5076,15).getEffects(player, player);
 			}

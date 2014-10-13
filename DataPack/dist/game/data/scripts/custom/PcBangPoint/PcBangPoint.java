@@ -221,7 +221,9 @@ public class PcBangPoint extends Quest
 		QuestState st = player.getQuestState(qn);
 		
 		if (st == null)
-			return htmltext;
+			(
+				return htmltext;
+			)
 		
 		if (POINTSSKILL.containsKey(event))
 		{

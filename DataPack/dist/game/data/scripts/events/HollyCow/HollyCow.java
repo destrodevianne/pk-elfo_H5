@@ -114,7 +114,7 @@ public class HollyCow extends Quest
 			{				
 				if (event.equalsIgnoreCase("feed"))
 				{			
-					if (chance >= 0 && chance < 6)
+					if ((chance >= 0) && (chance < 6))
 					{
 						switch(chance)
 						{
@@ -220,7 +220,7 @@ public class HollyCow extends Quest
 			{
 				if (event.equalsIgnoreCase("feed"))
 				{			
-					if (chance >= 0 && chance < 6)
+					if ((chance >= 0) && (chance < 6))
 					{
 						switch(chance)
 						{
@@ -326,7 +326,7 @@ public class HollyCow extends Quest
 			{
 				if (event.equalsIgnoreCase("feed"))
 				{			
-					if (chance >= 0 && chance < 6)
+					if ((chance >= 0) && (chance < 6))
 					{
 						switch(chance)
 						{
@@ -432,7 +432,7 @@ public class HollyCow extends Quest
 			{
 				if (event.equalsIgnoreCase("feed"))
 				{			
-					if (chance >= 0 && chance < 6)
+					if ((chance >= 0) && (chance < 6))
 					{
 						switch(chance)
 						{
@@ -658,6 +658,8 @@ public class HollyCow extends Quest
 	{
 		new HollyCow(-1,qn,"events");
 		if (EventsConfig.HC_STARTED)
-			_log.warning("Event System: Holly Cow Event loaded ...");
+			(
+				_log.warning("Event System: Holly Cow Event loaded ...");
+			)
 	}
 }

@@ -95,12 +95,10 @@ public class AdminMonsterRace implements IAdminCommandHandler
 			
 			ThreadPoolManager.getInstance().scheduleGeneral(new RunRace(codes, activeChar), 5000);
 		}
-		
 	}
 	
 	class RunRace implements Runnable
 	{
-		
 		private final int[][] codes;
 		private final L2PcInstance activeChar;
 		

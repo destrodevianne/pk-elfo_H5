@@ -11,6 +11,7 @@ import pk.elfo.gameserver.model.quest.Quest;
 /**
  * PkElfo
  */
+
 public class EventsConfig extends Quest
 {
 	private static final String qn = "EventsConfig";
@@ -19,83 +20,58 @@ public class EventsConfig extends Quest
 	
 	/**
 	 * Holly Cow Event date
-	 * @author Deyoun
-	 * @category Custom Event polegaj�cy na przywo�aniu za kupione scrolle krowy i karmienie jej lub dojenie. Z dojenia otrzymujemy mleko daj�ce buff, je�eli dojenie si� nie uda poka�e si� byk. Byki atakuj� oraz dropi� dodatkowe rzeczy Marzec 1-31
 	 */
 	public static boolean HC_STARTED = false;
 	/**
 	 * April Fool's Day date
-	 * @author Deyoun
-	 * @category Custom Event polega na zbieraniu paczek. Po zebraniu odpowiedniej ilo�ci wymieniamy je na dobr� lub z�� nagrod�. Kwiecie� 1-6
 	 **/
 	public static boolean AP_STARTED = false;
 	/**
 	 * Ninja Adventures Event date
-	 * @author Deyoun
-	 * @category Custom Polega na przy��czeniu si� do losowej wioski i walki dla niej. Po przy��czeniu si� do wybranej wioski nale�y zabija� wybrane potwory aby pokaza� si� kot ninja, kt�ry jest celem. Za zabicie kot�w ninja s� punkty dla wojownik�w Ninja oraz dla wiosek. Za zsumowane odpowiednio
-	 *           punkty mo�na wybra� nagrody z listy. Kwiecie� 7-30
 	 **/
 	public static boolean NA_STARTED = false;
 	/**
 	 * Super Star Event date
-	 * @author Deyoun
-	 * @category Custom Polega na zbieraniu gwiazd z instancji oraz wymianie gwiazd na nagrody u specjalnego npc. Maj 1-31
 	 */
 	public static boolean SS_STARTED = false;
 	/**
 	 * Squish and Squash Event date
-	 * @author Deyoun
-	 * @category Retail Event polega na podlewaniu oraz zabijaniu specjaln� broni� du�ych owoc�w. Po zabiciu tych owoc�w otrzymujemy specjalne nagrody. Czerwiec 1-30
 	 **/
 	public static boolean SQUASH_STARTED = false;
 	public static boolean SQUASH_DROP_ACTIVE = false;
 	/**
 	 * L2Day Event date
-	 * @author Deyoun
-	 * @category Retail Event polega na zbieraniu liter i uk�adaniu z nich s��w pokazanych przez NPC. Za u�o�one s�owo dostajemy nagrody wypisane u NPC. Lipiec 1-31
 	 **/
 	public static boolean L2DAY_STARTED = false;
 	public static boolean L2DAY_ACTIVE_DROP = false;
 	/**
 	 * Heavy Medal Event
-	 * @author Deyoun
-	 * @category Retail Event polega na zbieraniu dw�ch typ�w medali. Jedne z tych medali s� u�ywane w grze kt�ra pozwala na wybranie lepszych nagr�d. Nagrody mo�na otrzyma� za medale. Sierpie� 1-31
 	 **/
 	public static boolean HM_STARTED = false;
 	public static boolean HM_ACTIVE_DROP = false;
 	/**
 	 * SchoolDays date
-	 * @author Deyoun
-	 * @category Custom Event polega na uratowaniu wiedzy �wiata L2. Nale�y zbiera� ksi��ki do nauki skilli swojej klasy. Za zebrane ksi��ki mo�emy u NPC otrzyma� nagrody. Wrzesie� 1-30
 	 **/
 	public static boolean SD_STARTED = false;
 	public static boolean SD_ACTIVE_DROP = false;
 	/**
 	 * Trick or Transmutation Event date
-	 * @author Deyoun
-	 * @category Retail Event polega na wydropieniu kluczy, za pomoc� kt�rych mo�na otworzy� skrzyni�. Ze skrzyni otrzymujemy materia�y oraz recepty potrzebne nam do z�o�enia kamienia filozof�w. Gdy otworzymy z�o�ony kamie� otrzymamy losow� nagrod� wypisan� u npc. Pa�dziernik 1-31
 	 **/
 	public static boolean TOT_STARTED = false;
 	public static boolean TOT_ACTIVE_DROP = false;
 	/**
 	 * Hallowed You Event date
-	 * @author Deyoun
-	 * @category Custom Event polega na zabijaniu duch�w kt�re wychodz� z cia� potwor�w �yj�cych na cmentarzach. Za zabicie ducha otrzymujemy nagrod� w postaci, lizaka. Lizaki mo�na u�y�, w celu regeneracji Vitality lub wymieni� na specjalne nagrody. Listopad 1-30
 	 **/
 	public static boolean HY_STARTED = false;
 	public static boolean HY_ACTIVE_DROP = false;
 	/**
 	 * Christmas Is Here Event date
-	 * @author Deyoun
-	 * @category Custom Event polega na zbieraniu zagubionych skarpet. Skarpety mo�na wymieni� na nagrody �wi�teczne u miko�aja. Grudzie� 1-31
 	 **/
 	public static boolean CH_STARTED = false;
 	public static boolean CH_ACTIVE_DROP = false;
 	
 	/**
 	 * Get Event data from sql
-	 * @param eventName 
-	 * @return 
 	 */
 	private static boolean getEvent(String eventName)
 	{

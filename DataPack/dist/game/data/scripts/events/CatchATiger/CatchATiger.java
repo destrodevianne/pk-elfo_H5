@@ -1,18 +1,3 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- *
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- */
-
 package events.CatchATiger;
 
 import pk.elfo.gameserver.ThreadPoolManager;
@@ -36,7 +21,6 @@ import pk.elfo.util.Rnd;
 
 /**
  * PkElfo
- *
  */
  
 public class CatchATiger extends LongTimeEvent
@@ -319,9 +303,7 @@ public class CatchATiger extends LongTimeEvent
 				{
 					npc.setBusy(true); //there is only one chance :)
 					//Works for Tigers regardless of party, for Tiger Captains - only if party is gathered 
-					if ((((npcId == BABY_TIGER) || (npcId == GLOOMY_TIGER) || (npcId == WHITE_TIGER)) || 
-							(((npcId == BABY_TIGER_CAPTAIN) || (npcId == GLOOMY_TIGER_CAPTAIN) || (npcId == WHITE_TIGER_CAPTAIN)) && 
-								attacker.isInParty() && !attacker.getParty().getMembers().isEmpty())) && (Rnd.get(100) < 30))
+					if ((((npcId == BABY_TIGER) || (npcId == GLOOMY_TIGER) || (npcId == WHITE_TIGER)) || (((npcId == BABY_TIGER_CAPTAIN) || (npcId == GLOOMY_TIGER_CAPTAIN) || (npcId == WHITE_TIGER_CAPTAIN)) && attacker.isInParty() && !attacker.getParty().getMembers().isEmpty())) && (Rnd.get(100) < 30))
 					{
 						npc.setBusyMessage("fortune");
 						int counter = ((npcId == BABY_TIGER) || (npcId == GLOOMY_TIGER) || (npcId == WHITE_TIGER)) ? 10 : 40;
@@ -463,7 +445,7 @@ public class CatchATiger extends LongTimeEvent
 
 						for (L2PcInstance partyMember : party.getMembers())
 						{
-							if (partyMember != null && !partyMember.isDead() && npc.isInsideRadius(partyMember, 1500, true, false))
+							if ((partyMember != null) && !partyMember.isDead() && npc.isInsideRadius(partyMember, 1500, true, false))
 							{
 								QuestState st2 = partyMember.getQuestState(getName());
 								if (st2 == null)
@@ -493,7 +475,7 @@ public class CatchATiger extends LongTimeEvent
 						}						
 						for (L2PcInstance partyMember : party.getMembers())
 						{
-							if (partyMember != null && !partyMember.isDead() && npc.isInsideRadius(partyMember, 1500, true, false))
+							if ((partyMember != null) && !partyMember.isDead() && npc.isInsideRadius(partyMember, 1500, true, false))
 							{
 								QuestState st2 = partyMember.getQuestState(getName());
 								if (st2 == null)

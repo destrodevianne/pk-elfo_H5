@@ -1,17 +1,3 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- *
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package events.FifthAnniversary;
 
 import java.text.SimpleDateFormat;
@@ -32,7 +18,6 @@ import pk.elfo.util.Rnd;
 
 /**
  * PkElfo
- *
  */
 
 public class FifthAnniversary extends Quest
@@ -153,13 +138,7 @@ public class FifthAnniversary extends Quest
 		else if (player != null && event.equalsIgnoreCase("LINEAGEII"))
 		{
 		    st = player.getQuestState(qn);
-			if ( st.getQuestItemsCount(letterL) >= 1
-				&& st.getQuestItemsCount(letterI) >= 1
-				&& st.getQuestItemsCount(letterN) >= 1
-				&& st.getQuestItemsCount(letterE) >= 2
-				&& st.getQuestItemsCount(letterA) >= 1
-				&& st.getQuestItemsCount(letterG) >= 1
-				&& st.getQuestItemsCount(letterII) >= 1)
+		    if ( (st.getQuestItemsCount(letterL) >= 1) && (st.getQuestItemsCount(letterI) >= 1) && (st.getQuestItemsCount(letterN) >= 1) && (st.getQuestItemsCount(letterE) >= 2) && (st.getQuestItemsCount(letterA) >= 1) && (st.getQuestItemsCount(letterG) >= 1) && (st.getQuestItemsCount(letterII) >= 1))
 			{
 				st.takeItems(letterL,1);
 	            st.takeItems(letterI,1);
@@ -171,40 +150,59 @@ public class FifthAnniversary extends Quest
 	            prize = Rnd.get(1000);
 
 	            if (prize <= 5)
-	                st.giveItems(6662,1); // 1 - Ring of Core
+	            	(
+	            		st.giveItems(6662,1); // 1 - Ring of Core
+	                )
 	            else if (prize <= 10)
-	                st.giveItems(8752,1); // 1 - High grade Life Stone 76
+	            	(
+	            		st.giveItems(8752,1); // 1 - High grade Life Stone 76
+	                )
 	            else if (prize <= 25)
-	                st.giveItems(8742,1); // 1 - Mid grade Life Stone 76
+	            	(
+	            		st.giveItems(8742,1); // 1 - Mid grade Life Stone 76
+	                )
 	            else if (prize <= 50)
-	                st.giveItems(9157,1); // 1 - L2day Blessed SoR
+	            	(
+	            		st.giveItems(9157,1); // 1 - L2day Blessed SoR
+	                )
 	            else if (prize <= 75)
-	                st.giveItems(9156,1); // 1 - L2day Blessed SoE
+	            	(
+	            		st.giveItems(9156,1); // 1 - L2day Blessed SoE
+	                )
 	            else if (prize <= 100)
-	                st.giveItems(13429,1); // 1 - Teddy Bear Hat
+	            	(
+	            		st.giveItems(13429,1); // 1 - Teddy Bear Hat
+	                )
 	            else if (prize <= 200)
-	                st.giveItems(13430,1); // 1 - Piggy Hat
+	            	(
+	            		st.giveItems(13430,1); // 1 - Piggy Hat
+	                )
 	            else if (prize <= 300)
-	                st.giveItems(13431,1); // 1 - Jester Hat
+					(
+						st.giveItems(13431,1); // 1 - Jester Hat
+	                )
 	            else if (prize <= 400)
-	                st.giveItems(13425,1); // 1 - Small Parchement Box (1x Village Soe)
+	            	(
+	            		st.giveItems(13425,1); // 1 - Small Parchement Box (1x Village Soe)
+	                )
 	            else if (prize <= 500)
-	                st.giveItems(13426,1); // 1 - Small Mineral Box (1x Elemental Stone)
+	            	(
+	            		st.giveItems(13426,1); // 1 - Small Mineral Box (1x Elemental Stone)
+	                )
 	            else
-	                st.giveItems(13428,1); // 1 - Small Libation Box (1x L2Day Juice)
+	            	(
+	            		st.giveItems(13428,1); // 1 - Small Libation Box (1x L2Day Juice)
+	                )
 		    }
 			else
-				htmltext = "31854-03.htm";
+				(
+					htmltext = "31854-03.htm";
+		    	)
 		}
-		else if (player != null && event.equalsIgnoreCase("5YEARS"))
+		else if ((player != null) && event.equalsIgnoreCase("5YEARS"))
 		{
 		    st = player.getQuestState(qn);
-			if (st.getQuestItemsCount(letter5) >= 1
-	        	&& st.getQuestItemsCount(letterY) >= 1
-	        	&& st.getQuestItemsCount(letterE) >= 1
-	        	&& st.getQuestItemsCount(letterA) >= 1
-	        	&& st.getQuestItemsCount(letterR) >= 1
-	        	&& st.getQuestItemsCount(letterS) >= 1)
+		    if ((st.getQuestItemsCount(letter5) >= 1) && (st.getQuestItemsCount(letterY) >= 1) && (st.getQuestItemsCount(letterE) >= 1) && (st.getQuestItemsCount(letterA) >= 1) && (st.getQuestItemsCount(letterR) >= 1) && (st.getQuestItemsCount(letterS) >= 1))
 	        {
 	            st.takeItems(letter5,1);
 	            st.takeItems(letterY,1);
@@ -215,39 +213,59 @@ public class FifthAnniversary extends Quest
 	            prize = Rnd.get(1000);
 	            
 	            if (prize <= 5)
-	                st.giveItems(6660,1); // 1 - Ring of Queen Ant
+	            	(
+	                	st.giveItems(6660,1); // 1 - Ring of Queen Ant
+	            	)
 	            else if (prize <= 10)
-	                st.giveItems(8762,1); // 1 - Top grade Life Stone 76
+	            	(
+	                	st.giveItems(8762,1); // 1 - Top grade Life Stone 76
+	            	)
 	            else if (prize <= 25)
-	                st.giveItems(8752,2); // 2 - High grade Life Stones 76
+	            	(
+	                	st.giveItems(8752,2); // 2 - High grade Life Stones 76
+	            	)
 	            else if (prize <= 50)
-	                st.giveItems(9157,2); // 2 - L2day Blessed SoRs
+	            	(
+	                	st.giveItems(9157,2); // 2 - L2day Blessed SoRs
+	            	)
 	            else if (prize <= 75)
-	                st.giveItems(9156,2); // 2 - L2day Blessed SoEs
+	            	(
+	                	st.giveItems(9156,2); // 2 - L2day Blessed SoEs
+	            	)
 	            else if (prize <= 100)
-	                st.giveItems(13429,1); // 1 - Teddy Bear Hat
+	            	(
+	            		st.giveItems(13429,1); // 1 - Teddy Bear Hat
+	            	)
 	            else if (prize <= 150)
-	                st.giveItems(13430,1); // 1 - Piggy Hat
+	            	(
+	                	st.giveItems(13430,1); // 1 - Piggy Hat
+	            	)
 	            else if (prize <= 200)
-	                st.giveItems(13431,1); // 1 - Jester Hat
+	            	(
+	                	st.giveItems(13431,1); // 1 - Jester Hat
+	            	)
 	            else if (prize <= 300)
-	                st.giveItems(13422,2); // 1 - Medium Parchement Box (2x Village Soes)
+	            	(
+	                	st.giveItems(13422,2); // 1 - Medium Parchement Box (2x Village Soes)
+	            	)
 	            else if (prize <= 400)
-	                st.giveItems(13423,2); // 1 - Medium Mineral Box (2x Elemental Stones)
+	            	(
+	                	st.giveItems(13423,2); // 1 - Medium Mineral Box (2x Elemental Stones)
+	            	)
 	            else
-	                st.giveItems(13424,3); // 1 - Large Libation Box (3x L2Day Juices)
+	            	(
+	                	st.giveItems(13424,3); // 1 - Large Libation Box (3x L2Day Juices)
+	            	)
 	        }
 	        else
-	        	htmltext =  "31854-03.htm";
+	        	(
+	        		htmltext =  "31854-03.htm";
+		    	)
 		}
 		else if (player != null && event.equalsIgnoreCase("GRACIA"))
 		{
 		    st = player.getQuestState(qn);
-		    if (st.getQuestItemsCount(letterG) >= 1
-	        	&& st.getQuestItemsCount(letterR) >= 1
-	        	&& st.getQuestItemsCount(letterA) >= 2
-	        	&& st.getQuestItemsCount(letterC) >= 1
-	        	&& st.getQuestItemsCount(letterI) >= 1)
+		    if ((st.getQuestItemsCount(letterG) >= 1) && (st.getQuestItemsCount(letterR) >= 1) && (st.getQuestItemsCount(letterA) >= 2) && (st.getQuestItemsCount(letterC) >= 1) && (st.getQuestItemsCount(letterI) >= 1))
 	        {
 	            st.takeItems(letterG,1);
 	            st.takeItems(letterR,1);
@@ -257,35 +275,63 @@ public class FifthAnniversary extends Quest
 	            prize = Rnd.get(1000);
 	            
 	            if (prize <= 5)
-	                st.giveItems(6661,1); // 1 - Earring of Orfen
+	            	(
+	                	st.giveItems(6661,1); // 1 - Earring of Orfen
+	            	)
 	            else if (prize <= 10)
-	                st.giveItems(8752,1); // 1 - High grade Life Stone 76
+	            	(
+	                	st.giveItems(8752,1); // 1 - High grade Life Stone 76
+	            	)
 	            else if (prize <= 25)
-	                st.giveItems(8742,2); // 2 - Mid grade Life Stones 76
+	            	(
+	                	st.giveItems(8742,2); // 2 - Mid grade Life Stones 76
+	            	)
 	            else if (prize <= 50)
-	                st.giveItems(9157,1); // 1 - L2day Blessed SoR
+	            	(
+	            		st.giveItems(9157,1); // 1 - L2day Blessed SoR
+	            	)
 	            else if (prize <= 75)
-	                st.giveItems(9156,1); // 1 - L2day Blessed SoE
+	            	(
+	            		st.giveItems(9156,1); // 1 - L2day Blessed SoE
+	            	)
 	            else if (prize <= 100)
-	                st.giveItems(13429,1); // 1 - Teddy Bear Hat
+	            	(
+	            		st.giveItems(13429,1); // 1 - Teddy Bear Hat
+	            	)
 	            else if (prize <= 150)
-	                st.giveItems(13430,1); // 1 - Piggy Hat
+	            	(
+	            		st.giveItems(13430,1); // 1 - Piggy Hat
+	            	)
 	            else if (prize <= 200)
-	                st.giveItems(13431,1); // 1 - Jester Hat
+	            	(
+	            		st.giveItems(13431,1); // 1 - Jester Hat
+	            	)
 	            else if (prize <= 300)
-	                st.giveItems(13425,1); // 1 - Small Parchement Box (1x Village Soe)
+	            	(
+	            		st.giveItems(13425,1); // 1 - Small Parchement Box (1x Village Soe)
+	            	)
 	            else if (prize <= 400)
-	                st.giveItems(13426,1); // 1 - Small Mineral Box (1x Elemental Stone)
+	            	(
+	            		st.giveItems(13426,1); // 1 - Small Mineral Box (1x Elemental Stone)
+	            	)
 	            else
-	                st.giveItems(13424,2); // 1 - Medium Libation Box (2x L2Day Juices)
+	            	(
+	            		st.giveItems(13424,2); // 1 - Medium Libation Box (2x L2Day Juices)
+	            	)
 	        }
 	        else
-	        	htmltext =  "31854-03.htm";
+	        	(
+	        		htmltext =  "31854-03.htm";
+		    	)
 		}
 		else if (event.equalsIgnoreCase("chat0"))
-			htmltext =  "31854.htm";
+			(
+				htmltext =  "31854.htm";
+			)
 		else if (event.equalsIgnoreCase("chat1"))
-			htmltext =  "31854-02.htm";
+			(
+				htmltext =  "31854-02.htm";
+			)
 		return htmltext;
 	}	
 
@@ -294,7 +340,9 @@ public class FifthAnniversary extends Quest
 	{
 		QuestState st = player.getQuestState(getName());
 		if (st == null)
-			st = this.newQuestState(player);
+			(
+				st = this.newQuestState(player);
+			)
 		return "31854.htm";
 	}
 

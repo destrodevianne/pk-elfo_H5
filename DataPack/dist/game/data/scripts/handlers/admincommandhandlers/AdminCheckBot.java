@@ -23,7 +23,8 @@ import javolution.text.TextBuilder;
  
 public class AdminCheckBot implements IAdminCommandHandler
 {
-        private static final String[] ADMIN_COMMANDS = {
+        private static final String[] ADMIN_COMMANDS = 
+        {
                         "admin_checkBots",
                         "admin_readBot",
                         "admin_markBotReaded",

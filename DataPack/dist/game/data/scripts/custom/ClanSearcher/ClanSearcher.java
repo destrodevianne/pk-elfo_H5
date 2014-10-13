@@ -1,17 +1,3 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- * 
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- * 
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package custom.ClanSearcher;
 
 import java.sql.Connection;
@@ -38,9 +24,6 @@ import pk.elfo.gameserver.network.serverpackets.ShowBoard;
 import javolution.util.FastList;
 import javolution.util.FastMap;
 
-/*
- * Q.Q
- */
 public class ClanSearcher extends Quest
 {
 	private static final int NpcId = 36606;
@@ -127,17 +110,25 @@ public class ClanSearcher extends Quest
 		{
 			QuestState qs = player.getQuestState("ClanSearcher");
 			if (qs == null)
-				QuestManager.getInstance().getQuest("ClanSearcher").newQuestState(player);
+				(
+					QuestManager.getInstance().getQuest("ClanSearcher").newQuestState(player);
+				)
 			
 			String html = HtmCache.getInstance().getHtm(player.getHtmlPrefix(),"data/scripts/custom/ClanSearcher/1.htm");
 			html = html.replaceAll("%player%", player.getName());
 			
 			if (player.getClan() == null)
-				html = html.replaceAll("%text%", "Its not very safe for people to walk alone around in these dark days... Perhaps you would like to join some clan? <br> Leaders from all over the world come to me to advertise their clans. Maybe you could be a nice addition to their clans...");
+				(
+					html = html.replaceAll("%text%", "Its not very safe for people to walk alone around in these dark days... Perhaps you would like to join some clan? <br> Leaders from all over the world come to me to advertise their clans. Maybe you could be a nice addition to their clans...");
+				)
 			else if (player.isClanLeader())
-				html = html.replaceAll("%text%", "Another clan leader comes to me... what would you like me to offer you? <br> Do you want to advertise your clan, be it for new members, or just pissing off other clans. <br> Or maybe you just want to check out hows the concurency going on huh?");
+				(
+					html = html.replaceAll("%text%", "Another clan leader comes to me... what would you like me to offer you? <br> Do you want to advertise your clan, be it for new members, or just pissing off other clans. <br> Or maybe you just want to check out hows the concurency going on huh?");
+				)
 			else
-				html = html.replaceAll("%text%", "So... you are already in a clan huh? Good to see that people do not walk alone in those dark days...<br> Are you curious to see your concurence?");
+				(
+					html = html.replaceAll("%text%", "So... you are already in a clan huh? Good to see that people do not walk alone in those dark days...<br> Are you curious to see your concurence?");
+				)
 			
 			if (player.isClanLeader())
 			{
@@ -165,7 +156,9 @@ public class ClanSearcher extends Quest
 		for (L2ClanMember member : clan.getMembers())
 		{
 			if (member.getPlayerInstance() == null && !member.isOnline())
-				continue;
+				(
+					continue;
+				)
 			L2PcInstance player = member.getPlayerInstance();
 			
 			if ((player.getClanPrivileges() & L2Clan.CP_CL_JOIN_CLAN) == L2Clan.CP_CL_JOIN_CLAN)
@@ -202,9 +195,13 @@ public class ClanSearcher extends Quest
 			{
 				clan = ClanTable.getInstance().getClan(set.getInt("clanId"));
 				if (clan == null)
-					continue;
-				if (set.getInt("visible") > 0 || mode == 2)
-					clans.put(clan, set.getString("message"));
+					(
+						continue;
+					)
+				if ((set.getInt("visible") > 0) || (mode == 2)
+					(
+						clans.put(clan, set.getString("message"));
+					)
 			}
 			set.close();
 			if (mode == 2)
@@ -217,7 +214,9 @@ public class ClanSearcher extends Quest
 			for (Map.Entry<L2Clan, String> entry : clans.entrySet())
 			{
 				if (entry.getKey() == null)
-					continue;
+					(
+						continue;
+					)
 				
 				String fullMsg = clans.get(entry.getKey());
 				String smallClanInfo = fullMsg.substring(0, Math.min(fullMsg.length(), 96));
@@ -264,16 +263,22 @@ public class ClanSearcher extends Quest
 				sb.append("<tr><td align=center><font color=LEVEL>Clan presentation info:</font></td></tr>");
 				sb.append("<tr><td width=780 height=380><font color=00FFFF>" + message + "</font></td></tr>");
 				if (player.isClanLeader() && player.getClan().equals(clan)) // If the player is this clan's leader, give him button to change info.
-					sb.append("<tr><td align=center height=20><a action=\"bypass -h Quest ClanSearcher newclan.htm\">Edit clan presentation info</a></td></tr>");
+					(
+						sb.append("<tr><td align=center height=20><a action=\"bypass -h Quest ClanSearcher newclan.htm\">Edit clan presentation info</a></td></tr>");
+					)
 				else if (player.getClan() != null) // Player is already in clan, he cannot send clan invitation request
-					sb.append("<tr><td align=center height=20> </td></tr>");
+					(
+						sb.append("<tr><td align=center height=20> </td></tr>");
+					)
 				else
-					// Player isnt in a clan, give him invitation request button
-					sb.append("<tr><td align=center height=20><a action=\"bypass -h Quest ClanSearcher requestjoin_" + clan.getClanId() + "\">Send invitation request</a></td></tr>");
-				sb.append("<tr><td align=center height=30><a action=\"bypass -h Quest ClanSearcher show_list\">Back</a></td></tr>");
-				sb.append("</table>");
-				sb.append("</center></body></html>");
-				sendCBHtml(player, sb.toString());
+					(
+						// Player isnt in a clan, give him invitation request button
+						sb.append("<tr><td align=center height=20><a action=\"bypass -h Quest ClanSearcher requestjoin_" + clan.getClanId() + "\">Enviar pedido de convite</a></td></tr>");
+					)
+					sb.append("<tr><td align=center height=30><a action=\"bypass -h Quest ClanSearcher show_list\">Voltar</a></td></tr>");
+					sb.append("</table>");
+					sb.append("</center></body></html>");
+					sendCBHtml(player, sb.toString());
 			}
 			statement.close();
 			set.close();
@@ -317,7 +322,9 @@ public class ClanSearcher extends Quest
 			}
 			
 			if (player.getInventory().getAdena() > money)
-				player.reduceAdena("clanner", money, npc, true);
+				(
+					player.reduceAdena("clanner", money, npc, true);
+				)
 			else
 			{
 				player.sendPacket(new NpcHtmlMessage(0, "You don't have enough adena."));
@@ -376,7 +383,9 @@ public class ClanSearcher extends Quest
 	private final void sendCBHtml(L2PcInstance activeChar, String html, String fillMultiEdit)
 	{
 		if (activeChar == null)
-			return;
+			(
+				return;
+			)
 		
 		if (html != null)
 		{
@@ -386,20 +395,30 @@ public class ClanSearcher extends Quest
 			{
 				int start = html.indexOf("\"bypass ", i);
 				int finish = html.indexOf("\"", start + 1);
-				if (start < 0 || finish < 0)
-					break;
+				if ((start < 0) || (finish < 0))
+					(
+						break;
+					)
 				
 				if (html.substring(start + 8, start + 10).equals("-h"))
-					start += 11;
+					(
+						start += 11;
+					)
 				else
-					start += 8;
+					(
+						start += 8;
+					)
 				
 				i = finish;
 				int finish2 = html.indexOf("$", start);
-				if (finish2 < finish && finish2 > 0)
-					activeChar.addBypass2(html.substring(start, finish2).trim());
+				if ((finish2 < finish) && (finish2 > 0))
+					(
+						activeChar.addBypass2(html.substring(start, finish2).trim());
+					)
 				else
-					activeChar.addBypass(html.substring(start, finish).trim());
+					(
+						activeChar.addBypass(html.substring(start, finish).trim());
+					)
 			}
 		}
 		
@@ -457,7 +476,9 @@ public class ClanSearcher extends Quest
 			{
 				L2Clan clan = ClanTable.getInstance().getClan(set.getInt("clanId"));
 				if (clan != null)
-					clans.put(clan, set.getInt("timeleft"));
+					(
+						clans.put(clan, set.getInt("timeleft"));
+					)
 			}
 			for (Map.Entry<L2Clan, Integer> entry : clans.entrySet())
 			{
