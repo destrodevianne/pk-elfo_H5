@@ -13,7 +13,6 @@ import pk.elfo.gameserver.network.SystemMessageId;
 
 public class TargetOne implements ITargetTypeHandler
 {
-	
 	@Override
 	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
 	{

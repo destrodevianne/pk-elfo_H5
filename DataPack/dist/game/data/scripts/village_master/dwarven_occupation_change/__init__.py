@@ -119,8 +119,6 @@ class Quest (JQuest) :
 
 QUEST   = Quest(99999,qn,"village_master")
 
-
-
 for npc in SCAV_NPCS :
     QUEST.addStartNpc(npc)
     QUEST.addTalkId(npc)

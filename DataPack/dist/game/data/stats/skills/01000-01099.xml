@@ -1138,7 +1138,7 @@
 		<set name="operateType" val="A1" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
-		<set name="maxNegated" val="1" /> <!-- Quantidade de buffs retirados -->
+		<set name="maxNegated" val="5" /> <!-- Quantidade de buffs retirados -->
 	</skill>
 	<skill id="1059" levels="3" name="Empower" enchantGroup1="1" enchantGroup2="1">
 		<table name="#enchantMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>

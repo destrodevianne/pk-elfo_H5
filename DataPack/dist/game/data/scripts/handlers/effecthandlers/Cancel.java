@@ -69,7 +69,6 @@ public class Cancel extends L2Effect
             {
                 resMod = 1 + (0.02 * res);
             }
-
             rate *= resMod;
         }
 
@@ -197,7 +196,6 @@ public class Cancel extends L2Effect
                 }
             }
         }
-
         return true;
     }
 
@@ -215,7 +213,6 @@ public class Cancel extends L2Effect
         {
             rate = 75;
         }
-
         return Rnd.get(100) < rate;
     }
 }

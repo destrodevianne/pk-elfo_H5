@@ -18,7 +18,6 @@ public class VoiceInfo implements IVoicedCommandHandler
 		"infos"
 		};
 
-
 	@Override
 	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String target)
 	{

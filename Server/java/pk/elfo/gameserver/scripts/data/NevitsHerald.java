@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.scripts.data;
 
 import java.util.List;
@@ -56,69 +38,18 @@ public class NevitsHerald extends Quest
 	};
 	
 	private static final int[][] _spawns =
-	{
 		{
-			86979,
-			-142785,
-			-1341,
-			18259
-		}, // Town of Schuttgart
-		{
-			44168,
-			-48513,
-			-801,
-			31924
-		}, // Rune Township
-		{
-			148002,
-			-55279,
-			-2735,
-			44315
-		}, // Town of Goddard
-		{
-			147953,
-			26656,
-			-2205,
-			20352
-		}, // Town of Aden
-		{
-			82313,
-			53280,
-			-1496,
-			14791
-		}, // Town of Oren
-		{
-			81918,
-			148305,
-			-3471,
-			49151
-		}, // Town of Giran
-		{
-			16286,
-			142805,
-			-2706,
-			15689
-		}, // Town of Dion
-		{
-			-13968,
-			122050,
-			-2990,
-			19497
-		}, // Town of Gludio
-		{
-			-83207,
-			150896,
-			-3129,
-			30709
-		}, // Gludin Village
-		{
-			116892,
-			77277,
-			-2695,
-			45056
-		}
-	// Hunters Village
-	};
+        { 86979, -142785, -1341, 18259 },    // Town of Schuttgart
+        { 44168, -48513, -801, 31924 },        // Rune Township
+        { 148002, -55279, -2735, 44315 },    // Town of Goddard
+        { 147953, 26656, -2205, 20352 },    // Town of Aden
+        { 82313, 53280, -1496, 14791 },        // Town of Oren
+        { 81918, 148305, -3471, 49151 },    // Town of Giran
+        { 16286, 142805, -2706, 15689 },    // Town of Dion
+        { -13968, 122050, -2990, 19497 },    // Town of Gludio
+        { -83207, 150896, -3129, 30709 },    // Gludin Village
+        { 116892, 77277, -2695, 45056 }        // Hunters Village
+    };
 	
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
@@ -128,7 +59,6 @@ public class NevitsHerald extends Quest
 		{
 			st = newQuestState(player);
 		}
-		
 		return "4326.htm";
 	}
 	
@@ -145,7 +75,6 @@ public class NevitsHerald extends Quest
 				{
 					return "4326-1.htm";
 				}
-				
 				npc.setTarget(player);
 				npc.doCast(SkillTable.getInstance().getInfo(23312, 1));
 				return null;
@@ -200,7 +129,6 @@ public class NevitsHerald extends Quest
 			{
 				continue;
 			}
-			
 			onlinePlayer.sendPacket(message);
 		}
 		

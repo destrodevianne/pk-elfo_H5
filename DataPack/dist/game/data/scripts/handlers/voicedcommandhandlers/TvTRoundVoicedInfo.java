@@ -14,7 +14,10 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class TvTRoundVoicedInfo implements IVoicedCommandHandler
 {
-	private static final String[] _voicedCommands = { "tvtround" };
+	private static final String[] _voicedCommands = 
+	{ 
+		"tvtround"		
+	};
 	
 	/**
 	 * Set this to false and recompile script if you dont want to use string cache.
@@ -37,7 +40,6 @@ public class TvTRoundVoicedInfo implements IVoicedCommandHandler
 				try
 				{
 					NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(5);
-					
 					npcHtmlMessage.setHtml(htmContent);
 					// npcHtmlMessage.replace("%objectId%",
 					// String.valueOf(getObjectId()));
@@ -53,7 +55,6 @@ public class TvTRoundVoicedInfo implements IVoicedCommandHandler
 				{
 					_log.warning("wrong TvT Round voiced: " + e);
 				}
-				
 			}
 			else
 			{

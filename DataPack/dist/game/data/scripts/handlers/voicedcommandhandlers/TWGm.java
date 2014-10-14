@@ -16,19 +16,27 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class TWGm implements IVoicedCommandHandler
 {
-	private static final String[] _voicedCommands = { "tw", "tw_goto_ward" };
+	private static final String[] _voicedCommands = 
+	{ 
+		"tw", 
+		"tw_goto_ward" 
+	};
 	
 	@Override
 	public boolean useVoicedCommand(final String command, final L2PcInstance activeChar, final String target)
 	{
 		NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage( 0 );
-		if (command.equalsIgnoreCase("tw_goto_ward") && target != null && activeChar.isGM())
+		if (command.equalsIgnoreCase("tw_goto_ward") && (target != null) && activeChar.isGM())
 		{
 			final StringTokenizer st = new StringTokenizer(target);
 			try
 			{
-				String str_x = null;String str_y = null;String str_z = null;
-				int ward_x = 0;int ward_y = 0;int ward_z = 0;
+				String str_x = null;
+                String str_y = null;
+                String str_z = null;
+                int ward_x = 0;
+                int ward_y = 0;
+                int ward_z = 0;
 				
 				//_log.log(Level.INFO, "[TWGm] .tw_goto_ward " + target);
 				
@@ -48,7 +56,7 @@ public class TWGm implements IVoicedCommandHandler
 					ward_z = Integer.parseInt(str_z);
 				}
 				
-				if (ward_x != 0 && ward_y != 0 && ward_z != 0)
+				if ((ward_x != 0) && (ward_y != 0) && (ward_z != 0))
 				{
 					activeChar.teleToLocation(ward_x, ward_y, ward_z, false);
 					activeChar.sendMessage("[TWGm] TeleTo Ward location: " + ward_x + " " + ward_y + " " + ward_z);

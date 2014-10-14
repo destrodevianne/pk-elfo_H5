@@ -52,7 +52,8 @@ public class RaidBoosStatus implements IVoicedCommandHandler
                 for (int i = 29066; i <= 29068; i++)
 				{
 					StatsSet s = GrandBossManager.getInstance().getStatsSet(i);
-                    if (s == null) continue;
+                    if (s == null)
+                    	continue;
 					long d = s.getLong("respawn_time");
                     if (d >= dmax)
 					{

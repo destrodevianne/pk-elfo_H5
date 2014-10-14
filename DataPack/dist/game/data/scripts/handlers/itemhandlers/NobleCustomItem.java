@@ -13,11 +13,7 @@ import pk.elfo.gameserver.network.serverpackets.SocialAction;
  
 public class NobleCustomItem implements IItemHandler
 {
-
 	public NobleCustomItem()
-	{
-	//null
-	}
 
 	@Override
 	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
@@ -25,7 +21,9 @@ public class NobleCustomItem implements IItemHandler
 		if(Config.NOBLE_CUSTOM_ITEMS)
 		{
 			if(!(playable instanceof L2PcInstance))
-				return false;
+				(
+					return false;
+				)
 
 			L2PcInstance activeChar = (L2PcInstance) playable;
 
@@ -61,5 +59,4 @@ public class NobleCustomItem implements IItemHandler
 	{
 		Config.NOOBLE_CUSTOM_ITEM_ID
 	};
-
 }
