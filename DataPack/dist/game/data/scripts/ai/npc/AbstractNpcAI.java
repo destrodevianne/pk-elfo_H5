@@ -46,13 +46,13 @@ public abstract class AbstractNpcAI extends L2Script
         public static <T> boolean contains(T[] array, T obj)
         {
         	for (int i = 0; i < array.length; i++)
+        	{
+        		if (array[i] == obj)
         		{
-        			if (array[i] == obj)
-        			{
-        				return true;
-        			}
-                }
-                return false;
+        			return true;
+        		}
+        	}
+        	return false;
         }
         
         /**
@@ -90,10 +90,9 @@ public abstract class AbstractNpcAI extends L2Script
         			return i;
         		}
         	}
-                return -1;
+        	return -1;
         }
-        
-	
+
 	/**
 	 * Registers the following events to the current script:<br>
 	 * <ul>
