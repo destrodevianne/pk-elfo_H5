@@ -123,6 +123,10 @@ Fix Lindvior.java
 # - Os bonus respectivamente ganhos tem valores diferenciados
 # - Todos as skills atualizadas fornecem bonus exatamente igual ou inferior ao buff.
 #---------------------------------------------------------------------------------------#
+Fix no calculo do Chant of Victory
+- Adicionado elementos na xml da skill para arredondar o calculo na hora de somar os bonus do buff
+atualizado mana potion de 100 para 1000
+aumentando a chance do up dos soul crystal de 10 a 18 e corrigido os respectivos ups
 
 ###############################################
 #################### FIX BETA TEST ############

@@ -37,7 +37,7 @@ public class EventContainer
 	
 	protected Random rnd = new Random();
 	
-	private final FastMap<Integer, AbstractEvent> events;
+	private FastMap<Integer, AbstractEvent> events;
 	
 	public FastList<Integer> eventIds;
 	
