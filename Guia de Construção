@@ -105,6 +105,14 @@ FIX Skill 6921 - Penetration Attack
 FIX Skill 21875
 Mudado Scripts: ErosionHallAttack.java, ErosionHallDefence.java, HeartInfinityAttack.java, HeartInfinityDefence.java e DragonValley.java
 Fix em todas as skills de clan
+#---------------------------------------#
+# Fix skills de augment
+# - Might (ativo, passivo e chance)
+# - Duel Might (ativo, passivo e chance)
+# - Shield (ativo, passivo e chance)
+#---------------------------------------#
+Fix Baium
+Fix Lindvior.java
 
 ###############################################
 #################### FIX BETA TEST ############
