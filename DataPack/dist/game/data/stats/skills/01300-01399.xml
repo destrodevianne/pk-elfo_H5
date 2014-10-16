@@ -2003,84 +2003,84 @@
 			</effect>
 		</enchant1for>
 	</skill>
-	<skill id="1363" levels="1" name="Chant of Victory" enchantGroup1="5" enchantGroup2="5" enchantGroup3="5">
-		<table name="#enchantMagicLvl"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
-		<table name="#ench1Time"> 320 340 360 380 400 420 440 460 480 500 520 540 560 580 600 </table>
-		<table name="#ench2mpInitialConsume"> 55 53 51 49 47 45 43 41 40 38 36 34 32 30 28 </table>
-		<table name="#ench2mpConsume"> 218 212 204 196 189 181 174 166 158 150 142 136 128 121 113 </table>
-		<table name="#ench3Spd"> 0.83 0.85 0.87 0.89 0.9 0.91 0.92 0.93 0.94 0.95 0.96 0.97 0.98 0.99 1 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="multi_buff" />
-		<set name="magicLvl" val="78" />
-		<set name="itemConsumeId" val="3031" />
-		<set name="itemConsumeCount" val="40" />
-		<set name="mpInitialConsume" val="57" />
-		<set name="mpConsume" val="227" />
-		<set name="target" val="TARGET_PARTY" />
-		<set name="skillRadius" val="1000" />
-		<set name="reuseDelay" val="300000" />
-		<set name="hitTime" val="2500" />
-		<set name="skillType" val="BUFF" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="operateType" val="A2" />
-		<set name="aggroPoints" val="669" />
-		<enchant1 name="magicLvl" val="#enchantMagicLvl" />
-		<enchant2 name="magicLvl" val="#enchantMagicLvl" />
-		<enchant2 name="mpInitialConsume" val="#ench2mpInitialConsume" />
-		<enchant2 name="mpConsume" val="#ench2mpConsume" />
-		<enchant3 name="magicLvl" val="#enchantMagicLvl" />
-		<for>
-			<effect name="Buff" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="multi_buff">
-				<mul order="0x30" stat="maxHp" val="1.2" />
-				<add order="0x40" stat="mCritRate" val="2" />
-				<mul order="0x30" stat="cAtk" val="1.2" />
-				<mul order="0x30" stat="pAtk" val="1.1" />
-				<mul order="0x30" stat="pDef" val="1.2" />
-				<mul order="0x30" stat="pAtkSpd" val="1.2" />
-				<mul order="0x30" stat="mAtk" val="1.2" />
-				<mul order="0x30" stat="mDef" val="1.2" />
-				<mul order="0x30" stat="mAtkSpd" val="1.2" />
-				<sub order="0x40" stat="debuffVuln" val="10" />
-				<add order="0x40" stat="accCombat" val="4" />
-				<mul order="0x30" stat="runSpd" val="0.8" />
-			</effect>
-			<effect name="HealPercent" noicon="1" val="20" />
-		</for>
-		<enchant1for>
-			<effect name="Buff" abnormalTime="#ench1Time" val="0" abnormalLvl="1" abnormalType="multi_buff">
-				<mul order="0x30" stat="maxHp" val="1.2" />
-				<add order="0x40" stat="mCritRate" val="2" />
-				<mul order="0x30" stat="cAtk" val="1.2" />
-				<mul order="0x30" stat="pAtk" val="1.1" />
-				<mul order="0x30" stat="pDef" val="1.2" />
-				<mul order="0x30" stat="pAtkSpd" val="1.2" />
-				<mul order="0x30" stat="mAtk" val="1.2" />
-				<mul order="0x30" stat="mDef" val="1.2" />
-				<mul order="0x30" stat="mAtkSpd" val="1.2" />
-				<sub order="0x40" stat="debuffVuln" val="10" />
-				<add order="0x40" stat="accCombat" val="4" />
-				<mul order="0x30" stat="runSpd" val="0.8" />
-			</effect>
-			<effect name="HealPercent" noicon="1" val="20" />
-		</enchant1for>
-		<enchant3for>
-			<effect name="Buff" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="multi_buff">
-				<mul order="0x30" stat="maxHp" val="1.2" />
-				<basemul order="0x30" stat="mCritRate" val="0.02" />
-				<mul order="0x30" stat="cAtk" val="1.2" />
-				<mul order="0x30" stat="pAtk" val="1.1" />
-				<mul order="0x30" stat="pDef" val="1.2" />
-				<mul order="0x30" stat="pAtkSpd" val="1.2" />
-				<mul order="0x30" stat="mAtk" val="1.2" />
-				<mul order="0x30" stat="mDef" val="1.2" />
-				<mul order="0x30" stat="mAtkSpd" val="1.2" />
-				<sub order="0x40" stat="debuffVuln" val="10" />
-				<add order="0x40" stat="accCombat" val="4" />
-				<mul order="0x30" stat="runSpd" val="#ench3Spd" />
-			</effect>
-			<effect name="HealPercent" noicon="1" val="20" />
-		</enchant3for>
-	</skill>
+    <skill id="1363" levels="1" name="Chant of Victory" enchantGroup1="5" enchantGroup2="5" enchantGroup3="5">
+        <table name="#enchantMagicLvl"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
+        <table name="#ench1Time"> 320 340 360 380 400 420 440 460 480 500 520 540 560 580 600 </table>
+        <table name="#ench2mpInitialConsume"> 55 53 51 49 47 45 43 41 40 38 36 34 32 30 28 </table>
+        <table name="#ench2mpConsume"> 218 212 204 196 189 181 174 166 158 150 142 136 128 121 113 </table>
+        <table name="#ench3Spd"> 0.84 0.85 0.87 0.89 0.9 0.91 0.92 0.93 0.94 0.95 0.96 0.97 0.98 0.99 1 </table>
+        <set name="abnormalLvl" val="1" />
+        <set name="abnormalType" val="multi_buff" />
+        <set name="magicLvl" val="78" />
+        <set name="itemConsumeId" val="3031" />
+        <set name="itemConsumeCount" val="40" />
+        <set name="mpInitialConsume" val="57" />
+        <set name="mpConsume" val="227" />
+        <set name="target" val="TARGET_PARTY" />
+        <set name="skillRadius" val="1000" />
+        <set name="reuseDelay" val="300000" />
+        <set name="hitTime" val="2500" />
+        <set name="skillType" val="BUFF" />
+        <set name="isMagic" val="1" /> <!-- Magic Skill -->
+        <set name="operateType" val="A2" />
+        <set name="aggroPoints" val="669" />
+        <enchant1 name="magicLvl" val="#enchantMagicLvl" />
+        <enchant2 name="magicLvl" val="#enchantMagicLvl" />
+        <enchant2 name="mpInitialConsume" val="#ench2mpInitialConsume" />
+        <enchant2 name="mpConsume" val="#ench2mpConsume" />
+        <enchant3 name="magicLvl" val="#enchantMagicLvl" />
+        <for>
+            <effect name="Buff" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="multi_buff">
+                <mul order="0x30" stat="maxHp" val="1.208" />
+                <add order="0x40" stat="mCritRate" val="2" />
+                <mul order="0x30" stat="cAtk" val="1.208" />
+                <mul order="0x30" stat="pAtk" val="1.108" />
+                <mul order="0x30" stat="pDef" val="1.208" />
+                <mul order="0x30" stat="pAtkSpd" val="1.208" />
+                <mul order="0x30" stat="mAtk" val="1.208" />
+                <mul order="0x30" stat="mDef" val="1.208" />
+                <mul order="0x30" stat="mAtkSpd" val="1.208" />
+                <sub order="0x40" stat="debuffVuln" val="10" />
+                <add order="0x40" stat="accCombat" val="4" />
+                <mul order="0x30" stat="runSpd" val="0.808" />
+            </effect>
+            <effect name="HealPercent" noicon="1" val="20" />
+        </for>
+        <enchant1for>
+            <effect name="Buff" abnormalTime="#ench1Time" val="0" abnormalLvl="1" abnormalType="multi_buff">
+                <mul order="0x30" stat="maxHp" val="1.208" />
+                <add order="0x40" stat="mCritRate" val="2" />
+                <mul order="0x30" stat="cAtk" val="1.208" />
+                <mul order="0x30" stat="pAtk" val="1.108" />
+                <mul order="0x30" stat="pDef" val="1.208" />
+                <mul order="0x30" stat="pAtkSpd" val="1.208" />
+                <mul order="0x30" stat="mAtk" val="1.208" />
+                <mul order="0x30" stat="mDef" val="1.208" />
+                <mul order="0x30" stat="mAtkSpd" val="1.208" />
+                <sub order="0x40" stat="debuffVuln" val="10" />
+                <add order="0x40" stat="accCombat" val="4" />
+                <mul order="0x30" stat="runSpd" val="0.808" />
+            </effect>
+            <effect name="HealPercent" noicon="1" val="20" />
+        </enchant1for>
+        <enchant3for>
+            <effect name="Buff" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="multi_buff">
+                <mul order="0x30" stat="maxHp" val="1.208" />
+                <basemul order="0x30" stat="mCritRate" val="0.02" />
+                <mul order="0x30" stat="cAtk" val="1.208" />
+                <mul order="0x30" stat="pAtk" val="1.108" />
+                <mul order="0x30" stat="pDef" val="1.208" />
+                <mul order="0x30" stat="pAtkSpd" val="1.208" />
+                <mul order="0x30" stat="mAtk" val="1.208" />
+                <mul order="0x30" stat="mDef" val="1.208" />
+                <mul order="0x30" stat="mAtkSpd" val="1.208" />
+                <sub order="0x40" stat="debuffVuln" val="10" />
+                <add order="0x40" stat="accCombat" val="4" />
+                <mul order="0x30" stat="runSpd" val="#ench3Spd" />
+            </effect>
+            <effect name="HealPercent" noicon="1" val="20" />
+        </enchant3for>
+    </skill>
 	<skill id="1364" levels="1" name="Eye of Pa'agrio" enchantGroup1="5" enchantGroup2="5">
 		<!-- Confirmed CT2.5 -->
 		<table name="#enchantMagicLvl"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>

@@ -113,6 +113,16 @@ Fix em todas as skills de clan
 #---------------------------------------#
 Fix Baium
 Fix Lindvior.java
+#---------------------------------------------------------------------------------------#
+# Fix Augment Skills: Wild Magic, Empower e Magic Barrier
+# - Adicionado Bonus igual ao buff no Empower e Magic Barrier
+# - Modificado a skill Wild Magic para que de o bonus seguindo a tabela de leveis da skill
+#---------------------------------------------------------------------------------------#
+# Fix Augment Skills: Recall, Clarity, Agillity, Kiss of Eva e Guidance
+# - Cada skill fornece o bonus de acordo com o level da skill ganha com o augment
+# - Os bonus respectivamente ganhos tem valores diferenciados
+# - Todos as skills atualizadas fornecem bonus exatamente igual ou inferior ao buff.
+#---------------------------------------------------------------------------------------#
 
 ###############################################
 #################### FIX BETA TEST ############
