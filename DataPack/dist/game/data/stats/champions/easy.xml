@@ -1,13 +1,13 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/champions.xsd">
    <champion>
    <!-- Spawn chance in percents. Sum of chances for all champions shouldn't greater, than 100% -->
-       <chance>1</chance>
+       <chance>2</chance>
        <!-- level bounds -->
        <minLvl>1</minLvl>
        <maxLvl>1</maxLvl>
        <!-- identification -->
-       <title>easy</title>
-       <glow>1</glow><!-- 1 - red or 2 - blue -->
+       <title>PkElfo - easy</title>
+       <glow>2</glow><!-- 1 - red or 2 - blue -->
        <!-- rewards multiplier section -->
        <bonusExp>1</bonusExp>
        <bonusSp>1</bonusSp>

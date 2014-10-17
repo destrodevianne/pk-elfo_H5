@@ -7,8 +7,8 @@
        <minLvl>1</minLvl>
        <maxLvl>2</maxLvl>
        <!-- identification -->
-       <title>Hard</title>
-       <glow>2</glow><!-- 1 - red or 2 - blue -->
+       <title>PkElfo - Hard</title>
+       <glow>1</glow><!-- 1 - red or 2 - blue -->
        <!-- rewards multiplier section -->
        <bonusExp>2</bonusExp>
        <bonusSp>2</bonusSp>
