@@ -9,8 +9,8 @@ import pk.elfo.gameserver.instancemanager.RaidBossPointsManager;
 import pk.elfo.gameserver.model.L2Clan;
 import pk.elfo.gameserver.taskmanager.Task;
 import pk.elfo.gameserver.taskmanager.TaskManager;
-import pk.elfo.gameserver.taskmanager.TaskTypes;
 import pk.elfo.gameserver.taskmanager.TaskManager.ExecutedTask;
+import pk.elfo.gameserver.taskmanager.TaskTypes;
 
 public class TaskRaidPointsReset extends Task
 {
@@ -86,7 +86,7 @@ public class TaskRaidPointsReset extends Task
 			}
 			
 			RaidBossPointsManager.getInstance().cleanUp();
-			_log.info("Raid Points Reset Global Task: launched.");
+			_log.info("Raid Points Redefinir Tarefa Global: iniciado.");
 		}
 	}
 	

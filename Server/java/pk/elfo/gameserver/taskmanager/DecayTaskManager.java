@@ -115,7 +115,6 @@ public class DecayTaskManager
 			ret.append(current - _decayTasks.get(actor));
 			ret.append(Config.EOL);
 		}
-		
 		return ret.toString();
 	}
 	

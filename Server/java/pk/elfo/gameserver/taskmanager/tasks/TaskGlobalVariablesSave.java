@@ -3,8 +3,8 @@ package pk.elfo.gameserver.taskmanager.tasks;
 import pk.elfo.gameserver.instancemanager.GlobalVariablesManager;
 import pk.elfo.gameserver.taskmanager.Task;
 import pk.elfo.gameserver.taskmanager.TaskManager;
-import pk.elfo.gameserver.taskmanager.TaskTypes;
 import pk.elfo.gameserver.taskmanager.TaskManager.ExecutedTask;
+import pk.elfo.gameserver.taskmanager.TaskTypes;
 
 public class TaskGlobalVariablesSave extends Task
 {

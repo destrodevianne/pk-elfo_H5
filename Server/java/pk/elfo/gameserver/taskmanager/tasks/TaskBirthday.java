@@ -16,8 +16,8 @@ import pk.elfo.gameserver.model.entity.Message;
 import pk.elfo.gameserver.model.itemcontainer.Mail;
 import pk.elfo.gameserver.taskmanager.Task;
 import pk.elfo.gameserver.taskmanager.TaskManager;
-import pk.elfo.gameserver.taskmanager.TaskTypes;
 import pk.elfo.gameserver.taskmanager.TaskManager.ExecutedTask;
+import pk.elfo.gameserver.taskmanager.TaskTypes;
 import pk.elfo.gameserver.util.Util;
 
 public class TaskBirthday extends Task
@@ -50,7 +50,6 @@ public class TaskBirthday extends Task
 		{
 			checkBirthday(lastExecDate.get(Calendar.YEAR), lastExecDate.get(Calendar.MONTH), lastExecDate.get(Calendar.DATE));
 		}
-		
 		_log.info("BirthdayManager: " + _count + " gifts sent. " + rangeDate);
 	}
 	

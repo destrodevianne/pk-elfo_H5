@@ -161,7 +161,6 @@ public final class TaskManager
 			
 			_currentTasks.remove(this);
 		}
-		
 	}
 	
 	private void initializate()
@@ -287,9 +286,7 @@ public final class TaskManager
 					}
 					_log.info(getClass().getSimpleName() + ": Task " + task.getId() + " is obsoleted.");
 				}
-				catch (Exception e)
-				{
-				}
+				catch (Exception e) { }
 				break;
 			case TYPE_SPECIAL:
 				ScheduledFuture<?> result = task.getTask().launchSpecial(task);

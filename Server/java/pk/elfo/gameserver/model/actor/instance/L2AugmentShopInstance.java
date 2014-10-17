@@ -9,6 +9,8 @@ import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.text.TextBuilder;
+
 import pk.elfo.L2DatabaseFactory;
 import pk.elfo.gameserver.datatables.ItemTable;
 import pk.elfo.gameserver.datatables.SkillTable;
@@ -22,7 +24,6 @@ import pk.elfo.gameserver.network.serverpackets.ExVariationCancelResult;
 import pk.elfo.gameserver.network.serverpackets.InventoryUpdate;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.network.serverpackets.StatusUpdate;
-import javolution.text.TextBuilder;
 
 public class L2AugmentShopInstance extends L2NpcInstance
 {

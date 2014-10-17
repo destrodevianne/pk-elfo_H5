@@ -3,8 +3,8 @@ package pk.elfo.gameserver.taskmanager.tasks;
 import pk.elfo.gameserver.model.olympiad.Olympiad;
 import pk.elfo.gameserver.taskmanager.Task;
 import pk.elfo.gameserver.taskmanager.TaskManager;
-import pk.elfo.gameserver.taskmanager.TaskTypes;
 import pk.elfo.gameserver.taskmanager.TaskManager.ExecutedTask;
+import pk.elfo.gameserver.taskmanager.TaskTypes;
 
 public class TaskOlympiadSave extends Task
 {
@@ -22,7 +22,7 @@ public class TaskOlympiadSave extends Task
 		if (Olympiad.getInstance().inCompPeriod())
 		{
 			Olympiad.getInstance().saveOlympiadStatus();
-			_log.info("Olympiad System: Data updated.");
+			_log.info("Olympiad System: Dados atualizados.");
 		}
 	}
 	

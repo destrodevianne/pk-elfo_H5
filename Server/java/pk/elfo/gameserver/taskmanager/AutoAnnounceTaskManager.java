@@ -39,7 +39,6 @@ public class AutoAnnounceTaskManager
 			{
 				a.stopAnnounce();
 			}
-			
 			_announces.clear();
 		}
 		
@@ -103,7 +102,6 @@ public class AutoAnnounceTaskManager
 		{
 			statement.setInt(1, a.getId());
 			statement.execute();
-			
 		}
 		catch (Exception e)
 		{

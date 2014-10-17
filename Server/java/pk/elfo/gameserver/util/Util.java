@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.util;
 
 import java.io.File;
@@ -45,6 +27,7 @@ import javolution.util.FastList;
 /**
  * General Utility functions related to game server.
  */
+
 public final class Util
 {
 	private static final NumberFormat ADENA_FORMATTER = NumberFormat.getIntegerInstance(Locale.ENGLISH);
@@ -173,7 +156,6 @@ public final class Util
 		{
 			return 1000000;
 		}
-		
 		return calculateDistance(obj1.getPosition().getX(), obj1.getPosition().getY(), obj1.getPosition().getZ(), obj2.getPosition().getX(), obj2.getPosition().getY(), obj2.getPosition().getZ(), includeZAxis);
 	}
 	
@@ -223,10 +205,8 @@ public final class Util
 			{
 				charArray[i + 1] = Character.toUpperCase(charArray[i + 1]);
 			}
-			
 			result.append(charArray[i]);
 		}
-		
 		return result.toString();
 	}
 	
@@ -370,7 +350,6 @@ public final class Util
 			sbString.append(strValue);
 			sbString.append(strDelim);
 		}
-		
 		String result = sbString.toString();
 		TextBuilder.recycle(sbString);
 		return result;
@@ -728,7 +707,6 @@ public final class Util
 				// Do nothing
 			}
 		}
-		
 		return ret;
 	}
 	

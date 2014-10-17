@@ -5,8 +5,8 @@ import java.util.Calendar;
 import pk.elfo.gameserver.instancemanager.SoIManager;
 import pk.elfo.gameserver.taskmanager.Task;
 import pk.elfo.gameserver.taskmanager.TaskManager;
-import pk.elfo.gameserver.taskmanager.TaskTypes;
 import pk.elfo.gameserver.taskmanager.TaskManager.ExecutedTask;
+import pk.elfo.gameserver.taskmanager.TaskTypes;
 
 public class SoIStageUpdater extends Task
 {

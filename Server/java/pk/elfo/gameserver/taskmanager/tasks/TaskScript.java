@@ -30,17 +30,17 @@ public class TaskScript extends Task
 			}
 			catch (ScriptException e)
 			{
-				_log.warning("Failed loading: " + task.getParams()[2]);
+				_log.warning("Falha ao ler: " + task.getParams()[2]);
 				L2ScriptEngineManager.getInstance().reportScriptFileError(file, e);
 			}
 			catch (Exception e)
 			{
-				_log.warning("Failed loading: " + task.getParams()[2]);
+				_log.warning("Falha ao ler: " + task.getParams()[2]);
 			}
 		}
 		else
 		{
-			_log.warning("File Not Found: " + task.getParams()[2]);
+			_log.warning("Arquivo nao encontrado: " + task.getParams()[2]);
 		}
 	}
 }

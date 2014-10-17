@@ -4,8 +4,8 @@ import pk.elfo.gameserver.SevenSigns;
 import pk.elfo.gameserver.SevenSignsFestival;
 import pk.elfo.gameserver.taskmanager.Task;
 import pk.elfo.gameserver.taskmanager.TaskManager;
-import pk.elfo.gameserver.taskmanager.TaskTypes;
 import pk.elfo.gameserver.taskmanager.TaskManager.ExecutedTask;
+import pk.elfo.gameserver.taskmanager.TaskTypes;
 
 public class TaskSevenSignsUpdate extends Task
 {
@@ -27,11 +27,11 @@ public class TaskSevenSignsUpdate extends Task
 			{
 				SevenSignsFestival.getInstance().saveFestivalData(false);
 			}
-			_log.info("SevenSigns: Data updated successfully.");
+			_log.info("SevenSigns: Dados atualizados com sucesso.");
 		}
 		catch (Exception e)
 		{
-			_log.warning(getClass().getSimpleName() + ": SevenSigns: Failed to save Seven Signs configuration: " + e.getMessage());
+			_log.warning(getClass().getSimpleName() + ": SevenSigns: Falha ao salvar configuracao de Seven Signs: " + e.getMessage());
 		}
 	}
 	

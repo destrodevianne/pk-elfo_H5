@@ -6,8 +6,8 @@ import java.sql.PreparedStatement;
 import pk.elfo.L2DatabaseFactory;
 import pk.elfo.gameserver.taskmanager.Task;
 import pk.elfo.gameserver.taskmanager.TaskManager;
-import pk.elfo.gameserver.taskmanager.TaskTypes;
 import pk.elfo.gameserver.taskmanager.TaskManager.ExecutedTask;
+import pk.elfo.gameserver.taskmanager.TaskTypes;
 
 public class TaskDailySkillReuseClean extends Task
 {

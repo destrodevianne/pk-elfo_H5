@@ -119,7 +119,6 @@ public class MultilangMsgData
 		{
 			_messages.put(lang, new HashMap<String, String>());
 		}
-		
 		_messages.get(lang).put(msgName, msgText);
 	}
 	
@@ -143,7 +142,6 @@ public class MultilangMsgData
 		{
 			return _messages.get("en").get(msgName);
 		}
-		
 		return "";
 	}
 	
@@ -165,7 +163,6 @@ public class MultilangMsgData
 				}
 			}
 		}
-		
 		return ret.isEmpty() ? null : ret;
 	}
 	
