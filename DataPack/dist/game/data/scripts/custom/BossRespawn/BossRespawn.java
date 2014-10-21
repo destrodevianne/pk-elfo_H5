@@ -69,7 +69,7 @@ public class BossRespawn extends Quest
         }
 
         tb.append("<br><img src=\"L2UI_CH3.herotower_deco\" width=256 height=32><br>");
-        tb.append("<font color=3293F3>KingServer Project</font><br>");
+        tb.append("<font color=3293F3>PkElfo Project</font><br>");
         tb.append("</center></body></html>");
 
         NpcHtmlMessage msg = new NpcHtmlMessage(NPC_ID);
