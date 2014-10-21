@@ -590,6 +590,7 @@ public class EnterWorld extends L2GameClientPacket
 		activeChar.sendPacket(SystemMessageId.WELCOME_TO_LINEAGE);
 		SevenSigns.getInstance().sendCurrentPeriodMsg(activeChar);
 		Announcements.getInstance().showAnnouncements(activeChar);
+		activeChar.sendMessage("Este servidor usa o projeto PkElfo");
 		// Information when character is logged
 		activeChar.sendMessage("Seja Bem vindo: " + activeChar.getName());
 		activeChar.sendMessage("Sua classe: " + activeChar.getClassId());
