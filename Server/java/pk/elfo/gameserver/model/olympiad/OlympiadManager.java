@@ -464,6 +464,14 @@ public class OlympiadManager
 			return false;
 		}
 		
+		if (noble.isAio())
+		{
+			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_CANNOT_JOIN_OLYMPIAD_POSSESSING_S2);
+			sm.addPcName(noble);
+			player.sendPacket(sm);
+			return false;
+		}
+		
 		if (noble.isCursedWeaponEquipped())
 		{
 			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_CANNOT_JOIN_OLYMPIAD_POSSESSING_S2);
