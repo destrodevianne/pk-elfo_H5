@@ -2211,13 +2211,16 @@
 		<node X="26324" Y="-15704" />
 	</zone>
 	<!-- Fantasy Isle Magic -->
-	<zone name="fantasy_isle_magic" type="EffectZone" shape="Cuboid" minZ="-4324" maxZ="3097">
-		<stat name="skillIdLvl" val="22300-1;" />
-		<stat name="showDangerIcon" val="false" />
-		<stat name="reuse" val="60000" />
-		<node X="-88871" Y="-77664" />
-		<node X="-43060" Y="-43491" />
-	</zone>
+	<zone name="Fantasy Isle Magic Zone" type="EffectZone" shape="Cuboid" minZ="-4324" maxZ="3097">
+        <stat name="chance" val="100" />
+        <stat name="default_enabled" val="true" />
+        <stat name="initialDelay" val="1000" />
+        <stat name="reuse" val="3000" />
+        <stat name="showDangerIcon" val="false" />
+        <stat name="skillIdLvl" val="22300-1;" />
+        <node X="-88871" Y="-77664" />
+        <node X="-43060" Y="-43491" />
+    </zone>
 	<zone name="Seed of Annihilation 1" id="60006" type="EffectZone" shape="NPoly" minZ="-10700" maxZ="-10100">
 		<stat name="maxDynamicSkillCount" val="1" />
 		<stat name="showDangerIcon" val="false" />
