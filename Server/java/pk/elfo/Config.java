@@ -350,6 +350,24 @@ public final class Config
 	public static float POLE_VS_HEAVY;
 	public static float POLE_VS_LIGHT;
 	public static float POLE_VS_ROBE;
+	public static float RAPIER_VS_HEAVY;
+	public static float RAPIER_VS_LIGHT;
+	public static float RAPIER_VS_ROBE;
+	public static float ANCIENTSWORD_VS_HEAVY;
+	public static float ANCIENTSWORD_VS_LIGHT;
+	public static float ANCIENTSWORD_VS_ROBE;
+	public static float CROSSBOW_VS_HEAVY;
+	public static float CROSSBOW_VS_LIGHT;
+	public static float CROSSBOW_VS_ROBE;
+	public static float DUALDAGGER_VS_HEAVY;
+	public static float DUALDAGGER_VS_LIGHT;
+	public static float DUALDAGGER_VS_ROBE;
+	public static float BIGBLUNT_VS_HEAVY;
+	public static float BIGBLUNT_VS_LIGHT;
+	public static float BIGBLUNT_VS_ROBE;
+	public static float BIGSWORD_VS_HEAVY;
+	public static float BIGSWORD_VS_LIGHT;
+	public static float BIGSWORD_VS_ROBE;
 	// ----------------------------------------------------------------------------------------------------//
 	// CONFIGURACOES ESPECIAIS RELACIONADAS AS RACAS //
 	// ----------------------------------------------------------------------------------------------------//
@@ -3229,6 +3247,24 @@ public final class Config
 				POLE_VS_HEAVY = Float.parseFloat(BALANCECLASS.getProperty("PoleVsHeavy", "1.00"));
 				POLE_VS_LIGHT = Float.parseFloat(BALANCECLASS.getProperty("PoleVsLight", "1.00"));
 				POLE_VS_ROBE = Float.parseFloat(BALANCECLASS.getProperty("PoleVsRobe", "1.00"));
+				RAPIER_VS_HEAVY = Float.parseFloat(BALANCECLASS.getProperty("RapierVsHeavy", "1.00"));
+				RAPIER_VS_LIGHT = Float.parseFloat(BALANCECLASS.getProperty("RapierVsLight", "1.00"));
+				RAPIER_VS_ROBE = Float.parseFloat(BALANCECLASS.getProperty("RapierVsRobe", "1.00"));
+				ANCIENTSWORD_VS_HEAVY = Float.parseFloat(BALANCECLASS.getProperty("AncientSwordVsHeavy", "1.00"));
+				ANCIENTSWORD_VS_LIGHT = Float.parseFloat(BALANCECLASS.getProperty("AncientSwordVsLight", "1.00"));
+				ANCIENTSWORD_VS_ROBE = Float.parseFloat(BALANCECLASS.getProperty("AncientSwordVsRobe", "1.00"));
+				CROSSBOW_VS_HEAVY = Float.parseFloat(BALANCECLASS.getProperty("CrossbowVsHeavy", "1.00"));
+				CROSSBOW_VS_LIGHT = Float.parseFloat(BALANCECLASS.getProperty("CrossbowVsLight", "1.00"));
+				CROSSBOW_VS_ROBE = Float.parseFloat(BALANCECLASS.getProperty("CrossbowVsRobe", "1.00"));
+				DUALDAGGER_VS_HEAVY = Float.parseFloat(BALANCECLASS.getProperty("DualDaggerVsHeavy", "1.00"));
+				DUALDAGGER_VS_LIGHT = Float.parseFloat(BALANCECLASS.getProperty("DualDaggerVsLight", "1.00"));
+				DUALDAGGER_VS_ROBE = Float.parseFloat(BALANCECLASS.getProperty("DualDaggerVsRobe", "1.00"));
+				BIGBLUNT_VS_HEAVY = Float.parseFloat(BALANCECLASS.getProperty("BigBluntVsHeavy", "1.00"));
+				BIGBLUNT_VS_LIGHT = Float.parseFloat(BALANCECLASS.getProperty("BigBluntVsLight", "1.00"));
+				BIGBLUNT_VS_ROBE = Float.parseFloat(BALANCECLASS.getProperty("BigBluntVsRobe", "1.00"));
+				BIGSWORD_VS_HEAVY = Float.parseFloat(BALANCECLASS.getProperty("BigSwordVsHeavy", "1.00"));
+				BIGSWORD_VS_LIGHT = Float.parseFloat(BALANCECLASS.getProperty("BigSwordVsLight", "1.00"));
+				BIGSWORD_VS_ROBE = Float.parseFloat(BALANCECLASS.getProperty("BigSwordVsRobe", "1.00"));
 			
 			// #########################################################################################################//
 				

@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.model.stats;
 
 import java.util.ArrayList;
@@ -979,6 +961,126 @@ public final class Formulas
 			}
 		}
 		
+        if ((target instanceof L2PcInstance) && (weapon != null) && (weapon.getItemType() == L2WeaponType.RAPIER))
+        {
+            L2Armor armor = ((L2PcInstance) target).getActiveChestArmorItem();
+            if (armor != null)
+            {
+                if (((L2PcInstance) target).isWearingHeavyArmor())
+                {
+                    damage /= Config.RAPIER_VS_HEAVY;
+                }
+                if (((L2PcInstance) target).isWearingLightArmor())
+                {
+                    damage /= Config.RAPIER_VS_LIGHT;
+                }
+                if (((L2PcInstance) target).isWearingMagicArmor())
+                {
+                    damage /= Config.RAPIER_VS_ROBE;
+                }
+            }
+        }
+
+        if ((target instanceof L2PcInstance) && (weapon != null) && (weapon.getItemType() == L2WeaponType.ANCIENTSWORD))
+        {
+            L2Armor armor = ((L2PcInstance) target).getActiveChestArmorItem();
+            if (armor != null)
+            {
+                if (((L2PcInstance) target).isWearingHeavyArmor())
+                {
+                    damage /= Config.ANCIENTSWORD_VS_HEAVY;
+                }
+                if (((L2PcInstance) target).isWearingLightArmor())
+                {
+                    damage /= Config.ANCIENTSWORD_VS_LIGHT;
+                }
+                if (((L2PcInstance) target).isWearingMagicArmor())
+                {
+                    damage /= Config.ANCIENTSWORD_VS_ROBE;
+                }
+            }
+        }
+
+        if ((target instanceof L2PcInstance) && (weapon != null) && (weapon.getItemType() == L2WeaponType.CROSSBOW))
+        {
+            L2Armor armor = ((L2PcInstance) target).getActiveChestArmorItem();
+            if (armor != null)
+            {
+                if (((L2PcInstance) target).isWearingHeavyArmor())
+                {
+                    damage /= Config.CROSSBOW_VS_HEAVY;
+                }
+                if (((L2PcInstance) target).isWearingLightArmor())
+                {
+                    damage /= Config.CROSSBOW_VS_LIGHT;
+                }
+                if (((L2PcInstance) target).isWearingMagicArmor())
+                {
+                    damage /= Config.CROSSBOW_VS_ROBE;
+                }
+            }
+        }
+
+        if ((target instanceof L2PcInstance) && (weapon != null) && (weapon.getItemType() == L2WeaponType.DUALDAGGER))
+        {
+            L2Armor armor = ((L2PcInstance) target).getActiveChestArmorItem();
+            if (armor != null)
+            {
+                if (((L2PcInstance) target).isWearingHeavyArmor())
+                {
+                    damage /= Config.DUALDAGGER_VS_HEAVY;
+                }
+                if (((L2PcInstance) target).isWearingLightArmor())
+                {
+                    damage /= Config.DUALDAGGER_VS_LIGHT;
+                }
+                if (((L2PcInstance) target).isWearingMagicArmor())
+                {
+                    damage /= Config.DUALDAGGER_VS_ROBE;
+                }
+            }
+        }
+
+        if ((target instanceof L2PcInstance) && (weapon != null) && (weapon.getItemType() == L2WeaponType.BIGBLUNT))
+        {
+            L2Armor armor = ((L2PcInstance) target).getActiveChestArmorItem();
+            if (armor != null)
+            {
+                if (((L2PcInstance) target).isWearingHeavyArmor())
+                {
+                    damage /= Config.BIGBLUNT_VS_HEAVY;
+                }
+                if (((L2PcInstance) target).isWearingLightArmor())
+                {
+                    damage /= Config.BIGBLUNT_VS_LIGHT;
+                }
+                if (((L2PcInstance) target).isWearingMagicArmor())
+                {
+                    damage /= Config.BIGBLUNT_VS_ROBE;
+                }
+            }
+        }
+
+        if ((target instanceof L2PcInstance) && (weapon != null) && (weapon.getItemType() == L2WeaponType.BIGSWORD))
+        {
+            L2Armor armor = ((L2PcInstance) target).getActiveChestArmorItem();
+            if (armor != null)
+            {
+                if (((L2PcInstance) target).isWearingHeavyArmor())
+                {
+                    damage /= Config.BIGSWORD_VS_HEAVY;
+                }
+                if (((L2PcInstance) target).isWearingLightArmor())
+                {
+                    damage /= Config.BIGSWORD_VS_LIGHT;
+                }
+                if (((L2PcInstance) target).isWearingMagicArmor())
+                {
+                    damage /= Config.BIGSWORD_VS_ROBE;
+                }
+            }
+        }
+
 		// for summon use pet weapon vuln, since they cant hold weapon
 		if (attacker.isServitor())
 		{
