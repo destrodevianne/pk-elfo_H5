@@ -599,7 +599,7 @@
         <set name="operateType" val="A1" />
         <set name="skillType" val="TELEPORT" />
         <set name="target" val="TARGET_SELF" />
-        <set name="teleCoords" val="183624,-114891,-3340" />
+        <set name="teleCoords" val="183297,-114850,-3339" />
         <cond msgId="113" addName="1">
             <not>
                 <player insideZoneId="10501, 10502, 10503" />
@@ -629,7 +629,7 @@
         <set name="operateType" val="A1" />
         <set name="skillType" val="TELEPORT" />
         <set name="target" val="TARGET_SELF" />
-        <set name="teleCoords" val="154596,121127,-3812" />
+        <set name="teleCoords" val="154396,121235,-3808" />
         <cond msgId="113" addName="1">
             <not>
                 <player insideZoneId="10501, 10502, 10503" />
