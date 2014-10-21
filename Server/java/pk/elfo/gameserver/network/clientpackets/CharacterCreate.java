@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.network.clientpackets;
 
 import java.util.List;
@@ -260,23 +242,23 @@ public final class CharacterCreate extends L2GameClientPacket
 		final L2PcTemplate template = newChar.getTemplate();
 		//spawn custom para novos jogadores
 		if (Config.SPAWN_CHAR)
-        {
-         newChar.setXYZInvisible(Config.SPAWN_X, Config.SPAWN_Y, Config.SPAWN_Z );
-        }
-        else
-        {
-         newChar.setXYZInvisible(template.getSpawnX(), template.getSpawnY(), template.getSpawnZ());
-        }
+		{
+			newChar.setXYZInvisible(Config.SPAWN_X, Config.SPAWN_Y, Config.SPAWN_Z );
+		}
+			else
+			{
+				newChar.setXYZInvisible(template.getSpawnX(), template.getSpawnY(), template.getSpawnZ());
+			}
 		//titulo para novos jogadores
 		if (Config.CHAR_TITLE)
 		{
 			newChar.setTitle(Config.ADD_CHAR_TITLE);
 			newChar.getAppearance().setTitleColor(Config.TITLE_COLOR);
 		}
-		else
-		{
-			newChar.setTitle("");
-		}
+			else
+			{
+				newChar.setTitle("");
+			}
 		//mudar cor do nome de novos jogadores
 		if (Config.COLOR_NEW_CHAR_NAME)
 		{

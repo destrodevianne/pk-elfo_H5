@@ -233,13 +233,13 @@ public class L2VillageMasterInstance extends L2NpcInstance
 			
 			if (player.isCursedWeaponEquipped())
 			{
-				player.sendMessage("You can`t change Subclass while Cursed weapon equiped!");
+				player.sendMessage("Voce nao pode mudar de subclasse estando com as espadas demoniacas!");
 				return;
 			}
 			
 			if (player.isFlyingMounted())
 			{
-				player.sendMessage("You can`t change Subclass while Flying Monted!");
+				player.sendMessage("Voce nao pode mudar de subclasse estando montado em um Pet!");
 				return;
 			}
 			

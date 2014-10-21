@@ -351,9 +351,7 @@ public class LoginServerThread extends Thread
 						return;
 					}
 				}
-				catch (Exception e)
-				{
-				}
+				catch (Exception e) {}
 			}
 			
 			try

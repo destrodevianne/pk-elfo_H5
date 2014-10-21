@@ -226,7 +226,7 @@ public final class EffectMasterHandler
 		{
 			method = loadInstance.getClass().getMethod("size");
 			Object returnVal = method.invoke(loadInstance);
-			_log.log(Level.INFO, loadInstance.getClass().getSimpleName() + ": Carregado " + returnVal + " Handlers");
+			_log.log(Level.INFO, loadInstance.getClass().getSimpleName() + ": Carregado " + returnVal );
 		}
 		catch (Exception e)
 		{

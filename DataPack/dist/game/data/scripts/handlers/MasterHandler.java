@@ -826,7 +826,7 @@ public class MasterHandler
 			{
 				method = loadInstance.getClass().getMethod("size");
 				Object returnVal = method.invoke(loadInstance);
-				_log.log(Level.INFO, loadInstance.getClass().getSimpleName() + ": " + returnVal + " Handlers");
+				_log.log(Level.INFO, loadInstance.getClass().getSimpleName() + ": " + returnVal );
 			}
 			catch (Exception e)
 			{
