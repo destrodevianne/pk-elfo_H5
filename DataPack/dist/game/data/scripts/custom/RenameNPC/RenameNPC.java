@@ -37,17 +37,29 @@ public class RenameNPC extends Quest
 		{
 			st.getPlayer().setTarget(st.getPlayer());
 			if (eventSplit.length != 2)
-				htmltext = "Digite um novo nome ou remova o espaco entre os nomes.";			
+			{
+				htmltext = "Digite um novo nome ou remova o espaco entre os nomes.";
+			}
 			else if (st.getPlayer().getLevel() < Config.RENAME_NPC_MIN_LEVEL)
+			{
 				htmltext = "Level minimo: " + String.valueOf(Config.RENAME_NPC_MIN_LEVEL);
+			}
 			else if (validItemFee(st))
+			{
 				htmltext = "Voce nao tem moedas suficientes para trocar seu nome.";
+			}
 			else if (eventSplit[1].length() < 1 || eventSplit[1].length() > 16)
+			{
 				htmltext = "Numero maximo de caracteres: 16";
+			}
 			else if (!Util.isAlphaNumeric(eventSplit[1]))
+			{
 				htmltext = "O nome deve conter apenas caracteres alfanumericos.";
+			}
 			else if (CharNameTable.getInstance().doesCharNameExist(eventSplit[1]))
+			{
 				htmltext = "O nome escolhido ja esta em uso. Escolha outro nome.";
+			}
 			else
 			{
 				try
@@ -72,7 +84,9 @@ public class RenameNPC extends Quest
 						for (L2PcInstance member : player.getParty().getPartyMembers())
 						{
 							if (member != player)
+							{
 								member.sendPacket(new PartySmallWindowAll(member, player.getParty()));
+							}
 						}
 					}
 					if (player.getClan() != null)

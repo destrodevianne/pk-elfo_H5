@@ -121,9 +121,9 @@ public class RaidbossInfo extends Quest
 		QuestState st = player.getQuestState(qn);
 
 		if (st == null)
-			(
-				return htmltext;
-			)
+		{
+			return htmltext;
+		}
 
 		if (Util.isDigit(event))
 		{
@@ -135,7 +135,6 @@ public class RaidbossInfo extends Quest
 				Location loc = RADAR.get(rbid);
 				st.addRadar(loc.getX(), loc.getY(), loc.getZ());
 			}
-				
 			st.exitQuest(true);
 		}
 		return htmltext;

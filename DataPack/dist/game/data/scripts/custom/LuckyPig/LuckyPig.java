@@ -45,7 +45,6 @@ public class LuckyPig extends AbstractNpcAI
 		_ADENAS = new FastMap<Integer, List<Long>>().shared();
 		
 		registerMobs(_MOBS, QuestEventType.ON_KILL);
-		
 	}
 	
 	@Override
@@ -99,7 +98,6 @@ public class LuckyPig extends AbstractNpcAI
 									npc.deleteMe();
 									addSpawn(LUCKY_PIG_MOB_YELLOW, x, y, z, 0, true, 5 * 60 * 1000, true);
 								}
-								
 								cancelQuestTimer("checkForAdena", npc, null);
 							}
 						}
@@ -125,7 +123,6 @@ public class LuckyPig extends AbstractNpcAI
 				onSpawn(mob);
 			}
 		}
-		
 		return super.onKill(npc, player, isPet);
 	}
 	

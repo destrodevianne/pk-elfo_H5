@@ -9,12 +9,12 @@ import pk.elfo.gameserver.network.serverpackets.UserInfo;
 
 public class ColorNpc extends Quest
 {
-    // Npc
-    private static final int NpcId = 49295; // Custom Npc
-    // Item
-    private static final int ItemId = 6673; // Festival Adena
+	// Npc
+	private static final int NpcId = 49295; // Custom Npc
+	// Item
+	private static final int ItemId = 6673; // Festival Adena
 
-      public ColorNpc(int questId, String name, String descr)
+	public ColorNpc(int questId, String name, String descr)
     {
         super(questId, name, descr);
         addStartNpc(NpcId);
@@ -36,7 +36,7 @@ public class ColorNpc extends Quest
                 st.takeItems(ItemId,1);
                 st.getPlayer().getAppearance().setTitleColor(0x009900);
                 player.sendPacket(new UserInfo(player));
-                player.sendMessage("Your title color has been changed!");
+                player.sendMessage("A cor do seu titulo foi alterada!");
                 return null;
             }
             else
@@ -52,7 +52,7 @@ public class ColorNpc extends Quest
                 st.takeItems(ItemId,1);
                 st.getPlayer().getAppearance().setTitleColor(0xff7f00);
                 player.sendPacket(new UserInfo(player));
-                player.sendMessage("Your title color has been changed!");
+                player.sendMessage("A cor do seu titulo foi alterada!");
                 return null;
             }
             else
@@ -68,7 +68,7 @@ public class ColorNpc extends Quest
                 st.takeItems(ItemId,1);
                 st.getPlayer().getAppearance().setTitleColor(0xff00ff);
                 player.sendPacket(new UserInfo(player));
-                player.sendMessage("Your title color has been changed!");
+                player.sendMessage("A cor do seu titulo foi alterada!");
                 return null;
             }
             else
@@ -84,7 +84,7 @@ public class ColorNpc extends Quest
                 st.takeItems(ItemId,1);
                 st.getPlayer().getAppearance().setTitleColor(0x00ffff);
                 player.sendPacket(new UserInfo(player));
-                player.sendMessage("Your title color has been changed!");
+                player.sendMessage("A cor do seu titulo foi alterada!");
                 return null;
             }
             else
@@ -100,7 +100,7 @@ public class ColorNpc extends Quest
                 st.takeItems(ItemId,1);
                 st.getPlayer().getAppearance().setTitleColor(0x0000ff);
                 player.sendPacket(new UserInfo(player));
-                player.sendMessage("Your title color has been changed!");
+                player.sendMessage("A cor do seu titulo foi alterada!");
                 return null;
             }
             else
@@ -116,7 +116,7 @@ public class ColorNpc extends Quest
                 st.takeItems(ItemId,1);
                 st.getPlayer().getAppearance().setTitleColor(0x0099ff);
                 player.sendPacket(new UserInfo(player));
-                player.sendMessage("Your title color has been changed!");
+                player.sendMessage("A cor do seu titulo foi alterada!");
                 return null;
             }
             else
@@ -132,7 +132,7 @@ public class ColorNpc extends Quest
                 st.takeItems(ItemId,1);
                 st.getPlayer().getAppearance().setTitleColor(0x70db93);
                 player.sendPacket(new UserInfo(player));
-                player.sendMessage("Your title color has been changed!");
+                player.sendMessage("A cor do seu titulo foi alterada!");
                 return null;
             }
             else
@@ -148,7 +148,7 @@ public class ColorNpc extends Quest
                 st.takeItems(ItemId,1);
                 st.getPlayer().getAppearance().setTitleColor(0x9f9f9f);
                 player.sendPacket(new UserInfo(player));
-                player.sendMessage("Your title color has been changed!");
+                player.sendMessage("A cor do seu titulo foi alterada!");
                 return null;
             }
             else
@@ -164,7 +164,7 @@ public class ColorNpc extends Quest
                 st.takeItems(ItemId,1);
                 st.getPlayer().getAppearance().setTitleColor(0xffff00);
                 player.sendPacket(new UserInfo(player));
-                player.sendMessage("Your title color has been changed!");
+                player.sendMessage("A cor do seu titulo foi alterada!");
                 return null;
             }
             else
@@ -190,6 +190,6 @@ public class ColorNpc extends Quest
     public static void main(String[] args)
     {
         new ColorNpc(-1, "ColorNpc", "custom");
-        _log.info("ColorNpc: Loaded successfully.");
+        _log.info("ColorNpc: Iniciado com sucesso.");
     }
 }

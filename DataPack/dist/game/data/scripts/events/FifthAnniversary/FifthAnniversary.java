@@ -150,54 +150,54 @@ public class FifthAnniversary extends Quest
 	            prize = Rnd.get(1000);
 
 	            if (prize <= 5)
-	            	(
+	            	{
 	            		st.giveItems(6662,1); // 1 - Ring of Core
-	                )
+	            	}
 	            else if (prize <= 10)
-	            	(
+	            	{
 	            		st.giveItems(8752,1); // 1 - High grade Life Stone 76
-	                )
+	            	}
 	            else if (prize <= 25)
-	            	(
+	            	{
 	            		st.giveItems(8742,1); // 1 - Mid grade Life Stone 76
-	                )
+	            	}
 	            else if (prize <= 50)
-	            	(
+	            	{
 	            		st.giveItems(9157,1); // 1 - L2day Blessed SoR
-	                )
+	            	}
 	            else if (prize <= 75)
-	            	(
+	            	{
 	            		st.giveItems(9156,1); // 1 - L2day Blessed SoE
-	                )
+	            	}
 	            else if (prize <= 100)
-	            	(
+	            	{
 	            		st.giveItems(13429,1); // 1 - Teddy Bear Hat
-	                )
+	            	}
 	            else if (prize <= 200)
-	            	(
+	            	{
 	            		st.giveItems(13430,1); // 1 - Piggy Hat
-	                )
+	            	}
 	            else if (prize <= 300)
 					(
 						st.giveItems(13431,1); // 1 - Jester Hat
-	                )
+	            	}
 	            else if (prize <= 400)
-	            	(
+	            	{
 	            		st.giveItems(13425,1); // 1 - Small Parchement Box (1x Village Soe)
-	                )
+	            	}
 	            else if (prize <= 500)
-	            	(
+	            	{
 	            		st.giveItems(13426,1); // 1 - Small Mineral Box (1x Elemental Stone)
-	                )
+	            	}
 	            else
-	            	(
+	            	{
 	            		st.giveItems(13428,1); // 1 - Small Libation Box (1x L2Day Juice)
-	                )
+	            	}
 		    }
 			else
-				(
+				{
 					htmltext = "31854-03.htm";
-		    	)
+				}
 		}
 		else if ((player != null) && event.equalsIgnoreCase("5YEARS"))
 		{
@@ -213,54 +213,54 @@ public class FifthAnniversary extends Quest
 	            prize = Rnd.get(1000);
 	            
 	            if (prize <= 5)
-	            	(
+	            	{
 	                	st.giveItems(6660,1); // 1 - Ring of Queen Ant
-	            	)
+	            	}
 	            else if (prize <= 10)
-	            	(
+	            	{
 	                	st.giveItems(8762,1); // 1 - Top grade Life Stone 76
-	            	)
+	            	}
 	            else if (prize <= 25)
-	            	(
+	            	{
 	                	st.giveItems(8752,2); // 2 - High grade Life Stones 76
-	            	)
+	            	}
 	            else if (prize <= 50)
-	            	(
+	            	{
 	                	st.giveItems(9157,2); // 2 - L2day Blessed SoRs
-	            	)
+	            	}
 	            else if (prize <= 75)
-	            	(
+	            	{
 	                	st.giveItems(9156,2); // 2 - L2day Blessed SoEs
-	            	)
+	            	}
 	            else if (prize <= 100)
-	            	(
+	            	{
 	            		st.giveItems(13429,1); // 1 - Teddy Bear Hat
-	            	)
+	            	}
 	            else if (prize <= 150)
-	            	(
+	            	{
 	                	st.giveItems(13430,1); // 1 - Piggy Hat
-	            	)
+	            	}
 	            else if (prize <= 200)
-	            	(
+	            	{
 	                	st.giveItems(13431,1); // 1 - Jester Hat
-	            	)
+	            	}
 	            else if (prize <= 300)
-	            	(
+	            	{
 	                	st.giveItems(13422,2); // 1 - Medium Parchement Box (2x Village Soes)
-	            	)
+	            	}
 	            else if (prize <= 400)
-	            	(
+	            	{
 	                	st.giveItems(13423,2); // 1 - Medium Mineral Box (2x Elemental Stones)
-	            	)
+	            	}
 	            else
-	            	(
+	            	{
 	                	st.giveItems(13424,3); // 1 - Large Libation Box (3x L2Day Juices)
-	            	)
+	            	}
 	        }
 	        else
-	        	(
+	        	{
 	        		htmltext =  "31854-03.htm";
-		    	)
+	        	}
 		}
 		else if (player != null && event.equalsIgnoreCase("GRACIA"))
 		{
@@ -275,63 +275,63 @@ public class FifthAnniversary extends Quest
 	            prize = Rnd.get(1000);
 	            
 	            if (prize <= 5)
-	            	(
+	            	{
 	                	st.giveItems(6661,1); // 1 - Earring of Orfen
-	            	)
+	            	}
 	            else if (prize <= 10)
-	            	(
+	            	{
 	                	st.giveItems(8752,1); // 1 - High grade Life Stone 76
-	            	)
+	            	}
 	            else if (prize <= 25)
-	            	(
+	            	{
 	                	st.giveItems(8742,2); // 2 - Mid grade Life Stones 76
-	            	)
+	            	}
 	            else if (prize <= 50)
-	            	(
+	            	{
 	            		st.giveItems(9157,1); // 1 - L2day Blessed SoR
-	            	)
+	            	}
 	            else if (prize <= 75)
-	            	(
+	            	{
 	            		st.giveItems(9156,1); // 1 - L2day Blessed SoE
-	            	)
+	            	}
 	            else if (prize <= 100)
-	            	(
+	            	{
 	            		st.giveItems(13429,1); // 1 - Teddy Bear Hat
-	            	)
+	            	}
 	            else if (prize <= 150)
-	            	(
+	            	{
 	            		st.giveItems(13430,1); // 1 - Piggy Hat
-	            	)
+	            	}
 	            else if (prize <= 200)
-	            	(
+	            	{
 	            		st.giveItems(13431,1); // 1 - Jester Hat
-	            	)
+	            	}
 	            else if (prize <= 300)
-	            	(
+	            	{
 	            		st.giveItems(13425,1); // 1 - Small Parchement Box (1x Village Soe)
-	            	)
+	            	}
 	            else if (prize <= 400)
-	            	(
+	            	{
 	            		st.giveItems(13426,1); // 1 - Small Mineral Box (1x Elemental Stone)
-	            	)
+	            	}
 	            else
-	            	(
+	            	{
 	            		st.giveItems(13424,2); // 1 - Medium Libation Box (2x L2Day Juices)
-	            	)
+	            	}
 	        }
 	        else
-	        	(
+	        	{
 	        		htmltext =  "31854-03.htm";
-		    	)
+	        	}
 		}
 		else if (event.equalsIgnoreCase("chat0"))
-			(
+			{
 				htmltext =  "31854.htm";
-			)
+			}
 		else if (event.equalsIgnoreCase("chat1"))
-			(
+			{
 				htmltext =  "31854-02.htm";
-			)
+			}
 		return htmltext;
 	}	
 
@@ -340,9 +340,9 @@ public class FifthAnniversary extends Quest
 	{
 		QuestState st = player.getQuestState(getName());
 		if (st == null)
-			(
+			{
 				st = this.newQuestState(player);
-			)
+			}
 		return "31854.htm";
 	}
 

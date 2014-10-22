@@ -25,23 +25,18 @@ public class Enchant extends Quest
     public static final Logger _log = Logger.getLogger(Enchant.class.getName());
 
     private final static int npcId = 36611;
-
     // Item required to enchant armor +1
     private final static int itemRequiredArmor = 3470; // This id is the Event - Glittering Medals item. You can put 57 for Adena.
     private final static int itemRequiredArmorCount = 2;
-
     // Item required to enchant jewels +1
     private final static int itemRequiredJewels = 3470;
     private final static int itemRequiredJewelsCount = 2;
-
     // Item required to enchant weapon +1
     private final static int itemRequiredWeapon = 3470;
     private final static int itemRequiredWeaponCount = 2;
-
     // Item required to enchant belt/shirt +1
     private final static int itemRequiredBeltShirt = 3470;
     private final static int itemRequiredBeltShirtCount = 1;
-    
     // Item required to add Lv 7 attribute to weapon
     private final static int itemRequiredAttrWeapon = 3470;
     private final static int itemRequiredAttrWeaponCount = 2;
@@ -84,7 +79,6 @@ public class Enchant extends Quest
         {
             return drawHtml("Esta registrado para Olimpiada "," Voce nao pode usar os meus serviços <br1> ao jogar as Olimpiadas.", enchantType);
         }
-
         return enchantType;
     }
 
@@ -213,10 +207,10 @@ public class Enchant extends Quest
             
             htmlText = enchant("enchant", enchantType, player, armorType, itemRequiredWeapon, itemRequiredWeaponCount);
         }
-        else {
+        else 
+        {
         	htmlText = "html/" + htmlText;
         }
-
         return htmlText;
     }
 
@@ -253,10 +247,7 @@ public class Enchant extends Quest
 	                                qs.takeItems(itemRequired, itemRequiredCount);
 	                                player.sendMessage("You successfully enchanted your " + item.getItem().getName() +" from +" + currentEnchant + " to +" + newEnchantLevel + "!");
 	
-	                                String htmlContent = "<center>You successfully enchanted your:<br>"+
-	                                                        "<font color=\"FF7200\">" + item.getItem().getName() + "</font><br>"+
-	                                                        "From: <font color=\"AEFF00\">+" + currentEnchant + "</font> to <font color=\"AEFF00\">+" + newEnchantLevel + "</font>"+
-	                                                    "</center>";
+	                                String htmlContent = "<center>You successfully enchanted your:<br>"+ "<font color=\"FF7200\">" + item.getItem().getName() + "</font><br>"+ "From: <font color=\"AEFF00\">+" + currentEnchant + "</font> to <font color=\"AEFF00\">+" + newEnchantLevel + "</font>"+ "</center>";
 	
 	                                return drawHtml("Congratulations!", htmlContent, enchantType);
 	                            }
@@ -276,9 +267,7 @@ public class Enchant extends Quest
                     		
                     		player.sendMessage("You successfully added " + type + " element Lv 7 to your " + item.getItem().getName() +"!");
                     		
-                            String htmlContent = "<center>You added <font color=\"AEFF00\">" + type + "</font> element Lv 7 to your:<br>"+
-                                                    "<font color=\"FF7200\">" + item.getItem().getName() + "</font>"+
-                                                "</center>";
+                            String htmlContent = "<center>You added <font color=\"AEFF00\">" + type + "</font> element Lv 7 to your:<br>"+ "<font color=\"FF7200\">" + item.getItem().getName() + "</font>"+ "</center>";
 
                             return drawHtml("Congratulations!", htmlContent, enchantType);
                     	}
@@ -302,26 +291,22 @@ public class Enchant extends Quest
                 return drawHtml("Error Enchant", "<center>Something went wrong.<br>Are equiped with the item?</center>", enchantType);
             }
 
-
             player.sendMessage("Something went wrong. Are equiped with the item?");
             return drawHtml("Error Enchant", "<center>Something went wrong.<br>Are equiped with the item?</center>", enchantType);
         }
         // If player doesn't have correct amount of required item, tell him what he needs
         else
         {
-            String content = "<center>"+
-                                "Not enough <font color=\"FF7200\">Event - Glitering Medals</font>!<br>";
+            String content = "<center>"+ "Not enough <font color=\"FF7200\">Event - Glitering Medals</font>!<br>";
 
                     if ( qs.getQuestItemsCount(itemRequired) > 0 )
                     {
-                        content += "You have " + qs.getQuestItemsCount(itemRequired) + " Glittering Medals,<br1>"+
-                                    "Need " + (itemRequiredCount - qs.getQuestItemsCount(itemRequired)) + " more.";
+                        content += "You have " + qs.getQuestItemsCount(itemRequired) + " Glittering Medals,<br1>"+ "Need " + (itemRequiredCount - qs.getQuestItemsCount(itemRequired)) + " more.";
                     }
                     else
                     {
                         content += "You need <font color=\"FF7200\">" + itemRequiredCount + " Event - Glitering Medals</font>!";
                     }
-
                     content += "</center>";
 
             return drawHtml("Not Enough Items", content, enchantType);
@@ -342,7 +327,6 @@ public class Enchant extends Quest
                 return itemInstance;
             }
         }
-
         return null;
     }
 
@@ -365,7 +349,6 @@ public class Enchant extends Quest
 
             return newEnchantLevel;
         }
-
         return -1;
     }
     
@@ -395,17 +378,7 @@ public class Enchant extends Quest
 
     public String drawHtml(String title, String content, String enchantType)
     {
-        String html = "<html>"+
-                        "<title>L2Mondial Enchanter</title>"+
-                        "<body>"+
-                            "<center><img src=\"L2UI_CH3.herotower_deco\" width=256 height=32><br>"+
-                            "<font color=\"FF9900\">" + title + "</font></center><br>"+
-                            content +
-                            "<br><br>"+
-                            "<center><a action=\"bypass -h Quest Enchant " + enchantType + "\">Go Back</a></center>"+
-                        "</body>"+
-                        "</html>";
-
+        String html = "<html>"+ "<title>L2Mondial Enchanter</title>"+ "<body>"+ "<center><img src=\"L2UI_CH3.herotower_deco\" width=256 height=32><br>"+ "<font color=\"FF9900\">" + title + "</font></center><br>"+ content + "<br><br>"+ "<center><a action=\"bypass -h Quest Enchant " + enchantType + "\">Go Back</a></center>"+ "</body>"+ "</html>";
         return html;
     }
 }

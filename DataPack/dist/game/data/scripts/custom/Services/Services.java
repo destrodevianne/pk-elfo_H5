@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- *
- * This file is part of L2J DataPack.
- *
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package custom.Services;
 
 import java.io.BufferedWriter;
@@ -35,35 +17,27 @@ import pk.elfo.gameserver.model.quest.Quest;
 import pk.elfo.gameserver.model.quest.QuestState;
 import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
 
-/**
- * @author Colet
- */
 public class Services extends Quest
 {
     public static final Logger _log = Logger.getLogger(Services.class.getName());
 
     // NPC Id
     int servicesNpc = 9013;
-
     // Noble Items
     int nobleItemId = 57;
     long nobleItemCount = 1;
-
     // PK Reduce Items
     int pkReduceItemId = 57;
     long pkReduceItemCount = 1000;
-
     // Change Name Items
     int changeNameItemId = 57;
     long changeNameItemCount = 1000000;
     boolean logNameChanges = true;
-
     // Change Clan Name Items
     int changeClanNameItemId = 57;
     long changeClanNameItemCount = 50000;
     boolean logClanNameChanges = true;
     int clanMinLevel = 5;
-
     // Clan Level Items
     int[] clanLevelItemsId =
     {
@@ -130,7 +104,6 @@ public class Services extends Quest
         {
             return "Services-Blocked.htm";
         }
-
         return "Services.htm";
     }
 
@@ -497,7 +470,6 @@ public class Services extends Quest
                 return "ClanReputationPoints.htm";
             }
         }
-
         return htmlText;
     }
 }

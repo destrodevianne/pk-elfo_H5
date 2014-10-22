@@ -24,7 +24,8 @@ public class NevitsHerald extends Quest
 	private static final int NevitsHerald = 4326;
 	private static final int[] Antharas = { 29019, 29066, 29067, 29068 };
 	private static final int Valakas = 29028;
-	private static final NpcStringId[] spam = {
+	private static final NpcStringId[] spam = 
+	{
 		NpcStringId.SHOW_RESPECT_TO_THE_HEROES_WHO_DEFEATED_THE_EVIL_DRAGON_AND_PROTECTED_THIS_ADEN_WORLD,
 		NpcStringId.SHOUT_TO_CELEBRATE_THE_VICTORY_OF_THE_HEROES,
 		NpcStringId.PRAISE_THE_ACHIEVEMENT_OF_THE_HEROES_AND_RECEIVE_NEVITS_BLESSING
@@ -49,8 +50,9 @@ public class NevitsHerald extends Quest
 	{
 		QuestState st = player.getQuestState(getName());
 		if (st == null)
+		{
 			st = newQuestState(player);
-		
+		}
 		return "4326.htm";
 	}
 	
@@ -64,7 +66,9 @@ public class NevitsHerald extends Quest
 			if (event.equalsIgnoreCase("buff"))
 			{
 				if (player.getFirstEffect(L2EffectType.NEVIT_HOURGLASS) != null)
+				{
 					return "4326-1.htm";
+				}
 				
 				npc.setTarget(player);
 				npc.doCast(SkillTable.getInstance().getInfo(23312,1));
@@ -100,19 +104,23 @@ public class NevitsHerald extends Quest
 	{
 		ExShowScreenMessage message = null;
 		if (npc.getNpcId() == Valakas)
+		{
 			//message = new ExShowScreenMessage(1900151, 10000, null);
 			message = new ExShowScreenMessage(NpcStringId.THE_EVIL_FIRE_DRAGON_VALAKAS_HAS_BEEN_DEFEATED, 2, 10000);
+		}
 		else
+		{
 			//message = new ExShowScreenMessage(1900150, 10000, null);
 			message = new ExShowScreenMessage(NpcStringId.THE_EVIL_LAND_DRAGON_ANTHARAS_HAS_BEEN_DEFEATED, 2, 10000);
-		
+		}
 		//message.setUpperEffect(true);
 			
 		 for (L2PcInstance onlinePlayer :  L2World.getInstance().getAllPlayersArray()) 
 	        { 
 	            if (onlinePlayer == null) 
+	            {
 	                continue; 
-	             
+	            }
 	            onlinePlayer.sendPacket(message); 
 	        }
 		
@@ -126,7 +134,9 @@ public class NevitsHerald extends Quest
 			{
 				L2Npc herald = addSpawn(NevitsHerald, _spawn[0], _spawn[1], _spawn[2], _spawn[3], false, 0);
 				if (herald != null)
+				{
 					spawns.add(herald);
+				}
 			}
 			startQuestTimer("despawn", 14400000, npc, killer);
 			startQuestTimer("text_spam", 3000, npc, killer);

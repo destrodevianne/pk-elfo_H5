@@ -50,13 +50,13 @@ public class TopPvpPk extends Quest
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		if (event.equalsIgnoreCase("toppvp"))
-			(
-				sendTopPVP(player);
-			)
+		{
+			sendTopPVP(player);
+		}
 		else if (event.equalsIgnoreCase("toppk"))
-			(
-				sendTopPK(player);
-			)
+		{
+			sendTopPK(player);
+		}
 		return null;
 	}
 

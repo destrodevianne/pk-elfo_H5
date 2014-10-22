@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package custom.NewbieCoupons;
 
 import pk.elfo.gameserver.datatables.MultiSell;
@@ -35,22 +17,9 @@ public class NewbieCoupons extends Quest
 	
 	private static final int COUPON_ONE = 7832;
 	private static final int COUPON_TWO = 7833;
-	
-	private static final int[] NPCs =
-	{
-		30598,
-		30599,
-		30600,
-		30601,
-		30602,
-		31076,
-		31077,
-		32135
-	};
-	
+	private static final int[] NPCs = { 30598, 30599, 30600, 30601, 30602, 31076, 31077, 32135 };
 	private static final int WEAPON_MULTISELL = 305986001;
 	private static final int ACCESORIES_MULTISELL = 305986002;
-	
 	// enable/disable coupon give
 	private static final boolean NEWBIE_COUPONS_ENABLED = true;
 	
@@ -149,7 +118,6 @@ public class NewbieCoupons extends Quest
 			}
 			htmltext = "30598-8.htm"; // you're not eligible to use warehouse
 		}
-		
 		return htmltext;
 	}
 	
@@ -161,7 +129,6 @@ public class NewbieCoupons extends Quest
 		{
 			st = newQuestState(player);
 		}
-		
 		return "30598.htm";
 	}
 	

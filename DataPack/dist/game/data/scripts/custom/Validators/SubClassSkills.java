@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package custom.Validators;
 
 import java.util.Arrays;
@@ -34,7 +16,6 @@ import javolution.util.FastList;
 /**
  * Sub-class skills validator.<br>
  * TODO: Rewrite.
- * @author DS
  */
 public final class SubClassSkills extends Quest
 {
@@ -412,12 +393,10 @@ public final class SubClassSkills extends Quest
 				{
 					continue;
 				}
-				
 				item = certItems[i];
 				Util.handleIllegalPlayerAction(player, "Invalid cert item without variable or with wrong count:" + item.getObjectId(), 0);
 			}
 		}
-		
 		return null;
 	}
 	
@@ -457,7 +436,6 @@ public final class SubClassSkills extends Quest
 				{
 					tmp = FastList.newInstance();
 				}
-				
 				tmp.add(i);
 			}
 		}
@@ -465,7 +443,6 @@ public final class SubClassSkills extends Quest
 		{
 			return null;
 		}
-		
 		final L2ItemInstance[] result = tmp.toArray(new L2ItemInstance[tmp.size()]);
 		FastList.recycle(tmp);
 		return result;

@@ -258,51 +258,51 @@ public class SquashEvent extends Quest
 	{
 		int _random = Rnd.get(100);
 		if (_random < 10)
-			(
+			{
 				spawnNext(lower, npc);
-			)
+			}
 		else if(_random < 30)
-			(
+			{
 				spawnNext(higher, npc);
-			)
+			}
 		else
-			(
+			{
 				nectarText(npc);
-			)
+			}
 	}
 	
 	private void randomSpawn(int npcId, L2Npc npc, boolean delete)
 	{
 		if(Rnd.get(100) < 10)
-			(
+			{
 				spawnNext(npcId, npc);
-			)
+			}
 		else
-			(
+			{
 				nectarText(npc);
-			)
+			}
 	}
 	
 	private void ChronoText(L2Npc npc)
 	{
 		if(Rnd.get(100) < 20)
-			(
+			{
 				npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _CHRONO_TEXT[Rnd.get(_CHRONO_TEXT.length)]));
-			)
+			}
 	}
 	private void noChronoText(L2Npc npc)
 	{
 		if(Rnd.get(100) < 20)
-			(
+			{
 				npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _NOCHRONO_TEXT[Rnd.get(_NOCHRONO_TEXT.length)]));
-			)
+			}
 	}
 	private void nectarText(L2Npc npc)
 	{
 		if(Rnd.get(100) < 30)
-			(
+			{
 				npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _NECTAR_TEXT[Rnd.get(_NECTAR_TEXT.length)]));
-			)
+			}
 	}
 	
 	private void spawnNext(int npcId, L2Npc npc)

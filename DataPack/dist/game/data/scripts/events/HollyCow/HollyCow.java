@@ -658,8 +658,8 @@ public class HollyCow extends Quest
 	{
 		new HollyCow(-1,qn,"events");
 		if (EventsConfig.HC_STARTED)
-			(
+			{
 				_log.warning("Event System: Holly Cow Event loaded ...");
-			)
+			}
 	}
 }

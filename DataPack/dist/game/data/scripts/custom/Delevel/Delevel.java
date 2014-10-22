@@ -27,7 +27,6 @@ public class Delevel extends Quest
 	private static final int KARMA = 0; // 0=don't allow karma, more=max value
 	private static final int DELAY = 60; // delay in minutes between experience toggle
 	private static final int ACCESSLEVEL = 20; // access level for experience toggle. Choose one that's not taken if the default one is
-	
 	private static final String LVL_TOO_LOW = "leveltoolow.htm";
 	private static final String READY = "ready.htm";
 	
@@ -72,7 +71,6 @@ public class Delevel extends Quest
 				statement.setInt(1, ACCESSLEVEL);
 				statement.execute();
 			}
-			
 			statement.close();
 			statement = null;
 		}
@@ -116,7 +114,6 @@ public class Delevel extends Quest
 			htmltext = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "data/scripts/custom/Delevel/" + filename);
 			htmltext = htmltext.replace("%MINLVL%", String.valueOf(MINLVL));
 		}
-		
 		return htmltext;
 	}
 	

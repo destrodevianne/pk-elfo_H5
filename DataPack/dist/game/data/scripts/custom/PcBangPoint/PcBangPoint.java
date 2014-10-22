@@ -16,6 +16,7 @@ import javolution.util.FastMap;
 /**
  * Update to HIGH FIVE
  */
+
 public class PcBangPoint extends Quest
 {
 	private static final String qn = "PcBangPoint";
@@ -221,9 +222,9 @@ public class PcBangPoint extends Quest
 		QuestState st = player.getQuestState(qn);
 		
 		if (st == null)
-			(
+			{
 				return htmltext;
-			)
+			}
 		
 		if (POINTSSKILL.containsKey(event))
 		{
@@ -434,7 +435,6 @@ public class PcBangPoint extends Quest
 				htmltext = "nopoint.htm";
 			}
 		}
-		
 		return htmltext;
 	}
 	

@@ -1,17 +1,3 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- * 
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- * 
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package custom.NpcBuffer;
 
 import static pk.elfo.gameserver.util.Util.formatAdena;
@@ -58,12 +44,9 @@ import pk.elfo.gameserver.network.serverpackets.SetupGauge;
 public class NpcBuffer extends Quest
 {
     private static final boolean DEBUG = false;
-
     private static void print(Exception e) { _log.warning(">>>"+e.toString()+"<<<"); if (DEBUG) e.printStackTrace(); }
-
     private static final String QUEST_LOADING_INFO = "NpcBuffer";
     private static final int NPC_ID = 555;
-
     private static final String TITLE_NAME = "Buffer";
     private static final boolean SCRIPT_RELOAD = Config.NpcBuffer_Reload;
     private static final boolean SMART_WINDOW = Config.NpcBuffer_SmartWindow;
@@ -103,13 +86,11 @@ public class NpcBuffer extends Quest
     private static final int CONSUMABLE_ID = Config.NpcBuffer_consumableID;
     private static final int MAX_SCHEME_BUFFS = Config.BUFFS_MAX_AMOUNT;
     private static final int MAX_SCHEME_DANCES = Config.DANCES_MAX_AMOUNT;
-
     private static final String SET_FIGHTER = "Fighter";
     private static final String SET_MAGE = "Mage";
     private static final String SET_ALL = "All";
     private static final String SET_NONE = "None";
 
-    
     private String rebuildMainHtml(QuestState st)
     {
         String MAIN_HTML_MESSAGE = "<html><head><title>" + TITLE_NAME + "</title></head><body><center><img src=\"L2UI_CH3.herotower_deco\" width=256 height=32>";
@@ -184,9 +165,7 @@ public class NpcBuffer extends Quest
         
         if (MESSAGE.length() > 0)
         {
-            MAIN_HTML_MESSAGE += "<BR1><table width=100% border=0 cellspacing=0 cellpadding=1 bgcolor=444444><tr>"
-                              +  "<td><font color=00FFFF>Buffs:</font></td><td align=right>...</td></tr></table>"
-                              +  "<BR1><table cellspacing=0 cellpadding=0>" + MESSAGE + "</table>";
+            MAIN_HTML_MESSAGE += "<BR1><table width=100% border=0 cellspacing=0 cellpadding=1 bgcolor=444444><tr>" +  "<td><font color=00FFFF>Buffs:</font></td><td align=right>...</td></tr></table>" +  "<BR1><table cellspacing=0 cellpadding=0>" + MESSAGE + "</table>";
             MESSAGE = "";
             td = 0;
         }
@@ -214,9 +193,7 @@ public class NpcBuffer extends Quest
         
         if (MESSAGE.length() > 0)
         {
-            MAIN_HTML_MESSAGE += "<BR1><table width=100% border=0 cellspacing=0 cellpadding=1 bgcolor=444444><tr>"
-                              +  "<td><font color=00FFFF>Preset:</font></td><td align=right><font color=LEVEL>" + formatAdena(BUFF_SET_PRICE) + "</font> adena</td></tr></table>"
-                              +  "<BR1><table cellspacing=0 cellpadding=0>" + MESSAGE + "</table>";
+            MAIN_HTML_MESSAGE += "<BR1><table width=100% border=0 cellspacing=0 cellpadding=1 bgcolor=444444><tr>" +  "<td><font color=00FFFF>Preset:</font></td><td align=right><font color=LEVEL>" + formatAdena(BUFF_SET_PRICE) + "</font> adena</td></tr></table>" +  "<BR1><table cellspacing=0 cellpadding=0>" + MESSAGE + "</table>";
             MESSAGE = "";
             td = 0;
         }
@@ -350,7 +327,9 @@ public class NpcBuffer extends Quest
             act.setInt(1, id);
             ResultSet rs = act.executeQuery();
             if (rs.next())
+            {
                 val = rs.getString("buffType");
+            }
         }
         catch (SQLException e)
         {
@@ -586,9 +565,7 @@ public class NpcBuffer extends Quest
             }
             HTML_MESSAGE += "</table>";
         }
-
-        HTML_MESSAGE += "<br><button value=\"Back\" action=\"bypass -h Quest " + QUEST_LOADING_INFO + " redirect main 0 0\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">"
-                     +  "<br><font color=303030>" + TITLE_NAME + "</font></center></body></html>";
+        HTML_MESSAGE += "<br><button value=\"Back\" action=\"bypass -h Quest " + QUEST_LOADING_INFO + " redirect main 0 0\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">" +  "<br><font color=303030>" + TITLE_NAME + "</font></center></body></html>";
         return HTML_MESSAGE;
     }
 

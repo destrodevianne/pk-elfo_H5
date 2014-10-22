@@ -32,47 +32,46 @@ public class SlotMachine extends Quest
 
        public SlotMachine(int questId, String name, String descr)
        {
-               super(questId, name, descr);
-               loadConfigs();
-               addStartNpc(npcid);
-               addTalkId(npcid);
-               addFirstTalkId(npcid); 
+    	   super(questId, name, descr);
+    	   loadConfigs();
+    	   addStartNpc(npcid);
+    	   addTalkId(npcid);
+    	   addFirstTalkId(npcid); 
        }
       
        @Override
        public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
        {
-               if (npc.getNpcId() == npcid && event.equals("play") && checkstatus(player))
+    	   if (npc.getNpcId() == npcid && event.equals("play") && checkstatus(player))
                {
-                       for (int[] i : feed)
-                       {
-                               if(player.getInventory().getItemByItemId(i[0]) == null || (player.getInventory().getItemByItemId(i[0]) != null && player.getInventory().getItemByItemId(i[0]).getCount() < i[1]))
-                               {
-                                       player.sendMessage("Voce nao tem itens suficientes.");
-                                       return null;
-                               }
-                       }
+    		   for (int[] i : feed)
+    		   {
+    			   if(player.getInventory().getItemByItemId(i[0]) == null || (player.getInventory().getItemByItemId(i[0]) != null && player.getInventory().getItemByItemId(i[0]).getCount() < i[1]))
+    			   {
+    				   player.sendMessage("Voce nao tem itens suficientes.");
+    				   return null;
+    			   }
+    		   }
                       
-                       for (int[] i : feed)
-                       {
-                               player.destroyItem("SlotMachineConsumition", player.getInventory().getItemByItemId(i[0]).getObjectId(), i[1], null, false);
-                       }
+    		   for (int[] i : feed)
+    		   {
+    			   player.destroyItem("SlotMachineConsumition", player.getInventory().getItemByItemId(i[0]).getObjectId(), i[1], null, false);
+    		   }
                       
-                       try
-                       {
-                               for (int[] feeds : feed)
-                               {
-                                       player.sendMessage("Consumido: "+feeds[1]+" de "+ItemTable.getInstance().createDummyItem(feeds[0]).getItemName()+" por SlotMachine.");
-                               }      
-      
-                               run(player);
-                       }
-                       catch (InterruptedException e)
-                       {
-                               e.printStackTrace();
-                       }
+    		   try
+    		   {
+    			   for (int[] feeds : feed)
+    			   {
+    				   player.sendMessage("Consumido: "+feeds[1]+" de "+ItemTable.getInstance().createDummyItem(feeds[0]).getItemName()+" por SlotMachine.");
+    			   }      
+    			   run(player);
+    		   }
+    		   catch (InterruptedException e)
+    		   {
+    			   e.printStackTrace();
+    		   }
                }
-               return null;
+    	   return null;
        }
       
        void checkresult(L2PcInstance player)
@@ -411,95 +410,22 @@ public class SlotMachine extends Quest
       
        void showpage(L2PcInstance activeChar, String a, String b, String c)
        {
-               NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
-               TextBuilder replyMSG = new TextBuilder("<html><title>"+servername+" Evento Slot Machine</title><body>");
-               replyMSG.append("<center><img src=\"l2ui.squaregray\" width=290 height=1></center>");
-        replyMSG.append("<center>" +
-        "<table width=270 cellpadding=0 cellspacing=0>" +
-               "<tr>" +
-                       "<td width=270>" +     
-                               "<table width=270  height=50 cellspacing=0 cellpadding=0>" +
-                                       "<tr>");
-               replyMSG.append("<td width=45>" +
-                                                       "<center><img src=br_cashtex.item.br_cash_rune_of_rp_i00 width=32 height=32></center>" +
-                                               "</td>");
-               replyMSG.append("<td width=170>" +                     
-                                       "<center><font color=af9f47>Menu Principal Slot Machine</font></center>");
-               replyMSG.append("</td>" +
-                                               "<td width=32>" +
-                                               "<img src=br_cashtex.item.br_cash_rune_of_rp_i00 width=32 height=32>" +
-                                               "</td>" +
-                               "</tr>" +
-                               "</table>" +
-                              
-                                       "<center><img src=\"l2ui.squaregray\" width=290 height=1></center><br>" +
-                              
-                               "<table width=270 height=30 bgcolor=5b574c cellspacing=0 cellpadding=7>" +
-                                       "<tr>" +
-                                               "<td valign=top>" +
-                                                       "<table width=270 cellspacing=0 cellpadding=0>" +
-                                                               "<tr>");
-                                       replyMSG.append("<td><center>Jogando com Slot Machine...</center>" +
-                                                                       "</td>" +
-                                                               "</tr>" +
-                                                       "</table>" +
-                                               "</td>" +
-                                       "</tr>" +
-                              "</table>");
-  
-                               replyMSG.append("<br><center><img src=\"l2ui.squaregray\" width=290 height=1></center><br>" +
-                              
-                               "<table width=270 height=30 cellpadding=0 cellspacing=0 valign=top>" +
-                                       "<tr>" +
-                                               "<td>" +
-                                                       "<table width=270 height=40 bgcolor=090908 cellspacing=0 cellpadding=7>" +
-                                                               "<tr>" +
-                                                                       "<td valign=top>" +
-                                                                               "<table width=270 cellspacing=0 cellpadding=0>" +
-                                                                                       "<tr>");
-                                                                       replyMSG.append("<td height=24 valign=top>" +
-                                                                                                       "<center>" +
-                                                                                                       "<table cellspacing=-1>" +
-                                                                                                               "<tr>" +
-                                                                                                                       "<td><img src=\"icon.etc_dice_"+a+"_i00\" " +
-                                                                                                                               "width=32 height=32>" +
-                                                                                                                       "</td>" +
-                                                                                                                       "<td>" +
-                                                                                                                               "<img src=\"icon.etc_dice_"+b+"_i00\" width=32 height=32>" +
-                                                                                                                       "</td>" +
-                                                                                                                       "<td>" +
-                                                                                                                               "<img src=\"icon.etc_dice_"+c+"_i00\" width=32 height=32>" +
-                                                                                                                       "</td>" +
-                                                                                                               "</tr>" +
-                                                                                                       "</table>" +
-                                                                                                       "</center><br><br>");
-                                                                       replyMSG.append("</td><br>" +
-                                                                               "<br></tr>" +
-                                                                               "</table>" +
-                                                                       "</td>" +
-                                                               "</tr>" +
-                                                       "</table>" +
-                                               "</td>" +
-                                       "</tr>" +
-                               "</table>" +
-                              
-                               "<br><br><center><img src=\"l2ui.squaregray\" width=290 height=1></center><br>");
-        
-        replyMSG.append("<center><table width=270>" +
-                                                               "<tr>" +
-                                                                       "<td width=270>" +
-                                                                               "<center><font color=444444>By PkElfo</color><br>" +
-                                                                               "</center>" +
-                                                                       "</td>" +
-                                                               "</tr>" +
-                                                       "</table></center>");
-        replyMSG.append("</tr>" +
-                       "</td>" +
-               "</table>" +
-               "</center>");
-               replyMSG.append("</body></html>");
-        adminReply.setHtml(replyMSG.toString());
-        activeChar.sendPacket(adminReply);            
+    	   NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
+    	   TextBuilder replyMSG = new TextBuilder("<html><title>"+servername+" Evento Slot Machine</title><body>");
+    	   replyMSG.append("<center><img src=\"l2ui.squaregray\" width=290 height=1></center>");
+    	   replyMSG.append("<center>" + "<table width=270 cellpadding=0 cellspacing=0>" + "<tr>" + "<td width=270>" + "<table width=270  height=50 cellspacing=0 cellpadding=0>" + "<tr>");
+    	   replyMSG.append("<td width=45>" + "<center><img src=br_cashtex.item.br_cash_rune_of_rp_i00 width=32 height=32></center>" + "</td>");
+    	   replyMSG.append("<td width=170>" + "<center><font color=af9f47>Menu Principal Slot Machine</font></center>");
+    	   replyMSG.append("</td>" + "<td width=32>" + "<img src=br_cashtex.item.br_cash_rune_of_rp_i00 width=32 height=32>" + "</td>" + "</tr>" + "</table>" + "<center><img src=\"l2ui.squaregray\" width=290 height=1></center><br>" + "<table width=270 height=30 bgcolor=5b574c cellspacing=0 cellpadding=7>" + "<tr>" + "<td valign=top>" + "<table width=270 cellspacing=0 cellpadding=0>" + "<tr>");
+    	   replyMSG.append("<td><center>Jogando com Slot Machine...</center>" + "</td>" + "</tr>" + "</table>" + "</td>" + "</tr>" + "</table>");
+    	   replyMSG.append("<br><center><img src=\"l2ui.squaregray\" width=290 height=1></center><br>" + "<table width=270 height=30 cellpadding=0 cellspacing=0 valign=top>" + "<tr>" + "<td>" + "<table width=270 height=40 bgcolor=090908 cellspacing=0 cellpadding=7>" + "<tr>" + "<td valign=top>" + "<table width=270 cellspacing=0 cellpadding=0>" + "<tr>");
+    	   replyMSG.append("<td height=24 valign=top>" + "<center>" + "<table cellspacing=-1>" + "<tr>" + "<td><img src=\"icon.etc_dice_"+a+"_i00\" " + "width=32 height=32>" + "</td>" + "<td>" + "<img src=\"icon.etc_dice_"+b+"_i00\" width=32 height=32>" + "</td>" + "<td>" + "<img src=\"icon.etc_dice_"+c+"_i00\" width=32 height=32>" + "</td>" + "</tr>" + "</table>" + "</center><br><br>");
+    	   replyMSG.append("</td><br>" + "<br></tr>" + "</table>" + "</td>" + "</tr>" + "</table>" + "</td>" + "</tr>" + "</table>" + "<br><br><center><img src=\"l2ui.squaregray\" width=290 height=1></center><br>");
+    	   replyMSG.append("<center><table width=270>" + "<tr>" + "<td width=270>" + "<center><font color=444444>By PkElfo</color><br>" + "</center>" + "</td>" + "</tr>" + "</table></center>");
+    	   replyMSG.append("</tr>" + "</td>" + "</table>" + "</center>");
+    	   replyMSG.append("</body></html>");
+    	   adminReply.setHtml(replyMSG.toString());
+    	   activeChar.sendPacket(adminReply);            
        }
       
        void showmain(L2PcInstance activeChar)
