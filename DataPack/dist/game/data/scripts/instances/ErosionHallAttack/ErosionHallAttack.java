@@ -1087,7 +1087,7 @@ public class ErosionHallAttack extends Quest
 		
 		if (npcId == MOUTHOFEKIMUS)
 		{
-			enterInstance(player, "ErosionHallAttack.xml", ENTER_TELEPORT);
+			enterInstance(player, "[035] ErosionHallAttack.xml", ENTER_TELEPORT);
 			return "";
 		}
 		return "";

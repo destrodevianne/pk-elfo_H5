@@ -1168,7 +1168,7 @@ public class HeartInfinityAttack extends Quest
 		
 		if (npcId == ABYSSGAZE)
 		{
-			enterInstance(player, "HeartInfinityAttack.xml", ENTER_TELEPORT);
+			enterInstance(player, "[037] HeartInfinityAttack.xml", ENTER_TELEPORT);
 		}
 		return "";
 	}

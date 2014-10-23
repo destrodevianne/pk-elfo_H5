@@ -1321,7 +1321,7 @@ public class HeartInfinityDefence extends Quest
 		
 		if (npcId == ABYSSGAZE)
 		{
-			enterInstance(player, "GraciaContinents/HeartInfinityDefence.xml", ENTER_TELEPORT);
+			enterInstance(player, "[039] HeartInfinityDefence.xml", ENTER_TELEPORT);
 		}
 		return "";
 	}
@@ -1575,6 +1575,6 @@ public class HeartInfinityDefence extends Quest
 	
 	public static void main(String[] args)
 	{
-		new HeartInfinityDefence(-1, HeartInfinityDefence.class.getSimpleName(), "zones/GraciaContinents/");
+		new HeartInfinityDefence(-1, HeartInfinityDefence.class.getSimpleName(), "instances");
 	}
 }
