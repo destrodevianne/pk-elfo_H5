@@ -7,7 +7,6 @@ import javolution.util.FastList;
 import pk.elfo.Config;
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.instancemanager.InstanceManager;
-import pk.elfo.gameserver.instancemanager.WalkingManager;
 import pk.elfo.gameserver.model.L2Party;
 import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.Location;
@@ -911,12 +910,10 @@ public class HeartInfinityDefence extends Quest
 			1
 		}
 	};
-	
-	private static final int[] _route =
-	{
-		46,
-		47
-	};
+	// TODO:
+	/*
+	 * private static final int[] _route = { 46, 47 };
+	 */
 	
 	protected static int[][] SOULWAGON_SPAWN =
 	{
@@ -1110,8 +1107,8 @@ public class HeartInfinityDefence extends Quest
 		
 		instanceId = InstanceManager.getInstance().createDynamicInstance(template);
 		world = new HIDWorld();
-		world.setInstanceId(instanceId);
 		world.setTemplateId(INSTANCEID);
+		world.setInstanceId(instanceId);
 		world.setStatus(0);
 		InstanceManager.getInstance().addWorld(world);
 		
@@ -1324,7 +1321,7 @@ public class HeartInfinityDefence extends Quest
 		
 		if (npcId == ABYSSGAZE)
 		{
-			enterInstance(player, "[039] HeartInfinityDefence.xml", ENTER_TELEPORT);
+			enterInstance(player, "GraciaContinents/HeartInfinityDefence.xml", ENTER_TELEPORT);
 		}
 		return "";
 	}
@@ -1349,11 +1346,10 @@ public class HeartInfinityDefence extends Quest
 		return super.onAggroRangeEnter(npc, player, isSummon);
 	}
 	
-	@SuppressWarnings("null")
 	@Override
 	public final String onSpawn(L2Npc npc)
 	{
-		if ((npc != null) && Util.contains(NOTMOVE, npc.getNpcId()))
+		if (Util.contains(NOTMOVE, npc.getNpcId()))
 		{
 			npc.setIsNoRndWalk(true);
 			npc.setIsImmobilized(true);
@@ -1364,10 +1360,10 @@ public class HeartInfinityDefence extends Quest
 		{
 			if (npc.getNpcId() == SOULWAGON)
 			{
-				int route = _route[Rnd.get(0, _route.length - 1)];
-				WalkingManager.getInstance().startMoving(npc, route);
+				// TODO:
+				// int route = _route[Rnd.get(0, _route.length - 1)];
+				// WalkingManager.getInstance().startMoving(npc, route);
 				((L2MonsterInstance) npc).setPassive(true);
-				// Mobs not correct walking
 			}
 		}
 		return super.onSpawn(npc);
@@ -1508,7 +1504,6 @@ public class HeartInfinityDefence extends Quest
 		}
 	}
 	
-	@SuppressWarnings("null")
 	protected void conquestConclusion(HIDWorld world)
 	{
 		if (world.timerTask != null)
@@ -1527,24 +1522,23 @@ public class HeartInfinityDefence extends Quest
 		}
 		
 		broadCastPacket(world, new ExShowScreenMessage(NpcStringId.YOU_HAVE_FAILED_AT_S1_S2_THE_INSTANCE_WILL_SHORTLY_EXPIRE, 2, 8000));
-		if (world != null)
+		
+		conquestEnded = true;
+		final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
+		if (inst != null)
 		{
-			conquestEnded = true;
-			final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
-			if (inst != null)
+			inst.removeNpcs();
+			if (inst.getPlayers().isEmpty())
 			{
-				inst.removeNpcs();
-				if (inst.getPlayers().isEmpty())
-				{
-					inst.setDuration(5 * 60000);
-				}
-				else
-				{
-					inst.setDuration(5 * 60000);
-					inst.setEmptyDestroyTime(5 * 60000);
-				}
+				inst.setDuration(5 * 60000);
+			}
+			else
+			{
+				inst.setDuration(5 * 60000);
+				inst.setEmptyDestroyTime(5 * 60000);
 			}
 		}
+		
 	}
 	
 	@Override
@@ -1581,6 +1575,6 @@ public class HeartInfinityDefence extends Quest
 	
 	public static void main(String[] args)
 	{
-		new HeartInfinityDefence(-1, HeartInfinityDefence.class.getSimpleName(), "instances");
+		new HeartInfinityDefence(-1, HeartInfinityDefence.class.getSimpleName(), "zones/GraciaContinents/");
 	}
 }

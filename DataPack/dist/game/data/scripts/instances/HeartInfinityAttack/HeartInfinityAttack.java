@@ -11,8 +11,8 @@ import pk.elfo.Config;
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.instancemanager.InstanceManager;
-import pk.elfo.gameserver.instancemanager.SoIManager;
 import pk.elfo.gameserver.instancemanager.ZoneManager;
+import pk.elfo.gameserver.instancemanager.SoIManager;
 import pk.elfo.gameserver.model.L2Party;
 import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.Location;
@@ -984,8 +984,8 @@ public class HeartInfinityAttack extends Quest
 		
 		instanceId = InstanceManager.getInstance().createDynamicInstance(template);
 		world = new HIAWorld();
-		world.setInstanceId(instanceId);
 		world.setTemplateId(INSTANCEID);
+		world.setInstanceId(instanceId);
 		world.setStatus(0);
 		InstanceManager.getInstance().addWorld(world);
 		
@@ -1168,7 +1168,7 @@ public class HeartInfinityAttack extends Quest
 		
 		if (npcId == ABYSSGAZE)
 		{
-			enterInstance(player, "[037] HeartInfinityAttack.xml", ENTER_TELEPORT);
+			enterInstance(player, "HeartInfinityAttack.xml", ENTER_TELEPORT);
 		}
 		return "";
 	}
@@ -1233,11 +1233,10 @@ public class HeartInfinityAttack extends Quest
 		return super.onAttack(npc, attacker, damage, isSummon, skill);
 	}
 	
-	@SuppressWarnings("null")
 	@Override
 	public final String onSpawn(L2Npc npc)
 	{
-		if ((npc != null) && Util.contains(NOTMOVE, npc.getNpcId()))
+		if (Util.contains(NOTMOVE, npc.getNpcId()))
 		{
 			npc.setIsNoRndWalk(true);
 			npc.setIsImmobilized(true);
@@ -1508,7 +1507,6 @@ public class HeartInfinityAttack extends Quest
 		}, 10000);
 	}
 	
-	@SuppressWarnings("null")
 	protected void conquestConclusion(HIAWorld world)
 	{
 		if (world.timerTask != null)
@@ -1517,22 +1515,19 @@ public class HeartInfinityAttack extends Quest
 		}
 		
 		broadCastPacket(world, new ExShowScreenMessage(NpcStringId.CONGRATULATIONS_YOU_HAVE_SUCCEEDED_AT_S1_S2_THE_INSTANCE_WILL_SHORTLY_EXPIRE, 2, 8000));
-		if (world != null)
+		conquestEnded = true;
+		final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
+		if (inst != null)
 		{
-			conquestEnded = true;
-			final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
-			if (inst != null)
+			inst.removeNpcs();
+			if (inst.getPlayers().isEmpty())
 			{
-				inst.removeNpcs();
-				if (inst.getPlayers().isEmpty())
-				{
-					inst.setDuration(5 * 60000);
-				}
-				else
-				{
-					inst.setDuration(5 * 60000);
-					inst.setEmptyDestroyTime(5 * 60000);
-				}
+				inst.setDuration(5 * 60000);
+			}
+			else
+			{
+				inst.setDuration(5 * 60000);
+				inst.setEmptyDestroyTime(5 * 60000);
 			}
 		}
 	}
