@@ -31,20 +31,20 @@ public class BladeOtis extends AbstractNpcAI
 		int x = player.getX();
 		int y = player.getY();
 		if ((_guardSpawns.get(objId) != null) && (_guardSpawns.get(objId) >= 6))
-			(
-					return null;
-			)
+		{
+			return null;
+		}
 		if (event.equalsIgnoreCase("time_to_spawn"))
 		{
 			L2Npc guard = addSpawn(GUARD, x+Rnd.get(-20,50), y+Rnd.get(-20,50), npc.getZ(), 0, false, 0, false, npc.getInstanceId());
 			if (_guardSpawns.get(objId) != null)
-				(
-						_guardSpawns.put(objId, _guardSpawns.get(objId)+1);
-				)
+			{
+				_guardSpawns.put(objId, _guardSpawns.get(objId)+1);
+			}
 			else
-				(
-						_guardSpawns.put(objId, 1);
-				)
+			{
+				_guardSpawns.put(objId, 1);
+			}
 			_guardMaster.put(guard, npc);
 			guard.setTarget(player);
 			((L2Attackable)npc).addDamageHate(player,0,999);
@@ -60,19 +60,19 @@ public class BladeOtis extends AbstractNpcAI
 		int maxHp = npc.getMaxHp();
 		double nowHp = npc.getStatus().getCurrentHp();
 		if (npcId == BLADEO)
-			(
-					if (nowHp < maxHp*0.5)
+		{
+			if (nowHp < maxHp*0.5)
+				{
+					if (_guardSpawns.get(objId) == null || _guardSpawns.get(objId) == 0)
 					{
-						if (_guardSpawns.get(objId) == null || _guardSpawns.get(objId) == 0)
-							(
-									this.startQuestTimer("time_to_spawn", 1, npc, player);
-							)
-						else if (_guardSpawns.get(objId) < 6)
-							(
-									this.startQuestTimer("time_to_spawn", 10000, npc, player);
-							)
-					)
-			}
+						this.startQuestTimer("time_to_spawn", 1, npc, player);
+					}
+					else if (_guardSpawns.get(objId) < 6)
+					{
+						this.startQuestTimer("time_to_spawn", 10000, npc, player);
+					}
+				}
+		}
 		return super.onAttack(npc, player, damage, isPet);
 	}
 
@@ -87,18 +87,18 @@ public class BladeOtis extends AbstractNpcAI
 			{
 				L2Npc master = _guardMaster.get(npc);
 				if ((_guardSpawns.get(master.getObjectId()) != null) && (_guardSpawns.get(master.getObjectId()) > 0))
-					(
-							_guardSpawns.put(master.getObjectId(), _guardSpawns.get(master.getObjectId())-1);
-					)
+				{
+					_guardSpawns.put(master.getObjectId(), _guardSpawns.get(master.getObjectId())-1);
+				}
 				_guardMaster.remove(npc);
 			}
 		}
 		else if (npcId == BLADEO)
 		{
 			if (_guardSpawns.containsKey(objId))
-				(
-					_guardSpawns.remove(objId);
-				)
+			{
+				_guardSpawns.remove(objId);
+			}
 			for (L2Npc i : _guardMaster.keySet())
 			{
 				if ((_guardMaster.get(i) != null) && (npc == _guardMaster.get(i)))

@@ -474,7 +474,7 @@ public class HollyCow extends Quest
 						if (Rnd.get(1,10) > 6)
 						{
 							st.set("chance","0");
-							player.sendMessage("I eat too much .... prepare for fight");
+							player.sendMessage("I eat too much .... prepare-se para lutar");
 							htmltext = "";
 							npc.deleteMe();
 							st.addSpawn(Head_Bulk, DespawnDelay);								
@@ -526,7 +526,7 @@ public class HollyCow extends Quest
 					else
 					{
 						st.set("chance","0");
-						player.sendMessage("This hurt me ... help");
+						player.sendMessage("This hurt me ... ajuda");
 						htmltext = "";
 						npc.deleteMe();
 						st.addSpawn(Head_Bulk, DespawnDelay);
@@ -658,8 +658,8 @@ public class HollyCow extends Quest
 	{
 		new HollyCow(-1,qn,"events");
 		if (EventsConfig.HC_STARTED)
-			{
-				_log.warning("Event System: Holly Cow Event loaded ...");
-			}
+		{
+			_log.warning("Sistema de Evento: Evento Holly Cow iniciado.");
+		}
 	}
 }

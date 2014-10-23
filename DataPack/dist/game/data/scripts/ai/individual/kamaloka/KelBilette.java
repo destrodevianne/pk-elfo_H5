@@ -42,9 +42,9 @@ public class KelBilette extends AbstractNpcAI
 			npc.doCast(SkillTable.getInstance().getInfo(5203, 6));
 		}
 		else if (event.equalsIgnoreCase("time_to_spawn"))
-			(
-					addSpawn(GUARD, x + 100, y + 50, npc.getZ(), 0, false, 0, false, npc.getInstanceId());
-			)
+		{
+			addSpawn(GUARD, x + 100, y + 50, npc.getZ(), 0, false, 0, false, npc.getInstanceId());
+		}
 		return "";
 	}
 
@@ -61,16 +61,18 @@ public class KelBilette extends AbstractNpcAI
 				_isAlreadyStarted = true;
 			}
 			if (_isAlreadyStarted == true)
-				(
-						return "";
-				)
+			{
+				return "";
+			}
 			if (_isAlreadySpawned == false)
 			{
 				startQuestTimer("time_to_spawn", 10000, npc, player);
 				_isAlreadySpawned = true;
 			}
 			if (_isAlreadySpawned == true)
+			{
 				return "";
+			}
 		}
 		return "";
 	}
@@ -81,9 +83,9 @@ public class KelBilette extends AbstractNpcAI
 		int npcId = npc.getNpcId();
 
 		if (npcId == GUARD)
-			(
-					_isAlreadySpawned = true;
-			)
+		{
+			_isAlreadySpawned = true;
+		}
 		else if (npcId == KEL)
 		{
 			cancelQuestTimer("time_to_spawn", npc, player);

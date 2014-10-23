@@ -2,3 +2,14 @@ Parei de traduzir em Server/java/king/server/loginserver/FloodProtectedListerner
 mudar spawn dos npcs dos eventos Last Hero e Hide and Seek
 continuar mudança do spawn do npc do evento master enchanting
 
+
+Ajustar os itens de quests "gato amigo"
+Adicionar itens no Npc Olf Adams em Rune
+Ajustar a multisell do evento "event medal" - falta muitos itens na lista
+traduzir html da GK de giran
+traduzir html do npc loteria
+retirar htmls de assinatura do en e passar para o pt
+diminuri a quantidade de buffs que o cancel da
+verificar as skills de cancel dos boss
+aumentar o delay das skills de kamael
+adicionar frutas do manor para vender no gato

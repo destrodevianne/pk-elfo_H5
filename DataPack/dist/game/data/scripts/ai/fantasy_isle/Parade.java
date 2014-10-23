@@ -4,18 +4,20 @@ import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.concurrent.ScheduledFuture;
 
+import javolution.util.FastList;
+import ai.npc.AbstractNpcAI;
+
 import pk.elfo.gameserver.GameTimeController;
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.model.L2CharPosition;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
-import javolution.util.FastList;
-import ai.npc.AbstractNpcAI;
 
 /**
  * Fantasy Isle Parade
  */
+
 public class Parade extends AbstractNpcAI
 {
 	private static final boolean DEBUG = true;
@@ -33,70 +35,59 @@ public class Parade extends AbstractNpcAI
 		32384,
 		32383,
 		32382,
-		
 		32386,
 		32387,
 		32388,
 		32389,
 		32390,
-
 		32391,
 		32392,
 		32393,
 		32394,
 		32395,
-		
 		32396,
 		32397,
 		32398,
 		32399,
 		32400,
-		
 		32401,
 		32402,
 		32403,
 		32404,
-		
 		32405,
 		32406,
 		32407,
 		32408,
-		
 		32409,
 		32411,
 		32412,
 		32413,
 		32414,
 		32415,
-		
 		32416,
 		32417,
 		32418,
 		32419,
 		32420,
-		
 		32421,
 		32422,
 		32423,
 		32429,
 		32430,
-		
 		32447,
 		32448,
 		32449,
 		32450,
-		
 		32451,
 		32452,
 		32453,
 		32454,
 		32455,
 		32456,
-		
 		0,
 		0,
 		0,
-		32415,
+		32415
 	};
 	
 	//(Northbound 270 degrees) Route 1
@@ -114,14 +105,11 @@ public class Parade extends AbstractNpcAI
 	//(To 315 degrees northeast) Route 5
 	private final int[][] START5 = {{-57233, -53554, -2015, 57344},{-57290, -53610, -2015, 57344},{-57346, -53667, -2015, 57344}};
 	private final int[][] GOAL5  = {{-55338, -55435, -2015, 57344},{-55395, -55491, -2015, 57344},{-55451, -55547, -2015, 57344}};
-	
 	protected final int[][][] START = { START1, START2, START3, START4, START5 };
 	protected final int[][][] GOAL  = { GOAL1, GOAL2, GOAL3, GOAL4, GOAL5 };
-	
 	protected ScheduledFuture<?> spawnTask;
 	protected ScheduledFuture<?> deleteTask;
 	protected ScheduledFuture<?> cleanTask;
-	
 	protected int npcIndex;
 	protected FastList<L2Npc> spawns;
 	
@@ -150,7 +138,7 @@ public class Parade extends AbstractNpcAI
 		if (DEBUG)
 		{
 			SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm");
-			_log.info("Fantasy Isle: Parade script starting at " + format.format(System.currentTimeMillis() + diff) + " and is scheduled each next " + (cycle / 3600000) + " hours.");
+			_log.info("Fantasy Isle: Parade script a partir de " + format.format(System.currentTimeMillis() + diff) + " e esta programado cada lado " + (cycle / 3600000) + " horas.");
 		}
 		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Start(), diff, cycle);
 	}
@@ -160,10 +148,9 @@ public class Parade extends AbstractNpcAI
 		int now = GameTimeController.getGameTicks() * 60 / 100;
 		int dd = (hh * 3600 + mm * 60 + ss) - (now % 86400);
 		if (dd < 0)
-			(
-					dd += 86400;
-			)
-		
+		{
+			dd += 86400;
+		}
 		return dd * 1000L / 6L;
 	}
 	
@@ -193,9 +180,9 @@ public class Parade extends AbstractNpcAI
 				}
 				int npcId = ACTORS[npcIndex++];
 				if (npcId == 0)
-					(
-							continue;
-					)
+				{
+					continue;
+				}
 				for (int route = 0; route < 5; ++route)
 				{ // TODO:Provisional
 					int[] start = START[route][i];
@@ -231,9 +218,9 @@ public class Parade extends AbstractNpcAI
 					}
 				}
 				if (spawns.size() == 0)
-					(
-							deleteTask.cancel(false);// TODO:NPE
-					)
+				{
+					deleteTask.cancel(false);// TODO:NPE
+				}
 			}
 		}
 	}

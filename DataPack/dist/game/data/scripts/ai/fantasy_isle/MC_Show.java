@@ -1,25 +1,10 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package ai.fantasy_isle;
 
 import java.text.SimpleDateFormat;
 import java.util.Map;
+
+import javolution.util.FastMap;
+import ai.npc.AbstractNpcAI;
 
 import pk.elfo.Config;
 import pk.elfo.gameserver.GameTimeController;
@@ -32,12 +17,10 @@ import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.network.serverpackets.PlaySound;
-import javolution.util.FastMap;
-import ai.npc.AbstractNpcAI;
+
 
 /**
  * MC Show AI.
- * @author Kerberos
  */
 public class MC_Show extends AbstractNpcAI
 {
@@ -96,7 +79,6 @@ public class MC_Show extends AbstractNpcAI
 		NpcStringId.PLEASE_REMEMBER_THAT_FANTASY_ISLE_IS_ALWAYS_PLANNING_A_LOT_OF_GREAT_SHOWS_FOR_YOU,
 		NpcStringId.WELL_I_WISH_I_COULD_CONTINUE_ALL_NIGHT_LONG_BUT_THIS_IS_IT_FOR_TODAY_THANK_YOU,
 		NpcStringId.WE_LOVE_YOU
-	
 	};
 	
 	private class ShoutInfo
@@ -327,7 +309,6 @@ public class MC_Show extends AbstractNpcAI
 			_log.info("Fantasy Isle: MC show script starting at " + format.format(System.currentTimeMillis() + diff) + " and is scheduled each next 4 hours.");
 		}
 		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new StartMCShow(), diff, 14400000L);
-		
 	}
 	
 	private void autoChat(L2Npc npc, NpcStringId npcString, int type)

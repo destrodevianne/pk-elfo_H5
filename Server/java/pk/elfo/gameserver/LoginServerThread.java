@@ -351,7 +351,9 @@ public class LoginServerThread extends Thread
 						return;
 					}
 				}
-				catch (Exception e) {}
+				catch (Exception e)
+				{
+				}
 			}
 			
 			try
@@ -460,6 +462,8 @@ public class LoginServerThread extends Thread
 			sendPacket(cal);
 		}
 		catch (IOException e)
+		{
+		}
 	}
 	
 	/**
@@ -475,6 +479,8 @@ public class LoginServerThread extends Thread
 			sendPacket(ptc);
 		}
 		catch (IOException e)
+		{
+		}
 	}
 	
 	/**
@@ -491,6 +497,8 @@ public class LoginServerThread extends Thread
 			sendPacket(sem);
 		}
 		catch (IOException e)
+		{
+		}
 	}
 	
 	/**
@@ -507,6 +515,8 @@ public class LoginServerThread extends Thread
 			sendPacket(tbn);
 		}
 		catch (IOException e)
+		{
+		}
 	}
 	
 	/**
@@ -576,6 +586,8 @@ public class LoginServerThread extends Thread
 			sendPacket(rec);
 		}
 		catch (IOException e)
+		{
+		}
 	}
 	
 	/**
@@ -632,6 +644,8 @@ public class LoginServerThread extends Thread
 			sendPacket(ss);
 		}
 		catch (IOException e)
+		{
+		}
 	}
 	
 	/**
@@ -646,6 +660,8 @@ public class LoginServerThread extends Thread
 			sendPacket(ss);
 		}
 		catch (IOException e)
+		{
+		}
 	}
 	
 	/**
@@ -663,6 +679,8 @@ public class LoginServerThread extends Thread
 			sendPacket(cp);
 		}
 		catch (IOException e)
+		{
+		}
 	}
 	
 	/**

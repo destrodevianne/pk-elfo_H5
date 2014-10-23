@@ -6,7 +6,6 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
 import ai.npc.AbstractNpcAI;
 
-
 public class Gargos extends AbstractNpcAI 
 {
 	private static final int GARGOS = 18607;
@@ -54,10 +53,9 @@ public class Gargos extends AbstractNpcAI
 		int npcId = npc.getNpcId();
 
 		if (npcId == GARGOS)
-			(
-					cancelQuestTimer("TimeToFire", npc, player);
-			)
-			
+		{
+			cancelQuestTimer("TimeToFire", npc, player);
+		}
 		return "";
 	}
 

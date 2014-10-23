@@ -23,10 +23,9 @@ public class FireDragonMinions extends AbstractNpcAI
 	public String onSpawn(L2Npc npc)
 	{
 		if (npc.getNpcId() == FireDragon)
-			(
-					FireDragonStatus = 0;
-			)
-			
+		{
+			FireDragonStatus = 0;
+		}
 		return super.onSpawn(npc);
 	}
 	
@@ -106,7 +105,6 @@ public class FireDragonMinions extends AbstractNpcAI
 					break;
 			}
 		}
-		
 		return super.onAttack(npc, attacker, damage, isPet);
 	}
 

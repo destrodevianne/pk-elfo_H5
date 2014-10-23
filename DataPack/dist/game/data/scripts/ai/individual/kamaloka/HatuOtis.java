@@ -31,9 +31,9 @@ public class HatuOtis extends AbstractNpcAI
 				_isAlreadyUsedSkill = false;
 			}
 			else
-				(
-						return "";
-				)
+			{
+				return "";
+			}
 		}
 		return "";
 	}
@@ -72,9 +72,9 @@ public class HatuOtis extends AbstractNpcAI
 		int npcId = npc.getNpcId();
 
 		if (npcId == OTIS)
-			(
-					cancelQuestTimer("time_to_skill", npc, player);
-			)
+		{
+			cancelQuestTimer("time_to_skill", npc, player);
+		}
 		return "";
 	}
 
