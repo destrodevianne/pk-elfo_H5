@@ -196,7 +196,7 @@ public class ClanSearcher extends Quest
 				{
 					continue;
 				}
-				if ((set.getInt("visible") > 0) || (mode == 2)
+				if ((set.getInt("visible") > 0) || (mode == 2))
 				{
 					clans.put(clan, set.getString("message"));
 				}

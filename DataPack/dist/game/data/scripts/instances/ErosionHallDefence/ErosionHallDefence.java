@@ -172,7 +172,7 @@ public class ErosionHallDefence extends Quest
 		}
 	};
 	
-	private static final int[][] TUMOR_ALIVE_SPAWN =
+	protected static final int[][] TUMOR_ALIVE_SPAWN =
 	{
 		{
 			TUMOR_ALIVE,
@@ -960,8 +960,8 @@ public class ErosionHallDefence extends Quest
 		
 		instanceId = InstanceManager.getInstance().createDynamicInstance(template);
 		world = new HEDWorld();
-		world.setInstanceId(instanceId);
 		world.setTemplateId(INSTANCEID);
+		world.setInstanceId(instanceId);
 		world.setStatus(0);
 		((HEDWorld) world).startTime = System.currentTimeMillis();
 		InstanceManager.getInstance().addWorld(world);
@@ -1031,7 +1031,6 @@ public class ErosionHallDefence extends Quest
 		
 		ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 		{
-			@SuppressWarnings("synthetic-access")
 			@Override
 			public void run()
 			{
@@ -1115,7 +1114,7 @@ public class ErosionHallDefence extends Quest
 		
 		if (npcId == MOUTHOFEKIMUS)
 		{
-			enterInstance(player, "[036] ErosionHallDefence.xml", ENTER_TELEPORT);
+			enterInstance(player, "ErosionHallDefence.xml", ENTER_TELEPORT);
 			return "";
 		}
 		return "";
@@ -1141,11 +1140,10 @@ public class ErosionHallDefence extends Quest
 		return super.onAggroRangeEnter(npc, player, isSummon);
 	}
 	
-	@SuppressWarnings("null")
 	@Override
 	public final String onSpawn(L2Npc npc)
 	{
-		if ((npc != null) && Util.contains(NOTMOVE, npc.getNpcId()))
+		if (Util.contains(NOTMOVE, npc.getNpcId()))
 		{
 			npc.setIsNoRndWalk(true);
 			npc.setIsImmobilized(true);
@@ -1204,7 +1202,6 @@ public class ErosionHallDefence extends Quest
 		return super.onKill(npc, player, isSummon);
 	}
 	
-	@Override
 	public String onKillByMob(L2Npc npc, L2Npc killer)
 	{
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -1302,7 +1299,6 @@ public class ErosionHallDefence extends Quest
 		}
 	}
 	
-	@SuppressWarnings("null")
 	private void conquestConclusion(HEDWorld world)
 	{
 		if (world.finishTask != null)
@@ -1311,7 +1307,6 @@ public class ErosionHallDefence extends Quest
 			world.finishTask = null;
 		}
 		broadCastPacket(world, new ExShowScreenMessage(NpcStringId.YOU_HAVE_FAILED_AT_S1_S2_THE_INSTANCE_WILL_SHORTLY_EXPIRE, 2, 8000));
-		if (world != null)
 		{
 			conquestEnded = true;
 			final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());

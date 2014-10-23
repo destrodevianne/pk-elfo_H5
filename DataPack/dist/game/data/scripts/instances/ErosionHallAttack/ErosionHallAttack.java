@@ -1,6 +1,7 @@
 package instances.ErosionHallAttack;
 
 import java.util.Calendar;
+
 import javolution.util.FastList;
 
 import pk.elfo.Config;
@@ -56,7 +57,6 @@ public class ErosionHallAttack extends Quest
 		}
 	}
 	
-	private static final String qn = "ErosionHallAttack";
 	private static final int INSTANCEID = 119;
 	private static final int INSTANCEPENALTY = 24;
 	private static final int MOUTHOFEKIMUS = 32537;
@@ -956,8 +956,8 @@ public class ErosionHallAttack extends Quest
 		
 		instanceId = InstanceManager.getInstance().createDynamicInstance(template);
 		world = new HEWorld();
-		world.setInstanceId(instanceId);
 		world.setTemplateId(INSTANCEID);
+		world.setInstanceId(instanceId);
 		world.setStatus(0);
 		((HEWorld) world).startTime = System.currentTimeMillis();
 		InstanceManager.getInstance().addWorld(world);
@@ -973,7 +973,7 @@ public class ErosionHallAttack extends Quest
 			{
 				teleportPlayer(partyMember, coords, instanceId);
 				world.addAllowed(partyMember.getObjectId());
-				if (partyMember.getQuestState(qn) == null)
+				if (partyMember.getQuestState(getName()) == null)
 				{
 					newQuestState(partyMember);
 				}
@@ -1079,7 +1079,7 @@ public class ErosionHallAttack extends Quest
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		int npcId = npc.getNpcId();
-		QuestState st = player.getQuestState(qn);
+		QuestState st = player.getQuestState(getName());
 		if (st == null)
 		{
 			st = newQuestState(player);
@@ -1143,17 +1143,15 @@ public class ErosionHallAttack extends Quest
 		return super.onAttack(npc, attacker, damage, isSummon, skill);
 	}
 	
-	@SuppressWarnings("cast")
 	@Override
 	public final String onSpawn(L2Npc npc)
 	{
-		if ((npc != null) && Util.contains(NOTMOVE, npc.getNpcId()))
+		if (Util.contains(NOTMOVE, npc.getNpcId()))
 		{
 			npc.setIsNoRndWalk(true);
 			npc.setIsImmobilized(true);
 		}
 		
-		@SuppressWarnings("null")
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof HEWorld)
 		{
@@ -1167,7 +1165,7 @@ public class ErosionHallAttack extends Quest
 					broadCastPacket(world, new ExShowScreenMessage(NpcStringId.YOU_HAVE_FAILED_AT_S1_S2_THE_INSTANCE_WILL_SHORTLY_EXPIRE, 2, 8000));
 					finishInstance(world);
 					conquestEnded = true;
-					stopTumors((HEWorld) world);
+					stopTumors(world);
 				}
 			}
 			
@@ -1179,7 +1177,6 @@ public class ErosionHallAttack extends Quest
 		return super.onSpawn(npc);
 	}
 	
-	@SuppressWarnings("cast")
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
 	{
@@ -1227,7 +1224,7 @@ public class ErosionHallAttack extends Quest
 				world.cohemenes = null;
 				conquestEnded = true;
 				finishInstance(world);
-				stopTumors((HEWorld) world);
+				stopTumors(world);
 				SoIManager.notifyCohemenesKill();
 			}
 			
