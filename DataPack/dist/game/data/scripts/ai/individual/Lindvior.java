@@ -74,7 +74,7 @@ public class Lindvior extends AbstractNpcAI
 				scheduleNextLindviorVisit();
 				break;
 		}
-		return super.onAdvEvent(event, npc, player);
+		return onAdvEvent(event, npc, player);
 	}
 	
 	public void scheduleNextLindviorVisit()
