@@ -18,10 +18,6 @@ import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.network.serverpackets.PlaySound;
 
-
-/**
- * MC Show AI.
- */
 public class MC_Show extends AbstractNpcAI
 {
 	private static int MC = 32433;
@@ -79,6 +75,7 @@ public class MC_Show extends AbstractNpcAI
 		NpcStringId.PLEASE_REMEMBER_THAT_FANTASY_ISLE_IS_ALWAYS_PLANNING_A_LOT_OF_GREAT_SHOWS_FOR_YOU,
 		NpcStringId.WELL_I_WISH_I_COULD_CONTINUE_ALL_NIGHT_LONG_BUT_THIS_IS_IT_FOR_TODAY_THANK_YOU,
 		NpcStringId.WE_LOVE_YOU
+	
 	};
 	
 	private class ShoutInfo
@@ -309,6 +306,7 @@ public class MC_Show extends AbstractNpcAI
 			_log.info("Fantasy Isle: MC show script starting at " + format.format(System.currentTimeMillis() + diff) + " and is scheduled each next 4 hours.");
 		}
 		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new StartMCShow(), diff, 14400000L);
+		
 	}
 	
 	private void autoChat(L2Npc npc, NpcStringId npcString, int type)

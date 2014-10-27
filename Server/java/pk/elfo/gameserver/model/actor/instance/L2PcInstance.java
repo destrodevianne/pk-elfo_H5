@@ -148,6 +148,7 @@ import pk.elfo.gameserver.model.actor.position.PcPosition;
 import pk.elfo.gameserver.model.actor.stat.PcStat;
 import pk.elfo.gameserver.model.actor.status.PcStatus;
 import pk.elfo.gameserver.model.actor.templates.L2PcTemplate;
+
 import pk.elfo.gameserver.model.base.ClassId;
 import pk.elfo.gameserver.model.base.ClassLevel;
 import pk.elfo.gameserver.model.base.PlayerClass;
