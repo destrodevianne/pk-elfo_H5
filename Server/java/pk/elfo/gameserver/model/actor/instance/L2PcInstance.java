@@ -2217,7 +2217,6 @@ public final class L2PcInstance extends L2Playable
 	@Override
 	public void revalidateZone(boolean force)
 	{
-		// Cannot validate if not in a world region (happens during teleport)
 		if (getWorldRegion() == null)
 		{
 			return;

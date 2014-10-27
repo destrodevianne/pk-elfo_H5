@@ -4898,7 +4898,6 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 				return;
 			}
 		}
-		
 		getWorldRegion().revalidateZones(this);
 	}
 	
