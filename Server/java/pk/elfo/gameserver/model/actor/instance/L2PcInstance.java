@@ -147,7 +147,6 @@ import pk.elfo.gameserver.model.actor.position.PcPosition;
 import pk.elfo.gameserver.model.actor.stat.PcStat;
 import pk.elfo.gameserver.model.actor.status.PcStatus;
 import pk.elfo.gameserver.model.actor.templates.L2PcTemplate;
-
 import pk.elfo.gameserver.model.base.ClassId;
 import pk.elfo.gameserver.model.base.ClassLevel;
 import pk.elfo.gameserver.model.base.PlayerClass;
@@ -299,7 +298,6 @@ import pk.elfo.gameserver.scripting.scriptengine.events.HennaEvent;
 import pk.elfo.gameserver.scripting.scriptengine.events.ProfessionChangeEvent;
 import pk.elfo.gameserver.scripting.scriptengine.events.TransformEvent;
 import pk.elfo.gameserver.scripting.scriptengine.listeners.player.EquipmentListener;
-import pk.elfo.gameserver.scripting.scriptengine.listeners.player.EventListener;
 import pk.elfo.gameserver.scripting.scriptengine.listeners.player.HennaListener;
 import pk.elfo.gameserver.scripting.scriptengine.listeners.player.PlayerDespawnListener;
 import pk.elfo.gameserver.scripting.scriptengine.listeners.player.ProfessionChangeListener;
@@ -401,7 +399,6 @@ public final class L2PcInstance extends L2Playable
 	public FastList<TransformListener> transformListeners = new FastList<TransformListener>().shared();
 	public FastList<ProfessionChangeListener> professionChangeListeners = new FastList<ProfessionChangeListener>().shared();
 	public static FastList<ProfessionChangeListener> globalProfessionChangeListeners = new FastList<ProfessionChangeListener>().shared();
-	private final List<EventListener> _eventListeners = new FastList<EventListener>().shared();
 	
 	public class AIAccessor extends L2Character.AIAccessor
 	{
@@ -17816,7 +17813,6 @@ public final class L2PcInstance extends L2Playable
 						return isRaid ? Config.RATE_DROP_ITEMS_BY_RAID : Config.RATE_DROP_ITEMS;
 				}
 		}
-		
 		return 0;
 	}
 	
@@ -17844,42 +17840,5 @@ public final class L2PcInstance extends L2Playable
 	public void setGainXp(boolean b)
 	{
 		_addXpSp = b;
-	}
-	
-	/**
-	 * Adds a event listener.
-	 * @param listener
-	 */
-	public void addEventListener(EventListener listener)
-	{
-		_eventListeners.add(listener);
-	}
-	
-	/**
-	 * Removes event listener
-	 * @param listener
-	 */
-	public void removeEventListener(EventListener listener)
-	{
-		_eventListeners.remove(listener);
-	}
-	
-	public void removeEventListener(Class<? extends EventListener> clazz)
-	{
-		final Iterator<EventListener> it = _eventListeners.iterator();
-		EventListener event;
-		while (it.hasNext())
-		{
-			event = it.next();
-			if (event.getClass() == clazz)
-			{
-				it.remove();
-			}
-		}
-	}
-	
-	public Collection<EventListener> getEventListeners()
-	{
-		return _eventListeners;
 	}
 }
