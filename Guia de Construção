@@ -178,7 +178,6 @@ LuckyPig
 ***Evento RaidSpawn (a cada 30 minutos um raid e spawnado em determinado lugar, o tempo, raid, lugar de spawn e recompensa podem ser configurados no arquivo java do evento).
 BloodShed 
 Adicionado Event RPS (Rank PvP System)
-Adicionado Achievements Engine
 Adicionado Event SlotMachine (tipo uma caca-niqueis)
 
 ############### PHOENIX ENGINE:################

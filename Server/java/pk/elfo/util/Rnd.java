@@ -173,10 +173,7 @@ public final class Rnd
 			return _random.nextLong();
 		}
 	}
-	
-	/**
-	 * @author Forsaiken
-	 */
+
 	public static enum RandomType
 	{
 		/**
@@ -212,7 +209,6 @@ public final class Rnd
 	 * Instead it`s using thread local ensure reading and storing the whole 64bit seed chunk.<br>
 	 * This implementation is the fastest, never generates the same seed for 2 threads.<br>
 	 * Each thread has it`s own random instance.
-	 * @author Forsaiken
 	 * @see java.util.Random
 	 */
 	public static final class ThreadLocalRandom extends Random
@@ -353,7 +349,6 @@ public final class Rnd
 			case SECURE:
 				return new RandomContainer(new SecureRandom());
 		}
-		
 		throw new IllegalArgumentException();
 	}
 	

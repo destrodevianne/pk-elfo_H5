@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.tools.gsregistering;
 
 import java.awt.HeadlessException;
@@ -44,8 +26,9 @@ import pk.elfo.tools.i18n.LanguageControl;
 import pk.elfo.util.Util;
 
 /**
- * The Class BaseGameServerRegister. PkElfo
+ * The Class BaseGameServerRegister.
  */
+ 
 public abstract class BaseGameServerRegister
 {
 	private boolean _loaded = false;
@@ -351,7 +334,6 @@ public abstract class BaseGameServerRegister
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM gameservers WHERE server_id = ?"))
-		
 		{
 			ps.setInt(1, id);
 			ps.executeUpdate();
@@ -581,7 +563,6 @@ public abstract class BaseGameServerRegister
 		public UnregisterTask(int id)
 		{
 			_id = id;
-			
 		}
 		
 		@Override

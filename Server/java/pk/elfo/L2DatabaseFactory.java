@@ -218,7 +218,6 @@ public class L2DatabaseFactory
 			sbResult.append(word);
 			sbResult.append(braceRight);
 		}
-		
 		return sbResult.toString();
 	}
 	

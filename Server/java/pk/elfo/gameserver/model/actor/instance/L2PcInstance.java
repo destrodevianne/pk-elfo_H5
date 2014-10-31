@@ -93,7 +93,6 @@ import pk.elfo.gameserver.instancemanager.SiegeManager;
 import pk.elfo.gameserver.instancemanager.SoundManager.Versus;
 import pk.elfo.gameserver.instancemanager.TerritoryWarManager;
 import pk.elfo.gameserver.instancemanager.ZoneManager;
-import pk.elfo.gameserver.instancemanager.achievments_engine.AchievementsManager;
 import pk.elfo.gameserver.instancemanager.leaderboards.ArenaLeaderboard;
 import pk.elfo.gameserver.instancemanager.leaderboards.TvTLeaderboard;
 import pk.elfo.gameserver.masteriopack.rankpvpsystem.RPSConfig;
@@ -17882,113 +17881,5 @@ public final class L2PcInstance extends L2Playable
 	public Collection<EventListener> getEventListeners()
 	{
 		return _eventListeners;
-	}
-	
-	public boolean readyAchievementsList()
-	{
-		if (_completedAchievements.isEmpty())
-		{
-			return false;
-		}
-		return true;
-	}
-	
-	public void saveAchievemntData()
-	{
-		
-	}
-	
-	public void getAchievemntData()
-	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			PreparedStatement statement;
-			PreparedStatement insertStatement;
-			ResultSet rs;
-
-			statement = con.prepareStatement("SELECT * FROM achievements WHERE owner_id=" + getObjectId());
-			
-			rs = statement.executeQuery();
-			
-			String values = "owner_id";
-			String in = Integer.toString(getObjectId());
-			String questionMarks = in;
-			int ilosc = AchievementsManager.getInstance().getAchievementList().size();
-			
-			if (rs.next())
-			{
-				_completedAchievements.clear();
-				for (int i = 1; i <= ilosc; i++)
-				{
-					int a = rs.getInt("a" + i);
-					
-					if (!_completedAchievements.contains(i))
-					{
-						if ((a == 1) || String.valueOf(a).startsWith("1"))
-						{
-							_completedAchievements.add(i);
-						}
-					}
-				}
-			}
-			else
-			{
-				// Player hasnt entry in database, means we have to create it.
-				for (int i = 1; i <= ilosc; i++)
-				{
-					values += ", a" + i;
-					questionMarks += ", 0";
-				}
-				
-				String s = "INSERT INTO achievements(" + values + ") VALUES (" + questionMarks + ")";
-				insertStatement = con.prepareStatement(s);
-				
-				insertStatement.execute();
-				insertStatement.close();
-			}
-		}
-		catch (SQLException e)
-		{
-			_log.warning("[Achievements event loaded data: ]" + e);
-		}
-	}
-
-	private final List<Integer> _completedAchievements = new FastList<>();
-	
-	public long getOnlineTime()
-	{
-		return _onlineTime;
-	}
-	
-	public List<Integer> getCompletedAchievements()
-	{
-		return _completedAchievements;
-	}
-	
-	public void saveAchievementData(int achievementID, int objid)
-	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			Statement statement = con.createStatement();
-			if ((achievementID == 4) || (achievementID == 6) || (achievementID == 11) || (achievementID == 13))
-			{
-				statement.executeUpdate("UPDATE achievements SET a" + achievementID + "=1" + objid + " WHERE owner_id=" + getObjectId());
-			}
-			else
-			{
-				statement.executeUpdate("UPDATE achievements SET a" + achievementID + "=1 WHERE owner_id=" + getObjectId());
-			}
-			
-			statement.close();
-			
-			if (!_completedAchievements.contains(achievementID))
-			{
-				_completedAchievements.add(achievementID);
-			}
-		}
-		catch (SQLException e)
-		{
-			_log.warning("[ACHIEVEMENTS SAVE GETDATA]" + e);
-		}
 	}
 }

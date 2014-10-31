@@ -61,7 +61,6 @@ public class LoginCrypt
 		{
 			throw new IOException("raw array too short for size starting from offset");
 		}
-		
 		_crypt.decrypt(raw, offset, size);
 		return NewCrypt.verifyChecksum(raw, offset, size);
 	}

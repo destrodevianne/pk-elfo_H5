@@ -90,7 +90,6 @@ public class IPSubnet
 				}
 			}
 		}
-		
 		return true;
 	}
 	
@@ -128,7 +127,6 @@ public class IPSubnet
 		{
 			return applyMask(((InetAddress) o).getAddress());
 		}
-		
 		return false;
 	}
 	
@@ -149,7 +147,6 @@ public class IPSubnet
 		{
 			result[i >> 3] = (byte) (result[i >> 3] << 1);
 		}
-		
 		return result;
 	}
 }

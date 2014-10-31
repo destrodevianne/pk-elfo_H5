@@ -15,7 +15,6 @@ public class L2LogManager extends LogManager
 	@Override
 	public void reset()
 	{
-		// do nothing
 	}
 	
 	public void doReset()

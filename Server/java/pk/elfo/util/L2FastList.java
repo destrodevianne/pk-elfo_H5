@@ -12,11 +12,11 @@ import javolution.util.FastList;
  * @version 1.0.1 (2008-02-07)<br>
  *          1.0.0 - Initial version.<br>
  *          1.0.1 - Made forEachP() final.<br>
- * @author UnAfraid
  * @version 1.0.2 (20012-08-19)<br>
  *          1.0.2 - Using IL2Procedure instead of IForEach.
  * @param <T>
  */
+ 
 public class L2FastList<T> extends FastList<T>
 {
 	private static final long serialVersionUID = 8354641653178203420L;
@@ -68,7 +68,7 @@ public class L2FastList<T> extends FastList<T>
 	 * <br>
 	 * @param proc - a class method that must be executed on every element of collection.<br>
 	 * @return - returns true if entire collection is iterated, false if it`s been interrupted by<br>
-	 *         check method (IL2Procedure.execute(T))<br>
+	 * check method (IL2Procedure.execute(T))<br>
 	 */
 	public boolean executeForEach(IL2Procedure<T> proc)
 	{

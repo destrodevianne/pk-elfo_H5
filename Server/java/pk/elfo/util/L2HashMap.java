@@ -13,6 +13,7 @@ import pk.elfo.gameserver.model.interfaces.IL2Procedure;
  * @param <K>
  * @param <V>
  */
+ 
 public class L2HashMap<K, V> extends HashMap<K, V>
 {
 	private static final long serialVersionUID = 8503855490858805336L;

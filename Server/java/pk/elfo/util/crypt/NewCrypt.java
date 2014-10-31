@@ -72,7 +72,6 @@ public final class NewCrypt
 		check |= (raw[i + 1] << 8) & 0xff00;
 		check |= (raw[i + 2] << 0x10) & 0xff0000;
 		check |= (raw[i + 3] << 0x18) & 0xff000000;
-		
 		return check == chksum;
 	}
 	

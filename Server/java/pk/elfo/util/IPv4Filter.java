@@ -11,6 +11,7 @@ import org.mmocore.network.IAcceptFilter;
 /**
  * IPv4 filter.
  */
+ 
 public class IPv4Filter implements IAcceptFilter, Runnable
 {
 	private final HashMap<Integer, Flood> _ipFloodMap;
@@ -74,7 +75,6 @@ public class IPv4Filter implements IAcceptFilter, Runnable
 					f.trys = -1;
 					return false;
 				}
-				
 				f.trys++;
 			}
 			else
@@ -89,7 +89,6 @@ public class IPv4Filter implements IAcceptFilter, Runnable
 				_ipFloodMap.put(h, new Flood());
 			}
 		}
-		
 		return true;
 	}
 	

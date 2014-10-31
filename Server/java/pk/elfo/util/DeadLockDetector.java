@@ -94,7 +94,6 @@ public class DeadLockDetector extends Thread
 						an.announceToAll("Servidor esta com problemas de estabilidade - reiniciar agora.");
 						Shutdown.getInstance().startTelnetShutdown("DeadLockDetector - Auto Restart", 60, true);
 					}
-					
 				}
 				Thread.sleep(_sleepTime);
 			}

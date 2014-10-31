@@ -67,7 +67,6 @@ public abstract class BaseRecievePacket
 		{
 			_log.warning(getClass().getSimpleName() + ": " + e.getMessage());
 		}
-		
 		return result;
 	}
 	

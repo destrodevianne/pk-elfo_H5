@@ -64,7 +64,6 @@ public abstract class BaseSendablePacket
 		{
 			_log.warning(getClass().getSimpleName() + ": " + e.getMessage());
 		}
-		
 		_bao.write(0);
 		_bao.write(0);
 	}
@@ -113,9 +112,7 @@ public abstract class BaseSendablePacket
 				writeC(0x00);
 			}
 		}
-		
 		return _bao.toByteArray();
 	}
-	
 	public abstract byte[] getContent() throws IOException;
 }

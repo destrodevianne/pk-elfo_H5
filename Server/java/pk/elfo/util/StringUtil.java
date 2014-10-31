@@ -206,7 +206,6 @@ public final class StringUtil
 		{
 			sbString.append(string);
 		}
-		
 		return sbString;
 	}
 	
@@ -245,7 +244,6 @@ public final class StringUtil
 				length += string.length();
 			}
 		}
-		
 		return length;
 	}
 	

@@ -13,12 +13,12 @@ import javolution.util.FastMap;
  *          Changes:<br>
  *          1.0.0 - Initial version.<br>
  *          1.0.1 - Made forEachP() final.<br>
- * @author UnAfraid
  * @version 1.0.2 (2012-08-19)<br>
  *          1.0.2 - Using IL2Procedure instead of I2ForEachKey/Value<br>
  * @param <K>
  * @param <V>
  */
+ 
 public class L2FastMap<K, V> extends FastMap<K, V>
 {
 	private static final long serialVersionUID = 8503855490858805336L;

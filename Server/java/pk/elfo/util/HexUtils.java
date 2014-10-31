@@ -133,7 +133,6 @@ public class HexUtils
 			dstHexChars[charsIdx] = _NIBBLE_CHAR_LOOKUP[(data[dataIdx] & 0xF0) >> 4];
 			dstHexChars[++charsIdx] = _NIBBLE_CHAR_LOOKUP[data[dataIdx] & 0x0F];
 		}
-		
 		return dstHexChars;
 	}
 	
@@ -161,7 +160,6 @@ public class HexUtils
 				dstAsciiChars[charsIdx] = '.';
 			}
 		}
-		
 		return dstAsciiChars;
 	}
 	

@@ -11,6 +11,7 @@ import pk.elfo.gameserver.model.interfaces.IL2Procedure;
  * the list. If no such object exists, the list should be "wrapped" using the {@link L2FastList}. This is best done at creation time, to prevent accidental unsynchronized access.
  * @param <T>
  */
+ 
 public class L2ArrayList<T> extends ArrayList<T>
 {
 	private static final long serialVersionUID = 8354641653178203420L;
@@ -35,7 +36,7 @@ public class L2ArrayList<T> extends ArrayList<T>
 	 * <br>
 	 * @param proc - a class method that must be executed on every element of collection.<br>
 	 * @return - returns true if entire collection is iterated, false if it`s been interrupted by<br>
-	 *         check method (IL2Procedure.execute(T))<br>
+	 * check method (IL2Procedure.execute(T))<br>
 	 */
 	public boolean executeForEach(IL2Procedure<T> proc)
 	{

@@ -58,11 +58,9 @@ public final class Config
 	// constantes //
 	// ----------------------------------------------------------------------------------------------------//
 	public static final String EOL = System.getProperty("line.separator");
-	
 	// ----------------------------------------------------------------------------------------------------//
 	// Lineage II PkElfo arquivos de definicoes de propriedades //
 	// ----------------------------------------------------------------------------------------------------//
-
 	public static final String GENERAL_CONFIG_FILE = "./config/General.properties";
 	public static final String HEXID_FILE = "./config/hexid.txt";
 	public static final String IP_CONFIG_FILE = "./config/ipconfig.xml";
@@ -196,13 +194,9 @@ public final class Config
 	public static int RecoveryVitalityItemCount;
 	public static int SPItemId;
 	public static int SPItemCount;
-	// ########################################################################################################//
-	// Achievements Engine PROPERTIES
-	// ########################################################################################################//
-	public static boolean ENABLE_EVENT_ACHIEVEMENT;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// RECOMEND PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean REC_BUY;
 	public static int REC_ITEM_ID;
 	public static int REC_PRICE;
@@ -213,9 +207,9 @@ public final class Config
 	public static boolean NEW_PLAYER_BUFFS;
 	public static Map<Integer, Integer> FIGHTER_BUFF_LIST;
 	public static Map<Integer, Integer> MAGE_BUFF_LIST;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// AIOx PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ALT_AIO_EFFECT_ESPECIAL;
 	public static boolean ANNOUNCE_AIOX_DESCONECT;
 	public static boolean ANNOUNCE_AIOX_CONECT;
@@ -235,23 +229,23 @@ public final class Config
 	public static boolean ANNOUNCE_HERO_CONECT;
 	public static boolean ANNOUNCE_HERO_DESCONECT;
 	public static boolean ENABLE_HERO_MESSAGE;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// AUTORESTART PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean AUTO_RESTART_ENABLE;
 	public static int AUTO_RESTART_TIME;
 	public static String[] AUTO_RESTART_INTERVAL;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// CLANWARZONE PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ALLOW_CLANWAR_REWARD;
 	public static int CLANWAR_REWARD_ITEM;
 	public static int CLANWAR_REWARD_COUNT;
 	public static boolean ALLOW_CLANWAR_REP;
 	public static int CLANWAR_ADD_REP;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// Mensagens automaticas de tempos em tempos
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ON_ENTER_DELAY_MESSAGES_ENABLE;
 	public static int ON_ENTER_DELAY_TO_START;
 	public static boolean ON_ENTER_TEXT1_ENABLE;
@@ -274,26 +268,26 @@ public final class Config
 	public static String ON_ENTER_TEXT3_TYPE;
 	public static String ON_ENTER_TEXT4_TYPE;
 	public static String ON_ENTER_TEXT5_TYPE;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// RENAME PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static int RENAME_NPC_ID;
 	public static int RENAME_NPC_MIN_LEVEL;
 	public static String RENAME_NPC_FEE;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// CUSTOMMOD PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean CUSTOMMOD_ENABLE_MANA_POTIONS_SUPPORT;
 	
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// BANKING PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean BANKING_SYSTEM_ENABLED;
 	public static int BANKING_SYSTEM_GOLDBARS;
 	public static int BANKING_SYSTEM_ADENA;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// PKELFO PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean FENCE_MOVIE_BUILDER;
 	public static boolean CLAN_LEADER_COLOR_ENABLED;
 	public static int CLAN_LEADER_COLOR;
@@ -393,7 +387,6 @@ public final class Config
 	public static String VICTIM_PVP_MESSAGE;
 	/** Pvp No Escape **/
 	public static boolean PVP_NO_ESCAPE;
-
 	// ----------------------------------------------------------------------------------------------------//
 	// PC bang points
 	// ----------------------------------------------------------------------------------------------------//
@@ -458,9 +451,9 @@ public final class Config
 	public static int NpcBuffer_PriceScheme;
 	public static int NpcBuffer_MaxScheme;
 	public static int NpcBuffer_consumableID;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// Addons tittle color and name
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean PVP_COLOR_SYSTEM_ENABLED;
 	public static int PVP_AMOUNT1;
 	public static int PVP_AMOUNT2;
@@ -483,7 +476,7 @@ public final class Config
 	public static int TITLE_COLOR_FOR_PK_AMOUNT3;
 	public static int TITLE_COLOR_FOR_PK_AMOUNT4;
 	public static int TITLE_COLOR_FOR_PK_AMOUNT5;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean VOTE_SYSTEM_ENABLE;
 	public static boolean VOTE_SYSTEM_HOPZONE;
 	public static boolean VOTE_SYSTEM_DATABASE_SAVE;
@@ -494,9 +487,9 @@ public final class Config
 	public static String VOTE_SYSTEM_ITEM_ID;
 	public static String VOTE_SYSTEM_ITEM_COUNT;
 	public static boolean ALLOW_REFUSE_BUFF;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// Event Custom Config
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static int TW_TOWN_ID;
 	public static String TW_TOWN_NAME;
 	public static boolean TW_ALL_TOWNS;
@@ -596,9 +589,9 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	public static float RateMultipler;
 	public static int time_crazyrate;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// CHARACTER PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ALT_GAME_DELEVEL;
 	public static boolean DECREASE_SKILL_LEVEL;
 	public static double ALT_WEIGHT_LIMIT;
@@ -797,9 +790,9 @@ public final class Config
 	public static boolean ALT_DISABLE_BIGSWORD_CLASSES;
 	public static String DISABLE_BIGSWORD_CLASSES_STRING;
 	public static ArrayList<Integer> DISABLE_BIGSWORD_CLASSES;	
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// FREATURE PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// ----------------------------------------------------------------------------------------------------//
 	// ClanHall
 	// ----------------------------------------------------------------------------------------------------//
@@ -949,9 +942,9 @@ public final class Config
 	public static int CLAN_LEVEL_10_REQUIREMENT;
 	public static int CLAN_LEVEL_11_REQUIREMENT;
 	public static boolean ALLOW_WYVERN_DURING_SIEGE;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// GENERAL PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean EVERYBODY_HAS_ADMIN_RIGHTS;
 	public static boolean DISPLAY_SERVER_VERSION;
 	public static boolean SERVER_LIST_BRACKET;
@@ -1218,9 +1211,9 @@ public final class Config
 	public static FloodProtectorConfig FLOOD_PROTECTOR_SENDMAIL;
 	public static FloodProtectorConfig FLOOD_PROTECTOR_CHARACTER_SELECT;
 	public static FloodProtectorConfig FLOOD_PROTECTOR_ITEM_AUCTION;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// L2JMODS PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean L2JMOD_CHAMPION_ENABLE;
 	public static boolean L2JMOD_CHAMPION_PASSIVE;
 	public static int L2JMOD_CHAMPION_REWARD_LOWER_LVL_ITEM_CHANCE;
@@ -1327,9 +1320,9 @@ public final class Config
 	public static Map<Integer, Integer> L2JMOD_DUALBOX_CHECK_WHITELIST;
 	public static boolean L2JMOD_ALLOW_CHANGE_PASSWORD;
 	public static boolean CHAR_IS_DEAD = false;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// USERS PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ENABLE_TRADE_REFUSAL;
 	public static boolean ENABLE_PM_REFUSAL;
 	public static boolean SHOW_USER;
@@ -1351,9 +1344,9 @@ public final class Config
 	public static boolean STARTING_ITEMS = false;
 	public static int STARTING_ITEMS_ID;
 	public static long STARTING_ITEMS_COUNT;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// VIP PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ENABLE_VIP_MESSAGE;
 	public static boolean ANNOUNCE_VIP_CONECT;
 	public static boolean ANNOUNCE_VIP_DESCONECT;
@@ -1370,9 +1363,9 @@ public final class Config
 	public static boolean ENABLE_VIP_SYSTEM;
 	public static Map<Integer, Integer> VIP_SKILLS;
 	public static boolean ENABLE_VIP_TELEPORT;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// NPC PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ANNOUNCE_MAMMON_SPAWN;
 	public static boolean ALT_MOB_AGRO_IN_PEACEZONE;
 	public static boolean ALT_ATTACKABLE_NPCS;
@@ -1417,9 +1410,9 @@ public final class Config
 	public static double PET_HP_REGEN_MULTIPLIER;
 	public static double PET_MP_REGEN_MULTIPLIER;
 	public static List<Integer> NON_TALKING_NPCS;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// PvP PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static int KARMA_MIN_KARMA;
 	public static int KARMA_MAX_KARMA;
 	public static int KARMA_XP_DIVIDER;
@@ -1431,9 +1424,9 @@ public final class Config
 	public static String KARMA_NONDROPPABLE_ITEMS;
 	public static int[] KARMA_LIST_NONDROPPABLE_PET_ITEMS;
 	public static int[] KARMA_LIST_NONDROPPABLE_ITEMS;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// RATES PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static float RATE_XP;
 	public static float RATE_SP;
 	public static float RATE_PARTY_XP;
@@ -1504,9 +1497,9 @@ public final class Config
 	public static int SSQ_DAWN_TICKET_BUNDLE;
 	public static int SSQ_MANORS_AGREEMENT_ID;
 	public static int SSQ_JOIN_DAWN_ADENA_FEE;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// SERVER PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ENABLE_UPNP;
 	public static int PORT_GAME;
 	public static int PORT_LOGIN;
@@ -1533,17 +1526,17 @@ public final class Config
 	public static boolean LOG_LOGIN_CONTROLLER;
 	public static boolean LOGIN_SERVER_SCHEDULE_RESTART;
 	public static long LOGIN_SERVER_SCHEDULE_RESTART_TIME;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// COMMUNITYSERVER PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ENABLE_COMMUNITY_BOARD;
 	public static String COMMUNITY_SERVER_ADDRESS;
 	public static int COMMUNITY_SERVER_PORT;
 	public static byte[] COMMUNITY_SERVER_HEX_ID;
 	public static int COMMUNITY_SERVER_SQL_DP_ID;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// MMO PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static int MMO_SELECTOR_SLEEP_TIME;
 	public static int MMO_MAX_SEND_PER_PASS;
 	public static int MMO_MAX_READ_PER_PASS;
@@ -1639,9 +1632,9 @@ public final class Config
 	// titulo muda ao entrar em um clan
 	// ----------------------------------------------------------------------------------------------------//
 	public static boolean CLAN_NAME_AS_TITLE;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// GRANSDBOSS PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static int Antharas_Wait_Time;
 	public static int Valakas_Wait_Time;
 	public static int Interval_Of_Antharas_Spawn;
@@ -1694,36 +1687,36 @@ public final class Config
 	// chatfilter
 	// ----------------------------------------------------------------------------------------------------//
 	public static ArrayList<String> FILTER_LIST;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// SEXCURITY PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean SECOND_AUTH_ENABLED;
 	public static int SECOND_AUTH_MAX_ATTEMPTS;
 	public static long SECOND_AUTH_BAN_TIME;
 	public static String SECOND_AUTH_REC_LINK;
 	public static boolean ENABLE_BOTREPORT;
 	public static boolean GM_EDIT;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// Safe Admin
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ENABLE_SAFE_ADMIN_PROTECTION;
 	public static List<String> SAFE_ADMIN_NAMES = new ArrayList<>();
 	public static int SAFE_ADMIN_PUNISH;
 	public static boolean SAFE_ADMIN_SHOW_ADMIN_ENTER;
 	public static String BLOCK_DATE_FORMAT;
 	public static String BLOCK_HOUR_FORMAT;		
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// PVP Chat Shoutem e Hero
-	// ########################################################################################################//	
+	// ----------------------------------------------------------------------------------------------------//	
 	public static boolean CHAT_SHOUT_NEED_PVPS;
 	public static int PVPS_TO_USE_CHAT_SHOUT;
 	public static boolean CHAT_TRADE_NEED_PVPS;
 	public static int PVPS_TO_USE_CHAT_TRADE;
 	public static boolean CHAT_HERO_NEED_PVPS;
 	public static int PVPS_TO_USE_CHAT_HERO;	
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// EMAIl PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static String EMAIL_SERVERINFO_NAME;
 	public static String EMAIL_SERVERINFO_ADDRESS;
 	public static boolean EMAIL_SYS_ENABLED;
@@ -1737,18 +1730,18 @@ public final class Config
 	public static String EMAIL_SYS_ADDRESS;
 	public static String EMAIL_SYS_SELECTQUERY;
 	public static String EMAIL_SYS_DBFIELD;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// CONQUERABLE HALLS PROPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static int CHS_CLAN_MINLEVEL;
 	public static int CHS_MAX_ATTACKERS;
 	public static int CHS_MAX_FLAGS_PER_CLAN;
 	public static boolean CHS_ENABLE_FAME;
 	public static int CHS_FAME_AMOUNT;
 	public static int CHS_FAME_FREQUENCY;
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	// PREMIUM PORPERTIES
-	// ########################################################################################################//
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean PREMIUM_SERVICE_ENABLED;
 	public static boolean PREMIUM_ALLOW_VOICED;
 	public static boolean PREMIUM_PARTY_DROPSPOIL;
@@ -1854,9 +1847,9 @@ public final class Config
 			GAME_SERVER_SUBNETS = ipcd.getSubnets();
 			GAME_SERVER_HOSTS = ipcd.getHosts();
 			
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			// Load Community Properties //
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			L2Properties communityServerSettings = new L2Properties();
 			final File community = new File(COMMUNITY_CONFIGURATION_FILE);
 			try (InputStream is = new FileInputStream(community))
@@ -2555,24 +2548,9 @@ public final class Config
 					_log.log(Level.SEVERE, "Error while loading SEVENSIGNS settings!", e);
 				}
 
-			// ############################ ACHIEVEMENT PROPERTIES ######################################################//
-			
-			L2Properties AchievementSettings = new L2Properties();
-			final File achievement = new File(EVENT_ACHIEVEMENT);
-			try (InputStream is = new FileInputStream(achievement))
-			{
-				AchievementSettings.load(is);
-			}
-			catch (Exception e)
-			{
-				_log.log(Level.SEVERE, "Erro ao ler o arquivo ACHIEVEMENT Properties!", e);
-			}
-							
-			ENABLE_EVENT_ACHIEVEMENT = Boolean.parseBoolean(AchievementSettings.getProperty("AllowAchievement", "False"));
-
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			// ANTHARAS PROPERTIES
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			
 			L2Properties AntharasSettings = new L2Properties();
 			final File antharas = new File(ANTHARAS_CONFIG);
@@ -2606,9 +2584,9 @@ public final class Config
 			}
 			Random_Of_Antharas_Spawn = Random_Of_Antharas_Spawn * 3600000;
 			
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			// BAIUM PROPERTIES
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			
 			L2Properties BaiumSettings = new L2Properties();
 			final File baium = new File(BAIUM_CONFIG);
@@ -2635,9 +2613,9 @@ public final class Config
 			}
 			Random_Of_Baium_Spawn = Random_Of_Baium_Spawn * 3600000;
 			
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			// BELETH PROPERTIES
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			
 			L2Properties BelethSettings = new L2Properties();
 			final File beleth = new File(BELETH_CONFIG);
@@ -2666,9 +2644,9 @@ public final class Config
 			
 			BELETH_MIN_PLAYERS = Integer.parseInt(BelethSettings.getProperty("BelethMinPlayers", "36"));
 			
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			// CORE PROPERTIES
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			
 			L2Properties CoreSettings = new L2Properties();
 			final File core = new File(CORE_CONFIG);
@@ -2695,9 +2673,9 @@ public final class Config
 			}
 			Random_Of_Core_Spawn = Random_Of_Core_Spawn * 3600000;
 			
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			// FREYA EASY PROPERTIES
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			
 			L2Properties FreyaEasySettings = new L2Properties();
 			final File freyaeasy = new File(FREYA_EASY_CONFIG);
@@ -2713,9 +2691,9 @@ public final class Config
 			MAX_FREYA_PLAYERS = Integer.parseInt(FreyaEasySettings.getProperty("MaxFreyaPlayers", "27"));
 			MIN_LEVEL_PLAYERS = Integer.parseInt(FreyaEasySettings.getProperty("MinLevelPlayers", "82"));
 			
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			// FREYA HARD CORE PROPERTIES
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			
 			L2Properties FreyaHardCoreSettings = new L2Properties();
 			final File freyahardcore = new File(FREYA_HARDCORE_CONFIG);
@@ -2732,9 +2710,9 @@ public final class Config
 			MAX_FREYA_HC_PLAYERS = Integer.parseInt(FreyaHardCoreSettings.getProperty("MaxFreyaHcPlayers", "45"));
 			MIN_LEVEL_HC_PLAYERS = Integer.parseInt(FreyaHardCoreSettings.getProperty("MinLevelHcPlayers", "82"));
 			
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			// FRINTEZZA PROPERTIES
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			
 			L2Properties FrintezzaSettings = new L2Properties();
 			final File frintezza = new File(FRINTEZZA_CONFIG);
@@ -2750,9 +2728,9 @@ public final class Config
 			FRINTEZZA_MINPLAYERS = Integer.parseInt(FrintezzaSettings.getProperty("FrintezzaMinPlayers", "36"));
 			FRINTEZZA_MAXPLAYERS = Integer.parseInt(FrintezzaSettings.getProperty("FrintezzaMaxPlayers", "45"));
 			
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			// ORFEM PROPERTIES
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			
 			L2Properties OrfenSettings = new L2Properties();
 			final File orfen = new File(ORFEN_CONFIG);
@@ -2779,9 +2757,9 @@ public final class Config
 			}
 			Random_Of_Orfen_Spawn = Random_Of_Orfen_Spawn * 3600000;
 			
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			// QUEEN ANT PROPERTIES
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			
 			L2Properties QueenSettings = new L2Properties();
 			final File queen = new File(QUEEN_ANT_CONFIG);
@@ -2810,9 +2788,9 @@ public final class Config
 			
 			MAX_LEVEL_FOR_AQ_ZONE = Integer.parseInt(QueenSettings.getProperty("MaxLevelToEnter", "50"));
 			
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			// SAILREN PROPERTIES
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			
 			L2Properties SailrenSettings = new L2Properties();
 			final File sailren = new File(SAILREN_CONFIG);
@@ -2839,9 +2817,9 @@ public final class Config
 			}
 			Random_Of_Sailren_Spawn = Random_Of_Sailren_Spawn * 3600000;
 			
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			// SEE OF INFINITY PROPERTIES
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			
 			L2Properties SeeOfInfinitySettings = new L2Properties();
 			final File seeofinfinity = new File(SEE_OF_INFINITY_CONFIG);
@@ -2863,9 +2841,9 @@ public final class Config
 			HEART_DEFENCE_MIN_PLAYERS = Integer.parseInt(SeeOfInfinitySettings.getProperty("MinHeaDefPlayers", "18"));
 			HEART_DEFENCE_MAX_PLAYERS = Integer.parseInt(SeeOfInfinitySettings.getProperty("MaxHeaDefPlayers", "27"));
 			
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			// VALAKAS PROPERTIES
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			
 			L2Properties ValakasSettings = new L2Properties();
 			final File valakas = new File(VALAKAS_CONFIG);
@@ -2899,9 +2877,9 @@ public final class Config
 			}
 			Random_Of_Valakas_Spawn = Random_Of_Valakas_Spawn * 3600000;
 			
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			// ZAKEN PROPERTIES
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			
 			L2Properties ZakenSettings = new L2Properties();
 			final File zaken = new File(ZAKEN_CONFIG);
@@ -2921,9 +2899,9 @@ public final class Config
 			ZAKEN_MAXMEMBERS_DAYTIME = Integer.parseInt(ZakenSettings.getProperty("ZakenMaxMembersDaytime", "27"));
 			ZAKEN_MAXMEMBERS_NIGHTTIME = Integer.parseInt(ZakenSettings.getProperty("ZakenMaxMembersNighttime", "450"));
 			
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			// Load Feature L2Properties file (if exists) //
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			L2Properties Feature = new L2Properties();
 			final File feature = new File(FEATURE_CONFIG_FILE);
 			try (InputStream is = new FileInputStream(feature))
@@ -3127,9 +3105,9 @@ public final class Config
 			CLAN_LEVEL_11_REQUIREMENT = Integer.parseInt(Feature.getProperty("ClanLevel11Requirement", "170"));
 			ALLOW_WYVERN_DURING_SIEGE = Boolean.parseBoolean(Feature.getProperty("AllowRideWyvernDuringSiege", "True"));
 			
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			// GMADM PROPERTIES
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			
 			L2Properties GmSettings = new L2Properties();
 			final File Gm = new File(GMADM_CONFIG);
@@ -3159,9 +3137,9 @@ public final class Config
 			GM_GIVE_SPECIAL_SKILLS = Boolean.parseBoolean(GmSettings.getProperty("GMGiveSpecialSkills", "False"));
 			GM_GIVE_SPECIAL_AURA_SKILLS = Boolean.parseBoolean(GmSettings.getProperty("GMGiveSpecialAuraSkills", "False"));
 			
- 			// ########################################################################################################//
+ 			// ----------------------------------------------------------------------------------------------------//
 			// EnterWorld Properties //
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			L2Properties PlayerSettings = new L2Properties();
 			final File Player = new File(PLAYER_CONFIG_FILE);
 			try (InputStream is = new FileInputStream(Player))
@@ -3431,7 +3409,7 @@ public final class Config
 				_log.log(Level.SEVERE, "Error while loading Rename settings!", e);
 			}
 			
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			
 			// ############################ CUSTOM SPAWN PROPERTIES ####################################################//
 			
@@ -3709,7 +3687,7 @@ public final class Config
 			ANNOUNCE_VIP_CONECT = Boolean.parseBoolean(VipSettings.getProperty("AnnounceVipConect", "False"));
 			ENABLE_VIP_MESSAGE = Boolean.parseBoolean(VipSettings.getProperty("VipMensagem", "False"));
 
-			// ########################################################################################################//
+			// ----------------------------------------------------------------------------------------------------//
 			
 			// Character L2Properties
 			L2Properties Character = new L2Properties();

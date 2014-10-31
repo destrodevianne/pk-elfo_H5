@@ -11,8 +11,9 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 /**
- * Useful utilities common to L2J Server.
+ * PkElfo
  */
+
 public class Util
 {
 	private static final Logger _log = Logger.getLogger(Util.class.getName());
@@ -40,7 +41,7 @@ public class Util
 	 * Checks if a host name is internal
 	 * @param host the host name to check
 	 * @return true: host name is internal<br>
-	 *         false: host name is external
+	 * false: host name is external
 	 */
 	public static boolean isInternalHostname(String host)
 	{

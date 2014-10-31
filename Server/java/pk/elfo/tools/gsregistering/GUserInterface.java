@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.tools.gsregistering;
 
 import java.awt.BorderLayout;
@@ -53,12 +35,12 @@ import pk.elfo.tools.images.ImagesTable;
 /**
  * PkElfo
  */
+ 
 public class GUserInterface extends BaseGameServerRegister implements ActionListener
 {
 	private final JFrame _frame;
 	protected final JTableModel _dtm;
 	protected final JProgressBar _progressBar;
-	
 	public JTable _gsTable;
 	
 	public GUserInterface(ResourceBundle bundle)
@@ -326,7 +308,6 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 	/**
 	 * Forward mouse-events from table to buttons inside.<br>
 	 * Buttons animate properly.
-	 * @author KenM
 	 */
 	private class JTableButtonMouseListener implements MouseListener
 	{

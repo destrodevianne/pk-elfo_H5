@@ -27,7 +27,7 @@ public class UPnPService
         }
         catch (Exception e)
         {
-            _log.log(Level.WARNING, getClass().getSimpleName() + ": error while initializing: ", e);
+            _log.log(Level.WARNING, getClass().getSimpleName() + ": erro durante a inicializacao: ", e);
         }
     }
 
@@ -39,12 +39,12 @@ public class UPnPService
             return;
         }
 
-        _log.log(Level.INFO, "Looking for UPnP Gateway Devices...");
+        _log.log(Level.INFO, "Procurando por UPnP dispositivos de gateway...");
 
         final Map<InetAddress, GatewayDevice> gateways = _gatewayDiscover.discover();
         if (gateways.isEmpty())
         {
-            _log.log(Level.INFO, "No UPnP gateways found");
+            _log.log(Level.INFO, "Nao gateways UPnP encontrados");
             return;
         }
 
@@ -52,23 +52,23 @@ public class UPnPService
         _activeGW = _gatewayDiscover.getValidGateway();
         if (_activeGW != null)
         {
-            _log.log(Level.INFO, "Using UPnP gateway: " + _activeGW.getFriendlyName());
+            _log.log(Level.INFO, "Usando o gateway UPnP: " + _activeGW.getFriendlyName());
         }
         else
         {
-            _log.log(Level.INFO, "No active UPnP gateway found");
+            _log.log(Level.INFO, "No portal UPnP ativo encontrado");
             return;
         }
 
-        _log.log(Level.INFO, "Using local address: " + _activeGW.getLocalAddress().getHostAddress() + " External address: " + _activeGW.getExternalIPAddress());
+        _log.log(Level.INFO, "Usando endereco local: " + _activeGW.getLocalAddress().getHostAddress() + " endereco externo: " + _activeGW.getExternalIPAddress());
 
         if (Server.serverMode == Server.MODE_GAMESERVER)
         {
-            addPortMapping(Config.PORT_GAME, "L2j Game Server");
+            addPortMapping(Config.PORT_GAME, "L2PkElfo Game Server");
         }
         else if (Server.serverMode == Server.MODE_LOGINSERVER)
         {
-            addPortMapping(Config.PORT_LOGIN, "L2j Login Server");
+            addPortMapping(Config.PORT_LOGIN, "L2PkElfo Login Server");
         }
     }
 
@@ -100,11 +100,11 @@ public class UPnPService
 
         if (_activeGW.addPortMapping(port, port, localAddress.getHostAddress(), PROTOCOL, description))
         {
-            _log.log(Level.INFO, "Mapping successfull on [" + localAddress.getHostAddress() + ":" + port + "]");
+            _log.log(Level.INFO, "Mapeamento bem sucedido em [" + localAddress.getHostAddress() + ":" + port + "]");
         }
         else
         {
-            _log.log(Level.INFO, "Mapping failed on [" + localAddress.getHostAddress() + ":" + port + "] - Already mapped?");
+            _log.log(Level.INFO, "Mapeamento falhou em [" + localAddress.getHostAddress() + ":" + port + "] - ja mapeados?");
         }
     }
 
@@ -112,7 +112,7 @@ public class UPnPService
     {
         if (_activeGW.deletePortMapping(port, PROTOCOL))
         {
-            _log.log(Level.INFO, "Mapping was deleted from [" + _activeGW.getLocalAddress().getHostAddress() + ":" + port + "]");
+            _log.log(Level.INFO, "O mapeamento foi excluido do [" + _activeGW.getLocalAddress().getHostAddress() + ":" + port + "]");
         }
     }
 

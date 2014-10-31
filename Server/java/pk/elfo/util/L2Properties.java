@@ -14,6 +14,7 @@ import java.util.logging.Logger;
  * Specialized {@link java.util.Properties} class.<br>
  * Simplifies loading of property files and adds logging if a non existing property is requested.<br>
  */
+ 
 public final class L2Properties extends Properties
 {
 	private static final long serialVersionUID = 1L;
@@ -22,7 +23,6 @@ public final class L2Properties extends Properties
 	
 	public L2Properties()
 	{
-		
 	}
 	
 	public L2Properties(String name) throws IOException
@@ -100,11 +100,10 @@ public final class L2Properties extends Properties
 		
 		if (property == null)
 		{
-			_log.info("L2Properties: Missing property for key - " + key);
+			_log.info("L2Properties: Faltando propriedade para chave - " + key);
 			
 			return null;
 		}
-		
 		return property.trim();
 	}
 	
@@ -115,11 +114,10 @@ public final class L2Properties extends Properties
 		
 		if (property == null)
 		{
-			_log.warning("L2Properties: Missing defaultValue for key - " + key);
+			_log.warning("L2Properties: Faltando propriedade para chave - " + key);
 			
 			return null;
 		}
-		
 		return property.trim();
 	}
 	
@@ -141,7 +139,7 @@ public final class L2Properties extends Properties
         String value = getProperty(key);
         if (value == null)
         {
-            _log.warning("Missing property for key: " + key + " using default value: " + defaultValue);
+            _log.warning("Faltando propriedade para chave: " + key + " usando o valor padrao: " + defaultValue);
             return defaultValue;
         }
 
@@ -155,7 +153,7 @@ public final class L2Properties extends Properties
         }
         else
         {
-            _log.warning("Invalid value specified for key: " + key + " specified value: " + value + " should be \"boolean\" using default value: " + defaultValue);
+            _log.warning("Valor invalido especificado para a chave: " + key + " valor especificado: " + value + " deve ser \"boolean\" usando o valor padrao: " + defaultValue);
             return defaultValue;
         }
     }
@@ -165,7 +163,7 @@ public final class L2Properties extends Properties
         String value = getProperty(key);
         if (value == null)
         {
-            _log.warning("Missing property for key: " + key + " using default value: " + defaultValue);
+            _log.warning("Faltando propriedade para chave: " + key + " usando o valor padrao: " + defaultValue);
             return defaultValue;
         }
 
@@ -175,7 +173,7 @@ public final class L2Properties extends Properties
         }
         catch (NumberFormatException e)
         {
-            _log.warning("Invalid value specified for key: " + key + " specified value: " + value + " should be \"int\" using default value: " + defaultValue);
+            _log.warning("Valor invalido especificado para a chave: " + key + " valor especificado: " + value + " deve ser \"int\" usando o valor padrao: " + defaultValue);
             return defaultValue;
         }
     }

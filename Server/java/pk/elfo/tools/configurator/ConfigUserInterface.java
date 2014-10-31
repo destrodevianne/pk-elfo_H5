@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.tools.configurator;
 
 import java.awt.GridBagConstraints;
@@ -71,16 +53,13 @@ import javolution.util.FastList;
 /**
  * PkElfo
  */
+ 
 public class ConfigUserInterface extends JFrame implements ActionListener
 {
 	private static final long serialVersionUID = 2609592249095305857L;
-	
 	public static final String EOL = System.getProperty("line.separator");
-	
 	private final JTabbedPane _tabPane = new JTabbedPane();
-	
 	private List<ConfigFile> _configs = new FastList<>();
-	
 	private ResourceBundle _bundle;
 	
 	/**
@@ -364,7 +343,6 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 				}
 			}
 		}
-		
 		return value;
 	}
 	
@@ -432,7 +410,6 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		
 		class ConfigComment
 		{
-			
 			private String _comments;
 			
 			/**
