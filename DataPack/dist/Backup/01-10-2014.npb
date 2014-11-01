@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BackupProfile Ver="1.1">
+  <General ConnectionName="localhost_3306" DatabaseName="pkelfo" SchemaName="" Compressed="true" LockAllTables="false" UseSpecifyFileName="true" FileName="01-10-2014" Comments="01-10-2014"/>
+  <Tables SelectAll="true"/>
+  <Views SelectAll="false"/>
+  <Functions SelectAll="false"/>
+  <Events SelectAll="false"/>
+  <Sequences SelectAll="false"/>
+  <Indexes SelectAll="false"/>
+  <Triggers SelectAll="false"/>
+</BackupProfile>
