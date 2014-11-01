@@ -46,7 +46,7 @@ public class DragonVortex extends AbstractNpcAI
 			if (hasQuestItems(player, LARGE_DRAGON_BONE))
 			{
 				takeItems(player, LARGE_DRAGON_BONE, 1);
-				addSpawn(raid, new Location(player.getX() + getRandom(100), player.getY() + getRandom(100), player.getZ(), player.getHeading()), true, DESPAWN_DELAY);
+				addSpawn(raid, new Location(player.getX() + getRandom(400), player.getY() + getRandom(400), player.getZ(), player.getHeading()), true, DESPAWN_DELAY);
 			}
 			else
 			{
