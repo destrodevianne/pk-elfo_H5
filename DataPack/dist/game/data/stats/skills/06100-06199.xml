@@ -368,17 +368,23 @@
 			<player agathionId="16064" />
 		</cond>
 	</skill>
-	<skill id="6137" levels="1" name="Agathion Juju - Effect of Doubt">
-		<set name="abnormalLvl" val="0" />
-		<set name="abnormalType" val="big_head" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="10000" />
-		<set name="hitTime" val="1500" />
-		<set name="trait" val="ETC" />
-	</skill>
+    <skill id="6137" levels="1" name="Agathion Juju - Effect of Doubt">
+        <set name="abnormalLvl" val="0" />
+        <set name="abnormalType" val="big_head" />
+        <set name="isMagic" val="2" /> <!-- Static Skill -->
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="A2" />
+        <set name="reuseDelay" val="10000" />
+        <set name="hitTime" val="1500" />
+        <set name="trait" val="ETC" />
+        <cond msgId="2292">
+            <player agathionId="16064" />
+        </cond>
+        <for>
+            <effect name="BigHead" abnormalTime="120" val="0" abnormalVisualEffect="bighead" abnormalLvl="0" abnormalType="big_head" />
+        </for>
+    </skill>
 	<skill id="6138" levels="1" name="Agathion Juju - Large Firework">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="target" val="TARGET_NONE" />
@@ -872,16 +878,25 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 	</skill>
-	<skill id="6196" levels="1" name="Agathion Oink Oink's Ability">
-		<set name="abnormalLvl" val="2" />
-		<set name="abnormalType" val="vp_keep" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="72000000" />
-		<set name="coolTime" val="1000" />
-	</skill>
+    <skill id="6196" levels="1" name="Agathion Oink Oink's Ability">
+        <set name="abnormalLvl" val="2" />
+        <set name="abnormalType" val="vp_keep" />
+        <set name="isMagic" val="2" /> <!-- Static Skill -->
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="A2" />
+        <set name="reuseDelay" val="72000000" />
+        <set name="coolTime" val="1000" />
+        <set name="trait" val="ETC" />
+        <cond msgId="2292">
+            <player agathionId="16065" />
+        </cond>
+        <for>
+            <effect name="Buff" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="vp_up" abnormalVisualEffect="vitality">
+            <sub order="0x40" stat="vitalityConsumeRate" val="10" />
+        </effect>
+        </for>
+    </skill>
 	<skill id="6197" levels="1" name="Agathion Cute Trick - Oink Oink">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="target" val="TARGET_SELF" />

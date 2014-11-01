@@ -79,7 +79,6 @@ public final class UserInfo extends L2GameServerPacket
 		
 		writeD(_activeChar.getObjectId());
 		// Fix Cursed Sword's Name
-		writeS(_activeChar.getAppearance().getVisibleName());
 		writeS(_activeChar.getName());
 		writeD(_activeChar.getRace().ordinal());
 		writeD(_activeChar.getAppearance().getSex() ? 1 : 0);

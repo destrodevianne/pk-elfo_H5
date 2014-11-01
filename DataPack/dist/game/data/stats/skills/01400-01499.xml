@@ -1207,7 +1207,7 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="25" />
-		<set name="reuseDelay" val="15000" />
+		<set name="reuseDelay" val="21000" />
 		<set name="skillType" val="STEAL_BUFF" />
 		<set name="target" val="TARGET_ONE" />
 	</skill>

@@ -9644,15 +9644,7 @@ public final class L2PcInstance extends L2Playable
 		{
 			return false;
 		}
-		
-		// restriccion para los AIO
-		// tengo mis serias dudas xD
-		if (isAio() && !isInsideZone(ZoneId.PEACE))
-		{
-			sendMessage("isAutoAttackable");
-			return false;
-		}
-		
+
 		// Check if the attacker isn't the L2PcInstance Pet
 		if ((attacker == this) || (attacker == getSummon()))
 		{
@@ -12473,9 +12465,15 @@ public final class L2PcInstance extends L2Playable
 		
 		// Force a revalidation
 		revalidateZone(true);
-		
 		checkItemRestriction();
 		
+		// Refactor
+		if (isAio() && !isGM() && !isInsideZone(ZoneId.TOWN))
+		{
+			sendMessage("You can only teleport to another town while being an AIO!");
+			teleToLocation(MapRegionManager.TeleportWhereType.Town); // Teleporta o AIO para a cidade mais próxima.
+		}
+
 		if ((Config.PLAYER_TELEPORT_PROTECTION > 0) && !isInOlympiadMode())
 		{
 			setTeleportProtection(true);

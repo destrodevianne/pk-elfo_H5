@@ -133,6 +133,24 @@ Fix item e skill Mana Drug
 Fix de Fantasy Isle
 Fix area de efeito em Fantasy Isle
 Block AIO Char to use: Register to Olympiad Event if is Noblesse!
+- Fix item Agathion Seal Bracelet - Antharas
+- Fix item Agathion Seal Bracelet - Nevit's Messenger Kanna
+- Fix item Agathion Seal Bracelet - Guardian of the Dawn Kallesin
+- Fix skill Agathion Juju - Effect of Doubt
+- Fix skill Agathion Oink Oink's Ability
+- Fix skill Antharas's Cute Tricks
+- Fix skill Kanna's Splendor
+- Fix skill Kallesin's Splendor
+- Fix skill Release Seal on Agathion - Ball Trapping Gnosian
+- Fix skill Release Seal on Agathion - Ball Trapping Orodriel
+- Fix skill Release Seal on Agathion - Penalty Kick
+- Fix skill Release Seal on Agathion - Nevit's Messenger Kanna
+- Fix skill Release Seal on Agathion - Guardian of the Dawn Kallesin
+- Fix skill Chon-chon Agathion Special Skill - Great Warrior Soul Power
+- Aumentado o delay da skill Steal Divinity
+- Reduxino o numero de linhas de alguns arquivos
+Fix bug ao logar os chars
+
 ###############################################
 #################### FIX BETA TEST ############
 BETA: Attempting to fix multithreading issues.
