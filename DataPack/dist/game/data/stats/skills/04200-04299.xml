@@ -1271,7 +1271,6 @@
 			</for>
 	</skill>
 	<skill id="4276" levels="5" name="Archery Attack Weak Point">
-		<!-- Freya retail confirmed -->
 		<table name="#bowVuln"> 1.11 1.25 1.43 1.67 2 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="operateType" val="P" />
@@ -1341,7 +1340,6 @@
 		</for>
 	</skill>
 	<skill id="4284" levels="5" name="Resist Bleeding">
-		<!-- Freya retail confirmed -->
 		<table name="#bleedVuln"> 10 20 30 40 50 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="operateType" val="P" />
@@ -1350,7 +1348,6 @@
 		</for>
 	</skill>
 	<skill id="4285" levels="5" name="Resist Sleep">
-		<!-- Freya retail confirmed -->
 		<table name="#sleepVuln"> 10 20 30 40 50 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="operateType" val="P" />
@@ -1359,7 +1356,6 @@
 		</for>
 	</skill>
 	<skill id="4286" levels="1" name="Greater Resist Sleep">
-		<!-- Freya retail confirmed -->
 		<set name="target" val="TARGET_SELF" />
 		<set name="operateType" val="P" />
 		<for>
@@ -1367,7 +1363,6 @@
 		</for>
 	</skill>
 	<skill id="4287" levels="5" name="Resist Hold">
-		<!-- Freya retail confirmed -->
 		<table name="#rootVuln"> 10 20 30 40 50 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="operateType" val="P" />
@@ -1376,7 +1371,6 @@
 		</for>
 	</skill>
 	<skill id="4288" levels="1" name="Greater Resist Hold">
-		<!-- Freya retail confirmed -->
 		<set name="target" val="TARGET_SELF" />
 		<set name="operateType" val="P" />
 		<for>
@@ -1384,7 +1378,6 @@
 		</for>
 	</skill>
 	<skill id="4289" levels="1" name="Wyvern Breath">
-		<!-- Freya retail confirmed -->
 		<set name="element" val="0" /> <!-- Fire -->
 		<set name="elementPower" val="20" />
 		<set name="magicLvl" val="60" />
@@ -1405,70 +1398,60 @@
 		<set name="mpConsume" val="400" />
 	</skill>
 	<skill id="4290" levels="1" name="Race">
-		<!-- Freya retail confirmed -->
 		<!-- Race Undead -->
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="P" />
 	</skill>
 	<skill id="4291" levels="1" name="Race">
-		<!-- Freya retail confirmed -->
 		<!-- Race Construct -->
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="P" />
 	</skill>
 	<skill id="4292" levels="1" name="Race">
-		<!-- Freya retail confirmed -->
 		<!-- Race Beast -->
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="P" />
 	</skill>
 	<skill id="4293" levels="1" name="Race">
-		<!-- Freya retail confirmed -->
 		<!-- Race Animal -->
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="P" />
 	</skill>
 	<skill id="4294" levels="1" name="Race">
-		<!-- Freya retail confirmed -->
 		<!-- Race Plant -->
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="P" />
 	</skill>
 	<skill id="4295" levels="1" name="Race">
-		<!-- Freya retail confirmed -->
 		<!-- Race Humanoid -->
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="P" />
 	</skill>
 	<skill id="4296" levels="1" name="Race">
-		<!-- Freya retail confirmed -->
 		<!-- Race Spirit -->
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="P" />
 	</skill>
 	<skill id="4297" levels="1" name="Race">
-		<!-- Freya retail confirmed -->
 		<!-- Race Divine -->
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="P" />
 	</skill>
 	<skill id="4298" levels="1" name="Race">
-		<!-- Freya retail confirmed -->
 		<!-- Race Demonic -->
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="P" />
 	</skill>
 	<skill id="4299" levels="1" name="Race">
-		<!-- Freya retail confirmed -->
 		<!-- Race Dragon -->
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
