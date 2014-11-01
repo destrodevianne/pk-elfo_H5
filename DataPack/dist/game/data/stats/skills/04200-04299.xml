@@ -474,11 +474,11 @@
 		</for>
 	</skill>
 	<skill id="4225" levels="5" name="Resist Shock">
-		<!-- Freya retail confirmed -->
 		<table name="#stunVuln"> 10 20 30 40 50 </table>
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
-		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+        <set name="target" val="TARGET_SELF" />
 		<for>
 			<sub order="0x40" stat="stunVuln" val="#stunVuln" />
 		</for>
@@ -587,9 +587,9 @@
 		<set name="mpConsume" val="#mpConsume" />
 	</skill>
 	<skill id="4233" levels="1" name="Vampiric Attack">
-		<!-- Freya retail confirmed -->
 		<!-- Summon Shadow Skill -->
 		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="P" />
 		<for>
 			<add order="0x40" stat="absorbDam" val="15" />
@@ -1207,13 +1207,11 @@
 		<set name="operateType" val="P" />
 	</skill>
 	<skill id="4269" levels="1" name="Block All Chat">
-		<!-- Freya retail confirmed -->
 		<!-- This Skill Is Only For Description In The Client -->
 		<set name="target" val="TARGET_SELF" />
 		<set name="operateType" val="P" />
 	</skill>
 	<skill id="4270" levels="4" name="Weight Penalty">
-		<!-- Freya retail confirmed -->
 		<!-- This Skill SHOULD BE Only For Description In The Client - probably hardcoded on retail -->
 		<table name="#rate"> 0.5 0.5 0.5 0.5 </table>
 		<table name="#rateSpd"> 1 0.5 0.5 0 </table>
