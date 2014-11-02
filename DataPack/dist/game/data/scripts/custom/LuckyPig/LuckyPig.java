@@ -35,7 +35,7 @@ public class LuckyPig extends AbstractNpcAI
 	{
 		// TODO: Add Correct Monsters
 		22862,
-		22823,
+		22823
 	};
 	
 	public LuckyPig(int questId, String name, String descr)
