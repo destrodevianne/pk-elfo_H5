@@ -10,7 +10,6 @@ import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import ai.npc.AbstractNpcAI;
 import javolution.util.FastSet;
 
-
 public class OlAriosh extends AbstractNpcAI
 {
   private static final int ARIOSH = 18555;
@@ -76,12 +75,11 @@ public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
       _guard.decayMe();
       cancelQuestTimer("time_to_spawn", npc, killer);
     }
-
     return super.onKill(npc, killer, isPet);
   }
 
   public static void main(String[] args)
   {
-    new OlAriosh(OlAriosh.class.getSimpleName(), "ai");
+    new OlAriosh(OlAriosh.class.getSimpleName(), "ai/individual");
   }
 }

@@ -1248,7 +1248,7 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="item_skill" val="3418-1" />
+		<set name="item_skill" val="8264-1" />
 		<set name="time" val="43200" />
 		<for>
 			<set order="0x08" stat="pAtk" val="1" />

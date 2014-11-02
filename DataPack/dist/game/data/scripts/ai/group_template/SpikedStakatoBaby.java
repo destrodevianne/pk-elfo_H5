@@ -49,6 +49,6 @@ public class SpikedStakatoBaby extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new SpikedStakatoBaby(-1, "SpikedStakatoBaby", "ai");
+		new SpikedStakatoBaby(-1, "SpikedStakatoBaby", "ai/group_template");
 	}
 }

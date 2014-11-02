@@ -1,17 +1,3 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- * 
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- * 
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package ai.individual;
 
 import static pk.elfo.gameserver.ai.CtrlIntention.AI_INTENTION_FOLLOW;
@@ -76,7 +62,7 @@ public class FireDragon extends AbstractNpcAI
 		super(name, descr);
 		int[] mob =
 		{
-				VALAKAS
+			VALAKAS
 		};
 		registerMobs(mob);
 		i_ai0 = 0;
@@ -1885,6 +1871,6 @@ public class FireDragon extends AbstractNpcAI
 	public static void main(String[] args)
 	{
 		// now call the constructor (starts up the ai)
-		new FireDragon(FireDragon.class.getSimpleName(), "ai");
+		new FireDragon(FireDragon.class.getSimpleName(), "ai/individual");
 	}
 }

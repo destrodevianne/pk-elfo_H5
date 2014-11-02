@@ -73,7 +73,7 @@ public class Shutdown extends Thread
 	
 	public void startTelnetShutdown(String IP, int seconds, boolean restart)
 	{
-		_log.warning("IP: " + IP + " issued shutdown command. " + MODE_TEXT[_shutdownMode] + " em " + seconds + " segundos!");
+		_log.warning("IP: " + IP + " comando de desligar ativado. " + MODE_TEXT[_shutdownMode] + " em " + seconds + " segundos!");
 		
 		if (restart)
 		{
@@ -402,12 +402,10 @@ public class Shutdown extends Thread
 	 */
 	private void countdown()
 	{
-		
 		try
 		{
 			while (_secondsShut > 0)
 			{
-				
 				switch (_secondsShut)
 				{
 					case 540:
@@ -494,7 +492,6 @@ public class Shutdown extends Thread
 			case GM_RESTART:
 				_log.info("GM restart received. Restarting NOW!");
 				break;
-		
 		}
 		
 		if (Config.RANK_ARENA_ENABLED)

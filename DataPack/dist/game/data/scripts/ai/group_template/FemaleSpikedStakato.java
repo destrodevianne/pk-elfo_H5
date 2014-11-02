@@ -49,6 +49,6 @@ public class FemaleSpikedStakato extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new FemaleSpikedStakato(-1, "FemaleSpikedStakato", "ai");
+		new FemaleSpikedStakato(-1, "FemaleSpikedStakato", "ai/group_template");
 	}
 }

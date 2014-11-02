@@ -1404,6 +1404,6 @@ public class DVwalk extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new DVwalk(DVwalk.class.getSimpleName(), "ai");
+		new DVwalk(DVwalk.class.getSimpleName(), "ai/individual");
 	}
 }

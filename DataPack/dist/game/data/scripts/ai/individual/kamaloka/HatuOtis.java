@@ -80,6 +80,6 @@ public class HatuOtis extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new HatuOtis(HatuOtis.class.getSimpleName(), "ai");
+		new HatuOtis(HatuOtis.class.getSimpleName(), "ai/individual");
 	}
 }

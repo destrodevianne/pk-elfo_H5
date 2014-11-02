@@ -1,17 +1,3 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- * 
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- * 
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package ai.group_template;
 
 import pk.elfo.Config;
@@ -96,50 +82,95 @@ public class FortressReward extends Quest
 			if(siege != null && siege.checkIsAttacker(clan)) 
 			{
 			if(Util.contains(CGUARD, npcid))
+			{
 				rewardPlayer(player, npc, CGUARD_DROP);
+			}
 	 		else if (Util.contains(GUARD, npcid))
+			{
   				rewardPlayer(player, npc, GUARD_DROP);
+			}
 			else if (Util.contains(ARCHER, npcid))
+			{
  				rewardPlayer(player, npc, ARCHER_DROP);
+			}
  			else if (Util.contains(HEALER, npcid))
+			{
 				rewardPlayer(player, npc, HEALER_DROP);
+			}
 			else if (Util.contains(WIZARD, npcid))
+			{
 				rewardPlayer(player, npc, WIZARD_DROP);
+			}
 	        else if (Util.contains(SUPPORT, npcid))
+			{
 	            rewardPlayer(player, npc, SUPPORT_DROP);
+			}
 	        else if (Util.contains(ARCHCAP, npcid))
+			{
 	            rewardPlayer(player, npc, ARCHCAP_DROP);
+			}
  	        else if (Util.contains(GUARDCAP, npcid))
+			{
  	            rewardPlayer(player, npc, GUARDCAP_DROP);
+			}
 	        else if (Util.contains(REBELPRIV, npcid))
+			{
 	            rewardPlayer(player, npc, REBELPRIV_DROP);
+			}
 	        else if (Util.contains(DECORATED, npcid))
+			{
 	            rewardPlayer(player, npc, DECORATED_DROP);
+			}
 	        else if (Util.contains(REBELCOM, npcid))
+			{
 	            rewardPlayer(player, npc, REBELCOM_DROP);
+			}
 	        else if (Util.contains(DGSERG, npcid))
+			{
 	            rewardPlayer(player, npc, DGSERG_DROP);	
+			}
 	        else if (Util.contains(GENERAL, npcid))
+			{
 	            rewardPlayer(player, npc, GENERAL_DROP);
+			}
 	        else if (Util.contains(MINISTER, npcid))
+			{
 	            rewardPlayer(player, npc, MINISTER_DROP);
+			}
 	        else if (Util.contains(SGOLEM, npcid))
+			{
 	            rewardPlayer(player, npc, SGOLEM_DROP);
+			]
 	        else if (Util.contains(SBOX, npcid))
+			{
 	            rewardPlayer(player, npc, SBOX_DROP);
+			}
 			else if (Util.contains(SNOOP, npcid))
+			{
 	            rewardPlayer(player, npc, SNOOP_DROP);
+			}
 			else if (Util.contains(EVILUS, npcid))
+			{
 	            rewardPlayer(player, npc, EVILUS_DROP);
+			}
 			else if (Util.contains(COURT, npcid))
+			{
 	            rewardPlayer(player, npc, COURT_DROP);
+			}
 			else if (Util.contains(FORT, npcid))
+			{
 	            rewardPlayer(player, npc, FORT_DROP);
+			}
 			else if (Util.contains(BOMB, npcid))
+			{
 	            rewardPlayer(player, npc, BOMB_DROP);
+			}
 			else if (Util.contains(BOOM, npcid))
-	            rewardPlayer(player, npc, BOOM_DROP);	
+			{
+	            rewardPlayer(player, npc, BOOM_DROP);
+			}				
 			else if (Util.contains(GANG, npcid))
+			{
 	            rewardPlayer(player, npc, GANG_DROP);
 			}
 		}
@@ -149,71 +180,121 @@ public class FortressReward extends Quest
 	private void rewardPlayer(L2PcInstance player, L2Npc npc,  int[] drop)
 	{
 		if(player == null || npc == null)
+		{
 			return;
+		}
 		
 		QuestState st = player.getQuestState(getName());
 		if (st == null)
+		{
 			return;
+		}
 		
 		int chance = (drop[2] - (player.getLevel() - npc.getLevel()));
 
 		if (Rnd.get(100) < chance)
         {
-                st.giveItems(KE,(long)(Rnd.get(drop[0],drop[1])*Config.RATE_DROP_ITEMS));
-                st.playSound("ItemSound.quest_itemget");
-            }
-		}   
+            st.giveItems(KE,(long)(Rnd.get(drop[0],drop[1])*Config.RATE_DROP_ITEMS));
+            st.playSound("ItemSound.quest_itemget");
+        }
+	}   
 
 	public FortressReward(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
 
 		for (int court : CGUARD)
-		  addKillId(court);
-		for (int guard : GUARD)
-		  addKillId(guard);
-		for (int archer : ARCHER)
-		  addKillId(archer);
-		for (int healer : HEALER)
-		  addKillId(healer);
-		for (int wizard : WIZARD)
-		  addKillId(wizard);
-		for (int support : SUPPORT)
-		  addKillId(support);
-		for (int archcap : ARCHCAP)
-		  addKillId(archcap);
-		for (int guardcap : GUARDCAP)
-		  addKillId(guardcap);
-		for (int rebelpriv : REBELPRIV)
-		  addKillId(rebelpriv);
-		for (int decorated : DECORATED)
-		  addKillId(decorated);
-		for (int rebelcom : REBELCOM)
-		  addKillId(rebelcom);
-		for (int dgserg : DGSERG)
-		  addKillId(dgserg);
-		for (int general : GENERAL)
-			addKillId(general);
-		for (int minister : MINISTER)
-			addKillId(minister);
-		for (int golem : SGOLEM)
-			addKillId(golem);
-		for (int sbox : SBOX)
-			addKillId(sbox);
-	    for (int snoop : SNOOP)
-			addKillId(snoop);
-	    for (int evilus : EVILUS)
-			addKillId(evilus);
-	    for (int court : COURT)
+		{
 			addKillId(court);
+		}
+		for (int guard : GUARD)
+		{
+			addKillId(guard);
+		}
+		for (int archer : ARCHER)
+		{
+			addKillId(archer);
+		}
+		for (int healer : HEALER)
+		{
+			addKillId(healer);
+		}
+		for (int wizard : WIZARD)
+		{
+			addKillId(wizard);
+		}
+		for (int support : SUPPORT)
+		{
+			addKillId(support);
+		}
+		for (int archcap : ARCHCAP)
+		{
+			addKillId(archcap);
+		}
+		for (int guardcap : GUARDCAP)
+		{
+			addKillId(guardcap);
+		}
+		for (int rebelpriv : REBELPRIV)
+		{
+			addKillId(rebelpriv);
+		}
+		for (int decorated : DECORATED)
+		{
+			addKillId(decorated);
+		}
+		for (int rebelcom : REBELCOM)
+		{
+			addKillId(rebelcom);
+		}
+		for (int dgserg : DGSERG)
+		{
+			addKillId(dgserg);
+		}
+		for (int general : GENERAL)
+		{
+			addKillId(general);
+		}
+		for (int minister : MINISTER)
+		{
+			addKillId(minister);
+		}
+		for (int golem : SGOLEM)
+		{
+			addKillId(golem);
+		}
+		for (int sbox : SBOX)
+		{
+			addKillId(sbox);
+		}
+	    for (int snoop : SNOOP)
+		{
+			addKillId(snoop);
+		}
+	    for (int evilus : EVILUS)
+		{
+			addKillId(evilus);
+		}
+	    for (int court : COURT)
+		{
+			addKillId(court);
+		}
 	    for (int fort : FORT)
+		{
 			addKillId(fort);
+		}
 	    for (int bomb : BOMB)
+		{
 			addKillId(bomb);
+		}
 	    for (int boom : BOOM)
+		{
 			addKillId(boom);
+		}
 	    for (int gang : GANG)
+		{
 			addKillId(gang);
+		}
 	}
 	
 	public static void main(String[] args)

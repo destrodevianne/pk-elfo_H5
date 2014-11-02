@@ -57,6 +57,6 @@ public class FleeNpc extends AbstractNpcAI
 	// Register the new Script at the Script System
 	public static void main(String[] args)
 	{
-		new FleeNpc(FleeNpc.class.getSimpleName(), "ai");
+		new FleeNpc(FleeNpc.class.getSimpleName(), "ai/individual");
 	}
 }

@@ -45,7 +45,6 @@ public class ElcardiaAssistant extends AbstractNpcAI
 			{
 				npc.broadcastPacket(new MagicSkillUse(npc, player, 6729, 1, 500, 0)); // holyResist
 			}
-			
 			startQuestTimer("check_buff", 30000, npc, null);
 		}
 		return super.onAdvEvent(event, npc, player);
@@ -60,6 +59,6 @@ public class ElcardiaAssistant extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new ElcardiaAssistant(-1, ElcardiaAssistant.class.getSimpleName(), "ai");
+		new ElcardiaAssistant(-1, ElcardiaAssistant.class.getSimpleName(), "ai/group_template");
 	}
 }

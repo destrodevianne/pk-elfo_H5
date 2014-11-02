@@ -5,7 +5,6 @@ from pk.elfo.gameserver.model.quest import QuestState
 from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
 from pk.elfo.util import Rnd
 
-# ¥d¯Ç´µ °[¯T ¨È¯d­×
 ARIOSH = 18555
 GUARD1 = 18556
 
@@ -61,7 +60,7 @@ class Quest (JQuest) :
 				self.npcobject[npc.getObjectId()].hp_to_spawn[5] = True
 				self.SpawnMobs(npc)
 
-QUEST = Quest(-1,"Ariosh","ai")
+QUEST = Quest(-1,"Ariosh","ai/individual")
 
 QUEST.addKillId(ARIOSH)
 

@@ -266,7 +266,7 @@ public class EventsConfig extends Quest
 		if (EVENTS_ENABLED)
 		{
 			_log.info("===============================");
-			_log.info("Events System: Configuracao dos events:");
+			_log.info("Events System: Configuracao dos eventos:");
 			_log.info("HollyCow value " + String.valueOf(HC_STARTED));
 			_log.info("L2Day value " + String.valueOf(L2DAY_STARTED));
 			_log.info("NinjaAdventures value " + String.valueOf(NA_STARTED));

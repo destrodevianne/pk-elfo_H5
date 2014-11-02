@@ -72,6 +72,6 @@ public class CannibalisticStakatoFollower extends AbstractNpcAI
 
     public static void main(String[] args)
     {
-        new CannibalisticStakatoFollower(CannibalisticStakatoFollower.class.getSimpleName(), "ai");
+        new CannibalisticStakatoFollower(CannibalisticStakatoFollower.class.getSimpleName(), "ai/individual");
     }
 }

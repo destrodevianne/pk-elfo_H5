@@ -25,7 +25,6 @@ public class FollowerOfAllosce extends AbstractNpcAI
 			npc.doCast(SkillTable.getInstance().getInfo(5624, 1));
 			startQuestTimer("time_to_skill", 30000, npc, player);
 		}
-
 		return "";
 	}
 
@@ -41,12 +40,11 @@ public class FollowerOfAllosce extends AbstractNpcAI
 			npc.setTarget(player);
 			npc.doCast(SkillTable.getInstance().getInfo(5624, 1));
 		}
-
 		return "";
 	}
 
 	public static void main(String[] args)
 	{
-		new FollowerOfAllosce(FollowerOfAllosce.class.getSimpleName(), "ai");
+		new FollowerOfAllosce(FollowerOfAllosce.class.getSimpleName(), "ai/individual");
 	}
 }

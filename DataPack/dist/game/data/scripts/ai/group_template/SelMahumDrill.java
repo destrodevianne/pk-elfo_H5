@@ -1,17 +1,3 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- * 
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- * 
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package ai.group_template;
 
 import pk.elfo.gameserver.ai.CtrlIntention;
@@ -31,7 +17,6 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Sel Mahum Training Ground AI for drill groups.
- * @author GKR
  */
 
 public class SelMahumDrill extends AbstractNpcAI
@@ -151,7 +136,6 @@ public class SelMahumDrill extends AbstractNpcAI
 				onSpawn(npcSpawn.getLastSpawn());
 			}
 		}
-		
 		// Start global return home timer
 		startQuestTimer("return_home", 120000, null, null, true);
 	}
@@ -175,7 +159,6 @@ public class SelMahumDrill extends AbstractNpcAI
 							npc.broadcastEvent("do_social_action", TRAINING_RANGE, null);
 						}
 					}
-					
 					startQuestTimer("do_social_action", 15000, npc, null);
 				}
 				else if (Util.contains(MAHUM_SOLDIERS, npc.getNpcId()))
@@ -220,7 +203,6 @@ public class SelMahumDrill extends AbstractNpcAI
 		{
 			npc.broadcastEvent("ATTACKED", 1000, null);
 		}
-		
 		return super.onAttack(npc, attacker, damage, isPet);
 	}
 	
@@ -261,7 +243,6 @@ public class SelMahumDrill extends AbstractNpcAI
 				receiver.broadcastPacket(new NpcSay(receiver.getObjectId(), Say2.NPC_ALL, receiver.getNpcId(), CHIEF_FSTRINGS[Rnd.get(2)]));
 			}
 		}
-		
 		return null;
 	}
 	
@@ -290,7 +271,6 @@ public class SelMahumDrill extends AbstractNpcAI
 			// Restore AI handling by core
 			npc.disableCoreAI(false);
 		}
-		
 		return null;
 	}
 	
@@ -325,6 +305,6 @@ public class SelMahumDrill extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new SelMahumDrill(SelMahumDrill.class.getSimpleName(), "ai");
+		new SelMahumDrill(SelMahumDrill.class.getSimpleName(), "ai/group_template");
 	}
 }

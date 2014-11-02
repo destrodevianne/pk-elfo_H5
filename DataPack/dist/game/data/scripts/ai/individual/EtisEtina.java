@@ -52,6 +52,6 @@ public class EtisEtina extends AbstractNpcAI
 
     public static void main(String[] args)
     {
-        new EtisEtina(EtisEtina.class.getSimpleName(), "ai");
+        new EtisEtina(EtisEtina.class.getSimpleName(), "ai/individual");
     }
 }

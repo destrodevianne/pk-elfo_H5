@@ -96,6 +96,6 @@ public class KaimAbigore extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new KaimAbigore(KaimAbigore.class.getSimpleName(), "ai");
+		new KaimAbigore(KaimAbigore.class.getSimpleName(), "ai/individual");
 	}
 }

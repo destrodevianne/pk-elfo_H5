@@ -8,7 +8,6 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
 
-
 public class ForgeOfGods extends AbstractNpcAI
 {
    private static final int MOB_ID_INDEX = 0;
@@ -36,8 +35,10 @@ public class ForgeOfGods extends AbstractNpcAI
    {
        super(name, descr);
        
-       for (int[] currentSpawn : MOBS_SPAWNS)
+		for (int[] currentSpawn : MOBS_SPAWNS)
+		{
            addKillId(currentSpawn[MOB_ID_INDEX]);
+		}
    }
    
    @Override
@@ -45,12 +46,16 @@ public class ForgeOfGods extends AbstractNpcAI
    {
        L2Attackable killedMob = (L2Attackable) npc;
        if (killedMob == null)
+	   {
            return null;
-       
+       }
+	   
        L2Spawn killedMobSpawn = killedMob.getSpawn();
        if (killedMobSpawn != null && !killedMobSpawn.isRespawnEnabled())
+	   {
            return null;
-       
+       }
+	   
        int killedMobID = killedMob.getNpcId();
        L2Attackable newSpawnMob = null;
        
@@ -73,12 +78,11 @@ public class ForgeOfGods extends AbstractNpcAI
                }
            }
        }
-       
        return super.onKill(npc, killer, isPet);
    }
    
    public static void main(String[] args)
    {
-       new ForgeOfGods(ForgeOfGods.class.getSimpleName(), "ai");
+       new ForgeOfGods(ForgeOfGods.class.getSimpleName(), "ai/group_template");
    }
 }

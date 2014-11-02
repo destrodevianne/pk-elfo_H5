@@ -7,7 +7,6 @@ import ai.npc.AbstractNpcAI;
 
 public class HolyBrazier extends AbstractNpcAI
 {
-
 	private static final int HolyBrazier        = 32027;
 	private static final int GuardianOfTheGrail = 22133;
 
@@ -87,6 +86,6 @@ public class HolyBrazier extends AbstractNpcAI
 	public static void main(String[] args)
 	{
 		// now call the constructor (starts up the ai)
-		new HolyBrazier(HolyBrazier.class.getSimpleName(), "ai");
+		new HolyBrazier(HolyBrazier.class.getSimpleName(), "ai/individual");
 	}
 }

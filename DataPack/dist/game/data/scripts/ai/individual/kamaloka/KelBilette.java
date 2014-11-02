@@ -6,7 +6,6 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
 import ai.npc.AbstractNpcAI;
 
-
 public class KelBilette extends AbstractNpcAI
 {
 	private static final int KEL   = 18573;
@@ -96,6 +95,6 @@ public class KelBilette extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new KelBilette(KelBilette.class.getSimpleName(), "ai");
+		new KelBilette(KelBilette.class.getSimpleName(), "ai/individual");
 	}
 }

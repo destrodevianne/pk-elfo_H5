@@ -147,6 +147,6 @@ public class Trex extends AbstractNpcAI
 
     public static void main(String[] args)
     {
-        new Trex(Trex.class.getSimpleName(), "ai");
+        new Trex(Trex.class.getSimpleName(), "ai/individual");
     }
 }

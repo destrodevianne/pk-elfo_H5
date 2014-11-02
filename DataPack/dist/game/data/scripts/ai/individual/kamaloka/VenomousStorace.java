@@ -69,6 +69,6 @@ public class VenomousStorace extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new VenomousStorace(VenomousStorace.class.getSimpleName(), "ai");
+		new VenomousStorace(VenomousStorace.class.getSimpleName(), "ai/individual");
 	}
 }

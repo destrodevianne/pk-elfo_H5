@@ -534,6 +534,6 @@ public class Valakas extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Valakas(Valakas.class.getSimpleName(), "ai");
+		new Valakas(Valakas.class.getSimpleName(), "ai/individual");
 	}
 }

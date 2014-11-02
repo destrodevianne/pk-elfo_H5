@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package ai.individual;
 
 import pk.elfo.gameserver.datatables.DoorTable;
@@ -27,7 +9,6 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Outpost Captain's AI.
- * @author DS
  */
 public class OutpostCaptain extends AbstractNpcAI
 {
@@ -67,7 +48,6 @@ public class OutpostCaptain extends AbstractNpcAI
 		{
 			addSpawn(DOORKEEPER, npc.getSpawn().getSpawnLocation(), false, 0, false);
 		}
-		
 		return super.onKill(npc, killer, isSummon);
 	}
 	
@@ -88,12 +68,11 @@ public class OutpostCaptain extends AbstractNpcAI
 		{
 			startQuestTimer("level_up", 3000, npc, null);
 		}
-		
 		return super.onSpawn(npc);
 	}
 	
 	public static void main(String[] args)
 	{
-		new OutpostCaptain(OutpostCaptain.class.getSimpleName(), "ai");
+		new OutpostCaptain(OutpostCaptain.class.getSimpleName(), "ai/individual");
 	}
 }

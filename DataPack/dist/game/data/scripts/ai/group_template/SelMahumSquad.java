@@ -1,17 +1,3 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- * 
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- * 
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package ai.group_template;
 
 import pk.elfo.gameserver.GameTimeController;
@@ -34,7 +20,6 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Sel Mahum Training Ground AI for squads and chefs.
- * @author GKR
  */
 
 public class SelMahumSquad extends AbstractNpcAI
@@ -64,7 +49,6 @@ public class SelMahumSquad extends AbstractNpcAI
 	
 	private static final int FIRE_EFFECT_BURN = 1;
 	private static final int FIRE_EFFECT_NONE = 2;
-	
 	private static final int MAHUM_EFFECT_EAT = 1;
 	private static final int MAHUM_EFFECT_SLEEP = 2;
 	private static final int MAHUM_EFFECT_NONE = 3;
@@ -192,7 +176,6 @@ public class SelMahumSquad extends AbstractNpcAI
 		{
 			((L2MonsterInstance) npc).returnHome();
 		}
-		
 		return null;
 	}
 	
@@ -216,7 +199,6 @@ public class SelMahumSquad extends AbstractNpcAI
 		{
 			handlePreAttackMotion(npc);
 		}
-		
 		return null;
 	}
 	
@@ -293,7 +275,6 @@ public class SelMahumSquad extends AbstractNpcAI
 			receiver.setScriptValue(FULL_BARREL_REWARDING_PLAYER, reference.getObjectId()); // TODO: Use it in 289 quest
 			startQuestTimer("reset_full_bottle_prize", 180000, receiver, null);
 		}
-		
 		return null;
 	}
 	
@@ -308,7 +289,6 @@ public class SelMahumSquad extends AbstractNpcAI
 		cancelQuestTimer("chef_disable_reward", npc, null);
 		cancelQuestTimer("chef_heal_player", npc, null);
 		cancelQuestTimer("chef_set_invul", npc, null);
-		
 		return null;
 	}
 	
@@ -340,7 +320,6 @@ public class SelMahumSquad extends AbstractNpcAI
 			npc.doCast(SkillTable.getInstance().getInfo(6688, 1));
 			npc.broadcastEvent("SCE_SOUP_FAILURE", 600, caster);
 		}
-		
 		return null;
 	}
 	
@@ -375,7 +354,6 @@ public class SelMahumSquad extends AbstractNpcAI
 		{
 			healPlayer(npc, player);
 		}
-		
 		return null;
 	}
 	
@@ -406,11 +384,10 @@ public class SelMahumSquad extends AbstractNpcAI
 			attacked.setRHandId(THS_Weapon);
 		}
 		// TODO: Check about i_quest0
-		
 	}
 	
 	public static void main(String[] args)
 	{
-		new SelMahumSquad(SelMahumSquad.class.getSimpleName(), "ai");
+		new SelMahumSquad(SelMahumSquad.class.getSimpleName(), "ai/group_template");
 	}
 }

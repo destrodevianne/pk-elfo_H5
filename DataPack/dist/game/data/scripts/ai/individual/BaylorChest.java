@@ -48,6 +48,6 @@ public class BaylorChest extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new BaylorChest(BaylorChest.class.getSimpleName(), "ai");
+		new BaylorChest(BaylorChest.class.getSimpleName(), "ai/individual");
 	}
 }

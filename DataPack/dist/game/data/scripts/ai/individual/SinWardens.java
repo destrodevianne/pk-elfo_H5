@@ -66,6 +66,6 @@ public class SinWardens extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new SinWardens(SinWardens.class.getSimpleName(), "ai");
+		new SinWardens(SinWardens.class.getSimpleName(), "ai/individual");
 	}
 }

@@ -58,6 +58,6 @@ public class Baylor extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new Baylor(Baylor.class.getSimpleName(), "ai");
+		new Baylor(Baylor.class.getSimpleName(), "ai/individual");
 	}
 }

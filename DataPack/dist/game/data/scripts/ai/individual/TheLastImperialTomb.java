@@ -2401,13 +2401,12 @@ public class TheLastImperialTomb extends AbstractNpcAI
 				cancelQuestTimers("room_final");
 			}
 		}
-		
 		return super.onKill(npc, killer, isPet);
 	}
 	
 	public static void main(String[] args)
 	{
 		// now call the constructor (starts up the ai)
-		new TheLastImperialTomb(TheLastImperialTomb.class.getSimpleName(), "ai");
+		new TheLastImperialTomb(TheLastImperialTomb.class.getSimpleName(), "ai/individual");
 	}
 }

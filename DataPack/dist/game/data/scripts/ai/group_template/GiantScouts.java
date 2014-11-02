@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package ai.group_template;
 
 import java.util.Collection;
@@ -33,10 +15,6 @@ import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.CreatureSay;
 import ai.npc.AbstractNpcAI;
 
-/**
- * Giant Scouts AI.
- * @author Gnacik
- */
 public class GiantScouts extends AbstractNpcAI
 {
 	private static final int[] SCOUTS =
@@ -85,7 +63,6 @@ public class GiantScouts extends AbstractNpcAI
 							monster.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 						}
 					}
-					
 				}
 			}
 		}
@@ -94,6 +71,6 @@ public class GiantScouts extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new GiantScouts(GiantScouts.class.getSimpleName(), "ai");
+		new GiantScouts(GiantScouts.class.getSimpleName(), "ai/group_template");
 	}
 }

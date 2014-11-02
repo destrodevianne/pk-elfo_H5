@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package ai.group_template;
 
 import java.util.List;
@@ -35,7 +17,6 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Stakato Nest AI.
- * @author Gnacik
  */
 public class StakatoNest extends AbstractNpcAI
 {
@@ -90,7 +71,6 @@ public class StakatoNest extends AbstractNpcAI
 	private static final int STAKATO_BABY = 22632;
 	// Spiked Stakato Captain
 	private static final int STAKATO_CAPTAIN = 22629;
-	
 	// Female Spiked Stakato
 	private static final int STAKATO_FEMALE = 22620;
 	// Male Spiked Stakato
@@ -99,7 +79,6 @@ public class StakatoNest extends AbstractNpcAI
 	private static final int STAKATO_MALE_2 = 22622;
 	// Spiked Stakato Guard
 	private static final int STAKATO_GUARD = 22619;
-	
 	// Cannibalistic Stakato Chief
 	private static final int STAKATO_CHIEF = 25667;
 	// Growth Accelerator
@@ -280,6 +259,6 @@ public class StakatoNest extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new StakatoNest(StakatoNest.class.getSimpleName(), "ai");
+		new StakatoNest(StakatoNest.class.getSimpleName(), "ai/group_template");
 	}
 }

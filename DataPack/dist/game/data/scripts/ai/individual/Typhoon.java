@@ -53,6 +53,6 @@ public class Typhoon extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Typhoon(Typhoon.class.getSimpleName(), "ai");
+		new Typhoon(Typhoon.class.getSimpleName(), "ai/individual");
 	}
 }

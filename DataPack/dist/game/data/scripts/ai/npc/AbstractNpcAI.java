@@ -71,7 +71,7 @@ public abstract class AbstractNpcAI extends L2Script
         			return true;
         		}
         	}
-                return false;
+            return false;
         }
 
         /**

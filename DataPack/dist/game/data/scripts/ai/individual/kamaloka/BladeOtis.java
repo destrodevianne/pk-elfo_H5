@@ -114,6 +114,6 @@ public class BladeOtis extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new BladeOtis(BladeOtis.class.getSimpleName(), "ai");
+		new BladeOtis(BladeOtis.class.getSimpleName(), "ai/individual");
 	}
 }

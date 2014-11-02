@@ -96,7 +96,6 @@ public class Kechi extends AbstractNpcAI
 			}
 			
 		}
-		
 		return null;
 	}
 	
@@ -113,6 +112,6 @@ public class Kechi extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Kechi(Kechi.class.getSimpleName(), "ai");
+		new Kechi(Kechi.class.getSimpleName(), "ai/individual");
 	}
 }

@@ -7,9 +7,6 @@ import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.util.Util;
 import ai.npc.AbstractNpcAI;
 
-/**
- * ¤õÃÄ±í
- */
 public class PowderKeg extends AbstractNpcAI 
 {
 	private static final int[] NPC_IDS = { 18622 };
@@ -38,6 +35,6 @@ public class PowderKeg extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new PowderKeg(PowderKeg.class.getSimpleName(),"ai");
+		new PowderKeg(PowderKeg.class.getSimpleName(),"ai/individual");
 	}
 }

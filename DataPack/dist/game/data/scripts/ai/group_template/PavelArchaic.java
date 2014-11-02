@@ -1,13 +1,10 @@
 package ai.group_template;
 
+import ai.npc.AbstractNpcAI;
+
 import pk.elfo.gameserver.model.actor.L2Attackable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
-import ai.npc.AbstractNpcAI;
-
-/**
- * Pavel Archaic AI.
- */
 
 public final class PavelArchaic extends AbstractNpcAI
 {

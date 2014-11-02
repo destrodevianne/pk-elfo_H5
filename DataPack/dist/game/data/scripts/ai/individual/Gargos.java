@@ -61,6 +61,6 @@ public class Gargos extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new Gargos(Gargos.class.getSimpleName(), "ai");
+		new Gargos(Gargos.class.getSimpleName(), "ai/individual");
 	}
 }

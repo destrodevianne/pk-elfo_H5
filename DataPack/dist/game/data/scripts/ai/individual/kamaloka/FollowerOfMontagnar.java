@@ -4,7 +4,6 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
 
-
 public class FollowerOfMontagnar extends AbstractNpcAI 
 {
 	private static final int FOFMONTAGNAR = 18569;

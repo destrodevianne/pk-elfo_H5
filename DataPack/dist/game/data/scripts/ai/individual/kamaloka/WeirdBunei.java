@@ -63,6 +63,6 @@ public class WeirdBunei extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new WeirdBunei(WeirdBunei.class.getSimpleName(), "ai");
+		new WeirdBunei(WeirdBunei.class.getSimpleName(), "ai/individual");
 	}
 }

@@ -110,6 +110,6 @@ public class FireDragonMinions extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new FireDragonMinions(FireDragonMinions.class.getSimpleName(), "ai");
+		new FireDragonMinions(FireDragonMinions.class.getSimpleName(), "ai/individual");
 	}
 }

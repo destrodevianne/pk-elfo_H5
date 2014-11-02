@@ -62,6 +62,6 @@ public class WhiteAllosce extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new WhiteAllosce(WhiteAllosce.class.getSimpleName(), "ai");
+		new WhiteAllosce(WhiteAllosce.class.getSimpleName(), "ai/individual");
 	}
 }

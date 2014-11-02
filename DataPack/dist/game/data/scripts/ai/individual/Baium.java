@@ -719,6 +719,6 @@ public class Baium extends AbstractNpcAI
 
     public static void main(String[] args)
     {
-        new Baium(Baium.class.getSimpleName(), "ai");
+        new Baium(Baium.class.getSimpleName(), "ai/individual");
     }
 }

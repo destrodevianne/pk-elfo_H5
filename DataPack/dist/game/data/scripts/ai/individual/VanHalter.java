@@ -1736,7 +1736,6 @@ public class VanHalter extends AbstractNpcAI
             npc.setIsNoRndWalk(true);
             npc.setIsImmobilized(true);
         }
-
         return super.onSpawn(npc);
     }
 
@@ -1756,6 +1755,6 @@ public class VanHalter extends AbstractNpcAI
     public static void main(String[] args)
     {
         // now call the constructor (starts up the ai)
-        new VanHalter(VanHalter.class.getSimpleName(), "ai");
+        new VanHalter(VanHalter.class.getSimpleName(), "ai/individual");
     }
 }

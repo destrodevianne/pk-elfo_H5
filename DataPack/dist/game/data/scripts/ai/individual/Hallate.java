@@ -35,6 +35,6 @@ public class Hallate extends AbstractNpcAI
 
     public static void main(String[] args)
     {
-        new Hallate(Hallate.class.getSimpleName(), "ai");
+        new Hallate(Hallate.class.getSimpleName(), "ai/individual");
     }
 }

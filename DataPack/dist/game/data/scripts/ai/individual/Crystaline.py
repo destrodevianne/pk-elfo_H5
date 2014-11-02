@@ -131,7 +131,7 @@ class crys (JQuest):
 		self.startQuestTimer("timer",1000,npc,None)
 		return
 
-QUEST = crys(-1, "crys", "ai")
+QUEST = crys(-1, "crys", "ai/individual")
 
 QUEST.addStartNpc(npcid)
 
