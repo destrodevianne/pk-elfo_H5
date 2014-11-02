@@ -181,6 +181,7 @@ public class GameServer
 		
 		gameServer = this;
 		_log.finest(getClass().getSimpleName() + ": Memoria usada:" + getUsedMemoryMB() + "MB");
+		_log.info(getClass().getSimpleName() + ": L2PkElfo Hight Five Project");
 		
 		if (Config.SERVER_VERSION != null)
 		{

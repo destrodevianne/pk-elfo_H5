@@ -37,10 +37,6 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.network.serverpackets.SetSummonRemainTime;
 import pk.elfo.gameserver.network.serverpackets.SetupGauge;
 
-/**
- * @Squid and ????
- */
-
 public class NpcBuffer extends Quest
 {
     private static final boolean DEBUG = false;
