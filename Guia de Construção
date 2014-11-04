@@ -384,26 +384,28 @@ Mod Adicionado Mod de Restart
 ***Mod para mudar de quantos em quantos dias sera a siege
 ***Mod adicionado mod que muda o titulo dos aio para AIOx assim que viram aio
 ***Mod adicionado mensagens automaticas apos logar (sao 5 texto automatico com tempo configuravel), bom para propagandas
-
--------------------------------------------------------
-***Mod Restricoes adicionada para os AIOS              |
-|	- Eles nao podem atacar em nenhuma circunstancia.  |
-|	- Nao podem usar suas habilidades fora da cidade.  |
----------------------------------------------------------------------------------------------------------------------------------------
-|***Mod  kingle spree (vc mata 20 vezes sem morrer ai anuncia no server e o player ganha status de heroi, matar 40                    |
-|sem morrer vira rampage e recebe efeito glow vitalit (onde o personagem ficará fumaçando) alem dos status e aura de heroi e tambem anuncia em todo servidor, 60 vira lendario o ceu ficara vermelho na Região onde ele estiver)|
----------------------------------------------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------
-|***Mod Clan war zone (No momento que o cara teleportar para zone ou entrar nela, o codigo vai verificar se ele tem clan. 			  |
-|Se ele tiver clan, cada kill que ele fizer em algum outro player de outro clan que tambem estiver nessa zone, 						  |
-|sera contado alem do pvp uma reputacao para o clan.)																				  |
----------------------------------------------------------------------------------------------------------------------------------------
-
 ***Mod AIOItem
 ***Mod Buffs para novos jogadores Magos no primeiro Loguin
 ***Mod Buffs para novos jogadores Fighters no primeiro loguin
 ***Mod Advertência na tentativa de encantar itens que estão no limite máximo de enchant..!
 ***Mod Configurable Olympiad Period
+-------------------------------------------------------
+|***Mod Restricoes adicionada para os AIOS             |
+|	- Eles nao podem atacar em nenhuma circunstancia.  |
+|	- Nao podem usar suas habilidades fora da cidade.  |
+---------------------------------------------------------------------------------------------------------------------------------------
+|***Mod  kingle spree (vc mata 20 vezes sem morrer ai anuncia no server e o player ganha status de heroi, matar 40                    |
+|sem morrer vira rampage e recebe efeito glow vitalit (onde o personagem ficará fumaçando) alem dos status e aura de heroi 			  |
+|e tambem anuncia em todo servidor, 60 vira lendario o ceu ficara vermelho na Região onde ele estiver)								  |
+---------------------------------------------------------------------------------------------------------------------------------------
+|***Mod Clan war zone (No momento que o cara teleportar para zone ou entrar nela, o codigo vai verificar se ele tem clan. 			  |
+|Se ele tiver clan, cada kill que ele fizer em algum outro player de outro clan que tambem estiver nessa zone, 						  |
+|sera contado alem do pvp uma reputacao para o clan.)																				  |
+---------------------------------------------------------------------------------------------------------------------------------------
+|***Mod premiação ao ganhar determinado level (Obs.: se o player diminuir de level ao morrer e subir de level novamente, 			  |
+|ele ganhará novamente o prêmio, por isto não pode colocar item muito bom neste Mod, xml onde coloca a quantidade e o tipo 			  |
+|de item fica em: /game/data/scripts/custom/PremioPorLevel/rewards.xml)																  |
+---------------------------------------------------------------------------------------------------------------------------------------
 
 ###############################################
 ################## PROTECOES ##################
