@@ -81,97 +81,98 @@ public class FortressReward extends Quest
 			FortSiege siege = fort.getSiege();
 			if(siege != null && siege.checkIsAttacker(clan)) 
 			{
-			if(Util.contains(CGUARD, npcid))
-			{
-				rewardPlayer(player, npc, CGUARD_DROP);
-			}
-	 		else if (Util.contains(GUARD, npcid))
-			{
-  				rewardPlayer(player, npc, GUARD_DROP);
-			}
-			else if (Util.contains(ARCHER, npcid))
-			{
- 				rewardPlayer(player, npc, ARCHER_DROP);
-			}
- 			else if (Util.contains(HEALER, npcid))
-			{
-				rewardPlayer(player, npc, HEALER_DROP);
-			}
-			else if (Util.contains(WIZARD, npcid))
-			{
-				rewardPlayer(player, npc, WIZARD_DROP);
-			}
-	        else if (Util.contains(SUPPORT, npcid))
-			{
-	            rewardPlayer(player, npc, SUPPORT_DROP);
-			}
-	        else if (Util.contains(ARCHCAP, npcid))
-			{
-	            rewardPlayer(player, npc, ARCHCAP_DROP);
-			}
- 	        else if (Util.contains(GUARDCAP, npcid))
-			{
- 	            rewardPlayer(player, npc, GUARDCAP_DROP);
-			}
-	        else if (Util.contains(REBELPRIV, npcid))
-			{
-	            rewardPlayer(player, npc, REBELPRIV_DROP);
-			}
-	        else if (Util.contains(DECORATED, npcid))
-			{
-	            rewardPlayer(player, npc, DECORATED_DROP);
-			}
-	        else if (Util.contains(REBELCOM, npcid))
-			{
-	            rewardPlayer(player, npc, REBELCOM_DROP);
-			}
-	        else if (Util.contains(DGSERG, npcid))
-			{
-	            rewardPlayer(player, npc, DGSERG_DROP);	
-			}
-	        else if (Util.contains(GENERAL, npcid))
-			{
-	            rewardPlayer(player, npc, GENERAL_DROP);
-			}
-	        else if (Util.contains(MINISTER, npcid))
-			{
-	            rewardPlayer(player, npc, MINISTER_DROP);
-			}
-	        else if (Util.contains(SGOLEM, npcid))
-			{
-	            rewardPlayer(player, npc, SGOLEM_DROP);
-			]
-	        else if (Util.contains(SBOX, npcid))
-			{
-	            rewardPlayer(player, npc, SBOX_DROP);
-			}
-			else if (Util.contains(SNOOP, npcid))
-			{
-	            rewardPlayer(player, npc, SNOOP_DROP);
-			}
-			else if (Util.contains(EVILUS, npcid))
-			{
-	            rewardPlayer(player, npc, EVILUS_DROP);
-			}
-			else if (Util.contains(COURT, npcid))
-			{
-	            rewardPlayer(player, npc, COURT_DROP);
-			}
-			else if (Util.contains(FORT, npcid))
-			{
-	            rewardPlayer(player, npc, FORT_DROP);
-			}
-			else if (Util.contains(BOMB, npcid))
-			{
-	            rewardPlayer(player, npc, BOMB_DROP);
-			}
-			else if (Util.contains(BOOM, npcid))
-			{
-	            rewardPlayer(player, npc, BOOM_DROP);
-			}				
-			else if (Util.contains(GANG, npcid))
-			{
-	            rewardPlayer(player, npc, GANG_DROP);
+				if(Util.contains(CGUARD, npcid))
+				{
+					rewardPlayer(player, npc, CGUARD_DROP);
+				}
+				else if (Util.contains(GUARD, npcid))
+				{
+					rewardPlayer(player, npc, GUARD_DROP);
+				}
+				else if (Util.contains(ARCHER, npcid))
+				{
+					rewardPlayer(player, npc, ARCHER_DROP);
+				}
+				else if (Util.contains(HEALER, npcid))
+				{
+					rewardPlayer(player, npc, HEALER_DROP);
+				}
+				else if (Util.contains(WIZARD, npcid))
+				{
+					rewardPlayer(player, npc, WIZARD_DROP);
+				}
+				else if (Util.contains(SUPPORT, npcid))
+				{
+					rewardPlayer(player, npc, SUPPORT_DROP);
+				}
+				else if (Util.contains(ARCHCAP, npcid))
+				{
+					rewardPlayer(player, npc, ARCHCAP_DROP);
+				}
+				else if (Util.contains(GUARDCAP, npcid))
+				{
+					rewardPlayer(player, npc, GUARDCAP_DROP);
+				}
+				else if (Util.contains(REBELPRIV, npcid))
+				{
+					rewardPlayer(player, npc, REBELPRIV_DROP);
+				}
+				else if (Util.contains(DECORATED, npcid))
+				{
+					rewardPlayer(player, npc, DECORATED_DROP);
+				}
+				else if (Util.contains(REBELCOM, npcid))
+				{
+					rewardPlayer(player, npc, REBELCOM_DROP);
+				}
+				else if (Util.contains(DGSERG, npcid))
+				{
+					rewardPlayer(player, npc, DGSERG_DROP);	
+				}
+				else if (Util.contains(GENERAL, npcid))
+				{
+					rewardPlayer(player, npc, GENERAL_DROP);
+				}
+				else if (Util.contains(MINISTER, npcid))
+				{
+					rewardPlayer(player, npc, MINISTER_DROP);
+				}
+				else if (Util.contains(SGOLEM, npcid))
+				{
+					rewardPlayer(player, npc, SGOLEM_DROP);
+				}
+				else if (Util.contains(SBOX, npcid))
+				{
+					rewardPlayer(player, npc, SBOX_DROP);
+				}
+				else if (Util.contains(SNOOP, npcid))
+				{
+					rewardPlayer(player, npc, SNOOP_DROP);
+				}
+				else if (Util.contains(EVILUS, npcid))
+				{
+					rewardPlayer(player, npc, EVILUS_DROP);
+				}
+				else if (Util.contains(COURT, npcid))
+				{
+					rewardPlayer(player, npc, COURT_DROP);
+				}
+				else if (Util.contains(FORT, npcid))
+				{
+					rewardPlayer(player, npc, FORT_DROP);
+				}
+				else if (Util.contains(BOMB, npcid))
+				{
+					rewardPlayer(player, npc, BOMB_DROP);
+				}
+				else if (Util.contains(BOOM, npcid))
+				{
+					rewardPlayer(player, npc, BOOM_DROP);
+				}				
+				else if (Util.contains(GANG, npcid))
+				{
+					rewardPlayer(player, npc, GANG_DROP);
+				}
 			}
 		}
 		return super.onKill(npc, player, isPet);

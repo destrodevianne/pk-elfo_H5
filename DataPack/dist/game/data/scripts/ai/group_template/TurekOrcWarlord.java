@@ -25,7 +25,7 @@ public class TurekOrcWarlord extends AbstractNpcAI
 			{
 				if (Rnd.get(100) < 70)
 				{
-					npc.broadcastNpcSay("The battle has just begun!")
+					npc.broadcastNpcSay("The battle has just begun!");
 				}
 			}
 			else if (Rnd.get(100) < 10)
