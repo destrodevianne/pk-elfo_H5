@@ -149,13 +149,14 @@ public final class Config
 	public static final String CONFIGURATION_FILE = "./config/Server-IP-Password/Server.properties";
 	// ------------------------SERVICES--------------------------------------------------------------------//
 	public static final String BANKING_SYSTEM = "./config/Services/Banking.properties";
-	public static final String EMAIL_CONFIG_FILE = "./config/Services/Email.properties";
 	public static final String PKELFO_FILE = "./config/Services/Pkelfo.properties";
 	public static final String PREMIUM_CONFIG_FILE = "./config/Services/Premium/Premium.properties";
 	public static final String RATES_CONFIG_FILE = "./config/Services/Rates.properties";
 	public static final String REC_CONFIG_FILE ="./config/Services/Rec.properties";
 	// ------------------------VIP-------------------------------------------------------------------------//
 	public static final String VIP_CONFIG_FILE = "./config/VIP/Vip.properties";
+	// ----------------------------------------------------------------------------------------------------//
+	public static final String EMAIL_CONFIG_FILE = "./config/Email.properties";
 	//======================================================================================//
 	//                               CommunityPVP 
 	//======================================================================================//

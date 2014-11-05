@@ -1192,13 +1192,29 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="4267" levels="1" name="Grade Penalty">
-		<!-- Freya retail confirmed -->
-		<set name="power" val="0" />
+	<skill id="4267" levels="7" name="Grade Penalty">
+		<table name="#power">10 20 30 40 40 40 40</table>
+		<table name="#rate">0.65 0.55 0.45 0.35 0.25 0.15 0.12</table>
+		<set name="icon" val="icon.skill4267" />
+		<set name="magicLevel" val="1" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="P" />
 		<set name="stayAfterDeath" val="true" />
+		<for>
+			<!-- offlike -->
+			<sub order="0x40" stat="accCombat" val="16" />
+			<sub order="0x40" stat="rCrit" val="#power" />
+			<sub order="0x40" stat="cAtk" val="#power" />
+			<sub order="0x40" stat="magicPower" val="#power" />
+			<mul order="0x90" stat="pAtkSpd" val="0.9" />
+			<mul order="0x90" stat="pAtk" val="0.9" />
+			<!-- not offlike -->
+			<mul order="0x90" stat="rEvas" val="0.75" />
+			<mul order="0x90" stat="runSpd" val="#rate" />
+			<mul order="0x90" stat="regHp" val="#rate" />
+			<mul order="0x90" stat="regCp" val="#rate" />
+		</for>
 	</skill>
 	<skill id="4268" levels="1" name="Danger Area">
 		<!-- Freya retail confirmed -->
