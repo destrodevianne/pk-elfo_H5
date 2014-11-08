@@ -1679,6 +1679,9 @@ public final class Config
 	public static int HEART_ATTACK_MAX_PLAYERS;
 	public static int HEART_DEFENCE_MIN_PLAYERS;
 	public static int HEART_DEFENCE_MAX_PLAYERS;
+	// --Anuncio de Boss renascendo ou morrnedo------------------------------------------------------------//
+	public static boolean ANNOUNCE_TO_ALL_SPAWN_RB;
+	public static boolean ANNOUNCE_RB_ON_DEAD;
 	// ----------------------------------------------------------------------------------------------------//
 	// Gracia Seeds Settings
 	// ----------------------------------------------------------------------------------------------------//
@@ -2168,6 +2171,8 @@ public final class Config
 							
 			CUSTOMMOD_ENABLE_MANA_POTIONS_SUPPORT = Boolean.parseBoolean(CustomModSettings.getProperty("EnableManaPotionSupport", "False"));
 			CUSTOMMOD_DISPLAY_SERVER_TIME = Boolean.parseBoolean(CustomModSettings.getProperty("DisplayServerTime", "false"));
+			ANNOUNCE_TO_ALL_SPAWN_RB = Boolean.parseBoolean(CustomModSettings.getProperty("AnnounceBossSpawn", "True"));
+			ANNOUNCE_RB_ON_DEAD = Boolean.parseBoolean(CustomModSettings.getProperty("AnnounceBossDead", "True"));
 			}
 			
 			catch (Exception e)

@@ -61,7 +61,6 @@ public class Mail extends ItemContainer
 			
 			item.setLocation(getBaseLocation(), messageId);
 		}
-		
 		updateDatabase();
 	}
 	

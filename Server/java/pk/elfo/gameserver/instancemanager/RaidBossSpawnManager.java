@@ -142,11 +142,13 @@ public class RaidBossSpawnManager
 				
 				_log.info(getClass().getSimpleName() + ": Spawning Raid Boss " + raidboss.getName());
 				
+				if(Config.ANNOUNCE_TO_ALL_SPAWN_RB)
+                {
+                    Announcements.getInstance().announceToAll("Raid boss " + raidboss.getName() + " renasceu.");
+                }
 				_bosses.put(bossId, raidboss);
 			}
-			
 			_schedules.remove(bossId);
-			Announcements.getInstance().announceToAll("RaidBoss : " + raidboss.getName() + " Renasceu!");
 		}
 	}
 	
@@ -185,6 +187,11 @@ public class RaidBossSpawnManager
 				
 				_schedules.put(boss.getNpcId(), ThreadPoolManager.getInstance().scheduleGeneral(new SpawnSchedule(boss.getNpcId()), respawnDelay));
 				updateDb();
+				
+				if (Config.ANNOUNCE_RB_ON_DEAD)
+                {
+                    Announcements.getInstance().announceToAll("RaidBoss : " + boss.getName() + " foi morto agora!");
+                }
 			}
 		}
 		else

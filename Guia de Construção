@@ -406,6 +406,7 @@ Mod Adicionado Mod de Restart
 |ele ganhará novamente o prêmio, por isto não pode colocar item muito bom neste Mod, xml onde coloca a quantidade e o tipo 			  |
 |de item fica em: /game/data/scripts/custom/PremioPorLevel/rewards.xml)																  |
 ---------------------------------------------------------------------------------------------------------------------------------------
+Anuncio de boss ao morrer/spawn
 
 ###############################################
 ################## PROTECOES ##################

@@ -35,7 +35,9 @@ import javolution.util.FastList;
 /**
  * This class manages inventory
  * @version $Revision: 1.13.2.9.2.12 $ $Date: 2005/03/29 23:15:15 $ rewritten 23.2.2006 by Advi
+ * @author PkElfo
  */
+
 public abstract class Inventory extends ItemContainer
 {
 	protected static final Logger _log = Logger.getLogger(Inventory.class.getName());
@@ -43,7 +45,6 @@ public abstract class Inventory extends ItemContainer
 	public interface PaperdollListener
 	{
 		public void notifyEquiped(int slot, L2ItemInstance inst, Inventory inventory);
-		
 		public void notifyUnequiped(int slot, L2ItemInstance inst, Inventory inventory);
 	}
 	
@@ -73,20 +74,15 @@ public abstract class Inventory extends ItemContainer
 	public static final int PAPERDOLL_CLOAK = 23;
 	public static final int PAPERDOLL_BELT = 24;
 	public static final int PAPERDOLL_TOTALSLOTS = 25;
-	
 	// Speed percentage mods
 	public static final double MAX_ARMOR_WEIGHT = 12000;
 	public static final int ADENA_ID = 57;
-	
 	private final L2ItemInstance[] _paperdoll;
 	private final List<PaperdollListener> _paperdollListeners;
-	
 	// protected to be accessed from child classes only
 	protected int _totalWeight;
-	
 	// used to quickly check for using of items of special type
 	private int _wearedMask;
-	
 	// Recorder of alterations in inventory
 	private static final class ChangeRecorder implements PaperdollListener
 	{
@@ -577,7 +573,6 @@ public abstract class Inventory extends ItemContainer
 					{
 						for (SkillHolder holder : skills)
 						{
-							
 							itemSkill = holder.getSkill();
 							if (itemSkill != null)
 							{
@@ -825,10 +820,8 @@ public abstract class Inventory extends ItemContainer
 			addPaperdollListener(ItemSkillsListener.getInstance());
 			addPaperdollListener(BraceletListener.getInstance());
 		}
-		
 		// common
 		addPaperdollListener(StatsListener.getInstance());
-		
 	}
 	
 	protected abstract ItemLocation getEquipLocation();
@@ -1124,7 +1117,6 @@ public abstract class Inventory extends ItemContainer
 					{
 						continue;
 					}
-					
 					listener.notifyUnequiped(slot, old, this);
 				}
 				old.updateDatabase();
@@ -1142,7 +1134,6 @@ public abstract class Inventory extends ItemContainer
 					{
 						continue;
 					}
-					
 					listener.notifyEquiped(slot, item, this);
 				}
 				item.updateDatabase();
@@ -1681,7 +1672,6 @@ public abstract class Inventory extends ItemContainer
 				break;
 			}
 		}
-		
 		// Get the L2ItemInstance corresponding to the item identifier and return it
 		return bolt;
 	}
@@ -1775,7 +1765,6 @@ public abstract class Inventory extends ItemContainer
 				return;
 			}
 		}
-		
 		// no free slots - put on first
 		setPaperdollItem(PAPERDOLL_DECO1, item);
 	}
@@ -1807,7 +1796,6 @@ public abstract class Inventory extends ItemContainer
 				{
 					continue;
 				}
-				
 				listener.notifyUnequiped(slot, item, this);
 				listener.notifyEquiped(slot, item, this);
 			}
