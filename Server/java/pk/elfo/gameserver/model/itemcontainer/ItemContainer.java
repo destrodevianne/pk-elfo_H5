@@ -345,7 +345,8 @@ public abstract class ItemContainer
 			}
 			
 			// If possible, move entire item object
-			if ((sourceitem.getCount() == count) && (targetitem == null))
+			// Fix for DUP ITEM - PHX Bug Exploit
+			if ((sourceitem.getCount() == count) && (targetitem == null) && (!sourceitem.isStackable()))
 			{
 				removeItem(sourceitem);
 				target.addItem(process, sourceitem, actor, reference);
