@@ -371,6 +371,7 @@ Mod ao entrar em um clan o titulo muda altomaticamente para o do clan
 ***Mod criar itens na Bag ao criar novos char (configuravel o ID do item e a quantidade)
 ***Mod Advertência na tentativa de encantar itens que estão no limite máximo de enchant..!
 ***Mod Efeito visual para Remover clan do jogador e colocá-lo de volta quando ele sair da MultiFunctionZone
+***Mod Esse código desabilita a capacidade de equipar uma armadura se você não tiver a habilidade passiva Mastery dela.
 ***Mod adicionado mensagens automaticas apos logar (sao 5 texto automatico com tempo configuravel), bom para propagandas
 ***Mod NPC services (Limpar PKs, Level UP Clan, Clan reputação, Mudar sexo do char, Virar Nobles, Mudar nome do clan, Mudar nome do char)
 ***Mod para evento de rates funciona assim: ao ser habilitado multiplica-se as rates de XP e SP diferentes para jogadores que estão abaixo do level 40 e acima do level 41

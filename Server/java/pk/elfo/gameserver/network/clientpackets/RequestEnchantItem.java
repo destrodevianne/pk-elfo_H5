@@ -35,7 +35,6 @@ public final class RequestEnchantItem extends L2GameClientPacket
 	protected static final Logger _logEnchant = Logger.getLogger("enchant");
 	
 	private static final String _C__5F_REQUESTENCHANTITEM = "[C] 5F RequestEnchantItem";
-	
 	private int _objectId = 0;
 	private int _supportId;
 	
@@ -59,7 +58,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		{
 			if (wh instanceof L2WarehouseInstance)
 			{
-				activeChar.sendMessage("You cannot enchant near warehouse.");
+				activeChar.sendMessage("Voce nao pode encantar perto do Warehouse.");
 				return;
 			}
 		}
@@ -93,130 +92,112 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		if (activeChar.isInCraftMode())
 		{
 			activeChar.setActiveEnchantItem(null);
-			activeChar.sendMessage("Can't enchant while Crafting");
+			activeChar.sendMessage("Nao e possivel encantar enquanto estiver craftando");
 			return;
 		}
 		
 		if (activeChar.isTeleporting())
 		{
-			
 			activeChar.setActiveEnchantItem(null);
-			activeChar.sendMessage("Can't enchant while You Teleporting");
+			activeChar.sendMessage("Nao e possivel encantar teleportando");
 			return;
-			
 		}
 		
 		if (activeChar.isDead())
 		{
-			
 			activeChar.setActiveEnchantItem(null);
-			activeChar.sendMessage("Can't enchant while You Are Dead");
+			activeChar.sendMessage("Nao e possivel encantar estando morto");
 			return;
-			
 		}
+		
 		if (activeChar.isSleeping())
 		{
-			
 			activeChar.setActiveEnchantItem(null);
-			activeChar.sendMessage("Can't enchant while You Are In Sleep");
+			activeChar.sendMessage("Nao e possivel encantar estando em Sleep");
 			return;
-			
 		}
+		
 		if (activeChar.isParalyzed())
 		{
-			
 			activeChar.setActiveEnchantItem(null);
-			activeChar.sendMessage("Can't enchant while You Are In Para");
+			activeChar.sendMessage("Nao e possivel encantar estando paralizado");
 			return;
-			
 		}
 		
 		if (activeChar.isCastingNow())
 		{
-			
 			activeChar.setActiveEnchantItem(null);
 			activeChar.sendMessage("Can't enchant while Casting");
 			return;
-			
 		}
 		
 		if (activeChar.isMoving())
 		{
-			
 			activeChar.setActiveEnchantItem(null);
-			activeChar.sendMessage("Can't enchant while moving");
+			activeChar.sendMessage("Nao e possivel encantar enquanto se move");
 			return;
-			
 		}
 		
 		if (activeChar.isProcessingTransaction())
 		{
-			
 			activeChar.setActiveEnchantItem(null);
-			activeChar.sendMessage("Can't enchant while trading");
+			activeChar.sendMessage("Nao e possivel encantar estando em trade");
 			return;
-			
 		}
 		
 		if (activeChar.isStunned())
 		{
-			
 			activeChar.setActiveEnchantItem(null);
-			activeChar.sendMessage("Can't enchant while stunned");
+			activeChar.sendMessage("Nao e possivel encantar estando com Stun");
 			return;
-			
 		}
 		
 		if (activeChar.isMounted())
 		{
-			
 			activeChar.setActiveEnchantItem(null);
-			activeChar.sendMessage("Can't enchant while -beep-ted");
+			activeChar.sendMessage("Nao e possivel encantar estando montado em Pet");
 			return;
-			
 		}
 		
 		if (activeChar.isFakeDeath())
 		{
-			
 			activeChar.setActiveEnchantItem(null);
-			activeChar.sendMessage("Can't enchant while fake death");
+			activeChar.sendMessage("Nao e possivel encantar estando com fake death");
 			return;
-			
 		}
 		
 		if (activeChar.isInJail())
 		{
 			activeChar.setActiveEnchantItem(null);
-			activeChar.sendMessage("Can't enchant while in jail");
+			activeChar.sendMessage("Nao e possivel encantar estando na Prisao");
 			return;
 		}
 		
 		if (activeChar.isCursedWeaponEquipped())
 		{
 			activeChar.setActiveEnchantItem(null);
-			activeChar.sendMessage("Can't enchant while cursed weapon");
+			activeChar.sendMessage("Nao e possivel encantar estando com cursed weapon");
 			return;
 		}
 		
 		if (activeChar.isInWater())
 		{
 			activeChar.setActiveEnchantItem(null);
-			activeChar.sendMessage("Can't enchant while in water");
+			activeChar.sendMessage("Nao e possivel encantar estando na agua");
 			return;
 		}
 		
 		if (activeChar.isFlying())
 		{
 			activeChar.setActiveEnchantItem(null);
-			activeChar.sendMessage("Can't enchant while flying");
+			activeChar.sendMessage("Nao e possivel encantar estando voando");
 			return;
 		}
 		
 		if (activeChar.isSitting())
 		{
 			activeChar.setActiveEnchantItem(null);
-			activeChar.sendMessage("Can't enchant while sitting");
+			activeChar.sendMessage("Nao e possivel encantar estando sentado");
 			return;
 		}
 		
@@ -263,7 +244,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		// fast auto-enchant cheat check
 		if ((activeChar.getActiveEnchantTimestamp() == 0) || ((System.currentTimeMillis() - activeChar.getActiveEnchantTimestamp()) < 2000))
 		{
-			Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " use autoenchant program ", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(activeChar, "O jogador " + activeChar.getName() + " tentou usar programa de auto encanto ", Config.DEFAULT_PUNISH);
 			activeChar.setActiveEnchantItem(null);
 			activeChar.sendPacket(new EnchantResult(2, 0, 0));
 			return;
@@ -274,7 +255,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		if (scroll == null)
 		{
 			activeChar.sendPacket(SystemMessageId.NOT_ENOUGH_ITEMS);
-			Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " tried to enchant with a scroll he doesn't have", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(activeChar, "O jogador " + activeChar.getName() + " tentou encantar com um scroll que ele nao tem", Config.DEFAULT_PUNISH);
 			activeChar.setActiveEnchantItem(null);
 			activeChar.sendPacket(new EnchantResult(2, 0, 0));
 			return;
@@ -287,7 +268,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 			if (support == null)
 			{
 				activeChar.sendPacket(SystemMessageId.NOT_ENOUGH_ITEMS);
-				Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " tried to enchant with a support item he doesn't have", Config.DEFAULT_PUNISH);
+				Util.handleIllegalPlayerAction(activeChar, "O jogador " + activeChar.getName() + " tentou encantar com um item de apoio que nao tem", Config.DEFAULT_PUNISH);
 				activeChar.setActiveEnchantItem(null);
 				activeChar.sendPacket(new EnchantResult(2, 0, 0));
 				return;
@@ -411,7 +392,6 @@ public final class RequestEnchantItem extends L2GameClientPacket
 						{
 							iu.addModifiedItem(itm);
 						}
-						
 						activeChar.sendPacket(iu);
 						activeChar.broadcastUserInfo();
 					}
