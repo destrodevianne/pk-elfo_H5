@@ -1,177 +1,249 @@
-***significa que deve ser testado
+#################### LISTA DE FIX ####################################################
 
-###############################################
-#################### FIX ######################
-Dragon Vortex - Retail Like Call Monsters {Show effects when Spawn}.
-Enira Rework - Fixado "Spawn NullPointerExcepation"
-NevitsHerald
-Angel Cat's Blessing - Event
-Nevit's Blessings
-Freya
-Zaken nightmare
-Sailren
-Quests sailren
-Multisell para Captain Mathias (ID: 31340) em Rune. = Exchange Blue Elmore Coins
-Captain Mathias mudado de L2Guard para L2Merchant
+=======================FIX=================================
+FIX More
+FIX Freya
+FIX Dorian
+FIX Sailren
+FIX LUCK PIG
+FIX Baium.java
+FIX Phx enchant
+FIX NevitsHerald
+FIX Gollen Buffs
+FIX Lindvior.java
+FIX Premium System
+FIX Comunity Board
+FIX Quests sailren
+FIX Pet Enchant bug
+FIX Zaken nightmare
+Fix de Fantasy Isle
+FIX External Ip Check!
+FIX PHX Multisell bug
+FIX Nevit's Blessings
+FIX Territory War minor
+FIX OverEnchant trade bug
+FIX bug ao logar os chars
+FIX Pavel Archaic Updated
+FIX Fantasy Isle Buff Zone
+Fix related in Siege/Summon
+FIX algumas instances/quests
+FIX Seed of Destruction doors
+Fix no buff de Dragon Valley
+Fix em todas as skills de clan
+Fix Divine Inspiration AutoLearn
+Fix area de efeito em Fantasy Isle
+FIX no calculo do Chant of Victory
+FIX Mostrar nome das Cursed Weapons
 Fix em alguns Agathions e suas skills
-OverEnchant trade bug fix
-Pet Enchant bug fix
-Phx enchant fix
-PHX Multisell bugg fix
-Rocking Horse Mount Bracelet
-Ajuste na rota e no tempo dos Npcs Profhets
+Fix no sistema de bloquear o AIOx de sair da cidade
+Fix Bug quando um item com tempo para expirar era colocado na ClanWarehouse, o mesmo não sumia!
+Fix Augment Skills: Wild Magic, Empower e Magic Barrier - Adicionado Bonus igual ao buff no Empower e Magic Barrier - Modificado a skill Wild Magic para que de o bonus seguindo a tabela de leveis da skill
+Fix Augment Skills: Recall, Clarity, Agillity, Kiss of Eva e Guidance - Cada skill fornece o bonus de acordo com o level da skill ganha com o augment - Os bonus respectivamente ganhos tem valores diferenciados - Todos as skills atualizadas fornecem bonus exatamente igual ou inferior ao buff.
+
+=======================ADICIONADO==========================
+Adicionado Fame Manager
 Adicionado Walkers em DV
-Drop do item Will of Antharas dos Boss Behemoth Leader, Drake Lord, Dragon Beast. [Tired of Waiting]
-Ajuste na posição dos npcs no mapa: Batwing Drake, Bleeding Fly, Blackdagger Wing, Drake Mage e Maluk Warlord (alterações baseadas em uma surpeficie plana)
-Várias Updates | Skills, Droplist, Handlers 
-algumas instances/quests
-Knoriks, Dragons & Drakes de LOA atualizados e reorganizados
-Ai's para areas, mobs, bosses e Npcs
+Adicionado VarkaKetra AI
+Adicionado Seyo Instance
+Adicionado Stats EXP_LOST
+Adicionado Tunatun Instance
+Adicionado script em kamaloka
+Implement: Condition summonRace
+Implement: Condition to Take Castle
+Adicionado MercenaryCaptain Instance
+Implement: Condition to Player Call Pc
+Adicionado Mutated Elpy in FleeNpc.java
+Implement: Condition to Player Can Create Base
+Implement: Condition to Player Can Create Base
+Implement: Condition to Player Can Untransform
+Implement: Condition to Player Can Refuel Airship
+Adicionado Efeito correto para Seed of Annihilation
+Implement: Condition to Player Can Summon Siege Golem
+Adicionado 'itemConsumeId' for skill 'Open Packaged Book'
+Adicionado nova tabela na DB para salvar senha Descriptada
+Adicionado Level maximo em AntQueen configuravel em Configs
+Implement: UPnP Service facilita logar o servidor local e externamente)
+Adicionado skills: Clan De-Buff Control, Clan Muzzle Control e Clan Mental Control
+Adicionado synchronized block to setInsideZone to ensure correct usage between different threads
+Adicionado elementos na xml da skill para arredondar o calculo na hora de somar os bonus do buff
+
+=======================SKILLS==============================
+FIX Skill Veil
+FIX Skill Charm
+FIX Skill 21875
+FIX Skill Nectar
+FIX Skill Flame Icon
+FIX Skill Pablo's Box
+FIX Skill Freezing Strike
+FIX skill Kanna's Splendor
+FIX Skill Lightning Strike
+FIX skill Kallesin's Splendor
+FIX Skill Poison Blade Dance
+FIX skill Antharas's Cute Tricks
+FIX Skill 6921 - Penetration Attack
+FIX Skill Rune Jewelry Box - Talisman
+FIX skill Agathion Oink Oink's Ability
+FIX Skill 4275, 4279, 4280, 4281 e 4282
+FIX Skills Resist Shock, Vampiric Attack
+FIX skill Agathion Juju - Effect of Doubt
+FIX Skill Great Adventurer's Treasure Sack
+FIX Skill Beginner Adventurer's Treasure Sack
+FIX Skill Experienced Adventurer's Treasure Sack
+FIX skill Release Seal on Agathion - Penalty Kick
+FIX skill Release Seal on Agathion - Ball Trapping Gnosian
+FIX skill Release Seal on Agathion - Ball Trapping Orodriel
+FIX skill Release Seal on Agathion - Nevit's Messenger Kanna
+FIX skill Release Seal on Agathion - Guardian of the Dawn Kallesin
+FIX skill Chon-chon Agathion Special Skill - Great Warrior Soul Power
+Fix skills de augment /Might (ativo, passivo e chance) /Duel Might (ativo, passivo e chance) /Shield (ativo, passivo e chance)
+
+=======================ITENS===============================
+Fix item e skill Mana Drug
+FIX item e skill Scroll: Valakas Call
+FIX item e skill Scroll: Antharas Call
+FIX no item Rocking Horse Mount Bracelet
+FIX no item Scarecrow Transformation Stick
+FIX item Agathion Seal Bracelet - Antharas
+FIX nos itens: Color Name Pack e Color Name Pack - Event
+FIX item Agathion Seal Bracelet - Nevit's Messenger Kanna
+FIX item Agathion Seal Bracelet - Guardian of the Dawn Kallesin
 FIX nos itens: Jet Bike Mount Bracelet Pack e Jet Bike Mount Bracelet Pack - Event
 FIX dos itens: Jet Bike Mount Bracelet 7-Day Pack e Jet Bike Mount Bracelet 7-Day Pack - Event
 FIX nos itens: Jet Bike Mount Bracelet 30-Day Pack e Jet Bike Mount Bracelet 30-Day Pack - Event
-FIX nos itens: Color Name Pack e Color Name Pack - Event
-Fix no item Scarecrow Transformation Stick
-FIX Seed of Destruction doors
-Fix no buff de Dragon Valley
-Alterado o Match de conclusoes
-FIX Skill Rune Jewelry Box - Talisman
-FIX Skill Pablo's Box
-FIX Skill Great Adventurer's Treasure Sack
-FIX Skill Experienced Adventurer's Treasure Sack
-FIX Skill Beginner Adventurer's Treasure Sack
-FIX Skill Nectar
-FIX Skill Poison Blade Dance
-FIX Skill Charm
-FIX Skill Veil
-FIX Skill Freezing Strike
-FIX Skill Lightning Strike
-FIX Skill Beginner Adventurer's Treasure Sack
-FIX Skill Experienced Adventurer's Treasure Sack
-FIX Skill Great Adventurer's Treasure Sack
-FIX Skill Flame Icon
-FIX Skill 4275, 4279, 4280, 4281 e 4282
-Fix Skills Resist Shock, Vampiric Attack
-Adicionado nova tabela na DB para salvar senha Descriptada
-editado NPC de Enchante (agora é possível add elemental)
-Modificações na CommunityPVP e ADD Enchantes até +30
-Adicionado skills: Clan De-Buff Control, Clan Muzzle Control e Clan Mental Control
-Adding missing 'itemConsumeId' for skill 'Open Packaged Book'.
-Fixed Premium System
+
+=======================OUTROS==============================
 Revive Like OFF
-Adicionado Level maximo em AntQueen configuravel em Configs
-Soulshots/Spiritshots = Retail Like
-Gollen Buffs Fixed
-New Condition - "summonRace"
-Don't allow flying transformations outside Gracia Area! (ao teleportar de gracia tranformado em passaro nao buga mais)
-Added VarkaKetra AI
-Updated Varka Silenos Support
+HP/MP Heal effect fixes
 Updated Ketra Orc Support
-Fixado o tempo para invocar um summon, caso não tenha buffs!
-BUG FIX: Quando um item com tempo para expirar era colocado na ClanWarehouse, o mesmo não sumia!
-Fixado: Mostrar nome das Cursed Weapons 
-Fixado Comunity Board
-More Fix 
-Fix Divine Inspiration AutoLearn
-Adicionado Efeito correto para Seed of Annihilation
-Adicionado MercenaryCaptain Instance
-Adicionado Seyo Instance
-Adicionado Tunatun Instance
-Adicionado Fame Manager
-Adicionado Stats EXP_LOST
-[BUG] Fantasy Isle Buff Zone fix!
-Added Mutated Elpy in FleeNpc.java
-Dorian Fix
-Minor Packets Fix in PlayableStat.java, RequestFortressMapInfo.java and UserInfo.java
-#--------------------------#
-# Modify The Lord's Crown: #
-# 9% de Max. Mp 		   #
-# 9% de Max. Hp 		   #
-# 9% de Max. Cp 		   #
-# +3 de Acurracy) 		   #
-#--------------------------#
-[Fix]: External Ip Check!
-Minor refactor in Clientpackets in RequestFriendInvite.java
-Implement: Condition to Take Castle
-Implement: Condition to Player Call Pc
-Implement: Condition to Player Can Create Base
-Implement: Condition to Player Can Untransform
-Implement: Condition to Player Can Summon Siege Golem
-Implement: Condition to Player Can Refuel Airship
-Implement: Condition to Player Can Create Base
-[FIX] Territory War minor fix!
-UPnP Service Implemented (facilita logar o servidor local e externamente)
-Castle/Territory War Siege date & time picking to retail like L2OFF
-Fix related in Siege/Summon
-Fix no sistema de bloquear o AIOx de sair da cidade
-Pavel Archaic Updated
-Fix LUCK PIG
-FIX Skill 6921 - Penetration Attack
-FIX Skill 21875
-Mudado Scripts: ErosionHallAttack.java, ErosionHallDefence.java, HeartInfinityAttack.java, HeartInfinityDefence.java e DragonValley.java
-Fix em todas as skills de clan
-#---------------------------------------#
-# Fix skills de augment
-# - Might (ativo, passivo e chance)
-# - Duel Might (ativo, passivo e chance)
-# - Shield (ativo, passivo e chance)
-#---------------------------------------#
-Fix Baium
-Fix Lindvior.java
-#---------------------------------------------------------------------------------------#
-# Fix Augment Skills: Wild Magic, Empower e Magic Barrier
-# - Adicionado Bonus igual ao buff no Empower e Magic Barrier
-# - Modificado a skill Wild Magic para que de o bonus seguindo a tabela de leveis da skill
-#---------------------------------------------------------------------------------------#
-# Fix Augment Skills: Recall, Clarity, Agillity, Kiss of Eva e Guidance
-# - Cada skill fornece o bonus de acordo com o level da skill ganha com o augment
-# - Os bonus respectivamente ganhos tem valores diferenciados
-# - Todos as skills atualizadas fornecem bonus exatamente igual ou inferior ao buff.
-#---------------------------------------------------------------------------------------#
-Fix no calculo do Chant of Victory
-- Adicionado elementos na xml da skill para arredondar o calculo na hora de somar os bonus do buff
+Angel Cat's Blessing - Event
+Updated Varka Silenos Support
+Alterado o Match de conclusoes
+Updated Monastery of Silence AI
+Soulshots/Spiritshots = Retail Like
+Ai's para areas, mobs, bosses e Npcs
+Scarecrow monastery of rework silence
+Attempting to fix multithreading issues
 atualizado mana potion de 100 para 1000
-aumentando a chance do up dos soul crystal de 10 a 18 e corrigido os respectivos ups
-Fix item e skill Mana Drug
-- Fix item e skill Scroll: Valakas Call
-- Fix item e skill Scroll: Antharas Call
-Fix de Fantasy Isle
-Fix area de efeito em Fantasy Isle
+Aumentado o delay da skill Steal Divinity
+Várias Updates | Skills, Droplist, Handlers 
+Ajuste na rota e no tempo dos Npcs Profhets
+Reduzido o numero de linhas de alguns arquivos
+Captain Mathias mudado de L2Guard para L2Merchant
+Enira Rework - FIXado "Spawn NullPointerExcepation"
+Modificações na CommunityPVP e ADD Enchantes até +30
+HP Heal shouldn't heal through invulnerability state
+MP Heal shouldn't heal through invulnerability state
+editado NPC de Enchante (agora é possível add elemental)
+Minor refactor in Clientpackets in RequestFriendInvite.java
+Fixado o tempo para invocar um summon, caso não tenha buffs!
+Knoriks, Dragons & Drakes de LOA atualizados e reorganizados
 Block AIO Char to use: Register to Olympiad Event if is Noblesse!
-- Fix item Agathion Seal Bracelet - Antharas
-- Fix item Agathion Seal Bracelet - Nevit's Messenger Kanna
-- Fix item Agathion Seal Bracelet - Guardian of the Dawn Kallesin
-- Fix skill Agathion Juju - Effect of Doubt
-- Fix skill Agathion Oink Oink's Ability
-- Fix skill Antharas's Cute Tricks
-- Fix skill Kanna's Splendor
-- Fix skill Kallesin's Splendor
-- Fix skill Release Seal on Agathion - Ball Trapping Gnosian
-- Fix skill Release Seal on Agathion - Ball Trapping Orodriel
-- Fix skill Release Seal on Agathion - Penalty Kick
-- Fix skill Release Seal on Agathion - Nevit's Messenger Kanna
-- Fix skill Release Seal on Agathion - Guardian of the Dawn Kallesin
-- Fix skill Chon-chon Agathion Special Skill - Great Warrior Soul Power
-- Aumentado o delay da skill Steal Divinity
-- Reduxino o numero de linhas de alguns arquivos
-Fix bug ao logar os chars
+Removendo reflexão chamada de L2GroupSpawn porque não precisa dele
+Dragon Vortex - Retail Like Call Monsters {Show effects when Spawn}
+Castle/Territory War Siege date & time picking to retail like L2OFF
+Also fixing non properly used double checked locking approach for AI.
+Using proper effect ManaHealByLevel for Sweeper (42) second enchant route.
+Multisell para Captain Mathias (ID: 31340) em Rune. = Exchange Blue Elmore Coins
+aumentando a chance do up dos soul crystal de 10 a 18 e corrigido os respectivos ups
+Minor Packets Fix in PlayableStat.java, RequestFortressMapInfo.java and UserInfo.java
+Modify The Lord's Crown: /9% de Max. Mp /9% de Max. Hp /9% de Max. Cp /+3 de Acurracy)
+Drop do item Will of Antharas dos Boss Behemoth Leader, Drake Lord, Dragon Beast. [Tired of Waiting]
+Don't allow flying transformations outside Gracia Area! (ao teleportar de gracia tranformado em passaro nao buga mais)
+Mudado Scripts: ErosionHallAttack.java, ErosionHallDefence.java, HeartInfinityAttack.java, HeartInfinityDefence.java e DragonValley.java
+Ajuste na posição dos npcs no mapa: Batwing Drake, Bleeding Fly, Blackdagger Wing, Drake Mage e Maluk Warlord (alterações baseadas em uma surpeficie plana)
 
-###############################################
-#################### FIX BETA TEST ############
-BETA: Attempting to fix multithreading issues.
-BETA: HP/MP Heal effect fixes.
-BETA: HP Heal shouldn't heal through invulnerability state.
-BETA: MP Heal shouldn't heal through invulnerability state.
-BETA: Using proper effect ManaHealByLevel for Sweeper (42) second enchant route.
-BETA: Adding missing synchronized block to setInsideZone to ensure correct usage between different threads.
-* Also fixing non properly used double checked locking approach for AI.
-BETA: Removendo reflexão chamada de L2GroupSpawn porque não precisa dele
-BETA: Updated Monastery of Silence AI. 
-BETA: Scarecrow monastery of rework silence
-BETA: Adicionado script em kamaloka
 
-###############################################
-################### EVENTOS ###################
+#################### COMANDOS ########################################################
+
+==================== COMANDOS DE ADMIN ==========================
+.tw_goto_ward
+ADD Comando AdminRecalAll
+//dance (evento de dança)
+//removeaio <nome do char>
+//setaio <nome do char> <dias>
+//mass hero (da hero para todos online)
+//happyhour (inicia o evento Happy Hour)
+//banchat <nome do char> <tempo em minutos>
+//unbanchat <nome do char> <tempo em minutos>
+//removevip <char_name> (retira vip do jogador)
+//ClanFull (adiciona todas as skills + reputation)
+//msgtela + texto (manda mesagem global no centro da tela)
+//admin_setvip <char_name> <tempo>(em dias) (adiciona vip ao jogador)
+//deport (teleporta todos os players que estiverem perto do GM/ADM enchendo o saco para giran)
+
+==================== COMANDOS DE DONO DE CASTELO ================
+.opendoors (abre portas do castelo)
+.ridewyvern (monta no dragao voador)
+.closedoors (fecha portas do castelo)
+
+==================== COMANDOS DE LIDER DE CLAN ==================
+.set name
+.set home
+.set group
+.clanmsg + texto (manda mensagem global no meio da tela para os membros do clan)
+.siege ( mostra estatsticas dos castelos e tambem permite o lider do clan registrar para siege)
+
+==================== COMANDOS PARA JOGADORES ====================
+.debug
+.shieldon
+.shieldoff
+.premium
+.addpremium <dias>
+.mypremium ( mostra data de terminio do servico de premium)
+.repair (repara um char)
+.up10 (Up do level 10 ao 20 em Gludio)
+.up20 (Up do level 20 ao 30 em Dion)
+.up30 (Up do level 30 ao 40 em Hardin’s Private Academy)
+.up40 (Up do level 40 ao 50 em kruma tower primeiro andar)
+.up50 (Up do level 50 ao 60 em The Cemitery)
+.up60 (Up do level 60 ao 70 em Wall of Argos)
+.up70 (Up do level 70 ao 80 em Ketra Orc Outpost)
+.up80 (Up acima do level 80 em Antharas' Lair)
+.hellbound (mostra status de hellbound)
+.refusebuff (bloqueia o recebimento de buff)
+.deposit (troca 1kkk de adena por 1 God Bar)
+.withdraw (troca 1 God Bar por 1kkk de adena)
+.allowbuff (desbloqueia o recebimento de buff)
+.online (mostra quantidade de jogadores online)
+.res (ressucita o char, comando somente para VIP)
+.stats <nome do char> (mostra estatisticas do char)
+.lang (alterna entre os idiomas Ingles e Portugues)
+.changepassword (troca senha da conta dentro do jogo)
+.grandboss (mostra se os Big Bosses estao vivos ou mortos)
+.event (serve para se registrar nos eventos do Phoenix engine)
+.tvtjoin (registra no evento tvt)
+.tvtleave (retira registro do evento tvt)
+.tvt (mostra estatisticas do evento tvt)
+.infos (abre uma janela dentro do jogo mostrando informacoes do servidor)
+.engage (pede em casamento)
+.divorce (divorcia)
+.gotolove (teleporta ate seu marido/esposa)
+.openatod (Serve para abrir todos os Ancient Tome of the Demon que o player tiver na bag, ao invez de ficar clicando eternamente)
+.lider (teleporta para o lider do seu clan)
+.logout (desloga imediatamente)
+.user (abre painel de usuario que contem, informacoes do servidor, rates e comandos de habilitar/desabilitar pm, trade e ganho de xp/sp - adicionado opcao de desabilitar debuf)
+.cancel (cancela todos os buffs das barras de buff)
+.buyrec (troca determinado item por recomend, configuravel o item, quant. de item e quant. de recomend)
+.teleport <x> <y> <z> (comando de teleporte para VIP)
+-----------------------------------------------------------------------------------------------------------
+# Os seguintes comandos foram transferidos para o painel do usuario acessivel atraves do comando .user :  #
+# 																										  #
+# comando .pmon/ .pmoff para habilitar/desabilitar PM 													  #
+# Comando .tradeon/.tradeoff para bloquear/desbloquear o envio de trade para o char 					  #
+# Comando .expon/.expoff para bloquear/desbloquear a xp													  #
+-----------------------------------------------------------------------------------------------------------
+# comandos especiais em moobs													   						  #
+# .drop																									  #
+# .spoil																								  #
+# .info																									  #
+# .quest																								  #
+-----------------------------------------------------------------------------------------------------------
+
+
+#################### EVENTOS #########################################################
+
+==================== OFICIAIS E CUSTONS =========================
+
 Event: Crazy Rates (aumenta todas as rates por um tempo)
 Angel Cat
 AprilFoolsDay
@@ -203,7 +275,7 @@ BloodShed
 Adicionado Event RPS (Rank PvP System)
 Adicionado Event SlotMachine (tipo uma caca-niqueis)
 
-############### PHOENIX ENGINE:################
+==================== EVENTOS DA PHOENIX ENGINE ==================
 Battlefield
 Bomb
 CTF
@@ -219,176 +291,91 @@ VIPTvT
 Zombie
 Evento Last Hero	
 
-###############################################
-############# COMANDOS DE ADMIN ###############
-//ClanFull (adiciona todas as skills + reputation)
-//dance (evento de dança)
-//setaio <nome do char> <dias>
-//removeaio <nome do char>
-//admin_setvip <char_name> <tempo>(em dias) (adiciona vip ao jogador)
-//removevip <char_name> (retira vip do jogador)
-//banchat <nome do char> <tempo em minutos>
-//unbanchat <nome do char> <tempo em minutos>
-//mass hero (da hero para todos online)
-.tw_goto_ward
-//msgtela + texto (manda mesagem global no centro da tela)
-***//happyhour (inicia o evento Happy Hour)
-***//deport (teleporta todos os players que estiverem perto do GM/ADM enchendo o saco para giran)
-ADD Comando AdminRecalAll
 
-###############################################
-######## COMANDOS DE DONO DE CASTELO ##########
-.opendoors (abre portas do castelo)
-.closedoors (fecha portas do castelo)
-.ridewyvern (monta no dragao voador)
+#################### MODS ############################################################
+***significa que deve ser testado AINDA
+======================================================================================
 
-###############################################
-########## COMANDOS DE LIDER DE CLAN ##########
-.set name
-.set home
-.set group
-.siege ( mostra estatsticas dos castelos e tambem permite o lider do clan registrar para siege)
-.clanmsg + texto (manda mensagem global no meio da tela para os membros do clan)
-
-###############################################
-################## COMANDOS ###################
-.event (serve para se registrar nos eventos do Phoenix engine)
-.deposit (troca 1kkk de adena por 1 God Bar)
-.withdraw (troca 1 God Bar por 1kkk de adena)
-.changepassword (troca senha da conta dentro do jogo)
-.debug
-.hellbound (mostra status de hellbound)
-.lang (alterna entre os idiomas Ingles e Portugues)
-.online (mostra quantidade de jogadores online)
-.premium
-.mypremium ( mostra data de terminio do servico de premium)
-.addpremium <dias>
-.grandboss (mostra se os Big Bosses estao vivos ou mortos)
-.refusebuff (bloqueia o recebimento de buff)
-.allowbuff (desbloqueia o recebimento de buff)
-.repair (repara um char)
-.res (ressucita o char, comando somente para VIP)
-.stats <nome do char> (mostra estatisticas do char)
-.up10 (Up do level 10 ao 20 em Gludio)
-.up20 (Up do level 20 ao 30 em Dion)
-.up30 (Up do level 30 ao 40 em Hardin’s Private Academy)
-.up40 (Up do level 40 ao 50 em kruma tower primeiro andar)
-.up50 (Up do level 50 ao 60 em The Cemitery)
-.up60 (Up do level 60 ao 70 em Wall of Argos)
-.up70 (Up do level 70 ao 80 em Ketra Orc Outpost)
-.up80 (Up acima do level 80 em Antharas' Lair)
-.tvtjoin (registra no evento tvt)
-.tvtleave (retira registro do evento tvt)
-.tvt (mostra estatisticas do evento tvt)
-.infos (abre uma janela dentro do jogo mostrando informacoes do servidor)
-.engage (pede em casamento)
-.divorce (divorcia)
-.gotolove (teleporta ate seu marido/esposa)
-.shieldon
-.shieldoff
-.openatod (Serve para abrir todos os Ancient Tome of the Demon que o player tiver na bag, ao invez de ficar clicando eternamente)
-.lider (teleporta para o lider do seu clan)
-.logout (desloga imediatamente)
-.user (abre painel de usuario que contem, informacoes do servidor, rates e comandos de habilitar/desabilitar pm, trade e ganho de xp/sp - adicionado opcao de desabilitar debuf)
-.cancel (cancela todos os buffs das barras de buff)
-.buyrec (troca determinado item por recomend, configuravel o item, quant. de item e quant. de recomend)
-.teleport <x> <y> <z> (comando de teleporte para VIP)
-
------------------------------------------------------------------------------------------------------------
-# Os seguintes comandos foram transferidos para o painel do usuario acessivel atraves do comando .user :  #
-# 																										  #
-# comando .pmon/ .pmoff para habilitar/desabilitar PM 													  #
-# Comando .tradeon/.tradeoff para bloquear/desbloquear o envio de trade para o char 					  #
-# Comando .expon/.expoff para bloquear/desbloquear a xp													  #
------------------------------------------------------------------------------------------------------------
-# comandos especiais em moobs
-# .drop
-# .spoil
-# .info
-# .quest
------------------------------------------------------------------------------------------------------------
-	
-###############################################
-##################### MOD #####################
-Mod Community Board
-Mod Ao dar Shift+Click em algum char ou npc ou monstro, mostrara todos items e status dele. (Alterado o Mod Shit+Click nos Npc/Mob? para funcionar tambem nos players mostrando alguns status e itens)
-Mod Efeito de enchant random em todos os mobs e Npcs
-Mod Efeito para char em modo de shop offline
-Mod Balance Classe
-Mod Lider de clan com nick de cor diferente
-Mod Novos chars com titulo
-Mod Nevit's Advent Blessing
-Mod Arena Leaderboard
-Mod Craft Leaderboard
-Mod Fisherman Leaderboard
-Mod PC Bang Points
-Mod Prime Shop
-Mod Sistema de consumiveis infinitos SS, BSS e Arrows
-Mod Fake online players
 Mod Clan Full
-Mod quando morrer o ceu fica vermelho e da um som de Game Over
-Mod ao entrar em um clan o titulo muda altomaticamente para o do clan
-Mod aviso quando um Raid Boss renascer
+Mod Prime Shop
+***Mod AIOItem
+Mod Balance Classe
+Mod PC Bang Points
 Mod Evento de danca
-Mod Clan halls conquistaveis
-Mod comando /unstuck com skill configuravel
+Mod Community Board
+Mod Efeito para AIOx
 Mod Novos char nobres
 Mod Novos char herois
-Mod Muda o nome dos Champions
-Mod Cor do nome diferente para cada raca
-Mod Mensagem diferente para cada raca
-Mod Painel de usuario com comandos
-Mod Efeito para AIOx
-Mod Adicionado Mod de Restart
-# Mod Rewards for kill on TvT
-# Mod Bandeiras de clan nos Npcs sem quest
-***Mod Adicionado Multikill Announcer With Sounds
-***Mod Numero Maximo de membros na party (nao ultrapassar 12, porque buga o servidor)
-***Mod Anuncio de deslogamento de AIOx 
-***Mod Anuncio de logamento de AIOx
-***Mod Anuncio de deslogamento de VIP 
-***Mod Anuncio de logamento de VIP
-***Mod Anuncio de deslogamento de Hero
-***Mod Anuncio de logamento de Hero
-***Mod Anuncio de logamento de Novos Jogadores
-***Mod Mensagem de boas vindas na tela para aio, vip e hero.
-***Mod Chat exclusivo para char AIOx
-***Mod Ao matar um jogador com PK ganha-se 1 ponto de PvP
-***Mod Recompensa personalizada para o PvP
-***Mod PvP/PK Color System com mensagens
-***Mod Adicionado MOD movimento pelo teclado pelas setinhas
-***Mod para evento de rates funciona assim: ao ser habilitado multiplica-se as rates de XP e SP diferentes para jogadores que estão abaixo do level 40 e acima do level 41
-***Mod mensagem diferente para ganhador e perdedor de PvP
-***Mod mensagem diferente para quem deu pk e quem levou pk
-***Mod bloqueia o uso de GateKeepers para Chars em Modo Flag ( PvP )
-***Mod Desabilitar AIOx usar a GK
-***Mod Custom spawn para novos chars
-***Mod Pvps to use Chat Shout, Chat Trade & Chat Hero
-***Mod Sistema de Equipamentos E Restrições
-***Mod desabilitar chat para players mortos
-***Mod NPC services (Limpar PKs, Level UP Clan, Clan reputação, Mudar sexo do char, Virar Nobles, Mudar nome do clan, Mudar nome do char)
+Mod Arena Leaderboard
+Mod Craft Leaderboard
+Mod Fake online players
+Mod Fisherman Leaderboard
+Mod Novos chars com titulo
+Mod Rewards for kill on TvT
+Mod Nevit's Advent Blessing
+Mod Clan halls conquistaveis
 ***Mod anuncio de ban global
 ***Mod anuncio de jail global
-***Mod Anuncios login para Nobles & Hero
-***Mod efeito glow vitality em armaduras full +20
-***Mod Adicionado restrincao de AIO em Oly
-***Mod muda o local de teleporte ao usar o comando //unstuck
-***Mod MultiFunction zone Custom (coloca determinada zona como especial, podendo restringir varias coisas, como items classes, enchantes e etc. Cinco Multi Funcional para poder adicionar mais zonas configuradas se tiver necessidade) 
-***Mod anuncio de perda ou tomada de castelo depois da siege
-***Mod que permite vender item encantado nos shops
-***Mod criar itens na Bag ao criar novos char (configuravel o ID do item e a quantidade)
-***Mod mudar cor do nome dos novos jogadores (configuravel a cor)
-***Mod Proteção contra GM Corrupto [Precisa de Teste]
-***Mod Protecao para jogadores em modo de loja offline (ficam invulneraveis)
-***Mod Efeito visual para Remover clan do jogador e colocá-lo de volta quando ele sair da MultiFunctionZone
-***Mod para mudar de quantos em quantos dias sera a siege
-***Mod adicionado mod que muda o titulo dos aio para AIOx assim que viram aio
-***Mod adicionado mensagens automaticas apos logar (sao 5 texto automatico com tempo configuravel), bom para propagandas
-***Mod AIOItem
-***Mod Buffs para novos jogadores Magos no primeiro Loguin
-***Mod Buffs para novos jogadores Fighters no primeiro loguin
-***Mod Advertência na tentativa de encantar itens que estão no limite máximo de enchant..!
+Mod Muda o nome dos Champions
+Mod Adicionado Mod de Restart
+Anuncio de boss ao morrer/spawn
+***Mod Desabilitar AIOx usar a GK
+Mod Painel de usuario com comandos
+***Mod Anuncio de logamento de VIP
+***Mod Anuncio de logamento de AIOx
+***Mod Anuncio de logamento de Hero
 ***Mod Configurable Olympiad Period
+***Mod Chat exclusivo para char AIOx
+***Mod Custom spawn para novos chars
+Mod Mensagem diferente para cada raca
+***Mod Anuncio de deslogamento de VIP
+Mod aviso quando um Raid Boss renascer
+***Mod Anuncio de deslogamento de AIOx 
+***Mod Anuncio de deslogamento de Hero
+***Mod Anuncios login para Nobles & Hero
+Mod Bandeiras de clan nos Npcs sem quest
+Mod Cor do nome diferente para cada raca
+***Mod PvP/PK Color System com mensagens
+***Mod Adicionado restrincao de AIO em Oly
+***Mod Recompensa personalizada para o PvP
+Mod comando /unstuck com skill configuravel
+Mod Lider de clan com nick de cor diferente
+***Mod Sistema de Equipamentos E Restrições
+***Mod desabilitar chat para players mortos
+Mod Efeito para char em modo de shop offline
+***Mod Anuncio de logamento de Novos Jogadores
+***Mod efeito glow vitality em armaduras full +20
+***Mod Adicionado Multikill Announcer With Sounds
+***Mod que permite vender item encantado nos shops
+Mod Efeito de enchant random em todos os mobs e Npcs
+***Mod Pvps to use Chat Shout, Chat Trade & Chat Hero
+Mod Sistema de consumiveis infinitos SS, BSS e Arrows
+***Mod Proteção contra GM Corrupto [Precisa de Teste]
+***Mod para mudar de quantos em quantos dias sera a siege
+***Mod mensagem diferente para ganhador e perdedor de PvP
+***Mod Ao matar um jogador com PK ganha-se 1 ponto de PvP
+***Mod Buffs para novos jogadores Magos no primeiro Loguin
+***Mod mensagem diferente para quem deu pk e quem levou pk
+***Mod Adicionado MOD movimento pelo teclado pelas setinhas
+***Mod Mensagem de boas vindas na tela para aio, vip e hero.
+***Mod muda o local de teleporte ao usar o comando //unstuck
+***Mod anuncio de perda ou tomada de castelo depois da siege
+***Mod Buffs para novos jogadores Fighters no primeiro loguin
+Mod quando morrer o ceu fica vermelho e da um som de Game Over
+***Mod mudar cor do nome dos novos jogadores (configuravel a cor)
+***Mod bloqueia o uso de GateKeepers para Chars em Modo Flag ( PvP )
+Mod ao entrar em um clan o titulo muda altomaticamente para o do clan
+***Mod Protecao para jogadores em modo de loja offline (ficam invulneraveis)
+***Mod adicionado mod que muda o titulo dos aio para AIOx assim que viram aio
+***Mod Numero Maximo de membros na party (nao ultrapassar 12, porque buga o servidor)
+***Mod criar itens na Bag ao criar novos char (configuravel o ID do item e a quantidade)
+***Mod Advertência na tentativa de encantar itens que estão no limite máximo de enchant..!
+***Mod Efeito visual para Remover clan do jogador e colocá-lo de volta quando ele sair da MultiFunctionZone
+***Mod adicionado mensagens automaticas apos logar (sao 5 texto automatico com tempo configuravel), bom para propagandas
+***Mod NPC services (Limpar PKs, Level UP Clan, Clan reputação, Mudar sexo do char, Virar Nobles, Mudar nome do clan, Mudar nome do char)
+***Mod para evento de rates funciona assim: ao ser habilitado multiplica-se as rates de XP e SP diferentes para jogadores que estão abaixo do level 40 e acima do level 41
+Mod Ao dar Shift+Click em algum char ou npc ou monstro, mostrara todos items e status dele. (Alterado o Mod Shit+Click nos Npc/Mob? para funcionar tambem nos players mostrando alguns status e itens)
+***Mod MultiFunction zone Custom (coloca determinada zona como especial, podendo restringir varias coisas, como items classes, enchantes e etc. Cinco Multi Funcional para poder adicionar mais zonas configuradas se tiver necessidade) 
 -------------------------------------------------------
 |***Mod Restricoes adicionada para os AIOS             |
 |	- Eles nao podem atacar em nenhuma circunstancia.  |
@@ -406,72 +393,75 @@ Mod Adicionado Mod de Restart
 |ele ganhará novamente o prêmio, por isto não pode colocar item muito bom neste Mod, xml onde coloca a quantidade e o tipo 			  |
 |de item fica em: /game/data/scripts/custom/PremioPorLevel/rewards.xml)																  |
 ---------------------------------------------------------------------------------------------------------------------------------------
-Anuncio de boss ao morrer/spawn
 
-###############################################
-################## PROTECOES ##################
-Protecao contra Bot
-Recurso AntiPHX
-Protecao de overenchant
+
+#################### PROTECOES #######################################################
+
 AntiAfkTvt
+Recurso AntiPHX
 Safe Admin System
+Protecao contra Bot
+Protecao de overenchant
 
-###############################################
-################# NPCS CUSTOM #################
+
+#################### NPCS CUSTOM #####################################################
+
 Npc Buffer - ID 555
+Npc Top PvpPk - ID 36602
+Npc de Servicos ID: 9013 
 Npc Rank Stone - ID 8888
-Npc Offline Donate Informer - ID 24610
-Npc Phoenix Engine - ID 9999
 Npc Boss Respawn - ID 36602
 Npc ClanSearcher - ID 36606
-Npc Mudar cor do Nome - ID 49295
-Npc Delevar (diminuir level do char) - ID 36601
+Npc Phoenix Engine - ID 9999
 Npc NoblesseManager - ID 49296
-Npc Comprar Bracelete - ID 30098
-Npc Top PvpPk - ID 36602
 Npc Safe Enchant +30 - ID 36609
-Npc AIOx (mostra os Aio do server) - ID 80001
-Npc de Servicos ID: 9013 
+Npc Comprar Bracelete - ID 30098
+Npc Mudar cor do Nome - ID 49295
 Npc Gerenciador de Sieges ID: 55
+Npc Offline Donate Informer - ID 24610
+Npc AIOx (mostra os Aio do server) - ID 80001
+Npc Delevar (diminuir level do char) - ID 36601
 
-###############################################
-############## SYSTEM EXCLUSIVA ###############
+
+#################### SYSTEM EXCLUSIVA ###############################################
+
+Fix Efeitos H5
+Alguns arquivos traduzidos
 Fix icones de todas as Shirt's
 Fix Nome da skill "Stripe" para "Striped"
 Adicionado nomes de novos terrirorios H5
 Fix formato/idioma para adicionar acentos
-Fix Efeitos H5
-Alguns arquivos traduzidos
 
-###############################################
-############## OUTROS #########################
-Adicionado pasta com novas Texturas de botoes e etc.
-Adcionado pasta ScreenShots com imagens das novas texturas
+
+#################### OUTROS ##########################################################
+
 Colocado Banner no GS
-Personalizacao do NPC de encantamento com texturas novas e coloracao das letras
-Adicionado Dragao Voador Custom
-Adicionado Zona MultiFunctionZone em Zone.xml
-Adicionado Comparators.java
-Adicionado NPC com aparência da nova raça Ertheia
 Clan Hall minor change!
 Atualizacao das Instancias
+Adicionado Comparators.java
+Adicionado Dragao Voador Custom
+Adicionado Zona MultiFunctionZone em Zone.xml
+Adicionado pasta com novas Texturas de botoes e etc.
+Adcionado pasta ScreenShots com imagens das novas texturas
+Personalizacao do NPC de encantamento com texturas novas e coloracao das letras
 
-###############################################
-############## QUESTS #########################
+
+#################### QUESTS ###########################################################
 
 UPDATE IN JAVA:
 
 Alliance with Ketra Orcs (605)
-Battle against Varka Silenos (606)
-Prove Your Courage! (Ketra) (607)
-Slay the Enemy Commander! (Ketra) (608)
-Magical Power of Water - Part 1 (609)
-Magical Power of Water - Part 2 (610)
-Alliance with Varka Silenos (611)
 Battle against Ketra Orcs (612)
+Alliance with Varka Silenos (611)
 Prove Your Courage! (Varka) (613)
-Slay the Enemy Commander! (Varka) (614)
+Prove Your Courage! (Ketra) (607)
+Battle against Varka Silenos (606)
 Magical Power of Fire - Part 1 (615)
 Magical Power of Fire - Part 2 (616)
+Magical Power of Water - Part 1 (609)
+Magical Power of Water - Part 2 (610)
+Slay the Enemy Commander! (Varka) (614)
+Slay the Enemy Commander! (Ketra) (608)
+
 
 
