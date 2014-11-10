@@ -13,7 +13,7 @@ import pk.elfo.gameserver.network.serverpackets.SocialAction;
  
 public class NobleCustomItem implements IItemHandler
 {
-	public NobleCustomItem()
+	public NobleCustomItem() {}
 
 	@Override
 	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)

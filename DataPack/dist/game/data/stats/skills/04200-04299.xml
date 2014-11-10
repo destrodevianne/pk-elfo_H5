@@ -1206,7 +1206,6 @@
 			<sub order="0x40" stat="accCombat" val="16" />
 			<sub order="0x40" stat="rCrit" val="#power" />
 			<sub order="0x40" stat="cAtk" val="#power" />
-			<sub order="0x40" stat="magicPower" val="#power" />
 			<mul order="0x90" stat="pAtkSpd" val="0.9" />
 			<mul order="0x90" stat="pAtk" val="0.9" />
 			<!-- not offlike -->
