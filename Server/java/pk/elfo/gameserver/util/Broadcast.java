@@ -23,7 +23,6 @@ import pk.elfo.gameserver.network.serverpackets.RelationChanged;
 public final class Broadcast
 {
 	private static Logger _log = Logger.getLogger(Broadcast.class.getName());
-	
 	/**
 	 * Send a packet to all L2PcInstance in the _KnownPlayers of the L2Character that have the Character targeted.<BR>
 	 * <B><U> Concept</U> :</B><BR>
@@ -42,10 +41,8 @@ public final class Broadcast
 			{
 				continue;
 			}
-			
 			player.sendPacket(mov);
 		}
-		
 	}
 	
 	/**
@@ -88,7 +85,6 @@ public final class Broadcast
 				_log.log(Level.WARNING, e.getMessage(), e);
 			}
 		}
-		
 	}
 	
 	/**
@@ -132,7 +128,6 @@ public final class Broadcast
 		{
 			character.sendPacket(mov);
 		}
-		
 		toKnownPlayers(character, mov);
 	}
 	
@@ -183,18 +178,15 @@ public final class Broadcast
 		{
 			cs = new CreatureSay(0, Say2.ANNOUNCEMENT, "", text);
 		}
-		
 		toAllOnlinePlayers(cs);
 	}
 
-	// Multilingual announces
 	public static void announceToOnlinePlayers(MultilingualBroadcast mb)
 	{
 		if ((mb == null) || mb.isEmpty() || !mb.hasLang("en"))
 		{
 			return;
 		}
-		
 		mb.compile();
 		L2World.getInstance().forEachPlayer(new ForEachPlayerBroadcast(mb));
 	}
@@ -266,5 +258,4 @@ public final class Broadcast
 		CreatureSay cs = new CreatureSay(0, Say2.SHOUT, "Vote System", text);
 		toAllOnlinePlayers(cs);
 	}
-	
 }

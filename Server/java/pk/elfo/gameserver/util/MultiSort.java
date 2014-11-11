@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.util;
 
 import java.util.Arrays;
@@ -28,8 +10,8 @@ import javolution.util.FastList;
 
 /**
  * Descending Integer Sort Algorithm - Fast ordering system. - Can easily be ported elsewhere. - Can handle any number of values, from a list or even from a map. - Handles duplicate values.
- * @author Tempy
  */
+ 
 public class MultiSort
 {
 	public static final int SORT_ASCENDING = 0;
@@ -76,7 +58,6 @@ public class MultiSort
 		{
 			tempIntList[i] = Integer.valueOf(valueList[i]);
 		}
-		
 		return Arrays.asList(tempIntList);
 	}
 	
@@ -108,7 +89,6 @@ public class MultiSort
 		{
 			totalValue += (1 / currValue);
 		}
-		
 		return (getCount() / totalValue);
 	}
 	
@@ -118,7 +98,6 @@ public class MultiSort
 		{
 			return new FastList<>();
 		}
-		
 		return _keyList;
 	}
 	
@@ -143,7 +122,6 @@ public class MultiSort
 		{
 			return -1;
 		}
-		
 		return (getTotalValue() / getCount());
 	}
 	
@@ -171,7 +149,6 @@ public class MultiSort
 		{
 			totalValue += storedVal;
 		}
-		
 		return Math.sqrt(totalValue / (numValues - 1));
 	}
 	
@@ -188,7 +165,6 @@ public class MultiSort
 		{
 			totalValue += currValue;
 		}
-		
 		return totalValue;
 	}
 	
@@ -198,7 +174,6 @@ public class MultiSort
 		{
 			return new FastList<>();
 		}
-		
 		return _valueList;
 	}
 	

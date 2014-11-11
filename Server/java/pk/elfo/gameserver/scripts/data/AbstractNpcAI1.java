@@ -16,7 +16,6 @@ import pk.elfo.gameserver.util.Broadcast;
 
 /**
  * Abstract NPC AI class for datapack based AIs.
- * @author UnAfraid, Zoey76
  */
 public abstract class AbstractNpcAI1 extends L2Script
 {

@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.util;
 
 import java.sql.Connection;
@@ -103,21 +85,18 @@ public final class Evolve
 		L2NpcTemplate npcTemplate = NpcTable.getInstance().getTemplate(npcID);
 		
 		currentPet.unSummon(player);
-		
-		// deleting old pet item
+
 		currentPet.destroyControlItem(player, true);
 		
 		item = player.getInventory().addItem("Evolve", itemIdgive, 1, player, npc);
-		
-		// Summoning new pet
+
 		L2PetInstance petSummon = L2PetInstance.spawnPet(npcTemplate, player, item);
 		
 		if (petSummon == null)
 		{
 			return false;
 		}
-		
-		// Fix for non-linear baby pet exp
+
 		long _minimumexp = petSummon.getStat().getExpForLevel(petminlvl);
 		if (petexp < _minimumexp)
 		{
@@ -152,7 +131,6 @@ public final class Evolve
 		{
 			petSummon.startFeed();
 		}
-		
 		return true;
 	}
 	
@@ -194,17 +172,14 @@ public final class Evolve
 		}
 		
 		L2NpcTemplate npcTemplate = NpcTable.getInstance().getTemplate(npcId);
-		
-		// deleting old pet item
+
 		L2ItemInstance removedItem = player.getInventory().destroyItem("PetRestore", item, player, npc);
 		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_DISAPPEARED);
 		sm.addItemName(removedItem);
 		player.sendPacket(sm);
-		
-		// Give new pet item
+
 		L2ItemInstance addedItem = player.getInventory().addItem("PetRestore", itemIdgive, 1, player, npc);
-		
-		// Summoning new pet
+
 		L2PetInstance petSummon = L2PetInstance.spawnPet(npcTemplate, player, addedItem);
 		if (petSummon == null)
 		{
@@ -229,8 +204,7 @@ public final class Evolve
 		petSummon.spawnMe(player.getX(), player.getY(), player.getZ());
 		petSummon.startFeed();
 		addedItem.setEnchantLevel(petSummon.getLevel());
-		
-		// Inventory update
+
 		InventoryUpdate iu = new InventoryUpdate();
 		iu.addRemovedItem(removedItem);
 		player.sendPacket(iu);

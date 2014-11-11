@@ -367,7 +367,6 @@ public final class Util
 		{
 			return Math.round(number);
 		}
-		
 		float exponent = (float) Math.pow(10, numPlaces);
 		return Math.round(number * exponent) / exponent;
 	}

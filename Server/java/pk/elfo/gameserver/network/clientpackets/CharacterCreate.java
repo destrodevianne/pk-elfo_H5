@@ -85,7 +85,7 @@ public final class CharacterCreate extends L2GameClientPacket
 			{
 				_log.fine("Character Creation Failure: Character name " + _name + " is invalid. Message generated: Your title cannot exceed 16 characters in length. Please try again.");
 			}
-			
+
 			sendPacket(new CharCreateFail(CharCreateFail.REASON_16_ENG_CHARS));
 			return;
 		}
@@ -304,7 +304,7 @@ public final class CharacterCreate extends L2GameClientPacket
 				item = newChar.getInventory().addItem("Init", ie.getItemId(), ie.getCount(), newChar, null);
 				if (item == null)
 				{
-					_log.warning("Could not create item during char creation: itemId " + ie.getItemId() + ", amount " + ie.getCount() + ".");
+					_log.warning("Nao foi possivel criar um item durante a criacao de char: itemId " + ie.getItemId() + ", amount " + ie.getCount() + ".");
 					continue;
 				}
 				

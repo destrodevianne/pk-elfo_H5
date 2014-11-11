@@ -158,7 +158,6 @@ public final class TaskManager
 			{
 				scheduled.cancel(true);
 			}
-			
 			_currentTasks.remove(this);
 		}
 	}

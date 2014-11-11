@@ -136,7 +136,6 @@ public class AutoVoteRewardManager
 					{
 						return Integer.valueOf(inputLine.split(">")[2].replace("</span", ""));
 					}
-					
 				}
 			}
 		}
@@ -193,7 +192,6 @@ public class AutoVoteRewardManager
 		{
 			_log.log(Level.WARNING, "data error on vote: ", e);
 		}
-		
 		setLastVoteCount(votes);
 	}
 	

@@ -84,7 +84,6 @@ public class TaskRaidPointsReset extends Task
 					}
 				}
 			}
-			
 			RaidBossPointsManager.getInstance().cleanUp();
 			_log.info("Raid Points Redefinir Tarefa Global: iniciado.");
 		}

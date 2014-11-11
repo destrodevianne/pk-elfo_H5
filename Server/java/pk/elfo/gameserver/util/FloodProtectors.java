@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.util;
 
 import pk.elfo.Config;
@@ -23,73 +5,24 @@ import pk.elfo.gameserver.network.L2GameClient;
 
 /**
  * Collection of flood protectors for single player.
- * @author fordfrog
  */
 public final class FloodProtectors
 {
-	/**
-	 * Use-item flood protector.
-	 */
 	private final FloodProtectorAction _useItem;
-	/**
-	 * Roll-dice flood protector.
-	 */
 	private final FloodProtectorAction _rollDice;
-	/**
-	 * Firework flood protector.
-	 */
 	private final FloodProtectorAction _firework;
-	/**
-	 * Item-pet-summon flood protector.
-	 */
 	private final FloodProtectorAction _itemPetSummon;
-	/**
-	 * Hero-voice flood protector.
-	 */
 	private final FloodProtectorAction _heroVoice;
-	/**
-	 * Global-chat flood protector.
-	 */
 	private final FloodProtectorAction _globalChat;
-	/**
-	 * Subclass flood protector.
-	 */
 	private final FloodProtectorAction _subclass;
-	/**
-	 * Drop-item flood protector.
-	 */
 	private final FloodProtectorAction _dropItem;
-	/**
-	 * Server-bypass flood protector.
-	 */
 	private final FloodProtectorAction _serverBypass;
-	/**
-	 * Multisell flood protector.
-	 */
 	private final FloodProtectorAction _multiSell;
-	/**
-	 * Transaction flood protector.
-	 */
 	private final FloodProtectorAction _transaction;
-	/**
-	 * Manufacture flood protector.
-	 */
 	private final FloodProtectorAction _manufacture;
-	/**
-	 * Manor flood protector.
-	 */
 	private final FloodProtectorAction _manor;
-	/**
-	 * Send mail flood protector.
-	 */
 	private final FloodProtectorAction _sendMail;
-	/**
-	 * Character Select protector
-	 */
 	private final FloodProtectorAction _characterSelect;
-	/**
-	 * Item Auction
-	 */
 	private final FloodProtectorAction _itemAuction;
 	
 	/**

@@ -12,37 +12,15 @@ import pk.elfo.util.StringUtil;
 
 /**
  * Flood protector implementation.
- * @author fordfrog
  */
 public final class FloodProtectorAction
 {
-	/**
-	 * Logger
-	 */
 	private static final Logger _log = Logger.getLogger(FloodProtectorAction.class.getName());
-	/**
-	 * Client for this instance of flood protector.
-	 */
 	private final L2GameClient _client;
-	/**
-	 * Configuration of this instance of flood protector.
-	 */
 	private final FloodProtectorConfig _config;
-	/**
-	 * Next game tick when new request is allowed.
-	 */
 	private volatile int _nextGameTick = GameTimeController.getGameTicks();
-	/**
-	 * Request counter.
-	 */
 	private final AtomicInteger _count = new AtomicInteger(0);
-	/**
-	 * Flag determining whether exceeding request has been logged.
-	 */
 	private boolean _logged;
-	/**
-	 * Flag determining whether punishment application is in progress so that we do not apply punisment multiple times (flooding).
-	 */
 	private volatile boolean _punishmentInProgress;
 	
 	/**
@@ -78,7 +56,6 @@ public final class FloodProtectorAction
 				log(" called command ", command, " ~", String.valueOf((_config.FLOOD_PROTECTION_INTERVAL - (_nextGameTick - curTick)) * GameTimeController.MILLIS_IN_TICK), " ms after previous command");
 				_logged = true;
 			}
-			
 			_count.incrementAndGet();
 			
 			if (!_punishmentInProgress && (_config.PUNISHMENT_LIMIT > 0) && (_count.get() >= _config.PUNISHMENT_LIMIT) && (_config.PUNISHMENT_TYPE != null))
@@ -97,7 +74,6 @@ public final class FloodProtectorAction
 				{
 					jailChar();
 				}
-				
 				_punishmentInProgress = false;
 			}
 			return false;
@@ -150,7 +126,6 @@ public final class FloodProtectorAction
 			{
 				log(" banned for flooding ", _config.PUNISHMENT_TIME <= 0 ? "forever" : "for " + (_config.PUNISHMENT_TIME / 60000) + " mins");
 			}
-			
 			_client.getActiveChar().logout();
 		}
 		else
@@ -218,7 +193,6 @@ public final class FloodProtectorAction
 			default:
 				throw new IllegalStateException("Missing state on switch");
 		}
-		
 		StringUtil.append(output, lines);
 		_log.warning(output.toString());
 	}

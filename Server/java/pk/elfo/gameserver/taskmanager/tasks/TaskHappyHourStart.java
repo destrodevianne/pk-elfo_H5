@@ -81,7 +81,9 @@ public class TaskHappyHourStart extends Task
 			_log.info("Hoje e " + todayIs);
 		params = task.getParams();
 		if (Config.DEBUG)
+		{
 			_log.info("Parametros: " + params[0] + " " + params[1] + " " + params[2]);
+		}
            
 		if (todayIs.equals(params[2].split(" ")[0]))
 		{
