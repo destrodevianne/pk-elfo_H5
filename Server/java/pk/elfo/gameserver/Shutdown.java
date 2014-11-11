@@ -71,6 +71,12 @@ public class Shutdown extends Thread
 		Broadcast.toAllOnlinePlayers(sysm);
 	}
 	
+	public void shutDown(int sec, boolean r)
+	{
+		_counterInstance = new Shutdown(sec, r);
+		_counterInstance.start();
+	}
+
 	public void startTelnetShutdown(String IP, int seconds, boolean restart)
 	{
 		_log.warning("IP: " + IP + " comando de desligar ativado. " + MODE_TEXT[_shutdownMode] + " em " + seconds + " segundos!");

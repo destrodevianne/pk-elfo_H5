@@ -1608,7 +1608,13 @@ public final class Config
 	public static double HP_REGEN_MULTIPLIER;
 	public static double MP_REGEN_MULTIPLIER;
 	public static double CP_REGEN_MULTIPLIER;
+	// ----------------------------------------------------------------------------------------------------//
+	// Telnet
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean IS_TELNET_ENABLED;
+	public static int TELNET_LOGIN;
+	public static String TELNET_PASSWORD;
+	// ----------------------------------------------------------------------------------------------------//
 	public static boolean SHOW_LICENCE;
 	public static boolean ACCEPT_NEW_GAMESERVER;
 	public static int SERVER_ID;
@@ -4117,6 +4123,8 @@ public final class Config
 			}
 			
 			IS_TELNET_ENABLED = Boolean.parseBoolean(telnetSettings.getProperty("EnableTelnet", "false"));
+			TELNET_LOGIN = Integer.parseInt(telnetSettings.getProperty("StatusPort", "54321"));
+			TELNET_PASSWORD = telnetSettings.getString("StatusPW", "PkElfo");
 			
 			// MMO
 			L2Properties mmoSettings = new L2Properties();
@@ -5624,20 +5632,6 @@ public final class Config
 			MMO_MAX_READ_PER_PASS = Integer.parseInt(mmoSettings.getProperty("MaxReadPerPass", "12"));
 			MMO_HELPER_BUFFER_COUNT = Integer.parseInt(mmoSettings.getProperty("HelperBufferCount", "20"));
 			MMO_TCP_NODELAY = Boolean.parseBoolean(mmoSettings.getProperty("TcpNoDelay", "False"));
-			
-			// Load Telnet L2Properties file (if exists)
-			L2Properties telnetSettings = new L2Properties();
-			final File telnet = new File(TELNET_FILE);
-			try (InputStream is = new FileInputStream(telnet))
-			{
-				telnetSettings.load(is);
-			}
-			catch (Exception e)
-			{
-				_log.log(Level.SEVERE, "Error while loading Telnet settings!", e);
-			}
-			
-			IS_TELNET_ENABLED = Boolean.parseBoolean(telnetSettings.getProperty("EnableTelnet", "false"));
 			
 			// Email
 			L2Properties emailSettings = new L2Properties();

@@ -105,6 +105,7 @@ import pk.elfo.gameserver.instancemanager.MapRegionManager;
 import pk.elfo.gameserver.instancemanager.MercTicketManager;
 import pk.elfo.gameserver.instancemanager.PcCafePointsManager;
 import pk.elfo.gameserver.instancemanager.PetitionManager;
+import pk.elfo.gameserver.instancemanager.PunishmentManager;
 import pk.elfo.gameserver.instancemanager.QuestManager;
 import pk.elfo.gameserver.instancemanager.RaidBossPointsManager;
 import pk.elfo.gameserver.instancemanager.RaidBossSpawnManager;
@@ -208,7 +209,17 @@ public class GameServer
 		// load script engines
 		printSection("Mecanismos");
 		L2ScriptEngineManager.getInstance();
-
+		
+		if (Config.IS_TELNET_ENABLED)
+		{
+			_statusServer = new Status(Server.serverMode);
+			_statusServer.start();
+		}
+		else
+		{
+			_log.info(GameServer.class.getSimpleName() + ": Telnet desativado.");
+		}
+		
 		printSection("Mundo");
 		
 		// start game time control early
@@ -435,6 +446,8 @@ public class GameServer
 			GeoEditorListener.getInstance();
 		}
 		
+		PunishmentManager.getInstance();
+		
 		Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
 		
 		_log.info("IdFactory: Free ObjectID's remaining: " + IdFactory.getInstance().size());
@@ -557,16 +570,6 @@ public class GameServer
 		printSection("Database");
 		L2DatabaseFactory.getInstance();
 		gameServer = new GameServer();
-		
-		if (Config.IS_TELNET_ENABLED)
-		{
-			_statusServer = new Status(Server.serverMode);
-			_statusServer.start();
-		}
-		else
-		{
-			_log.info(GameServer.class.getSimpleName() + ": Telnet desativado.");
-		}
 	}
 	
 	public static void printSection(String s)
