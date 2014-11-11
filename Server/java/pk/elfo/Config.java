@@ -98,7 +98,6 @@ public final class Config
 	// ------------------------CUSTOM----------------------------------------------------------------------//
 	public static final String CUSTOM_MOD = "./config/Custom/Mods.properties";
 	// ------------------------EVENTOS---------------------------------------------------------------------//
-	public static final String EVENT_ACHIEVEMENT = "./config/Eventos/Achievement.properties";
 	public static final String EVENT_FILE = "./config/Eventos/Event.properties";
 	public static final String FORTSIEGE_CONFIGURATION_FILE = "./config/Eventos/FortSiege.properties";
 	public static final String DIASSIEGE_FILE = "./config/Eventos/ModDiasParaSiege.properties";
