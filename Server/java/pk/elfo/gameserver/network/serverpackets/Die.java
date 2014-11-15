@@ -64,7 +64,6 @@ public class Die extends L2GameServerPacket
 		{
 			_sweepable = ((L2Attackable) cha).isSweepActive();
 		}
-		
 	}
 	
 	@Override

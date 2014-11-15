@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.network;
 
 import java.io.File;
@@ -39,756 +21,135 @@ import pk.elfo.gameserver.network.serverpackets.ExShowScreenMessage;
 
 /**
  * NpcStringId implementation, based on SystemMessageId class
- * @author mrTJO
  */
 public final class NpcStringId
 {
 	private static final Logger _log = Logger.getLogger(NpcStringId.class.getName());
 	private static final NSLocalisation[] EMPTY_NSL_ARRAY = new NSLocalisation[0];
 	public static final NpcStringId[] EMPTY_ARRAY = new NpcStringId[0];
-	
-	/**
-	 * ID: 1<br>
-	 * Message: Hello! I am $s1. You are $s2, right? Hehehe
-	 */
 	public static final NpcStringId HELLO_I_AM_S1_YOU_ARE_S2_RIGHT_HEHEHE;
-	
-	/**
-	 * ID: 2<br>
-	 * Message: $s1--$s2--$s3--$s4//$s5 Hehehe
-	 */
 	public static final NpcStringId S1_S2_S3_S4_S5_HEHEHE;
-	
-	/**
-	 * ID: 5<br>
-	 * Message: Withdraw the fee for the next time at $s1/$s2 $s3
-	 */
 	public static final NpcStringId WITHDRAW_THE_FEE_FOR_THE_NEXT_TIME_AT_S1_S2_S4;
-	
-	/**
-	 * ID: 8<br>
-	 * Message: Stage
-	 */
 	public static final NpcStringId STAGE;
-	
-	/**
-	 * ID: 9<br>
-	 * Message: Stage $s1
-	 */
 	public static final NpcStringId STAGE_S1;
-	
-	/**
-	 * ID: 10<br>
-	 * Message: $s1%%
-	 */
 	public static final NpcStringId S1;
-	
-	/**
-	 * ID: 2004<br>
-	 * Message: What did you just do to me?
-	 */
 	public static final NpcStringId WHAT_DID_YOU_JUST_DO_TO_ME;
-	
-	/**
-	 * ID: 2005<br>
-	 * Message: Are you trying to tame me? Don't do that!
-	 */
 	public static final NpcStringId ARE_YOU_TRYING_TO_TAME_ME_DONT_DO_THAT;
-	
-	/**
-	 * ID: 2006<br>
-	 * Message: Don't give such a thing. You can endanger yourself!
-	 */
 	public static final NpcStringId DONT_GIVE_SUCH_A_THING_YOU_CAN_ENDANGER_YOURSELF;
-	
-	/**
-	 * ID: 2007<br>
-	 * Message: Yuck! What is this? It tastes terrible!
-	 */
 	public static final NpcStringId YUCK_WHAT_IS_THIS_IT_TASTES_TERRIBLE;
-	
-	/**
-	 * ID: 2008<br>
-	 * Message: I'm hungry. Give me a little more, please.
-	 */
 	public static final NpcStringId IM_HUNGRY_GIVE_ME_A_LITTLE_MORE_PLEASE;
-	
-	/**
-	 * ID: 2009<br>
-	 * Message: What is this? Is this edible?
-	 */
 	public static final NpcStringId WHAT_IS_THIS_IS_THIS_EDIBLE;
-	
-	/**
-	 * ID: 2010<br>
-	 * Message: Don't worry about me.
-	 */
 	public static final NpcStringId DONT_WORRY_ABOUT_ME;
-	
-	/**
-	 * ID: 2011<br>
-	 * Message: Thank you. That was delicious!
-	 */
 	public static final NpcStringId THANK_YOU_THAT_WAS_DELICIOUS;
-	
-	/**
-	 * ID: 2012<br>
-	 * Message: I think I am starting to like you!
-	 */
 	public static final NpcStringId I_THINK_I_AM_STARTING_TO_LIKE_YOU;
-	
-	/**
-	 * ID: 2013<br>
-	 * Message: Eeeeek! Eeeeek!
-	 */
 	public static final NpcStringId EEEEEK_EEEEEK;
-	
-	/**
-	 * ID: 2014<br>
-	 * Message: Don't keep trying to tame me. I don't want to be tamed.
-	 */
 	public static final NpcStringId DONT_KEEP_TRYING_TO_TAME_ME_I_DONT_WANT_TO_BE_TAMED;
-	
-	/**
-	 * ID: 2015<br>
-	 * Message: It is just food to me. Although it may also be your hand.
-	 */
 	public static final NpcStringId IT_IS_JUST_FOOD_TO_ME_ALTHOUGH_IT_MAY_ALSO_BE_YOUR_HAND;
-	
-	/**
-	 * ID: 2016<br>
-	 * Message: If I keep eating like this, won't I become fat? *chomp chomp*
-	 */
 	public static final NpcStringId IF_I_KEEP_EATING_LIKE_THIS_WONT_I_BECOME_FAT_CHOMP_CHOMP;
-	
-	/**
-	 * ID: 2017<br>
-	 * Message: Why do you keep feeding me?
-	 */
 	public static final NpcStringId WHY_DO_YOU_KEEP_FEEDING_ME;
-	
-	/**
-	 * ID: 2018<br>
-	 * Message: Don't trust me. I'm afraid I may betray you later.
-	 */
 	public static final NpcStringId DONT_TRUST_ME_IM_AFRAID_I_MAY_BETRAY_YOU_LATER;
-	
-	/**
-	 * ID: 2019<br>
-	 * Message: Grrrrr....
-	 */
 	public static final NpcStringId GRRRRR;
-	
-	/**
-	 * ID: 2020<br>
-	 * Message: You brought this upon yourself...!
-	 */
 	public static final NpcStringId YOU_BROUGHT_THIS_UPON_YOURSELF;
-	
-	/**
-	 * ID: 2021<br>
-	 * Message: I feel strange...! I keep having these evil thoughts...!
-	 */
 	public static final NpcStringId I_FEEL_STRANGE_I_KEEP_HAVING_THESE_EVIL_THOUGHTS;
-	
-	/**
-	 * ID: 2022<br>
-	 * Message: Alas... so this is how it all ends...
-	 */
 	public static final NpcStringId ALAS_SO_THIS_IS_HOW_IT_ALL_ENDS;
-	
-	/**
-	 * ID: 2023<br>
-	 * Message: I don't feel so good... Oh, my mind is very troubled...!
-	 */
 	public static final NpcStringId I_DONT_FEEL_SO_GOOD_OH_MY_MIND_IS_VERY_TROUBLED;
-	
-	/**
-	 * ID: 2024<br>
-	 * Message: $s1, so what do you think it is like to be tamed?
-	 */
 	public static final NpcStringId S1_SO_WHAT_DO_YOU_THINK_IT_IS_LIKE_TO_BE_TAMED;
-	
-	/**
-	 * ID: 2025<br>
-	 * Message: $s1, whenever I see spice, I think I will miss your hand that used to feed it to me.
-	 */
 	public static final NpcStringId S1_WHENEVER_I_SEE_SPICE_I_THINK_I_WILL_MISS_YOUR_HAND_THAT_USED_TO_FEED_IT_TO_ME;
-	
-	/**
-	 * ID: 2026<br>
-	 * Message: $s1, don't go to the village. I don't have the strength to follow you.
-	 */
 	public static final NpcStringId S1_DONT_GO_TO_THE_VILLAGE_I_DONT_HAVE_THE_STRENGTH_TO_FOLLOW_YOU;
-	
-	/**
-	 * ID: 2027<br>
-	 * Message: Thank you for trusting me, $s1. I hope I will be helpful to you.
-	 */
 	public static final NpcStringId THANK_YOU_FOR_TRUSTING_ME_S1_I_HOPE_I_WILL_BE_HELPFUL_TO_YOU;
-	
-	/**
-	 * ID: 2028<br>
-	 * Message: $s1, will I be able to help you?
-	 */
 	public static final NpcStringId S1_WILL_I_BE_ABLE_TO_HELP_YOU;
-	
-	/**
-	 * ID: 2029<br>
-	 * Message: I guess it's just my animal magnetism.
-	 */
 	public static final NpcStringId I_GUESS_ITS_JUST_MY_ANIMAL_MAGNETISM;
-	
-	/**
-	 * ID: 2030<br>
-	 * Message: Too much spicy food makes me sweat like a beast.
-	 */
 	public static final NpcStringId TOO_MUCH_SPICY_FOOD_MAKES_ME_SWEAT_LIKE_A_BEAST;
-	
-	/**
-	 * ID: 2031<br>
-	 * Message: Animals need love too.
-	 */
 	public static final NpcStringId ANIMALS_NEED_LOVE_TOO;
-	
-	/**
-	 * ID: 2032<br>
-	 * Message: What'd I miss? What'd I miss?
-	 */
 	public static final NpcStringId WHATD_I_MISS_WHATD_I_MISS;
-	
-	/**
-	 * ID: 2033<br>
-	 * Message: I just know before this is over, I'm gonna need a lot of serious therapy.
-	 */
 	public static final NpcStringId I_JUST_KNOW_BEFORE_THIS_IS_OVER_IM_GONNA_NEED_A_LOT_OF_SERIOUS_THERAPY;
-	
-	/**
-	 * ID: 2034<br>
-	 * Message: I sense great wisdom in you... I'm an animal, and I got instincts.
-	 */
 	public static final NpcStringId I_SENSE_GREAT_WISDOM_IN_YOU_IM_AN_ANIMAL_AND_I_GOT_INSTINCTS;
-	
-	/**
-	 * ID: 2035<br>
-	 * Message: Remember, I'm here to help.
-	 */
 	public static final NpcStringId REMEMBER_IM_HERE_TO_HELP;
-	
-	/**
-	 * ID: 2036<br>
-	 * Message: Are we there yet?
-	 */
 	public static final NpcStringId ARE_WE_THERE_YET;
-	
-	/**
-	 * ID: 2037<br>
-	 * Message: That really made me feel good to see that.
-	 */
 	public static final NpcStringId THAT_REALLY_MADE_ME_FEEL_GOOD_TO_SEE_THAT;
-	
-	/**
-	 * ID: 2038<br>
-	 * Message: Oh, no, no, no, Nooooo!
-	 */
 	public static final NpcStringId OH_NO_NO_NO_NOOOOO;
-	
-	/**
-	 * ID: 2150<br>
-	 * Message: Who awoke me?
-	 */
 	public static final NpcStringId WHO_AWOKE_ME;
-	
-	/**
-	 * ID: 2151<br>
-	 * Message: My master has instructed me to be your guide, $s1.
-	 */
 	public static final NpcStringId MY_MASTER_HAS_INSTRUCTED_ME_TO_BE_YOUR_GUIDE_S1;
-	
-	/**
-	 * ID: 2152<br>
-	 * Message: Please check this bookcase, $s1.
-	 */
 	public static final NpcStringId PLEASE_CHECK_THIS_BOOKCASE_S1;
-	
-	/**
-	 * ID: 2250<br>
-	 * Message: Did you call me, $s1?
-	 */
 	public static final NpcStringId DID_YOU_CALL_ME_S1;
-	
-	/**
-	 * ID: 2251<br>
-	 * Message: I'm confused! Maybe it's time to go back.
-	 */
 	public static final NpcStringId IM_CONFUSED_MAYBE_ITS_TIME_TO_GO_BACK;
-	
-	/**
-	 * ID: 2450<br>
-	 * Message: That sign!
-	 */
 	public static final NpcStringId THAT_SIGN;
-	
-	/**
-	 * ID: 2550<br>
-	 * Message: That box was sealed by my master, $s1! Don't touch it!
-	 */
 	public static final NpcStringId THAT_BOX_WAS_SEALED_BY_MY_MASTER_S1_DONT_TOUCH_IT;
-	
-	/**
-	 * ID: 2551<br>
-	 * Message: You've ended my immortal life! You're protected by the feudal lord, aren't you?
-	 */
 	public static final NpcStringId YOUVE_ENDED_MY_IMMORTAL_LIFE_YOURE_PROTECTED_BY_THE_FEUDAL_LORD_ARENT_YOU;
-	
-	/**
-	 * ID: 4151<br>
-	 * Message: Delivery duty complete. \\n Go find the Newbie Guide.
-	 */
 	public static final NpcStringId DELIVERY_DUTY_COMPLETE_N_GO_FIND_THE_NEWBIE_GUIDE;
-	
-	/**
-	 * ID: 4152<br>
-	 * Message: Acquisition of Soulshot for beginners complete. \\n Go find the Newbie Guide.
-	 */
 	public static final NpcStringId ACQUISITION_OF_SOULSHOT_FOR_BEGINNERS_COMPLETE_N_GO_FIND_THE_NEWBIE_GUIDE;
-	
-	/**
-	 * ID: 4153<br>
-	 * Message: Acquisition of Weapon Exchange coupon for beginners complete. \\n Go speak with the Newbie Guide.
-	 */
 	public static final NpcStringId ACQUISITION_OF_WEAPON_EXCHANGE_COUPON_FOR_BEGINNERS_COMPLETE_N_GO_SPEAK_WITH_THE_NEWBIE_GUIDE;
-	
-	/**
-	 * ID: 4154<br>
-	 * Message: Acquisition of race-specific weapon complete. \\n Go find the Newbie Guide.
-	 */
 	public static final NpcStringId ACQUISITION_OF_RACE_SPECIFIC_WEAPON_COMPLETE_N_GO_FIND_THE_NEWBIE_GUIDE;
-	
-	/**
-	 * ID: 4155<br>
-	 * Message: Last duty complete. \\n Go find the Newbie Guide.
-	 */
 	public static final NpcStringId LAST_DUTY_COMPLETE_N_GO_FIND_THE_NEWBIE_GUIDE;
-	
-	/**
-	 * ID: 6051<br>
-	 * Message: $s1! I must kill you. Blame your own curiosity.
-	 */
 	public static final NpcStringId S1_I_MUST_KILL_YOU_BLAME_YOUR_OWN_CURIOSITY;
-	
-	/**
-	 * ID: 6052<br>
-	 * Message: You have good luck. I shall return.
-	 */
 	public static final NpcStringId YOU_HAVE_GOOD_LUCK_I_SHALL_RETURN;
-	
-	/**
-	 * ID: 6053<br>
-	 * Message: You are strong. This was a mistake.
-	 */
 	public static final NpcStringId YOU_ARE_STRONG_THIS_WAS_A_MISTAKE;
-	
-	/**
-	 * ID: 6054<br>
-	 * Message: Who are you to join in the battle? How upsetting.
-	 */
 	public static final NpcStringId WHO_ARE_YOU_TO_JOIN_IN_THE_BATTLE_HOW_UPSETTING;
-	
-	/**
-	 * ID: 6451<br>
-	 * Message: $s1, did you come to help me?
-	 */
 	public static final NpcStringId S1_DID_YOU_COME_TO_HELP_ME;
-	
-	/**
-	 * ID: 6551<br>
-	 * Message: Drats! How could I be so wrong??
-	 */
 	public static final NpcStringId DRATS_HOW_COULD_I_BE_SO_WRONG;
-	
-	/**
-	 * ID: 6552<br>
-	 * Message: $s1! Step back from the confounded box! I will take it myself!
-	 */
 	public static final NpcStringId S1_STEP_BACK_FROM_THE_CONFOUNDED_BOX_I_WILL_TAKE_IT_MYSELF;
-	
-	/**
-	 * ID: 6553<br>
-	 * Message: $s1! I will be back soon. Stay there and don't you dare wander off!
-	 */
 	public static final NpcStringId S1_I_WILL_BE_BACK_SOON_STAY_THERE_AND_DONT_YOU_DARE_WANDER_OFF;
-	
-	/**
-	 * ID: 6554<br>
-	 * Message: Grr. I've been hit...
-	 */
 	public static final NpcStringId GRR_IVE_BEEN_HIT;
-	
-	/**
-	 * ID: 6555<br>
-	 * Message: Grr! Who are you and why have you stopped me?
-	 */
 	public static final NpcStringId GRR_WHO_ARE_YOU_AND_WHY_HAVE_YOU_STOPPED_ME;
-	
-	/**
-	 * ID: 6556<br>
-	 * Message: I am late!
-	 */
 	public static final NpcStringId I_AM_LATE;
-	
-	/**
-	 * ID: 6557<br>
-	 * Message: Good luck!
-	 */
 	public static final NpcStringId GOOD_LUCK;
-	
-	/**
-	 * ID: 6750<br>
-	 * Message: $s1! You seek the forbidden knowledge and I cannot let you have it!
-	 */
 	public static final NpcStringId S1_YOU_SEEK_THE_FORBIDDEN_KNOWLEDGE_AND_I_CANNOT_LET_YOU_HAVE_IT;
-	
-	/**
-	 * ID: 6751<br>
-	 * Message: Is this all I am allowed to have?...
-	 */
 	public static final NpcStringId IS_THIS_ALL_I_AM_ALLOWED_TO_HAVE;
-	
-	/**
-	 * ID: 6752<br>
-	 * Message: You defeated me, but our doom approaches...
-	 */
 	public static final NpcStringId YOU_DEFEATED_ME_BUT_OUR_DOOM_APPROACHES;
-	
-	/**
-	 * ID: 6753<br>
-	 * Message: $s1! Who are you? Why are you bothering my minions?
-	 */
 	public static final NpcStringId S1_WHO_ARE_YOU_WHY_ARE_YOU_BOTHERING_MY_MINIONS;
-	
-	/**
-	 * ID: 6754<br>
-	 * Message: Beefcake!!
-	 */
 	public static final NpcStringId BEEFCAKE;
-	
-	/**
-	 * ID: 6755<br>
-	 * Message: Grr! Why are you sticking your nose in our business?
-	 */
 	public static final NpcStringId GRR_WHY_ARE_YOU_STICKING_YOUR_NOSE_IN_OUR_BUSINESS;
-	
-	/**
-	 * ID: 6756<br>
-	 * Message: Farewell and watch your back!
-	 */
 	public static final NpcStringId FAREWELL_AND_WATCH_YOUR_BACK;
-	
-	/**
-	 * ID: 6757<br>
-	 * Message: Kamael! Good to see you. I have something to ask you...
-	 */
 	public static final NpcStringId KAMAEL_GOOD_TO_SEE_YOU_I_HAVE_SOMETHING_TO_ASK_YOU;
-	
-	/**
-	 * ID: 6758<br>
-	 * Message: $s1! Go get him!!
-	 */
 	public static final NpcStringId S1_GO_GET_HIM;
-	
-	/**
-	 * ID: 6759<br>
-	 * Message: $s1! What are you doing? Attack him!
-	 */
 	public static final NpcStringId S1_WHAT_ARE_YOU_DOING_ATTACK_HIM;
-	
-	/**
-	 * ID: 6760<br>
-	 * Message: $s1! Is ? your full potential?
-	 */
 	public static final NpcStringId S1_IS_YOUR_FULL_POTENTIAL;
-	
-	/**
-	 * ID: 6761<br>
-	 * Message: Thanks! I must go and hunt down those that oppose me.
-	 */
 	public static final NpcStringId THANKS_I_MUST_GO_AND_HUNT_DOWN_THOSE_THAT_OPPOSE_ME;
-	
-	/**
-	 * ID: 6762<br>
-	 * Message: You are so stubborn... I must follow him now...
-	 */
 	public static final NpcStringId YOU_ARE_SO_STUBBORN_I_MUST_FOLLOW_HIM_NOW;
-	
-	/**
-	 * ID: 6763<br>
-	 * Message: Seek enlightenment from the Tablet.
-	 */
 	public static final NpcStringId SEEK_ENLIGHTENMENT_FROM_THE_TABLET;
-	
-	/**
-	 * ID: 6764<br>
-	 * Message: Arrogant beings! You are all doomed!
-	 */
 	public static final NpcStringId ARROGANT_BEINGS_YOU_ARE_ALL_DOOMED;
-	
-	/**
-	 * ID: 6765<br>
-	 * Message: My time in your world has come to an end. Consider yourselves lucky...
-	 */
 	public static final NpcStringId MY_TIME_IN_YOUR_WORLD_HAS_COME_TO_AN_END_CONSIDER_YOURSELVES_LUCKY;
-	
-	/**
-	 * ID: 6766<br>
-	 * Message: $s1! How dare you!!!
-	 */
 	public static final NpcStringId S1_HOW_DARE_YOU;
-	
-	/**
-	 * ID: 6767<br>
-	 * Message: $s1! Ahhaa! Your god forsakes you!
-	 */
 	public static final NpcStringId S1_AHHAA_YOUR_GOD_FORSAKES_YOU;
-	
-	/**
-	 * ID: 6851<br>
-	 * Message: $s1! Your time is up. Prepare to die a horrible death.
-	 */
 	public static final NpcStringId S1_YOUR_TIME_IS_UP_PREPARE_TO_DIE_A_HORRIBLE_DEATH;
-	
-	/**
-	 * ID: 6852<br>
-	 * Message: Consider yourself lucky. The next time we meet, you will die - PERMANENTLY!
-	 */
 	public static final NpcStringId CONSIDER_YOURSELF_LUCKY_THE_NEXT_TIME_WE_MEET_YOU_WILL_DIE_PERMANENTLY;
-	
-	/**
-	 * ID: 6853<br>
-	 * Message: Fare thee well! We shall meet again.
-	 */
 	public static final NpcStringId FARE_THEE_WELL_WE_SHALL_MEET_AGAIN;
-	
-	/**
-	 * ID: 6854<br>
-	 * Message: $s1! Who are you? And better yet, why are you bothering my minions?
-	 */
 	public static final NpcStringId S1_WHO_ARE_YOU_AND_BETTER_YET_WHY_ARE_YOU_BOTHERING_MY_MINIONS;
-	
-	/**
-	 * ID: 6855<br>
-	 * Message: Strength beyond strength!!
-	 */
 	public static final NpcStringId STRENGTH_BEYOND_STRENGTH;
-	
-	/**
-	 * ID: 6856<br>
-	 * Message: Grr! Why are you sticking your nose where it doesn't belong?
-	 */
 	public static final NpcStringId GRR_WHY_ARE_YOU_STICKING_YOUR_NOSE_WHERE_IT_DOESNT_BELONG;
-	
-	/**
-	 * ID: 6857<br>
-	 * Message: You've won for now, but we will meet again!
-	 */
 	public static final NpcStringId YOUVE_WON_FOR_NOW_BUT_WE_WILL_MEET_AGAIN;
-	
-	/**
-	 * ID: 6858<br>
-	 * Message: Are they tired of following me?
-	 */
 	public static final NpcStringId ARE_THEY_TIRED_OF_FOLLOWING_ME;
-	
-	/**
-	 * ID: 6859<br>
-	 * Message: $s1! Can you help me?
-	 */
 	public static final NpcStringId S1_CAN_YOU_HELP_ME;
-	
-	/**
-	 * ID: 6860<br>
-	 * Message: Is that all you got, little $s1?
-	 */
 	public static final NpcStringId IS_THAT_ALL_YOU_GOT_LITTLE_S1;
-	
-	/**
-	 * ID: 6861<br>
-	 * Message: $s1! Wake up fool! Don't let him get away!
-	 */
 	public static final NpcStringId S1_WAKE_UP_FOOL_DONT_LET_HIM_GET_AWAY;
-	
-	/**
-	 * ID: 6862<br>
-	 * Message: The path is clear, but be careful!
-	 */
 	public static final NpcStringId THE_PATH_IS_CLEAR_BUT_BE_CAREFUL;
-	
-	/**
-	 * ID: 6863<br>
-	 * Message: I must follow someone now. See you around!
-	 */
 	public static final NpcStringId I_MUST_FOLLOW_SOMEONE_NOW_SEE_YOU_AROUND;
-	
-	/**
-	 * ID: 6864<br>
-	 * Message: May we meet again.
-	 */
 	public static final NpcStringId MAY_WE_MEET_AGAIN;
-	
-	/**
-	 * ID: 6865<br>
-	 * Message: Curses on those who blaspheme the Gods!
-	 */
 	public static final NpcStringId CURSES_ON_THOSE_WHO_BLASPHEME_THE_GODS;
-	
-	/**
-	 * ID: 6866<br>
-	 * Message: Einhasad is calling me! You are lucky and I shall continue my punishment later!
-	 */
 	public static final NpcStringId EINHASAD_IS_CALLING_ME_YOU_ARE_LUCKY_AND_I_SHALL_CONTINUE_MY_PUNISHMENT_LATER;
-	
-	/**
-	 * ID: 6867<br>
-	 * Message: By the power vested in me by the gods, you $s1, shall die!
-	 */
 	public static final NpcStringId BY_THE_POWER_VESTED_IN_ME_BY_THE_GODS_YOU_S1_SHALL_DIE;
-	
-	/**
-	 * ID: 6868<br>
-	 * Message: $s1! I will not forget you!
-	 */
 	public static final NpcStringId S1_I_WILL_NOT_FORGET_YOU;
-	
-	/**
-	 * ID: 6950<br>
-	 * Message: $s1! How dare you interfere! You shall pay for this!
-	 */
 	public static final NpcStringId S1_HOW_DARE_YOU_INTERFERE_YOU_SHALL_PAY_FOR_THIS;
-	
-	/**
-	 * ID: 6951<br>
-	 * Message: Beleth is calling me. You are lucky but still a fool...
-	 */
 	public static final NpcStringId BELETH_IS_CALLING_ME_YOU_ARE_LUCKY_BUT_STILL_A_FOOL;
-	
-	/**
-	 * ID: 6952<br>
-	 * Message: I shall take my leave, but will never surrender!
-	 */
 	public static final NpcStringId I_SHALL_TAKE_MY_LEAVE_BUT_WILL_NEVER_SURRENDER;
-	
-	/**
-	 * ID: 6954<br>
-	 * Message: Cower before my awesome and mighty power!!
-	 */
 	public static final NpcStringId COWER_BEFORE_MY_AWESOME_AND_MIGHTY_POWER;
-	
-	/**
-	 * ID: 6955<br>
-	 * Message: Grr! Can't you find something better to do with your time?
-	 */
 	public static final NpcStringId GRR_CANT_YOU_FIND_SOMETHING_BETTER_TO_DO_WITH_YOUR_TIME;
-	
-	/**
-	 * ID: 6956<br>
-	 * Message: I shall take my leave, but your head will be mine some day.. Oh yes..yes it will!
-	 */
 	public static final NpcStringId I_SHALL_TAKE_MY_LEAVE_BUT_YOUR_HEAD_WILL_BE_MINE_SOME_DAY_OH_YESYES_IT_WILL;
-	
-	/**
-	 * ID: 6957<br>
-	 * Message: My children are stronger!
-	 */
 	public static final NpcStringId MY_CHILDREN_ARE_STRONGER;
-	
-	/**
-	 * ID: 6958<br>
-	 * Message: $s1! Let's kill them all.
-	 */
 	public static final NpcStringId S1_LETS_KILL_THEM_ALL;
-	
-	/**
-	 * ID: 6959<br>
-	 * Message: $s1! Come my children...
-	 */
 	public static final NpcStringId S1_COME_MY_CHILDREN;
-	
-	/**
-	 * ID: 6960<br>
-	 * Message: $s1! Muster your strength... Pick them off like chickens.
-	 */
 	public static final NpcStringId S1_MUSTER_YOUR_STRENGTH_PICK_THEM_OFF_LIKE_CHICKENS;
-	
-	/**
-	 * ID: 6961<br>
-	 * Message: Thank you my children... Someday, we will meet again.
-	 */
 	public static final NpcStringId THANK_YOU_MY_CHILDREN_SOMEDAY_WE_WILL_MEET_AGAIN;
-	
-	/**
-	 * ID: 6962<br>
-	 * Message: My children... Seek my enemies.
-	 */
 	public static final NpcStringId MY_CHILDREN_SEEK_MY_ENEMIES;
-	
-	/**
-	 * ID: 6963<br>
-	 * Message: My children... I grant you my blessings...
-	 */
 	public static final NpcStringId MY_CHILDREN_I_GRANT_YOU_MY_BLESSINGS;
-	
-	/**
-	 * ID: 6964<br>
-	 * Message: You worthless beings!
-	 */
 	public static final NpcStringId YOU_WORTHLESS_BEINGS;
-	
-	/**
-	 * ID: 6965<br>
-	 * Message: My time on the material plane has ended. You are lucky...
-	 */
 	public static final NpcStringId MY_TIME_ON_THE_MATERIAL_PLANE_HAS_ENDED_YOU_ARE_LUCKY;
-	
-	/**
-	 * ID: 6966<br>
-	 * Message: $s1! Worthless beings! Begone!
-	 */
 	public static final NpcStringId S1_WORTHLESS_BEINGS_BEGONE;
-	
-	/**
-	 * ID: 6967<br>
-	 * Message: $s1! You are the meaning of the word 'danger'...
-	 */
 	public static final NpcStringId S1_YOU_ARE_THE_MEANING_OF_THE_WORD_DANGER;
-	
-	/**
-	 * ID: 7050<br>
-	 * Message: You made it here, $s1. I'll show my strength. Die!
-	 */
 	public static final NpcStringId YOU_MADE_IT_HERE_S1_ILL_SHOW_MY_STRENGTH_DIE;
-	
-	/**
-	 * ID: 7051<br>
-	 * Message: Ha! You failed! Are you ready to quit?
-	 */
 	public static final NpcStringId HA_YOU_FAILED_ARE_YOU_READY_TO_QUIT;
-	
-	/**
-	 * ID: 7052<br>
-	 * Message: I'm the strongest! I lost everything to win!
-	 */
 	public static final NpcStringId IM_THE_STRONGEST_I_LOST_EVERYTHING_TO_WIN;
-	
-	/**
-	 * ID: 7053<br>
-	 * Message: $s1! Are you doing this because they're Halisha's minions?
-	 */
 	public static final NpcStringId S1_ARE_YOU_DOING_THIS_BECAUSE_THEYRE_HALISHAS_MINIONS;
-	
-	/**
-	 * ID: 7054<br>
-	 * Message: My spirit is released from this shell. I'm getting close to Halisha...
-	 */
 	public static final NpcStringId MY_SPIRIT_IS_RELEASED_FROM_THIS_SHELL_IM_GETTING_CLOSE_TO_HALISHA;
 	
 	/**
@@ -21442,184 +20803,35 @@ public final class NpcStringId
 	 * Message: Valakas looks to its right.
 	 */
 	public static final NpcStringId VALAKAS_LOOKS_TO_ITS_RIGHT;
-	
-	/**
-	 * ID: 1900170<br>
-	 * Message: By my authority, I command you, creature, turn to dust.
-	 */
 	public static final NpcStringId BY_MY_AUTHORITY_I_COMMAND_YOU_CREATURE_TURN_TO_DUST;
-	
-	/**
-	 * ID: 1900171<br>
-	 * Message: By my wrath, I command you, creature, lose your mind.
-	 */
 	public static final NpcStringId BY_MY_WRATH_I_COMMAND_YOU_CREATURE_LOSE_YOUR_MIND;
-	
-	/**
-	 * ID: 1900172<br>
-	 * Message: Show respect to the heroes who defeated the evil dragon and protected this Aden world!
-	 */
 	public static final NpcStringId SHOW_RESPECT_TO_THE_HEROES_WHO_DEFEATED_THE_EVIL_DRAGON_AND_PROTECTED_THIS_ADEN_WORLD;
-	
-	/**
-	 * ID: 1900173<br>
-	 * Message: Shout to celebrate the victory of the heroes!
-	 */
 	public static final NpcStringId SHOUT_TO_CELEBRATE_THE_VICTORY_OF_THE_HEROES;
-	
-	/**
-	 * ID: 1900174<br>
-	 * Message: Praise the achievement of the heroes and receive Nevit's blessing!
-	 */
 	public static final NpcStringId PRAISE_THE_ACHIEVEMENT_OF_THE_HEROES_AND_RECEIVE_NEVITS_BLESSING;
-	
-	/**
-	 * ID: 1900175<br>
-	 * Message: Ugh I think this is it for me!
-	 */
 	public static final NpcStringId UGH_I_THINK_THIS_IS_IT_FOR_ME;
-	
-	/**
-	 * ID: 1900176<br>
-	 * Message: Valakas calls forth the servitor's master.
-	 */
 	public static final NpcStringId VALAKAS_CALLS_FORTH_THE_SERVITORS_MASTER;
-	
-	/**
-	 * ID: 1911111<br>
-	 * Message: You will soon become the sacrifice for us, those full of deceit and sin whom you despise!
-	 */
 	public static final NpcStringId YOU_WILL_SOON_BECOME_THE_SACRIFICE_FOR_US_THOSE_FULL_OF_DECEIT_AND_SIN_WHOM_YOU_DESPISE;
-	
-	/**
-	 * ID: 1911112<br>
-	 * Message: My brethren who are stronger than me will punish you. You will soon be covered in your own blood and crying in anguish!
-	 */
 	public static final NpcStringId MY_BRETHREN_WHO_ARE_STRONGER_THAN_ME_WILL_PUNISH_YOU_YOU_WILL_SOON_BE_COVERED_IN_YOUR_OWN_BLOOD_AND_CRYING_IN_ANGUISH;
-	
-	/**
-	 * ID: 1911113<br>
-	 * Message: How could I lose against these worthless creatures...?
-	 */
 	public static final NpcStringId HOW_COULD_I_LOSE_AGAINST_THESE_WORTHLESS_CREATURES;
-	
-	/**
-	 * ID: 1911114<br>
-	 * Message: Foolish creatures... the flames of hell are drawing closer.
-	 */
 	public static final NpcStringId FOOLISH_CREATURES_THE_FLAMES_OF_HELL_ARE_DRAWING_CLOSER;
-	
-	/**
-	 * ID: 1911115<br>
-	 * Message: No matter how you struggle this place will soon be covered with your blood.
-	 */
 	public static final NpcStringId NO_MATTER_HOW_YOU_STRUGGLE_THIS_PLACE_WILL_SOON_BE_COVERED_WITH_YOUR_BLOOD;
-	
-	/**
-	 * ID: 1911116<br>
-	 * Message: Those who set foot in this place shall not leave alive.
-	 */
 	public static final NpcStringId THOSE_WHO_SET_FOOT_IN_THIS_PLACE_SHALL_NOT_LEAVE_ALIVE;
-	
-	/**
-	 * ID: 1911117<br>
-	 * Message: Worthless creatures, I will grant you eternal sleep in fire and brimstone.
-	 */
 	public static final NpcStringId WORTHLESS_CREATURES_I_WILL_GRANT_YOU_ETERNAL_SLEEP_IN_FIRE_AND_BRIMSTONE;
-	
-	/**
-	 * ID: 1911118<br>
-	 * Message: If you wish to see hell, I will grant you your wish.
-	 */
 	public static final NpcStringId IF_YOU_WISH_TO_SEE_HELL_I_WILL_GRANT_YOU_YOUR_WISH;
-	
-	/**
-	 * ID: 1911119<br>
-	 * Message: Elapsed Time :
-	 */
 	public static final NpcStringId ELAPSED_TIME;
-	
-	/**
-	 * ID: 1911120<br>
-	 * Message: Time Remaining :
-	 */
 	public static final NpcStringId TIME_REMAINING;
-	
-	/**
-	 * ID: 10004431<br>
-	 * Message: It teleports the guard members of the Aden Imperial Castle to the inside of the castle.
-	 */
 	public static final NpcStringId IT_TELEPORTS_THE_GUARD_MEMBERS_OF_THE_ADEN_IMPERIAL_CASTLE_TO_THE_INSIDE_OF_THE_CASTLE;
-	
-	/**
-	 * ID: 10004432<br>
-	 * Message: It teleports the guard members of the Gludio Castle to the inside of the castle.
-	 */
 	public static final NpcStringId IT_TELEPORTS_THE_GUARD_MEMBERS_OF_THE_GLUDIO_CASTLE_TO_THE_INSIDE_OF_THE_CASTLE;
-	
-	/**
-	 * ID: 10004433<br>
-	 * Message: It teleports the guard members of the Dion Castle to the inside of the castle.
-	 */
 	public static final NpcStringId IT_TELEPORTS_THE_GUARD_MEMBERS_OF_THE_DION_CASTLE_TO_THE_INSIDE_OF_THE_CASTLE;
-	
-	/**
-	 * ID: 10004434<br>
-	 * Message: It teleports the guard members of the Giran Castle to the inside of the castle.
-	 */
 	public static final NpcStringId IT_TELEPORTS_THE_GUARD_MEMBERS_OF_THE_GIRAN_CASTLE_TO_THE_INSIDE_OF_THE_CASTLE;
-	
-	/**
-	 * ID: 10004436<br>
-	 * Message: It teleports the guard members of the Aden Castle to the inside of the castle.
-	 */
 	public static final NpcStringId IT_TELEPORTS_THE_GUARD_MEMBERS_OF_THE_ADEN_CASTLE_TO_THE_INSIDE_OF_THE_CASTLE;
-	
-	/**
-	 * ID: 10004437<br>
-	 * Message: It teleports the guard members of the Innadril Castle to the inside of the castle.
-	 */
 	public static final NpcStringId IT_TELEPORTS_THE_GUARD_MEMBERS_OF_THE_INNADRIL_CASTLE_TO_THE_INSIDE_OF_THE_CASTLE;
-	
-	/**
-	 * ID: 10004438<br>
-	 * Message: It teleports the guard members of the Goddard Castle to the inside of the castle.
-	 */
 	public static final NpcStringId IT_TELEPORTS_THE_GUARD_MEMBERS_OF_THE_GODDARD_CASTLE_TO_THE_INSIDE_OF_THE_CASTLE;
-	
-	/**
-	 * ID: 10004439<br>
-	 * Message: It teleports the guard members of the Rune Castle to the inside of the castle.
-	 */
 	public static final NpcStringId IT_TELEPORTS_THE_GUARD_MEMBERS_OF_THE_RUNE_CASTLE_TO_THE_INSIDE_OF_THE_CASTLE;
-	
-	/**
-	 * ID: 10004440<br>
-	 * Message: It teleports the guard members of the Schuttgart Castle to the inside of the castle.
-	 */
 	public static final NpcStringId IT_TELEPORTS_THE_GUARD_MEMBERS_OF_THE_SCHUTTGART_CASTLE_TO_THE_INSIDE_OF_THE_CASTLE;
-	
-	/**
-	 * ID: 10004441<br>
-	 * Message: It teleports the guard members of the Elmore Imperial Castle to the inside of the castle.
-	 */
 	public static final NpcStringId IT_TELEPORTS_THE_GUARD_MEMBERS_OF_THE_ELMORE_IMPERIAL_CASTLE_TO_THE_INSIDE_OF_THE_CASTLE;
-	
-	/**
-	 * Array containing all NpcStringId<br>
-	 * Important: Always initialize with a length of the highest NpcStringId + 1!!!
-	 */
 	private static NpcStringId[] VALUES;
-	
-	/**
-	 * No Text
-	 */
 	public static NpcStringId NONE;
-	
-	/**
-	 * ID: 1800232<br>
-	 * Message: The Soul Coffin has Awakened Ekimus!
-	 */
 	public static final NpcStringId THE_SOUL_COFFIN_HAS_AWAKENED_EKIMUS;
 	
 	static

@@ -3,9 +3,6 @@ package pk.elfo.gameserver.network.serverpackets;
 import pk.elfo.Config;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
-/**
- * Author: VISTALL Company: J Develop Station Date: 0:05:02/10.04.2010
- */
 public class ExBrGamePoint extends L2GameServerPacket
 {
 	private static final String TYPE = "[S] FE:D5 ExBrGamePoint";

@@ -1,8 +1,5 @@
 package pk.elfo.gameserver.network.serverpackets;
 
-/**
- * Author: VISTALL Company: J Develop Station Date: 2:02:35/10.04.2010 thx l2jfree
- */
 public class ExBrBuyProduct extends L2GameServerPacket
 {
 	private static final String TYPE = "[S] FE:D8 ExBrBuyProduct";

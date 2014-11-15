@@ -388,7 +388,6 @@ public class GameServer
 		if (Config.SAVE_DROPPED_ITEM)
 		{
 			ItemsOnGroundManager.getInstance();
-			
 		}
 		
 		if ((Config.AUTODESTROY_ITEM_AFTER > 0) || (Config.HERB_AUTO_DESTROY_TIME > 0))
@@ -397,7 +396,6 @@ public class GameServer
 		}
 		
 		MonsterRace.getInstance();
-		
 		SevenSigns.getInstance().spawnSevenSignsNPC();
 		SevenSignsFestival.getInstance();
 		AutoSpawnHandler.getInstance();
@@ -433,7 +431,6 @@ public class GameServer
 		}
 		
 		TaskManager.getInstance();
-		
 		AntiFeedManager.getInstance().registerEvent(AntiFeedManager.GAME_ID);
 		
 		if (Config.ALLOW_MAIL)

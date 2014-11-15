@@ -4,9 +4,6 @@ import pk.elfo.gameserver.datatables.ProductItemTable;
 import pk.elfo.gameserver.model.L2ProductItem;
 import pk.elfo.gameserver.model.L2ProductItemComponent;
 
-/**
- * Author: VISTALL Company: J Develop Station Date: 2:50:11/10.04.2010
- */
 public class ExBrProductInfo extends L2GameServerPacket
 {
 	private static final String TYPE = "[S] FE:D7 ExBrProductInfo";

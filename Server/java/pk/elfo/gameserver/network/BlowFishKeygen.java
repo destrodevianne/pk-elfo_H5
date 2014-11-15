@@ -2,10 +2,6 @@ package pk.elfo.gameserver.network;
 
 import pk.elfo.util.Rnd;
 
-/**
- * 
- * @author PkElfo
- */
 public class BlowFishKeygen
 {
 	private static final int CRYPT_KEYS_SIZE = 20;
@@ -38,7 +34,6 @@ public class BlowFishKeygen
 	// block instantiation
 	private BlowFishKeygen()
 	{
-		
 	}
 	
 	/**

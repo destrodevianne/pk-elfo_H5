@@ -192,7 +192,6 @@ public class Shutdown extends Thread
 			{
 				_log.log(Level.WARNING, "Error while removing UPnP port mappings: ", t);
 			}
-			
 			try
 			{
 				if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS)
@@ -205,7 +204,6 @@ public class Shutdown extends Thread
 			{
 				_log.log(Level.WARNING, "Error saving offline shops.", t);
 			}
-			
 			try
 			{
 				disconnectAllCharacters();
@@ -215,7 +213,6 @@ public class Shutdown extends Thread
 			{
 				// ignore
 			}
-			
 			// ensure all services are stopped
 			try
 			{
@@ -226,7 +223,6 @@ public class Shutdown extends Thread
 			{
 				// ignore
 			}
-			
 			// stop all threadpolls
 			try
 			{
@@ -237,7 +233,6 @@ public class Shutdown extends Thread
 			{
 				// ignore
 			}
-			
 			try
 			{
 				CommunityServerThread.getInstance().interrupt();
@@ -247,7 +242,6 @@ public class Shutdown extends Thread
 			{
 				// ignore
 			}
-			
 			try
 			{
 				LoginServerThread.getInstance().interrupt();
@@ -257,7 +251,6 @@ public class Shutdown extends Thread
 			{
 				// ignore
 			}
-			
 			// last byebye, save all data and quit this server
 			saveData();
 			tc.restartCounter();
@@ -281,7 +274,6 @@ public class Shutdown extends Thread
 			}
 			catch (Throwable t)
 			{
-				
 			}
 			
 			// server will quit, when this function ends.
@@ -293,7 +285,6 @@ public class Shutdown extends Thread
 			{
 				Runtime.getRuntime().halt(0);
 			}
-			
 			_log.info("The server has been successfully shut down in " + (tc1.getEstimatedTime() / 1000) + "seconds.");
 		}
 		else
@@ -365,7 +356,6 @@ public class Shutdown extends Thread
 		{
 			_counterInstance._abort();
 		}
-		
 		// the main instance should only run for shutdown hook, so we start a new instance
 		_counterInstance = new Shutdown(seconds, restart);
 		_counterInstance.start();
@@ -614,7 +604,6 @@ public class Shutdown extends Thread
 			}
 			catch (InterruptedException e)
 			{
-				// never happens :p
 			}
 		}
 		
@@ -625,7 +614,6 @@ public class Shutdown extends Thread
 		}
 		catch (InterruptedException e)
 		{
-			// never happens :p
 		}
 	}
 	
@@ -660,7 +648,7 @@ public class Shutdown extends Thread
 				}
 				catch (Throwable t)
 				{
-					_log.log(Level.WARNING, "Failed logour char " + player, t);
+					_log.log(Level.WARNING, "Falha ao relogar o char " + player, t);
 				}
 			}
 			return true;

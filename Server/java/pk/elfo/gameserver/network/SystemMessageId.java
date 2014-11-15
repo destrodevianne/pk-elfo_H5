@@ -19,10 +19,6 @@ import pk.elfo.Config;
 import pk.elfo.gameserver.model.clientstrings.Builder;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
-/**
- * PkElfo
- */
-
 public final class SystemMessageId
 {
 	private static final Logger _log = Logger.getLogger(SystemMessageId.class.getName());

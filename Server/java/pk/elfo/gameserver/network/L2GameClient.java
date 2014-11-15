@@ -47,7 +47,6 @@ import pk.elfo.gameserver.util.Util;
 
 /**
  * Represents a client connected on Game Server.
- * PkElfo
  */
 public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> implements Runnable
 {
@@ -259,7 +258,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		{
 			return;
 		}
-		
 		getConnection().sendPacket(gsp);
 		gsp.runImpl();
 	}
@@ -579,7 +577,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		{
 			_log.severe("could not restore in slot: " + charslot);
 		}
-		
 		// setCharacter(character);
 		return character;
 	}
@@ -985,7 +982,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return true;
 		}
-		
 		return getStats().dropPacket();
 	}
 	

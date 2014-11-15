@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.network;
 
 import java.nio.ByteBuffer;
@@ -40,13 +22,11 @@ import pk.elfo.util.Util;
  * <li>Clients sends a RequestAuthLogin being already authed. (Potential exploit).</li>
  * </ul>
  * Note: If for a given exception a packet needs to be handled on more then one state, then it should be added to all these states.
- * @author KenM
  */
 public final class L2GamePacketHandler implements IPacketHandler<L2GameClient>, IClientFactory<L2GameClient>, IMMOExecutor<L2GameClient>
 {
 	private static final Logger _log = Logger.getLogger(L2GamePacketHandler.class.getName());
-	
-	// implementation
+
 	@Override
 	public ReceivablePacket<L2GameClient> handlePacket(ByteBuffer buf, L2GameClient client)
 	{
@@ -692,7 +672,6 @@ public final class L2GamePacketHandler implements IPacketHandler<L2GameClient>, 
 					case 0xcf: // RequestProcureCrop
 						// msg = new RequestBuyProcure();
 						break;
-					
 					case 0xd0:
 						int id2 = -1;
 						if (buf.remaining() >= 2)

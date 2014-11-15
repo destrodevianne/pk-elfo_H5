@@ -1,9 +1,5 @@
 package pk.elfo.gameserver.network.serverpackets;
 
-/**
- * PkElfo
- */
-
 public class ExBrPremiumState extends L2GameServerPacket
 {
 	private final int _objId;

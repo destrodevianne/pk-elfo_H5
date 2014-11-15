@@ -8,10 +8,6 @@ import java.util.logging.Logger;
 
 import pk.elfo.util.L2Properties;
 
-/**
- * PkElfo
- */
-
 public final class AIOItem_Config
 {
     private static final Logger _log = Logger.getLogger(AIOItem_Config.class.getName());

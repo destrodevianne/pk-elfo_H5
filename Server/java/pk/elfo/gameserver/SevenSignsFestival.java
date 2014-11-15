@@ -155,19 +155,15 @@ public class SevenSignsFestival implements SpawnListener
 			{ -78537, 113839, -4895, -1, 18009 },
 			{ -78466, 113852, -4895, -1, 18010 },
 			{ -78509, 113899, -4895, -1, 18010 },
-			
 			{ -78481, 112557, -4895, -1, 18009 },
 			{ -78559, 112504, -4895, -1, 18010 },
 			{ -78489, 112494, -4895, -1, 18010 },
-			
 			{ -79803, 112543, -4895, -1, 18012 },
 			{ -79854, 112492, -4895, -1, 18013 },
 			{ -79886, 112557, -4895, -1, 18014 },
-			
 			{ -79821, 113811, -4895, -1, 18015 },
 			{ -79857, 113896, -4895, -1, 18017 },
 			{ -79878, 113816, -4895, -1, 18018 },
-			
 			// Archers and Marksmen \\
 			{ -79190, 113660, -4895, -1, 18011 },
 			{ -78710, 113188, -4895, -1, 18011 },
@@ -179,15 +175,12 @@ public class SevenSignsFestival implements SpawnListener
 			{ -76558, 110784, -4895, -1, 18019 },
 			{ -76607, 110815, -4895, -1, 18020 }, // South West
 			{ -76559, 110820, -4895, -1, 18020 },
-			
 			{ -75277, 110792, -4895, -1, 18019 },
 			{ -75225, 110801, -4895, -1, 18020 }, // South East
 			{ -75262, 110832, -4895, -1, 18020 },
-			
 			{ -75249, 109441, -4895, -1, 18022 },
 			{ -75278, 109495, -4895, -1, 18023 }, // North East
 			{ -75223, 109489, -4895, -1, 18024 },
-			
 			{ -76556, 109490, -4895, -1, 18025 },
 			{ -76607, 109469, -4895, -1, 18027 }, // North West
 			{ -76561, 109450, -4895, -1, 18028 },
@@ -202,19 +195,15 @@ public class SevenSignsFestival implements SpawnListener
 			{ -73184, 111319, -4895, -1, 18029 },
 			{ -73135, 111294, -4895, -1, 18030 }, // South West
 			{ -73185, 111281, -4895, -1, 18030 },
-			
 			{ -74477, 111321, -4895, -1, 18029 },
 			{ -74523, 111293, -4895, -1, 18030 }, // South East
 			{ -74481, 111280, -4895, -1, 18030 },
-			
 			{ -74489, 112604, -4895, -1, 18032 },
 			{ -74491, 112660, -4895, -1, 18033 }, // North East
 			{ -74527, 112629, -4895, -1, 18034 },
-			
 			{ -73197, 112621, -4895, -1, 18035 },
 			{ -73142, 112631, -4895, -1, 18037 }, // North West
 			{ -73182, 112656, -4895, -1, 18038 },
-			
 			// Archers and Marksmen \\
 			{ -73834, 112430, -4895, -1, 18031 },
 			{ -74299, 111959, -4895, -1, 18031 },
@@ -226,20 +215,16 @@ public class SevenSignsFestival implements SpawnListener
 			{ -75543, 114461, -4895, -1, 18039 },
 			{ -75514, 114493, -4895, -1, 18040 }, // South West
 			{ -75488, 114456, -4895, -1, 18040 },
-			
 			{ -75521, 113158, -4895, -1, 18039 },
 			{ -75504, 113110, -4895, -1, 18040 }, // South East
 			{ -75489, 113142, -4895, -1, 18040 },
-			
 			{ -76809, 113143, -4895, -1, 18042 },
 			{ -76860, 113138, -4895, -1, 18043 }, // North East
 			{ -76831, 113112, -4895, -1, 18044 },
-			
 			{ -76831, 114441, -4895, -1, 18045 },
 			{ -76840, 114490, -4895, -1, 18047 }, // North West
 			{ -76864, 114455, -4895, -1, 18048 },
-			
-			// Archers and Marksmen \\
+			// Archers and Marksmen 
 			{ -75703, 113797, -4895, -1, 18041 },
 			{ -76180, 114263, -4895, -1, 18041 },
 			{ -76639, 113797, -4895, -1, 18046 },
@@ -250,20 +235,16 @@ public class SevenSignsFestival implements SpawnListener
 			{ -79576, 108881, -4895, -1, 18049 },
 			{ -79592, 108835, -4895, -1, 18050 }, // South West
 			{ -79614, 108871, -4895, -1, 18050 },
-			
 			{ -79586, 110171, -4895, -1, 18049 },
 			{ -79589, 110216, -4895, -1, 18050 }, // South East
 			{ -79620, 110177, -4895, -1, 18050 },
-			
 			{ -78825, 110182, -4895, -1, 18052 },
 			{ -78238, 110182, -4895, -1, 18053 }, // North East
 			{ -78266, 110218, -4895, -1, 18054 },
-			
 			{ -78275, 108883, -4895, -1, 18055 },
 			{ -78267, 108839, -4895, -1, 18057 }, // North West
 			{ -78241, 108871, -4895, -1, 18058 },
-			
-			// Archers and Marksmen \\
+			// Archers and Marksmen
 			{ -79394, 109538, -4895, -1, 18051 },
 			{ -78929, 109992, -4895, -1, 18051 },
 			{ -78454, 109538, -4895, -1, 18056 },
@@ -278,20 +259,16 @@ public class SevenSignsFestival implements SpawnListener
 			{ -76542, 89653, -5151, -1, 18009 },
 			{ -76509, 89637, -5151, -1, 18010 },
 			{ -76548, 89614, -5151, -1, 18010 },
-			
 			{ -76539, 88326, -5151, -1, 18009 },
 			{ -76512, 88289, -5151, -1, 18010 },
 			{ -76546, 88287, -5151, -1, 18010 },
-			
 			{ -77879, 88308, -5151, -1, 18012 },
 			{ -77886, 88310, -5151, -1, 18013 },
 			{ -77879, 88278, -5151, -1, 18014 },
-			
 			{ -77857, 89605, -5151, -1, 18015 },
 			{ -77858, 89658, -5151, -1, 18017 },
 			{ -77891, 89633, -5151, -1, 18018 },
-			
-			// Archers and Marksmen \\
+			// Archers and Marksmen 
 			{ -76728, 88962, -5151, -1, 18011 },
 			{ -77194, 88494, -5151, -1, 18011 },
 			{ -77660, 88896, -5151, -1, 18016 },
@@ -302,20 +279,16 @@ public class SevenSignsFestival implements SpawnListener
 			{ -77585, 84650, -5151, -1, 18019 },
 			{ -77628, 84643, -5151, -1, 18020 },
 			{ -77607, 84613, -5151, -1, 18020 },
-			
 			{ -76603, 85946, -5151, -1, 18019 },
 			{ -77606, 85994, -5151, -1, 18020 },
 			{ -77638, 85959, -5151, -1, 18020 },
-			
 			{ -76301, 85960, -5151, -1, 18022 },
 			{ -76257, 85972, -5151, -1, 18023 },
 			{ -76286, 85992, -5151, -1, 18024 },
-			
 			{ -76281, 84667, -5151, -1, 18025 },
 			{ -76291, 84611, -5151, -1, 18027 },
 			{ -76257, 84616, -5151, -1, 18028 },
-			
-			// Archers and Marksmen \\
+			// Archers and Marksmen 
 			{ -77419, 85307, -5151, -1, 18021 },
 			{ -76952, 85768, -5151, -1, 18021 },
 			{ -76477, 85312, -5151, -1, 18026 },
@@ -326,20 +299,16 @@ public class SevenSignsFestival implements SpawnListener
 			{ -74211, 86494, -5151, -1, 18029 },
 			{ -74200, 86449, -5151, -1, 18030 },
 			{ -74167, 86464, -5151, -1, 18030 },
-			
 			{ -75495, 86482, -5151, -1, 18029 },
 			{ -75540, 86473, -5151, -1, 18030 },
 			{ -75509, 86445, -5151, -1, 18030 },
-			
 			{ -75509, 87775, -5151, -1, 18032 },
 			{ -75518, 87826, -5151, -1, 18033 },
 			{ -75542, 87780, -5151, -1, 18034 },
-			
 			{ -74214, 87789, -5151, -1, 18035 },
 			{ -74169, 87801, -5151, -1, 18037 },
 			{ -74198, 87827, -5151, -1, 18038 },
-			
-			// Archers and Marksmen \\
+			// Archers and Marksmen 
 			{ -75324, 87135, -5151, -1, 18031 },
 			{ -74852, 87606, -5151, -1, 18031 },
 			{ -74388, 87146, -5151, -1, 18036 },
@@ -350,20 +319,16 @@ public class SevenSignsFestival implements SpawnListener
 			{ -79560, 89007, -5151, -1, 18039 },
 			{ -79521, 89016, -5151, -1, 18040 },
 			{ -79544, 89047, -5151, -1, 18040 },
-			
 			{ -79552, 87717, -5151, -1, 18039 },
 			{ -79552, 87673, -5151, -1, 18040 },
 			{ -79510, 87702, -5151, -1, 18040 },
-			
 			{ -80866, 87719, -5151, -1, 18042 },
 			{ -80897, 87689, -5151, -1, 18043 },
 			{ -80850, 87685, -5151, -1, 18044 },
-			
 			{ -80848, 89013, -5151, -1, 18045 },
 			{ -80887, 89051, -5151, -1, 18047 },
 			{ -80891, 89004, -5151, -1, 18048 },
-			
-			// Archers and Marksmen \\
+			// Archers and Marksmen
 			{ -80205, 87895, -5151, -1, 18041 },
 			{ -80674, 88350, -5151, -1, 18041 },
 			{ -80209, 88833, -5151, -1, 18046 },
@@ -374,20 +339,16 @@ public class SevenSignsFestival implements SpawnListener
 			{ -80624, 84060, -5151, -1, 18049 },
 			{ -80621, 84007, -5151, -1, 18050 },
 			{ -80590, 84039, -5151, -1, 18050 },
-			
 			{ -80605, 85349, -5151, -1, 18049 },
 			{ -80639, 85363, -5151, -1, 18050 },
 			{ -80611, 85385, -5151, -1, 18050 },
-			
 			{ -79311, 85353, -5151, -1, 18052 },
 			{ -79277, 85384, -5151, -1, 18053 },
 			{ -79273, 85539, -5151, -1, 18054 },
-			
 			{ -79297, 84054, -5151, -1, 18055 },
 			{ -79285, 84006, -5151, -1, 18057 },
 			{ -79260, 84040, -5151, -1, 18058 },
-			
-			// Archers and Marksmen \\
+			// Archers and Marksmen
 			{ -79945, 85171, -5151, -1, 18051 },
 			{ -79489, 84707, -5151, -1, 18051 },
 			{ -79952, 84222, -5151, -1, 18056 },
@@ -402,11 +363,9 @@ public class SevenSignsFestival implements SpawnListener
 			{ -78757, 112834, -4895, -1, 18016 },
 			{ -78581, 112834, -4895, -1, 18016 },
 			{ -78822, 112526, -4895, -1, 18011 },
-			
 			{ -78822, 113702, -4895, -1, 18011 },
 			{ -78822, 113874, -4895, -1, 18011 },
 			{ -79524, 113546, -4895, -1, 18011 },
-			
 			{ -79693, 113546, -4895, -1, 18011 },
 			{ -79858, 113546, -4895, -1, 18011 },
 			{ -79545, 112757, -4895, -1, 18016 },
@@ -417,11 +376,9 @@ public class SevenSignsFestival implements SpawnListener
 			{ -75565, 110580, -4895, -1, 18026 },
 			{ -75565, 110740, -4895, -1, 18026 },
 			{ -75577, 109776, -4895, -1, 18021 },
-			
 			{ -75413, 109776, -4895, -1, 18021 },
 			{ -75237, 109776, -4895, -1, 18021 },
 			{ -76274, 109468, -4895, -1, 18021 },
-			
 			{ -76274, 109635, -4895, -1, 18021 },
 			{ -76274, 109795, -4895, -1, 18021 },
 			{ -76351, 110500, -4895, -1, 18056 },
@@ -432,11 +389,9 @@ public class SevenSignsFestival implements SpawnListener
 			{ -74191, 111527, -4895, -1, 18036 },
 			{ -74191, 111362, -4895, -1, 18036 },
 			{ -73495, 111611, -4895, -1, 18031 },
-			
 			{ -73327, 111611, -4895, -1, 18031 },
 			{ -73154, 111611, -4895, -1, 18031 },
 			{ -73473, 112301, -4895, -1, 18031 },
-			
 			{ -73473, 112475, -4895, -1, 18031 },
 			{ -73473, 112649, -4895, -1, 18031 },
 			{ -74270, 112326, -4895, -1, 18036 },
@@ -447,11 +402,9 @@ public class SevenSignsFestival implements SpawnListener
 			{ -75738, 113439, -4895, -1, 18046 },
 			{ -75571, 113439, -4895, -1, 18046 },
 			{ -75824, 114141, -4895, -1, 18041 },
-			
 			{ -75824, 114309, -4895, -1, 18041 },
 			{ -75824, 114477, -4895, -1, 18041 },
 			{ -76513, 114158, -4895, -1, 18041 },
-			
 			{ -76683, 114158, -4895, -1, 18041 },
 			{ -76857, 114158, -4895, -1, 18041 },
 			{ -76535, 113357, -4895, -1, 18056 },
@@ -462,11 +415,9 @@ public class SevenSignsFestival implements SpawnListener
 			{ -79350, 109894, -4895, -1, 18056 },
 			{ -79534, 109894, -4895, -1, 18056 },
 			{ -79285, 109187, -4895, -1, 18051 },
-			
 			{ -79285, 109019, -4895, -1, 18051 },
 			{ -79285, 108860, -4895, -1, 18051 },
 			{ -78587, 109172, -4895, -1, 18051 },
-			
 			{ -78415, 109172, -4895, -1, 18051 },
 			{ -78249, 109172, -4895, -1, 18051 },
 			{ -78575, 109961, -4895, -1, 18056 },
@@ -481,11 +432,9 @@ public class SevenSignsFestival implements SpawnListener
 			{ -76844, 89304, -5151, -1, 18011 },
 			{ -76844, 89479, -5151, -1, 18011 },
 			{ -76844, 89649, -5151, -1, 18011 },
-			
 			{ -77544, 89326, -5151, -1, 18011 },
 			{ -77716, 89326, -5151, -1, 18011 },
 			{ -77881, 89326, -5151, -1, 18011 },
-			
 			{ -77561, 88530, -5151, -1, 18016 },
 			{ -77561, 88364, -5151, -1, 18016 },
 			{ -76762, 88615, -5151, -1, 18016 },
@@ -496,11 +445,9 @@ public class SevenSignsFestival implements SpawnListener
 			{ -77307, 84969, -5151, -1, 18021 },
 			{ -77307, 84795, -5151, -1, 18021 },
 			{ -77307, 84623, -5151, -1, 18021 },
-			
 			{ -76614, 84944, -5151, -1, 18021 },
 			{ -76433, 84944, -5151, -1, 18021 },
 			{ -76251, 84944, -5151, -1, 18021 },
-			
 			{ -76594, 85745, -5151, -1, 18026 },
 			{ -76594, 85910, -5151, -1, 18026 },
 			{ -77384, 85660, -5151, -1, 18026 },
@@ -511,11 +458,9 @@ public class SevenSignsFestival implements SpawnListener
 			{ -74517, 86782, -5151, -1, 18031 },
 			{ -74344, 86782, -5151, -1, 18031 },
 			{ -74185, 86782, -5151, -1, 18031 },
-			
 			{ -74496, 87464, -5151, -1, 18031 },
 			{ -74496, 87636, -5151, -1, 18031 },
 			{ -74496, 87815, -5151, -1, 18031 },
-			
 			{ -75298, 87497, -5151, -1, 18036 },
 			{ -75460, 87497, -5151, -1, 18036 },
 			{ -75219, 86712, -5151, -1, 18036 },
@@ -526,11 +471,9 @@ public class SevenSignsFestival implements SpawnListener
 			{ -79851, 88703, -5151, -1, 18041 },
 			{ -79851, 88868, -5151, -1, 18041 },
 			{ -79851, 89040, -5151, -1, 18041 },
-			
 			{ -80548, 88722, -5151, -1, 18041 },
 			{ -80711, 88722, -5151, -1, 18041 },
 			{ -80883, 88722, -5151, -1, 18041 },
-			
 			{ -80565, 87916, -5151, -1, 18046 },
 			{ -80565, 87752, -5151, -1, 18046 },
 			{ -79779, 87996, -5151, -1, 18046 },
@@ -541,11 +484,9 @@ public class SevenSignsFestival implements SpawnListener
 			{ -79271, 84330, -5151, -1, 18051 },
 			{ -79448, 84330, -5151, -1, 18051 },
 			{ -79601, 84330, -5151, -1, 18051 },
-			
 			{ -80311, 84367, -5151, -1, 18051 },
 			{ -80311, 84196, -5151, -1, 18051 },
 			{ -80311, 84015, -5151, -1, 18051 },
-			
 			{ -80556, 85049, -5151, -1, 18056 },
 			{ -80384, 85049, -5151, -1, 18056 },
 			{ -79598, 85127, -5151, -1, 18056 },
@@ -560,15 +501,12 @@ public class SevenSignsFestival implements SpawnListener
 			{ -78999, 112957, -4927, -1, 18109 },
 			{ -79153, 112873, -4927, -1, 18109 },
 			{ -79256, 112873, -4927, -1, 18109 },
-			
 			{ -79368, 112957, -4927, -1, 18109 },
 			{ -79481, 113124, -4927, -1, 18109 },
 			{ -79481, 113275, -4927, -1, 18109 },
-			
 			{ -79364, 113398, -4927, -1, 18109 },
 			{ -79213, 113500, -4927, -1, 18109 },
 			{ -79099, 113500, -4927, -1, 18109 },
-			
 			{ -78960, 113398, -4927, -1, 18109 },
 			{ -78882, 113235, -4927, -1, 18109 },
 			{ -78882, 113099, -4927, -1, 18109 },
@@ -578,15 +516,12 @@ public class SevenSignsFestival implements SpawnListener
 			{ -76119, 110383, -4927, -1, 18110 },
 			{ -75980, 110442, -4927, -1, 18110 },
 			{ -75848, 110442, -4927, -1, 18110 },
-			
 			{ -75720, 110383, -4927, -1, 18110 },
 			{ -75625, 110195, -4927, -1, 18110 },
 			{ -75625, 110063, -4927, -1, 18110 },
-			
 			{ -75722, 109908, -4927, -1, 18110 },
 			{ -75863, 109832, -4927, -1, 18110 },
 			{ -75989, 109832, -4927, -1, 18110 },
-			
 			{ -76130, 109908, -4927, -1, 18110 },
 			{ -76230, 110079, -4927, -1, 18110 },
 			{ -76230, 110215, -4927, -1, 18110 },
@@ -596,15 +531,12 @@ public class SevenSignsFestival implements SpawnListener
 			{ -74055, 111781, -4927, -1, 18111 },
 			{ -74144, 111938, -4927, -1, 18111 },
 			{ -74144, 112075, -4927, -1, 18111 },
-			
 			{ -74055, 112173, -4927, -1, 18111 },
 			{ -73885, 112289, -4927, -1, 18111 },
 			{ -73756, 112289, -4927, -1, 18111 },
-			
 			{ -73574, 112141, -4927, -1, 18111 },
 			{ -73511, 112040, -4927, -1, 18111 },
 			{ -73511, 111912, -4927, -1, 18111 },
-			
 			{ -73574, 111772, -4927, -1, 18111 },
 			{ -73767, 111669, -4927, -1, 18111 },
 			{ -73899, 111669, -4927, -1, 18111 },
@@ -614,15 +546,12 @@ public class SevenSignsFestival implements SpawnListener
 			{ -76008, 113566, -4927, -1, 18112 },
 			{ -76159, 113485, -4927, -1, 18112 },
 			{ -76267, 113485, -4927, -1, 18112 },
-			
 			{ -76386, 113566, -4927, -1, 18112 },
 			{ -76482, 113748, -4927, -1, 18112 },
 			{ -76482, 113885, -4927, -1, 18112 },
-			
 			{ -76371, 114029, -4927, -1, 18112 },
 			{ -76220, 114118, -4927, -1, 18112 },
 			{ -76092, 114118, -4927, -1, 18112 },
-			
 			{ -75975, 114029, -4927, -1, 18112 },
 			{ -75861, 113851, -4927, -1, 18112 },
 			{ -75861, 113713, -4927, -1, 18112 },
@@ -632,15 +561,12 @@ public class SevenSignsFestival implements SpawnListener
 			{ -79100, 109782, -4927, -1, 18113 },
 			{ -78962, 109853, -4927, -1, 18113 },
 			{ -78851, 109853, -4927, -1, 18113 },
-			
 			{ -78721, 109782, -4927, -1, 18113 },
 			{ -78615, 109596, -4927, -1, 18113 },
 			{ -78615, 109453, -4927, -1, 18113 },
-			
 			{ -78746, 109300, -4927, -1, 18113 },
 			{ -78881, 109203, -4927, -1, 18113 },
 			{ -79027, 109203, -4927, -1, 18113 },
-			
 			{ -79159, 109300, -4927, -1, 18113 },
 			{ -79240, 109480, -4927, -1, 18113 },
 			{ -79240, 109615, -4927, -1, 18113 },
@@ -654,15 +580,12 @@ public class SevenSignsFestival implements SpawnListener
 			{ -77016, 88726, -5183, -1, 18114 },
 			{ -77136, 88646, -5183, -1, 18114 },
 			{ -77247, 88646, -5183, -1, 18114 },
-			
 			{ -77380, 88726, -5183, -1, 18114 },
 			{ -77512, 88883, -5183, -1, 18114 },
 			{ -77512, 89053, -5183, -1, 18114 },
-			
 			{ -77378, 89287, -5183, -1, 18114 },
 			{ -77254, 89238, -5183, -1, 18114 },
 			{ -77095, 89238, -5183, -1, 18114 },
-			
 			{ -76996, 89287, -5183, -1, 18114 },
 			{ -76901, 89025, -5183, -1, 18114 },
 			{ -76901, 88891, -5183, -1, 18114 },
@@ -672,15 +595,12 @@ public class SevenSignsFestival implements SpawnListener
 			{ -77128, 85553, -5183, -1, 18115 },
 			{ -77036, 85594, -5183, -1, 18115 },
 			{ -76919, 85594, -5183, -1, 18115 },
-			
 			{ -76755, 85553, -5183, -1, 18115 },
 			{ -76635, 85392, -5183, -1, 18115 },
 			{ -76635, 85216, -5183, -1, 18115 },
-			
 			{ -76761, 85025, -5183, -1, 18115 },
 			{ -76908, 85004, -5183, -1, 18115 },
 			{ -77041, 85004, -5183, -1, 18115 },
-			
 			{ -77138, 85025, -5183, -1, 18115 },
 			{ -77268, 85219, -5183, -1, 18115 },
 			{ -77268, 85410, -5183, -1, 18115 },
@@ -690,15 +610,12 @@ public class SevenSignsFestival implements SpawnListener
 			{ -75150, 87303, -5183, -1, 18116 },
 			{ -75150, 87175, -5183, -1, 18116 },
 			{ -75150, 87175, -5183, -1, 18116 },
-			
 			{ -75150, 87303, -5183, -1, 18116 },
 			{ -74943, 87433, -5183, -1, 18116 },
 			{ -74767, 87433, -5183, -1, 18116 },
-			
 			{ -74556, 87306, -5183, -1, 18116 },
 			{ -74556, 87184, -5183, -1, 18116 },
 			{ -74556, 87184, -5183, -1, 18116 },
-			
 			{ -74556, 87306, -5183, -1, 18116 },
 			{ -74757, 86830, -5183, -1, 18116 },
 			{ -74927, 86830, -5183, -1, 18116 },
@@ -708,15 +625,12 @@ public class SevenSignsFestival implements SpawnListener
 			{ -80010, 88128, -5183, -1, 18117 },
 			{ -80113, 88066, -5183, -1, 18117 },
 			{ -80220, 88066, -5183, -1, 18117 },
-			
 			{ -80359, 88128, -5183, -1, 18117 },
 			{ -80467, 88267, -5183, -1, 18117 },
 			{ -80467, 88436, -5183, -1, 18117 },
-			
 			{ -80381, 88639, -5183, -1, 18117 },
 			{ -80278, 88577, -5183, -1, 18117 },
 			{ -80142, 88577, -5183, -1, 18117 },
-			
 			{ -80028, 88639, -5183, -1, 18117 },
 			{ -79915, 88466, -5183, -1, 18117 },
 			{ -79915, 88322, -5183, -1, 18117 },
@@ -726,15 +640,12 @@ public class SevenSignsFestival implements SpawnListener
 			{ -80153, 84947, -5183, -1, 18118 },
 			{ -80003, 84962, -5183, -1, 18118 },
 			{ -79848, 84962, -5183, -1, 18118 },
-			
 			{ -79742, 84947, -5183, -1, 18118 },
 			{ -79668, 84772, -5183, -1, 18118 },
 			{ -79668, 84619, -5183, -1, 18118 },
-			
 			{ -79772, 84471, -5183, -1, 18118 },
 			{ -79888, 84414, -5183, -1, 18118 },
 			{ -80023, 84414, -5183, -1, 18118 },
-			
 			{ -80166, 84471, -5183, -1, 18118 },
 			{ -80253, 84600, -5183, -1, 18118 },
 			{ -80253, 84780, -5183, -1, 18118 },
@@ -793,7 +704,6 @@ public class SevenSignsFestival implements SpawnListener
 			_log.info("SevenSignsFestival: Initialization bypassed due to Seal Validation in effect.");
 			return;
 		}
-		
 		L2Spawn.addSpawnListener(this);
 		startFestivalManager();
 	}
@@ -830,7 +740,6 @@ public class SevenSignsFestival implements SpawnListener
 				festivalName = "No Level Limit";
 				break;
 		}
-		
 		return festivalName;
 	}
 	
@@ -858,7 +767,6 @@ public class SevenSignsFestival implements SpawnListener
 				maxLevel = 64;
 				break;
 		}
-		
 		return maxLevel;
 	}
 	
@@ -898,7 +806,6 @@ public class SevenSignsFestival implements SpawnListener
 		{
 			startFestivalManager();
 		}
-		
 		return _managerScheduledTask;
 	}
 	
@@ -1206,7 +1113,6 @@ public class SevenSignsFestival implements SpawnListener
 			{
 				tempStats.set("cabal", SevenSigns.getCabalShortName(SevenSigns.CABAL_DUSK));
 			}
-			
 			newData.put(i, tempStats);
 		}
 		
@@ -1253,7 +1159,6 @@ public class SevenSignsFestival implements SpawnListener
 		{
 			return -1;
 		}
-		
 		return (_nextFestivalCycleStart - System.currentTimeMillis()) / 60000;
 	}
 	
@@ -1263,7 +1168,6 @@ public class SevenSignsFestival implements SpawnListener
 		{
 			return -1;
 		}
-		
 		return (int) (((_nextFestivalStart - System.currentTimeMillis()) / 60000) + 1);
 	}
 	
@@ -1273,7 +1177,6 @@ public class SevenSignsFestival implements SpawnListener
 		{
 			return "<font color=\"FF0000\">This is the Seal Validation period. Festivals will resume next week.</font>";
 		}
-		
 		return "<font color=\"FF0000\">The next festival will begin in " + getMinsToNextFestival() + " minute(s).</font>";
 	}
 	
@@ -1313,10 +1216,8 @@ public class SevenSignsFestival implements SpawnListener
 				
 				return playerFestivalInfo;
 			}
-			
 			festivalId++;
 		}
-		
 		// Return default data if the player is not found as a participant.
 		return playerFestivalInfo;
 	}
@@ -1348,7 +1249,6 @@ public class SevenSignsFestival implements SpawnListener
 				return true;
 			}
 		}
-		
 		return false;
 	}
 	
@@ -1358,7 +1258,6 @@ public class SevenSignsFestival implements SpawnListener
 		{
 			return _dawnFestivalParticipants.get(festivalId);
 		}
-		
 		return _duskFestivalParticipants.get(festivalId);
 	}
 	
@@ -1368,7 +1267,6 @@ public class SevenSignsFestival implements SpawnListener
 		{
 			return _dawnPreviousParticipants.get(festivalId);
 		}
-		
 		return _duskPreviousParticipants.get(festivalId);
 	}
 	
@@ -1425,7 +1323,6 @@ public class SevenSignsFestival implements SpawnListener
 						{
 							continue;
 						}
-						
 						festivalInst.relocatePlayer(partyMember, true);
 					}
 				}
@@ -1452,7 +1349,6 @@ public class SevenSignsFestival implements SpawnListener
 		{
 			return _dawnFestivalScores.get(festivalId);
 		}
-		
 		return _duskFestivalScores.get(festivalId);
 	}
 	
@@ -1490,7 +1386,6 @@ public class SevenSignsFestival implements SpawnListener
 			currData.set("score", 0);
 			currData.set("members", "");
 		}
-		
 		return currData;
 	}
 	
@@ -1523,7 +1418,6 @@ public class SevenSignsFestival implements SpawnListener
 				}
 			}
 		}
-		
 		return result;
 	}
 	
@@ -1599,7 +1493,6 @@ public class SevenSignsFestival implements SpawnListener
 			
 			return true;
 		}
-		
 		return false;
 	}
 	
@@ -1616,7 +1509,6 @@ public class SevenSignsFestival implements SpawnListener
 		{
 			totalAccumBonus += accumBonus;
 		}
-		
 		return totalAccumBonus;
 	}
 	
@@ -1636,7 +1528,6 @@ public class SevenSignsFestival implements SpawnListener
 				eachStoneBonus = SevenSigns.SEAL_STONE_RED_VALUE;
 				break;
 		}
-		
 		int newTotalBonus = _accumulatedBonuses.get(festivalId) + (stoneAmount * eachStoneBonus);
 		_accumulatedBonuses.set(festivalId, newTotalBonus);
 	}
@@ -1673,7 +1564,6 @@ public class SevenSignsFestival implements SpawnListener
 				}
 			}
 		}
-		
 		return playerBonus;
 	}
 	
@@ -1706,7 +1596,6 @@ public class SevenSignsFestival implements SpawnListener
 		{
 			cs.addStringParameter(String.valueOf(getMinsToNextFestival()));
 		}
-		
 		npc.broadcastPacket(cs);
 	}
 	
@@ -1751,7 +1640,6 @@ public class SevenSignsFestival implements SpawnListener
 	
 	/**
 	 * The FestivalManager class is the main runner of all the festivals. It is used for easier integration and management of all running festivals.
-	 * @author Tempy
 	 */
 	private class FestivalManager implements Runnable
 	{
@@ -1761,10 +1649,8 @@ public class SevenSignsFestival implements SpawnListener
 		{
 			_festivalInstances = new FastMap<>();
 			_managerInstance = this;
-			
 			// Increment the cycle counter.
 			_festivalCycle++;
-			
 			// Set the next start timers.
 			setNextCycleStart();
 			setNextFestivalStart(Config.ALT_FESTIVAL_CYCLE_LENGTH - FESTIVAL_SIGNUP_TIME);
@@ -1853,7 +1739,6 @@ public class SevenSignsFestival implements SpawnListener
 					{
 						_festivalInstances.put(10 + i, new L2DarknessFestival(SevenSigns.CABAL_DUSK, i));
 					}
-					
 					if (_dawnFestivalParticipants.get(i) != null)
 					{
 						_festivalInstances.put(20 + i, new L2DarknessFestival(SevenSigns.CABAL_DAWN, i));
@@ -2018,7 +1903,6 @@ public class SevenSignsFestival implements SpawnListener
 			/*
 			 * Compute the offset if a Dusk instance is required. ID: 0 1 2 3 4 Dusk 1:1011121314 Dawn 2:2021222324
 			 */
-			
 			festivalId += (oracle == SevenSigns.CABAL_DUSK) ? 10 : 20;
 			return _festivalInstances.get(festivalId);
 		}
@@ -2068,7 +1952,6 @@ public class SevenSignsFestival implements SpawnListener
 			{
 				_participants = new ArrayList<>();
 			}
-			
 			festivalInit();
 		}
 		
@@ -2338,7 +2221,6 @@ public class SevenSignsFestival implements SpawnListener
 						{
 							continue;
 						}
-						
 						relocatePlayer(participant, false);
 						participant.sendMessage("The festival has ended. Your party leader must now register your score before the next festival takes place.");
 					}
@@ -2395,7 +2277,6 @@ public class SevenSignsFestival implements SpawnListener
 				{
 					_originalLocations.remove(participant.getObjectId());
 				}
-				
 				participant.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 				participant.teleToLocation(origPosition._x, origPosition._y, origPosition._z, true);
 				participant.sendMessage("You have been removed from the festival arena.");
@@ -2428,10 +2309,8 @@ public class SevenSignsFestival implements SpawnListener
 			_x = x;
 			_y = y;
 			_z = z;
-			
 			// Generate a random heading if no positive one given.
 			_heading = (heading < 0) ? Rnd.nextInt(65536) : heading;
-			
 			_npcId = -1;
 		}
 		

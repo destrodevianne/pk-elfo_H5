@@ -2,10 +2,6 @@ package pk.elfo.gameserver;
 
 import java.util.logging.Logger;
 
-/**
- * PkElfo
- */
-
 public class PkElfo
 {
 	private static final Logger _log = Logger.getLogger(GameServer.class.getName());

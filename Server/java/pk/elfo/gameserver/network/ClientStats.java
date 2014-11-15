@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.network;
 
 import pk.elfo.Config;
@@ -90,7 +72,6 @@ public class ClientStats
 		{
 			_queueOverflowDetected = false;
 		}
-		
 		return countPacket();
 	}
 	
@@ -108,7 +89,6 @@ public class ClientStats
 			_unknownPacketsInMin = 1;
 			return false;
 		}
-		
 		_unknownPacketsInMin++;
 		return _unknownPacketsInMin > Config.CLIENT_PACKET_QUEUE_MAX_UNKNOWN_PER_MIN;
 	}
@@ -128,7 +108,6 @@ public class ClientStats
 		{
 			return false;
 		}
-		
 		totalBursts++;
 		return true;
 	}
@@ -148,7 +127,6 @@ public class ClientStats
 			_overflowsInMin = 1;
 			return false;
 		}
-		
 		_overflowsInMin++;
 		return _overflowsInMin > Config.CLIENT_PACKET_QUEUE_MAX_OVERFLOWS_PER_MIN;
 	}
@@ -167,7 +145,6 @@ public class ClientStats
 			_underflowReadsInMin = 1;
 			return false;
 		}
-		
 		_underflowReadsInMin++;
 		return _underflowReadsInMin > Config.CLIENT_PACKET_QUEUE_MAX_UNDERFLOWS_PER_MIN;
 	}
@@ -241,10 +218,8 @@ public class ClientStats
 			{
 				_floodsInMin++;
 			}
-			
 			return true; // Return true only in the beginning of the flood
 		}
-		
 		return false;
 	}
 }

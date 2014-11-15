@@ -44,7 +44,6 @@ public class FortUpdater implements Runnable
 					{
 						return;
 					}
-					
 					_fort.getOwnerClan().increaseBloodOathCount();
 					
 					if (_fort.getFortState() == 2)
