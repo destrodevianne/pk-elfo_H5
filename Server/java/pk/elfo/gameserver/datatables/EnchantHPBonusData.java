@@ -76,6 +76,7 @@ public class EnchantHPBonusData extends DocumentParser
 						case L2Item.SLOT_FULL_ARMOR:
 						case L2Item.SLOT_UNDERWEAR:
 						case L2Item.SLOT_L_HAND:
+						case L2Item.SLOT_BELT:
 							item.attach(new FuncTemplate(null, null, "EnchantHp", Stats.MAX_HP, 0x60, new LambdaConst(0)));
 							break;
 						default:
