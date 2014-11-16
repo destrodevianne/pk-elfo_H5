@@ -141,6 +141,12 @@ public final class Logout extends L2GameClientPacket
 			}
 		}
 		
+		if (player.isProcessingTransaction())
+		{
+			player.sendMessage("You may not restart while offer trade.");
+			return;
+		}
+		
 		// MultiFunction Zone inicio
 		if (player.isInsideZone(ZoneId.MULTI_FUNCTION) && !L2MultiFunctionZone.logout_zone)
 		{

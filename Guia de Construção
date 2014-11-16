@@ -62,6 +62,7 @@ Implement: Condition to Player Can Refuel Airship
 Adicionado Efeito correto para Seed of Annihilation
 Implement: Condition to Player Can Summon Siege Golem
 Adicionado 'itemConsumeId' for skill 'Open Packaged Book'
+Adicionado protecao de nao poder relogar estando em trade
 Adicionado nova tabela na DB para salvar senha Descriptada
 Adicionado Level maximo em AntQueen configuravel em Configs
 Adicionado htmls que faltavam do NPC Gatekeeper of the Abyss

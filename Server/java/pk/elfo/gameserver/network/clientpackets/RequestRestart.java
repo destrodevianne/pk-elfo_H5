@@ -83,6 +83,12 @@ public final class RequestRestart extends L2GameClientPacket
 			L2PcInstance._isbuffrefusal = false;
 		}
 
+		if (player.isProcessingTransaction())
+		{
+			player.sendMessage("Cannot restart while offer trading");
+			return;
+		}
+		
 		if (player.isLocked())
 		{
 			_log.warning("Player " + player.getName() + " tried to restart during class change.");
