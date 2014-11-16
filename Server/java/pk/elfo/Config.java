@@ -1634,6 +1634,7 @@ public final class Config
 	public static boolean PROTECT_ENCHANT_ENABLE;
 	public static int MAX_ENCHANT_LEVEL_PROTECT;
 	public static int ENCHANT_PROTECT_PUNISH;
+	public static int BREAK_ENCHANT;
 	// ----------------------------------------------------------------------------------------------------//
 	// titulo muda ao entrar em um clan
 	// ----------------------------------------------------------------------------------------------------//
@@ -3331,6 +3332,7 @@ public final class Config
 			PROTECT_ENCHANT_ENABLE = Boolean.parseBoolean(ENCHANTPROTECTOR.getProperty("EnchantProtectEnable", "true"));
 			MAX_ENCHANT_LEVEL_PROTECT = Integer.parseInt(ENCHANTPROTECTOR.getProperty("MaxEnchantLevelProtect", "30"));
 			ENCHANT_PROTECT_PUNISH = Integer.parseInt(ENCHANTPROTECTOR.getProperty("EnchantProtectPunish", "60"));
+			BREAK_ENCHANT = Integer.valueOf(ENCHANTPROTECTOR.getProperty("BreakEnchant", "0"));
 			
 			// #########################################################################################################//
 			

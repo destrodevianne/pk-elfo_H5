@@ -303,11 +303,13 @@ public class GameServer
 		}
 		ItemAuctionManager.getInstance();
 		CastleManager.getInstance().loadInstances();
-		FortManager.getInstance().loadInstances();
 		NpcBufferTable.getInstance();
 		FakePcsTable.getInstance();
 		SpawnTable.getInstance();
+		FourSepulchersManager.getInstance().init();
+		DimensionalRiftManager.getInstance();
 		HellboundManager.getInstance();
+		FortManager.getInstance().loadInstances();
 		
 		if (Config.ENABLE_BONUS_MANAGER)
 		{
@@ -317,8 +319,6 @@ public class GameServer
 		RaidBossSpawnManager.getInstance();
 		DayNightSpawnManager.getInstance().trim().notifyChangeMode();
 		GrandBossManager.getInstance().initZones();
-		FourSepulchersManager.getInstance().init();
-		DimensionalRiftManager.getInstance();
 		EventDroplist.getInstance();
 		
 		printSection("Siege");

@@ -27,12 +27,11 @@ public final class SpawnTable
 	private static final String SELECT_CUSTOM_SPAWNS = "SELECT  spawn_name, count, npc_templateid, locx, locy, locz, heading, respawn_delay, respawn_random, loc_id, periodOfDay FROM custom_spawnlist";
 	
 	private static final Map<Integer, Set<L2Spawn>> _spawnTable = new FastMap<Integer, Set<L2Spawn>>().shared();
-	
+
 	protected SpawnTable()
 	{
 		load();
 	}
-	
 	/**
 	 * Wrapper to load all spawns.
 	 */

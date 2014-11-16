@@ -15,6 +15,7 @@ import pk.elfo.gameserver.model.L2ManufactureItem;
 import pk.elfo.gameserver.model.L2ManufactureList;
 import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.TradeItem;
+import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.effects.AbnormalEffect;
 import pk.elfo.gameserver.network.L2GameClient;

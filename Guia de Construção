@@ -376,6 +376,7 @@ Mod ao entrar em um clan o titulo muda altomaticamente para o do clan
 ***Mod Efeito visual para Remover clan do jogador e colocá-lo de volta quando ele sair da MultiFunctionZone
 ***Mod Esse código desabilita a capacidade de equipar uma armadura se você não tiver a habilidade passiva Mastery dela.
 ***Mod adicionado mensagens automaticas apos logar (sao 5 texto automatico com tempo configuravel), bom para propagandas
+***Mod Breack Enchant (ao falhar o enchant com Blessed Enchant o item volta para o valor configurado em EnchantProtector.properties)
 ***Mod NPC services (Limpar PKs, Level UP Clan, Clan reputação, Mudar sexo do char, Virar Nobles, Mudar nome do clan, Mudar nome do char)
 ***Mod para evento de rates funciona assim: ao ser habilitado multiplica-se as rates de XP e SP diferentes para jogadores que estão abaixo do level 40 e acima do level 41
 Mod Ao dar Shift+Click em algum char ou npc ou monstro, mostrara todos items e status dele. (Alterado o Mod Shit+Click nos Npc/Mob? para funcionar tambem nos players mostrando alguns status e itens)

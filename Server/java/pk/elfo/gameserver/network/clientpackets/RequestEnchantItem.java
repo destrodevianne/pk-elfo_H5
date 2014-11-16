@@ -401,7 +401,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 						// blessed enchant - clear enchant value
 						activeChar.sendPacket(SystemMessageId.BLESSED_ENCHANT_FAILED);
 						
-						item.setEnchantLevel(0);
+						item.setEnchantLevel(Config.BREAK_ENCHANT);
 						item.updateDatabase();
 						activeChar.sendPacket(new EnchantResult(3, 0, 0));
 						showEnchantAnimation(activeChar, 0);
