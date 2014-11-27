@@ -68,6 +68,7 @@ Adicionado Level maximo em AntQueen configuravel em Configs
 Adicionado htmls que faltavam do NPC Gatekeeper of the Abyss
 Implement: UPnP Service facilita logar o servidor local e externamente)
 Adicionado skills: Clan De-Buff Control, Clan Muzzle Control e Clan Mental Control
+Adicionado Skill.valueOf(id,lv) metodo para referenciar SkillData.getInstance().getSkill()
 Adicionado synchronized block to setInsideZone to ensure correct usage between different threads
 Adicionado elementos na xml da skill para arredondar o calculo na hora de somar os bonus do buff
 

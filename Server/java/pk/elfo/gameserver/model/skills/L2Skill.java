@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.model.skills;
 
 import java.util.ArrayList;
@@ -84,10 +66,8 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	public static final int SKILL_CREATE_COMMON = 1320;
 	public static final int SKILL_DIVINE_INSPIRATION = 1405;
 	public static final int SKILL_NPC_RACE = 4416;
-	
 	public static final boolean geoEnabled = Config.GEODATA > 0;
-	
-	// conditional values
+	// valores condicionais
 	public static final int COND_RUNNING = 0x0001;
 	public static final int COND_WALKING = 0x0002;
 	public static final int COND_SIT = 0x0004;
@@ -97,67 +77,55 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	public static final int COND_ROBES = 0x0040;
 	public static final int COND_CHARGES = 0x0080;
 	public static final int COND_SHIELD = 0x0100;
-	
 	private static final Func[] _emptyFunctionSet = new Func[0];
 	private static final L2Effect[] _emptyEffectSet = new L2Effect[0];
-	
-	// these two build the primary key
+	// estes dois construi a chave primaria
 	private final int _id;
 	private final int _level;
-	
-	/** Identifier for a skill that client can't display */
+	/** Identificador para uma skill que o cliente nao pode exibir */
 	private int _displayId;
-	
-	// not needed, just for easier debug
+	// nao e necessario, apenas para facilitar a depuracao
 	private final String _name;
 	private final L2SkillOpType _operateType;
 	private final int _magic;
 	private final L2TraitType _traitType;
 	private final boolean _staticReuse;
-	private final boolean _staticDamage; // Damage dealing skills do static damage based on the power value.
+	private final boolean _staticDamage; // Habilidades de causar dano, causa danos estaticos com base no valor de energia
 	private final int _mpConsume;
 	private final int _mpInitialConsume;
 	private final int _hpConsume;
 	private final int _cpConsume;
-	
 	private final int _targetConsume;
 	private final int _targetConsumeId;
-	
 	private final int _itemConsume;
 	private final int _itemConsumeId;
-	
 	private final int _castRange;
 	private final int _effectRange;
-	
-	// Abnormal levels for skills and their canceling, e.g. poison vs negate
-	private final int _abnormalLvl; // e.g. poison or bleed lvl 2
-	// Note: see also _effectAbnormalLvl
-	private final int _negateLvl; // abnormalLvl is negated with negateLvl
-	private final int[] _negateId; // cancels the effect of skill ID
-	private final int[] _negateCasterId; // cancels the effect of skill ID on caster
-	private final L2SkillType[] _negateStats; // lists the effect types that are canceled
-	private final Map<String, Byte> _negateAbnormals; // lists the effect abnormal types with order below the presented that are canceled
-	private final int _maxNegatedEffects; // maximum number of effects to negate
-	
-	private final boolean _stayAfterDeath; // skill should stay after death
-	private final boolean _stayOnSubclassChange; // skill should stay on subclass change
-	
-	// kill by damage over time
+	// Niveis anormais de habilidades e seu cancelamento, exemplo poison vs negate
+	private final int _abnormalLvl; // exemplo poison ou bleed lvl 2
+	// Nota: veja tambem _effectAbnormalLvl
+	private final int _negateLvl; // abnormalLvl e negado com negateLvl
+	private final int[] _negateId; // cancela o efeito de skill ID
+	private final int[] _negateCasterId; // cancela o efeito de skill ID no rodizio
+	private final L2SkillType[] _negateStats; // lista os tipos de efeitos que sao canceladas
+	private final Map<String, Byte> _negateAbnormals; // lista os tipos de efeitos anormais com a ordem apresentada abaixo do que sao cancelados
+	private final int _maxNegatedEffects; // numero maximo de efeitos para negar
+	private final boolean _stayAfterDeath; // skill deve permanecer apos a morte
+	private final boolean _stayOnSubclassChange; // skill deve ficar sobre a mudanca de subclasse
+	// matar por dano ao longo do tempo
 	private final boolean _killByDOT;
-	
 	private final int _refId;
-	// all times in milliseconds
+	// todas as vezes em milissegundos
 	private final int _hitTime;
 	private final int[] _hitTimings;
 	// private final int _skillInterruptTime;
 	private final int _coolTime;
 	private final int _reuseHashCode;
 	private final int _reuseDelay;
-	
-	/** Target type of the skill : SELF, PARTY, CLAN, PET... */
+	/** Tipo de destino da skill : SELF, PARTY, CLAN, PET... */
 	private final L2TargetType _targetType;
 	private final int _feed;
-	// base success chance
+	// base de chance de sucesso
 	private final double _power;
 	private final double _pvpPower;
 	private final double _pvePower;
@@ -168,36 +136,28 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	private final int _minChance;
 	private final int _maxChance;
 	private final int _blowChance;
-	
 	private final boolean _isNeutral;
-	// Effecting area of the skill, in radius.
-	// The radius center varies according to the _targetType:
-	// "caster" if targetType = AURA/PARTY/CLAN or "target" if targetType = AREA
+	// Area efetiva da habilidade, no raio.
+	// O centro do raio varia de acordo com o _targetType:
+	// "caster" se targetType = AURA/PARTY/CLAN ou "target" se targetType = AREA
 	private final int _skillRadius;
-	
 	private final L2SkillType _skillType;
-	private final L2SkillType _effectType; // additional effect has a type
-	private final int _effectAbnormalLvl; // abnormal level for the additional effect type, e.g. poison lvl 1
+	private final L2SkillType _effectType; // efeito adicional tem um tipo de
+	private final int _effectAbnormalLvl; // nivel anormal para o tipo de efeito adicional, por exemplo, poison lvl 1
 	private final int _effectId;
-	private final int _effectLvl; // normal effect level
-	
+	private final int _effectLvl; // nivel de efeito normal
 	private final boolean _nextActionIsAttack;
-	
 	private final boolean _removedOnAnyActionExceptMove;
 	private final boolean _removedOnDamage;
-	
 	private final byte _element;
 	private final int _elementPower;
-	
 	private final Stats _stat;
 	private final BaseStats _saveVs;
-	
 	private final int _condition;
 	private final int _conditionValue;
 	private final boolean _overhit;
 	private final int _weaponsAllowed;
 	private final int _armorsAllowed;
-	
 	private final int _minPledgeClass;
 	private final boolean _isOffensive;
 	private final int _chargeConsume;
@@ -209,14 +169,12 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	private final int _expNeeded;
 	private final int _critChance;
 	private final boolean _dependOnTargetBuff;
-	
 	private final int _transformId;
 	private final int _transformDuration;
-	
 	private final int _afterEffectId;
 	private final int _afterEffectLvl;
-	private final boolean _isHeroSkill; // If true the skill is a Hero Skill
-	private final boolean _isGMSkill; // True if skill is GM skill
+	private final boolean _isHeroSkill; // Se tiver true a skill e uma Skill de heroi
+	private final boolean _isGMSkill; // True se a skill for skill de GM
 	
 	private final int _baseCritRate; // percent of success for skill critical hit (especially for PDAM & BLOW - they're not affected by rCrit values or buffs). Default loads -1 for all other skills but 0 to PDAM & BLOW
 	private final int _lethalEffect1; // percent of success for lethal 1st effect (hit cp to 1 or if mob hp to 50%) (only for PDAM skills)
@@ -232,35 +190,24 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	public EffectTemplate[] _effectTemplates;
 	protected EffectTemplate[] _effectTemplatesSelf;
 	protected EffectTemplate[] _effectTemplatesPassive;
-	
 	protected ChanceCondition _chanceCondition = null;
-	
-	// Flying support
+	// suporte a voo
 	private final String _flyType;
 	private final int _flyRadius;
 	private final float _flyCourse;
-	
 	private final boolean _isDebuff;
-	
 	private final String _attribute;
-	
 	private final boolean _ignoreShield;
-	
 	private final boolean _isSuicideAttack;
 	private final boolean _canBeReflected;
 	private final boolean _canBeDispeled;
-	
 	private final boolean _isClanSkill;
 	private final boolean _excludedFromCheck;
 	private final boolean _simultaneousCast;
-	
 	private L2ExtractableSkill _extractableItems = null;
-	
 	private final int _maxTargets;
 	private final boolean _isStaticHeal;
-	
 	private int _npcId = 0;
-	
 	// Appearance
 	private final int _faceId;
 	private final int _hairColorId;
@@ -288,14 +235,11 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		_itemConsumeId = set.getInteger("itemConsumeId", 0);
 		_afterEffectId = set.getInteger("afterEffectId", 0);
 		_afterEffectLvl = set.getInteger("afterEffectLvl", 1);
-		
 		_castRange = set.getInteger("castRange", -1);
 		_effectRange = set.getInteger("effectRange", -1);
-		
 		_abnormalLvl = set.getInteger("abnormalLvl", -1);
-		_effectAbnormalLvl = set.getInteger("effectAbnormalLvl", -1); // support for a separate effect abnormal lvl, e.g. poison inside a different skill
+		_effectAbnormalLvl = set.getInteger("effectAbnormalLvl", -1); // suporte para um efeito separado anormal lvl, exemplo, poison dentro de uma skill diferente
 		_negateLvl = set.getInteger("negateLvl", -1);
-		
 		_attribute = set.getString("attribute", "");
 		String str = set.getString("negateStats", "");
 		
@@ -317,9 +261,8 @@ public abstract class L2Skill implements IChanceSkillTrigger
 				}
 				catch (Exception e)
 				{
-					throw new IllegalArgumentException("SkillId: " + _id + "Enum value of type " + L2SkillType.class.getName() + "required, but found: " + stats[i]);
+					throw new IllegalArgumentException("SkillId: " + _id + "Valor de enumeracao do tipo " + L2SkillType.class.getName() + "requirida, mas encontrou: " + stats[i]);
 				}
-				
 				array[i] = type;
 			}
 			_negateStats = array;
@@ -332,11 +275,11 @@ public abstract class L2Skill implements IChanceSkillTrigger
 			for (String ngtStack : negateAbnormals.split(";"))
 			{
 				String[] ngt = ngtStack.split(",");
-				if (ngt.length == 1) // Only abnormalType is present, without abnormalLvl
+				if (ngt.length == 1) // Apenas abnormalType esta presente, sem abnormalLvl
 				{
 					_negateAbnormals.put(ngt[0], Byte.MAX_VALUE);
 				}
-				else if (ngt.length == 2) // Both abnormalType and abnormalLvl are present
+				else if (ngt.length == 2) // Ambos abnormalType e abnormalLvl estao presentes
 				{
 					try
 					{
@@ -344,12 +287,12 @@ public abstract class L2Skill implements IChanceSkillTrigger
 					}
 					catch (Exception e)
 					{
-						throw new IllegalArgumentException("SkillId: " + _id + " Byte value required, but found: " + ngt[1]);
+						throw new IllegalArgumentException("SkillId: " + _id + " Byte valor exigido, mas nao encontrou: " + ngt[1]);
 					}
 				}
 				else
 				{
-					throw new IllegalArgumentException("SkillId: " + _id + ": Incorrect negate Abnormals for " + ngtStack + ". Lvl: abnormalType1,abnormalLvl1;abnormalType2,abnormalLvl2;abnormalType3,abnormalLvl3... or abnormalType1;abnormalType2;abnormalType3...");
+					throw new IllegalArgumentException("SkillId: " + _id + ": Abnormals Negate incorreta para " + ngtStack + ". Lvl: abnormalType1,abnormalLvl1;abnormalType2,abnormalLvl2;abnormalType3,abnormalLvl3... ou abnormalType1;abnormalType2;abnormalType3...");
 				}
 			}
 		}
@@ -388,10 +331,8 @@ public abstract class L2Skill implements IChanceSkillTrigger
 			_negateCasterId = new int[0];
 		}
 		_maxNegatedEffects = set.getInteger("maxNegated", 0);
-		
 		_stayAfterDeath = set.getBool("stayAfterDeath", false);
 		_stayOnSubclassChange = set.getBool("stayOnSubclassChange", true);
-		
 		_killByDOT = set.getBool("killByDOT", false);
 		_isNeutral = set.getBool("neutral", false);
 		_hitTime = set.getInteger("hitTime", 0);
@@ -409,7 +350,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 			}
 			catch (Exception e)
 			{
-				throw new IllegalArgumentException("SkillId: " + _id + " invalid hitTimings value: " + hitTimings + ", \"percent,percent,...percent\" required");
+				throw new IllegalArgumentException("SkillId: " + _id + " valor hitTimings invalidos: " + hitTimings + ", \"percent,percent,...percent\" requirido");
 			}
 		}
 		else
@@ -426,7 +367,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		{
 			if (Config.DEBUG)
 			{
-				_log.info("*** Skill " + _name + " (" + _level + ") changed reuse from " + set.getInteger("reuseDelay", 0) + " to " + Config.SKILL_REUSE_LIST.get(_id) + " seconds.");
+				_log.info("*** Skill " + _name + " (" + _level + ") mudado a reutilizacao de " + set.getInteger("reuseDelay", 0) + " para " + Config.SKILL_REUSE_LIST.get(_id) + " segundos.");
 			}
 			_reuseDelay = Config.SKILL_REUSE_LIST.get(_id);
 		}
@@ -436,7 +377,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		}
 		
 		_skillRadius = set.getInteger("skillRadius", 0);
-		
 		_targetType = set.getEnum("target", L2TargetType.class);
 		_power = set.getFloat("power", 0.f);
 		_pvpPower = set.getFloat("pvpPower", (float) getPower());
@@ -453,17 +393,12 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		_effectType = set.getEnum("effectType", L2SkillType.class, null);
 		_effectId = set.getInteger("effectId", 0);
 		_effectLvl = set.getInteger("effectLevel", 0);
-		
 		_nextActionIsAttack = set.getBool("nextActionAttack", false);
-		
 		_removedOnAnyActionExceptMove = set.getBool("removedOnAnyActionExceptMove", false);
 		_removedOnDamage = set.getBool("removedOnDamage", _skillType == L2SkillType.SLEEP);
-		
 		_element = set.getByte("element", (byte) -1);
 		_elementPower = set.getInteger("elementPower", 0);
-		
 		_saveVs = set.getEnum("saveVs", BaseStats.class, BaseStats.NULL);
-		
 		_condition = set.getInteger("condition", 0);
 		_conditionValue = set.getInteger("conditionValue", 0);
 		_overhit = set.getBool("overHit", false);
@@ -490,7 +425,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 				
 				if (old == mask)
 				{
-					_log.info("[weaponsAllowed] Unknown item type name: " + item);
+					_log.info("[armas de estimacao] Item desconhecido, nome do tipo: " + item);
 				}
 			}
 			_weaponsAllowed = mask;
@@ -499,15 +434,14 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		{
 			_weaponsAllowed = 0;
 		}
-		
 		_armorsAllowed = set.getInteger("armorsAllowed", 0);
-		
 		_minPledgeClass = set.getInteger("minPledgeClass", 0);
 		_isOffensive = set.getBool("offensive", isSkillTypeOffensive());
 		_chargeConsume = set.getInteger("chargeConsume", 0);
 		_triggeredId = set.getInteger("triggeredId", 0);
 		_triggeredLevel = set.getInteger("triggeredLevel", 1);
 		_chanceType = set.getString("chanceType", "");
+		
 		if (!_chanceType.isEmpty() && !_chanceType.isEmpty())
 		{
 			_chanceCondition = ChanceCondition.parse(set);
@@ -518,29 +452,22 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		_blowChance = set.getInteger("blowChance", 0);
 		_expNeeded = set.getInteger("expNeeded", 0);
 		_critChance = set.getInteger("critChance", 0);
-		
 		_transformId = set.getInteger("transformId", 0);
 		_transformDuration = set.getInteger("transformDuration", 0);
-		
 		_isHeroSkill = SkillTreesData.getInstance().isHeroSkill(_id, _level);
 		_isGMSkill = SkillTreesData.getInstance().isGMSkill(_id, _level);
-		
 		_baseCritRate = set.getInteger("baseCritRate", ((_skillType == L2SkillType.PDAM) || (_skillType == L2SkillType.BLOW)) ? 0 : -1);
 		_lethalEffect1 = set.getInteger("lethal1", 0);
 		_lethalEffect2 = set.getInteger("lethal2", 0);
-		
 		_directHpDmg = set.getBool("dmgDirectlyToHp", false);
 		_isTriggeredSkill = set.getBool("isTriggeredSkill", false);
 		_sSBoost = set.getFloat("SSBoost", 0.f);
 		_aggroPoints = set.getInteger("aggroPoints", 0);
-		
 		_flyType = set.getString("flyType", null);
 		_flyRadius = set.getInteger("flyRadius", 0);
 		_flyCourse = set.getFloat("flyCourse", 0);
 		_canBeReflected = set.getBool("canBeReflected", true);
-		
 		_canBeDispeled = set.getBool("canBeDispeled", true);
-		
 		_isClanSkill = set.getBool("isClanSkill", false);
 		_excludedFromCheck = set.getBool("excludedFromCheck", false);
 		_dependOnTargetBuff = set.getBool("dependOnTargetBuff", false);
@@ -551,9 +478,8 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		{
 			if (capsuled_items.isEmpty())
 			{
-				_log.warning("Empty Extractable Item Skill data in Skill Id: " + _id);
+				_log.warning("Dados do Item de skill extraiveis vazios no Skill Id: " + _id);
 			}
-			
 			_extractableItems = parseExtractableSkill(_id, _level, capsuled_items);
 		}
 		_maxTargets = set.getInteger("maxTargets", -1);
@@ -597,7 +523,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	}
 	
 	/**
-	 * Return the target type of the skill : SELF, PARTY, CLAN, PET...
+	 * Retorne o tipo de destino da skill : SELF, PARTY, CLAN, PET...
 	 * @return
 	 */
 	public final L2TargetType getTargetType()
@@ -1339,7 +1265,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		{
 			return true;
 		}
-		
 		final SystemMessage message = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
 		message.addSkillName(this);
 		activeChar.sendPacket(message);
@@ -1370,7 +1295,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		{
 			return true;
 		}
-		
 		return false;
 	}
 	
@@ -1435,7 +1359,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	{
 		// Init to null the target of the skill
 		L2Character target = null;
-		
 		// Get the L2Objcet targeted by the user of the skill at this moment
 		L2Object objTarget = activeChar.getTarget();
 		// If the L2Object targeted is a L2Character, it becomes the L2Character target
@@ -1443,7 +1366,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		{
 			target = (L2Character) objTarget;
 		}
-		
 		return getTargetList(activeChar, onlyFirst, target);
 	}
 	
@@ -1553,7 +1475,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 					{
 						return false;
 					}
-					
 					// Same commandchannel
 					if ((player.getParty().getCommandChannel() != null) && (player.getParty().getCommandChannel() == targetPlayer.getParty().getCommandChannel()))
 					{
@@ -1626,7 +1547,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		{
 			return false;
 		}
-		
 		return true;
 	}
 	
@@ -1651,9 +1571,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		{
 			return false;
 		}
-		
 		return true;
-		
 	}
 	
 	public final Func[] getStatFuncs(L2Effect effect, L2Character player)
@@ -1678,7 +1596,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		
 		for (FuncTemplate t : _funcTemplates)
 		{
-			
 			f = t.getFunc(env, this); // skill is owner
 			if (f != null)
 			{
@@ -1689,7 +1606,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		{
 			return _emptyFunctionSet;
 		}
-		
 		return funcs.toArray(new Func[funcs.size()]);
 	}
 	
@@ -1801,7 +1717,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		{
 			return _emptyEffectSet;
 		}
-		
 		return effects.toArray(new L2Effect[effects.size()]);
 	}
 	
@@ -1889,7 +1804,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		{
 			return _emptyEffectSet;
 		}
-		
 		return effects.toArray(new L2Effect[effects.size()]);
 	}
 	
@@ -1920,7 +1834,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		{
 			return _emptyEffectSet;
 		}
-		
 		return effects.toArray(new L2Effect[effects.size()]);
 	}
 	
@@ -1951,7 +1864,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		{
 			return _emptyEffectSet;
 		}
-		
 		return effects.toArray(new L2Effect[effects.size()]);
 	}
 	
@@ -1991,7 +1903,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 			tmp[len] = effect;
 			_effectTemplates = tmp;
 		}
-		
 	}
 	
 	public final void attachSelf(EffectTemplate effect)
@@ -2174,7 +2085,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 			prodData = prodList.split(",");
 			if (prodData.length < 3)
 			{
-				_log.warning("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " -> wrong seperator!");
+				_log.warning("Dados de skills extraiveis: Erro na Skill Id: " + skillId + " Level: " + skillLvl + " -> wrong seperator!");
 			}
 			List<ItemHolder> items = null;
 			double chance = 0;
@@ -2190,7 +2101,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 					quantity = Integer.parseInt(prodData[j += 1]);
 					if ((prodId <= 0) || (quantity <= 0))
 					{
-						_log.warning("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " wrong production Id: " + prodId + " or wrond quantity: " + quantity + "!");
+						_log.warning("Dados de skills extraiveis: Erro na Skill Id: " + skillId + " Level: " + skillLvl + " wrong production Id: " + prodId + " or wrond quantity: " + quantity + "!");
 					}
 					items.add(new ItemHolder(prodId, quantity));
 				}
@@ -2198,14 +2109,14 @@ public abstract class L2Skill implements IChanceSkillTrigger
 			}
 			catch (Exception e)
 			{
-				_log.warning("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " -> incomplete/invalid production data or wrong seperator!");
+				_log.warning("Dados de skills extraiveis: Erro na Skill Id: " + skillId + " Level: " + skillLvl + " -> incomplete/invalid production data or wrong seperator!");
 			}
 			products.add(new L2ExtractableProductItem(items, chance));
 		}
 		
 		if (products.isEmpty())
 		{
-			_log.warning("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " -> There are no production items!");
+			_log.warning("Dados de skills extraiveis: Erro na Skill Id: " + skillId + " Level: " + skillLvl + " -> There are no production items!");
 		}
 		return new L2ExtractableSkill(SkillTable.getSkillHashCode(skillId, skillLvl), products);
 	}
@@ -2255,5 +2166,10 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	public int getHairStyleId()
 	{
 		return _hairStyleId;
+	}
+
+	public static L2Skill valueOf(int skillId, int level)
+	{
+		return SkillTable.getInstance().getInfo(skillId, level);
 	}
 }
