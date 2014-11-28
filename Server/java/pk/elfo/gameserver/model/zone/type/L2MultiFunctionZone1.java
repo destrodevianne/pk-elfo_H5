@@ -9,7 +9,6 @@ import java.util.Properties;
 import javolution.util.FastList;
 
 import pk.elfo.gameserver.ThreadPoolManager;
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.L2Summon;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
@@ -35,7 +34,7 @@ public class L2MultiFunctionZone1 extends L2RespawnZone
     public static boolean pvp_enabled1, restart_zone1, store_zone1, logout_zone1, revive_noblesse1, revive_heal1, revive1, remove_buffs1, remove_pets1, give_noblesse1;
     static int radius1, enchant1, revive_delay1;
     static int[][] spawn_loc1;
-    L2Skill noblesse1 = SkillTable.getInstance().getInfo(1323, 1);
+    L2Skill noblesse1 = L2Skill.valueOf(1323, 1);
     private static List<String> items1 = new FastList<>();
     private static List<String> grades1 = new FastList<>(), classes1 = new FastList<>();
     public static List<int[]> rewards1;
@@ -67,7 +66,7 @@ public class L2MultiFunctionZone1 extends L2RespawnZone
             if ((classes1 != null) && classes1.contains("" + activeChar.getClassId().getId()))
             {
                 activeChar.teleToLocation(83597, 147888, -3405);
-                activeChar.sendMessage("Your class is not allowed in the MultiFunction zone.");
+                activeChar.sendMessage("Sua classe nao e permitido no MultiFunction zone.");
                 return;
             }
 
@@ -77,10 +76,10 @@ public class L2MultiFunctionZone1 extends L2RespawnZone
                 {
                     int slot = activeChar.getInventory().getSlotFromItem(o);
                     activeChar.getInventory().unEquipItemInBodySlot(slot);
-                    activeChar.sendMessage(o.getName() + " unequiped because is not allowed inside this zone.");
+                    activeChar.sendMessage(o.getName() + " unequiped porque nao e permitido dentro desta zone.");
                 }
             }
-            activeChar.sendMessage("You entered in a MultiFunction zone.");
+            activeChar.sendMessage("Voce entrou em uma MultiFunction zone.");
             clear(activeChar);
             if (give_noblesse1)
             {
@@ -106,7 +105,7 @@ public class L2MultiFunctionZone1 extends L2RespawnZone
         if (character instanceof L2PcInstance)
         {
             L2PcInstance activeChar = ((L2PcInstance) character);
-            activeChar.sendMessage("You left from a MultiFunction zone.");
+            activeChar.sendMessage("Voce saiu de uma MultiFunction zone.");
 
             if (pvp_enabled1)
             {
