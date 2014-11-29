@@ -4,7 +4,7 @@
 <!-- "cycle": NPC moves from first point to last point, then moves directly to the first point. -->
 <!-- "conveyor": NPC moves from first point to last point, then teleports directly to the first point. -->
 <!-- "random": NPC randomly moves between points. -->
-<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/Routes.xsd">
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/Routes.xsd">
 	<!-- Just test route - Giran town square -->
 	<route id="1" repeat="true" repeatStyle="cycle">
 		<point string="" X="80863" Y="148339" Z="-3469" delay="0" run="true" />

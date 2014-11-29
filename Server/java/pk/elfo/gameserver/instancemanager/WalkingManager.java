@@ -194,7 +194,7 @@ public class WalkingManager extends DocumentParser
 	@Override
 	public final void load()
 	{
-		parseDatapackFile("data/Routes.xml");
+		parseDatapackFile("data/xmls/Routes.xml");
 		_log.info(getClass().getSimpleName() + ": " + _routes.size() + " walking routes.");
 	}
 	
