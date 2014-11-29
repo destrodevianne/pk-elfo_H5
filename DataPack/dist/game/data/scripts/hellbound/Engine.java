@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package hellbound;
 
 import java.io.File;
@@ -41,10 +23,8 @@ import pk.elfo.gameserver.model.quest.Quest;
 
 public class Engine extends Quest implements Runnable
 {
-	private static final String pointsInfoFile = "data/hellboundTrustPoints.xml";
-	
+	private static final String pointsInfoFile = "data/xmls/hellboundTrustPoints.xml";
 	private static final int UPDATE_INTERVAL = 10000;
-	
 	private static final int[][] DOOR_LIST =
 	{
 		{
@@ -82,11 +62,8 @@ public class Engine extends Quest implements Runnable
 	};
 	
 	private static final String ANNOUNCE = "Hellbound now has reached level: %lvl%";
-	
 	private int _cachedLevel = -1;
-	
 	private static Map<Integer, PointsInfoHolder> pointsInfo = new FastMap<>();
-	
 	// Holds info about points for mob killing
 	private class PointsInfoHolder
 	{
@@ -274,7 +251,6 @@ public class Engine extends Quest implements Runnable
 				HellboundManager.getInstance().setLevel(5);
 			}
 		}
-		
 		return super.onKill(npc, killer, isSummon);
 	}
 	
