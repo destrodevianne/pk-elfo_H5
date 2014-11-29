@@ -42,7 +42,7 @@ import pk.elfo.util.file.filter.XMLFilter;
 public class FaenorScriptEngine extends ScriptEngine
 {
 	private static final Logger _log = Logger.getLogger(FaenorScriptEngine.class.getName());
-	public static final String PACKAGE_DIRECTORY = "data/faenor/";
+	public static final String PACKAGE_DIRECTORY = "data/eventos faenor/";
 	
 	protected FaenorScriptEngine()
 	{
