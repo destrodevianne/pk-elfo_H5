@@ -30,8 +30,7 @@ public class MerchantPriceConfigTable implements InstanceListManager
 		return SingletonHolder._instance;
 	}
 	
-	private static final String MPCS_FILE = "MerchantPriceConfig.xml";
-	
+	private static final String MPCS_FILE = "xmls/MerchantPriceConfig.xml";
 	private final Map<Integer, MerchantPriceConfig> _mpcs = new FastMap<>();
 	private MerchantPriceConfig _defaultMpc;
 	
@@ -132,7 +131,6 @@ public class MerchantPriceConfigTable implements InstanceListManager
 			{
 				zoneId = Integer.parseInt(node.getNodeValue());
 			}
-			
 			return new MerchantPriceConfig(id, name, baseTax, castleId, zoneId);
 		}
 		return null;
@@ -165,10 +163,7 @@ public class MerchantPriceConfigTable implements InstanceListManager
 	public void activateInstances()
 	{
 	}
-	
-	/**
-	 * @author KenM
-	 */
+
 	public static final class MerchantPriceConfig
 	{
 		private final int _id;
