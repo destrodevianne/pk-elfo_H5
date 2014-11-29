@@ -31,7 +31,7 @@ public class RecipeData extends DocumentParser
 	public void load()
 	{
 		_recipes.clear();
-		parseDatapackFile("data/recipes.xml");
+		parseDatapackFile("data/xmls/recipes.xml");
 		_log.info(getClass().getSimpleName() + ": " + _recipes.size() + " recipes.");
 	}
 	

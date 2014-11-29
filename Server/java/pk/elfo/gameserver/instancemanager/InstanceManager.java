@@ -46,7 +46,7 @@ public class InstanceManager extends DocumentParser
 	public void load()
 	{
 		_instanceIdNames.clear();
-		parseDatapackFile("data/instancenames.xml");
+		parseDatapackFile("data/xmls/instancenames.xml");
 		_log.info(getClass().getSimpleName() + ": " + _instanceIdNames.size() + " instance names.");
 	}
 	
