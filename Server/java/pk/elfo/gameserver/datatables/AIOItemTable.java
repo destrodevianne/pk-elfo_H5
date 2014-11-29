@@ -98,61 +98,59 @@ public final class AIOItemTable
 				_categoryBuffs = new FastMap<Integer, L2Skill>();
 			}
 		}
-		
 		void loadMyData()
-	{
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-			{
-				PreparedStatement statement = con.prepareStatement("SELECT buff_id, buff_lvl FROM aio_buffs WHERE category = ?");
-				statement.setString(1, _categoryName);
-				ResultSet rset = statement.executeQuery();
-				
-				StringBuilder catSb = new StringBuilder();
-				catSb.append("<html><body>");
-				catSb.append("<html><body><center>");
-				catSb.append("<br><font color=LEVEL>Choose what you want!</font><br>");
-				catSb.append("<table width = 240 height 32>");
-				
-				int b = 2;
-				
-				while (rset.next())
+		{
+				try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 				{
-					int id = rset.getInt("buff_id");
-					int lvl = rset.getInt("buff_lvl");
-					
-					L2Skill buff = SkillTable.getInstance().getInfo(id, lvl);
-					_categoryBuffs.put(id, buff);
-					_allBuffs.put(id, buff);
-					
-					if ((b % 2) == 0)
+					PreparedStatement statement = con.prepareStatement("SELECT buff_id, buff_lvl FROM aio_buffs WHERE category = ?");
+					statement.setString(1, _categoryName);
+					ResultSet rset = statement.executeQuery();
+				
+					StringBuilder catSb = new StringBuilder();
+					catSb.append("<html><body>");
+					catSb.append("<html><body><center>");
+					catSb.append("<br><font color=LEVEL>Escolha o que vocE quer!</font><br>");
+					catSb.append("<table width = 240 height 32>");
+				
+					int b = 2;
+				
+					while (rset.next())
 					{
-						catSb.append("<tr>");
-						catSb.append("<td><a action=\"bypass -h Aioitem_buffer_buff " + _categoryName + " " + id + "\">" + buff.getName() + "</a></td>");
+						int id = rset.getInt("buff_id");
+						int lvl = rset.getInt("buff_lvl");
+					
+						L2Skill buff = SkillTable.getInstance().getInfo(id, lvl);
+						_categoryBuffs.put(id, buff);
+						_allBuffs.put(id, buff);
+					
+						if ((b % 2) == 0)
+						{
+							catSb.append("<tr>");
+							catSb.append("<td><a action=\"bypass -h Aioitem_buffer_buff " + _categoryName + " " + id + "\">" + buff.getName() + "</a></td>");
+						}
+						else
+						{
+							catSb.append("<td><a action=\"bypass -h Aioitem_buffer_buff " + _categoryName + " " + id + "\">" + buff.getName() + "</a></td>");
+							catSb.append("</tr>");
+						}
+						b++;
 					}
-					else
-					{
-						catSb.append("<td><a action=\"bypass -h Aioitem_buffer_buff " + _categoryName + " " + id + "\">" + buff.getName() + "</a></td>");
-						catSb.append("</tr>");
-					}
-					b++;
+					catSb.append("</table><br><a action=\"bypass -h Aioitem_buffer_main\"><font color=LEVEL>Inicio</font></a>");
+					catSb.append("</center></body></html>");
+				
+					NpcHtmlMessage msg = new NpcHtmlMessage(5);
+					msg.setHtml(catSb.toString());
+				
+					BufferPageHolder.categoryPages.put(_categoryName, msg);
+					rset.close();
+					statement.close();
+					con.close();
 				}
-				
-				catSb.append("</table><br><a action=\"bypass -h Aioitem_buffer_main\"><font color=LEVEL>Main</font></a>");
-				catSb.append("</center></body></html>");
-				
-				NpcHtmlMessage msg = new NpcHtmlMessage(5);
-				msg.setHtml(catSb.toString());
-				
-				BufferPageHolder.categoryPages.put(_categoryName, msg);
-				rset.close();
-				statement.close();
-				con.close();
+				catch (Exception e)
+				{
+					_log.severe("Nao foi possivel carregar a tabela de buffs para AIOItem\n" + e.getMessage());
+				}
 			}
-			catch (Exception e)
-			{
-				_log.severe("Couldnt load buffs table for AIOItem\n" + e.getMessage());
-			}
-		}
 		
 		public FastMap<Integer, L2Skill> getCategoryBuffs()
 		{
@@ -164,11 +162,11 @@ public final class AIOItemTable
 	{
 		if (!AIOItem_Config.AIOITEM_ENABLEME)
 		{
-			_log.config("AIOItem: I'm disabled");
+			_log.config("AIOItem: estou desativado");
 			return;
 		}
 		
-		_log.config("Loading AIOItem Data...");
+		_log.config("Lendo dados de AIOItem...");
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
 			try
@@ -177,7 +175,7 @@ public final class AIOItemTable
 				ResultSet rset = statement.executeQuery();
 				
 				StringBuilder sbMain = new StringBuilder();
-				sbMain.append("<html><body><br><center>Choose any category to teleport:<br>");
+				sbMain.append("<html><body><br><center>Escolha qualquer categoria de teleporte:<br>");
 				while (rset.next())
 				{
 					final int id = rset.getInt("category_id");
@@ -191,7 +189,7 @@ public final class AIOItemTable
 					
 					StringBuilder sbCategory = new StringBuilder();
 					FastMap<Integer, Integer[]> spawnInfo = new FastMap<>();
-					sbCategory.append("<html><body><br><center>Choose between my teleports!:<br>");
+					sbCategory.append("<html><body><br><center>Escolha entre os meus teleportes!:<br>");
 					
 					while (catSet.next())
 					{
@@ -208,7 +206,6 @@ public final class AIOItemTable
 							z
 						};
 						spawnInfo.put(teleId, array);
-						
 						sbCategory.append("<a action=\"bypass -h Aioitem_teleport_goto " + id + " " + teleId + "\">" + teleName + "</a><br1>");
 					}
 					sbCategory.append("</center></body></html>");
@@ -223,14 +220,13 @@ public final class AIOItemTable
 				NpcHtmlMessage main = new NpcHtmlMessage(5);
 				main.setHtml(sbMain.toString());
 				TeleportPageHolder.mainPage = main;
-				
 				rset.close();
 				statement.close();
-				_log.config("AIOItemTable: Loaded " + TeleportPageHolder.categoryPages.size() + " teleport categories!");
+				_log.config("AIOItemTable: Lido " + TeleportPageHolder.categoryPages.size() + " categorias de teleporte!");
 			}
 			catch (Exception e)
 			{
-				_log.warning("AIOItemTable: Couldnt load AIO Item teleports: " + e.getMessage());
+				_log.warning("AIOItemTable: Nao foi possivel carregar o AIO Item teleportes: " + e.getMessage());
 				e.printStackTrace();
 			}
 			
@@ -238,9 +234,8 @@ public final class AIOItemTable
 			{
 				PreparedStatement buffStatement = con.prepareStatement("SELECT category FROM aio_buffs");
 				ResultSet buffSet = buffStatement.executeQuery();
-				
 				StringBuilder mainSb = new StringBuilder();
-				mainSb.append("<html><body><br><center>Choose any category to get Buffs:</center><br>");
+				mainSb.append("<html><body><br><center>Escolha uma categoria de Buffs:</center><br>");
 				FastList<String> alredyGathered = new FastList<>();
 				while (buffSet.next())
 				{
@@ -260,14 +255,13 @@ public final class AIOItemTable
 				NpcHtmlMessage msg = new NpcHtmlMessage(5);
 				msg.setHtml(mainSb.toString());
 				BufferPageHolder.mainPage = msg;
-				
 				buffSet.close();
 				buffStatement.close();
-				_log.config("Loaded " + _buffs.size() + " buffs categories for the AIOItem");
+				_log.config("Lido " + _buffs.size() + " da categoria de buffs para o AIOItem");
 			}
 			catch (Exception e)
 			{
-				_log.warning("AIOItem: Couldnt load AIO Item buffs: " + e.getMessage());
+				_log.warning("AIOItem: Nao foi possivel carregar o AIO Item buffs: " + e.getMessage());
 				e.printStackTrace();
 			}
 			// PvP Rank
@@ -278,7 +272,7 @@ public final class AIOItemTable
 		}
 		catch (Exception e)
 		{
-			_log.severe("Couldnt load data for the AIOItem\n" + e.getMessage());
+			_log.severe("Nao foi possivel carregar os dados de AIOItem\n" + e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -302,7 +296,7 @@ public final class AIOItemTable
 		}
 		catch (Exception e)
 		{
-			_log.warning("AIOItemTable: Couldnt gather needed info from database for PvP Top:");
+			_log.warning("AIOItemTable: Nao foi possivel recolher informacoes necessarias do banco de dados para o PvP Top:");
 			e.printStackTrace();
 		}
 		buildPvpRank(getTop25Pvps());
@@ -365,7 +359,6 @@ public final class AIOItemTable
 			sb.append("<td width=90>" + entry.getKey() + "</td>");
 			sb.append("<td width=90>" + entry.getValue() + "</td>");
 			sb.append("</tr></table>");
-			
 			++counter;
 		}
 		_pvpList = sb.toString();
@@ -383,14 +376,13 @@ public final class AIOItemTable
 				final int pk = rset.getInt("pkkills");
 				
 				_allPks.put(name, pk);
-				
 			}
 			rset.close();
 			statement.close();
 		}
 		catch (Exception e)
 		{
-			_log.warning("AIOItemTable: Couldnt gather needed info from database for Pk Top:");
+			_log.warning("AIOItemTable: Nao foi possivel recolher informacoes necessarias do banco de dados para o Pk Top:");
 			e.printStackTrace();
 		}
 		buildPkRank(getTop25Pks());
@@ -439,7 +431,6 @@ public final class AIOItemTable
 			sb.append("<td width=90>" + entry.getKey() + "</td>");
 			sb.append("<td width=90>" + entry.getValue() + "</td>");
 			sb.append("</tr></table>");
-			
 			++counter;
 		}
 		_pkList = sb.toString();
@@ -491,7 +482,7 @@ public final class AIOItemTable
 		}
 		catch (Exception e)
 		{
-			_log.warning("AIOItemTable: Teleport Category [" + category + "] or spawn point [" + teleId + "] does not exist");
+			_log.warning("AIOItemTable: Categoria de Teleporte [" + category + "] ou ponto de spawn [" + teleId + "] nao existe");
 		}
 		return null;
 	}
@@ -522,7 +513,6 @@ public final class AIOItemTable
 		{
 			return null;
 		}
-		
 		return _buffs.get(cat);
 	}
 	
@@ -564,27 +554,27 @@ public final class AIOItemTable
 	{
 		if (player.getPvpFlag() > 0)
 		{
-			player.sendMessage("Cannot use AIOItem while flagged!");
+			player.sendMessage("Nao e possivel usar o AIOItem enquanto estiver flagged!");
 			return false;
 		}
 		if ((player.getKarma() > 0) || player.isCursedWeaponEquipped())
 		{
-			player.sendMessage("Cannot use AIOItem while chaotic!");
+			player.sendMessage("Nao e possivel usar o AIOItem enquanto estiver chaotic!");
 			return false;
 		}
 		if (player.isInOlympiadMode() || TvTEvent.isPlayerParticipant(player.getObjectId()))
 		{
-			player.sendMessage("Cannot use while in events!");
+			player.sendMessage("Nao e possivel usar estando em events!");
 			return false;
 		}
 		if (player.isEnchanting())
 		{
-			player.sendMessage("Cannot use while enchanting!");
+			player.sendMessage("Nao e possivel usar enquanto enchanta!");
 			return false;
 		}
 		if (player.isInJail())
 		{
-			player.sendMessage("Cannot use while in Jail!");
+			player.sendMessage("Nao e possivel usar estando na Jaula!");
 			return false;
 		}
 		return true;
@@ -603,9 +593,7 @@ public final class AIOItemTable
 		}
 		
 		activeChar.setTarget(activeChar);
-		
 		String[] subCmd = command.split("_");
-		
 		IAIOItemHandler handler = AIOItemHandler.getInstance().getAIOHandler(subCmd[1]);
 		
 		if (handler != null)
@@ -614,7 +602,7 @@ public final class AIOItemTable
 		}
 		else
 		{
-			_log.warning("AIOItemTable: Cannot find AIOItem handler for command: " + subCmd[1]);
+			_log.warning("AIOItemTable: Nao e possivel encontrar o comando AIOItem nos handlers: " + subCmd[1]);
 		}
 	}
 }

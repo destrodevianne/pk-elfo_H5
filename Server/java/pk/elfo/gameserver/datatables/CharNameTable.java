@@ -160,7 +160,6 @@ public class CharNameTable
 			_accessLevels.put(id, accessLevel);
 			return name;
 		}
-		
 		return null; // not found
 	}
 	
@@ -170,7 +169,6 @@ public class CharNameTable
 		{
 			return _accessLevels.get(objectId);
 		}
-		
 		return 0;
 	}
 	

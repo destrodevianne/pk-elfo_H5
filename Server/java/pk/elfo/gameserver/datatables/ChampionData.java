@@ -126,7 +126,6 @@ public final class ChampionData extends DocumentParser
 		{
 			mul = 1;
 		}
-		
 		return mul;
 	}
 	
@@ -159,7 +158,6 @@ public final class ChampionData extends DocumentParser
 		{
 			result = false;
 		}
-		
 		return result;
 	}
 	
@@ -191,7 +189,6 @@ public final class ChampionData extends DocumentParser
 				totalProb += _championChances.get(i);
 			}
 		}
-		
 		return championType;
 	}
 	
@@ -210,7 +207,6 @@ public final class ChampionData extends DocumentParser
 		{
 			teamId = 0;
 		}
-		
 		return teamId;
 	}
 	
@@ -229,7 +225,6 @@ public final class ChampionData extends DocumentParser
 		{
 			title = "";
 		}
-		
 		return title;
 	}
 	
@@ -243,7 +238,6 @@ public final class ChampionData extends DocumentParser
 		{
 			return _championRewards.get(championType);
 		}
-		
 		return null;
 	}
 	

@@ -888,7 +888,6 @@ public class AugmentationData
 				}
 			}
 		}
-		
 		return temp;
 	}
 	
@@ -903,7 +902,6 @@ public class AugmentationData
 		{
 			return null;
 		}
-		
 		return temp.getSkill();
 	}
 	

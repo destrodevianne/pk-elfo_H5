@@ -82,7 +82,7 @@ public class AdventBonus
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "[AdventTable]: Could not restore Adventurer Bonus.", e);
+			_log.log(Level.SEVERE, "[AdventTable]: Nao foi possivel recuperar o Adventurer Bonus.", e);
 		}
 	}
 	
@@ -157,7 +157,7 @@ public class AdventBonus
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "[AdventTable]: Could not update Adventurer Bonus for player: " + charId + ".", e);
+			_log.log(Level.SEVERE, "[AdventTable]: Nao foi possivel atualizar o Adventurer Bonus para o jogador: " + charId + ".", e);
 		}
 	}
 	
@@ -190,7 +190,7 @@ public class AdventBonus
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "[AdventTable]: Could not update Adventurer Bonus tasks.", e);
+			_log.log(Level.SEVERE, "[AdventTable]: Nao foi possivel atualizar o Adventurer Bonus tarefas.", e);
 		}
 	}
 	

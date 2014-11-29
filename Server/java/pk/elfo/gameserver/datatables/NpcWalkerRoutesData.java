@@ -30,7 +30,7 @@ public class NpcWalkerRoutesData extends DocumentParser
 	public void load()
 	{
 		_routes.clear();
-		parseDatapackFile("data/WalkerRoutes.xml");
+		parseDatapackFile("data/xmls/WalkerRoutes.xml");
 		_log.info(getClass().getSimpleName() + ": " + _routes.size() + " Npc Walker Routes.");
 	}
 	

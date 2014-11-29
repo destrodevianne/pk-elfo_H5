@@ -47,9 +47,7 @@ import pk.elfo.util.L2FastList;
 public class ClanTable
 {
 	private static final Logger _log = Logger.getLogger(ClanTable.class.getName());
-	
 	private static List<ClanWarListener> clanWarListeners = new L2FastList<>(true);
-	
 	private final Map<Integer, L2Clan> _clans = new HashMap<>();
 	
 	public L2Clan[] getClans()
@@ -100,7 +98,6 @@ public class ClanTable
 	public L2Clan getClan(int clanId)
 	{
 		L2Clan clan = _clans.get(Integer.valueOf(clanId));
-		
 		return clan;
 	}
 	
@@ -112,7 +109,6 @@ public class ClanTable
 			{
 				return clan;
 			}
-			
 		}
 		return null;
 	}
@@ -160,7 +156,6 @@ public class ClanTable
 			player.sendPacket(SystemMessageId.CLAN_NAME_TOO_LONG);
 			return null;
 		}
-		
 		if (null != getClanByName(clanName))
 		{
 			// clan name is already taken
@@ -170,7 +165,6 @@ public class ClanTable
 			sm = null;
 			return null;
 		}
-		
 		L2Clan clan = new L2Clan(IdFactory.getInstance().getNextId(), clanName);
 		L2ClanMember leader = new L2ClanMember(clan, player);
 		clan.setLeader(leader);
@@ -179,9 +173,7 @@ public class ClanTable
 		player.setClan(clan);
 		player.setPledgeClass(L2ClanMember.calculatePledgeClass(player));
 		player.setClanPrivileges(L2Clan.CP_ALL);
-		
 		_clans.put(Integer.valueOf(clan.getClanId()), clan);
-		
 		// should be update packet only
 		player.sendPacket(new PledgeShowInfoUpdate(clan));
 		player.sendPacket(new PledgeShowMemberListAll(clan, player));
@@ -412,7 +404,6 @@ public class ClanTable
 		{
 			return;
 		}
-		
 		clan1.deleteEnemyClan(clan2);
 		clan2.deleteAttackerClan(clan1);
 		clan1.broadcastClanStatus();

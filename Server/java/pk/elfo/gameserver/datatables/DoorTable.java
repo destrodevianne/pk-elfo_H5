@@ -39,7 +39,7 @@ public class DoorTable extends DocumentParser
 		_doors.clear();
 		_groups.clear();
 		_regions.clear();
-		parseDatapackFile("data/doors.xml");
+		parseDatapackFile("data/xmls/doors.xml");
 	}
 	
 	@Override
@@ -70,7 +70,6 @@ public class DoorTable extends DocumentParser
 				}
 			}
 		}
-		
 		_log.info(getClass().getSimpleName() + ": " + _doors.size() + " portas para " + _regions.size() + " regioes.");
 	}
 	
@@ -90,7 +89,6 @@ public class DoorTable extends DocumentParser
 		{
 			collisionRadius = 20;
 		}
-		
 		set.set("collision_radius", collisionRadius);
 		set.set("collision_height", height);
 	}

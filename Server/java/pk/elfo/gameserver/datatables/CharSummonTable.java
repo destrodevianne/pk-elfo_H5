@@ -27,14 +27,11 @@ import pk.elfo.gameserver.network.serverpackets.PetItemList;
 public class CharSummonTable
 {
 	private static Logger _log = Logger.getLogger(CharSummonTable.class.getName());
-	
 	private static final String INIT_SUMMONS = "SELECT ownerId, summonSkillId FROM character_summons";
 	private static final String INIT_PET = "SELECT ownerId, item_obj_id FROM pets WHERE restore = 'true'";
-	
 	private static final String SAVE_SUMMON = "REPLACE INTO character_summons (ownerId,summonSkillId,curHp,curMp,time) VALUES (?,?,?,?,?)";
 	private static final String LOAD_SUMMON = "SELECT curHp, curMp, time FROM character_summons WHERE ownerId = ? AND summonSkillId = ?";
 	private static final String REMOVE_SUMMON = "DELETE FROM character_summons WHERE ownerId = ?";
-	
 	private static final TIntIntHashMap _servitors = new TIntIntHashMap();
 	private static final TIntIntHashMap _pets = new TIntIntHashMap();
 	
@@ -112,7 +109,6 @@ public class CharSummonTable
 		{
 			_log.log(Level.SEVERE, getClass().getSimpleName() + ": Failed to store summon [SummonId: " + summon.getNpcId() + "] from Char [CharId: " + summon.getOwner().getObjectId() + "] data", e);
 		}
-		
 	}
 	
 	public void restoreServitor(L2PcInstance activeChar)
@@ -125,7 +121,6 @@ public class CharSummonTable
 			ps.setInt(2, skillId);
 			try (ResultSet rs = ps.executeQuery())
 			{
-				
 				L2NpcTemplate summonTemplate;
 				L2ServitorInstance summon;
 				L2SkillSummon skill;
@@ -190,7 +185,6 @@ public class CharSummonTable
 					}
 					
 					summon.setTimeRemaining(time);
-					
 					// L2World.getInstance().storeObject(summon);
 					summon.spawnMe(activeChar.getX() + 20, activeChar.getY() + 20, activeChar.getZ());
 				}

@@ -62,11 +62,9 @@ public final class CharTemplateTable
 				set.set("baseShldDef", 0);
 				set.set("baseShldRate", 0);
 				set.set("baseAtkRange", 40);
-				
 				set.set("spawnX", rset.getInt("x"));
 				set.set("spawnY", rset.getInt("y"));
 				set.set("spawnZ", rset.getInt("z"));
-				
 				set.set("collision_radius", rset.getDouble("m_col_r"));
 				set.set("collision_height", rset.getDouble("m_col_h"));
 				set.set("collision_radius_female", rset.getDouble("f_col_r"));
