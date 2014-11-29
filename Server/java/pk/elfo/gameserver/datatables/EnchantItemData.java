@@ -32,7 +32,7 @@ public class EnchantItemData extends DocumentParser
 	{
 		_scrolls.clear();
 		_supports.clear();
-		parseDatapackFile("data/enchantData.xml");
+		parseDatapackFile("data/xmls/enchantData.xml");
 		_log.info(getClass().getSimpleName() + ": " + _scrolls.size() + " Enchant Scrolls.");
 		_log.info(getClass().getSimpleName() + ": " + _supports.size() + " Support Items.");
 	}
