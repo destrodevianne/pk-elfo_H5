@@ -45,10 +45,10 @@ public class BonusExpManager
 			factory.setValidating(false);
 			factory.setIgnoringComments(true);
 			
-			File file = new File(Config.DATAPACK_ROOT + "/data/BonusExpItems.xml");
+			File file = new File(Config.DATAPACK_ROOT + "/data/xmls/BonusExpItems.xml");
 			if (!file.exists())
 			{
-				_log.log(Level.INFO, "[" + getClass().getSimpleName() + "]Missing" + Config.DATAPACK_ROOT + "/data/BonusExpItems.xmlThescriptwontworkwithoutit!");
+				_log.log(Level.INFO, "[" + getClass().getSimpleName() + "]Missing" + Config.DATAPACK_ROOT + "/data/xmls/BonusExpItems.xmlThescriptwontworkwithoutit!");
 				return;
 			}
 			
@@ -98,7 +98,6 @@ public class BonusExpManager
 									_log.severe("[" + getClass().getSimpleName() + "]Missingsp,skipping");
 									continue;
 								}
-								
 								_bonusItems.put(itemId, new BonusItem(bonusExp, bonusSp));
 							}
 						}
@@ -110,7 +109,6 @@ public class BonusExpManager
 		{
 			e.printStackTrace();
 		}
-		
 		_log.info(getClass().getSimpleName() + ": " + _bonusItems.size() + " Items");
 	}
 	
