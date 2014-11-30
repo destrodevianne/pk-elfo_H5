@@ -2,13 +2,13 @@ package pk.elfo.gameserver.scripts.data;
 
 import java.util.List;
 
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.effects.L2EffectType;
 import pk.elfo.gameserver.model.quest.Quest;
 import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.ExShowScreenMessage;
@@ -76,7 +76,7 @@ public class NevitsHerald extends Quest
 					return "4326-1.htm";
 				}
 				npc.setTarget(player);
-				npc.doCast(SkillTable.getInstance().getInfo(23312, 1));
+				npc.doCast(L2Skill.valueOf(23312, 1));
 				return null;
 			}
 		}

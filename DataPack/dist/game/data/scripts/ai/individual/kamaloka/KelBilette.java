@@ -1,6 +1,5 @@
 package ai.individual.kamaloka;
 
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
@@ -31,14 +30,14 @@ public class KelBilette extends AbstractNpcAI
 		if (event.equalsIgnoreCase("time_to_skill"))
 		{
 			npc.setTarget(player);
-			npc.doCast(SkillTable.getInstance().getInfo(4748, 6));
+			npc.doCast(L2Skill.valueOf(4748, 6));
 			_isAlreadyStarted = false;
 			startQuestTimer("time_to_skill1", 10000, npc, player);
 		}
 		else if (event.equalsIgnoreCase("time_to_skill1"))
 		{
 			npc.setTarget(player);
-			npc.doCast(SkillTable.getInstance().getInfo(5203, 6));
+			npc.doCast(L2Skill.valueOf(5203, 6));
 		}
 		else if (event.equalsIgnoreCase("time_to_spawn"))
 		{

@@ -3,7 +3,6 @@ package ai.group_template;
 import java.util.Calendar;
 import java.util.Map;
 
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.datatables.SpawnTable;
 import pk.elfo.gameserver.instancemanager.ZoneManager;
 import pk.elfo.gameserver.model.L2Spawn;
@@ -12,6 +11,7 @@ import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2MonsterInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.model.zone.L2ZoneType;
 import pk.elfo.gameserver.model.zone.type.L2EffectZone;
 import pk.elfo.gameserver.util.Util;
@@ -331,8 +331,8 @@ public class SeedOfAnnihilation extends AbstractNpcAI
 			else
 			{
 				npc.setTarget(player);
-				npc.doCast(SkillTable.getInstance().getInfo(6408, 1));
-				npc.doCast(SkillTable.getInstance().getInfo(6649, 1));
+				npc.doCast(L2Skill.valueOf(6408, 1));
+				npc.doCast(L2Skill.valueOf(6649, 1));
 				npc.showChatWindow(player, 1);
 			}
 		}

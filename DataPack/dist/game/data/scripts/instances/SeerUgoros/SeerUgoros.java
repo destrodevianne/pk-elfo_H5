@@ -8,7 +8,6 @@ import ai.npc.AbstractNpcAI;
 
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.ai.CtrlIntention;
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.instancemanager.MapRegionManager;
 import pk.elfo.gameserver.instancemanager.ZoneManager;
 import pk.elfo.gameserver.model.L2World;
@@ -45,7 +44,7 @@ public class SeerUgoros extends AbstractNpcAI
 	private static final byte FIGHTING = 1;
 	private static final byte DEAD = 2;
 	protected static byte STATE = DEAD;
-	private static final L2Skill _ugoros_skill = SkillTable.getInstance().getInfo(6426, 1);
+	private static final L2Skill _ugoros_skill = L2Skill.valueOf(6426, 1);
 	
 	public SeerUgoros(String name, String descr)
 	{

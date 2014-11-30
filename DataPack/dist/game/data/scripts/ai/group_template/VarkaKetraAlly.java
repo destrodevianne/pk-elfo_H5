@@ -1,6 +1,5 @@
 package ai.group_template;
 
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
@@ -38,7 +37,7 @@ public class VarkaKetraAlly extends AbstractNpcAI
 			if ((attacker.isAlliedWithKetra() && npc.getFactionId() == "ketra")
 			    || (attacker.isAlliedWithVarka() && npc.getFactionId() == "varka"))
 			{
-				L2Skill skill = SkillTable.getInstance().getInfo(4578, 1);
+				L2Skill skill = L2Skill.valueOf(4578, 1);
 				if (skill != null)
 				{
 					npc.setTarget(attacker);

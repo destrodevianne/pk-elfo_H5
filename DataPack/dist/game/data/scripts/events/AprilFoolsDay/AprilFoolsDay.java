@@ -1,10 +1,10 @@
 package events.AprilFoolsDay;
 
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.quest.Quest;
 import pk.elfo.gameserver.model.quest.QuestState;
+import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.util.Rnd;
 import events.EventsConfig;
 
@@ -195,7 +195,7 @@ public class AprilFoolsDay extends Quest
 			}
 			else if ((randomGet > 68) && (randomGet <= 75))
 			{
-				SkillTable.getInstance().getInfo(5076,15).getEffects(player, player);
+				L2Skill.valueOf(5076,15).getEffects(player, player);
 			}
 			else
 			{

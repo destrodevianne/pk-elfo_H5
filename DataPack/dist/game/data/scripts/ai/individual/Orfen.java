@@ -4,7 +4,6 @@ import java.util.List;
 
 import pk.elfo.Config;
 import pk.elfo.gameserver.ai.CtrlIntention;
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.instancemanager.GrandBossManager;
 import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.L2Spawn;
@@ -233,7 +232,7 @@ public class Orfen extends AbstractNpcAI
 				npc.broadcastPacket(packet);
 				originalCaster.teleToLocation(npc.getX(), npc.getY(), npc.getZ());
 				npc.setTarget(originalCaster);
-				npc.doCast(SkillTable.getInstance().getInfo(4064, 1));
+				npc.doCast(L2Skill.valueOf(4064, 1));
 			}
 		}
 		return super.onSkillSee(npc, caster, skill, targets, isSummon);
@@ -251,7 +250,7 @@ public class Orfen extends AbstractNpcAI
 		if ((npcId == RAIKEL_LEOS) && (getRandom(20) == 0))
 		{
 			npc.setTarget(attacker);
-			npc.doCast(SkillTable.getInstance().getInfo(4067, 4));
+			npc.doCast(L2Skill.valueOf(4067, 4));
 		}
 		else if (npcId == RIBA_IREN)
 		{
@@ -264,7 +263,7 @@ public class Orfen extends AbstractNpcAI
 			{
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null, null);
 				npc.setTarget(caller);
-				npc.doCast(SkillTable.getInstance().getInfo(4516, 1));
+				npc.doCast(L2Skill.valueOf(4516, 1));
 			}
 		}
 		return super.onFactionCall(npc, caller, attacker, isSummon);
@@ -288,7 +287,7 @@ public class Orfen extends AbstractNpcAI
 				npc.broadcastPacket(packet);
 				attacker.teleToLocation(npc.getX(), npc.getY(), npc.getZ());
 				npc.setTarget(attacker);
-				npc.doCast(SkillTable.getInstance().getInfo(4064, 1));
+				npc.doCast(L2Skill.valueOf(4064, 1));
 			}
 		}
 		else if (npcId == RIBA_IREN)
@@ -296,7 +295,7 @@ public class Orfen extends AbstractNpcAI
 			if (!npc.isCastingNow() && ((npc.getCurrentHp() - damage) < (npc.getMaxHp() / 2.0)))
 			{
 				npc.setTarget(attacker);
-				npc.doCast(SkillTable.getInstance().getInfo(4516, 1));
+				npc.doCast(L2Skill.valueOf(4516, 1));
 			}
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);

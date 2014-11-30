@@ -7,7 +7,6 @@ import java.util.Collection;
 
 import pk.elfo.Config;
 import pk.elfo.gameserver.ThreadPoolManager;
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.instancemanager.GrandBossManager;
 import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.StatsSet;
@@ -220,7 +219,7 @@ public class FireDragon extends AbstractNpcAI
 					if (sk_4691 == 0 || (sk_4691 == 1 && lvl != 4))
 					{
 						npc.setTarget(npc);
-						npc.doCast(SkillTable.getInstance().getInfo(4691, 4));
+						npc.doCast(L2Skill.valueOf(4691, 4));
 					}
 				}
 				else if (npc.getCurrentHp() > ((npc.getMaxHp() * 2) / 4.0))
@@ -228,7 +227,7 @@ public class FireDragon extends AbstractNpcAI
 					if (sk_4691 == 0 || (sk_4691 == 1 && lvl != 3))
 					{
 						npc.setTarget(npc);
-						npc.doCast(SkillTable.getInstance().getInfo(4691, 3));
+						npc.doCast(L2Skill.valueOf(4691, 3));
 					}
 				}
 				else if (npc.getCurrentHp() > ((npc.getMaxHp() * 3) / 4.0))
@@ -236,13 +235,13 @@ public class FireDragon extends AbstractNpcAI
 					if (sk_4691 == 0 || (sk_4691 == 1 && lvl != 2))
 					{
 						npc.setTarget(npc);
-						npc.doCast(SkillTable.getInstance().getInfo(4691, 2));
+						npc.doCast(L2Skill.valueOf(4691, 2));
 					}
 				}
 				else if (sk_4691 == 0 || (sk_4691 == 1 && lvl != 1))
 				{
 					npc.setTarget(npc);
-					npc.doCast(SkillTable.getInstance().getInfo(4691, 1));
+					npc.doCast(L2Skill.valueOf(4691, 1));
 				}
 			}
 			else if (event.equalsIgnoreCase("1003"))
@@ -401,7 +400,7 @@ public class FireDragon extends AbstractNpcAI
 			if (sk_4258 == 0)
 			{
 				npc.setTarget(attacker);
-				npc.doCast(SkillTable.getInstance().getInfo(4258, 1));
+				npc.doCast(L2Skill.valueOf(4258, 1));
 			}
 		}
 		if (attacker.getZ() < (npc.getZ() + 200))
@@ -431,7 +430,7 @@ public class FireDragon extends AbstractNpcAI
 						i_ai3 = 0;
 						i_ai4 = 0;
 						npc.setTarget(npc);
-						npc.doCast(SkillTable.getInstance().getInfo(4687, 1));
+						npc.doCast(L2Skill.valueOf(4687, 1));
 						i_quest0 = 1;
 					}
 				}
@@ -1033,44 +1032,44 @@ public class FireDragon extends AbstractNpcAI
 				{
 					if (Rnd.get(100) < 20)
 					{
-						skill = SkillTable.getInstance().getInfo(4690, 1);
+						skill = L2Skill.valueOf(4690, 1);
 					}
 					else if (Rnd.get(100) < 15)
 					{
-						skill = SkillTable.getInstance().getInfo(4689, 1);
+						skill = L2Skill.valueOf(4689, 1);
 					}
 					else if (Rnd.get(100) < 15 && i0 == 1 && i_quest0 == 1)
 					{
-						skill = SkillTable.getInstance().getInfo(4685, 1);
+						skill = L2Skill.valueOf(4685, 1);
 						i_quest0 = 0;
 					}
 					else if (Rnd.get(100) < 10 && i1 == 1)
 					{
-						skill = SkillTable.getInstance().getInfo(4688, 1);
+						skill = L2Skill.valueOf(4688, 1);
 					}
 					else if (Rnd.get(100) < 35)
 					{
-						skill = SkillTable.getInstance().getInfo(4683, 1);
+						skill = L2Skill.valueOf(4683, 1);
 					}
 					else
 					{
 						if (Rnd.get(2) == 0) // TODO: replace me with direction, to check if player standing on left or right side of valakas
-							skill = SkillTable.getInstance().getInfo(4681, 1); // left hand
+							skill = L2Skill.valueOf(4681, 1); // left hand
 						else
-							skill = SkillTable.getInstance().getInfo(4682, 1); // right hand
+							skill = L2Skill.valueOf(4682, 1); // right hand
 					}
 				}
 				else if (Rnd.get(100) < 20)
 				{
-					skill = SkillTable.getInstance().getInfo(4690, 1);
+					skill = L2Skill.valueOf(4690, 1);
 				}
 				else if (Rnd.get(100) < 15)
 				{
-					skill = SkillTable.getInstance().getInfo(4689, 1);
+					skill = L2Skill.valueOf(4689, 1);
 				}
 				else
 				{
-					skill = SkillTable.getInstance().getInfo(4684, 1);
+					skill = L2Skill.valueOf(4684, 1);
 				}
 			}
 			else if (npc.getCurrentHp() > ((npc.getMaxHp() * 2) / 4))
@@ -1086,44 +1085,44 @@ public class FireDragon extends AbstractNpcAI
 				{
 					if (Rnd.get(100) < 5)
 					{
-						skill = SkillTable.getInstance().getInfo(4690, 1);
+						skill = L2Skill.valueOf(4690, 1);
 					}
 					else if (Rnd.get(100) < 10)
 					{
-						skill = SkillTable.getInstance().getInfo(4689, 1);
+						skill = L2Skill.valueOf(4689, 1);
 					}
 					else if (Rnd.get(100) < 10 && i0 == 1 && i_quest0 == 1)
 					{
-						skill = SkillTable.getInstance().getInfo(4685, 1);
+						skill = L2Skill.valueOf(4685, 1);
 						i_quest0 = 0;
 					}
 					else if (Rnd.get(100) < 10 && i1 == 1)
 					{
-						skill = SkillTable.getInstance().getInfo(4688, 1);
+						skill = L2Skill.valueOf(4688, 1);
 					}
 					else if (Rnd.get(100) < 20)
 					{
-						skill = SkillTable.getInstance().getInfo(4683, 1);
+						skill = L2Skill.valueOf(4683, 1);
 					}
 					else
 					{
 						if (Rnd.get(2) == 0) // TODO: replace me with direction, to check if player standing on left or right side of valakas
-							skill = SkillTable.getInstance().getInfo(4681, 1); // left hand
+							skill = L2Skill.valueOf(4681, 1); // left hand
 						else
-							skill = SkillTable.getInstance().getInfo(4682, 1); // right hand
+							skill = L2Skill.valueOf(4682, 1); // right hand
 					}
 				}
 				else if (Rnd.get(100) < 5)
 				{
-					skill = SkillTable.getInstance().getInfo(4690, 1);
+					skill = L2Skill.valueOf(4690, 1);
 				}
 				else if (Rnd.get(100) < 10)
 				{
-					skill = SkillTable.getInstance().getInfo(4689, 1);
+					skill = L2Skill.valueOf(4689, 1);
 				}
 				else
 				{
-					skill = SkillTable.getInstance().getInfo(4684, 1);
+					skill = L2Skill.valueOf(4684, 1);
 				}
 			}
 			else if (npc.getCurrentHp() > ((npc.getMaxHp() * 3) / 4.0))
@@ -1139,44 +1138,44 @@ public class FireDragon extends AbstractNpcAI
 				{
 					if (Rnd.get(100) < 0)
 					{
-						skill = SkillTable.getInstance().getInfo(4690, 1);
+						skill = L2Skill.valueOf(4690, 1);
 					}
 					else if (Rnd.get(100) < 5)
 					{
-						skill = SkillTable.getInstance().getInfo(4689, 1);
+						skill = L2Skill.valueOf(4689, 1);
 					}
 					else if (Rnd.get(100) < 5 && i0 == 1 && i_quest0 == 1)
 					{
-						skill = SkillTable.getInstance().getInfo(4685, 1);
+						skill = L2Skill.valueOf(4685, 1);
 						i_quest0 = 0;
 					}
 					else if (Rnd.get(100) < 10 && i1 == 1)
 					{
-						skill = SkillTable.getInstance().getInfo(4688, 1);
+						skill = L2Skill.valueOf(4688, 1);
 					}
 					else if (Rnd.get(100) < 15)
 					{
-						skill = SkillTable.getInstance().getInfo(4683, 1);
+						skill = L2Skill.valueOf(4683, 1);
 					}
 					else
 					{
 						if (Rnd.get(2) == 0) // TODO: replace me with direction, to check if player standing on left or right side of valakas
-							skill = SkillTable.getInstance().getInfo(4681, 1); // left hand
+							skill = L2Skill.valueOf(4681, 1); // left hand
 						else
-							skill = SkillTable.getInstance().getInfo(4682, 1); // right hand
+							skill = L2Skill.valueOf(4682, 1); // right hand
 					}
 				}
 				else if (Rnd.get(100) < 0)
 				{
-					skill = SkillTable.getInstance().getInfo(4690, 1);
+					skill = L2Skill.valueOf(4690, 1);
 				}
 				else if (Rnd.get(100) < 5)
 				{
-					skill = SkillTable.getInstance().getInfo(4689, 1);
+					skill = L2Skill.valueOf(4689, 1);
 				}
 				else
 				{
-					skill = SkillTable.getInstance().getInfo(4684, 1);
+					skill = L2Skill.valueOf(4684, 1);
 				}
 			}
 			else
@@ -1192,44 +1191,44 @@ public class FireDragon extends AbstractNpcAI
 				{
 					if (Rnd.get(100) < 0)
 					{
-						skill = SkillTable.getInstance().getInfo(4690, 1);
+						skill = L2Skill.valueOf(4690, 1);
 					}
 					else if (Rnd.get(100) < 10)
 					{
-						skill = SkillTable.getInstance().getInfo(4689, 1);
+						skill = L2Skill.valueOf(4689, 1);
 					}
 					else if (Rnd.get(100) < 5 && i0 == 1 && i_quest0 == 1)
 					{
-						skill = SkillTable.getInstance().getInfo(4685, 1);
+						skill = L2Skill.valueOf(4685, 1);
 						i_quest0 = 0;
 					}
 					else if (Rnd.get(100) < 10 && i1 == 1)
 					{
-						skill = SkillTable.getInstance().getInfo(4688, 1);
+						skill = L2Skill.valueOf(4688, 1);
 					}
 					else if (Rnd.get(100) < 15)
 					{
-						skill = SkillTable.getInstance().getInfo(4683, 1);
+						skill = L2Skill.valueOf(4683, 1);
 					}
 					else
 					{
 						if (Rnd.get(2) == 0) // TODO: replace me with direction, to check if player standing on left or right side of valakas
-							skill = SkillTable.getInstance().getInfo(4681, 1); // left hand
+							skill = L2Skill.valueOf(4681, 1); // left hand
 						else
-							skill = SkillTable.getInstance().getInfo(4682, 1); // right hand
+							skill = L2Skill.valueOf(4682, 1); // right hand
 					}
 				}
 				else if (Rnd.get(100) < 0)
 				{
-					skill = SkillTable.getInstance().getInfo(4690, 1);
+					skill = L2Skill.valueOf(4690, 1);
 				}
 				else if (Rnd.get(100) < 10)
 				{
-					skill = SkillTable.getInstance().getInfo(4689, 1);
+					skill = L2Skill.valueOf(4689, 1);
 				}
 				else
 				{
-					skill = SkillTable.getInstance().getInfo(4684, 1);
+					skill = L2Skill.valueOf(4684, 1);
 				}
 			}
 		}

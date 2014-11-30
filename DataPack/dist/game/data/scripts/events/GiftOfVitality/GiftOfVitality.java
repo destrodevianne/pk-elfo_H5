@@ -1,29 +1,11 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package events.GiftOfVitality;
 
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.event.LongTimeEvent;
 import pk.elfo.gameserver.model.quest.QuestState;
 import pk.elfo.gameserver.model.quest.State;
+import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
@@ -75,7 +57,7 @@ public class GiftOfVitality extends LongTimeEvent
 			{
 				npc.setTarget(player);
 				// Gift of Vitality
-				npc.doCast(SkillTable.getInstance().getInfo(23179, 1));
+				npc.doCast(L2Skill.valueOf(23179, 1));
 				st.setState(State.STARTED);
 				st.set("reuse", String.valueOf(System.currentTimeMillis() + (HOURS * 3600000)));
 				htmltext = "4306-okvitality.htm";
@@ -90,22 +72,22 @@ public class GiftOfVitality extends LongTimeEvent
 			else
 			{
 				npc.setTarget(player);
-				npc.doCast(SkillTable.getInstance().getInfo(5627, 1)); // Wind Walk
-				npc.doCast(SkillTable.getInstance().getInfo(5628, 1)); // Shield
-				npc.doCast(SkillTable.getInstance().getInfo(5637, 1)); // Magic Barrier
+				npc.doCast(L2Skill.valueOf(5627, 1)); // Wind Walk
+				npc.doCast(L2Skill.valueOf(5628, 1)); // Shield
+				npc.doCast(L2Skill.valueOf(5637, 1)); // Magic Barrier
 				if (player.isMageClass())
 				{
-					npc.doCast(SkillTable.getInstance().getInfo(5633, 1)); // Bless the Soul
-					npc.doCast(SkillTable.getInstance().getInfo(5634, 1)); // Acumen
-					npc.doCast(SkillTable.getInstance().getInfo(5635, 1)); // Concentration
-					npc.doCast(SkillTable.getInstance().getInfo(5636, 1)); // Empower
+					npc.doCast(L2Skill.valueOf(5633, 1)); // Bless the Soul
+					npc.doCast(L2Skill.valueOf(5634, 1)); // Acumen
+					npc.doCast(L2Skill.valueOf(5635, 1)); // Concentration
+					npc.doCast(L2Skill.valueOf(5636, 1)); // Empower
 				}
 				else
 				{
-					npc.doCast(SkillTable.getInstance().getInfo(5629, 1)); // Bless the Body
-					npc.doCast(SkillTable.getInstance().getInfo(5630, 1)); // Vampiric Rage
-					npc.doCast(SkillTable.getInstance().getInfo(5631, 1)); // Regeneration
-					npc.doCast(SkillTable.getInstance().getInfo(5632, 1)); // Haste
+					npc.doCast(L2Skill.valueOf(5629, 1)); // Bless the Body
+					npc.doCast(L2Skill.valueOf(5630, 1)); // Vampiric Rage
+					npc.doCast(L2Skill.valueOf(5631, 1)); // Regeneration
+					npc.doCast(L2Skill.valueOf(5632, 1)); // Haste
 				}
 				htmltext = "4306-okbuff.htm";
 			}
@@ -123,17 +105,17 @@ public class GiftOfVitality extends LongTimeEvent
 			else
 			{
 				npc.setTarget(player.getSummon());
-				npc.doCast(SkillTable.getInstance().getInfo(5627, 1)); // Wind Walk
-				npc.doCast(SkillTable.getInstance().getInfo(5628, 1)); // Shield
-				npc.doCast(SkillTable.getInstance().getInfo(5637, 1)); // Magic Barrier
-				npc.doCast(SkillTable.getInstance().getInfo(5629, 1)); // Bless the Body
-				npc.doCast(SkillTable.getInstance().getInfo(5633, 1)); // Bless the Soul
-				npc.doCast(SkillTable.getInstance().getInfo(5630, 1)); // Vampiric Rage
-				npc.doCast(SkillTable.getInstance().getInfo(5634, 1)); // Acumen
-				npc.doCast(SkillTable.getInstance().getInfo(5631, 1)); // Regeneration
-				npc.doCast(SkillTable.getInstance().getInfo(5635, 1)); // Concentration
-				npc.doCast(SkillTable.getInstance().getInfo(5632, 1)); // Haste
-				npc.doCast(SkillTable.getInstance().getInfo(5636, 1)); // Empower
+				npc.doCast(L2Skill.valueOf(5627, 1)); // Wind Walk
+				npc.doCast(L2Skill.valueOf(5628, 1)); // Shield
+				npc.doCast(L2Skill.valueOf(5637, 1)); // Magic Barrier
+				npc.doCast(L2Skill.valueOf(5629, 1)); // Bless the Body
+				npc.doCast(L2Skill.valueOf(5633, 1)); // Bless the Soul
+				npc.doCast(L2Skill.valueOf(5630, 1)); // Vampiric Rage
+				npc.doCast(L2Skill.valueOf(5634, 1)); // Acumen
+				npc.doCast(L2Skill.valueOf(5631, 1)); // Regeneration
+				npc.doCast(L2Skill.valueOf(5635, 1)); // Concentration
+				npc.doCast(L2Skill.valueOf(5632, 1)); // Haste
+				npc.doCast(L2Skill.valueOf(5636, 1)); // Empower
 				htmltext = "4306-okbuff.htm";
 			}
 		}

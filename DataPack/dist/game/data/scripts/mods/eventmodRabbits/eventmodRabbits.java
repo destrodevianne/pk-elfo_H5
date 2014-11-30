@@ -6,7 +6,6 @@ import java.util.concurrent.ScheduledFuture;
 import pk.elfo.Config;
 import pk.elfo.gameserver.Announcements;
 import pk.elfo.gameserver.ThreadPoolManager;
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2EventChestInstance;
@@ -184,7 +183,6 @@ public class eventmodRabbits extends Event
 		
 		// Announce event end
 		Announcements.getInstance().announceToAll("Rabbit Event finished");
-		
 		return true;
 	}
 	
@@ -200,8 +198,7 @@ public class eventmodRabbits extends Event
 				player.untransform();
 			}
 			
-			SkillTable.getInstance().getInfo(2428, 1).getEffects(npc, player);
-			
+			L2Skill.valueOf(2428, 1).getEffects(npc, player);
 			return null;
 		}
 		return htmltext;
@@ -253,9 +250,8 @@ public class eventmodRabbits extends Event
 		// So... Apply raid curse if player don't use skill on chest but attack it
 		if (_isactive && (npc.getNpcId() == _npc_chest))
 		{
-			SkillTable.getInstance().getInfo(4515, 1).getEffects(npc, attacker);
+			L2Skill.valueOf(4515, 1).getEffects(npc, attacker);
 		}
-		
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
 	

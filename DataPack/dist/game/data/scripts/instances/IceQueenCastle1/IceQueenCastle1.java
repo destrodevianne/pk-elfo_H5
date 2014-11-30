@@ -5,7 +5,6 @@ import java.util.Arrays;
 import quests.Q10285_MeetingSirra.Q10285_MeetingSirra;
 
 import pk.elfo.gameserver.ai.CtrlIntention;
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.instancemanager.InstanceManager;
 import pk.elfo.gameserver.model.L2CharPosition;
 import pk.elfo.gameserver.model.L2World;
@@ -57,8 +56,8 @@ public class IceQueenCastle1 extends Quest
 	};
 	
 	// Freya Skills
-	// private static final L2Skill _attackSkill = SkillTable.getInstance().getInfo(6278, 1);
-	private static final L2Skill _showBlizzard = SkillTable.getInstance().getInfo(6276, 1);
+	// private static final L2Skill _attackSkill = L2Skill.valueOf(6278, 1);
+	private static final L2Skill _showBlizzard = L2Skill.valueOf(6276, 1);
 	
 	private static final int[] ENTRY_POINT =
 	{

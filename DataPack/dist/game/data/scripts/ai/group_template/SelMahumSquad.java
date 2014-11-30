@@ -2,7 +2,6 @@ package ai.group_template;
 
 import pk.elfo.gameserver.GameTimeController;
 import pk.elfo.gameserver.ai.CtrlIntention;
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.datatables.SpawnTable;
 import pk.elfo.gameserver.model.L2CharPosition;
 import pk.elfo.gameserver.model.L2Object;
@@ -143,12 +142,12 @@ public class SelMahumSquad extends AbstractNpcAI
 			
 			if (npc.isNoRndWalk()) // i_ai0 == 1
 			{
-				npc.doCast(SkillTable.getInstance().getInfo(6331, 1));
+				npc.doCast(L2Skill.valueOf(6331, 1));
 				npc.setDisplayEffect(MAHUM_EFFECT_SLEEP);
 			}
 			if (npc.isScriptValue(BUSY_STATE, 1)) // Eating - i_ai3 = 1
 			{
-				npc.doCast(SkillTable.getInstance().getInfo(6332, 1));
+				npc.doCast(L2Skill.valueOf(6332, 1));
 				npc.setDisplayEffect(MAHUM_EFFECT_EAT);
 			}
 			
@@ -317,7 +316,7 @@ public class SelMahumSquad extends AbstractNpcAI
 	{
 		if ((npc.getNpcId() == STOVE) && (skill.getId() == 9075) && Util.contains(targets, npc))
 		{
-			npc.doCast(SkillTable.getInstance().getInfo(6688, 1));
+			npc.doCast(L2Skill.valueOf(6688, 1));
 			npc.broadcastEvent("SCE_SOUP_FAILURE", 600, caster);
 		}
 		return null;
@@ -362,7 +361,7 @@ public class SelMahumSquad extends AbstractNpcAI
 		if ((player != null) && !player.isDead() && !npc.isScriptValue(INVUL_REMOVE_TIMER_STARTED, 1) && ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK) || (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_CAST)))
 		{
 			npc.setTarget(player);
-			npc.doCast(SkillTable.getInstance().getInfo(6330, 1));
+			npc.doCast(L2Skill.valueOf(6330, 1));
 		}
 		else
 		{

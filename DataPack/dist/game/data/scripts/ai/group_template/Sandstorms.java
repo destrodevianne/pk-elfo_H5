@@ -1,8 +1,8 @@
 package ai.group_template;
 
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.skills.L2Skill;
 import ai.npc.AbstractNpcAI;
 
 /**
@@ -16,7 +16,7 @@ public class Sandstorms extends AbstractNpcAI
 	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		npc.setTarget(player);
-		npc.doCast(SkillTable.getInstance().getInfo(5435, 1));
+		npc.doCast(L2Skill.valueOf(5435, 1));
 		return super.onAggroRangeEnter(npc, player, isSummon);
 	}
 	

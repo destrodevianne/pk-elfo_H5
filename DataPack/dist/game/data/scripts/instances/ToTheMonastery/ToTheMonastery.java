@@ -10,7 +10,6 @@ import quests.Q10296_SevenSignPoweroftheSeal.Q10296_SevenSignPoweroftheSeal;
 
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.ai.CtrlIntention;
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.instancemanager.InstanceManager;
 import pk.elfo.gameserver.model.Location;
 import pk.elfo.gameserver.model.actor.L2Npc;
@@ -415,7 +414,7 @@ public class ToTheMonastery extends Quest
 					
 					if (player.getCurrentHp() < (player.getMaxHp() * 0.8D))
 					{
-						L2Skill skill = SkillTable.getInstance().getInfo(6724, 1);
+						L2Skill skill = L2Skill.valueOf(6724, 1);
 						if (skill != null)
 						{
 							npc.setTarget(player);
@@ -425,7 +424,7 @@ public class ToTheMonastery extends Quest
 					
 					if (player.getCurrentMp() < (player.getMaxMp() * 0.5D))
 					{
-						L2Skill skill = SkillTable.getInstance().getInfo(6728, 1);
+						L2Skill skill = L2Skill.valueOf(6728, 1);
 						if (skill != null)
 						{
 							npc.setTarget(player);
@@ -435,7 +434,7 @@ public class ToTheMonastery extends Quest
 					
 					if (player.getCurrentHp() < (player.getMaxHp() * 0.1D))
 					{
-						L2Skill skill = SkillTable.getInstance().getInfo(6730, 1);
+						L2Skill skill = L2Skill.valueOf(6730, 1);
 						if (skill != null)
 						{
 							npc.setTarget(player);
@@ -445,7 +444,7 @@ public class ToTheMonastery extends Quest
 					
 					if (player.isInCombat())
 					{
-						L2Skill skill = SkillTable.getInstance().getInfo(6725, 1);
+						L2Skill skill = L2Skill.valueOf(6725, 1);
 						if (skill != null)
 						{
 							npc.setTarget(player);
@@ -519,7 +518,7 @@ public class ToTheMonastery extends Quest
 						{
 							if (player.getCurrentHp() < (player.getMaxHp() * 0.8D))
 							{
-								L2Skill skill = SkillTable.getInstance().getInfo(6724, 1);
+								L2Skill skill = L2Skill.valueOf(6724, 1);
 								if (skill != null)
 								{
 									npc.setTarget(player);
@@ -529,7 +528,7 @@ public class ToTheMonastery extends Quest
 							
 							if (player.getCurrentMp() < (player.getMaxMp() * 0.5D))
 							{
-								L2Skill skill = SkillTable.getInstance().getInfo(6728, 1);
+								L2Skill skill = L2Skill.valueOf(6728, 1);
 								if (skill != null)
 								{
 									npc.setTarget(player);
@@ -539,7 +538,7 @@ public class ToTheMonastery extends Quest
 							
 							if (player.getCurrentHp() < (player.getMaxHp() * 0.1D))
 							{
-								L2Skill skill = SkillTable.getInstance().getInfo(6730, 1);
+								L2Skill skill = L2Skill.valueOf(6730, 1);
 								if (skill != null)
 								{
 									npc.setTarget(player);
@@ -547,7 +546,7 @@ public class ToTheMonastery extends Quest
 								}
 							}
 							
-							L2Skill skill = SkillTable.getInstance().getInfo(6725, 1);
+							L2Skill skill = L2Skill.valueOf(6725, 1);
 							if (skill != null)
 							{
 								npc.setTarget(player);

@@ -73,7 +73,6 @@ public final class SystemMessage extends L2GameServerPacket
 			return (int[]) _value;
 		}
 	}
-	
 	// TODO: UnAfraid: Check/Implement id's: 14,15.
 	// 15 exists in goddess of destruction but also may works in h5 needs to be verified!
 	// private static final byte TYPE_CLASS_ID = 15;
@@ -99,7 +98,6 @@ public final class SystemMessage extends L2GameServerPacket
 		{
 			throw new NullPointerException();
 		}
-		
 		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1);
 		sm.addString(text);
 		return sm;
@@ -118,7 +116,6 @@ public final class SystemMessage extends L2GameServerPacket
 		{
 			smId.setStaticSystemMessage(sm);
 		}
-		
 		return sm;
 	}
 	
@@ -151,7 +148,6 @@ public final class SystemMessage extends L2GameServerPacket
 			_smId.setParamCount(_paramIndex + 1);
 			_log.log(Level.INFO, "Wrong parameter count '" + (_paramIndex + 1) + "' for SystemMessageId: " + _smId);
 		}
-		
 		_params[_paramIndex++] = param;
 	}
 	
@@ -289,7 +285,6 @@ public final class SystemMessage extends L2GameServerPacket
 		{
 			return addString(item.getName());
 		}
-		
 		append(new SMParam(TYPE_ITEM_NAME, id));
 		return this;
 	}
@@ -478,7 +473,6 @@ public final class SystemMessage extends L2GameServerPacket
 				}
 			}
 		}
-		
 		sm.addString(sml.getLocalisation(params));
 		return sm;
 	}

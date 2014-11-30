@@ -1,9 +1,9 @@
 # Electrifying Recharge! - v0.1 by DrLecter
 import sys
-from pk.elfo.gameserver.datatables import SkillTable
 from pk.elfo.gameserver.model.quest import State
 from pk.elfo.gameserver.model.quest import QuestState
 from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
+from pk.elfo.gameserver.model.skills import L2Skill
 
 qn = "367_ElectrifyingRecharge"
 
@@ -80,7 +80,7 @@ class Quest (JQuest) :
    elif chance < 7 :
       for item in range(5875,5879):
          if st.getQuestItemsCount(item) :
-            npc.doCast(SkillTable.getInstance().getInfo(4072,4))
+            npc.doCast(L2Skill.valueOf(4072,4))
             st.takeItems(item,-1)
             st.giveItems(item+1,1)
             if item < 5878 :

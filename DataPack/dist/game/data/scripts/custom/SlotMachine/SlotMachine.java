@@ -7,11 +7,11 @@ import java.util.List;
 import java.util.Properties;
 import javolution.text.TextBuilder;
 import pk.elfo.gameserver.datatables.ItemTable;
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.itemcontainer.PcInventory;
 import pk.elfo.gameserver.model.quest.Quest;
+import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
@@ -113,7 +113,7 @@ public class SlotMachine extends Quest
                                }
                        }
                        showresult(player, true);
-                       player.useMagic(SkillTable.getInstance().getInfo(5965, 1), true, true);
+                       player.useMagic(L2Skill.valueOf(5965, 1), true, true);
                }
                else
                {

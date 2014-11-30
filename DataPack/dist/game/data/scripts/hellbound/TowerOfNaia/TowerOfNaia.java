@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package hellbound.TowerOfNaia;
 
 import java.util.Arrays;
@@ -27,7 +9,6 @@ import java.util.Map;
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.datatables.DoorTable;
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.instancemanager.GlobalVariablesManager;
 import pk.elfo.gameserver.instancemanager.ZoneManager;
 import pk.elfo.gameserver.model.L2CharPosition;
@@ -48,9 +29,6 @@ import pk.elfo.gameserver.util.Util;
 import javolution.util.FastList;
 import javolution.util.FastMap;
 
-/**
- * @author GKR
- */
 public class TowerOfNaia extends Quest
 {
 	// Challenge states
@@ -985,7 +963,7 @@ public class TowerOfNaia extends Quest
 				cancelQuestTimers("spawn_lock");
 				startQuestTimer("spawn_lock", 300000, null, null);
 				npc.setTarget(player);
-				npc.doCast(SkillTable.getInstance().getInfo(5527, 1));
+				npc.doCast(L2Skill.valueOf(5527, 1));
 			}
 		}
 		else if (event.equalsIgnoreCase("teleport") && (_lock != null))
@@ -1011,7 +989,7 @@ public class TowerOfNaia extends Quest
 				else
 				{
 					npc.setTarget(player);
-					npc.doCast(SkillTable.getInstance().getInfo(5527, 1));
+					npc.doCast(L2Skill.valueOf(5527, 1));
 				}
 			}
 			else

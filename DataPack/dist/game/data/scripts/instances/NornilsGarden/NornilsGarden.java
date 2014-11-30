@@ -2,7 +2,6 @@ package instances.NornilsGarden;
 
 import quests.Q00179_IntoTheLargeCavern.Q00179_IntoTheLargeCavern;
 
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.instancemanager.InstanceManager;
 import pk.elfo.gameserver.model.L2Party;
 import pk.elfo.gameserver.model.Location;
@@ -74,10 +73,10 @@ public class NornilsGarden extends Quest
 		}
 	};
 	
-	private static final L2Skill skill1 = SkillTable.getInstance().getInfo(4322, 1);
-	private static final L2Skill skill2 = SkillTable.getInstance().getInfo(4327, 1);
-	private static final L2Skill skill3 = SkillTable.getInstance().getInfo(4329, 1);
-	private static final L2Skill skill4 = SkillTable.getInstance().getInfo(4324, 1);
+	private static final L2Skill skill1 = L2Skill.valueOf(4322, 1);
+	private static final L2Skill skill2 = L2Skill.valueOf(4327, 1);
+	private static final L2Skill skill3 = L2Skill.valueOf(4329, 1);
+	private static final L2Skill skill4 = L2Skill.valueOf(4324, 1);
 	
 	private static final int _herb_jar = 18478;
 	

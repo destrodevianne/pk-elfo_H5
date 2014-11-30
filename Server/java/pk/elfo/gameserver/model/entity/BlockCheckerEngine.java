@@ -8,7 +8,6 @@ import java.util.logging.Logger;
 import pk.elfo.Config;
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.datatables.NpcTable;
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.datatables.SpawnTable;
 import pk.elfo.gameserver.instancemanager.HandysBlockCheckerManager;
 import pk.elfo.gameserver.instancemanager.HandysBlockCheckerManager.ArenaParticipantsHolder;
@@ -311,9 +310,9 @@ public final class BlockCheckerEngine
 		public StartEvent()
 		{
 			// Initialize all used skills
-			_freeze = SkillTable.getInstance().getInfo(6034, 1);
-			_transformationRed = SkillTable.getInstance().getInfo(6035, 1);
-			_transformationBlue = SkillTable.getInstance().getInfo(6036, 1);
+			_freeze = L2Skill.valueOf(6034, 1);
+			_transformationRed = L2Skill.valueOf(6035, 1);
+			_transformationBlue = L2Skill.valueOf(6036, 1);
 		}
 		
 		/**

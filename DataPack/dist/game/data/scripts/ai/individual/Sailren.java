@@ -2,13 +2,13 @@ package ai.individual;
 
 import pk.elfo.Config;
 import pk.elfo.gameserver.ai.CtrlIntention;
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.instancemanager.GrandBossManager;
 import pk.elfo.gameserver.model.L2CharPosition;
 import pk.elfo.gameserver.model.StatsSet;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2GrandBossInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.network.serverpackets.PlaySound;
 import pk.elfo.gameserver.network.serverpackets.SocialAction;
 import pk.elfo.gameserver.network.serverpackets.SpecialCamera;
@@ -107,7 +107,7 @@ public class Sailren extends AbstractNpcAI
 		{
 			npc.setTarget(npc);
 			npc.setIsParalyzed(false);
-			npc.doCast(SkillTable.getInstance().getInfo(5118,1));
+			npc.doCast(L2Skill.valueOf(5118,1));
 			npc.setIsParalyzed(true);
 			this.startQuestTimer("camera_2", 4000, npc, null);
 			npc.broadcastPacket(new SpecialCamera(npc.getObjectId(),300,90,24,4000,11000,0,0,1,0));
@@ -116,7 +116,7 @@ public class Sailren extends AbstractNpcAI
 		{
 			npc.setTarget(npc);
 			npc.setIsParalyzed(false);
-			npc.doCast(SkillTable.getInstance().getInfo(5118,1));
+			npc.doCast(L2Skill.valueOf(5118,1));
 			npc.setIsParalyzed(true);
 			this.startQuestTimer("camera_3", 4000, npc, null);
 			npc.broadcastPacket(new SpecialCamera(npc.getObjectId(),300,160,16,4000,11000,0,0,1,0));
@@ -125,7 +125,7 @@ public class Sailren extends AbstractNpcAI
 		{
 			npc.setTarget(npc);
 			npc.setIsParalyzed(false);
-			npc.doCast(SkillTable.getInstance().getInfo(5118,1));
+			npc.doCast(L2Skill.valueOf(5118,1));
 			npc.setIsParalyzed(true);
 			this.startQuestTimer("camera_4", 4000, npc, null);
 			npc.broadcastPacket(new SpecialCamera(npc.getObjectId(),300,250,8,4000,11000,0,0,1,0));
@@ -134,7 +134,7 @@ public class Sailren extends AbstractNpcAI
 		{
 			npc.setTarget(npc);
 			npc.setIsParalyzed(false);
-			npc.doCast(SkillTable.getInstance().getInfo(5118,1));
+			npc.doCast(L2Skill.valueOf(5118,1));
 			npc.setIsParalyzed(true);
 			this.startQuestTimer("camera_5", 4000, npc, null);
 			npc.broadcastPacket(new SpecialCamera(npc.getObjectId(),300,340,0,4000,11000,0,0,1,0));

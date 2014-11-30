@@ -1,6 +1,5 @@
 package ai.individual.kamaloka;
 
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
@@ -24,7 +23,7 @@ public class PowderKeg extends AbstractNpcAI
 
 		if (Util.contains(NPC_IDS, npcId))
 		{
-			L2Skill _boom = SkillTable.getInstance().getInfo(5714, 1);
+			L2Skill _boom = L2Skill.valueOf(5714, 1);
 			npc.disableCoreAI(true);
 			npc.doCast(_boom);
 			npc.broadcastStatusUpdate();

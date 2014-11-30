@@ -6,7 +6,6 @@ import javolution.util.FastList;
 
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.ai.CtrlIntention;
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.instancemanager.InstanceManager;
 import pk.elfo.gameserver.model.actor.L2Attackable;
 import pk.elfo.gameserver.model.actor.L2Character;
@@ -154,8 +153,8 @@ public class PailakaDevilsLegacy extends Quest
 	};
 	// @formatter:on
 	
-	private static L2Skill boom_skill = SkillTable.getInstance().getInfo(5714, 1);
-	private static L2Skill energy_skill = SkillTable.getInstance().getInfo(5712, 1);
+	private static L2Skill boom_skill = L2Skill.valueOf(5714, 1);
+	private static L2Skill energy_skill = L2Skill.valueOf(5712, 1);
 	
 	private void attackPlayer(L2Attackable npc, L2Playable attacker)
 	{

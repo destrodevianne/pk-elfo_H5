@@ -4,7 +4,6 @@ import pk.elfo.Config;
 import pk.elfo.gameserver.GameTimeController;
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.ai.CtrlIntention;
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.handler.IUserCommandHandler;
 import pk.elfo.gameserver.instancemanager.MapRegionManager;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
@@ -57,8 +56,8 @@ public class Unstuck implements IUserCommandHandler
 		}
 		activeChar.forceIsCasting(GameTimeController.getGameTicks() + (unstuckTimer / GameTimeController.MILLIS_IN_TICK));
 		
-		L2Skill escape = SkillTable.getInstance().getInfo(2099, 1); // 5 minutes escape
-		L2Skill GM_escape = SkillTable.getInstance().getInfo(2100, 1); // 1 second escape
+		L2Skill escape = L2Skill.valueOf(2099, 1); // 5 minutes escape
+		L2Skill GM_escape = L2Skill.valueOf(2100, 1); // 1 second escape
 		if (activeChar.getAccessLevel().isGm())
 		{
 			if (GM_escape != null)

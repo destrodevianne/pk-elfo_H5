@@ -1,26 +1,8 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package transformations;
-
-import pk.elfo.gameserver.datatables.SkillTable;
+ 
 import pk.elfo.gameserver.instancemanager.TransformationManager;
 import pk.elfo.gameserver.model.L2Transformation;
+import pk.elfo.gameserver.model.skills.L2Skill;
 
 public class Teleporter extends L2Transformation
 {
@@ -51,7 +33,7 @@ public class Teleporter extends L2Transformation
 		updateSkills();
 		
 		// Transform Dispel
-		getPlayer().addSkill(SkillTable.getInstance().getInfo(619, 1), false);
+		getPlayer().addSkill(L2Skill.valueOf(619, 1), false);
 		
 		getPlayer().setTransformAllowedSkills(SKILLS);
 	}
@@ -67,22 +49,22 @@ public class Teleporter extends L2Transformation
 		final int level = getPlayer().getLevel();
 		
 		// Gatekeeper Aura Flare
-		getPlayer().removeSkill(SkillTable.getInstance().getInfo(5656, level), false);
+		getPlayer().removeSkill(L2Skill.valueOf(5656, level), false);
 		// Gatekeeper Prominence
-		getPlayer().removeSkill(SkillTable.getInstance().getInfo(5657, level), false);
+		getPlayer().removeSkill(L2Skill.valueOf(5657, level), false);
 		// Gatekeeper Flame Strike
-		getPlayer().removeSkill(SkillTable.getInstance().getInfo(5658, level), false);
+		getPlayer().removeSkill(L2Skill.valueOf(5658, level), false);
 		// Gatekeeper Berserker Spirit
 		if (level >= 35 & level < 52)
 		{
-			getPlayer().removeSkill(SkillTable.getInstance().getInfo(5659, 1), false);
+			getPlayer().removeSkill(L2Skill.valueOf(5659, 1), false);
 		}
 		else if (level >= 52)
 		{
-			getPlayer().removeSkill(SkillTable.getInstance().getInfo(5659, 2), false);
+			getPlayer().removeSkill(L2Skill.valueOf(5659, 2), false);
 		}
 		// Transform Dispel
-		getPlayer().removeSkill(SkillTable.getInstance().getInfo(619, 1), false);
+		getPlayer().removeSkill(L2Skill.valueOf(619, 1), false);
 		
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
@@ -98,19 +80,19 @@ public class Teleporter extends L2Transformation
 		final int level = getPlayer().getLevel();
 		
 		// Gatekeeper Aura Flare
-		getPlayer().addSkill(SkillTable.getInstance().getInfo(5656, level), false);
+		getPlayer().addSkill(L2Skill.valueOf(5656, level), false);
 		// Gatekeeper Prominence
-		getPlayer().addSkill(SkillTable.getInstance().getInfo(5657, level), false);
+		getPlayer().addSkill(L2Skill.valueOf(5657, level), false);
 		// Gatekeeper Flame Strike
-		getPlayer().addSkill(SkillTable.getInstance().getInfo(5658, level), false);
+		getPlayer().addSkill(L2Skill.valueOf(5658, level), false);
 		// Gatekeeper Berserker Spirit
 		if (level >= 35 & level < 52)
 		{
-			getPlayer().addSkill(SkillTable.getInstance().getInfo(5659, 1), false);
+			getPlayer().addSkill(L2Skill.valueOf(5659, 1), false);
 		}
 		else if (level >= 52)
 		{
-			getPlayer().addSkill(SkillTable.getInstance().getInfo(5659, 2), false);
+			getPlayer().addSkill(L2Skill.valueOf(5659, 2), false);
 		}
 	}
 	

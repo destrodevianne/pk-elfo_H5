@@ -1,6 +1,5 @@
 package ai.individual;
 
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
@@ -26,7 +25,7 @@ public class Gargos extends AbstractNpcAI
 		{
 			_isStarted = false;
 			player.sendMessage("Oooo... Ooo...");
-			npc.doCast(SkillTable.getInstance().getInfo(5705, 1));
+			npc.doCast(L2Skill.valueOf(5705, 1));
 		}
 		return "";
 	}

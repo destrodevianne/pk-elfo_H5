@@ -1,26 +1,8 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package transformations;
-
-import pk.elfo.gameserver.datatables.SkillTable;
+ 
 import pk.elfo.gameserver.instancemanager.TransformationManager;
 import pk.elfo.gameserver.model.L2Transformation;
+import pk.elfo.gameserver.model.skills.L2Skill;
 
 public class VanguardShilienKnight extends L2Transformation
 {
@@ -56,17 +38,17 @@ public class VanguardShilienKnight extends L2Transformation
 		}
 		
 		// Dual Weapon Mastery
-		getPlayer().removeSkill(SkillTable.getInstance().getInfo(144, lvl), false);
+		getPlayer().removeSkill(L2Skill.valueOf(144, lvl), false);
 		// Blade Hurricane
-		getPlayer().removeSkill(SkillTable.getInstance().getInfo(815, lvl), false);
+		getPlayer().removeSkill(L2Skill.valueOf(815, lvl), false);
 		// Double Strike
-		getPlayer().removeSkill(SkillTable.getInstance().getInfo(817, lvl), false);
+		getPlayer().removeSkill(L2Skill.valueOf(817, lvl), false);
 		// Boost Morale
-		getPlayer().removeSkill(SkillTable.getInstance().getInfo(956, lvl), false, false);
+		getPlayer().removeSkill(L2Skill.valueOf(956, lvl), false, false);
 		// Triple Blade Slash
-		getPlayer().removeSkill(SkillTable.getInstance().getInfo(958, lvl), false);
+		getPlayer().removeSkill(L2Skill.valueOf(958, lvl), false);
 		// Switch Stance
-		getPlayer().removeSkill(SkillTable.getInstance().getInfo(838, 1), false);
+		getPlayer().removeSkill(L2Skill.valueOf(838, 1), false);
 		
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
@@ -80,17 +62,17 @@ public class VanguardShilienKnight extends L2Transformation
 		}
 		
 		// Dual Weapon Mastery
-		getPlayer().addSkill(SkillTable.getInstance().getInfo(144, lvl), false);
+		getPlayer().addSkill(L2Skill.valueOf(144, lvl), false);
 		// Blade Hurricane
-		getPlayer().addSkill(SkillTable.getInstance().getInfo(815, lvl), false);
+		getPlayer().addSkill(L2Skill.valueOf(815, lvl), false);
 		// Double Strike
-		getPlayer().addSkill(SkillTable.getInstance().getInfo(817, lvl), false);
+		getPlayer().addSkill(L2Skill.valueOf(817, lvl), false);
 		// Boost Morale
-		getPlayer().addSkill(SkillTable.getInstance().getInfo(956, lvl), false);
+		getPlayer().addSkill(L2Skill.valueOf(956, lvl), false);
 		// Triple Blade Slash
-		getPlayer().addSkill(SkillTable.getInstance().getInfo(958, lvl), false);
+		getPlayer().addSkill(L2Skill.valueOf(958, lvl), false);
 		// Switch Stance
-		getPlayer().addSkill(SkillTable.getInstance().getInfo(838, 1), false);
+		getPlayer().addSkill(L2Skill.valueOf(838, 1), false);
 		// Set allowed skills
 		getPlayer().setTransformAllowedSkills(new int[]
 		{

@@ -10,7 +10,6 @@ import pk.elfo.gameserver.GeoData;
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.datatables.NpcTable;
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.datatables.SpawnTable;
 import pk.elfo.gameserver.instancemanager.GrandBossManager;
 import pk.elfo.gameserver.model.L2CharPosition;
@@ -642,10 +641,10 @@ public class Antharas extends AbstractNpcAI
 				case 29073:
 				case 29074:
 				case 29075:
-					skill = SkillTable.getInstance().getInfo(5097, 1);
+					skill = L2Skill.valueOf(5097, 1);
 					break;
 				case 29076:
-					skill = SkillTable.getInstance().getInfo(5094, 1);
+					skill = L2Skill.valueOf(5094, 1);
 					break;
 			}
 			
@@ -881,10 +880,10 @@ public class Antharas extends AbstractNpcAI
 				case 29073:
 				case 29074:
 				case 29075:
-					skill = SkillTable.getInstance().getInfo(5097, 1);
+					skill = L2Skill.valueOf(5097, 1);
 					break;
 				case 29076:
-					skill = SkillTable.getInstance().getInfo(5094, 1);
+					skill = L2Skill.valueOf(5094, 1);
 					break;
 			}
 			

@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package hellbound.TullyWorkshop;
 
 import java.util.Arrays;
@@ -28,7 +10,6 @@ import java.util.concurrent.ScheduledFuture;
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.datatables.DoorTable;
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.instancemanager.RaidBossSpawnManager;
 import pk.elfo.gameserver.instancemanager.ZoneManager;
 import pk.elfo.gameserver.instancemanager.RaidBossSpawnManager.StatusEnum;
@@ -52,9 +33,6 @@ import pk.elfo.gameserver.util.Util;
 import javolution.util.FastList;
 import javolution.util.FastMap;
 
-/**
- * @author GKR
- */
 public class TullyWorkshop extends Quest
 {
 	// NPC's
@@ -1353,7 +1331,7 @@ public class TullyWorkshop extends Quest
 					{
 						npc.setTarget(player);
 					}
-					npc.doCast(SkillTable.getInstance().getInfo(5526, 1));
+					npc.doCast(L2Skill.valueOf(5526, 1));
 				}
 				else
 				{
@@ -1368,7 +1346,7 @@ public class TullyWorkshop extends Quest
 					for (L2PcInstance partyMember : party.getMembers())
 					{
 						npc.setTarget(partyMember);
-						npc.doCast(SkillTable.getInstance().getInfo(5526, 1));
+						npc.doCast(L2Skill.valueOf(5526, 1));
 					}
 					startQuestTimer("despawn_agent_7", 60000, npc, null);
 				}
@@ -1525,7 +1503,7 @@ public class TullyWorkshop extends Quest
 				actor.clearAggroList();
 				actor.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 				actor.setTarget(victim);
-				actor.doCast(SkillTable.getInstance().getInfo(4065, 11));
+				actor.doCast(L2Skill.valueOf(4065, 11));
 				victim.setCurrentHp(victim.getCurrentHp() + (victim.getMaxHp() * 0.03)); // FIXME: not retail, it should be done after spell is finished, but it cannot be tracked now
 			}
 		}

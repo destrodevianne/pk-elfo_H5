@@ -1,6 +1,5 @@
 package ai.individual.kamaloka;
 
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
@@ -27,7 +26,7 @@ public class WeirdBunei extends AbstractNpcAI
 			{
 				_isAlreadyStarted = false;
 				npc.setTarget(player);
-				npc.doCast(SkillTable.getInstance().getInfo(5625, 1));
+				npc.doCast(L2Skill.valueOf(5625, 1));
 			}
 			else
 				return "";

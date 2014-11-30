@@ -1,26 +1,8 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package transformations;
-
-import pk.elfo.gameserver.datatables.SkillTable;
+ 
 import pk.elfo.gameserver.instancemanager.TransformationManager;
 import pk.elfo.gameserver.model.L2Transformation;
+import pk.elfo.gameserver.model.skills.L2Skill;
 
 public class DivineHealer extends L2Transformation
 {
@@ -52,7 +34,6 @@ public class DivineHealer extends L2Transformation
 		{
 			return;
 		}
-		
 		transformedSkills();
 	}
 	
@@ -65,44 +46,42 @@ public class DivineHealer extends L2Transformation
 	public void removeSkills()
 	{
 		// Divine Healer Major Heal
-		getPlayer().removeSkill(SkillTable.getInstance().getInfo(698, 1), false);
+		getPlayer().removeSkill(L2Skill.valueOf(698, 1), false);
 		// Divine Healer Battle Heal
-		getPlayer().removeSkill(SkillTable.getInstance().getInfo(699, 1), false);
+		getPlayer().removeSkill(L2Skill.valueOf(699, 1), false);
 		// Divine Healer Group Heal
-		getPlayer().removeSkill(SkillTable.getInstance().getInfo(700, 1), false);
+		getPlayer().removeSkill(L2Skill.valueOf(700, 1), false);
 		// Divine Healer Resurrection
-		getPlayer().removeSkill(SkillTable.getInstance().getInfo(701, 1), false);
+		getPlayer().removeSkill(L2Skill.valueOf(701, 1), false);
 		// Divine Healer Clans
-		getPlayer().removeSkill(SkillTable.getInstance().getInfo(702, 1), false);
+		getPlayer().removeSkill(L2Skill.valueOf(702, 1), false);
 		// Sacrifice Healer
-		getPlayer().removeSkill(SkillTable.getInstance().getInfo(703, 1), false);
+		getPlayer().removeSkill(L2Skill.valueOf(703, 1), false);
 		// Decrease Bow/Crossbow Attack Speed
-		getPlayer().removeSkill(SkillTable.getInstance().getInfo(5491, 1), false);
+		getPlayer().removeSkill(L2Skill.valueOf(5491, 1), false);
 		// Transform Dispel
-		getPlayer().removeSkill(SkillTable.getInstance().getInfo(619, 1), false);
-		
+		getPlayer().removeSkill(L2Skill.valueOf(619, 1), false);
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
 	
 	public void transformedSkills()
 	{
 		// Divine Healer Major Heal
-		getPlayer().addSkill(SkillTable.getInstance().getInfo(698, 1), false);
+		getPlayer().addSkill(L2Skill.valueOf(698, 1), false);
 		// Divine Healer Battle Heal
-		getPlayer().addSkill(SkillTable.getInstance().getInfo(699, 1), false);
+		getPlayer().addSkill(L2Skill.valueOf(699, 1), false);
 		// Divine Healer Group Heal
-		getPlayer().addSkill(SkillTable.getInstance().getInfo(700, 1), false);
+		getPlayer().addSkill(L2Skill.valueOf(700, 1), false);
 		// Divine Healer Resurrection
-		getPlayer().addSkill(SkillTable.getInstance().getInfo(701, 1), false);
+		getPlayer().addSkill(L2Skill.valueOf(701, 1), false);
 		// Divine Healer Cleanse
-		getPlayer().addSkill(SkillTable.getInstance().getInfo(702, 1), false);
+		getPlayer().addSkill(L2Skill.valueOf(702, 1), false);
 		// Sacrifice Healer
-		getPlayer().addSkill(SkillTable.getInstance().getInfo(703, 1), false);
+		getPlayer().addSkill(L2Skill.valueOf(703, 1), false);
 		// Decrease Bow/Crossbow Attack Speed
-		getPlayer().addSkill(SkillTable.getInstance().getInfo(5491, 1), false);
+		getPlayer().addSkill(L2Skill.valueOf(5491, 1), false);
 		// Transform Dispel
-		getPlayer().addSkill(SkillTable.getInstance().getInfo(619, 1), false);
-		
+		getPlayer().addSkill(L2Skill.valueOf(619, 1), false);
 		getPlayer().setTransformAllowedSkills(SKILLS);
 	}
 	

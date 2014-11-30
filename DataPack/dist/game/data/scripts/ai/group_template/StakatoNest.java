@@ -3,7 +3,6 @@ package ai.group_template;
 import java.util.List;
 
 import pk.elfo.gameserver.ai.CtrlIntention;
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.actor.L2Attackable;
 import pk.elfo.gameserver.model.actor.L2Npc;
@@ -112,7 +111,7 @@ public class StakatoNest extends AbstractNpcAI
 					mob.abortAttack();
 					mob.abortCast();
 					mob.setHeading(Util.calculateHeadingFrom(mob, _follower));
-					mob.doCast(SkillTable.getInstance().getInfo(4484, 1));
+					mob.doCast(L2Skill.valueOf(4484, 1));
 					mob.setCurrentHp(mob.getCurrentHp() + _hp);
 					_follower.doDie(_follower);
 					_follower.deleteMe();

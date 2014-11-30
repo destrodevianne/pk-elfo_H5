@@ -8,7 +8,6 @@ import pk.elfo.Config;
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.datatables.NpcTable;
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.datatables.SpawnTable;
 import pk.elfo.gameserver.instancemanager.InstanceManager;
 import pk.elfo.gameserver.model.L2CharPosition;
@@ -819,8 +818,8 @@ public class IceQueenCastle2 extends Quest
 						world._jinia.setIsImmobilized(true);
 						world._kegor.setIsImmobilized(true);
 					}
-					L2Skill skill1 = SkillTable.getInstance().getInfo(6288, 1);
-					L2Skill skill2 = SkillTable.getInstance().getInfo(6289, 1);
+					L2Skill skill1 = L2Skill.valueOf(6288, 1);
+					L2Skill skill2 = L2Skill.valueOf(6289, 1);
 					for (int objId : world.getAllowed())
 					{
 						L2PcInstance player = L2World.getInstance().getPlayer(objId);
@@ -1064,8 +1063,8 @@ public class IceQueenCastle2 extends Quest
 						world._jinia.setIsImmobilized(true);
 						world._kegor.setIsImmobilized(true);
 					}
-					L2Skill skill1 = SkillTable.getInstance().getInfo(6288, 1);
-					L2Skill skill2 = SkillTable.getInstance().getInfo(6289, 1);
+					L2Skill skill1 = L2Skill.valueOf(6288, 1);
+					L2Skill skill2 = L2Skill.valueOf(6289, 1);
 					for (int objId : world.getAllowed())
 					{
 						L2PcInstance player = L2World.getInstance().getPlayer(objId);

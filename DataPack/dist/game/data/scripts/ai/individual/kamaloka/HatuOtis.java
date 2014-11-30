@@ -1,6 +1,5 @@
 package ai.individual.kamaloka;
 
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
@@ -27,7 +26,7 @@ public class HatuOtis extends AbstractNpcAI
 			if (_isAlreadyUsedSkill == true)
 			{
 				npc.setTarget(npc);
-				npc.doCast(SkillTable.getInstance().getInfo(4737, 3));
+				npc.doCast(L2Skill.valueOf(4737, 3));
 				_isAlreadyUsedSkill = false;
 			}
 			else
@@ -53,7 +52,7 @@ public class HatuOtis extends AbstractNpcAI
 				{
 					player.sendMessage("I will be with you, and to take care of you !");
 					npc.setTarget(player);
-					npc.doCast(SkillTable.getInstance().getInfo(4175, 3));
+					npc.doCast(L2Skill.valueOf(4175, 3));
 					_isAlreadyUsedSkill1 = true;
 				}
 			}

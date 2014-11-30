@@ -1,8 +1,8 @@
 package ai.individual.kamaloka;
 
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.skills.L2Skill;
 import ai.npc.AbstractNpcAI;
 
 
@@ -22,7 +22,7 @@ public class FollowerOfAllosce extends AbstractNpcAI
 		if (event.equalsIgnoreCase("time_to_skill"))
 		{
 			npc.setTarget(player);
-			npc.doCast(SkillTable.getInstance().getInfo(5624, 1));
+			npc.doCast(L2Skill.valueOf(5624, 1));
 			startQuestTimer("time_to_skill", 30000, npc, player);
 		}
 		return "";
@@ -38,7 +38,7 @@ public class FollowerOfAllosce extends AbstractNpcAI
 			npc.setIsInvul(true);
 			startQuestTimer("time_to_skill", 30000, npc, player);
 			npc.setTarget(player);
-			npc.doCast(SkillTable.getInstance().getInfo(5624, 1));
+			npc.doCast(L2Skill.valueOf(5624, 1));
 		}
 		return "";
 	}

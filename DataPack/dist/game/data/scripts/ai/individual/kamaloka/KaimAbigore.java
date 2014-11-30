@@ -1,6 +1,5 @@
 package ai.individual.kamaloka;
 
-import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
@@ -29,7 +28,7 @@ public class KaimAbigore extends AbstractNpcAI
 		if (event.equalsIgnoreCase("time_to_skill"))
 		{
 			npc.setTarget(player);
-			npc.doCast(SkillTable.getInstance().getInfo(5260, 5));
+			npc.doCast(L2Skill.valueOf(5260, 5));
 			_isAlreadyStarted = false;
 		}
 		else if (event.equalsIgnoreCase("time_to_spawn"))
