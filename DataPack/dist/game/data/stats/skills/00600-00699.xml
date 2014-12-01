@@ -464,7 +464,7 @@
 		<set name="hitTime" val="100" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="32" />
-		<set name="mpConsume" val="20" />
+		<set name="mpConsume" val="30" />
 		<set name="mpInitialConsume" val="10" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
