@@ -68,30 +68,18 @@ public class East extends Quest
 	
 	//Managers spawn coordinates (npcId, x, y, z, heading)
 	private int[][] MANAGER_SPAWN_POINTS = 
-	{
-		{ 32664, -122368, -219072, -6720, 0 },
-		{ 32665, -122352, -218144, -6720, 0 },
-		{ 32666, -122368, -220320, -6720, 0 },
-		{ 32667, -121440, -218544, -6720, 0 },
-		{ 32668, -121424, -220224, -6720, 0 }
-	
+	{ 
+		{ 32664, -122368, -219072, -6720, 0 }, { 32665, -122352, -218144, -6720, 0 }, { 32666, -122368, -220320, -6720, 0 }, { 32667, -121440, -218544, -6720, 0 }, { 32668, -121424, -220224, -6720, 0 }
 	};
 
 	private int[][] BOX_SPAWN_POINTS = 
 	{
-		{ -121359, -219866, -6720, 0 },
-		{ -121663, -219885, -6720, 0 },
-		{ -121627, -220530, -6720, 0 },
-		{ -121368, -220411, -6720, 0 }
+		{ -121359, -219866, -6720, 0 }, { -121663, -219885, -6720, 0 }, { -121627, -220530, -6720, 0 }, { -121368, -220411, -6720, 0 }
 	};
 
 	private static final int[][] ROOM_ENTER_POINTS = 
 	{ 
-		{ -122368, -218972, -6720 }, 
-		{ -122352, -218044, -6720 }, 
-		{ -122368, -220220, -6720 }, 
-		{ -121440, -218444, -6720 },
-		{ -121424, -220124, -6720 } //Raid room
+		{ -122368, -218972, -6720 }, { -122352, -218044, -6720 }, { -122368, -220220, -6720 }, { -121440, -218444, -6720 }, { -121424, -220124, -6720 } //Raid room
 	};
 
 	private static final int[] AENKINEL_SPAWN = { -121359, -219866, -6728, 0 };
@@ -139,7 +127,6 @@ public class East extends Quest
 				return false;
 			}
 		}
-
 		return true;
 	}
 	
@@ -175,8 +162,9 @@ public class East extends Quest
 		
 		//Schedule next banish task only if remaining time is enough
 		if (inst.getInstanceEndTime() - System.currentTimeMillis() > 60000)
+		{
 			startQuestTimer("banish_strangers", 60000, world.managers[world.currentRoom - 1], null);
-
+		}
 		return;
 	}
 
@@ -185,7 +173,9 @@ public class East extends Quest
 		L2Party party = world.getPartyInside();
 
 		if (party == null)
+		{
 			return;
+		}
 
 		int newRoom = world.currentRoom;
 		
@@ -220,7 +210,6 @@ public class East extends Quest
 			startQuestTimer("banish_strangers", 60000, world.managers[newRoom - 1], null);
 		
 		world.currentRoom = newRoom;
-				
 		return;
 	}
 	
@@ -229,37 +218,42 @@ public class East extends Quest
 		L2Party party = world.getPartyInside();
 
 		if (party == null)
+		{
 			return;
+		}
 		
 		int newRoom = Rnd.get(ROOM_ENTER_POINTS.length - 1) + 1;
 
 		for (L2PcInstance partyMember : party.getMembers())
 		{
-				QuestState st = partyMember.getQuestState(qn);
-				if (st == null)
-					st = newQuestState(partyMember);
-
-				if (st.getQuestItemsCount(DELUSION_MARK) > 0)
-					st.takeItems(DELUSION_MARK, st.getQuestItemsCount(DELUSION_MARK));
-				
-				if (partyMember.getObjectId() == party.getLeaderObjectId())
-					st.giveItems(DELUSION_MARK, 1);
-				
-				//Save location for teleport back into main hall
-				st.set("return_point", Integer.toString(partyMember.getX()) + ";" + Integer.toString(partyMember.getY()) + ";" + Integer.toString(partyMember.getZ())); 
-
-				partyMember.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-				partyMember.setInstanceId(world.getInstanceId());
-				world.addAllowed(partyMember.getObjectId());
-				partyMember.teleToLocation(ROOM_ENTER_POINTS[newRoom-1][0] - 50 + Rnd.get(100), ROOM_ENTER_POINTS[newRoom-1][1] - 50 + Rnd.get(100), ROOM_ENTER_POINTS[newRoom-1][2]);
+			QuestState st = partyMember.getQuestState(qn);
+			if (st == null)
+			{
+				st = newQuestState(partyMember);
+			}
+			
+			if (st.getQuestItemsCount(DELUSION_MARK) > 0)
+			{
+				st.takeItems(DELUSION_MARK, st.getQuestItemsCount(DELUSION_MARK));
+			}
+			
+			if (partyMember.getObjectId() == party.getLeaderObjectId())
+			{
+				st.giveItems(DELUSION_MARK, 1);
+			}
+			
+			//Save location for teleport back into main hall
+			st.set("return_point", Integer.toString(partyMember.getX()) + ";" + Integer.toString(partyMember.getY()) + ";" + Integer.toString(partyMember.getZ())); 
+			partyMember.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+			partyMember.setInstanceId(world.getInstanceId());
+			world.addAllowed(partyMember.getObjectId());
+			partyMember.teleToLocation(ROOM_ENTER_POINTS[newRoom-1][0] - 50 + Rnd.get(100), ROOM_ENTER_POINTS[newRoom-1][1] - 50 + Rnd.get(100), ROOM_ENTER_POINTS[newRoom-1][2]);
 		}
+		startQuestTimer("prepare_change_room", ROOM_CHANGE_INTERVAL + Rnd.get(ROOM_CHANGE_RANDOM_TIME - 10) * 1000, world.managers[newRoom - 1], null); //schedule room change
+		startQuestTimer("banish_strangers", 60000, world.managers[newRoom - 1], null); //schedule checkup for player without party or another party
 
-    startQuestTimer("prepare_change_room", ROOM_CHANGE_INTERVAL + Rnd.get(ROOM_CHANGE_RANDOM_TIME - 10) * 1000, world.managers[newRoom - 1], null); //schedule room change
-    startQuestTimer("banish_strangers", 60000, world.managers[newRoom - 1], null); //schedule checkup for player without party or another party
-
-    world.currentRoom = newRoom;
-    
-    return;
+		world.currentRoom = newRoom;
+		return;
 	}
 
 	private void earthQuake(CDWorld world)
@@ -267,17 +261,19 @@ public class East extends Quest
 		L2Party party = world.getPartyInside();
 
 		if (party == null)
+		{
 			return;
+		}
  
 		for (L2PcInstance partyMember : party.getMembers())
 		{
 			if (world.getInstanceId() == partyMember.getInstanceId())
+			{
 				partyMember.sendPacket(new Earthquake(partyMember.getX(), partyMember.getY(), partyMember.getZ(), 20, 10));
+			}
 		}
-	
 		startQuestTimer("change_room", 5000, world.managers[world.currentRoom - 1], null);
-
-		return;
+	return;
 	}
 	
 	protected void spawnState(CDWorld world)
@@ -285,8 +281,9 @@ public class East extends Quest
 		addSpawn(AENKINEL, AENKINEL_SPAWN[0], AENKINEL_SPAWN[1], AENKINEL_SPAWN[2], AENKINEL_SPAWN[3], false, 0, false, world.getInstanceId());
 
 		for (int i=0; i < MANAGER_SPAWN_POINTS.length; i++)
+		{
 			world.managers[i] = addSpawn(MANAGER_SPAWN_POINTS[i][0], MANAGER_SPAWN_POINTS[i][1], MANAGER_SPAWN_POINTS[i][2], MANAGER_SPAWN_POINTS[i][3], MANAGER_SPAWN_POINTS[i][4], false, 0, false, world.getInstanceId());
-
+		}
 		return;
 	}
 	
@@ -314,7 +311,9 @@ public class East extends Quest
 		}
 		//New instance
 		if (!checkConditions(player))
+		{
 			return 0;
+		}
 		L2Party party = player.getParty();
 		instanceId = InstanceManager.getInstance().createDynamicInstance(template);
 		world = new CDWorld(party);
@@ -381,31 +380,45 @@ public class East extends Quest
 			CDWorld world = (CDWorld) tmpworld;
 
 			if (event.equals("prepare_change_room"))
+			{
 				earthQuake(world);
+			}
 			
 			else if (event.equals("change_room"))
+			{
 				changeRoom(world);
+			}
 
 			else if (event.equals("banish_strangers"))
+			{
 				banishStrangers(world);
+			}
 			
 			//Timers part ends here, further player cannot be null
 			if (player == null)
+			{
 				return null;
+			}
 
 			QuestState st = player.getQuestState(qn);
 
 			if (st == null)
+			{
 				st = newQuestState(player);
+			}
 
 			//Change room from dialog
 			else if (event.equals("next_room"))
 			{
 				if (player.getParty() == null)
+				{
 					htmltext = HtmCache.getInstance().getHtm(player.getHtmlPrefix(),"/data/scripts/instances/ChambersOfDelusion/no_party.htm");
+				}
 				
 				else if (player.getParty().getLeaderObjectId() != player.getObjectId())
+				{
 					htmltext = HtmCache.getInstance().getHtm(player.getHtmlPrefix(),"/data/scripts/instances/ChambersOfDelusion/no_leader.htm");
+				}
 				
 				else if (st.getQuestItemsCount(DELUSION_MARK) > 0)
 				{
@@ -424,15 +437,18 @@ public class East extends Quest
 			else if (event.equals("go_out"))
 			{
 				if (player.getParty() == null)
+				{
 					htmltext = HtmCache.getInstance().getHtm(player.getHtmlPrefix(),"/data/scripts/instances/ChambersOfDelusion/no_party.htm");
+				}
 				
 				else if (player.getParty().getLeaderObjectId() != player.getObjectId())
+				{
 					htmltext = HtmCache.getInstance().getHtm(player.getHtmlPrefix(),"/data/scripts/instances/ChambersOfDelusion/no_leader.htm");
+				}
 				
 				else
 				{
 					Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
-					
 					cancelQuestTimer("prepare_change_room", npc, null);
 					cancelQuestTimer("change_room", npc, null);
 					cancelQuestTimer("banish_strangers", npc, null);
@@ -442,18 +458,18 @@ public class East extends Quest
 						exitInstance(partyMember);
 						world.removeAllowed(partyMember.getObjectId());
 					}
-					
 					inst.setEmptyDestroyTime(0);
-			  }
+				}
 			}
 			
 			else if (event.equals("look_party"))
 			{
 				if (player.getParty() != null && player.getParty() == world.getPartyInside())
+				{
 					player.teleToLocation(ROOM_ENTER_POINTS[world.currentRoom - 1][0], ROOM_ENTER_POINTS[world.currentRoom - 1][1], ROOM_ENTER_POINTS[world.currentRoom - 1][2]);
+				}
 			}
 		}
-
 		return htmltext;
 	}
 
@@ -492,14 +508,14 @@ public class East extends Quest
 						item = new RewardItem(LEONARD, (int) (2 * Config.RATE_DROP_ITEMS));
 						box.dropItem(attacker, item);
 					}
-					
 					box.doCast(SUCCESS_SKILL.getSkill());
 				}
 				else
+				{
 					box.doCast(FAIL_SKILL.getSkill());
+				}
 			}
 		}
-
 		return super.onAttack(npc, attacker, damage, isPet, skill);
 	}
 
@@ -528,7 +544,6 @@ public class East extends Quest
 				}
 			}
 		}
-
 		return super.onKill(npc, player, isPet);
 	}
 
@@ -536,8 +551,9 @@ public class East extends Quest
 	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
 	{
 		if (npc.getNpcId() == BOX && skill.getId() == 5376 || skill.getId() == 5758 && !npc.isDead())
+		{
 			npc.doDie(player); 
-
+		}
 		return super.onSpellFinished(npc, player, skill);
 	}
 
@@ -548,13 +564,14 @@ public class East extends Quest
 		QuestState st = player.getQuestState(qn);
 
 		if (st == null)
+		{
 			st = newQuestState(player);
-
+		}
+		
 		if (npcId == ENTRANCE_GATEKEEPER)
 		{
 			enterInstance(player, "[001] Delusion Chamber, Eastern Seal.xml");
 		}
-
 		return "";
 	}
 	

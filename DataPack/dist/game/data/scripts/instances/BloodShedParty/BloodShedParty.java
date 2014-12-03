@@ -1,17 +1,3 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- * 
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- * 
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.BloodShedParty;
 
 import javolution.util.FastMap;
@@ -35,11 +21,8 @@ import pk.elfo.util.Rnd;
 
 public class BloodShedParty extends Quest
 {
-	
 	private static final String qn = "Bloodshedparty";
-	
 	private static final int INSTANCEID = 555555;
-	
 	// Items
 	private static final int E_APIGA = 14720;
 	private static final int ADENA = 57;
@@ -49,18 +32,15 @@ public class BloodShedParty extends Quest
 	private static final int SCROLLW = 6578;
 	private static final int SCROLLA = 6577;
 	private static final int GOLDDRAGON = 3481;
-	
 	// NPCs
 	private static final int ROSE = 2009001;
 	private static final int CHEST = 2010010;
 	private static final int MOBS = 2010001;
 	// FIRST CHAMBER MOBS
 	private static final int PROTECTOR = 2010005;
-	
 	private static final int BELETH = 2010007;
 	private static final int BAYLOR = 2010008;
 	private static final int TIAT = 2010009;
-	
 	// Doors
 	private static final int[] DOOR =
 	{
@@ -79,15 +59,8 @@ public class BloodShedParty extends Quest
 	
 	private class BSPWorld extends InstanceWorld
 	{
-		public long[] storeTime =
-		{
-			0,
-			0
-		};
-		
-		public BSPWorld()
-		{
-		}
+		public long[] storeTime = { 0, 0 };
+		public BSPWorld() { }
 	}
 	
 	private boolean checkConditions(L2PcInstance player)
@@ -279,7 +252,6 @@ public class BloodShedParty extends Quest
 			{
 				exitInstance(player, tele, 0);
 			}
-			
 			npc.decayMe();
 			Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
 			inst.setEmptyDestroyTime(0);
@@ -372,13 +344,11 @@ public class BloodShedParty extends Quest
 		addStartNpc(ROSE);
 		addTalkId(ROSE);
 		addTalkId(CHEST);
-		
 		addKillId(MOBS);
 		addKillId(PROTECTOR);
 		addKillId(BELETH);
 		addKillId(BAYLOR);
 		addKillId(TIAT);
-		
 		_mobs = new FastMap<>();
 		
 	}
@@ -387,5 +357,4 @@ public class BloodShedParty extends Quest
 	{
 		new BloodShedParty(-1, qn, "Bloodshedparty");
 	}
-	
 }

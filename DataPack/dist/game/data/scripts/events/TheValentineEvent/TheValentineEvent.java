@@ -8,10 +8,8 @@ import pk.elfo.gameserver.model.quest.State;
 
 public class TheValentineEvent extends LongTimeEvent
 {
-	// NPC
-	private static final int NPC = 4301;
-	// Item
-	private static final int RECIPE = 20191;
+	private static final int NPC = 4301; // NPC
+	private static final int RECIPE = 20191; // Item
 	
 	public TheValentineEvent(String name, String descr)
 	{

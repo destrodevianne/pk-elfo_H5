@@ -1188,6 +1188,8 @@ public final class Config
 	public static int MIN_BLOCK_CHECKER_TEAM_MEMBERS;
 	public static boolean HBCE_FAIR_PLAY;
 	public static int PLAYER_MOVEMENT_BLOCK_TIME;
+	public static int MIN_PLAYERS_SOFD;
+	public static int MAX_PLAYERS_SOFD;
 	public static boolean CLEAR_CREST_CACHE;
 	public static int NORMAL_ENCHANT_COST_MULTIPLIER;
 	public static int SAFE_ENCHANT_COST_MULTIPLIER;
@@ -3728,7 +3730,7 @@ public final class Config
 			CP_REGEN_MULTIPLIER = Double.parseDouble(Character.getProperty("CpRegenMultiplier", "100")) / 100;
 			ALT_GAME_TIREDNESS = Boolean.parseBoolean(Character.getProperty("AltGameTiredness", "false"));
 			ENABLE_MODIFY_SKILL_DURATION = Boolean.parseBoolean(Character.getProperty("EnableModifySkillDuration", "false"));
-			
+						
 			// Create Map only if enabled
 			if (ENABLE_MODIFY_SKILL_DURATION)
 			{
@@ -3984,7 +3986,9 @@ public final class Config
 			FORBIDDEN_NAMES = Character.getProperty("ForbiddenNames", "").split(",");
 			SILENCE_MODE_EXCLUDE = Boolean.parseBoolean(Character.getProperty("SilenceModeExclude", "False"));
 			PLAYER_MOVEMENT_BLOCK_TIME = Integer.parseInt(Character.getProperty("NpcTalkBlockingTime", "0")) * 1000;
-
+			MIN_PLAYERS_SOFD = Integer.parseInt(Character.getProperty("MinPlayerDestruction", "36"));
+			MAX_PLAYERS_SOFD = Integer.parseInt(Character.getProperty("MaxPlayerDestruction", "45"));
+			
 			// Restrictions Custom Config
 			L2Properties RestrictionSettings = new L2Properties();
 			final File Restrictions = new File(RESTRICTIONS_CONFIG_FILE);

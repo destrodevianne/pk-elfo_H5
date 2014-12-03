@@ -82,8 +82,8 @@ public class Stage1 extends Quest
 	
 	private static final String qn = "SoDStage1";
 	private static final int INSTANCEID = 110; // this is the client number
-	private static final int MIN_PLAYERS = 36;
-	private static final int MAX_PLAYERS = 45;
+	private static final int MIN_PLAYERS = Config.MIN_PLAYERS_SOFD;
+	private static final int MAX_PLAYERS = Config.MAX_PLAYERS_SOFD;
 	private static final int MAX_DEVICESPAWNEDMOBCOUNT = 100; // prevent too much mob spawn
 	
 	private final Map<Integer, L2Territory> _spawnZoneList = new HashMap<>();
