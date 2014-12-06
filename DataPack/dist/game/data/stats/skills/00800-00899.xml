@@ -332,6 +332,8 @@
 		<set name="magicLvl" val="72" />
 		<set name="mpConsume" val="50" />
 		<set name="operateType" val="A1" />
+		<set name="flyType" val="DUMMY" />
+		<set name="flyRadius" val="600" />
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="INSTANT_JUMP" />
 		<set name="castRange" val="600" />
