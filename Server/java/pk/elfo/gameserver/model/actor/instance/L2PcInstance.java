@@ -10188,7 +10188,7 @@ public final class L2PcInstance extends L2Playable
 			}
 		}
 		
-		if ((skill.getSkillType() == L2SkillType.INSTANT_JUMP) || (skill.getId() == 628) || (skill.getId() == 793) || (skill.getId() == 995))
+		if ((skill.getSkillType() == L2SkillType.INSTANT_JUMP) || (skill.getId() == 628) || (skill.getId() == 793) || (skill.getId() == 995) || (skill.getId() == 821))
 		{
 			// You cannot jump while rooted right ;)
 			if (isMovementDisabled())
