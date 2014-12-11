@@ -56,8 +56,6 @@
         <sync todir="${build.dist}" includeemptydirs="true">
             <fileset dir="dist" />
         </sync>
-        <concat destfile="${build.dist.doc}/L2J_Server_CHANGELOG.txt">${l2j.changelog}</concat>
-        <concat destfile="${build.dist.game}/config/l2j-version.properties">version=${l2j.version}${line.separator}builddate=${build.tstamp}</concat>
     </target>
 
     <target name="compile" depends="dist" description="Compile the source.">
@@ -95,7 +93,7 @@
                 <attribute name="Class-Path" value="${manifest.libs}" />
                 <attribute name="Implementation-URL" value="http://www.pk-elfo.com/" />
                 <attribute name="Implementation-Version" value="${l2j.version}" />
-                <attribute name="Main-Class" value="com.l2jserver.tools.configurator.ConfigUserInterface" />
+                <attribute name="Main-Class" value="pk.elfo.tools.configurator.ConfigUserInterface" />
             </manifest>
         </jar>
         <jar destfile="${build.dist.game}/GameServer_PkElfo.jar" level="9">
@@ -130,7 +128,7 @@
                 <attribute name="Class-Path" value="${manifest.libs}" />
                 <attribute name="Implementation-URL" value="http://www.pk-elfo.com/" />
                 <attribute name="Implementation-Version" value="${l2j.version}" />
-                <attribute name="Main-Class" value="com.l2jserver.tools.configurator.ConfigUserInterface" />
+                <attribute name="Main-Class" value="pk.elfo.tools.configurator.ConfigUserInterface" />
             </manifest>
         </jar>
         <jar destfile="${build.dist.tools}/dbinst_cs.jar" level="9">
@@ -148,7 +146,7 @@
                 <attribute name="Class-Path" value="${manifest.libs}" />
                 <attribute name="Implementation-URL" value="http://www.pk-elfo.com/" />
                 <attribute name="Implementation-Version" value="${l2j.version}" />
-                <attribute name="Main-Class" value="com.l2jserver.tools.dbinstaller.LauncherCS" />
+                <attribute name="Main-Class" value="pk.elfo.tools.dbinstaller.LauncherCS" />
             </manifest>
         </jar>
         <jar destfile="${build.dist.tools}/dbinst_gs.jar" level="9">
@@ -166,7 +164,7 @@
                 <attribute name="Class-Path" value="${manifest.libs}" />
                 <attribute name="Implementation-URL" value="http://www.pk-elfo.com/" />
                 <attribute name="Implementation-Version" value="${l2j.version}" />
-                <attribute name="Main-Class" value="com.l2jserver.tools.dbinstaller.LauncherGS" />
+                <attribute name="Main-Class" value="pk.elfo.tools.dbinstaller.LauncherGS" />
             </manifest>
         </jar>
         <jar destfile="${build.dist.tools}/dbinst_ls.jar" level="9">
@@ -184,7 +182,7 @@
                 <attribute name="Class-Path" value="${manifest.libs}" />
                 <attribute name="Implementation-URL" value="http://www.pk-elfo.com/" />
                 <attribute name="Implementation-Version" value="${l2j.version}" />
-                <attribute name="Main-Class" value="com.l2jserver.tools.dbinstaller.LauncherLS" />
+                <attribute name="Main-Class" value="pk.elfo.tools.dbinstaller.LauncherLS" />
             </manifest>
         </jar>
     </target>

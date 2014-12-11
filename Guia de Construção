@@ -48,9 +48,7 @@ Adicionado GmShop
 Adicionado Fame Manager
 Adicionado Walkers em DV
 Adicionado VarkaKetra AI
-Adicionado Seyo Instance
 Adicionado Stats EXP_LOST
-Adicionado Tunatun Instance
 Adicionado script em kamaloka
 Implement: Condition summonRace
 Implement: Condition to Take Castle
@@ -334,7 +332,6 @@ Mod Painel de usuario com comandos
 ***Mod Anuncio de logamento de Hero
 ***Mod Configurable Olympiad Period
 ***Mod Chat exclusivo para char AIOx
-***Mod Custom spawn para novos chars
 Mod Mensagem diferente para cada raca
 ***Mod Anuncio de deslogamento de VIP
 Mod aviso quando um Raid Boss renascer
@@ -374,7 +371,6 @@ Mod quando morrer o ceu fica vermelho e da um som de Game Over
 ***Mod bloqueia o uso de GateKeepers para Chars em Modo Flag ( PvP )
 Mod ao entrar em um clan o titulo muda altomaticamente para o do clan
 ***Mod Protecao para jogadores em modo de loja offline (ficam invulneraveis)
-***Mod adicionado mod que muda o titulo dos aio para AIOx assim que viram aio
 ***Mod Numero Maximo de membros na party (nao ultrapassar 12, porque buga o servidor)
 ***Mod criar itens na Bag ao criar novos char (configuravel o ID do item e a quantidade)
 ***Mod Advertência na tentativa de encantar itens que estão no limite máximo de enchant..!

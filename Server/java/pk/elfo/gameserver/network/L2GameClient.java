@@ -52,10 +52,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 {
 	protected static final Logger _log = Logger.getLogger(L2GameClient.class.getName());
 	protected static final Logger _logAccounting = Logger.getLogger("accounting");
-	
-	/**
-	 * @author KenM
-	 */
+
 	public static enum GameClientState
 	{
 		/** Client has just connected . */
@@ -67,7 +64,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	}
 	
 	private GameClientState _state;
-	
 	// Info
 	private final InetAddress _addr;
 	private String _accountName;
@@ -75,32 +71,22 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	private L2PcInstance _activeChar;
 	private final ReentrantLock _activeCharLock = new ReentrantLock();
 	private SecondaryPasswordAuth _secondaryAuth;
-	
 	private boolean _isAuthedGG;
 	private final long _connectionStartTime;
 	private CharSelectInfoPackage[] _charSlotMapping = null;
-	
 	// flood protectors
 	private final FloodProtectors _floodProtectors = new FloodProtectors(this);
-	
 	// Task
 	protected final ScheduledFuture<?> _autoSaveInDB;
 	protected ScheduledFuture<?> _cleanupTask = null;
-	
 	private L2GameServerPacket _aditionalClosePacket;
-	
 	// Crypt
 	private final GameCrypt _crypt;
-	
 	private final ClientStats _stats;
-	
 	private boolean _isDetached = false;
-	
 	private boolean _protocol;
-	
 	private final ArrayBlockingQueue<ReceivablePacket<L2GameClient>> _packetQueue;
 	private final ReentrantLock _queueLock = new ReentrantLock();
-	
 	private int[][] trace;
 	
 	public L2GameClient(MMOConnection<L2GameClient> con)
