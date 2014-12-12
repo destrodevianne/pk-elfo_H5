@@ -47,7 +47,7 @@ import pk.elfo.util.L2Properties;
 import pk.elfo.util.StringUtil;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public final class Config

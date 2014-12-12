@@ -5,11 +5,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledFuture;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
+import ai.npc.AbstractNpcAI;
+
 import pk.elfo.Config;
 import pk.elfo.gameserver.GeoData;
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.datatables.NpcTable;
+import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.datatables.SpawnTable;
 import pk.elfo.gameserver.instancemanager.GrandBossManager;
 import pk.elfo.gameserver.model.L2CharPosition;
@@ -28,13 +33,7 @@ import pk.elfo.gameserver.network.serverpackets.Earthquake;
 import pk.elfo.gameserver.network.serverpackets.L2GameServerPacket;
 import pk.elfo.gameserver.network.serverpackets.PlaySound;
 import pk.elfo.gameserver.network.serverpackets.SpecialCamera;
-import javolution.util.FastList;
-import javolution.util.FastMap;
-import ai.npc.AbstractNpcAI;
 
-/**
- * This class ... control for sequence of fight against Antharas.
- */
 public class Antharas extends AbstractNpcAI
 {
 	// config
@@ -641,10 +640,10 @@ public class Antharas extends AbstractNpcAI
 				case 29073:
 				case 29074:
 				case 29075:
-					skill = L2Skill.valueOf(5097, 1);
+					skill = SkillTable.getInstance().getInfo(5097, 1);
 					break;
 				case 29076:
-					skill = L2Skill.valueOf(5094, 1);
+					skill = SkillTable.getInstance().getInfo(5094, 1);
 					break;
 			}
 			
@@ -880,10 +879,10 @@ public class Antharas extends AbstractNpcAI
 				case 29073:
 				case 29074:
 				case 29075:
-					skill = L2Skill.valueOf(5097, 1);
+					skill = SkillTable.getInstance().getInfo(5097, 1);
 					break;
 				case 29076:
-					skill = L2Skill.valueOf(5094, 1);
+					skill = SkillTable.getInstance().getInfo(5094, 1);
 					break;
 			}
 			
@@ -930,6 +929,6 @@ public class Antharas extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Antharas(Antharas.class.getSimpleName(), "ai/individual");
+		new Antharas(Antharas.class.getSimpleName(), "ai");
 	}
 }

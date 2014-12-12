@@ -3,6 +3,7 @@ package ai.individual;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.quest.QuestState;
+
 import ai.npc.AbstractNpcAI;
 
 public class Baylor extends AbstractNpcAI
@@ -58,6 +59,6 @@ public class Baylor extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new Baylor(Baylor.class.getSimpleName(), "ai/individual");
+		new Baylor(Baylor.class.getSimpleName(), "ai");
 	}
 }

@@ -5,23 +5,22 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.util.Rnd;
+
 import ai.npc.AbstractNpcAI;
 
 public class BaylorChest extends AbstractNpcAI
 {
-	private final int CHEST = 29116;
-	
 	public BaylorChest(String name, String descr)
 	{
 		super(name, descr);
-		addKillId(CHEST);
+		addKillId(29116);
 	}
 
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
 		int npcId = npc.getNpcId();
-		if (npcId == CHEST)
+		if (npcId == 29116)
 		{
 			int chance = Rnd.get(100);
 			if (chance <= 1)
@@ -48,6 +47,6 @@ public class BaylorChest extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new BaylorChest(BaylorChest.class.getSimpleName(), "ai/individual");
+		new BaylorChest(BaylorChest.class.getSimpleName(), "ai");
 	}
 }

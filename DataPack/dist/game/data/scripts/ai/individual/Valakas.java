@@ -3,9 +3,12 @@ package ai.individual;
 import java.util.ArrayList;
 import java.util.List;
 
+import ai.npc.AbstractNpcAI;
+
 import pk.elfo.Config;
 import pk.elfo.gameserver.GeoData;
 import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.instancemanager.GrandBossManager;
 import pk.elfo.gameserver.model.L2CharPosition;
 import pk.elfo.gameserver.model.Location;
@@ -23,7 +26,6 @@ import pk.elfo.gameserver.network.serverpackets.PlaySound;
 import pk.elfo.gameserver.network.serverpackets.SocialAction;
 import pk.elfo.gameserver.network.serverpackets.SpecialCamera;
 import pk.elfo.gameserver.util.Util;
-import ai.npc.AbstractNpcAI;
 
 public class Valakas extends AbstractNpcAI
 {
@@ -84,6 +86,7 @@ public class Valakas extends AbstractNpcAI
 	private long _timeTracker = 0; // Time tracker for last attack on Valakas.
 	private L2Playable _actualVictim; // Actual target of Valakas.
 	private static L2BossZone ZONE;
+	
 	private Valakas(String name, String descr)
 	{
 		super(name, descr);
@@ -127,8 +130,10 @@ public class Valakas extends AbstractNpcAI
 			
 			final L2Npc valakas = addSpawn(VALAKAS, loc_x, loc_y, loc_z, heading, false, 0);
 			GrandBossManager.getInstance().addBoss((L2GrandBossInstance) valakas);
+			
 			valakas.setCurrentHpMp(hp, mp);
 			valakas.setRunning();
+			
 			// Start timers.
 			if (status == FIGHTING)
 			{
@@ -171,6 +176,7 @@ public class Valakas extends AbstractNpcAI
 					plyr.sendPacket(new PlaySound(1, "B03_A", 0, 0, 0, 0, 0));
 					plyr.sendPacket(new SocialAction(npc.getObjectId(), 3));
 				}
+				
 				// Launch the cinematic, and tasks (regen + skill).
 				startQuestTimer("spawn_1", 1700, npc, null); // 1700
 				startQuestTimer("spawn_2", 3200, npc, null); // 1500
@@ -227,25 +233,25 @@ public class Valakas extends AbstractNpcAI
 				if ((npc.getCurrentHp() < (npc.getMaxHp() / 4)) && (lvl != 4))
 				{
 					npc.setTarget(npc);
-					npc.doCast(L2Skill.valueOf(4691, 4));
+					npc.doCast(SkillTable.getInstance().getInfo(4691, 4));
 				}
 				// Current HPs are inferior to 50% ; apply lvl 3 of regen skill.
 				else if ((npc.getCurrentHp() < ((npc.getMaxHp() * 2) / 4.0)) && (lvl != 3))
 				{
 					npc.setTarget(npc);
-					npc.doCast(L2Skill.valueOf(4691, 3));
+					npc.doCast(SkillTable.getInstance().getInfo(4691, 3));
 				}
 				// Current HPs are inferior to 75% ; apply lvl 2 of regen skill.
 				else if ((npc.getCurrentHp() < ((npc.getMaxHp() * 3) / 4.0)) && (lvl != 2))
 				{
 					npc.setTarget(npc);
-					npc.doCast(L2Skill.valueOf(4691, 2));
+					npc.doCast(SkillTable.getInstance().getInfo(4691, 2));
 				}
 				// Apply lvl 1.
 				else if (lvl != 1)
 				{
 					npc.setTarget(npc);
-					npc.doCast(L2Skill.valueOf(4691, 1));
+					npc.doCast(SkillTable.getInstance().getInfo(4691, 1));
 				}
 			}
 			// Spawn cinematic, regen_task and choose of skill.
@@ -384,7 +390,7 @@ public class Valakas extends AbstractNpcAI
 		// Debuff strider-mounted players.
 		if (attacker.getMountType() == 1)
 		{
-			final L2Skill skill = L2Skill.valueOf(4258, 1);
+			final L2Skill skill = SkillTable.getInstance().getInfo(4258, 1);
 			if (attacker.getFirstEffect(skill) == null)
 			{
 				npc.setTarget(attacker);
@@ -402,8 +408,10 @@ public class Valakas extends AbstractNpcAI
 		// Cancel skill_task and regen_task.
 		cancelQuestTimer("regen_task", npc, null);
 		cancelQuestTimer("skill_task", npc, null);
+		
 		// Launch death animation.
 		ZONE.broadcastPacket(new PlaySound(1, "B03_D", 0, 0, 0, 0, 0));
+		
 		startQuestTimer("die_1", 300, npc, null); // 300
 		startQuestTimer("die_2", 600, npc, null); // 300
 		startQuestTimer("die_3", 3800, npc, null); // 3200
@@ -412,6 +420,7 @@ public class Valakas extends AbstractNpcAI
 		startQuestTimer("die_6", 13300, npc, null); // 4600
 		startQuestTimer("die_7", 14000, npc, null); // 700
 		startQuestTimer("die_8", 16500, npc, null); // 2500
+		
 		GrandBossManager.getInstance().setBossStatus(VALAKAS, DEAD);
 		// Calculate Min and Max respawn times randomly.
 		long respawnTime = getRandom((Config.Interval_Of_Valakas_Spawn - Config.Random_Of_Valakas_Spawn), (Config.Interval_Of_Valakas_Spawn + Config.Random_Of_Valakas_Spawn));
@@ -420,6 +429,7 @@ public class Valakas extends AbstractNpcAI
 		StatsSet info = GrandBossManager.getInstance().getStatsSet(VALAKAS);
 		info.set("respawn_time", (System.currentTimeMillis() + respawnTime));
 		GrandBossManager.getInstance().setStatsSet(VALAKAS, info);
+		
 		return super.onKill(npc, killer, isSummon);
 	}
 	
@@ -435,11 +445,13 @@ public class Valakas extends AbstractNpcAI
 		{
 			return;
 		}
+		
 		// Pickup a target if no or dead victim. 10% luck he decides to reconsiders his target.
 		if ((_actualVictim == null) || _actualVictim.isDead() || !(npc.getKnownList().knowsObject(_actualVictim)) || (getRandom(10) == 0))
 		{
 			_actualVictim = getRandomTarget(npc);
 		}
+		
 		// If result is still null, Valakas will roam. Don't go deeper in skill AI.
 		if (_actualVictim == null)
 		{
@@ -448,6 +460,7 @@ public class Valakas extends AbstractNpcAI
 				int x = npc.getX();
 				int y = npc.getY();
 				int z = npc.getZ();
+				
 				int posX = x + getRandom(-1400, 1400);
 				int posY = y + getRandom(-1400, 1400);
 				
@@ -533,6 +546,6 @@ public class Valakas extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Valakas(Valakas.class.getSimpleName(), "ai/individual");
+		new Valakas(Valakas.class.getSimpleName(), "ai");
 	}
 }
