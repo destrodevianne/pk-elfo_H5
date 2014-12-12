@@ -4,6 +4,10 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class VenomousStorace extends AbstractNpcAI
 {
@@ -50,7 +54,9 @@ public class VenomousStorace extends AbstractNpcAI
 				}
 			}
 			if (_isLockSpawned == 2)
+			{
 				return "";
+			}
 			return "";
 		}
 		return "";
@@ -61,9 +67,13 @@ public class VenomousStorace extends AbstractNpcAI
 	{
 		int npcId = npc.getNpcId();
 		if (npcId == GUARD)
+		{
 			_isLockSpawned = 1;
+		}
 		else if (npcId == VENOMOUS)
+		{
 			cancelQuestTimer("time_to_spawn", npc, player);
+		}
 		return "";
 	}
 

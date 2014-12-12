@@ -40,6 +40,10 @@ import pk.elfo.gameserver.network.gameserverpackets.ServerStatus;
 import pk.elfo.gameserver.network.serverpackets.ServerClose;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.util.Broadcast;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class Shutdown extends Thread
 {

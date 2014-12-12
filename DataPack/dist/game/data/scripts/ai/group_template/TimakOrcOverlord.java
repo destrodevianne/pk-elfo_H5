@@ -5,6 +5,10 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class TimakOrcOverlord extends AbstractNpcAI 
 {
@@ -24,7 +28,9 @@ public class TimakOrcOverlord extends AbstractNpcAI
 			if (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK)
 			{
 				if (Rnd.get(100) < 50)
+				{
 					npc.broadcastNpcSay("Dear ultimate power!!!");
+				}
 			}
 		}
 		return super.onAttack(npc, player, damage, isPet);
@@ -32,6 +38,6 @@ public class TimakOrcOverlord extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new TimakOrcOverlord(TimakOrcOverlord.class.getSimpleName(), "ai/group_template");
+		new TimakOrcOverlord(TimakOrcOverlord.class.getSimpleName(), "ai");
 	}
 }

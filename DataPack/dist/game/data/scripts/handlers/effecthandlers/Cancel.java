@@ -13,7 +13,7 @@ import pk.elfo.util.Rnd;
 import pk.elfo.util.StringUtil;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class Cancel extends L2Effect

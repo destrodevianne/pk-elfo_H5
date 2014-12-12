@@ -8,11 +8,11 @@ import pk.elfo.gameserver.handler.IAdminCommandHandler;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.gameserverpackets.ServerStatus;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
-
+ 
 /**
- * This class handles the admin commands that acts on the login
- * @version $Revision: 1.2.2.1.2.4 $ $Date: 2007/07/31 10:05:56 $
+ * Projeto PkElfo
  */
+
 public class AdminLogin implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =

@@ -14,10 +14,11 @@ import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.CreatureSay;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Polymorphing on attack monsters AI.
+ * Projeto PkElfo
  */
+
 public class PolymorphingOnAttack extends AbstractNpcAI
 {
 	private static final Map<Integer, List<Integer>> MOBSPAWNS = new HashMap<>();
@@ -95,6 +96,6 @@ public class PolymorphingOnAttack extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new PolymorphingOnAttack(PolymorphingOnAttack.class.getSimpleName(), "ai/group_template");
+		new PolymorphingOnAttack(PolymorphingOnAttack.class.getSimpleName(), "ai");
 	}
 }

@@ -15,7 +15,7 @@ import pk.elfo.gameserver.network.serverpackets.ValidateLocation;
 import pk.elfo.gameserver.network.serverpackets.FlyToLocation.FlyType;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class ThrowUp extends L2Effect

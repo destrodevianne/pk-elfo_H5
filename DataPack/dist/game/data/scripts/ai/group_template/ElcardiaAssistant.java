@@ -5,6 +5,10 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.effects.L2Effect;
 import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class ElcardiaAssistant extends AbstractNpcAI
 {
@@ -59,6 +63,6 @@ public class ElcardiaAssistant extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new ElcardiaAssistant(-1, ElcardiaAssistant.class.getSimpleName(), "ai/group_template");
+		new ElcardiaAssistant(-1, ElcardiaAssistant.class.getSimpleName(), "ai");
 	}
 }

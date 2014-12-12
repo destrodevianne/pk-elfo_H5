@@ -13,6 +13,10 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.punishment.PunishmentAffect;
 import pk.elfo.gameserver.model.punishment.PunishmentTask;
 import pk.elfo.gameserver.model.punishment.PunishmentType;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class Telnet extends Thread
 {

@@ -12,10 +12,11 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.util.L2FastMap;
 import javolution.util.FastSet;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Dark Water Dragon's AI.
+ * Projeto PkElfo
  */
+
 public class DarkWaterDragon extends AbstractNpcAI
 {
 	private static final int DRAGON = 22267;
@@ -222,6 +223,6 @@ public class DarkWaterDragon extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new DarkWaterDragon(DarkWaterDragon.class.getSimpleName(), "ai/individual");
+		new DarkWaterDragon(DarkWaterDragon.class.getSimpleName(), "ai");
 	}
 }

@@ -6,7 +6,7 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * This class handles following admin commands: - character_disconnect = disconnects target player
- * PkElfo
+ * Projeto PkElfo
  */
 public class AdminDisconnect implements IAdminCommandHandler
 {

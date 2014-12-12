@@ -8,7 +8,7 @@ import pk.elfo.gameserver.model.stats.Env;
 import pk.elfo.gameserver.network.serverpackets.EtcStatusUpdate;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class CharmOfCourage extends L2Effect

@@ -142,6 +142,10 @@ import pk.elfo.gameserver.taskmanager.TaskManager;
 import pk.elfo.status.Status;
 import pk.elfo.util.DeadLockDetector;
 import pk.elfo.util.IPv4Filter;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class GameServer
 {

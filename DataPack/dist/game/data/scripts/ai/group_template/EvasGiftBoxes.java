@@ -3,6 +3,10 @@ package ai.group_template;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class EvasGiftBoxes extends AbstractNpcAI
 {
@@ -66,6 +70,6 @@ public class EvasGiftBoxes extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new EvasGiftBoxes(EvasGiftBoxes.class.getSimpleName(), "ai/group_template");
+		new EvasGiftBoxes(EvasGiftBoxes.class.getSimpleName(), "ai");
 	}
 }

@@ -8,7 +8,7 @@ import pk.elfo.gameserver.model.stats.Env;
 /**
  * Effect will generate charges for L2PcInstance targets.<br>
  * Number of charges in "value", maximum number in "count" effect variables.
- * PkElfo
+ * Projeto PkElfo
  */
 public class IncreaseCharges extends L2Effect
 {

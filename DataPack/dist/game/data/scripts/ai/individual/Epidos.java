@@ -13,6 +13,7 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Manages minion's spawn, idle despawn and Teleportation Cube spawn.
+ * Projeto PkElfo
  */
 public class Epidos extends AbstractNpcAI
 {
@@ -119,6 +120,6 @@ public class Epidos extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Epidos(Epidos.class.getSimpleName(), "ai/individual");
+		new Epidos(Epidos.class.getSimpleName(), "ai");
 	}
 }

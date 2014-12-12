@@ -7,10 +7,11 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Necromancer of the Valley AI.
+ * Projeto PkElfo
  */
+
 public class NecromancerValley extends AbstractNpcAI
 {
 	private static final int NECROMANCER = 22858;
@@ -62,6 +63,6 @@ public class NecromancerValley extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new NecromancerValley(NecromancerValley.class.getSimpleName(), "ai/individual");
+		new NecromancerValley(NecromancerValley.class.getSimpleName(), "ai");
 	}
 }

@@ -1,7 +1,7 @@
 package pk.elfo;
-
+ 
 /**
- * This class used to be the starter class, since LS/GS split, it only retains server mode
+ * Projeto PkElfo
  */
 
 public class Server

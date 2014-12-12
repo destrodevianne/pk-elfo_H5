@@ -14,7 +14,7 @@ import pk.elfo.gameserver.network.serverpackets.ExShowDominionRegistry;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class TerritoryWar implements IBypassHandler

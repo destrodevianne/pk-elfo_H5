@@ -8,7 +8,7 @@ import pk.elfo.gameserver.model.skills.L2SkillType;
 import pk.elfo.gameserver.model.stats.Env;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class Negate extends L2Effect

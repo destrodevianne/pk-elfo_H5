@@ -7,7 +7,7 @@ import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.handler.ITelnetHandler;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class ThreadHandler implements ITelnetHandler

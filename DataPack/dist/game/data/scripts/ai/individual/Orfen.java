@@ -22,10 +22,11 @@ import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.network.serverpackets.PlaySound;
 import javolution.util.FastList;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Orfen's AI
+ * Projeto PkElfo
  */
+
 public class Orfen extends AbstractNpcAI
 {
 	private static final Location[] POS =
@@ -330,6 +331,6 @@ public class Orfen extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Orfen(Orfen.class.getSimpleName(), "ai/individual");
+		new Orfen(Orfen.class.getSimpleName(), "ai");
 	}
 }

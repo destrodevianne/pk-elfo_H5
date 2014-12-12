@@ -10,6 +10,10 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.ExCubeGameChangeTimeToStart;
 import pk.elfo.gameserver.network.serverpackets.ExCubeGameRequestReady;
 import pk.elfo.gameserver.network.serverpackets.ExCubeGameTeamList;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class HandysBlockCheckerEvent extends Quest
 {

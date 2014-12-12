@@ -10,7 +10,7 @@ import pk.elfo.gameserver.model.stats.Env;
 
 /**
  * Synchronizing effects on player and servitor if one of them gets removed for some reason the same will happen to another.
- * PkElfo
+ * Projeto PkElfo
  */
 public class ServitorShare extends L2Effect
 {

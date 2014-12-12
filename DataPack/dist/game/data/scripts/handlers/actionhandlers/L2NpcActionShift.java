@@ -22,7 +22,7 @@ import pk.elfo.gameserver.network.serverpackets.StatusUpdate;
 import pk.elfo.util.StringUtil;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class L2NpcActionShift implements IActionHandler

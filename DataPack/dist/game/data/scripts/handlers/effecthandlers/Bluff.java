@@ -11,7 +11,7 @@ import pk.elfo.gameserver.network.serverpackets.StartRotation;
 import pk.elfo.gameserver.network.serverpackets.StopRotation;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class Bluff extends L2Effect

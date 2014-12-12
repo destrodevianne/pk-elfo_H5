@@ -8,7 +8,7 @@ import pk.elfo.gameserver.model.effects.L2EffectType;
 import pk.elfo.gameserver.model.stats.Env;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class Petrification extends L2Effect

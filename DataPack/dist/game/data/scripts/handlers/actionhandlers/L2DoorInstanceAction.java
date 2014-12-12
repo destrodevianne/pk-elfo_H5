@@ -14,7 +14,7 @@ import pk.elfo.gameserver.network.serverpackets.MyTargetSelected;
 import pk.elfo.gameserver.network.serverpackets.StaticObject;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class L2DoorInstanceAction implements IActionHandler

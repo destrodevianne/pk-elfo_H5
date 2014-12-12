@@ -13,11 +13,11 @@ import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.network.serverpackets.SocialAction;
 import pk.elfo.gameserver.scripting.scriptengine.impl.L2Script;
 import pk.elfo.gameserver.util.Broadcast;
-
+ 
 /**
- * Abstract NPC AI class for datapack based AIs.
- * PkElfo
+ * Projeto PkElfo
  */
+
 public abstract class AbstractNpcAI extends L2Script
 {
 	public Logger _log = Logger.getLogger(getClass().getSimpleName());

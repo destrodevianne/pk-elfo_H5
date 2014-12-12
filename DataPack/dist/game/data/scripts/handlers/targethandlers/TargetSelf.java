@@ -7,7 +7,7 @@ import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.model.skills.targets.L2TargetType;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class TargetSelf implements ITargetTypeHandler

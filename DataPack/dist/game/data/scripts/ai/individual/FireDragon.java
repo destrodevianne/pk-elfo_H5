@@ -27,6 +27,10 @@ import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.Rnd;
 import javolution.util.FastList;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class FireDragon extends AbstractNpcAI
 {
@@ -1870,6 +1874,6 @@ public class FireDragon extends AbstractNpcAI
 	public static void main(String[] args)
 	{
 		// now call the constructor (starts up the ai)
-		new FireDragon(FireDragon.class.getSimpleName(), "ai/individual");
+		new FireDragon(FireDragon.class.getSimpleName(), "ai");
 	}
 }

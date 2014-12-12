@@ -23,11 +23,11 @@ import pk.elfo.gameserver.util.Util;
 import javolution.util.FastMap;
 import quests.Q00020_BringUpWithLove.Q00020_BringUpWithLove;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Growth-capable mobs: Polymorphing upon successful feeding.<br>
- * Updated to Freya.
+ * Projeto PkElfo
  */
+
 public class BeastFarm extends AbstractNpcAI
 {
 	private static final int GOLDEN_SPICE = 15474;
@@ -95,7 +95,7 @@ public class BeastFarm extends AbstractNpcAI
 	
 	private BeastFarm()
 	{
-		super(BeastFarm.class.getSimpleName(), "ai/group_template");
+		super(BeastFarm.class.getSimpleName(), "ai");
 		registerMobs(FEEDABLE_BEASTS, QuestEventType.ON_KILL, QuestEventType.ON_SKILL_SEE);
 		
 		GrowthCapableMob temp;

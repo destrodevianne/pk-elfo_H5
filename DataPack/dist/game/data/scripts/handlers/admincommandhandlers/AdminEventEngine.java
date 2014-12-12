@@ -26,11 +26,11 @@ import pk.elfo.gameserver.network.serverpackets.PlaySound;
 import pk.elfo.gameserver.network.serverpackets.UserInfo;
 import pk.elfo.util.Rnd;
 import pk.elfo.util.StringUtil;
-
+ 
 /**
- * This class handles following admin commands: - admin = shows menu
- * @version $Revision: 1.3.2.1.2.4 $ $Date: 2005/04/11 10:06:06 $
+ * Projeto PkElfo
  */
+
 public class AdminEventEngine implements IAdminCommandHandler
 {
 	

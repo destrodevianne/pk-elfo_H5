@@ -14,7 +14,7 @@ import pk.elfo.gameserver.model.skills.L2SkillType;
 import pk.elfo.gameserver.model.stats.Formulas;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class StrSiegeAssault implements ISkillHandler

@@ -4,6 +4,10 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class Gargos extends AbstractNpcAI 
 {
@@ -60,6 +64,6 @@ public class Gargos extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new Gargos(Gargos.class.getSimpleName(), "ai/individual");
+		new Gargos(Gargos.class.getSimpleName(), "ai");
 	}
 }

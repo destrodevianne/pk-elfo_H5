@@ -12,10 +12,11 @@ import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import javolution.util.FastList;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Manages Darion's Enforcer's and Darion's Executioner spawn/despawn
+ * Projeto PkElfo
  */
+
 public class Keltas extends AbstractNpcAI
 {
 	private static final int KELTAS = 22341;
@@ -175,6 +176,6 @@ public class Keltas extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Keltas(Keltas.class.getSimpleName(), "ai/individual");
+		new Keltas(Keltas.class.getSimpleName(), "ai");
 	}
 }

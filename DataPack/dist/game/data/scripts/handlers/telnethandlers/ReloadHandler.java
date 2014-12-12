@@ -23,7 +23,7 @@ import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.scripting.L2ScriptEngineManager;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class ReloadHandler implements ITelnetHandler

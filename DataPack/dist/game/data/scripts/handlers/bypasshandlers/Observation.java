@@ -13,7 +13,7 @@ import pk.elfo.gameserver.network.serverpackets.ActionFailed;
 import pk.elfo.gameserver.network.serverpackets.ItemList;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class Observation implements IBypassHandler

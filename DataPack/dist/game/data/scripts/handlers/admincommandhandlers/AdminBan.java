@@ -20,7 +20,7 @@ import pk.elfo.gameserver.util.GMAudit;
  * This class handles following admin commands: - ban_acc <account_name> = changes account access level to -1 and logs him off. If no account is specified target's account is used. - ban_char <char_name> = changes a characters access level to -1 and logs him off. If no character is specified target
  * is used. - ban_chat <char_name> <duration> = chat bans a character for the specified duration. If no name is specified the target is chat banned indefinitely. - unban_acc <account_name> = changes account access level to 0. - unban_char <char_name> = changes specified characters access level to 0.
  * - unban_chat <char_name> = lifts chat ban from specified player. If no player name is specified current target is used. - jail charname [penalty_time] = jails character. Time specified in minutes. For ever if no time is specified. - unjail charname = Unjails player, teleport him to Floran.
- * PkElfo
+ * Projeto PkElfo
  */
 public class AdminBan implements IAdminCommandHandler
 {

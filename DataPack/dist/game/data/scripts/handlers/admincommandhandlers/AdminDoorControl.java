@@ -7,12 +7,11 @@ import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.actor.instance.L2DoorInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.entity.Castle;
-
+ 
 /**
- * This class handles following admin commands: - open1 = open coloseum door 24190001 - open2 = open coloseum door 24190002 - open3 = open coloseum door 24190003 - open4 = open coloseum door 24190004 - openall = open all coloseum door - close1 = close coloseum door 24190001 - close2 = close coloseum
- * door 24190002 - close3 = close coloseum door 24190003 - close4 = close coloseum door 24190004 - closeall = close all coloseum door - open = open selected door - close = close selected door
- * @version $Revision: 1.2.4.5 $ $Date: 2005/04/11 10:06:06 $
+ * Projeto PkElfo
  */
+
 public class AdminDoorControl implements IAdminCommandHandler
 {
 	private static DoorTable _doorTable = DoorTable.getInstance();

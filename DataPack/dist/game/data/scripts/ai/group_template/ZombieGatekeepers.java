@@ -34,7 +34,9 @@ public class ZombieGatekeepers extends AbstractNpcAI
 			_attackersList.put(npcObjId, player);
 		}
 		else if (!_attackersList.get(npcObjId).contains(target))
+		{
 			_attackersList.get(npcObjId).add(target);
+		}
 		return super.onAttack(npc, attacker, damage, isPet);
 	}
 
@@ -72,12 +74,14 @@ public class ZombieGatekeepers extends AbstractNpcAI
 	{
 		int npcObjId = npc.getObjectId();
 		if (_attackersList.get(npcObjId) != null)
+		{
 			_attackersList.get(npcObjId).clear();
+		}
 		return super.onKill(npc, killer, isPet);
 	}
 
 	public static void main(String[] args)
 	{
-		new ZombieGatekeepers(ZombieGatekeepers.class.getSimpleName(), "ai/group_template");
+		new ZombieGatekeepers(ZombieGatekeepers.class.getSimpleName(), "ai");
 	}
 }

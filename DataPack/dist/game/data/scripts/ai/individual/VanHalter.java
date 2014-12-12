@@ -33,6 +33,10 @@ import pk.elfo.util.Rnd;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class VanHalter extends AbstractNpcAI
 {

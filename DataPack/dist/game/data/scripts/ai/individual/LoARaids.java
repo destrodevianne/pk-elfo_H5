@@ -3,6 +3,10 @@ package ai.individual;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class LoARaids extends AbstractNpcAI
 {
@@ -95,6 +99,6 @@ public class LoARaids extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new LoARaids(LoARaids.class.getSimpleName(), "ai/individual");
+		new LoARaids(LoARaids.class.getSimpleName(), "ai");
 	}
 }

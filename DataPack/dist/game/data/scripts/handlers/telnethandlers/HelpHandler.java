@@ -6,7 +6,7 @@ import java.net.Socket;
 import pk.elfo.gameserver.handler.ITelnetHandler;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class HelpHandler implements ITelnetHandler

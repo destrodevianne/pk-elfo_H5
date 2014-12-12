@@ -6,9 +6,9 @@ import pk.elfo.gameserver.model.actor.instance.L2DoorInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.entity.Castle;
 import pk.elfo.gameserver.network.SystemMessageId;
-
+ 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class CastleVCmd implements IVoicedCommandHandler

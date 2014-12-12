@@ -15,7 +15,7 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.network.serverpackets.SiegeInfo;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public final class AdminCHSiege implements IAdminCommandHandler

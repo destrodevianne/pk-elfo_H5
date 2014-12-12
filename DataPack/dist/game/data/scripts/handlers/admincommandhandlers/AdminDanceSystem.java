@@ -9,7 +9,7 @@ import pk.elfo.gameserver.network.serverpackets.ExShowScreenMessage;
 import pk.elfo.gameserver.network.serverpackets.PlaySound;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class AdminDanceSystem implements IAdminCommandHandler

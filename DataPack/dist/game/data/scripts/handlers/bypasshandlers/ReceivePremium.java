@@ -7,7 +7,7 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.ExGetPremiumItemList;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class ReceivePremium implements IBypassHandler

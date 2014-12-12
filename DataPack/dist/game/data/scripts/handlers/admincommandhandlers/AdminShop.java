@@ -9,15 +9,11 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.serverpackets.ActionFailed;
 import pk.elfo.gameserver.network.serverpackets.BuyList;
 import pk.elfo.gameserver.network.serverpackets.ExBuySellList;
-
-
+ 
 /**
- * This class handles following admin commands:
- * <ul>
- * <li>gmshop = shows menu</li>
- * <li>buy id = shows shop with respective id</li>
- * </ul>
+ * Projeto PkElfo
  */
+
 public class AdminShop implements IAdminCommandHandler
 {
 	private static final Logger _log = Logger.getLogger(AdminShop.class.getName());

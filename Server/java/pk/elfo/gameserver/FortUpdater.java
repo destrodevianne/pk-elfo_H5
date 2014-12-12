@@ -8,6 +8,10 @@ import pk.elfo.gameserver.instancemanager.CastleManager;
 import pk.elfo.gameserver.model.L2Clan;
 import pk.elfo.gameserver.model.entity.Fort;
 import pk.elfo.gameserver.model.itemcontainer.PcInventory;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class FortUpdater implements Runnable
 {

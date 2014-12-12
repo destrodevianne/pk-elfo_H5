@@ -10,7 +10,7 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.network.serverpackets.StaticObject;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class L2DoorInstanceActionShift implements IActionHandler

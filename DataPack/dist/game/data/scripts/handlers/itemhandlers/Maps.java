@@ -8,7 +8,7 @@ import pk.elfo.gameserver.network.serverpackets.ShowMiniMap;
 
 /**
  * This class provides handling for items that should display a map when double clicked.
- * PkElfo
+ * Projeto PkElfo
  */
 public class Maps implements IItemHandler
 {

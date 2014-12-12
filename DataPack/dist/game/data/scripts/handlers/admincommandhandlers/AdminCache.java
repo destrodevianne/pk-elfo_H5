@@ -9,7 +9,7 @@ import pk.elfo.gameserver.handler.IAdminCommandHandler;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class AdminCache implements IAdminCommandHandler

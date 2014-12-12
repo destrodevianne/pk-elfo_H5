@@ -9,7 +9,7 @@ import pk.elfo.gameserver.model.stats.Env;
 import pk.elfo.util.Rnd;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class CancelDebuff extends L2Effect

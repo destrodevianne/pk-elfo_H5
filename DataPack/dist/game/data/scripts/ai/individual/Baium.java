@@ -48,6 +48,7 @@ import pk.elfo.gameserver.util.Util;
  * are you willing to take that chance that you'll wake him and not be able to finish your quest? Doubtful. [ this powerful attack vs the player who wakes him up is NOT yet implemented here]</li>
  * <li>Once someone starts attacking Baium no one else can port into the chamber where he is. Unlike with the other raid bosses, you can just show up at any time as long as you are there when they die.<br>
  * Not true with Baium. Once he gets attacked, the port to Baium closes. byebye, see you in 5 days. If nobody attacks Baium for 30 minutes, he auto-despawns and unlocks the vortex.</li>
+ * Projeto PkElfo
  */
 public class Baium extends AbstractNpcAI
 {
@@ -719,6 +720,6 @@ public class Baium extends AbstractNpcAI
 
     public static void main(String[] args)
     {
-        new Baium(Baium.class.getSimpleName(), "ai/individual");
+        new Baium(Baium.class.getSimpleName(), "ai");
     }
 }

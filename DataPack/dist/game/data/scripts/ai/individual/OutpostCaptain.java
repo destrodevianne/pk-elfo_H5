@@ -6,10 +6,11 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2DoorInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Outpost Captain's AI.
+ * Projeto PkElfo
  */
+
 public class OutpostCaptain extends AbstractNpcAI
 {
 	private static final int CAPTAIN = 18466;
@@ -73,6 +74,6 @@ public class OutpostCaptain extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new OutpostCaptain(OutpostCaptain.class.getSimpleName(), "ai/individual");
+		new OutpostCaptain(OutpostCaptain.class.getSimpleName(), "ai");
 	}
 }

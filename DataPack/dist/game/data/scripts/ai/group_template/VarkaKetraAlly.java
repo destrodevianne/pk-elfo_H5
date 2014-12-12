@@ -6,6 +6,10 @@ import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.network.serverpackets.InventoryUpdate;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class VarkaKetraAlly extends AbstractNpcAI 
 {
@@ -120,22 +124,33 @@ public class VarkaKetraAlly extends AbstractNpcAI
 				long featherWisdomCount = featherWisdom == null ? 0 : featherWisdom.getCount();
 
 				if (ketrasBadgeSoldierCount > 0)
+				{
 					player.destroyItemByItemId("ketrasBadgeSoldier", 7226, ketrasBadgeSoldierCount, player, true);
+				}
 				if (ketrasBadgeOfficerCount > 0)
+				{
 					player.destroyItemByItemId("ketrasBadgeOfficer", 7227, ketrasBadgeOfficerCount, player, true);
+				}
 				if (ketrasBadgeCaptainCount > 0)
+				{
 					player.destroyItemByItemId("ketrasBadgeCaptain", 7228, ketrasBadgeCaptainCount, player, true);
+				}
 				if (featherValorCount > 0)
+				{
 					player.destroyItemByItemId("featherValor", 7229, featherValorCount, player, true);
+				}
 				if (featherWisdomCount > 0)
+				{
 					player.destroyItemByItemId("featherWisdom", 7230, featherWisdomCount, player, true);
+				}
 
 				player.destroyItemByItemId("Mark", varkaAllyMark[player.getAllianceWithVarkaKetra() + 5], 1, player, true);
 				player.setAllianceWithVarkaKetra(player.getAllianceWithVarkaKetra() + 1);
 				if (player.getAllianceWithVarkaKetra() != 0)
+				{
 					mark = player.getInventory().addItem("Mark", varkaAllyMark[player.getAllianceWithVarkaKetra() + 5], 1, player, player);
+				}
 			}
-
 			InventoryUpdate u = new InventoryUpdate();
 			u.addNewItem(mark);
 			player.sendPacket(u);
@@ -144,6 +159,6 @@ public class VarkaKetraAlly extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new VarkaKetraAlly(VarkaKetraAlly.class.getSimpleName(), "ai/group_template");
+		new VarkaKetraAlly(VarkaKetraAlly.class.getSimpleName(), "ai");
 	}
 }

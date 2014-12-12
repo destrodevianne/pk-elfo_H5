@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package conquerablehalls.flagwar.WildBeastReserve;
 
 import java.util.Collection;
@@ -25,10 +7,11 @@ import pk.elfo.gameserver.model.L2CharPosition;
 import pk.elfo.gameserver.model.Location;
 import pk.elfo.gameserver.model.zone.type.L2ResidenceHallTeleportZone;
 import conquerablehalls.flagwar.FlagWar;
-
+ 
 /**
- * @author BiggBoss
+ * Projeto PkElfo
  */
+
 public final class WildBeastReserve extends FlagWar
 {
 	static
@@ -81,10 +64,8 @@ public final class WildBeastReserve extends FlagWar
 			{
 				continue;
 			}
-			
 			TELE_ZONES[id] = teleZone;
 		}
-		
 		QUEST_REWARD = 0;
 		CENTER = new L2CharPosition(57762, -92696, -1359, 0);
 	}
@@ -117,7 +98,6 @@ public final class WildBeastReserve extends FlagWar
 				result = "messenger_flag5.htm";
 				break;
 		}
-		
 		return result;
 	}
 	
@@ -144,7 +124,6 @@ public final class WildBeastReserve extends FlagWar
 				result = "messenger_ally5result.htm";
 				break;
 		}
-		
 		return result;
 	}
 	

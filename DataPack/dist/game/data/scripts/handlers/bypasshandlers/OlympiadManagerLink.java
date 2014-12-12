@@ -28,7 +28,7 @@ import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.util.L2FastList;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class OlympiadManagerLink implements IBypassHandler

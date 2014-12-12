@@ -5,6 +5,10 @@ import ai.npc.AbstractNpcAI;
 import pk.elfo.gameserver.model.actor.L2Attackable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public final class PavelArchaic extends AbstractNpcAI
 {
@@ -16,7 +20,7 @@ public final class PavelArchaic extends AbstractNpcAI
 
     private PavelArchaic()
     {
-        super(PavelArchaic.class.getSimpleName(), "ai/group_template");
+        super(PavelArchaic.class.getSimpleName(), "ai");
         addKillId(SAFETY_DEVICE, PINCER_GOLEM, JACKHAMMER_GOLEM);
     }
 

@@ -10,7 +10,7 @@ import pk.elfo.gameserver.model.stats.Formulas;
 import pk.elfo.gameserver.network.SystemMessageId;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class Spoil extends L2Effect

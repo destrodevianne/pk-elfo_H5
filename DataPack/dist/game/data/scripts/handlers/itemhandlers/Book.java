@@ -10,7 +10,7 @@ import pk.elfo.gameserver.network.serverpackets.ActionFailed;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class Book implements IItemHandler

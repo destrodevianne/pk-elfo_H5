@@ -14,9 +14,9 @@ import pk.elfo.gameserver.network.serverpackets.ActionFailed;
 import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
 import pk.elfo.gameserver.network.serverpackets.SetupGauge;
 import pk.elfo.gameserver.util.Broadcast;
-
+ 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class Unstuck implements IUserCommandHandler

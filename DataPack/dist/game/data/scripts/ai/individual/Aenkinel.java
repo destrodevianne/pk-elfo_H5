@@ -4,6 +4,10 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.quest.QuestState;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class Aenkinel extends AbstractNpcAI
 {
@@ -57,6 +61,6 @@ public class Aenkinel extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new Aenkinel(Aenkinel.class.getSimpleName(), "ai/individual");
+		new Aenkinel(Aenkinel.class.getSimpleName(), "ai");
 	}
 }

@@ -15,7 +15,7 @@ public class MercTicket implements IItemHandler
 	/**
 	 * handler for using mercenary tickets. Things to do: 1) Check constraints: 1.a) Tickets may only be used in a castle 1.b) Only specific tickets may be used in each castle (different tickets for each castle) 1.c) only the owner of that castle may use them 1.d) tickets cannot be used during siege
 	 * 1.e) Check if max number of tickets has been reached 1.f) Check if max number of tickets from this ticket's TYPE has been reached 2) If allowed, call the MercTicketManager to add the item and spawn in the world 3) Remove the item from the person's inventory
-	 * PkElfo
+	 * Projeto PkElfo
 	 */
 	@Override
 	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)

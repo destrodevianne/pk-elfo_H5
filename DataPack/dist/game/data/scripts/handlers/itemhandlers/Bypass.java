@@ -8,7 +8,7 @@ import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class Bypass implements IItemHandler

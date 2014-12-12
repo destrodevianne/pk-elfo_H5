@@ -5,6 +5,10 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class TurekOrcSupplier extends AbstractNpcAI 
 {
@@ -38,6 +42,6 @@ public class TurekOrcSupplier extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new TurekOrcSupplier(TurekOrcSupplier.class.getSimpleName(), "ai/group_template");
+		new TurekOrcSupplier(TurekOrcSupplier.class.getSimpleName(), "ai");
 	}
 }

@@ -8,7 +8,7 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.serverpackets.SiegeInfo;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public final class AIOSiegeHandler implements IAIOItemHandler

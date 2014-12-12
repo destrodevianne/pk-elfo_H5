@@ -8,6 +8,10 @@ import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.gameserver.model.items.type.L2EtcItemType;
 import javolution.util.FastList;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class ItemsAutoDestroy
 {

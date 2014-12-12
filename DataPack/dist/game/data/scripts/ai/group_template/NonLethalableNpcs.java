@@ -4,6 +4,10 @@ import pk.elfo.gameserver.datatables.SpawnTable;
 import pk.elfo.gameserver.model.L2Spawn;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class NonLethalableNpcs extends AbstractNpcAI
 {
@@ -35,6 +39,6 @@ public class NonLethalableNpcs extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new NonLethalableNpcs(NonLethalableNpcs.class.getSimpleName(), "ai/group_template");
+		new NonLethalableNpcs(NonLethalableNpcs.class.getSimpleName(), "ai");
 	}
 }

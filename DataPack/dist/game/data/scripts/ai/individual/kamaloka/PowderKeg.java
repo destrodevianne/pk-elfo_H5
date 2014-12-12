@@ -5,6 +5,10 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.util.Util;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class PowderKeg extends AbstractNpcAI 
 {

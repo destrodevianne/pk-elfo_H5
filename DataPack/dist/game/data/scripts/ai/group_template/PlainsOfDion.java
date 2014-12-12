@@ -9,10 +9,11 @@ import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.util.Util;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * AI for mobs in Plains of Dion (near Floran Village)
+ * Projeto PkElfo
  */
+
 public final class PlainsOfDion extends AbstractNpcAI
 {
 	private static final int MONSTERS[] =
@@ -75,6 +76,6 @@ public final class PlainsOfDion extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new PlainsOfDion(PlainsOfDion.class.getSimpleName(), "ai/group_template");
+		new PlainsOfDion(PlainsOfDion.class.getSimpleName(), "ai");
 	}
 }

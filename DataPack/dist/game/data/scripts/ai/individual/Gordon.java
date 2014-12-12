@@ -9,10 +9,11 @@ import pk.elfo.gameserver.model.actor.L2Attackable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Gordon AI
+ * Projeto PkElfo
  */
+
 public class Gordon extends AbstractNpcAI
 {
 	private static final int GORDON = 29095;
@@ -242,6 +243,6 @@ public class Gordon extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Gordon(Gordon.class.getSimpleName(), "ai/individual");
+		new Gordon(Gordon.class.getSimpleName(), "ai");
 	}
 }

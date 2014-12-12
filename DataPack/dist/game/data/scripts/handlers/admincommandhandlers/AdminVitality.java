@@ -8,7 +8,7 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.actor.stat.PcStat;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class AdminVitality implements IAdminCommandHandler

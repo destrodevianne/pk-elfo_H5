@@ -11,12 +11,11 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.util.StringUtil;
-
+ 
 /**
- * This class handles following admin commands: - cw_info = displays cursed weapon status - cw_remove = removes a cursed weapon from the world, item id or name must be provided - cw_add = adds a cursed weapon into the world, item id or name must be provided. Target will be the weilder - cw_goto =
- * teleports GM to the specified cursed weapon - cw_reload = reloads instance manager
- * @version $Revision: 1.1.6.3 $ $Date: 2007/07/31 10:06:06 $
+ * Projeto PkElfo
  */
+
 public class AdminCursedWeapons implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =

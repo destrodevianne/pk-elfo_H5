@@ -13,6 +13,10 @@ import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.model.L2CharPosition;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class Parade extends AbstractNpcAI
 {

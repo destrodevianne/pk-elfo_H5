@@ -9,6 +9,10 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
 import javolution.util.FastMap;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class BladeOtis extends AbstractNpcAI
 {

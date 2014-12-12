@@ -17,7 +17,7 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class Loto implements IBypassHandler

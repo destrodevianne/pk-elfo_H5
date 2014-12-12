@@ -45,12 +45,11 @@ import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.network.serverpackets.UserInfo;
 import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.StringUtil;
-
+ 
 /**
- * This class handles following admin commands: - edit_character - current_player - character_list - show_characters - find_character - find_ip - find_account - rec - nokarma - setkarma - settitle - changename - setsex - setclass - fullfood - save_modifications - setcolor - settcolor - setpk -
- * setpvp - remove_clan_penalty - summon_info - unsummon - summon_setlvl - show_pet_inv - partyinfo
- * @version $Revision: 1.3.2.1.2.10 $ $Date: 2005/04/11 10:06:06 $ Typo fix, rework for admin_tracert, gatherCharacterInfo and editCharacter by Zoey76 28/02/2011
+ * Projeto PkElfo
  */
+
 public class AdminEditChar implements IAdminCommandHandler
 {
 	private static Logger _log = Logger.getLogger(AdminEditChar.class.getName());

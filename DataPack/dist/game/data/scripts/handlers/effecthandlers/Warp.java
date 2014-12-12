@@ -21,7 +21,7 @@ import pk.elfo.gameserver.util.Util;
  * <br>
  * If target is effector, put in XML self = "1". This will make _actor = getEffector(). This, combined with target type, allows more complex actions like flying target's backwards or player's backwards.<br>
  * <br>
- * PkElfo
+ * Projeto PkElfo
  */
 public class Warp extends L2Effect
 {

@@ -22,7 +22,7 @@ import javolution.text.TextBuilder;
 
 /**
  * 
- * PkElfo
+ * Projeto PkElfo
  * 
  */
 public class AdminHappyHour implements IAdminCommandHandler

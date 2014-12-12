@@ -15,7 +15,7 @@ import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.util.Util;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class SummonFriend implements ISkillHandler

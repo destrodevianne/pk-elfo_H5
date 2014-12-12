@@ -13,7 +13,7 @@ import pk.elfo.gameserver.Announcements;
 import pk.elfo.gameserver.Shutdown;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class DeadLockDetector extends Thread

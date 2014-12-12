@@ -27,7 +27,7 @@ import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.util.Rnd;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class Disablers implements ISkillHandler

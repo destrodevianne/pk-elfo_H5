@@ -12,7 +12,7 @@ import pk.elfo.gameserver.util.GMAudit;
 import pk.elfo.util.StringUtil;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class AdminInstanceZone implements IAdminCommandHandler

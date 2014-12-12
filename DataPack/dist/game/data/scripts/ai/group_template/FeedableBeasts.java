@@ -18,10 +18,11 @@ import pk.elfo.gameserver.util.Util;
 import javolution.util.FastMap;
 import quests.Q00020_BringUpWithLove.Q00020_BringUpWithLove;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Growth-capable mobs: Polymorphing upon successful feeding.
+ * Projeto PkElfo
  */
+
 public class FeedableBeasts extends AbstractNpcAI
 {
 	private static final int GOLDEN_SPICE = 6643;
@@ -218,7 +219,7 @@ public class FeedableBeasts extends AbstractNpcAI
 	
 	private FeedableBeasts()
 	{
-		super(FeedableBeasts.class.getSimpleName(), "ai/group_template");
+		super(FeedableBeasts.class.getSimpleName(), "ai");
 		registerMobs(FEEDABLE_BEASTS, QuestEventType.ON_KILL, QuestEventType.ON_SKILL_SEE);
 		
 		// TODO: no grendels?

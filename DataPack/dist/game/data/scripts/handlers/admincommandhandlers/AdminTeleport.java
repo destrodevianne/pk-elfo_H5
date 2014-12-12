@@ -27,11 +27,11 @@ import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.util.StringUtil;
-
+ 
 /**
- * This class handles following admin commands: - show_moves - show_teleport - teleport_to_character - move_to - teleport_character
- * @version $Revision: 1.3.2.6.2.4 $ $Date: 2005/04/11 10:06:06 $ con.close() change and small typo fix by Zoey76 24/02/2011
+ * Projeto PkElfo
  */
+
 public class AdminTeleport implements IAdminCommandHandler
 {
 	private static final Logger _log = Logger.getLogger(AdminTeleport.class.getName());

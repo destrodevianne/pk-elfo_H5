@@ -19,10 +19,11 @@ import pk.elfo.gameserver.network.serverpackets.ExShowQuestMark;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.network.serverpackets.QuestList;
 import javolution.text.TextBuilder;
-
+ 
 /**
- * TODO: Rework and cleanup.
+ * Projeto PkElfo
  */
+
 public class AdminShowQuests implements IAdminCommandHandler
 {
 	private static final Logger _log = Logger.getLogger(AdminShowQuests.class.getName());

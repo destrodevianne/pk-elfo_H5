@@ -8,11 +8,11 @@ import pk.elfo.gameserver.model.itemcontainer.Inventory;
 import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.InventoryUpdate;
-
+ 
 /**
- * This class handles following admin commands: - delete = deletes target
- * @version $Revision: 1.2.2.1.2.4 $ $Date: 2005/04/11 10:05:56 $
+ * Projeto PkElfo
  */
+
 public class AdminElement implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =

@@ -7,7 +7,7 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class SupportBlessing implements IBypassHandler

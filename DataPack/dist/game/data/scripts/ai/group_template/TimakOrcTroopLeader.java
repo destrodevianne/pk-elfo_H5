@@ -5,6 +5,10 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class TimakOrcTroopLeader extends AbstractNpcAI 
 {
@@ -24,7 +28,9 @@ public class TimakOrcTroopLeader extends AbstractNpcAI
 			if (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK)
 			{
 				if (Rnd.get(100) < 50)
+				{
 					npc.broadcastNpcSay("Destroy the enemy, my brothers!");
+				}
 			}
 		}
 		return super.onAttack(npc, player, damage, isPet);
@@ -32,6 +38,6 @@ public class TimakOrcTroopLeader extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new TimakOrcTroopLeader(TimakOrcTroopLeader.class.getSimpleName(), "ai/group_template");
+		new TimakOrcTroopLeader(TimakOrcTroopLeader.class.getSimpleName(), "ai");
 	}
 }

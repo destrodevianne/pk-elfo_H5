@@ -10,7 +10,7 @@ import pk.elfo.gameserver.network.serverpackets.ValidateLocation;
 import pk.elfo.util.Rnd;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class GetPlayer implements ISkillHandler

@@ -26,6 +26,10 @@ import pk.elfo.gameserver.network.serverpackets.PlaySound;
 import pk.elfo.gameserver.network.serverpackets.SocialAction;
 import pk.elfo.gameserver.network.serverpackets.SpecialCamera;
 import pk.elfo.gameserver.util.Util;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class Valakas extends AbstractNpcAI
 {

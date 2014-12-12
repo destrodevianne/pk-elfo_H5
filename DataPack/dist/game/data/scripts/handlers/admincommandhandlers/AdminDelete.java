@@ -10,7 +10,7 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * This class handles following admin commands: - delete = deletes target
- * PkElfo
+ * Projeto PkElfo
  */
 public class AdminDelete implements IAdminCommandHandler
 {

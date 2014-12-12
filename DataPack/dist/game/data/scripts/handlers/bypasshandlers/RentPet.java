@@ -12,7 +12,7 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.network.serverpackets.SetupGauge;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class RentPet implements IBypassHandler

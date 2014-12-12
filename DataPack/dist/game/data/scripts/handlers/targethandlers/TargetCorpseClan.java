@@ -19,7 +19,7 @@ import pk.elfo.gameserver.util.Util;
 import javolution.util.FastList;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class TargetCorpseClan implements ITargetTypeHandler

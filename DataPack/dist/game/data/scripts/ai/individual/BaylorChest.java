@@ -7,6 +7,10 @@ import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.util.Rnd;
 
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class BaylorChest extends AbstractNpcAI
 {

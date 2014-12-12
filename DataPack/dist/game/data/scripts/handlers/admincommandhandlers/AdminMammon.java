@@ -7,10 +7,11 @@ import pk.elfo.gameserver.model.AutoSpawnHandler.AutoSpawnInstance;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.SystemMessageId;
-
+ 
 /**
- * Admin Command Handler for Mammon NPCs
+ * Projeto PkElfo
  */
+
 public class AdminMammon implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =

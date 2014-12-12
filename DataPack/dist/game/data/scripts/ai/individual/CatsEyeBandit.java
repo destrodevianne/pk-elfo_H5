@@ -7,10 +7,11 @@ import pk.elfo.gameserver.model.quest.QuestState;
 import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.gameserver.network.clientpackets.Say2;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Cat's Eye Bandit (Quest Monster) AI.
+ * Projeto PkElfo
  */
+
 public final class CatsEyeBandit extends AbstractNpcAI
 {
 	// NPC ID
@@ -51,6 +52,6 @@ public final class CatsEyeBandit extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new CatsEyeBandit(CatsEyeBandit.class.getSimpleName(), "ai/individual");
+		new CatsEyeBandit(CatsEyeBandit.class.getSimpleName(), "ai");
 	}
 }

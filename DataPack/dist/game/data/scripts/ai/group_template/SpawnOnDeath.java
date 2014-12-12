@@ -9,6 +9,10 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
 import javolution.util.FastMap;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class SpawnOnDeath extends AbstractNpcAI 
 {
@@ -64,6 +68,6 @@ public class SpawnOnDeath extends AbstractNpcAI
 	}
 	public static void main(String[] args)
 	{
-		new SpawnOnDeath(SpawnOnDeath.class.getSimpleName(), "ai/group_template");
+		new SpawnOnDeath(SpawnOnDeath.class.getSimpleName(), "ai");
 	}
 }

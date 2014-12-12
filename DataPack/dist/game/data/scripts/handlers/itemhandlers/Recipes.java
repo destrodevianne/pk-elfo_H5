@@ -10,7 +10,7 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class Recipes implements IItemHandler

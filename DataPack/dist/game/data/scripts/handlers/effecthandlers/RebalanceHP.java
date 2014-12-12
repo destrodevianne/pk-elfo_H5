@@ -10,7 +10,7 @@ import pk.elfo.gameserver.network.serverpackets.StatusUpdate;
 import pk.elfo.gameserver.util.Util;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class RebalanceHP extends L2Effect

@@ -21,7 +21,7 @@ import pk.elfo.gameserver.network.serverpackets.ValidateLocation;
 import pk.elfo.util.Rnd;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class L2NpcAction implements IActionHandler

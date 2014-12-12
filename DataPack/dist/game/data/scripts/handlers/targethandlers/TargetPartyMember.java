@@ -8,7 +8,7 @@ import pk.elfo.gameserver.model.skills.targets.L2TargetType;
 import pk.elfo.gameserver.network.SystemMessageId;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class TargetPartyMember implements ITargetTypeHandler

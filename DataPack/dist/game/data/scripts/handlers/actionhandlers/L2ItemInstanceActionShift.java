@@ -9,7 +9,7 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.util.StringUtil;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class L2ItemInstanceActionShift implements IActionHandler

@@ -11,11 +11,11 @@ import pk.elfo.gameserver.model.actor.instance.L2ControllableMobInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.taskmanager.DecayTaskManager;
-
+ 
 /**
- * This class handles following admin commands: - res = resurrects target L2Character
- * @version $Revision: 1.2.4.5 $ $Date: 2005/04/11 10:06:06 $
+ * Projeto PkElfo
  */
+
 public class AdminRes implements IAdminCommandHandler
 {
 	private static Logger _log = Logger.getLogger(AdminRes.class.getName());

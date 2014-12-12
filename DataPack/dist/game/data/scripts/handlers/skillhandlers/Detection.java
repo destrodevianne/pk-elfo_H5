@@ -10,7 +10,7 @@ import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.model.skills.L2SkillType;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class Detection implements ISkillHandler

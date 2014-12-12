@@ -6,6 +6,10 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class BodyDestroyer extends AbstractNpcAI
 {
@@ -65,6 +69,6 @@ public class BodyDestroyer extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new BodyDestroyer(BodyDestroyer.class.getSimpleName(), "ai/individual");
+		new BodyDestroyer(BodyDestroyer.class.getSimpleName(), "ai");
 	}
 }

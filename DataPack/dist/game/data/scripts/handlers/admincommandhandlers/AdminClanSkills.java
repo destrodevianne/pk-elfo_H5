@@ -6,7 +6,7 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
    
 public class AdminClanSkills implements IAdminCommandHandler

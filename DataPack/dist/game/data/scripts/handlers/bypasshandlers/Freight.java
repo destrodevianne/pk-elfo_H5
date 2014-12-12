@@ -9,7 +9,7 @@ import pk.elfo.gameserver.network.serverpackets.PackageToList;
 import pk.elfo.gameserver.network.serverpackets.WareHouseWithdrawalList;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class Freight implements IBypassHandler

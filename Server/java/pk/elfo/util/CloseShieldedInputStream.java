@@ -5,7 +5,7 @@ import java.io.InputStream;
 
 /**
  * Prevent the underlying input stream to close.
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class CloseShieldedInputStream extends InputStream

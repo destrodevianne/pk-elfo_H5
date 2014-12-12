@@ -8,7 +8,7 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.util.Util;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class ChatPetition implements IChatHandler

@@ -12,10 +12,11 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.util.Util;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Dummy AI for spawns/respawns only for testing.
+ * Projeto PkElfo
  */
+
 public class DenOfEvil extends AbstractNpcAI
 {
 	// private static final int _buffer_id = 32656;
@@ -223,6 +224,6 @@ public class DenOfEvil extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new DenOfEvil(DenOfEvil.class.getSimpleName(), "ai/group_template");
+		new DenOfEvil(DenOfEvil.class.getSimpleName(), "ai");
 	}
 }

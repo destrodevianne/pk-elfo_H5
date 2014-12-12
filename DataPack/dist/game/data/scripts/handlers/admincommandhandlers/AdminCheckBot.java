@@ -18,7 +18,7 @@ import pk.elfo.gameserver.util.BotPunish;
 import javolution.text.TextBuilder;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class AdminCheckBot implements IAdminCommandHandler

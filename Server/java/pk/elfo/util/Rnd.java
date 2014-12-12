@@ -4,7 +4,7 @@ import java.security.SecureRandom;
 import java.util.Random;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public final class Rnd

@@ -13,7 +13,7 @@ import pk.elfo.util.Rnd;
 import javolution.util.FastList;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class RandomizeHate extends L2Effect

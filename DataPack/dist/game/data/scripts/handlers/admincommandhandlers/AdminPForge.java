@@ -14,10 +14,11 @@ import pk.elfo.gameserver.network.clientpackets.L2GameClientPacket;
 import pk.elfo.gameserver.network.serverpackets.AdminForgePacket;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.util.StringUtil;
-
+ 
 /**
- * This class handles commands for gm to forge packets
+ * Projeto PkElfo
  */
+
 public class AdminPForge implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =

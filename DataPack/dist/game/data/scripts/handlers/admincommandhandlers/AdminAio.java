@@ -16,7 +16,7 @@ import pk.elfo.gameserver.network.serverpackets.EtcStatusUpdate;
 
 /**
  * Give / Take Status Aio to Player Changes name color and title color if enabled Uses: setaio [<player_name>] [<time_duration in days>] removeaio [<player_name>] If <player_name> is not specified, the current target player is used.
- * PkElfo
+ * Projeto PkElfo
  */
 public class AdminAio implements IAdminCommandHandler
 {

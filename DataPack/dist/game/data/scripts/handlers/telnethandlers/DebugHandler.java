@@ -35,7 +35,7 @@ import javolution.util.FastComparator;
 import javolution.util.FastTable;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class DebugHandler implements ITelnetHandler

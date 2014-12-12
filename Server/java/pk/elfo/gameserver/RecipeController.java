@@ -33,6 +33,10 @@ import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.Rnd;
 import javolution.util.FastMap;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class RecipeController
 {

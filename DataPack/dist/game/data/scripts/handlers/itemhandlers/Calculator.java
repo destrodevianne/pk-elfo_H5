@@ -7,7 +7,7 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.ShowCalculator;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class Calculator implements IItemHandler

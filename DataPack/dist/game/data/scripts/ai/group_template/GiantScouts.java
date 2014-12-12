@@ -14,6 +14,10 @@ import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.CreatureSay;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class GiantScouts extends AbstractNpcAI
 {
@@ -71,6 +75,6 @@ public class GiantScouts extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new GiantScouts(GiantScouts.class.getSimpleName(), "ai/group_template");
+		new GiantScouts(GiantScouts.class.getSimpleName(), "ai");
 	}
 }

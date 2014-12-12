@@ -8,7 +8,7 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.ExChooseInventoryAttributeItem;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class EnchantAttribute implements IItemHandler

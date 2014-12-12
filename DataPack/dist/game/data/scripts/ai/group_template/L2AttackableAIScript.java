@@ -21,6 +21,10 @@ import pk.elfo.gameserver.model.quest.Quest;
 import pk.elfo.gameserver.model.quest.jython.QuestJython;
 import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.util.Util;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public final class L2AttackableAIScript extends QuestJython
 {
@@ -172,7 +176,7 @@ public final class L2AttackableAIScript extends QuestJython
 	
 	public static void main(String[] args)
 	{
-		L2AttackableAIScript ai = new L2AttackableAIScript(-1, L2AttackableAIScript.class.getSimpleName(), "ai/group_template");
+		L2AttackableAIScript ai = new L2AttackableAIScript(-1, L2AttackableAIScript.class.getSimpleName(), "ai");
 		// register all mobs here...
 		for (int level = 1; level < 100; level++)
 		{

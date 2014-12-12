@@ -8,10 +8,11 @@ import pk.elfo.gameserver.model.actor.L2Attackable;
 import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
-
+ 
 /**
- * Zealot of Shilen AI
+ * Projeto PkElfo
  */
+
 public class ZealotOfShilen extends AbstractNpcAI
 {
 	private static final int ZEALOT = 18782;

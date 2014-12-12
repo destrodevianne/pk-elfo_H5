@@ -7,6 +7,10 @@ import pk.elfo.gameserver.model.actor.instance.L2MonsterInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class SpikedStakatoBaby extends AbstractNpcAI
 {
@@ -49,6 +53,6 @@ public class SpikedStakatoBaby extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new SpikedStakatoBaby(-1, "SpikedStakatoBaby", "ai/group_template");
+		new SpikedStakatoBaby(-1, "SpikedStakatoBaby", "ai");
 	}
 }

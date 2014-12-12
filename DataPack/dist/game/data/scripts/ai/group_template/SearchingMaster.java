@@ -5,10 +5,11 @@ import pk.elfo.gameserver.model.actor.L2Attackable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Searching Master AI.
+ * Projeto PkElfo
  */
+
 public class SearchingMaster extends AbstractNpcAI
 {
 	private static final int[] MOBS =
@@ -47,6 +48,6 @@ public class SearchingMaster extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new SearchingMaster(SearchingMaster.class.getSimpleName(), "ai/group_template");
+		new SearchingMaster(SearchingMaster.class.getSimpleName(), "ai");
 	}
 }

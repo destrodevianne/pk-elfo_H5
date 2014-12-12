@@ -8,9 +8,9 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.util.StringUtil;
-
+ 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class StatsVCmd implements IVoicedCommandHandler

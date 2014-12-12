@@ -24,6 +24,6 @@
  * In order to achieve this special teleportation, a teleport script is needed.<br>
  * <br>
  * All implementation details are fully covered by quests.<br>
- * @author Zoey76
+ * Projeto PElfo
  */
 package ai.npc.Teleports;

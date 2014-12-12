@@ -14,6 +14,10 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.base.ClassId;
 import pk.elfo.gameserver.model.holders.SkillHolder;
 import pk.elfo.gameserver.util.Util;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public final class DragonValley extends AbstractNpcAI
 {
@@ -112,7 +116,7 @@ public final class DragonValley extends AbstractNpcAI
 
     public DragonValley()
     {
-        super(DragonValley.class.getSimpleName(), "ai/group_template");
+        super(DragonValley.class.getSimpleName(), "ai");
         addAttackId(NECROMANCER_OF_THE_VALLEY);
         addAttackId(SUMMON_NPC);
         addKillId(NECROMANCER_OF_THE_VALLEY);

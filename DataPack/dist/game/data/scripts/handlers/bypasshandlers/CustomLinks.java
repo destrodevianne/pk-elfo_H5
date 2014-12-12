@@ -11,7 +11,7 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
  * <a action="bypass -h CustomLinks custom.html">Custom Link</a><br>
  * Root directory data/html/
  * @version 1.0
- * PkElfo
+ * Projeto PkElfo
  */
 public class CustomLinks implements IBypassHandler
 {

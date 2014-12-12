@@ -13,7 +13,7 @@ import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.CreatureSay;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class ChatsHandler implements ITelnetHandler

@@ -3,6 +3,10 @@ package ai.individual;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class Kechi extends AbstractNpcAI
 {
@@ -94,7 +98,6 @@ public class Kechi extends AbstractNpcAI
 					keshiStatus = 7;
 					SpawnMobs(npc);
 			}
-			
 		}
 		return null;
 	}
@@ -106,12 +109,11 @@ public class Kechi extends AbstractNpcAI
 		{
 			addSpawn(32279, 154077, 149527, -12159, 0, false, 0L, false, killer.getInstanceId());
 		}
-		
 		return super.onKill(npc, killer, isPet);
 	}
 	
 	public static void main(String[] args)
 	{
-		new Kechi(Kechi.class.getSimpleName(), "ai/individual");
+		new Kechi(Kechi.class.getSimpleName(), "ai");
 	}
 }

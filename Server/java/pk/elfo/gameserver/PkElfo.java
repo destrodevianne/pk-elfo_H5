@@ -1,6 +1,10 @@
 package pk.elfo.gameserver;
 
 import java.util.logging.Logger;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class PkElfo
 {
@@ -30,7 +34,7 @@ public class PkElfo
 		_log.info("_______________________________________________________________________________");
 		_log.info("                               Projeto High Five                               ");
 		_log.info("                              ALL RIGHTS RESERVED                              ");
-        _log.info("                       Copyright 2013-2014 Team - PkElfo                       ");
+        _log.info("                       Copyright 2013-2015 Team - PkElfo                       ");
 		_log.info("_______________________________________________________________________________");
 	}
 }

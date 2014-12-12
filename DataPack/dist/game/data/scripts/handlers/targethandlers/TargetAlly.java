@@ -13,7 +13,7 @@ import pk.elfo.gameserver.model.skills.targets.L2TargetType;
 import javolution.util.FastList;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class TargetAlly implements ITargetTypeHandler

@@ -3,11 +3,11 @@ package handlers.admincommandhandlers;
 import pk.elfo.gameserver.handler.IAdminCommandHandler;
 import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
-
+ 
 /**
- * This class handles following admin commands: - target name = sets player with respective name as target
- * @version $Revision: 1.2.4.3 $ $Date: 2005/04/11 10:05:56 $
+ * Projeto PkElfo
  */
+
 public class AdminTarget implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =

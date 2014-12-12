@@ -7,7 +7,7 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.serverpackets.ExShowQuestInfo;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class QuestList implements IBypassHandler

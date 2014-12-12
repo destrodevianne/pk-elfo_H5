@@ -8,7 +8,7 @@ import pk.elfo.gameserver.network.serverpackets.ExRegMax;
 import pk.elfo.gameserver.network.serverpackets.StatusUpdate;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class HealOverTime extends L2Effect

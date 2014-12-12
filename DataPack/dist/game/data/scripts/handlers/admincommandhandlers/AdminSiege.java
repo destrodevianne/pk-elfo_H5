@@ -20,10 +20,11 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.StringUtil;
-
+ 
 /**
- * This class handles all siege commands.
+ * Projeto PkElfo
  */
+
 public class AdminSiege implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =

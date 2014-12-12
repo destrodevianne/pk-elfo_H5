@@ -7,10 +7,11 @@ import pk.elfo.gameserver.model.actor.instance.L2MonsterInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.holders.SkillHolder;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Manages Naia's cast on the Hellbound Core
+ * Projeto PkElfo
  */
+
 public class HellboundCore extends AbstractNpcAI
 {
 	private static final int NAIA = 18484;
@@ -51,6 +52,6 @@ public class HellboundCore extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new HellboundCore(HellboundCore.class.getSimpleName(), "ai/individual");
+		new HellboundCore(HellboundCore.class.getSimpleName(), "ai");
 	}
 }

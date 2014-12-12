@@ -5,6 +5,10 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class Mutation extends AbstractNpcAI 
 {
@@ -68,6 +72,6 @@ public class Mutation extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new Mutation(Mutation.class.getSimpleName(), "ai/group_template");
+		new Mutation(Mutation.class.getSimpleName(), "ai");
 	}
 }

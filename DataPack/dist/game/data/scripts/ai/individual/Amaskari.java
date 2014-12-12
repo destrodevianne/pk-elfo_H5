@@ -15,7 +15,7 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Manages Amaskari's and minions' chat and some skill usage.
- * @author GKR
+ * Projeto PkElfo
  */
 public class Amaskari extends AbstractNpcAI
 {
@@ -167,6 +167,6 @@ public class Amaskari extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Amaskari(Amaskari.class.getSimpleName(), "ai/individual");
+		new Amaskari(Amaskari.class.getSimpleName(), "ai");
 	}
 }

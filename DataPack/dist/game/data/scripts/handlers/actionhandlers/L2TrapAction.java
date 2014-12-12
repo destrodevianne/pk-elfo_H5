@@ -9,7 +9,7 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.MyTargetSelected;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class L2TrapAction implements IActionHandler

@@ -3,6 +3,10 @@ package ai.individual;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class Darnel extends AbstractNpcAI
 {
@@ -27,6 +31,6 @@ public class Darnel extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new Darnel(Darnel.class.getSimpleName(), "ai/individual");
+		new Darnel(Darnel.class.getSimpleName(), "ai");
 	}
 }

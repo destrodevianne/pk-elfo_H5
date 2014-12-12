@@ -11,7 +11,7 @@ import pk.elfo.gameserver.model.holders.SkillHolder;
 import pk.elfo.gameserver.model.zone.ZoneId;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class ArenaBuff implements IBypassHandler

@@ -40,6 +40,7 @@ import pk.elfo.util.StringUtil;
  * <li>admin_setskill</li>
  * </ul>
  * @version 2012/02/26 Small fixes by Zoey76 05/03/2011
+ * Projeto PkElfo
  */
 public class AdminSkill implements IAdminCommandHandler
 {

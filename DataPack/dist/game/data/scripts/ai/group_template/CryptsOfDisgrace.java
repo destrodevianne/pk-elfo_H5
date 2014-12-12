@@ -7,6 +7,10 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class CryptsOfDisgrace extends AbstractNpcAI
 {
@@ -125,6 +129,6 @@ public class CryptsOfDisgrace extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new CryptsOfDisgrace(CryptsOfDisgrace.class.getSimpleName(), "ai/group_template");
+		new CryptsOfDisgrace(CryptsOfDisgrace.class.getSimpleName(), "ai");
 	}
 }

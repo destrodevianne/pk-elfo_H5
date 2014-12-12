@@ -14,7 +14,7 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import javolution.util.FastList;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class TargetCorpseMob implements ITargetTypeHandler

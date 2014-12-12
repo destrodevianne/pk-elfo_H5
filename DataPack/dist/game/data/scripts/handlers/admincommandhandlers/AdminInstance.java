@@ -10,7 +10,7 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.entity.Instance;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class AdminInstance implements IAdminCommandHandler

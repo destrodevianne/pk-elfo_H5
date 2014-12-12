@@ -23,11 +23,11 @@ import pk.elfo.gameserver.network.serverpackets.L2GameServerPacket;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import javolution.util.FastList;
 import javolution.util.FastMap;
-
+ 
 /**
- * This class stores references to all online game masters. (access level > 100)
- * @version $Revision: 1.2.2.1.2.7 $ $Date: 2005/04/05 19:41:24 $
+ * Projeto PkElfo
  */
+
 public class GmListTable
 {
 	private static Logger _log = Logger.getLogger(GmListTable.class.getName());
@@ -51,7 +51,6 @@ public class GmListTable
 				tmpGmList.add(n.getKey());
 			}
 		}
-		
 		return tmpGmList;
 	}
 	
@@ -70,7 +69,6 @@ public class GmListTable
 				tmpGmList.add(n.getKey().getName() + " (invis)");
 			}
 		}
-		
 		return tmpGmList;
 	}
 	
@@ -138,7 +136,6 @@ public class GmListTable
 				return true;
 			}
 		}
-		
 		return false;
 	}
 	

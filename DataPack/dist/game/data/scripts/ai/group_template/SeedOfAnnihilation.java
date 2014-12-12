@@ -17,10 +17,11 @@ import pk.elfo.gameserver.model.zone.type.L2EffectZone;
 import pk.elfo.gameserver.util.Util;
 import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Seed Of Annihilation AI.
+ * Projeto PkElfo
  */
+
 public class SeedOfAnnihilation extends AbstractNpcAI
 {
 	private static final Map<Integer, Location> _teleportZones = new FastMap<>();
@@ -376,6 +377,6 @@ public class SeedOfAnnihilation extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new SeedOfAnnihilation(SeedOfAnnihilation.class.getSimpleName(), "ai/group_template");
+		new SeedOfAnnihilation(SeedOfAnnihilation.class.getSimpleName(), "ai");
 	}
 }

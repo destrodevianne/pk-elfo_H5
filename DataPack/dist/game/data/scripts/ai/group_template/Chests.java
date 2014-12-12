@@ -14,12 +14,11 @@ import pk.elfo.gameserver.network.serverpackets.PlaySound;
 import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Chest AI implementation.
- * @author Fulminus
- * @author FBIagent
+ * Projeto PkElfo
  */
+
 public class Chests extends AbstractNpcAI
 {
 	private static final int _SKILL_UNLOCK_ID = 27;
@@ -48,7 +47,7 @@ public class Chests extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Chests("chests", "ai/group_template");
+		new Chests("chests", "ai");
 	}
 	
 	private Chests(String name, String descr)

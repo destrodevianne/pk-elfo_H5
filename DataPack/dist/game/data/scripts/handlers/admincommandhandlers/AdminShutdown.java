@@ -11,11 +11,11 @@ import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.util.Util;
-
+ 
 /**
- * This class handles following admin commands: - server_shutdown [sec] = shows menu or shuts down server in sec seconds
- * @version $Revision: 1.5.2.1.2.4 $ $Date: 2005/04/11 10:06:06 $
+ * Projeto PkElfo
  */
+
 public class AdminShutdown implements IAdminCommandHandler
 {
 	// private static Logger _log = Logger.getLogger(AdminShutdown.class.getName());

@@ -27,7 +27,7 @@ import pk.elfo.gameserver.network.serverpackets.ExShowSellCropList;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class ManorManager implements IBypassHandler

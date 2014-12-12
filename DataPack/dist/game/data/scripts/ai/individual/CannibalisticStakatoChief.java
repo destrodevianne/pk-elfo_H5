@@ -82,6 +82,6 @@ public class CannibalisticStakatoChief extends AbstractNpcAI
 
     public static void main(String[] args)
     {
-        new CannibalisticStakatoChief(CannibalisticStakatoChief.class.getSimpleName(), "ai/individual");
+        new CannibalisticStakatoChief(CannibalisticStakatoChief.class.getSimpleName(), "ai");
     }
 }

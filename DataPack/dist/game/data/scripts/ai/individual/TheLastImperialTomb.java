@@ -31,6 +31,10 @@ import pk.elfo.gameserver.network.serverpackets.SpecialCamera;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class TheLastImperialTomb extends AbstractNpcAI
 {
@@ -2407,6 +2411,6 @@ public class TheLastImperialTomb extends AbstractNpcAI
 	public static void main(String[] args)
 	{
 		// now call the constructor (starts up the ai)
-		new TheLastImperialTomb(TheLastImperialTomb.class.getSimpleName(), "ai/individual");
+		new TheLastImperialTomb(TheLastImperialTomb.class.getSimpleName(), "ai");
 	}
 }

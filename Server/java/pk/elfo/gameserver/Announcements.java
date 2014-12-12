@@ -25,7 +25,11 @@ import pk.elfo.gameserver.script.DateRange;
 import pk.elfo.gameserver.util.Broadcast;
 import pk.elfo.util.StringUtil;
 import javolution.util.FastList;
- 
+  
+/**
+ * Projeto PkElfo
+ */
+
 public class Announcements
 {
 	private static Logger _log = Logger.getLogger(Announcements.class.getName());

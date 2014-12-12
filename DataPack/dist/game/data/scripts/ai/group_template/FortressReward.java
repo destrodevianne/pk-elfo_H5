@@ -11,6 +11,10 @@ import pk.elfo.gameserver.model.quest.Quest;
 import pk.elfo.gameserver.model.quest.QuestState;
 import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.Rnd;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class FortressReward extends Quest
 {

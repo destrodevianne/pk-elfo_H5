@@ -5,9 +5,9 @@ import pk.elfo.gameserver.model.L2CharPosition;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class FleeNpc extends AbstractNpcAI
@@ -57,6 +57,6 @@ public class FleeNpc extends AbstractNpcAI
 	// Register the new Script at the Script System
 	public static void main(String[] args)
 	{
-		new FleeNpc(FleeNpc.class.getSimpleName(), "ai/individual");
+		new FleeNpc(FleeNpc.class.getSimpleName(), "ai");
 	}
 }

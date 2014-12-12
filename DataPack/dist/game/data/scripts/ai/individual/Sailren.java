@@ -14,6 +14,10 @@ import pk.elfo.gameserver.network.serverpackets.SocialAction;
 import pk.elfo.gameserver.network.serverpackets.SpecialCamera;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class Sailren extends AbstractNpcAI
 {
@@ -275,6 +279,6 @@ public class Sailren extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Sailren(Sailren.class.getSimpleName(),"ai/individual");
+		new Sailren(Sailren.class.getSimpleName(),"ai");
 	}
 }

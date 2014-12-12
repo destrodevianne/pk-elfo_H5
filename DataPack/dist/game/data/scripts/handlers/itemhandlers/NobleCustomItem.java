@@ -8,7 +8,7 @@ import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.gameserver.network.serverpackets.SocialAction;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class NobleCustomItem implements IItemHandler

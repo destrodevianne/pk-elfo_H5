@@ -15,11 +15,11 @@ import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.stats.Stats;
 import pk.elfo.gameserver.network.SystemMessageId;
-
+ 
 /**
- * This class handles following admin commands: - handles every admin menu command
- * @version $Revision: 1.3.2.6.2.4 $ $Date: 2005/04/11 10:06:06 $
+ * Projeto PkElfo
  */
+
 public class AdminMenu implements IAdminCommandHandler
 {
 	private static final Logger _log = Logger.getLogger(AdminMenu.class.getName());

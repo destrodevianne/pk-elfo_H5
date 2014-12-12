@@ -24,7 +24,7 @@ import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.Rnd;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class Fishing implements ISkillHandler

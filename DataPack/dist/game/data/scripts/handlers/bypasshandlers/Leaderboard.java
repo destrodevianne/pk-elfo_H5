@@ -10,9 +10,9 @@ import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
-
+ 
 /**
- * PkEfo
+ * Projeto PkElfo
  */
 
 public class Leaderboard implements IBypassHandler

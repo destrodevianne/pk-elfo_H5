@@ -4,9 +4,9 @@ import pk.elfo.gameserver.handler.IVoicedCommandHandler;
 import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.util.Util;
-
+ 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class SetVCmd implements IVoicedCommandHandler

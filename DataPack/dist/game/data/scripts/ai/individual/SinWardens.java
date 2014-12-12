@@ -9,6 +9,10 @@ import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class SinWardens extends AbstractNpcAI
 {
@@ -66,6 +70,6 @@ public class SinWardens extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new SinWardens(SinWardens.class.getSimpleName(), "ai/individual");
+		new SinWardens(SinWardens.class.getSimpleName(), "ai");
 	}
 }

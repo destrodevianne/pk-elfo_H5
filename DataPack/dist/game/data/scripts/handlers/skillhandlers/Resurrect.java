@@ -16,7 +16,7 @@ import pk.elfo.gameserver.taskmanager.DecayTaskManager;
 import javolution.util.FastList;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class Resurrect implements ISkillHandler

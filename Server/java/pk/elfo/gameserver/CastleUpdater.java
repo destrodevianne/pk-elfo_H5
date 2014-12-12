@@ -8,6 +8,10 @@ import pk.elfo.gameserver.instancemanager.CastleManager;
 import pk.elfo.gameserver.model.L2Clan;
 import pk.elfo.gameserver.model.entity.Castle;
 import pk.elfo.gameserver.model.itemcontainer.ItemContainer;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class CastleUpdater implements Runnable
 {

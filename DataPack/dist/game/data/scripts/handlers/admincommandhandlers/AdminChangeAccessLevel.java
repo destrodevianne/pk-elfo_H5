@@ -14,7 +14,7 @@ import pk.elfo.gameserver.network.SystemMessageId;
 
 /**
  * This class handles following admin commands: - changelvl = change a character's access level Can be used for character ban (as opposed to regular //ban that affects accounts) or to grant mod/GM privileges ingame
- * PkElfo
+ * Projeto PkElfo
  */
 public class AdminChangeAccessLevel implements IAdminCommandHandler
 {

@@ -7,7 +7,7 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.SSQStatus;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class SevenSignsRecord implements IItemHandler

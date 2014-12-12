@@ -15,11 +15,11 @@ import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.network.serverpackets.PlaySound;
 import javolution.util.FastList;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Core AI
- * @author DrLecter Revised By Emperorc
+ * Projeto PkElfo
  */
+
 public class Core extends AbstractNpcAI
 {
 	private static final int CORE = 29006;
@@ -204,6 +204,6 @@ public class Core extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Core(Core.class.getSimpleName(), "ai/individual");
+		new Core(Core.class.getSimpleName(), "ai");
 	}
 }

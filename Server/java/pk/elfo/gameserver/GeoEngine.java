@@ -28,6 +28,10 @@ import pk.elfo.gameserver.model.actor.instance.L2DefenderInstance;
 import pk.elfo.gameserver.model.actor.instance.L2DoorInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.util.Point3D;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class GeoEngine extends GeoData
 {

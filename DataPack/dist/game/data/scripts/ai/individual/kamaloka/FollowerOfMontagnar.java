@@ -3,6 +3,10 @@ package ai.individual.kamaloka;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class FollowerOfMontagnar extends AbstractNpcAI 
 {
@@ -20,8 +24,9 @@ public class FollowerOfMontagnar extends AbstractNpcAI
 		int npcId = npc.getNpcId();
 
 		if (npcId == FOFMONTAGNAR)
+		{
 			npc.setIsInvul(true);
-
+		}
 		return "";
 	}
 

@@ -6,6 +6,10 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class HotSpringDisease extends AbstractNpcAI
 {
@@ -65,6 +69,6 @@ public class HotSpringDisease extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new HotSpringDisease(HotSpringDisease.class.getSimpleName(), "ai/group_template");
+		new HotSpringDisease(HotSpringDisease.class.getSimpleName(), "ai");
 	}
 }

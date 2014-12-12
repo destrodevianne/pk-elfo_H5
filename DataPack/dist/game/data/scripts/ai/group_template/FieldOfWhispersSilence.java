@@ -5,6 +5,10 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.gameserver.network.serverpackets.CreatureSay;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class FieldOfWhispersSilence extends AbstractNpcAI
 {
@@ -36,6 +40,6 @@ public class FieldOfWhispersSilence extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new FieldOfWhispersSilence(-1, "FieldOfWhispersSilence", "ai/group_template");
+		new FieldOfWhispersSilence(-1, "FieldOfWhispersSilence", "ai");
 	}
 }

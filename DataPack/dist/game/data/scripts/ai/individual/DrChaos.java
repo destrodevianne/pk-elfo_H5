@@ -9,10 +9,11 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.quest.Quest;
 import pk.elfo.gameserver.network.serverpackets.PlaySound;
 import pk.elfo.gameserver.network.serverpackets.SpecialCamera;
-
+ 
 /**
- * DrChaos' AI.
+ * Projeto PkElfo
  */
+
 public class DrChaos extends Quest
 {
 	private static final int DR_CHAOS = 32033;
@@ -98,6 +99,6 @@ public class DrChaos extends Quest
 	
 	public static void main(String[] args)
 	{
-		new DrChaos(-1, "Doctor Chaos", "ai/individual");
+		new DrChaos(-1, "Doctor Chaos", "ai");
 	}
 }

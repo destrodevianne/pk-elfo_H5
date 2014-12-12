@@ -17,7 +17,7 @@ import pk.elfo.gameserver.network.serverpackets.ValidateLocation;
 import pk.elfo.util.StringUtil;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class L2PcInstanceActionShift implements IActionHandler

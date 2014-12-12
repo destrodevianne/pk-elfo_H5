@@ -6,6 +6,10 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.actor.instance.L2RaidBossInstance;
 import pk.elfo.gameserver.model.holders.SkillHolder;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class Typhoon extends AbstractNpcAI
 {
@@ -53,6 +57,6 @@ public class Typhoon extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Typhoon(Typhoon.class.getSimpleName(), "ai/individual");
+		new Typhoon(Typhoon.class.getSimpleName(), "ai");
 	}
 }

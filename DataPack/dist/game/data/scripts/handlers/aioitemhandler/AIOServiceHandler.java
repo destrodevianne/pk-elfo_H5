@@ -13,7 +13,7 @@ import pk.elfo.gameserver.network.serverpackets.HennaEquipList;
 import pk.elfo.gameserver.network.serverpackets.HennaRemoveList;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class AIOServiceHandler implements IAIOItemHandler

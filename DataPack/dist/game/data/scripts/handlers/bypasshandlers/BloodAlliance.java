@@ -11,7 +11,7 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
  * Castle Warehouse - Blood Alliance.
- * PkElfo
+ * Projeto PkElfo
  */
 public class BloodAlliance implements IBypassHandler
 {

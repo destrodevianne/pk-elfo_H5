@@ -9,7 +9,7 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class ClanRepsItem implements IItemHandler

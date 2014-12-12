@@ -3,6 +3,10 @@ package pk.elfo.gameserver;
 import java.util.ArrayList;
 
 import pk.elfo.gameserver.network.serverpackets.L2GameServerPacket;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class Text extends L2GameServerPacket
 {

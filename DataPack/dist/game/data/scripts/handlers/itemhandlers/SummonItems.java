@@ -25,7 +25,7 @@ import pk.elfo.gameserver.network.serverpackets.SetupGauge;
 import pk.elfo.gameserver.util.Broadcast;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class SummonItems implements IItemHandler

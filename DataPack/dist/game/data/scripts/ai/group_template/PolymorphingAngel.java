@@ -7,10 +7,11 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Angel spawns...when one of the angels in the keys dies, the other angel will spawn.
+ * Projeto PkElfo
  */
+
 public class PolymorphingAngel extends AbstractNpcAI
 {
 	private static final Map<Integer, Integer> ANGELSPAWNS = new FastMap<>();
@@ -39,6 +40,6 @@ public class PolymorphingAngel extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new PolymorphingAngel(PolymorphingAngel.class.getSimpleName(), "ai/group_template");
+		new PolymorphingAngel(PolymorphingAngel.class.getSimpleName(), "ai");
 	}
 }

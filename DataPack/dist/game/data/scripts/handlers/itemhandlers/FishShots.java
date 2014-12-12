@@ -17,7 +17,7 @@ import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
 import pk.elfo.gameserver.util.Broadcast;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class FishShots implements IItemHandler

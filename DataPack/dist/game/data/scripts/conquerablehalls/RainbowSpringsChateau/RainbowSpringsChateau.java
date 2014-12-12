@@ -41,10 +41,11 @@ import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.util.Util;
-
+ 
 /**
- * Rainbow Springs Chateau clan hall siege script.
+ * Projeto PkElfo
  */
+
 public class RainbowSpringsChateau extends Quest
 {
 	private static final Logger _log = Logger.getLogger(RainbowSpringsChateau.class.getName());

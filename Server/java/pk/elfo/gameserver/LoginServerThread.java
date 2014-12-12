@@ -57,6 +57,10 @@ import pk.elfo.util.crypt.NewCrypt;
 import pk.elfo.util.network.BaseSendablePacket;
 import javolution.util.FastList;
 import javolution.util.FastMap;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class LoginServerThread extends Thread
 {

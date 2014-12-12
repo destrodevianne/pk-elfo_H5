@@ -16,6 +16,10 @@ import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.util.Util;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class MonasteryOfSilence extends AbstractNpcAI
 {
@@ -184,6 +188,6 @@ public class MonasteryOfSilence extends AbstractNpcAI
 	
 	public static void main(String[]args)
 	{
-		new MonasteryOfSilence(MonasteryOfSilence.class.getSimpleName(), "ai/group_template");
+		new MonasteryOfSilence(MonasteryOfSilence.class.getSimpleName(), "ai");
 	}
 }

@@ -21,7 +21,7 @@ import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.util.StringUtil;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class Festival implements IBypassHandler

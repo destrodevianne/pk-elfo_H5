@@ -11,7 +11,7 @@ import pk.elfo.gameserver.network.serverpackets.StaticObject;
 import pk.elfo.util.StringUtil;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class L2StaticObjectInstanceActionShift implements IActionHandler

@@ -16,7 +16,7 @@ import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class AIOSchemeHandler implements IAIOItemHandler

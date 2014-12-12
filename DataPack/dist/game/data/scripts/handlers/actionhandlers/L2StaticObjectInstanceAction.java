@@ -12,7 +12,7 @@ import pk.elfo.gameserver.network.serverpackets.MyTargetSelected;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class L2StaticObjectInstanceAction implements IActionHandler

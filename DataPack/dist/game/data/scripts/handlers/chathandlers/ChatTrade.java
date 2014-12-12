@@ -13,7 +13,7 @@ import pk.elfo.gameserver.network.serverpackets.CreatureSay;
 import pk.elfo.gameserver.util.Util;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class ChatTrade implements IChatHandler

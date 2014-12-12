@@ -16,6 +16,10 @@ import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.util.Rnd;
 import javolution.util.FastList;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class MercenaryCaptain extends Quest
 {
@@ -127,6 +131,6 @@ public class MercenaryCaptain extends Quest
 	
 	public static void main(String[] args)
 	{
-		new MercenaryCaptain(-1, "MercenaryCaptain", "ai/group_template");
+		new MercenaryCaptain(-1, "MercenaryCaptain", "ai");
 	}
 }

@@ -15,7 +15,7 @@ import pk.elfo.gameserver.network.serverpackets.ActionFailed;
 import pk.elfo.util.Rnd;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class Unlock implements ISkillHandler

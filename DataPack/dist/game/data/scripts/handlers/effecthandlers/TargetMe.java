@@ -10,7 +10,7 @@ import pk.elfo.gameserver.model.stats.Env;
 import pk.elfo.gameserver.network.serverpackets.MyTargetSelected;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class TargetMe extends L2Effect

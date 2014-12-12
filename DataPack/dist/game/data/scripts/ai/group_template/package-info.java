@@ -13,6 +13,6 @@
  * "NPC registrations" refers to the addition of NPCs in the various events of the scripts, such as onAttack, onKill, etc.<br>
  * Those are done by using methods such as addKillId(..) etc.<br>
  * @see quests
- * @author Fulminus, Zoey76
+ * Projeto PkElfo
  */
 package ai.group_template;

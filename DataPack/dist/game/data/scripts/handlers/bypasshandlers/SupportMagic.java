@@ -8,7 +8,7 @@ import pk.elfo.gameserver.model.base.ClassId;
 import pk.elfo.gameserver.model.holders.SkillHolder;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class SupportMagic implements IBypassHandler

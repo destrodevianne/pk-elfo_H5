@@ -16,9 +16,9 @@ import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Sel Mahum Training Ground AI for squads and chefs.
+ * Projeto PkElfo
  */
 
 public class SelMahumSquad extends AbstractNpcAI
@@ -387,6 +387,6 @@ public class SelMahumSquad extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new SelMahumSquad(SelMahumSquad.class.getSimpleName(), "ai/group_template");
+		new SelMahumSquad(SelMahumSquad.class.getSimpleName(), "ai");
 	}
 }

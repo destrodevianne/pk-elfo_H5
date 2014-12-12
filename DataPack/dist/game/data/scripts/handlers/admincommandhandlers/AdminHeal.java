@@ -10,11 +10,11 @@ import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.SystemMessageId;
-
+ 
 /**
- * This class handles following admin commands: - heal = restores HP/MP/CP on target, name or radius
- * @version $Revision: 1.2.4.5 $ $Date: 2005/04/11 10:06:06 $ Small typo fix by Zoey76 24/02/2011
+ * Projeto PkElfo
  */
+
 public class AdminHeal implements IAdminCommandHandler
 {
 	private static Logger _log = Logger.getLogger(AdminRes.class.getName());

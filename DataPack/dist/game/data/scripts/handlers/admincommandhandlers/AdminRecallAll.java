@@ -5,7 +5,7 @@ import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class AdminRecallAll implements IAdminCommandHandler

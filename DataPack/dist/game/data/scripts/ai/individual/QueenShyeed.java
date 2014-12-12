@@ -8,10 +8,11 @@ import pk.elfo.gameserver.model.zone.type.L2EffectZone;
 import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.gameserver.network.clientpackets.Say2;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Queen Shyeed AI
+ * Projeto PkElfo
  */
+
 public class QueenShyeed extends AbstractNpcAI
 {
 	// NPC
@@ -89,6 +90,6 @@ public class QueenShyeed extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new QueenShyeed(QueenShyeed.class.getSimpleName(), "ai/individual");
+		new QueenShyeed(QueenShyeed.class.getSimpleName(), "ai");
 	}
 }

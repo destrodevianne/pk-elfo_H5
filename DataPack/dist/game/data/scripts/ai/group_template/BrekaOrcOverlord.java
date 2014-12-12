@@ -5,11 +5,14 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class BrekaOrcOverlord extends AbstractNpcAI 
 {
 	private static final int BREKA = 20270;
-
 	private static boolean _FirstAttacked;
 
 	public BrekaOrcOverlord(String name, String descr)
@@ -58,6 +61,6 @@ public class BrekaOrcOverlord extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new BrekaOrcOverlord(BrekaOrcOverlord.class.getSimpleName(), "ai/group_template");
+		new BrekaOrcOverlord(BrekaOrcOverlord.class.getSimpleName(), "ai");
 	}
 }

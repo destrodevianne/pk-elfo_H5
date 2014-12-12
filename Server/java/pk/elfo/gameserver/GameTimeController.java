@@ -11,6 +11,10 @@ import pk.elfo.Config;
 import pk.elfo.gameserver.ai.CtrlEvent;
 import pk.elfo.gameserver.instancemanager.DayNightSpawnManager;
 import pk.elfo.gameserver.model.actor.L2Character;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class GameTimeController
 {

@@ -17,7 +17,7 @@ import javolution.util.FastList;
 /**
  * Implementation of the Confusion Effect.<br>
  * Zoey76: TODO: Review onActionTime() method.
- * PkElfo
+ * Projeto PkElfo
  */
 public class ConfuseMob extends L2Effect
 {

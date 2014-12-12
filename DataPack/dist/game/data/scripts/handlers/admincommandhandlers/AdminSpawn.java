@@ -30,11 +30,11 @@ import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.util.Broadcast;
 import pk.elfo.util.StringUtil;
-
+ 
 /**
- * This class handles following admin commands: - show_spawns = shows menu - spawn_index lvl = shows menu for monsters with respective level - spawn_monster id = spawns monster id on target
- * @version $Revision: 1.2.2.5.2.5 $ $Date: 2005/04/11 10:06:06 $
+ * Projeto PkElfo
  */
+
 public class AdminSpawn implements IAdminCommandHandler
 {
 	private static final Logger _log = Logger.getLogger(AdminSpawn.class.getName());

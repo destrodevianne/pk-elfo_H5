@@ -7,9 +7,9 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.entity.TvTEvent;
 import pk.elfo.gameserver.network.serverpackets.ActionFailed;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
-
+ 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class TvTVoicedInfo implements IVoicedCommandHandler

@@ -4,6 +4,10 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2MonsterInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class IsleOfPrayer extends AbstractNpcAI
 {
@@ -31,7 +35,7 @@ public class IsleOfPrayer extends AbstractNpcAI
 	
 	private IsleOfPrayer()
 	{
-		super(IsleOfPrayer.class.getSimpleName(), "ai/group_template");
+		super(IsleOfPrayer.class.getSimpleName(), "ai");
 		addKillId(MUDDY_CORAL);
 	}
 	

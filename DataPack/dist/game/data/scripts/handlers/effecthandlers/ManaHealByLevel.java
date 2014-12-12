@@ -11,7 +11,7 @@ import pk.elfo.gameserver.network.serverpackets.StatusUpdate;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class ManaHealByLevel extends L2Effect

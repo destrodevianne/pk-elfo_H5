@@ -9,6 +9,10 @@ import pk.elfo.gameserver.idfactory.IdFactory;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
 import pk.elfo.util.Rnd;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class MonsterRace
 {

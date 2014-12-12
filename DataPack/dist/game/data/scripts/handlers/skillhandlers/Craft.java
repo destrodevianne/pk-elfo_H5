@@ -10,7 +10,7 @@ import pk.elfo.gameserver.model.skills.L2SkillType;
 import pk.elfo.gameserver.network.SystemMessageId;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class Craft implements ISkillHandler

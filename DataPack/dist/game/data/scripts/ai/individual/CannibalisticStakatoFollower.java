@@ -7,6 +7,10 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class CannibalisticStakatoFollower extends AbstractNpcAI
 {
@@ -72,6 +76,6 @@ public class CannibalisticStakatoFollower extends AbstractNpcAI
 
     public static void main(String[] args)
     {
-        new CannibalisticStakatoFollower(CannibalisticStakatoFollower.class.getSimpleName(), "ai/individual");
+        new CannibalisticStakatoFollower(CannibalisticStakatoFollower.class.getSimpleName(), "ai");
     }
 }

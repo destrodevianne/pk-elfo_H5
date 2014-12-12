@@ -9,7 +9,7 @@ import pk.elfo.gameserver.model.entity.TvTRoundEventTeleporter;
 import pk.elfo.gameserver.model.entity.TvTRoundManager;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class AdminTvTRoundEvent implements IAdminCommandHandler

@@ -4,12 +4,11 @@ import pk.elfo.gameserver.handler.IAdminCommandHandler;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.util.Util;
-
+ 
 /**
- * Allows Game Masters to test System Messages.<br>
- * admin_msg display the raw message.<br>
- * admin_msgx is an extended version that allows to set parameters.
+ * Projeto PkElfo
  */
+
 public class AdminMessages implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =

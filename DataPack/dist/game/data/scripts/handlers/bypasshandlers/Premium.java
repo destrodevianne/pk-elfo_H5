@@ -23,7 +23,7 @@ import pk.elfo.util.StringUtil;
 import pk.elfo.util.TimeConstant;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class Premium implements IBypassHandler

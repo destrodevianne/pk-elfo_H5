@@ -16,10 +16,11 @@ import javolution.util.FastList;
 import javolution.util.FastMap;
 import javolution.util.FastSet;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Summon Minions AI. Based on work of Slyce.
+ * Projeto PkElfo
  */
+
 public class SummonMinions extends AbstractNpcAI
 {
 	private static int HasSpawned;
@@ -218,6 +219,6 @@ public class SummonMinions extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new SummonMinions(SummonMinions.class.getSimpleName(), "ai/group_template");
+		new SummonMinions(SummonMinions.class.getSimpleName(), "ai");
 	}
 }

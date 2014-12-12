@@ -7,7 +7,7 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.ShowXMasSeal;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class SpecialXMas implements IItemHandler

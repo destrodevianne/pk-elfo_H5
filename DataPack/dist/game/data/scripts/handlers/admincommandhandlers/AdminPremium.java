@@ -10,7 +10,7 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.util.Util;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class AdminPremium implements IAdminCommandHandler

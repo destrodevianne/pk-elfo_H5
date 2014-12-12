@@ -13,11 +13,11 @@ import pk.elfo.gameserver.network.serverpackets.CharInfo;
 import pk.elfo.gameserver.network.serverpackets.ExBrExtraUserInfo;
 import pk.elfo.gameserver.network.serverpackets.InventoryUpdate;
 import pk.elfo.gameserver.network.serverpackets.UserInfo;
-
+ 
 /**
- * This class handles following admin commands: - enchant_armor
- * @version $Revision: 1.3.2.1.2.10 $ $Date: 2005/08/24 21:06:06 $
+ * Projeto PkElfo
  */
+
 public class AdminEnchant implements IAdminCommandHandler
 {
 	private static Logger _log = Logger.getLogger(AdminEnchant.class.getName());

@@ -6,7 +6,7 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.serverpackets.ExShowBaseAttributeCancelWindow;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class ReleaseAttribute implements IBypassHandler

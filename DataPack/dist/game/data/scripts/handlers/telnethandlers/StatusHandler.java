@@ -21,7 +21,7 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class StatusHandler implements ITelnetHandler

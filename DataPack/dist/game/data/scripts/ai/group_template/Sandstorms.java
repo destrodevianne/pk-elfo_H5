@@ -4,10 +4,11 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Sandstorms AI.
+ * Projeto PkElfo
  */
+
 public class Sandstorms extends AbstractNpcAI
 {
 	private static final int SANDSTORM = 32350;
@@ -28,6 +29,6 @@ public class Sandstorms extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Sandstorms(Sandstorms.class.getSimpleName(), "ai/group_template");
+		new Sandstorms(Sandstorms.class.getSimpleName(), "ai");
 	}
 }

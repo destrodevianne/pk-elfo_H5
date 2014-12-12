@@ -11,11 +11,11 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
 import pk.elfo.gameserver.network.serverpackets.SetupGauge;
 import pk.elfo.gameserver.util.Util;
-
+ 
 /**
- * This class handles following admin commands: polymorph
- * @version $Revision: 1.2.2.1.2.4 $ $Date: 2007/07/31 10:05:56 $
+ * Projeto PkElfo
  */
+
 public class AdminPolymorph implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =

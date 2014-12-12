@@ -9,7 +9,7 @@ import pk.elfo.gameserver.model.skills.L2SkillType;
 import pk.elfo.util.Rnd;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class BallistaBomb implements ISkillHandler

@@ -8,9 +8,9 @@ import pk.elfo.gameserver.model.base.Race;
 import pk.elfo.gameserver.model.zone.type.L2RespawnZone;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
-
+ 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class Loc implements IUserCommandHandler

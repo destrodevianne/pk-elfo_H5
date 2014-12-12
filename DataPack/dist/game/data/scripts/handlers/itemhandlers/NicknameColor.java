@@ -7,7 +7,7 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.ExRequestChangeNicknameColor;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class NicknameColor implements IItemHandler

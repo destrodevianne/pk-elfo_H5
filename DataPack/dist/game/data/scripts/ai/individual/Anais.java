@@ -12,11 +12,11 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.holders.SkillHolder;
 import pk.elfo.gameserver.model.quest.QuestTimer;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Anais AI.
- * @author nonom
+ * Projeto PkElfo
  */
+
 public final class Anais extends AbstractNpcAI
 {
 	// NPCs
@@ -166,6 +166,6 @@ public final class Anais extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Anais(Anais.class.getSimpleName(), "ai/individual");
+		new Anais(Anais.class.getSimpleName(), "ai");
 	}
 }

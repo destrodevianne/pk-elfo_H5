@@ -9,7 +9,7 @@ import pk.elfo.gameserver.network.serverpackets.ExShowScreenMessage;
 
 /**
  *
- * PkElfo
+ * Projeto PkElfo
  *
  */
 

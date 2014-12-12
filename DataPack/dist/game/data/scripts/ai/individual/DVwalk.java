@@ -6,6 +6,10 @@ import pk.elfo.gameserver.model.actor.L2Attackable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class DVwalk extends AbstractNpcAI
 {
@@ -1404,6 +1408,6 @@ public class DVwalk extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new DVwalk(DVwalk.class.getSimpleName(), "ai/individual");
+		new DVwalk(DVwalk.class.getSimpleName(), "ai");
 	}
 }

@@ -16,7 +16,7 @@ import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
 import javolution.util.FastList;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class Signet extends L2Effect

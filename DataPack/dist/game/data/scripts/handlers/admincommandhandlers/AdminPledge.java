@@ -20,6 +20,7 @@ import pk.elfo.gameserver.network.serverpackets.SystemMessage;
  * //pledge dismiss<BR>
  * //pledge setlevel level<BR>
  * //pledge rep reputation_points<BR>
+ * Projeto PkElfo
  */
 public class AdminPledge implements IAdminCommandHandler
 {

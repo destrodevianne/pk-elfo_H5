@@ -33,10 +33,11 @@ import pk.elfo.gameserver.network.serverpackets.SpecialCamera;
 import pk.elfo.gameserver.network.serverpackets.StaticObject;
 import pk.elfo.gameserver.util.Util;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Beleth's AI.
+ * Projeto PkElfo
  */
+
 public class Beleth extends AbstractNpcAI
 {
 	protected static L2Npc CAMERA;
@@ -750,6 +751,6 @@ public class Beleth extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Beleth(Beleth.class.getSimpleName(), "ai/individual");
+		new Beleth(Beleth.class.getSimpleName(), "ai");
 	}
 }

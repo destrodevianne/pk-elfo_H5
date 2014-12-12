@@ -14,11 +14,11 @@ import pk.elfo.gameserver.model.stats.Formulas;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.util.StringUtil;
-
+ 
 /**
- * This class handles following admin commands: - gm = turns gm mode on/off
- * @version $Revision: 1.1.2.1 $ $Date: 2005/03/15 21:32:48 $
+ * Projeto PkElfo
  */
+
 public class AdminFightCalculator implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =

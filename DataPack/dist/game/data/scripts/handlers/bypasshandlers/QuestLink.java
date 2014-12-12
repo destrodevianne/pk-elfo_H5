@@ -20,7 +20,7 @@ import pk.elfo.util.StringUtil;
 import javolution.util.FastList;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class QuestLink implements IBypassHandler

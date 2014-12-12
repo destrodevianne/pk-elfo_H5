@@ -87,9 +87,9 @@ import handlers.effecthandlers.TransferDamage;
 import handlers.effecthandlers.Transformation;
 import handlers.effecthandlers.UnsummonAgathion;
 import handlers.effecthandlers.Warp;
-
+ 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public final class EffectMasterHandler

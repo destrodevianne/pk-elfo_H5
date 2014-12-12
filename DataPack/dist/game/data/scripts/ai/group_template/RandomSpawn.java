@@ -7,10 +7,11 @@ import pk.elfo.gameserver.model.Location;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Manages spawn of NPC's, having several random spawn points.
+ * Projeto PkElfo
  */
+
 public class RandomSpawn extends AbstractNpcAI
 {
 	private static Map<Integer, Location[]> SPAWN_POINTS = new FastMap<>();
@@ -107,6 +108,6 @@ public class RandomSpawn extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new RandomSpawn(RandomSpawn.class.getSimpleName(), "ai/group_template");
+		new RandomSpawn(RandomSpawn.class.getSimpleName(), "ai");
 	}
 }

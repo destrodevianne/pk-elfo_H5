@@ -20,7 +20,7 @@ import pk.elfo.gameserver.scripting.L2ScriptEngineManager;
 import pk.elfo.gameserver.util.Util;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class AdminQuest implements IAdminCommandHandler

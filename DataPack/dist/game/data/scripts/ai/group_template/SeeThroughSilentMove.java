@@ -5,10 +5,11 @@ import pk.elfo.gameserver.model.L2Spawn;
 import pk.elfo.gameserver.model.actor.L2Attackable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * See Through Silent Move AI.
+ * Projeto PkElfo
  */
+
 public class SeeThroughSilentMove extends AbstractNpcAI
 {
 	//@formatter:off
@@ -61,6 +62,6 @@ public class SeeThroughSilentMove extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new SeeThroughSilentMove(SeeThroughSilentMove.class.getSimpleName(), "ai/group_template");
+		new SeeThroughSilentMove(SeeThroughSilentMove.class.getSimpleName(), "ai");
 	}
 }

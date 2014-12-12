@@ -6,11 +6,11 @@ import pk.elfo.Config;
 import pk.elfo.gameserver.handler.IAdminCommandHandler;
 import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
-
+ 
 /**
- * This class handles following admin commands: - invul = turns invulnerability on/off
- * @version $Revision: 1.2.4.4 $ $Date: 2007/07/31 10:06:02 $
+ * Projeto PkElfo
  */
+
 public class AdminInvul implements IAdminCommandHandler
 {
 	private static Logger _log = Logger.getLogger(AdminInvul.class.getName());

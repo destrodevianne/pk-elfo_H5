@@ -19,7 +19,7 @@ import javolution.text.TextBuilder;
 /**
  * This class handles following admin commands: - announce text = announces text to all players - list_announcements = show menu - reload_announcements = reloads announcements from txt file - announce_announcements = announce all stored announcements to all players - add_announcement text = adds
  * text to startup announcements - del_announcement id = deletes announcement with respective id
- * PkElfo
+ * Projeto PkElfo
  */
 public class AdminAnnouncements implements IAdminCommandHandler
 {

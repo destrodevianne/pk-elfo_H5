@@ -13,7 +13,7 @@ import pk.elfo.gameserver.network.serverpackets.ActionFailed;
 import pk.elfo.gameserver.network.serverpackets.ShopPreviewList;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class Wear implements IBypassHandler

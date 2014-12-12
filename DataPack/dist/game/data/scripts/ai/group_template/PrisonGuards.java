@@ -17,10 +17,11 @@ import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
 import custom.IOPRace.IOPRace;
-
+ 
 /**
- * Prison Guards AI.
+ * Projeto PkElfo
  */
+
 public class PrisonGuards extends AbstractNpcAI
 {
 	final private static int GUARD1 = 18367;
@@ -236,6 +237,6 @@ public class PrisonGuards extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new PrisonGuards(PrisonGuards.class.getSimpleName(), "ai/group_template");
+		new PrisonGuards(PrisonGuards.class.getSimpleName(), "ai");
 	}
 }

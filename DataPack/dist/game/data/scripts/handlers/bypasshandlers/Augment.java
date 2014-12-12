@@ -9,7 +9,7 @@ import pk.elfo.gameserver.network.serverpackets.ExShowVariationCancelWindow;
 import pk.elfo.gameserver.network.serverpackets.ExShowVariationMakeWindow;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class Augment implements IBypassHandler

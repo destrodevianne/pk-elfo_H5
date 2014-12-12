@@ -13,10 +13,11 @@ import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.taskmanager.DecayTaskManager;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Hellbound Slaves AI.
+ * Projeto PkElfo
  */
+
 public class Slaves extends AbstractNpcAI
 {
 	private static final int[] MASTERS =
@@ -81,6 +82,6 @@ public class Slaves extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Slaves(Slaves.class.getSimpleName(), "ai/group_template");
+		new Slaves(Slaves.class.getSimpleName(), "ai");
 	}
 }

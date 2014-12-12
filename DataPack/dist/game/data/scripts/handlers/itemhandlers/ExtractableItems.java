@@ -15,7 +15,7 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.util.Rnd;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class ExtractableItems implements IItemHandler

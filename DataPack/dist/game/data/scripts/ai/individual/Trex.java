@@ -7,6 +7,10 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.util.Rnd;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class Trex extends AbstractNpcAI
 {
@@ -147,6 +151,6 @@ public class Trex extends AbstractNpcAI
 
     public static void main(String[] args)
     {
-        new Trex(Trex.class.getSimpleName(), "ai/individual");
+        new Trex(Trex.class.getSimpleName(), "ai");
     }
 }

@@ -8,6 +8,10 @@ import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class WarriorMonk extends AbstractNpcAI
 {
@@ -81,6 +85,6 @@ public class WarriorMonk extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new WarriorMonk(-1, "WarriorMonk", "ai/group_template");
+		new WarriorMonk(-1, "WarriorMonk", "ai");
 	}
 }

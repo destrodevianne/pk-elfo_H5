@@ -8,7 +8,7 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.entity.L2Event;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class EventEngine implements IBypassHandler

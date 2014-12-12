@@ -17,7 +17,7 @@ import javolution.util.FastList;
 import javolution.util.FastMap;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class ChainHeal implements ISkillHandler

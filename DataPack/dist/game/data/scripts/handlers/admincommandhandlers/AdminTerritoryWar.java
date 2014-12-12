@@ -11,10 +11,11 @@ import pk.elfo.gameserver.model.TerritoryWard;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.quest.Quest;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
-
+ 
 /**
- * Admin comand handler for Territory War System This class handles following admin commands:
+ * Projeto PkElfo
  */
+
 public class AdminTerritoryWar implements IAdminCommandHandler
 {
 	private static final String[] _adminCommands =

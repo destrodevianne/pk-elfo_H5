@@ -6,16 +6,16 @@ import pk.elfo.gameserver.cache.HtmCache;
 import pk.elfo.gameserver.handler.IVoicedCommandHandler;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
-
+ 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class VoiceInfo implements IVoicedCommandHandler
 {
 	private static String[]	VOICED_COMMANDS	=
 		{ 
-		"infos"
+			"infos"
 		};
 
 	@Override

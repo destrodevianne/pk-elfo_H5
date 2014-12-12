@@ -13,10 +13,11 @@ import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
 import pk.elfo.gameserver.util.Broadcast;
 import pk.elfo.gameserver.util.Util;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Stakato Nest AI.
+ * Projeto PkElfo
  */
+
 public class StakatoNest extends AbstractNpcAI
 {
 	// List of all mobs just for register
@@ -258,6 +259,6 @@ public class StakatoNest extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new StakatoNest(StakatoNest.class.getSimpleName(), "ai/group_template");
+		new StakatoNest(StakatoNest.class.getSimpleName(), "ai");
 	}
 }

@@ -14,9 +14,9 @@ import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Sel Mahum Training Ground AI for drill groups.
+ * Projeto PkElfo
  */
 
 public class SelMahumDrill extends AbstractNpcAI
@@ -305,6 +305,6 @@ public class SelMahumDrill extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new SelMahumDrill(SelMahumDrill.class.getSimpleName(), "ai/group_template");
+		new SelMahumDrill(SelMahumDrill.class.getSimpleName(), "ai");
 	}
 }

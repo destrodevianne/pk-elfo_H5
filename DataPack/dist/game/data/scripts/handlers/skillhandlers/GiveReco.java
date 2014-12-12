@@ -12,7 +12,7 @@ import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.network.serverpackets.UserInfo;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class GiveReco implements ISkillHandler

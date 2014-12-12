@@ -9,11 +9,11 @@ import java.util.logging.Logger;
 import pk.elfo.L2DatabaseFactory;
 import pk.elfo.gameserver.handler.IAdminCommandHandler;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
-
+ 
 /**
- * This class handles following admin commands: - delete = deletes target
- * @version $Revision: 1.1.2.6.2.3 $ $Date: 2005/04/11 10:05:59 $
+ * Projeto PkElfo
  */
+
 public class AdminRepairChar implements IAdminCommandHandler
 {
 	private static Logger _log = Logger.getLogger(AdminRepairChar.class.getName());

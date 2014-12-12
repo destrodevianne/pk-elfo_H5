@@ -9,7 +9,7 @@ import pk.elfo.gameserver.model.skills.targets.L2TargetType;
 import pk.elfo.gameserver.model.zone.ZoneId;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class TargetEnemySummon implements ITargetTypeHandler

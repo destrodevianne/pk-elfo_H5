@@ -23,7 +23,7 @@ import pk.elfo.gameserver.network.serverpackets.MagicSkillLaunched;
 import pk.elfo.gameserver.util.Point3D;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class SignetMDam extends L2Effect

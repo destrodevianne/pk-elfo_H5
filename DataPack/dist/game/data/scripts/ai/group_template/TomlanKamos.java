@@ -4,6 +4,10 @@ import pk.elfo.gameserver.instancemanager.InstanceManager;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class TomlanKamos extends AbstractNpcAI
 {
@@ -66,6 +70,6 @@ public class TomlanKamos extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new TomlanKamos(-1, "TomlanKamos", "ai/group_template");
+		new TomlanKamos(-1, "TomlanKamos", "ai");
 	}
 }

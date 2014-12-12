@@ -7,6 +7,10 @@ import java.io.InputStream;
 import java.util.logging.Logger;
 
 import pk.elfo.util.L2Properties;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public final class AIOItem_Config
 {

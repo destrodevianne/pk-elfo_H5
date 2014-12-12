@@ -12,10 +12,11 @@ import pk.elfo.gameserver.model.entity.Fort;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.util.StringUtil;
-
+ 
 /**
- * This class handles all siege commands: Todo: change the class name, and neaten it up
+ * Projeto PkElfo
  */
+
 public class AdminFortSiege implements IAdminCommandHandler
 {
 	// private static Logger _log = Logger.getLogger(AdminFortSiege.class.getName());

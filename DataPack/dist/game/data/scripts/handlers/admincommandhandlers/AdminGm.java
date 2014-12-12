@@ -5,11 +5,11 @@ import java.util.logging.Logger;
 import pk.elfo.gameserver.datatables.AdminTable;
 import pk.elfo.gameserver.handler.IAdminCommandHandler;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
-
+ 
 /**
- * This class handles following admin commands: - gm = turns gm mode off
- * @version $Revision: 1.2.4.4 $ $Date: 2005/04/11 10:06:06 $
+ * Projeto PkElfo
  */
+
 public class AdminGm implements IAdminCommandHandler
 {
 	private static Logger _log = Logger.getLogger(AdminGm.class.getName());

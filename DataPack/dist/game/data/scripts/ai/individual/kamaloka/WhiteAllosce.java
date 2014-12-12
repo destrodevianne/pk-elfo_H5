@@ -4,6 +4,10 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class WhiteAllosce extends AbstractNpcAI
 {
@@ -45,7 +49,9 @@ public class WhiteAllosce extends AbstractNpcAI
 				_isLock = true;
 			}
 			else
+			{
 				return "";
+			}
 		}
 		return "";
 	}
@@ -56,7 +62,9 @@ public class WhiteAllosce extends AbstractNpcAI
 		int npcId = npc.getNpcId();
 
 		if (npcId == ALLOSCE)
+		{
 			cancelQuestTimer("time_to_spawn", npc, player);
+		}
 		return "";
 	}
 

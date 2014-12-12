@@ -2,9 +2,9 @@ package handlers.voicedcommandhandlers;
 
 import pk.elfo.gameserver.handler.IVoicedCommandHandler;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
-
+ 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class BadBuffShield implements IVoicedCommandHandler

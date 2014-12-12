@@ -10,7 +10,7 @@ import pk.elfo.gameserver.model.stats.Env;
 import pk.elfo.gameserver.model.stats.Formulas;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class CpDam implements ISkillHandler

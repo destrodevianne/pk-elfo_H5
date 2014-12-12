@@ -18,7 +18,7 @@ import pk.elfo.gameserver.network.serverpackets.EtcStatusUpdate;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class AdminVip implements IAdminCommandHandler

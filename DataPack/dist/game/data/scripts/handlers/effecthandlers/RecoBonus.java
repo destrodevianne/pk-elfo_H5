@@ -7,7 +7,7 @@ import pk.elfo.gameserver.model.effects.L2EffectType;
 import pk.elfo.gameserver.model.stats.Env;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class RecoBonus extends L2Effect

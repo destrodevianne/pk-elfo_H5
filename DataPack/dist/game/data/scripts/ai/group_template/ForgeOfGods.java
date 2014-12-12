@@ -7,6 +7,10 @@ import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class ForgeOfGods extends AbstractNpcAI
 {
@@ -83,6 +87,6 @@ public class ForgeOfGods extends AbstractNpcAI
    
    public static void main(String[] args)
    {
-       new ForgeOfGods(ForgeOfGods.class.getSimpleName(), "ai/group_template");
+       new ForgeOfGods(ForgeOfGods.class.getSimpleName(), "ai");
    }
 }

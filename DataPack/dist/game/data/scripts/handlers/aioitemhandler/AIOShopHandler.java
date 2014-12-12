@@ -11,7 +11,7 @@ import pk.elfo.gameserver.network.serverpackets.BuyList;
 import pk.elfo.gameserver.network.serverpackets.ExBuySellList;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class AIOShopHandler implements IAIOItemHandler

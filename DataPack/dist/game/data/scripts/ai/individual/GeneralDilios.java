@@ -10,10 +10,11 @@ import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Dilios AI
+ * Projeto PkElfo
  */
+
 public class GeneralDilios extends AbstractNpcAI
 {
 	private static final int GENERAL_ID = 32549;
@@ -82,6 +83,6 @@ public class GeneralDilios extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new GeneralDilios(GeneralDilios.class.getSimpleName(), "ai/individual");
+		new GeneralDilios(GeneralDilios.class.getSimpleName(), "ai");
 	}
 }

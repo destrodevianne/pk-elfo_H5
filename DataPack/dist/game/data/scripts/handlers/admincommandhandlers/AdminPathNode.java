@@ -9,7 +9,7 @@ import pk.elfo.gameserver.pathfinding.AbstractNodeLoc;
 import pk.elfo.gameserver.pathfinding.PathFinding;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class AdminPathNode implements IAdminCommandHandler

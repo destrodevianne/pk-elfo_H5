@@ -24,7 +24,7 @@ import pk.elfo.gameserver.network.serverpackets.UserInfo;
 import pk.elfo.gameserver.util.GMAudit;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class PlayerHandler implements ITelnetHandler

@@ -9,7 +9,7 @@ import pk.elfo.gameserver.model.stats.Env;
 import pk.elfo.gameserver.network.SystemMessageId;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class Transformation extends L2Effect

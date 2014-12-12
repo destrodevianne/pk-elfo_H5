@@ -3,6 +3,10 @@ package ai.individual;
 import pk.elfo.gameserver.model.actor.instance.L2NpcInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class Hallate extends AbstractNpcAI
 {
@@ -35,6 +39,6 @@ public class Hallate extends AbstractNpcAI
 
     public static void main(String[] args)
     {
-        new Hallate(Hallate.class.getSimpleName(), "ai/individual");
+        new Hallate(Hallate.class.getSimpleName(), "ai");
     }
 }

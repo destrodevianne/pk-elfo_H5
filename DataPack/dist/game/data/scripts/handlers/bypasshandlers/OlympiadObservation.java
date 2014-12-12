@@ -16,7 +16,7 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.ExOlympiadMatchList;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class OlympiadObservation implements IBypassHandler

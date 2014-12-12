@@ -8,6 +8,10 @@ import pk.elfo.gameserver.model.L2Spawn;
 import pk.elfo.gameserver.model.Location;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.util.Point3D;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class GeoData
 {

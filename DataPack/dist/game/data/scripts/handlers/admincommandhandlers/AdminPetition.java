@@ -5,10 +5,11 @@ import pk.elfo.gameserver.instancemanager.PetitionManager;
 import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.SystemMessageId;
-
+ 
 /**
- * This class handles commands for GMs to respond to petitions.
+ * Projeto PkElfo
  */
+
 public class AdminPetition implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =

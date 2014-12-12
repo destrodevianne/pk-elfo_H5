@@ -7,11 +7,11 @@ import pk.elfo.gameserver.handler.IAdminCommandHandler;
 import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.items.L2Item;
-
+ 
 /**
- * This class handles following admin commands: - itemcreate = show menu - create_item <id> [num] = creates num items with respective id, if num is not specified, assumes 1.
- * @version $Revision: 1.2.2.2.2.3 $ $Date: 2005/04/11 10:06:06 $
+ * Projeto PkElfo
  */
+
 public class AdminCreateItem implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =

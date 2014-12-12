@@ -14,10 +14,11 @@ import pk.elfo.gameserver.model.zone.L2ZoneType;
 import pk.elfo.gameserver.model.zone.ZoneId;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.util.StringUtil;
-
+ 
 /**
- * Small typo fix by Zoey76 24/02/2011
+ * Projeto PkElfo
  */
+
 public class AdminZone implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =

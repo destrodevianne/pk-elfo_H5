@@ -9,7 +9,7 @@ import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.network.serverpackets.SkillCoolTime;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class AdminReuse implements IAdminCommandHandler

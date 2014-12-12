@@ -10,7 +10,7 @@ import pk.elfo.gameserver.model.quest.QuestState;
 import pk.elfo.gameserver.network.SystemMessageId;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class QuestItems implements IItemHandler

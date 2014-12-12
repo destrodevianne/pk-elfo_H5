@@ -7,7 +7,7 @@ import pk.elfo.gameserver.instancemanager.TownManager;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class AdminTownWar implements IAdminCommandHandler

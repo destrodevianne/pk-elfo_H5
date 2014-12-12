@@ -8,7 +8,7 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.ChooseInventoryItem;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class EnchantScrolls implements IItemHandler

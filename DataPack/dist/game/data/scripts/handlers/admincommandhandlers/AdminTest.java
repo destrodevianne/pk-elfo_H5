@@ -12,10 +12,11 @@ import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
-
+ 
 /**
- * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
+ * Projeto PkElfo
  */
+
 public class AdminTest implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =

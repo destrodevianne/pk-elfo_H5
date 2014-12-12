@@ -19,7 +19,7 @@ import pk.elfo.gameserver.network.serverpackets.SetupGauge;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class ScrollOfEscape implements IItemHandler

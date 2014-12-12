@@ -7,7 +7,7 @@ import pk.elfo.gameserver.Shutdown;
 import pk.elfo.gameserver.handler.ITelnetHandler;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class ServerHandler implements ITelnetHandler

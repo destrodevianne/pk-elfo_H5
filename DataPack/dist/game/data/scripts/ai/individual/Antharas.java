@@ -33,6 +33,10 @@ import pk.elfo.gameserver.network.serverpackets.Earthquake;
 import pk.elfo.gameserver.network.serverpackets.L2GameServerPacket;
 import pk.elfo.gameserver.network.serverpackets.PlaySound;
 import pk.elfo.gameserver.network.serverpackets.SpecialCamera;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class Antharas extends AbstractNpcAI
 {

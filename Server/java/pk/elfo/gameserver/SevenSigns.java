@@ -30,6 +30,10 @@ import pk.elfo.gameserver.network.serverpackets.SSQInfo;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.util.Broadcast;
 import javolution.util.FastMap;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class SevenSigns
 {

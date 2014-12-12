@@ -3,7 +3,10 @@ package ai.individual;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
-
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class HolyBrazier extends AbstractNpcAI
 {
@@ -76,7 +79,6 @@ public class HolyBrazier extends AbstractNpcAI
 			{
 				_guard.deleteMe();
 				_guard = null;
-				
 			}
 			_brazier = null;
 		}
@@ -86,6 +88,6 @@ public class HolyBrazier extends AbstractNpcAI
 	public static void main(String[] args)
 	{
 		// now call the constructor (starts up the ai)
-		new HolyBrazier(HolyBrazier.class.getSimpleName(), "ai/individual");
+		new HolyBrazier(HolyBrazier.class.getSimpleName(), "ai");
 	}
 }

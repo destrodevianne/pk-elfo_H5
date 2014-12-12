@@ -12,12 +12,11 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.util.IllegalPlayerAction;
 import pk.elfo.gameserver.util.Util;
-
+ 
 /**
- * This class handles following admin commands: <li>add_exp_sp_to_character <i>shows menu for add or remove</i> <li>add_exp_sp exp sp <i>Adds exp & sp to target, displays menu if a parameter is missing</i> <li>remove_exp_sp exp sp <i>Removes exp & sp from target, displays menu if a parameter is
- * missing</i>
- * @version $Revision: 1.2.4.6 $ $Date: 2005/04/11 10:06:06 $
+ * Projeto PkElfo
  */
+
 public class AdminExpSp implements IAdminCommandHandler
 {
 	private static Logger _log = Logger.getLogger(AdminExpSp.class.getName());

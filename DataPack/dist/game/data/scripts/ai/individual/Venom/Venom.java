@@ -19,23 +19,20 @@ import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.scripting.scriptengine.events.SiegeEvent;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Venom AI on Rune Castle.
+ * Projeto PkElfo
  */
+
 public final class Venom extends AbstractNpcAI
 {
 	private static final int CASTLE = 8; // Rune
-	
 	private static final int VENOM = 29054;
 	private static final int TELEPORT_CUBE = 29055;
 	private static final int DUNGEON_KEEPER = 35506;
-	
 	private static final byte ALIVE = 0;
 	private static final byte DEAD = 1;
-	
 	private static final int HOURS_BEFORE = 24;
-	
 	private static final Location[] TARGET_TELEPORTS =
 	{
 		new Location(12860, -49158, 976),
@@ -56,7 +53,6 @@ public final class Venom extends AbstractNpcAI
 	private static final Location DUNGEON = new Location(11882, -49216, -3008);
 	private static final Location TELEPORT = new Location(12589, -49044, -3008);
 	private static final Location CUBE = new Location(12047, -49211, -3009);
-	
 	private static final SkillHolder VENOM_STRIKE = new SkillHolder(4993, 1);
 	private static final SkillHolder SONIC_STORM = new SkillHolder(4994, 1);
 	private static final SkillHolder VENOM_TELEPORT = new SkillHolder(4995, 1);
@@ -64,11 +60,9 @@ public final class Venom extends AbstractNpcAI
 	
 	private L2Npc _venom;
 	private final L2Npc _massymore;
-	
 	private int _venomX;
 	private int _venomY;
 	private int _venomZ;
-	
 	private boolean _aggroMode = false;
 	private boolean _prisonIsOpen = false;
 	

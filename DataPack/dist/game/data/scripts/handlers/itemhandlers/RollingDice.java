@@ -12,7 +12,7 @@ import pk.elfo.gameserver.util.Broadcast;
 import pk.elfo.util.Rnd;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class RollingDice implements IItemHandler

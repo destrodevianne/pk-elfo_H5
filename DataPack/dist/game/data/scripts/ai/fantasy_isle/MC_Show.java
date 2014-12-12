@@ -17,6 +17,10 @@ import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.network.serverpackets.PlaySound;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class MC_Show extends AbstractNpcAI
 {

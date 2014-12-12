@@ -8,10 +8,11 @@ import pk.elfo.gameserver.model.holders.SkillHolder;
 import pk.elfo.gameserver.model.skills.L2Skill;
 import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Demon Prince's AI.
+ * Projeto PkElfo
  */
+
 public class DemonPrince extends AbstractNpcAI
 {
 	private static final int DEMON_PRINCE = 25540;
@@ -107,6 +108,6 @@ public class DemonPrince extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new DemonPrince(DemonPrince.class.getSimpleName(), "ai/individual");
+		new DemonPrince(DemonPrince.class.getSimpleName(), "ai");
 	}
 }

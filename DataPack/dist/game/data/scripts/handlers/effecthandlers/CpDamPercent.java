@@ -7,7 +7,7 @@ import pk.elfo.gameserver.model.stats.Env;
 import pk.elfo.gameserver.network.serverpackets.StatusUpdate;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class CpDamPercent extends L2Effect

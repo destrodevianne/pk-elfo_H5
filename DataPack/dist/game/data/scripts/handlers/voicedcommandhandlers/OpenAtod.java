@@ -3,9 +3,9 @@ package handlers.voicedcommandhandlers;
 import pk.elfo.gameserver.handler.IVoicedCommandHandler;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.util.Rnd;
-
+ 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class OpenAtod implements IVoicedCommandHandler

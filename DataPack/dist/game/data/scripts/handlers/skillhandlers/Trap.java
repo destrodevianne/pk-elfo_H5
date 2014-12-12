@@ -11,7 +11,7 @@ import pk.elfo.gameserver.model.skills.L2SkillType;
 import pk.elfo.gameserver.network.SystemMessageId;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class Trap implements ISkillHandler

@@ -8,10 +8,11 @@ import pk.elfo.gameserver.model.actor.instance.L2StaticObjectInstance;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.CreatureSay;
-
+ 
 /**
- * This class handles following admin commands: - targetsay <message> = makes talk a L2Character
+ * Projeto PkElfo
  */
+
 public class AdminTargetSay implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =

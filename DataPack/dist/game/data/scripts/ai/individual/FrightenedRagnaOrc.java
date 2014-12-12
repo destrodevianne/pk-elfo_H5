@@ -11,10 +11,11 @@ import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Frightened Ragna Orc AI.
+ * Projeto PkElfo
  */
+
 public final class FrightenedRagnaOrc extends AbstractNpcAI
 {
 	// NPC ID
@@ -125,6 +126,6 @@ public final class FrightenedRagnaOrc extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new FrightenedRagnaOrc(FrightenedRagnaOrc.class.getSimpleName(), "ai/individual");
+		new FrightenedRagnaOrc(FrightenedRagnaOrc.class.getSimpleName(), "ai");
 	}
 }

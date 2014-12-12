@@ -21,10 +21,11 @@ import pk.elfo.gameserver.network.serverpackets.PlaySound;
 import pk.elfo.util.Rnd;
 import javolution.util.FastList;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Queen Ant's AI
+ * Projeto PkElfo
  */
+
 public class QueenAnt extends AbstractNpcAI
 {
 	private static final int QUEEN = 29001;
@@ -346,6 +347,6 @@ public class QueenAnt extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new QueenAnt(QueenAnt.class.getSimpleName(), "ai/individual");
+		new QueenAnt(QueenAnt.class.getSimpleName(), "ai");
 	}
 }

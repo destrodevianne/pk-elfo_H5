@@ -8,6 +8,10 @@ import pk.elfo.gameserver.datatables.SpawnTable;
 import pk.elfo.gameserver.model.L2Spawn;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class Enira extends AbstractNpcAI
 {
@@ -17,7 +21,6 @@ public class Enira extends AbstractNpcAI
     public Enira(int questId, String name, String descr)
     {
         super(name, descr);
-
         eniraSpawn();
     }
 
@@ -58,6 +61,6 @@ public class Enira extends AbstractNpcAI
 
     public static void main(String[] args)
     {
-        new Enira(-1, Enira.class.getSimpleName(), "ai/individual");
+        new Enira(-1, Enira.class.getSimpleName(), "ai");
     }
 }

@@ -32,9 +32,9 @@ import pk.elfo.gameserver.network.serverpackets.MagicSkillUse;
 import pk.elfo.gameserver.network.serverpackets.SetupGauge;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.util.Broadcast;
-
+ 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class Wedding implements IVoicedCommandHandler

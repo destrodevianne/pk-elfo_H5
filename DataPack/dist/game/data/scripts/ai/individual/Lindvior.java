@@ -9,6 +9,10 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.gameserver.network.clientpackets.Say2;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class Lindvior extends AbstractNpcAI
 {
@@ -32,7 +36,7 @@ public class Lindvior extends AbstractNpcAI
 	
 	private Lindvior()
 	{
-		super(Lindvior.class.getSimpleName(), "ai/individual");
+		super(Lindvior.class.getSimpleName(), "ai");
 		scheduleNextLindviorVisit();
 	}
 	

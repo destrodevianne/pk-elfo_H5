@@ -8,6 +8,10 @@ import pk.elfo.gameserver.model.quest.Quest;
 import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.util.Rnd;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class OlMahumGeneral extends AbstractNpcAI 
 {
@@ -56,6 +60,6 @@ public class OlMahumGeneral extends AbstractNpcAI
 
 	public static void main(String[] args)
 	{
-		new OlMahumGeneral(OlMahumGeneral.class.getSimpleName(), "ai/group_template");
+		new OlMahumGeneral(OlMahumGeneral.class.getSimpleName(), "ai");
 	}
 }

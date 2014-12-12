@@ -12,7 +12,7 @@ import pk.elfo.gameserver.network.serverpackets.DeleteObject;
 import pk.elfo.gameserver.network.serverpackets.L2GameServerPacket;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class Hide extends L2Effect

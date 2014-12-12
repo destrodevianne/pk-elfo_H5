@@ -12,10 +12,11 @@ import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.util.MinionList;
 import javolution.util.FastSet;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Ranku's AI.
+ * Projeto PkElfo
  */
+
 public class Ranku extends AbstractNpcAI
 {
 	private static final int RANKU = 25542;
@@ -100,6 +101,6 @@ public class Ranku extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Ranku(Ranku.class.getSimpleName(), "ai/individual");
+		new Ranku(Ranku.class.getSimpleName(), "ai");
 	}
 }

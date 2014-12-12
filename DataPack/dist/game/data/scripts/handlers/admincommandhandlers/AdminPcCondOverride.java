@@ -7,10 +7,11 @@ import pk.elfo.gameserver.model.PcCondOverride;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.util.Util;
-
+ 
 /**
- * Handler provides ability to override server's conditions for admin.
+ * Projeto PkElfo
  */
+
 public class AdminPcCondOverride implements IAdminCommandHandler
 {
 	private static final String[] COMMANDS =

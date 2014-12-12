@@ -18,7 +18,7 @@ import pk.elfo.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import pk.elfo.gameserver.util.Util;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
  
 public class InstantJump implements ISkillHandler

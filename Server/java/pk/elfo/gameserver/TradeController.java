@@ -17,6 +17,10 @@ import pk.elfo.gameserver.model.L2TradeList;
 import pk.elfo.gameserver.model.L2TradeList.L2TradeItem;
 import javolution.util.FastList;
 import javolution.util.FastMap;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class TradeController
 {

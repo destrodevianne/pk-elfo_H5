@@ -8,6 +8,7 @@ import ai.npc.AbstractNpcAI;
 /**
  * Naia Lock AI.<br>
  * Removes minions after master's death.
+ * Projeto PkElfo
  */
 public class NaiaLock extends AbstractNpcAI
 {
@@ -28,6 +29,6 @@ public class NaiaLock extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new NaiaLock(NaiaLock.class.getSimpleName(), "ai/individual");
+		new NaiaLock(NaiaLock.class.getSimpleName(), "ai");
 	}
 }

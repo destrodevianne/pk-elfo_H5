@@ -10,9 +10,9 @@ import pk.elfo.gameserver.instancemanager.ExpirableServicesManager;
 import pk.elfo.gameserver.instancemanager.ExpirableServicesManager.ServiceType;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.util.Util;
-
+ 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class Premium implements IVoicedCommandHandler

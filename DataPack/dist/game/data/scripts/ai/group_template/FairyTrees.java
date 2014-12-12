@@ -9,6 +9,10 @@ import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.Rnd;
 import ai.npc.AbstractNpcAI;
+ 
+/**
+ * Projeto PkElfo
+ */
 
 public class FairyTrees extends AbstractNpcAI
 {
@@ -55,6 +59,6 @@ public class FairyTrees extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new FairyTrees(FairyTrees.class.getSimpleName(), "ai/group_template");
+		new FairyTrees(FairyTrees.class.getSimpleName(), "ai");
 	}
 }

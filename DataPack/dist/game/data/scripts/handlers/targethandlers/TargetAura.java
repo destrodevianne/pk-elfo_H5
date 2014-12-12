@@ -14,7 +14,7 @@ import pk.elfo.gameserver.model.zone.ZoneId;
 import javolution.util.FastList;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class TargetAura implements ITargetTypeHandler

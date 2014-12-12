@@ -6,10 +6,11 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.network.SystemMessageId;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Star Stones AI.
+ * Projeto PkElfo
  */
+
 public class StarStones extends AbstractNpcAI
 {
 	private static final int[] MOBS =
@@ -85,6 +86,6 @@ public class StarStones extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new StarStones(StarStones.class.getSimpleName(), "ai/group_template");
+		new StarStones(StarStones.class.getSimpleName(), "ai");
 	}
 }

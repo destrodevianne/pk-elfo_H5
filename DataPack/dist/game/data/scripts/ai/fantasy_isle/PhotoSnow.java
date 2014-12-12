@@ -3,10 +3,11 @@ package ai.fantasy_isle;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
-
+ 
 /**
- * Fantasy Isle Photo Npc
+ * Projeto PkElfo
  */
+
 public class PhotoSnow extends AbstractNpcAI
 {
 	private static final int FantasyIsle4317 = 4317;
