@@ -53,6 +53,7 @@ Adicionado script em kamaloka
 Implement: Condition summonRace
 Implement: Condition to Take Castle
 Adicionado MercenaryCaptain Instance
+Colocado Lavassaurus Alpha targeáveis
 Implement: Condition to Player Call Pc
 Adicionado Mutated Elpy in FleeNpc.java
 Adicionado novo Telnet com sistema de punição
@@ -60,6 +61,7 @@ Implement: Condition to Player Can Create Base
 Implement: Condition to Player Can Create Base
 Implement: Condition to Player Can Untransform
 Implement: Condition to Player Can Refuel Airship
+Mudado coordenadas do Boss Pagan Watcher Cerberon
 Adicionado Efeito correto para Seed of Annihilation
 Implement: Condition to Player Can Summon Siege Golem
 Adicionado 'itemConsumeId' for skill 'Open Packaged Book'
