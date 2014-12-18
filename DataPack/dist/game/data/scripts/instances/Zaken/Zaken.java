@@ -11,6 +11,7 @@ import ai.npc.AbstractNpcAI;
 
 import pk.elfo.Config;
 import pk.elfo.gameserver.GeoEngine;
+import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.instancemanager.InstanceManager;
 import pk.elfo.gameserver.instancemanager.ZoneManager;
 import pk.elfo.gameserver.model.L2Object;
@@ -943,7 +944,6 @@ public class Zaken extends AbstractNpcAI
 					return "no-minimum-party.html";
 				}
 			}
-			
 			enterInstance(player, "[034] Zaken-" + event + ".xml", event);
 		}
 		InstanceWorld tmpworld;
@@ -1002,12 +1002,12 @@ public class Zaken extends AbstractNpcAI
 				{
 					int[] position = ZoneManager.getInstance().getZoneById(world._zakenZone).getZone().getRandomPoint();
 					world._zaken = (L2Attackable) addSpawn(ZAKEN_DAY, position[0], position[1], position[2], 32768, false, 0, false, world.getInstanceId());
-					world._zaken.addSkill(L2Skill.valueOf(4216, 1));
-					world._zaken.addSkill(L2Skill.valueOf(4217, 1));
-					world._zaken.addSkill(L2Skill.valueOf(4218, 1));
-					world._zaken.addSkill(L2Skill.valueOf(4219, 1));
-					world._zaken.addSkill(L2Skill.valueOf(4220, 1));
-					world._zaken.addSkill(L2Skill.valueOf(4221, 1));
+					world._zaken.addSkill(SkillTable.getInstance().getInfo(4216, 1));
+					world._zaken.addSkill(SkillTable.getInstance().getInfo(4217, 1));
+					world._zaken.addSkill(SkillTable.getInstance().getInfo(4218, 1));
+					world._zaken.addSkill(SkillTable.getInstance().getInfo(4219, 1));
+					world._zaken.addSkill(SkillTable.getInstance().getInfo(4220, 1));
+					world._zaken.addSkill(SkillTable.getInstance().getInfo(4221, 1));
 					world._zaken.setRunning();
 					world._zaken.addDamageHate(player, 0, 999);
 					world._zaken.getAI().setIntention(AI_INTENTION_ATTACK, player);
@@ -1017,12 +1017,12 @@ public class Zaken extends AbstractNpcAI
 				{
 					int[] position = ZoneManager.getInstance().getZoneById(world._zakenZone).getZone().getRandomPoint();
 					world._zaken = (L2Attackable) addSpawn(ZAKEN_DAY83, position[0], position[1], position[2], 32768, false, 0, false, world.getInstanceId());
-					world._zaken.addSkill(L2Skill.valueOf(4216, 1));
-					world._zaken.addSkill(L2Skill.valueOf(4217, 1));
-					world._zaken.addSkill(L2Skill.valueOf(6689, 1));
-					world._zaken.addSkill(L2Skill.valueOf(6690, 1));
-					world._zaken.addSkill(L2Skill.valueOf(6691, 1));
-					world._zaken.addSkill(L2Skill.valueOf(6692, 1));
+					world._zaken.addSkill(SkillTable.getInstance().getInfo(4216, 1));
+					world._zaken.addSkill(SkillTable.getInstance().getInfo(4217, 1));
+					world._zaken.addSkill(SkillTable.getInstance().getInfo(6689, 1));
+					world._zaken.addSkill(SkillTable.getInstance().getInfo(6690, 1));
+					world._zaken.addSkill(SkillTable.getInstance().getInfo(6691, 1));
+					world._zaken.addSkill(SkillTable.getInstance().getInfo(6692, 1));
 					world._zaken.setRunning();
 					world._zaken.addDamageHate(player, 0, 999);
 					world._zaken.getAI().setIntention(AI_INTENTION_ATTACK, player);
@@ -1032,12 +1032,12 @@ public class Zaken extends AbstractNpcAI
 				{
 					Location loc = _spawnsZaken.get(Rnd.get(_spawnsZaken.size()));
 					world._zaken = (L2Attackable) addSpawn(ZAKEN_NIGHT, loc.getX(), loc.getY(), loc.getZ(), 32768, false, 0, false, world.getInstanceId());
-					world._zaken.addSkill(L2Skill.valueOf(4216, 1));
-					world._zaken.addSkill(L2Skill.valueOf(4217, 1));
-					world._zaken.addSkill(L2Skill.valueOf(4218, 1));
-					world._zaken.addSkill(L2Skill.valueOf(4219, 1));
-					world._zaken.addSkill(L2Skill.valueOf(4220, 1));
-					world._zaken.addSkill(L2Skill.valueOf(4221, 1));
+					world._zaken.addSkill(SkillTable.getInstance().getInfo(4216, 1));
+					world._zaken.addSkill(SkillTable.getInstance().getInfo(4217, 1));
+					world._zaken.addSkill(SkillTable.getInstance().getInfo(4218, 1));
+					world._zaken.addSkill(SkillTable.getInstance().getInfo(4219, 1));
+					world._zaken.addSkill(SkillTable.getInstance().getInfo(4220, 1));
+					world._zaken.addSkill(SkillTable.getInstance().getInfo(4221, 1));
 					world._zaken.setRunning();
 					world._zaken.addDamageHate(player, 0, 999);
 					world._zaken.getAI().setIntention(AI_INTENTION_ATTACK, player);
@@ -1228,7 +1228,7 @@ public class Zaken extends AbstractNpcAI
 					if (skillId != 0)
 					{
 						npc.setTarget(player);
-						npc.doCast(L2Skill.valueOf(skillId, 1));
+						npc.doCast(SkillTable.getInstance().getInfo(skillId, 1));
 					}
 				}
 			}
@@ -1259,7 +1259,7 @@ public class Zaken extends AbstractNpcAI
 				if (sk_4258 == 0)
 				{
 					npc.setTarget(attacker);
-					npc.doCast(L2Skill.valueOf(4258, 1));
+					npc.doCast(SkillTable.getInstance().getInfo(4258, 1));
 				}
 			}
 			L2Character originalAttacker = isPet ? attacker.getSummon() : attacker;
@@ -1337,7 +1337,7 @@ public class Zaken extends AbstractNpcAI
 				if (skillId != 0)
 				{
 					npc.setTarget(attacker);
-					npc.doCast(L2Skill.valueOf(skillId, 1));
+					npc.doCast(SkillTable.getInstance().getInfo(skillId, 1));
 				}
 			}
 		}
@@ -1428,7 +1428,7 @@ public class Zaken extends AbstractNpcAI
 				if (skillId != 0)
 				{
 					npc.setTarget(caster);
-					npc.doCast(L2Skill.valueOf(skillId, 1));
+					npc.doCast(SkillTable.getInstance().getInfo(skillId, 1));
 				}
 			}
 		}
