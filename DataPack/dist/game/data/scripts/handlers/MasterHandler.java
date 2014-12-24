@@ -25,6 +25,7 @@ import pk.elfo.gameserver.handler.custom.ClanMensagem;
 import pk.elfo.gameserver.handler.custom.Lider;
 import pk.elfo.gameserver.handler.custom.Logout;
 import pk.elfo.gameserver.handler.custom.Online;
+import pk.elfo.gameserver.handler.custom.Play;
 import pk.elfo.gameserver.handler.custom.RaidBoosStatus;
 import pk.elfo.gameserver.handler.custom.BuyRec;
 import pk.elfo.gameserver.handler.custom.RefuseBuff;
@@ -703,6 +704,7 @@ public class MasterHandler
 			Logout.class,
 			BuyRec.class,
 			ClanMensagem.class,
+			Play.class,
 			(Config.CANCELAR_ONLINE ? Cancelar.class : null),
 			(Config.CMD_ONLINE ? Online.class : null),
 			(Config.BOSS_STATS ? RaidBoosStatus.class : null),

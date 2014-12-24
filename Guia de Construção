@@ -247,6 +247,14 @@ ADD Comando AdminRecalAll
 # .info																									  #
 # .quest																								  #
 -----------------------------------------------------------------------------------------------------------
+# estes comandos permitem ao jogador ouvir musicas custons adicionadas no cliente na pasta:				  #
+# /lineage II/music no formato: .ogg 																	  #
+# .play1 																								  #
+# .play2 																								  #
+# .play3 																								  #
+# .play4 																								  #
+# .play5 																								  #
+-----------------------------------------------------------------------------------------------------------
 
 
 #################### EVENTOS #########################################################
@@ -346,6 +354,7 @@ Mod Cor do nome diferente para cada raca
 ***Mod PvP/PK Color System com mensagens
 ***Mod Adicionado restrincao de AIO em Oly
 ***Mod Recompensa personalizada para o PvP
+Mod Anuncio de quando o Lider do clan logar
 Mod comando /unstuck com skill configuravel
 Mod Lider de clan com nick de cor diferente
 ***Mod Sistema de Equipamentos E Restrições

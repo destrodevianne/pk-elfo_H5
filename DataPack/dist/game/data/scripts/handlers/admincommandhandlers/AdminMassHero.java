@@ -50,6 +50,8 @@ public class AdminMassHero implements IAdminCommandHandler
         }
         return true;
     }
-
-    private static String[] ADMIN_COMMANDS = { "admin_masshero" };
+    private static String[] ADMIN_COMMANDS = 
+	{ 
+		"admin_masshero" 
+	};
 }

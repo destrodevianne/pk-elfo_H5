@@ -309,6 +309,7 @@ public final class Config
 	public static byte CLAN_LEVEL;
 	public static int REPUTATION_QUANTITY;
 	public static boolean ANNOUNCE_CASTLE_LORDS;
+	public static boolean ANNOUNCE_CLAN_LOGIN;
 	public static boolean ANNOUNCE_NOBLESSE_LOGIN = false;
 	public static boolean ANNOUNCE_HERO_LOGIN = false;
 	public static boolean SHOW_ONLINE_PLAYERS_ON_LOGIN;
@@ -2157,6 +2158,7 @@ public final class Config
 				CLAN_LEADER_COLOR = Integer.decode((new StringBuilder()).append("0x").append(ClanleSettings.getProperty("ClanLeaderColor", "00FFFF")).toString()).intValue();
 				CLAN_LEADER_COLOR_CLAN_LEVEL = Integer.parseInt(ClanleSettings.getProperty("ClanLeaderColorAtClanLevel", "1"));
 				ANNOUNCE_CASTLE_LORDS = Boolean.parseBoolean(ClanleSettings.getProperty("AnnounceCastleLords", "True"));
+				ANNOUNCE_CLAN_LOGIN = Boolean.parseBoolean(ClanleSettings.getProperty("AnnounceClanLogin", "False"));
 				USE_CR_ITEM = Boolean.parseBoolean(ClanleSettings.getProperty("EnableTheClanRepPointsItem", "False"));
 				CR_ITEM_MIN_CLAN_LVL = Integer.parseInt(ClanleSettings.getProperty("MinClanLevelNeededForCR", "7"));
 				CR_ITEM_REPS_TO_BE_AWARDED = Integer.parseInt(ClanleSettings.getProperty("HowManyClanRepsToGive", "500"));
@@ -3690,7 +3692,7 @@ public final class Config
 						{
 							if (!skill.equals(""))
 							{
-								System.out.println("[Vip System]: invalid config property in L2JWarsCustom.properties -> VipSkills \"" + skillSplit[0] + "\"" + skillSplit[1]);
+								System.out.println("[Vip System]: invalid config property in Vip.properties -> VipSkills \"" + skillSplit[0] + "\"" + skillSplit[1]);
 							}
 						}
 					}

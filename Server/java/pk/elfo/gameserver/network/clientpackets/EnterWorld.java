@@ -515,6 +515,11 @@ public class EnterWorld extends L2GameClientPacket
 		
 		Quest.playerEnter(activeChar);
 		
+		if(Config.ANNOUNCE_CLAN_LOGIN && activeChar.isClanLeader())
+		{
+			Announcements.getInstance().announceToAll("O lider do Clan " + activeChar.getName() + " esta Online!");
+		}
+
 		if (!Config.DISABLE_TUTORIAL)
 		{
 			loadTutorial(activeChar);
