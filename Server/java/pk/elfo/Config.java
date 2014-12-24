@@ -133,7 +133,6 @@ public final class Config
 	public static final String ENCHANT_PROTECTOR_FILE = "./config/Player/EnchantProtector.properties";
 	public static final String PLAYER_CONFIG_FILE = "./config/Player/EnterWorld.properties";
 	public static final String ITEMSS_FILE = "./config/Player/Item.properties";
-	public static final String TECLADO_FILE = "./config/Player/MovimentoTeclado.properties";
 	public static final String NEW_PLAYER_BUFFS_MOD = "./config/Player/NewBieBuffs.properties";
 	public static final String RACACONFIG_FILE = "./config/Player/RacaConfig.properties";
 	public static final String RENAME_CONFIG_FILE = "./config/Player/Rename.properties";
@@ -1333,7 +1332,6 @@ public final class Config
 	public static boolean ENABLE_EXP_REFUSAL;
 	public static boolean COMMAND_LIDER;
 	public static boolean COMMAND_LOGOUT;
-	public static boolean ALLOW_KEYBOARD_MOVEMENT;
 	public static boolean ENABLE_LOWLEVEL_XPSP;
 	public static int LOWLEVEL_LVL;
 	public static int LOWLEVEL_XP;
@@ -3366,24 +3364,7 @@ public final class Config
 				INITIAL_EQUIPMENT_EVENT = Boolean.parseBoolean(ITEMSS.getProperty("InitialEquipmentEvent", "True"));
 
 			// #########################################################################################################//
-				
-			// ############################ TECLADO PROPERTIES #########################################################//
-				
-			L2Properties TECLADOCONFIG = new L2Properties();
-			final File tecladoconfig = new File(TECLADO_FILE);
-			try (InputStream is = new FileInputStream(tecladoconfig))
-				{
-					TECLADOCONFIG.load(is);
-				}
-			catch (Exception e)
-				{
-					_log.log(Level.SEVERE, "Error while loading TECLADOCONFIG settings!", e);
-				}
 
-			ALLOW_KEYBOARD_MOVEMENT = Boolean.parseBoolean(TECLADOCONFIG.getProperty("AllowKeyboardMovement", "false"));
-				
-			// #########################################################################################################//
-				
 			// ############################ RACAS CONFIGS PROPERTIES ###################################################//
 				
 			L2Properties RACACONFIG = new L2Properties();
