@@ -175,10 +175,10 @@ public class Valakas extends AbstractNpcAI
 				npc.teleToLocation(212852, -114842, -1632);
 				
 				// Sound + socialAction.
-				for (L2PcInstance plyr : ZONE.getPlayersInside())
+				for (L2PcInstance player : ZONE.getPlayersInside())
 				{
-					plyr.sendPacket(new PlaySound(1, "B03_A", 0, 0, 0, 0, 0));
-					plyr.sendPacket(new SocialAction(npc.getObjectId(), 3));
+					player.sendPacket(new PlaySound(1, "B03_A", 0, 0, 0, 0, 0));
+					player.sendPacket(new SocialAction(npc.getObjectId(), 3));
 				}
 				
 				// Launch the cinematic, and tasks (regen + skill).
