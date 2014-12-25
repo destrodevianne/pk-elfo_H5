@@ -117,7 +117,6 @@ import handlers.admincommandhandlers.AdminPledge;
 import handlers.admincommandhandlers.AdminPolymorph;
 import handlers.admincommandhandlers.AdminPremium;
 import handlers.admincommandhandlers.AdminQuest;
-import handlers.admincommandhandlers.AdminRacesOnWar:
 import handlers.admincommandhandlers.AdminRecallAll;
 import handlers.admincommandhandlers.AdminRepairChar;
 import handlers.admincommandhandlers.AdminRes;
@@ -706,7 +705,6 @@ public class MasterHandler
 			BuyRec.class,
 			ClanMensagem.class,
 			Play.class,
-			AdminRacesOnWar.class,
 			(Config.CANCELAR_ONLINE ? Cancelar.class : null),
 			(Config.CMD_ONLINE ? Online.class : null),
 			(Config.BOSS_STATS ? RaidBoosStatus.class : null),

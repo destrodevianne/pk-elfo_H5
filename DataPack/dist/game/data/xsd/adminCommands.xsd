@@ -548,8 +548,6 @@
 	                                <xs:enumeration value="admin_playmovie" />
 	                                <xs:enumeration value="admin_brodmovie" />
 									<xs:enumeration value="admin_crazy_event" />
-									<xs:enumeration value="admin_startrw" />
-									<xs:enumeration value="admin_stoprw" />
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:attribute>

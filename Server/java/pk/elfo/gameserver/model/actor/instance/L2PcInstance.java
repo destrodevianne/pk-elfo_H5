@@ -46,7 +46,6 @@ import pk.elfo.gameserver.cache.WarehouseCacheManager;
 import pk.elfo.gameserver.communitybbs.BB.Forum;
 import pk.elfo.gameserver.communitybbs.Manager.ForumsBBSManager;
 import pk.elfo.gameserver.communitybbs.Manager.RegionBBSManager;
-import pk.elfo.gameserver.custom.racesonwar.RacesOnWar;
 import pk.elfo.gameserver.datatables.AdminTable;
 import pk.elfo.gameserver.datatables.AdventBonus;
 import pk.elfo.gameserver.datatables.AIOItemTable;
@@ -6065,12 +6064,7 @@ public final class L2PcInstance extends L2Playable
 					TvTLeaderboard.getInstance().onDeath(getObjectId(), getName());
 				}
 			}
-			
-			if (RacesOnWar.getStateRaceOnWar() == StateRacesOnWar.ACTIVE)
-			{
-                RacesOnWar.onDie(this, pk);
-			}
-			
+
 			// announce pvp/pk
 			if (Config.ANNOUNCE_PK_PVP && (pk != null) && !pk.isGM())
 			{

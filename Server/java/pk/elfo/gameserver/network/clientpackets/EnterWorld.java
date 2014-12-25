@@ -1176,7 +1176,6 @@ public class EnterWorld extends L2GameClientPacket
 				sm.addItemName(activeChar.getInventory().getItemByItemId(spiritId));
 				activeChar.sendPacket(sm);
 			}
-			activeChar.rechargeAutoSoulShot(true, true, false);
 		}
 	}
 	

@@ -678,8 +678,5 @@
 	<admin command="banchat" accessLevel="7" />
 	<admin command="debug" accessLevel="7" />
 	<admin command="unbanchat" accessLevel="7" />
-	
-	<!-- Races On War-->
-    <admin command="admin_startrw" accessLevel="7" />
-    <admin command="admin_stoprw" accessLevel="7" />
+
 </list>
