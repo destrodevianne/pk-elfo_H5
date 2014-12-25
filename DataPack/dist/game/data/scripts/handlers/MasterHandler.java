@@ -18,6 +18,7 @@ import pk.elfo.gameserver.handler.TargetHandler;
 import pk.elfo.gameserver.handler.TelnetHandler;
 import pk.elfo.gameserver.handler.UserCommandHandler;
 import pk.elfo.gameserver.handler.VoicedCommandHandler;
+import pk.elfo.gameserver.handler.custom.BuyRec;
 import pk.elfo.gameserver.handler.custom.Cancelar;
 import pk.elfo.gameserver.handler.custom.ChangePassword;
 import pk.elfo.gameserver.handler.custom.ChatAdmin;
@@ -27,7 +28,6 @@ import pk.elfo.gameserver.handler.custom.Logout;
 import pk.elfo.gameserver.handler.custom.Online;
 import pk.elfo.gameserver.handler.custom.Play;
 import pk.elfo.gameserver.handler.custom.RaidBoosStatus;
-import pk.elfo.gameserver.handler.custom.BuyRec;
 import pk.elfo.gameserver.handler.custom.RefuseBuff;
 import pk.elfo.gameserver.handler.custom.Repair;
 import pk.elfo.gameserver.handler.custom.Res;
@@ -117,6 +117,7 @@ import handlers.admincommandhandlers.AdminPledge;
 import handlers.admincommandhandlers.AdminPolymorph;
 import handlers.admincommandhandlers.AdminPremium;
 import handlers.admincommandhandlers.AdminQuest;
+import handlers.admincommandhandlers.AdminRacesOnWar:
 import handlers.admincommandhandlers.AdminRecallAll;
 import handlers.admincommandhandlers.AdminRepairChar;
 import handlers.admincommandhandlers.AdminRes;
@@ -705,6 +706,7 @@ public class MasterHandler
 			BuyRec.class,
 			ClanMensagem.class,
 			Play.class,
+			AdminRacesOnWar.class,
 			(Config.CANCELAR_ONLINE ? Cancelar.class : null),
 			(Config.CMD_ONLINE ? Online.class : null),
 			(Config.BOSS_STATS ? RaidBoosStatus.class : null),
