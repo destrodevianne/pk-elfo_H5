@@ -53,7 +53,6 @@ import pk.elfo.gameserver.model.entity.TvTEvent;
 import pk.elfo.gameserver.model.entity.TvTRoundEvent;
 import pk.elfo.gameserver.model.entity.clanhall.AuctionableHall;
 import pk.elfo.gameserver.model.entity.clanhall.SiegableHall;
-import pk.elfo.gameserver.model.items.L2Item;
 import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.gameserver.model.quest.Quest;
 import pk.elfo.gameserver.model.quest.QuestState;
@@ -63,7 +62,6 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.communityserver.CommunityServerThread;
 import pk.elfo.gameserver.network.communityserver.writepackets.WorldInfo;
 import pk.elfo.gameserver.network.serverpackets.Die;
-import pk.elfo.gameserver.network.serverpackets.ExAutoSoulShot;
 import pk.elfo.gameserver.network.serverpackets.EtcStatusUpdate;
 import pk.elfo.gameserver.network.serverpackets.ExBasicActionList;
 import pk.elfo.gameserver.network.serverpackets.ExBrPremiumState;
@@ -615,24 +613,27 @@ public class EnterWorld extends L2GameClientPacket
 		// teste de buffs para novos chars
 		if(Config.NEW_PLAYER_BUFFS)
 		{
-			if(activeChar.isMageClass())
+			if (activeChar.getLevel() < 10)
 			{
-				for(Integer skillid : Config.MAGE_BUFF_LIST.keySet())
+				if(activeChar.isMageClass())
 				{
-					int skilllvl = Config.MAGE_BUFF_LIST.get(skillid);
-					L2Skill skill = L2Skill.valueOf(skillid, skilllvl);
-					if(skill != null)
-						skill.getEffects(activeChar, activeChar);
+					for(Integer skillid : Config.MAGE_BUFF_LIST.keySet())
+					{
+						int skilllvl = Config.MAGE_BUFF_LIST.get(skillid);
+						L2Skill skill = L2Skill.valueOf(skillid, skilllvl);
+						if(skill != null)
+							skill.getEffects(activeChar, activeChar);
+					}
 				}
-			}
-			else
-			{
-				for(Integer skillid : Config.FIGHTER_BUFF_LIST.keySet())
+				else
 				{
-					int skilllvl = Config.FIGHTER_BUFF_LIST.get(skillid);
-					L2Skill skill = L2Skill.valueOf(skillid, skilllvl);
-					if(skill != null)
-						skill.getEffects(activeChar, activeChar);
+					for(Integer skillid : Config.FIGHTER_BUFF_LIST.keySet())
+					{
+						int skilllvl = Config.FIGHTER_BUFF_LIST.get(skillid);
+						L2Skill skill = L2Skill.valueOf(skillid, skilllvl);
+						if(skill != null)
+							skill.getEffects(activeChar, activeChar);
+					}
 				}
 			}
 		}
@@ -942,11 +943,6 @@ public class EnterWorld extends L2GameClientPacket
 		{
 			RankPvpSystem.updateNickAndTitleColor(activeChar, null);
 		}
-		
-		if (Config.AUTO_ACTIVATE_SHOTS)
-		{
-			verifyAndLoadShots(activeChar);
-		}
 	}
 	
 	/**
@@ -1096,89 +1092,7 @@ public class EnterWorld extends L2GameClientPacket
 		}
 		
 	}
-	
-	/**
-	 * This method will get the correct soulshot/spirishot and activate it for the current weapon if it's over the minimum.
-	 * @param activeChar
-	 * @author Zoey76
-	 */
-	private void verifyAndLoadShots(L2PcInstance activeChar)
-	{
-		int soulId = -1;
-		int spiritId = -1;
-		int bspiritId = -1;
-		
-		if (!activeChar.isDead() && activeChar.getActiveWeaponItem() != null)
-		{
-			switch (activeChar.getActiveWeaponItem().getCrystalType())
-			{
-				case L2Item.CRYSTAL_NONE:
-					soulId = 1835;
-					spiritId = 2509;
-					bspiritId = 3947;
-					break;
-				case L2Item.CRYSTAL_D:
-					soulId = 1463;
-					spiritId = 2510;
-					bspiritId = 3948;
-					break;
-				case L2Item.CRYSTAL_C:
-					soulId = 1464;
-					spiritId = 2511;
-					bspiritId = 3949;
-					break;
-				case L2Item.CRYSTAL_B:
-					soulId = 1465;
-					spiritId = 2512;
-					bspiritId = 3950;
-					break;
-				case L2Item.CRYSTAL_A:
-					soulId = 1466;
-					spiritId = 2513;
-					bspiritId = 3951;
-					break;
-				case L2Item.CRYSTAL_S:
-				case L2Item.CRYSTAL_S80:
-				case L2Item.CRYSTAL_S84:
-					soulId = 1467;
-					spiritId = 2514;
-					bspiritId = 3952;
-					break;
-			}
-			
-			//Soulshots.
-			if ((soulId > -1) && activeChar.getInventory().getInventoryItemCount(soulId, -1) > Config.AUTO_ACTIVATE_SHOTS_MIN)
-			{
-				activeChar.addAutoSoulShot(soulId);
-				activeChar.sendPacket(new ExAutoSoulShot(soulId, 1));
-				//Message
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_OF_S1_WILL_BE_AUTO);
-				sm.addItemName(activeChar.getInventory().getItemByItemId(soulId));
-				activeChar.sendPacket(sm);
-			}
-			
-			//Blessed Spirishots first, then Spirishots.
-			if ((bspiritId > -1) && activeChar.getInventory().getInventoryItemCount(bspiritId, -1) > Config.AUTO_ACTIVATE_SHOTS_MIN)
-			{
-				activeChar.addAutoSoulShot(bspiritId);
-				activeChar.sendPacket(new ExAutoSoulShot(bspiritId, 1));
-				//Message
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_OF_S1_WILL_BE_AUTO);
-				sm.addItemName(activeChar.getInventory().getItemByItemId(bspiritId));
-				activeChar.sendPacket(sm);
-			}
-			else if ((spiritId > -1) && activeChar.getInventory().getInventoryItemCount(spiritId, -1) > Config.AUTO_ACTIVATE_SHOTS_MIN)
-			{
-				activeChar.addAutoSoulShot(spiritId);
-				activeChar.sendPacket(new ExAutoSoulShot(spiritId, 1));
-				//Message
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_OF_S1_WILL_BE_AUTO);
-				sm.addItemName(activeChar.getInventory().getItemByItemId(spiritId));
-				activeChar.sendPacket(sm);
-			}
-		}
-	}
-	
+
 	@Override
 	public String getType()
 	{
