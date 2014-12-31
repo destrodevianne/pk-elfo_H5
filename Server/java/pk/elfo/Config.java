@@ -1320,8 +1320,6 @@ public final class Config
 	public static int L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP;
 	public static int L2JMOD_DUALBOX_CHECK_MAX_L2EVENT_PARTICIPANTS_PER_IP;
 	public static Map<Integer, Integer> L2JMOD_DUALBOX_CHECK_WHITELIST;
-	public static boolean AUTO_ACTIVATE_SHOTS;
-	public static int AUTO_ACTIVATE_SHOTS_MIN;
 	public static boolean L2JMOD_ALLOW_CHANGE_PASSWORD;
 	public static boolean CHAR_IS_DEAD = false;
 	// ----------------------------------------------------------------------------------------------------//
@@ -5125,8 +5123,6 @@ public final class Config
 				}
 			}
 			L2JMOD_ALLOW_CHANGE_PASSWORD = Boolean.parseBoolean(L2JModSettings.getProperty("AllowChangePassword", "False"));
-			AUTO_ACTIVATE_SHOTS = Boolean.parseBoolean(L2JModSettings.getProperty("AutoActivateShotsEnabled", "False"));;
-			AUTO_ACTIVATE_SHOTS_MIN = Integer.parseInt(L2JModSettings.getProperty("AutoActivateShotsMin", "200"));
 			
 			// ############################ PVPPK PROPERTIES #########################################################//
 			

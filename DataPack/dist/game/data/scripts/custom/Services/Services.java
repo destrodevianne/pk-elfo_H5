@@ -25,17 +25,17 @@ public class Services extends Quest
     int servicesNpc = 9013;
     // Noble Items
     int nobleItemId = 57;
-    long nobleItemCount = 1;
+    long nobleItemCount = 40;
     // PK Reduce Items
     int pkReduceItemId = 57;
-    long pkReduceItemCount = 1000;
+    long pkReduceItemCount = 10;
     // Change Name Items
     int changeNameItemId = 57;
-    long changeNameItemCount = 1000000;
+    long changeNameItemCount = 50;
     boolean logNameChanges = true;
     // Change Clan Name Items
     int changeClanNameItemId = 57;
-    long changeClanNameItemCount = 50000;
+    long changeClanNameItemCount = 50;
     boolean logClanNameChanges = true;
     int clanMinLevel = 5;
     // Clan Level Items
@@ -61,11 +61,11 @@ public class Services extends Quest
 
     // Clan Reputation Points Items
     int clanReputationPointsItemId = 57;
-    long clanReputationPointsItemCount = 5;
+    long clanReputationPointsItemCount = 40;
 
     // Change Gender Items
     int changeGenderItemId = 57;
-    long changeGenderItemCount = 50;
+    long changeGenderItemCount = 60;
 
     public Services(int questId, String name, String descr)
     {

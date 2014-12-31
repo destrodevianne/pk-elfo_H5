@@ -477,24 +477,6 @@ public final class UseItem extends L2GameClientPacket
 						activeChar.sendPacket(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION);
 						return;
 					}
-					if (activeChar.getLevel() >= 40)
-					{
-						if (!(activeChar.getSkillLevel(227) >= 1) || !(activeChar.getSkillLevel(233) >= 1) || !(activeChar.getSkillLevel(236) >= 1) || !(activeChar.getSkillLevel(252) >= 1) || !(activeChar.getSkillLevel(258) >= 1) || !(activeChar.getSkillLevel(465) >= 1) && (item.getItem().getItemType() == L2ArmorType.LIGHT))
-						{
-							activeChar.sendMessage("Voce nao pode usar este tipo de armadura, a menos que voca tenha a skill passiva Light Armor Mastery.");
-							return;
-						}
-						if (!(activeChar.getSkillLevel(231) >= 1) || !(activeChar.getSkillLevel(232) >= 1) || !(activeChar.getSkillLevel(253) >= 1) || !(activeChar.getSkillLevel(259) >= 1) && (item.getItem().getItemType() == L2ArmorType.HEAVY))
-						{
-							activeChar.sendMessage("Voce nao pode usar este tipo de armadura, a menos que voca tenha a skill passiva Heavy Armor Mastery.");
-							return;
-						}
-						if (!(activeChar.getSkillLevel(234) >= 1) || !(activeChar.getSkillLevel(235) >= 1) || !(activeChar.getSkillLevel(251) >= 1) && (item.getItem().getItemType() == L2ArmorType.MAGIC))
-						{
-							activeChar.sendMessage("Voce nao pode usar este tipo de armadura, a menos que voca tenha a skill passiva Robe Mastery.");
-							return;
-						}
-					}
 					break;
 				}
 				case L2Item.SLOT_DECO:
