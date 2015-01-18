@@ -230,7 +230,6 @@ ADD Comando AdminRecalAll
 .openatod (Serve para abrir todos os Ancient Tome of the Demon que o player tiver na bag, ao invez de ficar clicando eternamente)
 .lider (teleporta para o lider do seu clan)
 .logout (desloga imediatamente)
-.user (abre painel de usuario que contem, informacoes do servidor, rates e comandos de habilitar/desabilitar pm, trade e ganho de xp/sp - adicionado opcao de desabilitar debuf)
 .cancel (cancela todos os buffs das barras de buff)
 .buyrec (troca determinado item por recomend, configuravel o item, quant. de item e quant. de recomend)
 .teleport <x> <y> <z> (comando de teleporte para VIP)
@@ -306,7 +305,6 @@ RussianRoulete
 TvT
 VIPTvT
 Zombie
-Evento Last Hero	
 
 
 #################### MODS ############################################################
@@ -345,10 +343,9 @@ Mod Painel de usuario com comandos
 ***Mod Chat exclusivo para char AIOx
 Mod Mensagem diferente para cada raca
 ***Mod Anuncio de deslogamento de VIP
-Mod aviso quando um Raid Boss renascer
 ***Mod Anuncio de deslogamento de AIOx 
 ***Mod Anuncio de deslogamento de Hero
-***Mod Anuncios login para Nobles & Hero
+***Mod Anuncios login para Nobles
 Mod Bandeiras de clan nos Npcs sem quest
 Mod Cor do nome diferente para cada raca
 ***Mod PvP/PK Color System com mensagens
@@ -371,12 +368,12 @@ Mod Sistema de consumiveis infinitos SS, BSS e Arrows
 ***Mod para mudar de quantos em quantos dias sera a siege
 ***Mod mensagem diferente para ganhador e perdedor de PvP
 ***Mod Ao matar um jogador com PK ganha-se 1 ponto de PvP
-***Mod Buffs para novos jogadores Magos no primeiro Loguin
+***Mod Buffs para novos jogadores Magos no primeiro loguin até alcançar o level 10
 ***Mod mensagem diferente para quem deu pk e quem levou pk
 ***Mod Mensagem de boas vindas na tela para aio, vip e hero.
 ***Mod muda o local de teleporte ao usar o comando //unstuck
 ***Mod anuncio de perda ou tomada de castelo depois da siege
-***Mod Buffs para novos jogadores Fighters no primeiro loguin
+***Mod Buffs para novos jogadores Fighters no primeiro loguin até alcançar o level 10
 Mod quando morrer o ceu fica vermelho e da um som de Game Over
 ***Mod mudar cor do nome dos novos jogadores (configuravel a cor)
 ***Mod bloqueia o uso de GateKeepers para Chars em Modo Flag ( PvP )
@@ -386,7 +383,6 @@ Mod ao entrar em um clan o titulo muda altomaticamente para o do clan
 ***Mod criar itens na Bag ao criar novos char (configuravel o ID do item e a quantidade)
 ***Mod Advertência na tentativa de encantar itens que estão no limite máximo de enchant..!
 ***Mod Efeito visual para Remover clan do jogador e colocá-lo de volta quando ele sair da MultiFunctionZone
-***Mod Esse código desabilita a capacidade de equipar uma armadura se você não tiver a habilidade passiva Mastery dela.
 ***Mod adicionado mensagens automaticas apos logar (sao 5 texto automatico com tempo configuravel), bom para propagandas
 ***Mod Breack Enchant (ao falhar o enchant com Blessed Enchant o item volta para o valor configurado em EnchantProtector.properties)
 ***Mod NPC services (Limpar PKs, Level UP Clan, Clan reputação, Mudar sexo do char, Virar Nobles, Mudar nome do clan, Mudar nome do char)
@@ -405,16 +401,14 @@ Mod Ao dar Shift+Click em algum char ou npc ou monstro, mostrara todos items e s
 |***Mod Clan war zone (No momento que o cara teleportar para zone ou entrar nela, o codigo vai verificar se ele tem clan. 			  |
 |Se ele tiver clan, cada kill que ele fizer em algum outro player de outro clan que tambem estiver nessa zone, 						  |
 |sera contado alem do pvp uma reputacao para o clan.)																				  |
----------------------------------------------------------------------------------------------------------------------------------------
-|***Mod premiação ao ganhar determinado level (Obs.: se o player diminuir de level ao morrer e subir de level novamente, 			  |
-|ele ganhará novamente o prêmio, por isto não pode colocar item muito bom neste Mod, xml onde coloca a quantidade e o tipo 			  |
-|de item fica em: /game/data/scripts/custom/PremioPorLevel/rewards.xml)																  |
----------------------------------------------------------------------------------------------------------------------------------------
-
 
 #################### PROTECOES #######################################################
 
 AntiAfkTvt
+Recurso AntiPHX
+Safe Admin System
+Protecao contra Bot
+Protecao de overenchantAntiAfkTvt
 Recurso AntiPHX
 Safe Admin System
 Protecao contra Bot

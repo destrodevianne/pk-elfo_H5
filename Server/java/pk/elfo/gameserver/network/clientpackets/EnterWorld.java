@@ -245,16 +245,16 @@ public class EnterWorld extends L2GameClientPacket
 					{
 						if (i.getEnchantLevel() > Config.MAX_ENCHANT_LEVEL_PROTECT)
 						{
-							// Delete Item Over enchanted
+							// Deleta o Item com Over enchanted
 							activeChar.getInventory().destroyItem(null, i, activeChar, null);
-							// Message to Player
+							// Menssagem para o Player
 							activeChar.sendMessage("[Server]:Voce possui itens acima do level permitido!");
 							activeChar.sendMessage("[Server]:Esta acao e proibida, voce sera expulso!");
 							// If Audit is only a Kick, with this the player goes in Jail for 1.200 minutes
 							activeChar.setPunishLevel(L2PcInstance.PunishLevel.JAIL, Config.ENCHANT_PROTECT_PUNISH);
 							// Log in console
-							_log.info("#### ATTENCTION ####");
-							_log.info(i + " item has been removed from player.");
+							_log.info("#### ATENCAO ####");
+							_log.info(i + " item foi removido do jogador.");
 						}
 					}
 				}
@@ -609,36 +609,7 @@ public class EnterWorld extends L2GameClientPacket
 			activeChar.sendMessage("Temos em todo o mundo: " + L2World.getInstance().getAllPlayers().size() + " Jogadores(s) OnLine");
 			activeChar.sendMessage("==================================");
 		}
-		
-		// teste de buffs para novos chars
-		if(Config.NEW_PLAYER_BUFFS)
-		{
-			if (activeChar.getLevel() < 10)
-			{
-				if(activeChar.isMageClass())
-				{
-					for(Integer skillid : Config.MAGE_BUFF_LIST.keySet())
-					{
-						int skilllvl = Config.MAGE_BUFF_LIST.get(skillid);
-						L2Skill skill = L2Skill.valueOf(skillid, skilllvl);
-						if(skill != null)
-							skill.getEffects(activeChar, activeChar);
-					}
-				}
-				else
-				{
-					for(Integer skillid : Config.FIGHTER_BUFF_LIST.keySet())
-					{
-						int skilllvl = Config.FIGHTER_BUFF_LIST.get(skillid);
-						L2Skill skill = L2Skill.valueOf(skillid, skilllvl);
-						if(skill != null)
-							skill.getEffects(activeChar, activeChar);
-					}
-				}
-			}
-		}
-		// fim teste de buffs para novos chars
-		
+
 		if (Config.ENABLE_AIOX_MESSAGE)
 		{
 			if (activeChar.isAio())
@@ -1090,7 +1061,6 @@ public class EnterWorld extends L2GameClientPacket
 		{
 			qs.getQuest().notifyEvent("UC", null, player);
 		}
-		
 	}
 
 	@Override

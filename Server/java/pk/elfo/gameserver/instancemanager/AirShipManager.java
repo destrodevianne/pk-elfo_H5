@@ -162,11 +162,11 @@ public class AirShipManager
 			}
 			catch (SQLException e)
 			{
-				_log.log(Level.WARNING, getClass().getSimpleName() + ": Could not add new airship license: " + e.getMessage(), e);
+				_log.log(Level.WARNING, getClass().getSimpleName() + ": Nao pode adicionar nova licenca para o dirigivel: " + e.getMessage(), e);
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, getClass().getSimpleName() + ": Error while initializing: " + e.getMessage(), e);
+				_log.log(Level.WARNING, getClass().getSimpleName() + ": Erro quando iniciava: " + e.getMessage(), e);
 			}
 		}
 	}
@@ -263,13 +263,13 @@ public class AirShipManager
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Could not load airships table: " + e.getMessage(), e);
+			_log.log(Level.WARNING, getClass().getSimpleName() + ": Nao pode carregar a tabela de dirigiveis(airships Table): " + e.getMessage(), e);
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Error while initializing: " + e.getMessage(), e);
+			_log.log(Level.WARNING, getClass().getSimpleName() + ": Erro quando iniciava: " + e.getMessage(), e);
 		}
-		_log.info(getClass().getSimpleName() + ": " + _airShipsInfo.size() + " private airships");
+		_log.info(getClass().getSimpleName() + ": " + _airShipsInfo.size());
 	}
 	
 	private void storeInDb(int ownerId)
@@ -289,11 +289,11 @@ public class AirShipManager
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Could not update airships table: " + e.getMessage(), e);
+			_log.log(Level.WARNING, getClass().getSimpleName() + ": Nao pode atualizar a tabela de dirigiveis(airships Table): " + e.getMessage(), e);
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Error while save: " + e.getMessage(), e);
+			_log.log(Level.WARNING, getClass().getSimpleName() + ": Erro ao salvar: " + e.getMessage(), e);
 		}
 	}
 	

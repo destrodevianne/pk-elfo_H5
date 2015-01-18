@@ -21,14 +21,14 @@ public class Res implements IVoicedCommandHandler
         {
               if (!activeChar.isAlikeDead())
               {
-                 activeChar.sendMessage("You cannot be ressurected while alive.");
+                 activeChar.sendMessage("Voce nao pode ser ressucitado estando vivo.");
                  {
                 	 return false;
                  }
               }
            if(activeChar.isInOlympiadMode())
            {
-              activeChar.sendMessage("You cannot use this feature during olympiad.");
+              activeChar.sendMessage("Voce nao pode ser ressucitado estando nas olympiad.");
               {
             	  return false;
               }

@@ -13,7 +13,7 @@ public class BuyRec implements IVoicedCommandHandler
 
     public boolean useVoicedCommand(String command, L2PcInstance activeChar, String target)
     {
-        if (command.equalsIgnoreCase("buyrec"))
+        if (command.equalsIgnoreCase("buyrec") && activeChar.isVip())
         {
             if(Config.REC_BUY)
             {

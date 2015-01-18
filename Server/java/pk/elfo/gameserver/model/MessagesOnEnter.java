@@ -21,120 +21,161 @@ public class MessagesOnEnter implements Runnable
 	@Override
 	public void run()
 	{
-		if(_text == 1){
-			if(Config.ON_ENTER_TEXT1_TYPE.equals("PARTYROOM_COMMANDER")){
+		if(_text == 1)
+		{
+			if(Config.ON_ENTER_TEXT1_TYPE.equals("PARTYROOM_COMMANDER"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.PARTYROOM_COMMANDER,activeChar.getName(),Config.ON_ENTER_TEXT1));
 			}
-			else if(Config.ON_ENTER_TEXT1_TYPE.equals("EXSHOW")){
+			else if(Config.ON_ENTER_TEXT1_TYPE.equals("EXSHOW"))
+			{
 				activeChar.sendPacket(new ExShowScreenMessage(Config.ON_ENTER_TEXT1, 6*1000));
 			}
-			else if(Config.ON_ENTER_TEXT1_TYPE.equals("CRITICAL_ANNOUNCE")){
+			else if(Config.ON_ENTER_TEXT1_TYPE.equals("CRITICAL_ANNOUNCE"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.CRITICAL_ANNOUNCE,activeChar.getName(),Config.ON_ENTER_TEXT1));
 			}
-			else if(Config.ON_ENTER_TEXT1_TYPE.equals("CLAN")){
+			else if(Config.ON_ENTER_TEXT1_TYPE.equals("CLAN"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.CLAN,activeChar.getName(),Config.ON_ENTER_TEXT1));
 			}
-			else if(Config.ON_ENTER_TEXT1_TYPE.equals("HERO_VOICE")){
+			else if(Config.ON_ENTER_TEXT1_TYPE.equals("HERO_VOICE"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.HERO_VOICE,activeChar.getName(),Config.ON_ENTER_TEXT1));
 			}
-			else{
+			else
+			{
 				activeChar.sendPacket(new ExShowScreenMessage(Config.ON_ENTER_TEXT1, 6*1000));
 			}
 		}
-		else if(_text == 2){
-			if(Config.ON_ENTER_TEXT2_TYPE.equals("PARTYROOM_COMMANDER")){
+		else if(_text == 2)
+		{
+			if(Config.ON_ENTER_TEXT2_TYPE.equals("PARTYROOM_COMMANDER"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.PARTYROOM_COMMANDER,activeChar.getName(),Config.ON_ENTER_TEXT2));
 			}
-			else if(Config.ON_ENTER_TEXT2_TYPE.equals("EXSHOW")){
+			else if(Config.ON_ENTER_TEXT2_TYPE.equals("EXSHOW"))
+			{
 				activeChar.sendPacket(new ExShowScreenMessage(Config.ON_ENTER_TEXT2, 6*1000));
 			}
-			else if(Config.ON_ENTER_TEXT2_TYPE.equals("CRITICAL_ANNOUNCE")){
+			else if(Config.ON_ENTER_TEXT2_TYPE.equals("CRITICAL_ANNOUNCE"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.CRITICAL_ANNOUNCE,activeChar.getName(),Config.ON_ENTER_TEXT2));
 			}
-			else if(Config.ON_ENTER_TEXT2_TYPE.equals("CLAN")){
+			else if(Config.ON_ENTER_TEXT2_TYPE.equals("CLAN"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.CLAN,activeChar.getName(),Config.ON_ENTER_TEXT2));
 			}
-			else if(Config.ON_ENTER_TEXT2_TYPE.equals("HERO_VOICE")){
+			else if(Config.ON_ENTER_TEXT2_TYPE.equals("HERO_VOICE"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.HERO_VOICE,activeChar.getName(),Config.ON_ENTER_TEXT2));
 			}
-			else{
+			else
+			{
 				activeChar.sendPacket(new ExShowScreenMessage(Config.ON_ENTER_TEXT2, 6*1000));
 			}
 		}
-		else if(_text == 3){
-			if(Config.ON_ENTER_TEXT3_TYPE.equals("PARTYROOM_COMMANDER")){
+		else if(_text == 3)
+		{
+			if(Config.ON_ENTER_TEXT3_TYPE.equals("PARTYROOM_COMMANDER"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.PARTYROOM_COMMANDER,activeChar.getName(),Config.ON_ENTER_TEXT3));
 			}
-			else if(Config.ON_ENTER_TEXT3_TYPE.equals("EXSHOW")){
+			else if(Config.ON_ENTER_TEXT3_TYPE.equals("EXSHOW"))
+			{
 				activeChar.sendPacket(new ExShowScreenMessage(Config.ON_ENTER_TEXT3, 6*1000));
 			}
-			else if(Config.ON_ENTER_TEXT3_TYPE.equals("CRITICAL_ANNOUNCE")){
+			else if(Config.ON_ENTER_TEXT3_TYPE.equals("CRITICAL_ANNOUNCE"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.CRITICAL_ANNOUNCE,activeChar.getName(),Config.ON_ENTER_TEXT3));
 			}
-			else if(Config.ON_ENTER_TEXT3_TYPE.equals("CLAN")){
+			else if(Config.ON_ENTER_TEXT3_TYPE.equals("CLAN"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.CLAN,activeChar.getName(),Config.ON_ENTER_TEXT3));
 			}
-			else if(Config.ON_ENTER_TEXT3_TYPE.equals("HERO_VOICE")){
+			else if(Config.ON_ENTER_TEXT3_TYPE.equals("HERO_VOICE"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.HERO_VOICE,activeChar.getName(),Config.ON_ENTER_TEXT3));
 			}
-			else{
+			else
+			{
 				activeChar.sendPacket(new ExShowScreenMessage(Config.ON_ENTER_TEXT3, 6*1000));
 			}
 		}
-		else if(_text == 4){
-			if(Config.ON_ENTER_TEXT4_TYPE.equals("PARTYROOM_COMMANDER")){
+		else if(_text == 4)
+		{
+			if(Config.ON_ENTER_TEXT4_TYPE.equals("PARTYROOM_COMMANDER"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.PARTYROOM_COMMANDER,activeChar.getName(),Config.ON_ENTER_TEXT4));
 			}
-			else if(Config.ON_ENTER_TEXT4_TYPE.equals("EXSHOW")){
+			else if(Config.ON_ENTER_TEXT4_TYPE.equals("EXSHOW"))
+			{
 				activeChar.sendPacket(new ExShowScreenMessage(Config.ON_ENTER_TEXT4, 6*1000));
 			}
-			else if(Config.ON_ENTER_TEXT4_TYPE.equals("CRITICAL_ANNOUNCE")){
+			else if(Config.ON_ENTER_TEXT4_TYPE.equals("CRITICAL_ANNOUNCE"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.CRITICAL_ANNOUNCE,activeChar.getName(),Config.ON_ENTER_TEXT4));
 			}
-			else if(Config.ON_ENTER_TEXT4_TYPE.equals("CLAN")){
+			else if(Config.ON_ENTER_TEXT4_TYPE.equals("CLAN"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.CLAN,activeChar.getName(),Config.ON_ENTER_TEXT4));
 			}
-			else if(Config.ON_ENTER_TEXT4_TYPE.equals("HERO_VOICE")){
+			else if(Config.ON_ENTER_TEXT4_TYPE.equals("HERO_VOICE"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.HERO_VOICE,activeChar.getName(),Config.ON_ENTER_TEXT4));
 			}
-			else{
+			else
+			{
 				activeChar.sendPacket(new ExShowScreenMessage(Config.ON_ENTER_TEXT4, 6*1000));
 			}
 		}
-		else if(_text == 5){
-			if(Config.ON_ENTER_TEXT5_TYPE.equals("PARTYROOM_COMMANDER")){
+		else if(_text == 5)
+		{
+			if(Config.ON_ENTER_TEXT5_TYPE.equals("PARTYROOM_COMMANDER"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.PARTYROOM_COMMANDER,activeChar.getName(),Config.ON_ENTER_TEXT5));
 			}
-			else if(Config.ON_ENTER_TEXT5_TYPE.equals("EXSHOW")){
+			else if(Config.ON_ENTER_TEXT5_TYPE.equals("EXSHOW"))
+			{
 				activeChar.sendPacket(new ExShowScreenMessage(Config.ON_ENTER_TEXT5, 6*1000));
 			}
-			else if(Config.ON_ENTER_TEXT5_TYPE.equals("CRITICAL_ANNOUNCE")){
+			else if(Config.ON_ENTER_TEXT5_TYPE.equals("CRITICAL_ANNOUNCE"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.CRITICAL_ANNOUNCE,activeChar.getName(),Config.ON_ENTER_TEXT5));
 			}
-			else if(Config.ON_ENTER_TEXT5_TYPE.equals("CLAN")){
+			else if(Config.ON_ENTER_TEXT5_TYPE.equals("CLAN"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.CLAN,activeChar.getName(),Config.ON_ENTER_TEXT5));
 			}
-			else if(Config.ON_ENTER_TEXT5_TYPE.equals("HERO_VOICE")){
+			else if(Config.ON_ENTER_TEXT5_TYPE.equals("HERO_VOICE"))
+			{
 				activeChar.sendPacket(new CreatureSay(15, Say2.HERO_VOICE,activeChar.getName(),Config.ON_ENTER_TEXT5));
 			}
-			else{
+			else
+			{
 				activeChar.sendPacket(new ExShowScreenMessage(Config.ON_ENTER_TEXT5, 6*1000));
 			}
 		}
-		else{
-			if(Config.ON_ENTER_TEXT1_ENABLE && Config.ON_ENTER_TEXT1_DELAY != 0 && Config.ON_ENTER_TEXT1 != null){
+		else
+		{
+			if(Config.ON_ENTER_TEXT1_ENABLE && Config.ON_ENTER_TEXT1_DELAY != 0 && Config.ON_ENTER_TEXT1 != null)
+			{
 				ThreadPoolManager.getInstance().scheduleGeneral(new MessagesOnEnter(activeChar,1), Config.ON_ENTER_TEXT1_DELAY * 1000);//IN SECONDS
 			}
-			if(Config.ON_ENTER_TEXT2_ENABLE && Config.ON_ENTER_TEXT2_DELAY != 0 && Config.ON_ENTER_TEXT2 != null){
+			if(Config.ON_ENTER_TEXT2_ENABLE && Config.ON_ENTER_TEXT2_DELAY != 0 && Config.ON_ENTER_TEXT2 != null)
+			{
 				ThreadPoolManager.getInstance().scheduleGeneral(new MessagesOnEnter(activeChar,2), Config.ON_ENTER_TEXT2_DELAY * 1000);
 			}
-			if(Config.ON_ENTER_TEXT3_ENABLE && Config.ON_ENTER_TEXT3_DELAY != 0 && Config.ON_ENTER_TEXT3 != null){
+			if(Config.ON_ENTER_TEXT3_ENABLE && Config.ON_ENTER_TEXT3_DELAY != 0 && Config.ON_ENTER_TEXT3 != null)
+			{
 				ThreadPoolManager.getInstance().scheduleGeneral(new MessagesOnEnter(activeChar,3), Config.ON_ENTER_TEXT3_DELAY * 1000);
 			}
-			if(Config.ON_ENTER_TEXT4_ENABLE && Config.ON_ENTER_TEXT4_DELAY != 0 && Config.ON_ENTER_TEXT4 != null){
+			if(Config.ON_ENTER_TEXT4_ENABLE && Config.ON_ENTER_TEXT4_DELAY != 0 && Config.ON_ENTER_TEXT4 != null)
+			{
 				ThreadPoolManager.getInstance().scheduleGeneral(new MessagesOnEnter(activeChar,4), Config.ON_ENTER_TEXT4_DELAY * 1000);
 			}
-			if(Config.ON_ENTER_TEXT5_ENABLE && Config.ON_ENTER_TEXT5_DELAY != 0 && Config.ON_ENTER_TEXT5 != null){
+			if(Config.ON_ENTER_TEXT5_ENABLE && Config.ON_ENTER_TEXT5_DELAY != 0 && Config.ON_ENTER_TEXT5 != null)
+			{
 				ThreadPoolManager.getInstance().scheduleGeneral(new MessagesOnEnter(activeChar,5), Config.ON_ENTER_TEXT5_DELAY * 1000);
 			}			
 		}
