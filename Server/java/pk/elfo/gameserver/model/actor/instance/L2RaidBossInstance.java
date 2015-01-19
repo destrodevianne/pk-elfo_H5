@@ -13,10 +13,6 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.util.Rnd;
 
-/**
- * This class manages all RaidBoss.<br>
- * In a group mob, there are one master called RaidBoss and several slaves called Minions.
- */
 public class L2RaidBossInstance extends L2MonsterInstance
 {
 	private static final int RAIDBOSS_MAINTENANCE_INTERVAL = 30000; // 30 sec

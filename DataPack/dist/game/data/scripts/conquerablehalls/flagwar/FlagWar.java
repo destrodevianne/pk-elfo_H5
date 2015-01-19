@@ -22,10 +22,10 @@ import pk.elfo.gameserver.model.L2CharPosition;
 import pk.elfo.gameserver.model.L2Clan;
 import pk.elfo.gameserver.model.L2ClanMember;
 import pk.elfo.gameserver.model.L2SiegeClan;
+import pk.elfo.gameserver.model.L2SiegeClan.SiegeClanType;
 import pk.elfo.gameserver.model.L2Spawn;
 import pk.elfo.gameserver.model.L2World;
 import pk.elfo.gameserver.model.Location;
-import pk.elfo.gameserver.model.L2SiegeClan.SiegeClanType;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
@@ -36,14 +36,11 @@ import pk.elfo.gameserver.model.zone.type.L2ResidenceHallTeleportZone;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
- 
-/**
- * Projeto PkElfo
- */
 
 public abstract class FlagWar extends ClanHallSiegeEngine
 {
 	protected static String qn;
+	
 	private static final String SQL_LOAD_ATTACKERS = "SELECT * FROM siegable_hall_flagwar_attackers WHERE hall_id = ?";
 	private static final String SQL_SAVE_ATTACKER = "INSERT INTO siegable_hall_flagwar_attackers_members VALUES (?,?,?)";
 	private static final String SQL_LOAD_MEMEBERS = "SELECT object_id FROM siegable_hall_flagwar_attackers_members WHERE clan_id = ?";
@@ -51,25 +48,34 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	private static final String SQL_SAVE_NPC = "UPDATE siegable_hall_flagwar_attackers SET npc = ? WHERE clan_id = ?";
 	private static final String SQL_CLEAR_CLAN = "DELETE FROM siegable_hall_flagwar_attackers WHERE hall_id = ?";
 	private static final String SQL_CLEAR_CLAN_ATTACKERS = "DELETE FROM siegable_hall_flagwar_attackers_members WHERE hall_id = ?";
+	
 	protected static int ROYAL_FLAG;
 	protected static int FLAG_RED;
 	protected static int FLAG_YELLOW;
 	protected static int FLAG_GREEN;
 	protected static int FLAG_BLUE;
 	protected static int FLAG_PURPLE;
+	
 	protected static int ALLY_1;
 	protected static int ALLY_2;
 	protected static int ALLY_3;
 	protected static int ALLY_4;
 	protected static int ALLY_5;
+	
 	protected static int TELEPORT_1;
+	
 	protected static int MESSENGER;
+	
 	protected static int[] OUTTER_DOORS_TO_OPEN = new int[2];
 	protected static int[] INNER_DOORS_TO_OPEN = new int[2];
 	protected static Location[] FLAG_COORDS = new Location[7];
+	
 	protected static L2ResidenceHallTeleportZone[] TELE_ZONES = new L2ResidenceHallTeleportZone[6];
+	
 	protected static int QUEST_REWARD;
+	
 	protected static L2CharPosition CENTER;
+	
 	protected Map<Integer, ClanData> _data = new HashMap<>(6);
 	protected L2Clan _winner;
 	private boolean _firstPhase;
@@ -92,6 +98,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		addKillId(ALLY_3);
 		addKillId(ALLY_4);
 		addKillId(ALLY_5);
+		
 		addSpawnId(ALLY_1);
 		addSpawnId(ALLY_2);
 		addSpawnId(ALLY_3);
@@ -334,6 +341,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 				}
 			}
 		}
+		
 		return html;
 	}
 	
@@ -437,11 +445,13 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		{
 			registerClan(ClanTable.getInstance().getClan(_hall.getOwnerId()));
 		}
+		
 		_hall.banishForeigners();
 		SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.REGISTRATION_TERM_FOR_S1_ENDED);
 		msg.addString(getName());
 		Announcements.getInstance().announceToAll(msg);
 		_hall.updateSiegeStatus(SiegeStatus.WAITING_BATTLE);
+		
 		_siegeTask = ThreadPoolManager.getInstance().scheduleGeneral(new SiegeStarts(), 3600000);
 	}
 	
@@ -482,6 +492,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 				}
 			}
 		}
+		
 		// Schedule open doors closement and siege start in 2 minutes
 		ThreadPoolManager.getInstance().scheduleGeneral(new CloseOutterDoorsTask(FlagWar.super), 300000);
 	}
@@ -506,7 +517,9 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 			{
 				_hall.openCloseDoor(door, false);
 			}
+			
 			_hall.getZone().banishNonSiegeParticipants();
+			
 			_siegable.startSiege();
 		}
 	}
@@ -733,6 +746,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 					}
 				}
 			}
+			
 			dat.playersInstance.clear();
 		}
 	}
@@ -751,6 +765,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	}
 	
 	public abstract String getFlagHtml(int flag);
+	
 	public abstract String getAllyHtml(int ally);
 	
 	@Override

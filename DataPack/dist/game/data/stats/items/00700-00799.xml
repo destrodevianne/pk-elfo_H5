@@ -362,7 +362,7 @@
 		<set name="immediate_effect" val="1" />
 		<set name="material" val="liquid" />
 		<set name="weight" val="180" />
-		<set name="price" val="80" />
+		<set name="price" val="55000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ManaPotion" />
@@ -393,7 +393,7 @@
 		<set name="immediate_effect" val="1" />
 		<set name="material" val="liquid" />
 		<set name="weight" val="180" />
-		<set name="price" val="2000" />
+		<set name="price" val="11500" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ManaPotion" />

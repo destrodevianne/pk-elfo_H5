@@ -6,11 +6,8 @@ import pk.elfo.gameserver.instancemanager.ZoneManager;
 import pk.elfo.gameserver.model.L2CharPosition;
 import pk.elfo.gameserver.model.Location;
 import pk.elfo.gameserver.model.zone.type.L2ResidenceHallTeleportZone;
+
 import conquerablehalls.flagwar.FlagWar;
- 
-/**
- * Projeto PkElfo
- */
 
 public final class WildBeastReserve extends FlagWar
 {
@@ -64,8 +61,10 @@ public final class WildBeastReserve extends FlagWar
 			{
 				continue;
 			}
+			
 			TELE_ZONES[id] = teleZone;
 		}
+		
 		QUEST_REWARD = 0;
 		CENTER = new L2CharPosition(57762, -92696, -1359, 0);
 	}
@@ -98,6 +97,7 @@ public final class WildBeastReserve extends FlagWar
 				result = "messenger_flag5.htm";
 				break;
 		}
+		
 		return result;
 	}
 	
@@ -124,6 +124,7 @@ public final class WildBeastReserve extends FlagWar
 				result = "messenger_ally5result.htm";
 				break;
 		}
+		
 		return result;
 	}
 	
