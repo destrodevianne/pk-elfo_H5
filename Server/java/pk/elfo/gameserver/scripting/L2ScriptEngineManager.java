@@ -702,7 +702,6 @@ public final class L2ScriptEngineManager
 				{
 					_log.log(Level.WARNING, e.getMessage(), e);
 				}
-				
 			}
 		}
 	}

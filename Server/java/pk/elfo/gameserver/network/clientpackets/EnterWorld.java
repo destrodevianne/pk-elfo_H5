@@ -610,6 +610,39 @@ public class EnterWorld extends L2GameClientPacket
 			activeChar.sendMessage("==================================");
 		}
 
+        // teste de buffs para novos chars
+        if(Config.NEW_PLAYER_BUFFS)
+        {
+            if (activeChar.getLevel() < 10)
+            {
+                if(activeChar.isMageClass())
+                {
+                    for(Integer skillid : Config.MAGE_BUFF_LIST.keySet())
+                    {
+                        int skilllvl = Config.MAGE_BUFF_LIST.get(skillid);
+                        L2Skill skill = L2Skill.valueOf(skillid, skilllvl);
+                        if(skill != null)
+						{
+                            skill.getEffects(activeChar, activeChar);
+						}
+                    }
+                }
+                else
+                {
+                    for(Integer skillid : Config.FIGHTER_BUFF_LIST.keySet())
+                    {
+                        int skilllvl = Config.FIGHTER_BUFF_LIST.get(skillid);
+                        L2Skill skill = L2Skill.valueOf(skillid, skilllvl);
+                        if(skill != null)
+						{
+                            skill.getEffects(activeChar, activeChar);
+						}
+                    }
+                }
+            }
+        }
+        // fim teste de buffs para novos chars
+
 		if (Config.ENABLE_AIOX_MESSAGE)
 		{
 			if (activeChar.isAio())
@@ -697,7 +730,7 @@ public class EnterWorld extends L2GameClientPacket
 		{
 			if (activeChar.isAio())
 			{
-				activeChar.stopAbnormalEffect(0x400000);
+				activeChar.stopAbnormalEffect(2097152);
 			}
 		}
 		

@@ -178,7 +178,7 @@ public class AdminAio implements IAdminCommandHandler
 				
 				if(Config.ALT_AIO_EFFECT_ESPECIAL)
 				{
-					activeChar.startAbnormalEffect(0x400000);
+					activeChar.startAbnormalEffect(2097152);
 				}
 				
 				if (Config.ALLOW_AIO_NCOLOR && activeChar.isAio())

@@ -1351,6 +1351,9 @@ public final class Config
 	public static boolean ENABLE_VIP_MESSAGE;
 	public static boolean ANNOUNCE_VIP_CONECT;
 	public static boolean ANNOUNCE_VIP_DESCONECT;
+	// System Day Create char Vip  
+	public static boolean ALLOW_CUSTOM_CHAR_VIP;
+	public static int CUSTOM_DAY_VIP;
 	// ----------------------------------------------------------------------------------------------------//
 	// Vip System
 	// ----------------------------------------------------------------------------------------------------//
@@ -3684,6 +3687,8 @@ public final class Config
 			ANNOUNCE_VIP_DESCONECT = Boolean.parseBoolean(VipSettings.getProperty("AnnounceVipDesconect", "False"));
 			ANNOUNCE_VIP_CONECT = Boolean.parseBoolean(VipSettings.getProperty("AnnounceVipConect", "False"));
 			ENABLE_VIP_MESSAGE = Boolean.parseBoolean(VipSettings.getProperty("VipMensagem", "False"));
+			ALLOW_CUSTOM_CHAR_VIP = Boolean.parseBoolean(VipSettings.getProperty("AllowCustomStartVip", "false"));
+			CUSTOM_DAY_VIP = Integer.parseInt(VipSettings.getProperty("CustomStartDays", "1"));
 
 			// ----------------------------------------------------------------------------------------------------//
 			

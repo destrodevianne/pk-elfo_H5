@@ -237,7 +237,13 @@ public final class CharacterCreate extends L2GameClientPacket
 		{
 			newChar.addAdena("Init", Config.STARTING_ADENA, null, false);
 		}
-		
+		if (Config.ALLOW_CUSTOM_CHAR_VIP)
+		{
+			//	activeChar.getStat().add(setvip.getName.Config.CUSTOM_DAY_VIP);
+			//	activeChar.getStat().add(setVipEndTime.getName.Config.CUSTOM_DAY_VIP);
+			newChar.setVip(true);
+			newChar.setVipEndTime(Config.CUSTOM_DAY_VIP);
+		}
 		// TODO: Make it random.
 		final L2PcTemplate template = newChar.getTemplate();
 		//spawn custom para novos jogadores

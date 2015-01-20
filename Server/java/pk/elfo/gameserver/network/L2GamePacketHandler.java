@@ -861,6 +861,7 @@ public final class L2GamePacketHandler implements IPacketHandler<L2GameClient>, 
 								msg = new ExGetOnAirShip();
 								break;
 							case 0x38:
+								// MoveToLocationAirShip
 								msg = new MoveToLocationAirShip();
 								break;
 							case 0x39:

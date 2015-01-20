@@ -10,6 +10,8 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastMap;
+
 import pk.elfo.Config;
 import pk.elfo.L2DatabaseFactory;
 import pk.elfo.gameserver.Announcements;
@@ -21,7 +23,6 @@ import pk.elfo.gameserver.model.StatsSet;
 import pk.elfo.gameserver.model.actor.instance.L2RaidBossInstance;
 import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
 import pk.elfo.util.Rnd;
-import javolution.util.FastMap;
 
 public class RaidBossSpawnManager
 {
@@ -114,7 +115,6 @@ public class RaidBossSpawnManager
 			bossId = npcId;
 		}
 		
-		@SuppressWarnings("null")
 		@Override
 		public void run()
 		{
@@ -143,11 +143,12 @@ public class RaidBossSpawnManager
 				_log.info(getClass().getSimpleName() + ": Spawning Raid Boss " + raidboss.getName());
 				
 				if(Config.ANNOUNCE_TO_ALL_SPAWN_RB)
-                {
-                    Announcements.getInstance().announceToAll("Raid boss " + raidboss.getName() + " renasceu.");
-                }
+				{
+					Announcements.getInstance().announceToAll("Raid boss " + raidboss.getName() + " Online.");
+				}
 				_bosses.put(bossId, raidboss);
 			}
+			
 			_schedules.remove(bossId);
 		}
 	}
@@ -189,9 +190,9 @@ public class RaidBossSpawnManager
 				updateDb();
 				
 				if (Config.ANNOUNCE_RB_ON_DEAD)
-                {
-                    Announcements.getInstance().announceToAll("RaidBoss : " + boss.getName() + " foi morto agora!");
-                }
+				{
+					Announcements.getInstance().announceToAll("RaidBoss : " + boss.getName() + " Esta morto agora!");
+				}
 			}
 		}
 		else

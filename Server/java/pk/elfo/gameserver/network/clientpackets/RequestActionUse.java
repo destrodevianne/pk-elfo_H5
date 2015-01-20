@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.network.clientpackets;
 
 import java.util.Arrays;
@@ -422,41 +404,41 @@ public final class RequestActionUse extends L2GameClientPacket
 				}
 				break;
 			case 67: // Steer
-				if (activeChar.isInAirShip())
-				{
-					if (activeChar.getAirShip().setCaptain(activeChar))
-					{
-						activeChar.broadcastUserInfo();
-					}
-				}
-				break;
-			case 68: // Cancel Control
-				if (activeChar.isInAirShip() && activeChar.getAirShip().isCaptain(activeChar))
-				{
-					if (activeChar.getAirShip().setCaptain(null))
-					{
-						activeChar.broadcastUserInfo();
-					}
-				}
-				break;
-			case 69: // Destination Map
-				AirShipManager.getInstance().sendAirShipTeleportList(activeChar);
-				break;
-			case 70: // Exit Airship
-				if (activeChar.isInAirShip())
-				{
-					if (activeChar.getAirShip().isCaptain(activeChar))
-					{
-						if (activeChar.getAirShip().setCaptain(null))
-						{
-							activeChar.broadcastUserInfo();
-						}
-					}
-					else if (activeChar.getAirShip().isInDock())
-					{
-						activeChar.getAirShip().oustPlayer(activeChar);
-					}
-				}
+ 				if (activeChar.isInAirShip())
+ 				{
+ 					if (activeChar.getAirShip().setCaptain(activeChar))
+ 					{
+ 						activeChar.broadcastUserInfo();
+ 					}
+ 				}
+ 				break;
+ 			case 68: // Cancel Control
+ 				if (activeChar.isInAirShip() && activeChar.getAirShip().isCaptain(activeChar))
+ 				{
+ 					if (activeChar.getAirShip().setCaptain(null))
+ 					{
+ 						activeChar.broadcastUserInfo();
+ 					}
+ 				}
+ 				break;
+ 			case 69: // Destination Map
+ 				AirShipManager.getInstance().sendAirShipTeleportList(activeChar);
+ 				break;
+ 			case 70: // Exit Airship
+ 				if (activeChar.isInAirShip())
+ 				{
+ 					if (activeChar.getAirShip().isCaptain(activeChar))
+ 					{
+ 						if (activeChar.getAirShip().setCaptain(null))
+ 						{
+ 							activeChar.broadcastUserInfo();
+ 						}
+ 					}
+ 					else if (activeChar.getAirShip().isInDock())
+ 					{
+ 						activeChar.getAirShip().oustPlayer(activeChar);
+ 					}
+ 				}
 				break;
 			case 71:
 			case 72:
