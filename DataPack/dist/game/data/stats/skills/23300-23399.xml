@@ -381,11 +381,23 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="target" val="TARGET_NONE" />
 	</skill>
-	<item id="23341" type="EtcItem" name="Moeda Donator">
-		<set name="icon" val="etc_box_of_adventure_5_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="material" val="gold" />
-		<set name="price" val="1" />
-		<set name="is_stackable" val="true" />
-	</item>
+	<skill id="23341" levels="1" name="Box Surpresa">
+		<!-- Confirmed CT2.5 -->
+		<table name="#extractableItems"> 6392,2000,20.55555;6393,1000,14.01515;6622,1,6.16666;9625,1,0.86999;9626,1,3.19444;9627,1,6.38888;17168,1,5.75;9576,2,5;14169,2,8.33333;16167,2,6.94444;22340,1,1;22203,1,1.66666;22202,1,1.38888;21411,5,12.77777;21399,1,1;21387,2,5
+		</table>
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="capsuled_items_skill" val="#extractableItems" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="operateType" val="A1" />
+		<set name="target" val="TARGET_SELF" />
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+		<for>
+			<effect name="RestorationRandom" noicon="1" val="0" />
+		</for>
+	</skill>
 </list>

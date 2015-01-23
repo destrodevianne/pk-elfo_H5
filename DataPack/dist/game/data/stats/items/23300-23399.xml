@@ -3,8 +3,22 @@
 	<item id="23341" type="EtcItem" name="Moeda Donator">
 		<set name="icon" val="etc_box_of_adventure_5_i00" />
 		<set name="immediate_effect" val="1" />
-		<set name="material" val="gold" />
+		<set name="material" val="steel" />
 		<set name="price" val="1" />
 		<set name="is_stackable" val="true" />
+	</item>
+	<item id="23342" type="EtcItem" name="Box Surpresa PkElfo">
+		<set name="icon" val="br_cashtex.item.br_cash_lucky_box_i00" />
+		<set name="default_action" val="capsule" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="steel" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="23341-1" />
 	</item>
 </list>

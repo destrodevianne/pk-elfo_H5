@@ -25,14 +25,32 @@
 	<item id="22202" type="EtcItem" name="S84 Weapon Box - Event">
 		<!-- Description: Box containing an S84 high-grade weapon. Which one could it be? -->
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="default_action" val="capsule" />
+		<set name="immediate_effect" val="1" />
 		<set name="material" val="cotton" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="22405-1" />
 	</item>
 	<item id="22203" type="EtcItem" name="Vorpal Armor Box - Event">
 		<!-- Description: Box containing a Vorpal armor. Which one could it be? -->
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="default_action" val="capsule" />
+		<set name="immediate_effect" val="1" />
 		<set name="material" val="cotton" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="22358-1" />
 	</item>
 	<item id="22204" type="EtcItem" name="Attribute Stone Box - Event">
 		<!-- Description: Box containing an Attribute Ore. Which one could it be? -->

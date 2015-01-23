@@ -1,4 +1,4 @@
-package vehicles;
+package pk.elfo.gameserver.model.actor;
 
 import java.util.concurrent.Future;
 import java.util.logging.Level;

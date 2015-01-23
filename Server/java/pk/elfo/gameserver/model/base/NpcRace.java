@@ -1,5 +1,9 @@
 package pk.elfo.gameserver.model.base;
 
+/**
+ * L2PkElfo
+ */
+ 
 public enum NpcRace
 {
     ANIMAL,

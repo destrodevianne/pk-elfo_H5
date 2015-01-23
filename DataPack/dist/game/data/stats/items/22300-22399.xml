@@ -370,11 +370,20 @@
 		<set name="material" val="cotton" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="22340" type="EtcItem" name="Elegia Armor Chest - Event">
+	<item id="22340" type="EtcItem" name="Elegia Armor Box - Event">
 		<!-- Description: The chest contains 1 Elegia armor. Which one could it be? -->
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="default_action" val="capsule" />
+		<set name="immediate_effect" val="1" />
 		<set name="material" val="cotton" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="22406-1" />
 	</item>
 	<item id="22341" type="EtcItem" name="Scroll: Enchant Weapon - C Grade">
 		<!-- Description: When enchanted, P. Atk. increases by 3 for C-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons. P. Atk. increases by 4 for two-handed swords, two-handed blunts, dualswords, and two-handed combat weapons. P. Atk. increases by 6 for bows. M. Atk. increases by 3 for all weapons. Starting at +4, P. Atk. / M. Atk. bonus double. If enchanting fails, the item will not be crystallized but the enchant value will be reset to 0. Can be exchanged, dropped, and destroyed. Can be stored in a Private Warehouse. -->

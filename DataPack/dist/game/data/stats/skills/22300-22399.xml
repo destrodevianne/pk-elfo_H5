@@ -369,9 +369,22 @@
 	</skill>
 	<skill id="22358" levels="1" name="Vorpal Armor Box">
 		<!-- Desciption: There is no available description. -->
-		<set name="operateType" val="P" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="target" val="TARGET_NONE" />
+		<table name="#extractableItems"> 16171,1,35;16172,1,35;16173,1,30
+		</table>
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="capsuled_items_skill" val="#extractableItems" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="operateType" val="A1" />
+		<set name="target" val="TARGET_SELF" />
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+		<for>
+			<effect name="RestorationRandom" noicon="1" val="0" />
+		</for>
 	</skill>
 	<skill id="22359" levels="1" name="Scroll: Enchant Weapon of Destruction (S-Grade)">
 		<!-- Desciption: There is no available description. -->
