@@ -6,7 +6,7 @@ import pk.elfo.gameserver.model.VehiclePathPoint;
 
 public class SoAController extends AirShipController
 {
-	private static final int DOCK_ZONE = 60002;
+	private static final int DOCK_ZONE = 50604;
 	private static final int LOCATION = 103;
 	private static final int CONTROLLER_ID = 32779;
 	
