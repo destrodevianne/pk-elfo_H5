@@ -3,6 +3,9 @@ package handlers.skillhandlers;
 import java.util.List;
 import java.util.Map;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
+
 import pk.elfo.gameserver.handler.ISkillHandler;
 import pk.elfo.gameserver.handler.SkillHandler;
 import pk.elfo.gameserver.model.L2Object;
@@ -13,13 +16,7 @@ import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.StatusUpdate;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.util.ValueSortMap;
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
-/**
- * Projeto PkElfo
- */
- 
 public class ChainHeal implements ISkillHandler
 {
 	private static final L2SkillType[] SKILL_IDS =
