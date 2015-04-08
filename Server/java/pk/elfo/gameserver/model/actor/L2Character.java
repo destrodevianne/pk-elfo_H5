@@ -6597,7 +6597,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 						_skiprange++;
 						continue;
 					}
-					if ((escapeRange > 0) && (Config.GEODATA > 0) && !GeoData.getInstance().canSeeTarget(this, target))
+					if ((skill.getTargetType() != L2TargetType.PARTY || !skill.hasEffectType(L2EffectType.HEAL)) && (Config.GEODATA > 0) && !GeoData.getInstance().canSeeTarget(this, target))
 					{
 						_skipgeo++;
 						continue;
