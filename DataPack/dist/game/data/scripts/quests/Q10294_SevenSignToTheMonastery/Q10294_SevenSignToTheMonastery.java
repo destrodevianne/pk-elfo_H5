@@ -1,11 +1,11 @@
 package quests.Q10294_SevenSignToTheMonastery;
 
+import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.quest.Quest;
 import pk.elfo.gameserver.model.quest.QuestState;
 import pk.elfo.gameserver.model.quest.State;
-import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.network.serverpackets.OnEventTrigger;
 import pk.elfo.gameserver.network.serverpackets.SocialAction;
 import pk.elfo.gameserver.util.Util;
@@ -149,7 +149,7 @@ public final class Q10294_SevenSignToTheMonastery extends Quest
 			st.set("book_" + npc.getNpcId(), "1");
 			npc.setDisplayEffect(1);
 			npc.setTarget(npc);
-			npc.doCast(L2Skill.valueOf(9077, 1));
+			npc.doCast(SkillTable.getInstance().getInfo(9077, 1));
 			if (green == 0)
 			{
 				if (npc.getNpcId() == EastReadingDesk3)

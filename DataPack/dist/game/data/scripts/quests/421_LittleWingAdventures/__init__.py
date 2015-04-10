@@ -7,10 +7,10 @@ from java.sql import PreparedStatement
 from java.sql import ResultSet
 from java.sql import SQLException
 from pk.elfo import L2DatabaseFactory
+from pk.elfo.gameserver.datatables import SkillTable
 from pk.elfo.gameserver.model.quest import State
 from pk.elfo.gameserver.model.quest import QuestState
 from pk.elfo.gameserver.model.quest.jython import QuestJython as JQuest
-from pk.elfo.gameserver.model.skills import L2Skill
 from pk.elfo.gameserver.network import SystemMessageId
 from pk.elfo.gameserver.network.serverpackets import ItemList
 from pk.elfo.gameserver.network.serverpackets import NpcSay
@@ -197,7 +197,7 @@ class Quest (JQuest) :
                      st.playSound("ItemSound.quest_finish")
                   else :
                      npc.setTarget(player)
-                     skill = L2Skill.valueOf(4167,1)
+                     skill = SkillTable.getInstance().getInfo(4167,1)
                      if skill != None:
                         skill.getEffects(npc, player)
                      htmltext = "30747-18.htm"
@@ -212,7 +212,7 @@ class Quest (JQuest) :
                      st.playSound("ItemSound.quest_finish")
                   else :
                      npc.setTarget(player)
-                     skill = L2Skill.valueOf(4167,1)
+                     skill = SkillTable.getInstance().getInfo(4167,1)
                      if skill != None:
                         skill.getEffects(npc, player)
                      htmltext = "30747-18.htm"
@@ -227,7 +227,7 @@ class Quest (JQuest) :
                      st.playSound("ItemSound.quest_finish")
                   else :
                      npc.setTarget(player)
-                     skill = L2Skill.valueOf(4167,1)
+                     skill = SkillTable.getInstance().getInfo(4167,1)
                      if skill != None:
                         skill.getEffects(npc, player)
                      htmltext = "30747-18.htm"

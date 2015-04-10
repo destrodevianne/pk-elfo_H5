@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package quests.Q00179_IntoTheLargeCavern;
 
 import pk.elfo.gameserver.model.actor.L2Npc;
@@ -25,11 +7,6 @@ import pk.elfo.gameserver.model.quest.Quest;
 import pk.elfo.gameserver.model.quest.QuestState;
 import pk.elfo.gameserver.model.quest.State;
 
-/**
- * Into the Large Cavern (179)
- * @author Gnacik
- * @version 2010-10-15 Based on official server Naia
- */
 public class Q00179_IntoTheLargeCavern extends Quest
 {
 	// NPCs
@@ -48,27 +25,22 @@ public class Q00179_IntoTheLargeCavern extends Quest
 	{
 		String htmltext = event;
 		final QuestState st = player.getQuestState(getName());
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		if (npc.getNpcId() == KEKROPUS)
 		{
-			if (event.equalsIgnoreCase("32138-03.html"))
+			if (event.equals("32138-03.html"))
 			{
 				st.startQuest();
 			}
 		}
 		else if (npc.getNpcId() == MENACING_MACHINE)
 		{
-			if (event.equalsIgnoreCase("32258-08.html"))
+			if (event.equals("32258-08.html"))
 			{
 				st.giveItems(391, 1);
 				st.giveItems(413, 1);
 				st.exitQuest(false, true);
 			}
-			else if (event.equalsIgnoreCase("32258-09.html"))
+			else if (event.equals("32258-09.html"))
 			{
 				st.giveItems(847, 2);
 				st.giveItems(890, 2);
@@ -119,7 +91,7 @@ public class Q00179_IntoTheLargeCavern extends Quest
 				case State.STARTED:
 					if (st.isCond(1))
 					{
-						htmltext = "32138-03.htm";
+						htmltext = "32138-03.html";
 					}
 					break;
 				case State.COMPLETED:

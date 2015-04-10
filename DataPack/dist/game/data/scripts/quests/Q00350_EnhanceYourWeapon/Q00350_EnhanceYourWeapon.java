@@ -34,8 +34,8 @@ import org.w3c.dom.Node;
 import pk.elfo.Config;
 import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.actor.L2Attackable;
-import pk.elfo.gameserver.model.actor.L2Attackable.AbsorberInfo;
 import pk.elfo.gameserver.model.actor.L2Npc;
+import pk.elfo.gameserver.model.actor.L2Attackable.AbsorberInfo;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.gameserver.model.quest.Quest;
@@ -512,7 +512,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 			factory.setValidating(false);
 			factory.setIgnoringComments(true);
 			
-			File file = new File(Config.DATAPACK_ROOT, "data/xmls/levelUpCrystalData.xml");
+			File file = new File(Config.DATAPACK_ROOT, "data/levelUpCrystalData.xml");
 			if (!file.exists())
 			{
 				_log.severe("[EnhanceYourWeapon] Missing levelUpCrystalData.xml. The quest wont work without it!");
