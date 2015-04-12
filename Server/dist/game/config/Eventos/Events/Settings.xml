@@ -3,7 +3,7 @@
 	<event id="0">
 		<property name="ipCheckOnRegister" value="False" />
 		<property name="registerTime" value="600" />
-		<property name="voteTime" value="0" />
+		<property name="voteTime" value="5" />
 		<property name="voteEnabled" value="True" />
 		<property name="schedulerEnabled" value="True" />
 		<property name="firstAfterStartTime" value="60" />

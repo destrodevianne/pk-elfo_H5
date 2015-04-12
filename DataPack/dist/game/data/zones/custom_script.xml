@@ -89,6 +89,11 @@
 		<node X="-193009" Y="245647" />
 		<node X="-193315" Y="240185" />
 	</zone>
+		<zone name="Seed of Annihination AirShips dock" id="50604" type="ScriptZone" shape="Cuboid" minZ="-1000" maxZ="6200" rad="2900">
+		<node X="-172514" Y="155675"/>
+		<node X="-183192" Y="151677"/>
+		<spawn X="-184274" Y="243050" Z="1579"/>
+	</zone>
 	<zone name="Seed of Annihilation 1" id="60002" type="ScriptZone" shape="Cylinder" minZ="-10600" maxZ="-10500" rad="260">
 		<node X="-182488" Y="186655" />
 	</zone>

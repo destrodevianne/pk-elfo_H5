@@ -4,6 +4,9 @@ import pk.elfo.Config;
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.instancemanager.RaidBossPointsManager;
 import pk.elfo.gameserver.instancemanager.RaidBossSpawnManager;
+import pk.elfo.gameserver.instancemanager.RaidBossSpawnManager.StatusEnum;
+import pk.elfo.gameserver.model.L2Object.InstanceType;
+import pk.elfo.gameserver.model.L2Party;
 import pk.elfo.gameserver.model.L2Spawn;
 import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.L2Summon;
@@ -16,21 +19,9 @@ import pk.elfo.util.Rnd;
 public class L2RaidBossInstance extends L2MonsterInstance
 {
 	private static final int RAIDBOSS_MAINTENANCE_INTERVAL = 30000; // 30 sec
-	
 	private RaidBossSpawnManager.StatusEnum _raidStatus;
 	private boolean _useRaidCurse = true;
-	
-	/**
-	 * Constructor of L2RaidBossInstance (use L2Character and L2NpcInstance constructor).<br>
-	 * <B><U>Actions</U>:</B>
-	 * <ul>
-	 * <li>Call the L2Character constructor to set the _template of the L2RaidBossInstance (copy skills from template to object and link _calculators to NPC_STD_CALCULATOR)</li>
-	 * <li>Set the name of the L2RaidBossInstance</li>
-	 * <li>Create a RandomAnimation Task that will be launched after the calculated delay if the server allow it</li>
-	 * </ul>
-	 * @param objectId the identifier of the object to initialized
-	 * @param template to apply to the NPC
-	 */
+
 	public L2RaidBossInstance(int objectId, L2NpcTemplate template)
 	{
 		super(objectId, template);
@@ -49,7 +40,7 @@ public class L2RaidBossInstance extends L2MonsterInstance
 	@Override
 	protected int getMaintenanceInterval()
 	{
-		return RAIDBOSS_MAINTENANCE_INTERVAL;
+		return 30000;
 	}
 	
 	@Override
@@ -108,7 +99,6 @@ public class L2RaidBossInstance extends L2MonsterInstance
 		{
 			getMinionList().spawnMinions();
 		}
-		
 		_maintenanceTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
 		{
 			@Override
@@ -126,15 +116,15 @@ public class L2RaidBossInstance extends L2MonsterInstance
 			return;
 		}
 		
-		final L2Spawn spawn = getSpawn();
+		L2Spawn spawn = getSpawn();
 		if (spawn == null)
 		{
 			return;
 		}
 		
-		final int spawnX = spawn.getLocx();
-		final int spawnY = spawn.getLocy();
-		final int spawnZ = spawn.getLocz();
+		int spawnX = spawn.getLocx();
+		int spawnY = spawn.getLocy();
+		int spawnZ = spawn.getLocz();
 		
 		if (!isInCombat() && !isMovementDisabled())
 		{
@@ -158,7 +148,7 @@ public class L2RaidBossInstance extends L2MonsterInstance
 	@Override
 	public float getVitalityPoints(int damage)
 	{
-		return -super.getVitalityPoints(damage) / 100;
+		return -super.getVitalityPoints(damage) / 100.0F;
 	}
 	
 	@Override

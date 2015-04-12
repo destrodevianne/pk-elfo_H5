@@ -7,6 +7,7 @@ import java.util.Date;
 import javolution.util.FastList;
 import pk.elfo.Config;
 import pk.elfo.gameserver.Announcements;
+import pk.elfo.gameserver.GameServerRestart;
 import pk.elfo.gameserver.LoginServerThread;
 import pk.elfo.gameserver.SevenSigns;
 import pk.elfo.gameserver.TaskPriority;
@@ -61,6 +62,7 @@ import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.communityserver.CommunityServerThread;
 import pk.elfo.gameserver.network.communityserver.writepackets.WorldInfo;
+import pk.elfo.gameserver.network.serverpackets.CreatureSay;
 import pk.elfo.gameserver.network.serverpackets.Die;
 import pk.elfo.gameserver.network.serverpackets.EtcStatusUpdate;
 import pk.elfo.gameserver.network.serverpackets.ExBasicActionList;
@@ -947,6 +949,13 @@ public class EnterWorld extends L2GameClientPacket
 		{
 			RankPvpSystem.updateNickAndTitleColor(activeChar, null);
 		}
+		
+		CreatureSay msg;
+        if (Config.AUTO_RESTART_ENABLE)
+        {
+            msg = new CreatureSay(2, Say2.BOAT, "[Attention] ", "Server will be restarted at " + GameServerRestart.getInstance().getRestartNextTime() + " .");
+            activeChar.sendPacket(msg);
+        }
 	}
 	
 	/**

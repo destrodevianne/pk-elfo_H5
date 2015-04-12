@@ -42,41 +42,42 @@ public class Bernarde extends Quest
 	@Override
 	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		if ("HolyWater".equalsIgnoreCase(event))
-		{
-			if (HellboundManager.getInstance().getLevel() == 2)
-			{
-				if (player.getInventory().getInventoryItemCount(DARION_BADGE, -1, false) >= 5)
-				{
-					if (player.exchangeItemsById("Quest", npc, DARION_BADGE, 5, HOLY_WATER, 1, true))
-					{
-						return "32300-02b.htm";
-					}
-				}
-			}
-			event = "32300-02c.htm";
-		}
-		else if ("Treasure".equalsIgnoreCase(event))
-		{
-			if (HellboundManager.getInstance().getLevel() == 3)
-			{
-				if (player.getInventory().getInventoryItemCount(TREASURE, -1, false) > 0)
-				{
-					if (player.destroyItemByItemId("Quest", TREASURE, player.getInventory().getInventoryItemCount(TREASURE, -1, false), npc, true))
-					{
-						HellboundManager.getInstance().updateTrust((int) (player.getInventory().getInventoryItemCount(TREASURE, -1, false) * 1000), true);
-						return "32300-02d.htm";
-					}
-				}
-			}
-			event = "32300-02e.htm";
-		}
-		else if ("rumors".equalsIgnoreCase(event))
-		{
-			event = "32300-" + HellboundManager.getInstance().getLevel() + "r.htm";
-		}
-		return event;
-	}
+        switch (event)
+        {
+            case "HolyWater":
+            {
+                if (HellboundManager.getInstance().getLevel() == 2)
+                {
+                    if (player.getInventory().getInventoryItemCount(DARION_BADGE, -1, false) >= 5)
+                    {
+                        if (player.exchangeItemsById("Quest", npc, DARION_BADGE, 5, HOLY_WATER, 1, true))
+                        {
+                            return "32300-02b.htm";
+                        }
+                    }
+                }
+                event = "32300-02c.htm";
+                break;
+            }
+            case "Treasure":
+            {
+                if ((HellboundManager.getInstance().getLevel() == 3) && hasQuestItems(player, TREASURE))
+                {
+                    HellboundManager.getInstance().updateTrust((int) (getQuestItemsCount(player, TREASURE) * 1000), true);
+                    takeItems(player, TREASURE, -1);
+                    return "32300-02d.htm";
+                }
+                event = "32300-02e.htm";
+                break;
+            }
+            case "rumors":
+            {
+                event = "32300-" + HellboundManager.getInstance().getLevel() + "r.htm";
+                break;
+            }
+        }
+        return event;
+    }
 	
 	@Override
 	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
