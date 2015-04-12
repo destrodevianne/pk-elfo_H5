@@ -2,69 +2,278 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
     <skill id="22200" levels="1" name="Transformation Scroll - Veil Master">
         <!-- Transformed into a Veil Master. -->
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
-        <set name="operateType" val="P" />
+		<set name="abnormalType" val="transform" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="hitTime" val="500" />
+		<set name="operateType" val="A2" />
+		<set name="transformId" val="13108" />
+		<set name="itemConsumeId" val="21181" />
+		<set name="itemConsumeCount" val="1" />
+		<cond msgId="1509">
+			<player olympiad="false" />
+		</cond>
+		<for>
+			<effect name="Transformation" abnormalTime="1800" val="4" abnormalLvl="1" abnormalType="transform"> <!-- Transformation lasts 30 minutes -->
+				<set order="0x40" stat="STR" val="22" />
+				<set order="0x40" stat="DEX" val="21" />
+				<set order="0x40" stat="CON" val="27" />
+				<set order="0x40" stat="INT" val="41" />
+				<set order="0x40" stat="WIT" val="20" />
+				<set order="0x40" stat="MEN" val="39" />
+			</effect>
+		</for>
     </skill>
     <skill id="22201" levels="1" name="Transformation Scroll - Saber Tooth Tiger">
         <!-- Transformed into a Saber Tooth Tiger. -->
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
-        <set name="operateType" val="P" />
+        <set name="abnormalType" val="transform" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="hitTime" val="500" />
+		<set name="operateType" val="A2" />
+		<set name="transformId" val="13109" />
+		<set name="itemConsumeId" val="21182" />
+		<set name="itemConsumeCount" val="1" />
+		<cond msgId="1509">
+			<player olympiad="false" />
+		</cond>
+		<for>
+			<effect name="Transformation" abnormalTime="1800" val="5" abnormalLvl="1" abnormalType="transform"> <!-- Transformation lasts 30 minutes -->
+				<set order="0x40" stat="STR" val="40" />
+				<set order="0x40" stat="DEX" val="28" />
+				<set order="0x40" stat="CON" val="45" />
+				<set order="0x40" stat="INT" val="21" />
+				<set order="0x40" stat="WIT" val="11" />
+				<set order="0x40" stat="MEN" val="25" />
+			</effect>
+		</for>
     </skill>
     <skill id="22202" levels="1" name="Transformation Scroll - Ol Mahum">
         <!-- Transformed into an Ol Mahum. -->
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
-        <set name="operateType" val="P" />
+        <set name="abnormalType" val="transform" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="hitTime" val="500" />
+		<set name="operateType" val="A2" />
+		<set name="transformId" val="13110" />
+		<set name="itemConsumeId" val="21183" />
+		<set name="itemConsumeCount" val="1" />
+		<cond msgId="1509">
+			<player olympiad="false" />
+		</cond>
+		<for>
+			<effect name="Transformation" abnormalTime="1800" val="6" abnormalLvl="1" abnormalType="transform"> <!-- Transformation lasts 30 minutes -->
+				<set order="0x40" stat="STR" val="40" />
+				<set order="0x40" stat="DEX" val="30" />
+				<set order="0x40" stat="CON" val="43" />
+				<set order="0x40" stat="INT" val="21" />
+				<set order="0x40" stat="WIT" val="11" />
+				<set order="0x40" stat="MEN" val="25" />
+			</effect>
+		</for>
     </skill>
     <skill id="22203" levels="1" name="Transformation Scroll - Doll Blader">
         <!-- Transformed into a Doll Blader. -->
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
-        <set name="operateType" val="P" />
+        <set name="abnormalType" val="transform" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="hitTime" val="500" />
+		<set name="operateType" val="A2" />
+		<set name="transformId" val="13111" />
+		<set name="itemConsumeId" val="21184" />
+		<set name="itemConsumeCount" val="1" />
+		<cond msgId="1509">
+			<player olympiad="false" />
+		</cond>
+		<for>
+			<effect name="Transformation" abnormalTime="1800" val="7" abnormalLvl="1" abnormalType="transform"> <!-- Transformation lasts 30 minutes -->
+				<set order="0x40" stat="STR" val="40" />
+				<set order="0x40" stat="DEX" val="30" />
+				<set order="0x40" stat="CON" val="43" />
+				<set order="0x40" stat="INT" val="21" />
+				<set order="0x40" stat="WIT" val="11" />
+				<set order="0x40" stat="MEN" val="25" />
+			</effect>
+		</for>
     </skill>
     <skill id="22204" levels="1" name="Transformation Scroll - Zaken">
         <!-- Transformed into Zaken. -->
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
-        <set name="operateType" val="P" />
+        <set name="abnormalType" val="transform" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="hitTime" val="500" />
+		<set name="operateType" val="A2" />
+		<set name="transformId" val="13099" />
+		<set name="itemConsumeId" val="21185" />
+		<set name="itemConsumeCount" val="1" />
+		<cond msgId="1509">
+			<player olympiad="false" />
+		</cond>
+		<for>
+			<effect name="Transformation" abnormalTime="1800" val="305" abnormalLvl="1" abnormalType="transform"> <!-- Transformation lasts 30 minutes -->
+				<set order="0x40" stat="STR" val="48" />
+				<set order="0x40" stat="DEX" val="30" />
+				<set order="0x40" stat="CON" val="52" />
+				<set order="0x40" stat="INT" val="45" />
+				<set order="0x40" stat="WIT" val="20" />
+				<set order="0x40" stat="MEN" val="45" />
+			</effect>
+		</for>
     </skill>
     <skill id="22205" levels="1" name="Transformation Scroll - Anakim">
         <!-- Transformed into Anakim. -->
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
-        <set name="operateType" val="P" />
+        <set name="abnormalType" val="transform" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="hitTime" val="500" />
+		<set name="operateType" val="A2" />
+		<set name="transformId" val="13100" />
+		<set name="itemConsumeId" val="21186" />
+		<set name="itemConsumeCount" val="1" />
+		<cond msgId="1509">
+			<player olympiad="false" />
+		</cond>
+		<for>
+			<effect name="Transformation" abnormalTime="1800" val="306" abnormalLvl="1" abnormalType="transform"> <!-- Transformation lasts 30 minutes -->
+				<set order="0x40" stat="STR" val="46" />
+				<set order="0x40" stat="DEX" val="30" />
+				<set order="0x40" stat="CON" val="49" />
+				<set order="0x40" stat="INT" val="50" />
+				<set order="0x40" stat="WIT" val="20" />
+				<set order="0x40" stat="MEN" val="45" />
+			</effect>
+		</for>
     </skill>
     <skill id="22206" levels="1" name="Transformation Scroll - Venom">
         <!-- Transformed into Venom. -->
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
-        <set name="operateType" val="P" />
+        <set name="abnormalType" val="transform" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="hitTime" val="500" />
+		<set name="operateType" val="A2" />
+		<set name="transformId" val="13101" />
+		<set name="itemConsumeId" val="21187" />
+		<set name="itemConsumeCount" val="1" />
+		<cond msgId="1509">
+			<player olympiad="false" />
+		</cond>
+		<for>
+			<effect name="Transformation" abnormalTime="1800" val="307" abnormalLvl="1" abnormalType="transform"> <!-- Transformation lasts 30 minutes -->
+				<set order="0x40" stat="STR" val="43" />
+				<set order="0x40" stat="DEX" val="30" />
+				<set order="0x40" stat="CON" val="47" />
+				<set order="0x40" stat="INT" val="46" />
+				<set order="0x40" stat="WIT" val="20" />
+				<set order="0x40" stat="MEN" val="42" />
+			</effect>
+		</for>
     </skill>
     <skill id="22207" levels="1" name="Transformation Scroll - Gordon">
         <!-- Transformed into Gordon. -->
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
-        <set name="operateType" val="P" />
+        <set name="abnormalType" val="transform" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="hitTime" val="500" />
+		<set name="operateType" val="A2" />
+		<set name="transformId" val="13102" />
+		<set name="itemConsumeId" val="21188" />
+		<set name="itemConsumeCount" val="1" />
+		<cond msgId="1509">
+			<player olympiad="false" />
+		</cond>
+		<for>
+			<effect name="Transformation" abnormalTime="1800" val="308" abnormalLvl="1" abnormalType="transform"> <!-- Transformation lasts 30 minutes -->
+				<set order="0x40" stat="STR" val="43" />
+				<set order="0x40" stat="DEX" val="30" />
+				<set order="0x40" stat="CON" val="47" />
+				<set order="0x40" stat="INT" val="46" />
+				<set order="0x40" stat="WIT" val="20" />
+				<set order="0x40" stat="MEN" val="42" />
+			</effect>
+		</for>
     </skill>
     <skill id="22208" levels="1" name="Transformation Scroll - Ranku">
         <!-- Transformed into Ranku. -->
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
-        <set name="operateType" val="P" />
+        <set name="abnormalType" val="transform" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="hitTime" val="500" />
+		<set name="operateType" val="A2" />
+		<set name="transformId" val="13103" />
+		<set name="itemConsumeId" val="21189" />
+		<set name="itemConsumeCount" val="1" />
+		<cond msgId="1509">
+			<player olympiad="false" />
+		</cond>
+		<for>
+			<effect name="Transformation" abnormalTime="1800" val="309" abnormalLvl="1" abnormalType="transform"> <!-- Transformation lasts 30 minutes -->
+				<set order="0x40" stat="STR" val="43" />
+				<set order="0x40" stat="DEX" val="30" />
+				<set order="0x40" stat="CON" val="47" />
+				<set order="0x40" stat="INT" val="46" />
+				<set order="0x40" stat="WIT" val="20" />
+				<set order="0x40" stat="MEN" val="42" />
+			</effect>
+		</for>
     </skill>
     <skill id="22209" levels="1" name="Transformation Scroll - Kietch">
         <!-- Transformed into Kietch. -->
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
-        <set name="operateType" val="P" />
+        <set name="abnormalType" val="transform" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="hitTime" val="500" />
+		<set name="operateType" val="A2" />
+		<set name="transformId" val="13104" />
+		<set name="itemConsumeId" val="21190" />
+		<set name="itemConsumeCount" val="1" />
+		<cond msgId="1509">
+			<player olympiad="false" />
+		</cond>
+		<for>
+			<effect name="Transformation" abnormalTime="1800" val="310" abnormalLvl="1" abnormalType="transform"> <!-- Transformation lasts 30 minutes -->
+				<set order="0x40" stat="STR" val="43" />
+				<set order="0x40" stat="DEX" val="30" />
+				<set order="0x40" stat="CON" val="47" />
+				<set order="0x40" stat="INT" val="46" />
+				<set order="0x40" stat="WIT" val="20" />
+				<set order="0x40" stat="MEN" val="42" />
+			</effect>
+		</for>
     </skill>
     <skill id="22210" levels="1" name="Transformation Scroll - Duke Devil">
         <!-- Transformed into Duke Devil. -->
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
-        <set name="operateType" val="P" />
+        <set name="abnormalType" val="transform" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="hitTime" val="500" />
+		<set name="operateType" val="A2" />
+		<set name="transformId" val="13105" />
+		<set name="itemConsumeId" val="21191" />
+		<set name="itemConsumeCount" val="1" />
+		<cond msgId="1509">
+			<player olympiad="false" />
+		</cond>
+		<for>
+			<effect name="Transformation" abnormalTime="1800" val="311" abnormalLvl="1" abnormalType="transform"> <!-- Transformation lasts 30 minutes -->
+				<set order="0x40" stat="STR" val="43" />
+				<set order="0x40" stat="DEX" val="30" />
+				<set order="0x40" stat="CON" val="47" />
+				<set order="0x40" stat="INT" val="46" />
+				<set order="0x40" stat="WIT" val="20" />
+				<set order="0x40" stat="MEN" val="42" />
+			</effect>
+		</for>
     </skill>
     <skill id="22211" levels="1" name="Blessed Scroll of Escape">
         <!-- none -->
