@@ -9,6 +9,7 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="true" />
+		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
 		<set name="capsuled_items" val="21406,1,1,100" />
 	</item>
@@ -41,6 +42,8 @@
 		<set name="default_action" val="equip" />
 		<set name="bodypart" val="lbracelet" />
 		<set name="material" val="silver" />
+		<set name="weight" val="100" />
+		<set name="is_depositable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="time" val="10080" />
@@ -109,7 +112,7 @@
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="material" val="steel" />
 		<set name="weight" val="100" />
-		<set name="time" val="10080" /> 7 dias
+		<set name="time" val="10080" />
 		<set name="is_depositable" val="false" />
 		<set name="weight" val="100" />
 		<set name="is_depositable" val="false" />
@@ -125,7 +128,7 @@
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="material" val="steel" />
 		<set name="weight" val="100" />
-		<set name="time" val="10080" /> 7 dias
+		<set name="time" val="10080" />
 		<set name="is_depositable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -139,7 +142,7 @@
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="material" val="steel" />
 		<set name="weight" val="100" />
-		<set name="time" val="43200" /> 30 dias
+		<set name="time" val="43200" />
 		<set name="is_depositable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -153,7 +156,7 @@
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="material" val="steel" />
 		<set name="weight" val="100" />
-		<set name="time" val="43200" /> 30 dias
+		<set name="time" val="43200" />
 		<set name="is_depositable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
@@ -197,7 +200,7 @@
 		<set name="weight" val="30" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="time" val="10080" /> 7 dias
+		<set name="time" val="10080" />
 		<set name="item_skill" val="21171-1" /> <!-- Guess. -->
 	</item>
 	<item id="21416" type="Armor" name="Mount Bracelet - Jet Bike - 7-day limited period (event)">
@@ -210,7 +213,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
-		<set name="time" val="10080" /> 7 dias
+		<set name="time" val="10080" />
 		<set name="item_skill" val="21171-1" /> <!-- Guess. -->
 	</item>
 	<item id="21417" type="Armor" name="Mount Bracelet - Jet Bike - 30-day limited period">
@@ -222,7 +225,7 @@
 		<set name="weight" val="30" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="time" val="43200" /> 30 dias
+		<set name="time" val="43200" />
 		<set name="item_skill" val="21171-1" /> <!-- Guess. -->
 	</item>
 	<item id="21418" type="Armor" name="Mount Bracelet - Jet Bike - 30-day limited period (event)">
@@ -235,7 +238,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
-		<set name="time" val="43200" /> 30 dias
+		<set name="time" val="43200" />
 		<set name="item_skill" val="21171-1" /> <!-- Guess. -->
 	</item>
 	<item id="21419" type="Armor" name="Mount Bracelet - Jet Bike">
@@ -294,58 +297,85 @@
 		<!-- Description: Dimensional item pack. Gift box containing 1 brown bear hat (7 day). Cannot be exchanged or dropped. Can be shared between characters within an account through the Dimensional Merchant. Can be stored in a private warehouse. -->
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="material" val="steel" />
+		<set name="weight" val="100" />
+		<set name="time" val="10080" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="21429,1,1,100" />
 	</item>
 	<item id="21424" type="EtcItem" name="Brown Bear Hat 7-Day Pack - Event">
 		<!-- Description: Dimensional item pack. Gift box containing 1 brown bear hat (7 day). Cannot be exchanged, dropped, or destroyed. Can be shared between characters within an account through the Dimensional Merchant. Can be stored in a private warehouse. -->
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="material" val="steel" />
+		<set name="weight" val="100" />
+		<set name="time" val="10080" />
+		<set name="is_depositable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="21430,1,1,100" />
 	</item>
 	<item id="21425" type="EtcItem" name="Brown Bear Hat 30-Day Pack">
 		<!-- Description: Dimensional item pack. Gift box containing 1 brown bear hat (30 day). Cannot be exchanged or dropped. Can be shared between characters within an account through the Dimensional Merchant. Can be stored in a private warehouse. -->
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="material" val="steel" />
+		<set name="weight" val="100" />
+		<set name="time" val="43200" />
+		<set name="is_depositable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="21431,1,1,100" />
 	</item>
 	<item id="21426" type="EtcItem" name="Brown Bear Hat 30-Day Pack - Event">
 		<!-- Description: Dimensional item pack. Gift box containing 1 brown bear hat (30 day). Cannot be exchanged, dropped, or destroyed. Can be shared between characters within an account through the Dimensional Merchant. Can be stored in a private warehouse. -->
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="material" val="steel" />
+		<set name="weight" val="100" />
+		<set name="time" val="43200" />
+		<set name="is_depositable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="21432,1,1,100" />
 	</item>
 	<item id="21427" type="EtcItem" name="Brown Bear Hat Pack">
 		<!-- Description: Dimensional item pack. Gift box containing 1 brown bear hat. Cannot be exchanged or dropped. Can be shared between characters within an account through the Dimensional Merchant. Can be stored in a private warehouse. -->
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="material" val="steel" />
+		<set name="weight" val="100" />
+		<set name="is_depositable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="21433,1,1,100" />
 	</item>
 	<item id="21428" type="EtcItem" name="Brown Bear Hat Pack - Event">
 		<!-- Description: Dimensional item pack. Gift box containing 1 brown bear hat. Cannot be exchanged, dropped, or destroyed. Can be shared between characters within an account through the Dimensional Merchant. Can be stored in a private warehouse. -->
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="material" val="steel" />
+		<set name="weight" val="100" />
+		<set name="is_depositable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="21434,1,1,100" />
 	</item>
 	<item id="21429" type="Armor" name="Brown Bear Hat - 7-day limited period">
 		<!-- Description: Dimensional item. Hat that looks like a Brown Bear. Can be used for 7 days. Uses 2 hair accessory slots. Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -356,6 +386,7 @@
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
 		<set name="time" val="10080" />
 	</item>
 	<item id="21430" type="Armor" name="Brown Bear Hat - 7-day limited period (event)">
@@ -368,6 +399,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
 		<set name="time" val="10080" />
 	</item>
 	<item id="21431" type="Armor" name="Brown Bear Hat - 30-day limited period">
@@ -379,6 +411,7 @@
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 	</item>
 	<item id="21432" type="Armor" name="Brown Bear Hat - 30-day limited period (event)">
@@ -391,6 +424,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 	</item>
 	<item id="21433" type="Armor" name="Brown Bear Hat">
@@ -403,6 +437,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_freightable" val="true" />
+		<set name="is_depositable" val="false" />
 	</item>
 	<item id="21434" type="Armor" name="Brown Bear Hat - Event">
 		<!-- Description: Dimensional item. Hat that looks like a Brown Bear. Uses 2 hair accessory slots. Cannot be exchanged, dropped, or destroyed. Can be shared between characters within an account through the Dimensional Merchant. Can be stored in a private warehouse. -->
@@ -415,6 +450,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_freightable" val="true" />
+		<set name="is_depositable" val="false" />
 	</item>
 	<item id="21435" type="EtcItem" name="Chicken Hat 7-Day Pack">
 		<!-- Description: Dimensional item pack. Gift box containing 1 chicken hat (7 day). Cannot be exchanged or dropped. Can be shared between characters within an account through the Dimensional Merchant. Can be stored in a private warehouse. -->

@@ -13850,6 +13850,12 @@ public final class SystemMessageId
 	public static final SystemMessageId CLOAK_REMOVED_BECAUSE_ARMOR_SET_REMOVED;
 	
 	/**
+	 * ID: 2453<br>
+	 * Message: The cloak equip has been removed because the armor set equip has been removed.
+	 */
+	public static final SystemMessageId THE_CLOAK_CANNOT_BE_EQUIPPED_BECAUSE_A_NECESSARY_ITEM_IS_NOT_EQUIPPED;
+	
+	/**
 	 * ID: 2455<br>
 	 * Message: The airship must be summoned in order for you to board.
 	 */
@@ -17473,6 +17479,7 @@ public final class SystemMessageId
 		THERE_ARE_S1_DAYS_UNTIL_YOUR_CHARACTERS_BIRTHDAY = new SystemMessageId(2449);
 		C1_BIRTHDAY_IS_S3_S4_S2 = new SystemMessageId(2450);
 		CLOAK_REMOVED_BECAUSE_ARMOR_SET_REMOVED = new SystemMessageId(2451);
+		THE_CLOAK_CANNOT_BE_EQUIPPED_BECAUSE_A_NECESSARY_ITEM_IS_NOT_EQUIPPED = new SystemMessageId(2453);
 		THE_AIRSHIP_MUST_BE_SUMMONED_TO_BOARD = new SystemMessageId(2455);
 		THE_AIRSHIP_NEED_CLANLVL_5_TO_SUMMON = new SystemMessageId(2456);
 		THE_AIRSHIP_NEED_LICENSE_TO_SUMMON = new SystemMessageId(2457);
