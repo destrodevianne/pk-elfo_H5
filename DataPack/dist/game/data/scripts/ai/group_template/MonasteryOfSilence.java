@@ -1,5 +1,7 @@
 package ai.group_template;
 
+import ai.npc.AbstractNpcAI;
+
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.datatables.SpawnTable;
 import pk.elfo.gameserver.model.L2Object;
@@ -15,7 +17,6 @@ import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.gameserver.network.clientpackets.Say2;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.util.Util;
-import ai.npc.AbstractNpcAI;
  
 /**
  * Projeto PkElfo
@@ -32,13 +33,13 @@ public class MonasteryOfSilence extends AbstractNpcAI
 		22789, // Guide Solina
 		22790, // Seeker Solina
 		22791, // Savior Solina
-		22793, // Ascetic Solina
+		22793 // Ascetic Solina
 	};
 	
 	private static final int[] DIVINITY_CLAN =
 	{
 		22794, // Divinity Judge
-		22795, // Divinity Manager
+		22795 // Divinity Manager
 	};
 	
 	private static final NpcStringId[] SOLINA_KNIGHTS_MSG =
@@ -56,9 +57,9 @@ public class MonasteryOfSilence extends AbstractNpcAI
 	
 	private static final SkillHolder DECREASE_SPEED = new SkillHolder(4589, 8);
 	
-	private MonasteryOfSilence(String name, String descr)
+	private MonasteryOfSilence
 	{
-		super(name, descr);
+		super(MonasteryOfSilence.class.getSimpleName(), "ai/group_template");
 		addAggroRangeEnterId(SOLINA_CLAN);
 		addAggroRangeEnterId(CAPTAIN, KNIGHT);
 		addSpellFinishedId(SOLINA_CLAN);
@@ -81,29 +82,25 @@ public class MonasteryOfSilence extends AbstractNpcAI
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		switch (event)
+		if (event.equals("training") && !npc.isInCombat() && (getRandom(100) < 30))
 		{
-			case "training":
-				if (!npc.isInCombat() && (getRandom(100) < 25))
+			for (L2Character character : npc.getKnownList().getKnownCharactersInRadius(300))
+			{
+				if (character.isNpc() && (((L2Npc) character).getNpcId() == SCARECROW))
 				{
-					for (L2Character character : npc.getKnownList().getKnownCharactersInRadius(300))
+					for (L2Skill skill : npc.getAllSkills())
 					{
-						if (!character.isPlayable() && (((L2Npc) character).getNpcId() == SCARECROW))
+						if (skill.isActive())
 						{
-							for (L2Skill skill : npc.getAllSkills())
-							{
-								if (skill.isActive())
-								{
-									npc.disableSkill(skill, 0);
-								}
-							}
-							npc.setRunning();
-							((L2Attackable) npc).addDamageHate(character, 0, 100);
-							npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, character, null);
-							break;
+							npc.disableSkill(skill, 0);
 						}
 					}
+					npc.setRunning();
+					((L2Attackable) npc).addDamageHate(character, 0, 100);
+					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, character, null);
+					break;
 				}
+			}
 		}
 		return super.onAdvEvent(event, npc, player);
 	}
@@ -114,17 +111,19 @@ public class MonasteryOfSilence extends AbstractNpcAI
 		if (player.getActiveWeaponInstance() == null)
 		{
 			npc.setTarget(null);
+			((L2Attackable) npc).disableAllSkills();
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			return super.onAggroRangeEnter(npc, player, isSummon);
 		}
 		
-		if (player.isVisible() && !player.isGM())
+		if (!npc.isInCombat())
 		{
 			npc.setRunning();
 			npc.setTarget(player);
+			((L2Attackable) npc).enableAllSkills();
 			if (Util.contains(SOLINA_CLAN, npc.getNpcId()))
 			{
-				if (getRandom(10) < 3)
+				if (getRandom(100) < 3)
 				{
 					broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.YOU_CANNOT_CARRY_A_WEAPON_WITHOUT_AUTHORIZATION);
 				}
@@ -160,7 +159,7 @@ public class MonasteryOfSilence extends AbstractNpcAI
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet)
 	{
-		if (getRandom(10) < 1)
+		if (getRandom(100) < 1)
 		{
 			broadcastNpcSay(npc, Say2.NPC_ALL, SOLINA_KNIGHTS_MSG[getRandom(2)]);
 		}
@@ -186,8 +185,8 @@ public class MonasteryOfSilence extends AbstractNpcAI
 		return super.onSpellFinished(npc, player, skill);
 	}
 	
-	public static void main(String[]args)
+	public static void main(String[] args)
 	{
-		new MonasteryOfSilence(MonasteryOfSilence.class.getSimpleName(), "ai");
+		new MonasteryOfSilence();
 	}
 }

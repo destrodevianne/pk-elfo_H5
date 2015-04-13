@@ -818,6 +818,8 @@
 		<set name="material" val="paper" />
 		<set name="weight" val="120" />
 		<set name="is_stackable" val="true" />
+		<set name="price" value="0"/>
+		
 	</item>
 	<item id="21182" type="EtcItem" name="Transformation Scroll: Saber Tooth Tiger - Event">
 		<!-- Description: Transformation scroll that transforms you into a Saber Tooth Tiger for 30 minute(s). No effect if used while transformed. -->

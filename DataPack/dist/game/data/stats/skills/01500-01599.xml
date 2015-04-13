@@ -1413,7 +1413,7 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="4" />
 		<set name="itemConsumeId" val="3031" />
-		<set name="maxTargets" val="10" />
+		<set name="maxTargets" val="11" />
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="156" />
 		<set name="mpInitialConsume" val="38" />
