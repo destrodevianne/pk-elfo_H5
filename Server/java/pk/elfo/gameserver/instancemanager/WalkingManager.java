@@ -19,7 +19,7 @@ import pk.elfo.gameserver.model.Location;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2MonsterInstance;
 import pk.elfo.gameserver.model.quest.Quest;
-import com.l2jserver.gameserver.model.quest.Quest.QuestEventType;
+import pk.elfo.gameserver.model.quest.Quest.QuestEventType;
 import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.util.Rnd;
 
