@@ -312,7 +312,6 @@ public final class Config
 	public static boolean ANNOUNCE_NOBLESSE_LOGIN = false;
 	public static boolean ANNOUNCE_HERO_LOGIN = false;
 	public static boolean SHOW_ONLINE_PLAYERS_ON_LOGIN;
-	public static int MAX_PARTY_MEMBERS;
 	// ----------------------------------------------------------------------------------------------------//
 	// Shots Infinitos: SS, BSS e flechas
 	// ----------------------------------------------------------------------------------------------------//
@@ -3478,7 +3477,6 @@ public final class Config
 				FENCE_MOVIE_BUILDER = Boolean.parseBoolean(PkelfoSettings.getProperty("AllowFenceBuild", "false"));
 				ANNOUNCE_NOBLESSE_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("AnnounceNoblesseLogin", "False"));
 				ANNOUNCE_HERO_LOGIN = Boolean.parseBoolean(PkelfoSettings.getProperty("AnnounceHeroLogin", "False"));
-				MAX_PARTY_MEMBERS = Integer.parseInt(PkelfoSettings.getProperty("MaxPartyMembers", "12"));
 				// Shots Infinitos: SS, BSS e flechas
 				NpcBuffer_Reload = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableReloadScript", "False"));
 				NpcBuffer_SmartWindow = Boolean.parseBoolean(PkelfoSettings.getProperty("EnableSmartWindow", "True"));

@@ -1,25 +1,8 @@
-/*
- * Copyright (C) 2004-2013 L2J Server
- * 
- * This file is part of L2J Server.
- * 
- * L2J Server is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J Server is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package pk.elfo.gameserver.network.clientpackets;
 
 import static pk.elfo.gameserver.model.actor.L2Npc.INTERACTION_DISTANCE;
 import pk.elfo.Config;
+import pk.elfo.gameserver.datatables.OfflineTradersTable;
 import pk.elfo.gameserver.model.ItemRequest;
 import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.L2World;
@@ -151,6 +134,12 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 			return;
 		}
 		
+		// Update offline trade record in realtime     
+		if (Config.OFFLINE_TRADE_ENABLE && Config.RESTORE_OFFLINERS && !(storeList.getItemCount() == 0) && (storePlayer.getClient() == null || storePlayer.getClient().isDetached()))
+		{
+			OfflineTradersTable.storeOffliners();
+		}
+
 		if (storeList.getItemCount() == 0)
 		{
 			storePlayer.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);

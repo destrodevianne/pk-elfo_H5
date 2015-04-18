@@ -19,6 +19,7 @@ import pk.elfo.gameserver.model.Location;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2MonsterInstance;
 import pk.elfo.gameserver.model.quest.Quest;
+import com.l2jserver.gameserver.model.quest.Quest.QuestEventType;
 import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.util.Rnd;
 
@@ -361,7 +362,7 @@ public class WalkingManager extends DocumentParser
 				// only if not already moved / not engaged in battle... should not happens if called on spawn
 				if ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE) || (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE))
 				{
-					WalkInfo walk = new WalkInfo(routeId);
+					WalkingManager.WalkInfo walk = new WalkingManager.WalkInfo(routeId);
 					
 					if (npc.isDebug())
 					{
@@ -413,22 +414,18 @@ public class WalkingManager extends DocumentParser
 					}, 60000);
 				}
 			}
-			else
-			// walk was stopped due to some reason (arrived to node, script action, fight or something else), resume it
-			{
-				if ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE) || (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE))
+				else if ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE) || (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE))
 				{
-					WalkInfo walk = _activeRoutes.get(npc.getObjectId());
-					
-					// Prevent call simultaneously from scheduled task and onArrived() or temporarily stop walking for resuming in future
-					if (walk._blocked || walk._suspended)
+					WalkingManager.WalkInfo walk = (WalkingManager.WalkInfo)_activeRoutes.get(npc.getObjectId());
+
+					if ((walk._blocked) || (walk._suspended))
 					{
 						npc.sendDebugMessage("Trying continue to move at route " + routeId + ", but cannot now (operation is blocked)");
 						return;
 					}
-					
+
 					walk._blocked = true;
-					
+
 					L2NpcWalkerNode node = walk.getCurrentNode();
 					npc.sendDebugMessage("Route id: " + routeId + ", continue to node " + walk._currentNode);
 					npc.setIsRunning(node.getRunning());

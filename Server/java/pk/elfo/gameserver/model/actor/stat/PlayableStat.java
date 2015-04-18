@@ -211,7 +211,7 @@ public class PlayableStat extends CharStat
 	
 	public long getExpForLevel(int level)
 	{
-		return ExperienceTable.getInstance().getExpForLevel(level);
+		return level;
 	}
 	
 	@Override
