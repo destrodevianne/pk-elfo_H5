@@ -59,6 +59,7 @@ Adicionado LuckyPigs.java
 Adicionado Stats EXP_LOST
 Adicionado script em kamaloka
 Implement: Condition summonRace
+Adicionado L2StakatoZone.java
 Implement: Condition to Take Castle
 Adicionado MercenaryCaptain Instance
 Colocado Lavassaurus Alpha targeáveis
@@ -344,14 +345,10 @@ Mod Adicionado Mod de Restart
 Anuncio de boss ao morrer/spawn
 ***Mod Desabilitar AIOx usar a GK
 Mod Painel de usuario com comandos
-***Mod Anuncio de logamento de VIP
-***Mod Anuncio de logamento de AIOx
 ***Mod Anuncio de logamento de Hero
 ***Mod Configurable Olympiad Period
 ***Mod Chat exclusivo para char AIOx
 Mod Mensagem diferente para cada raca
-***Mod Anuncio de deslogamento de VIP
-***Mod Anuncio de deslogamento de AIOx 
 ***Mod Anuncio de deslogamento de Hero
 ***Mod Anuncios login para Nobles
 Mod Bandeiras de clan nos Npcs sem quest

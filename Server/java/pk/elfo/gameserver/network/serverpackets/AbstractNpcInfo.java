@@ -83,10 +83,10 @@ public abstract class AbstractNpcInfo extends L2GameServerPacket
 			{
 				_name = cha.getName();// On every subclass
 			}
-			
+			// muda o titulo dos champions
 			if (cha.isChampion() && !ChampionData.getInstance().getTitle(cha.getChampionType()).isEmpty())
 			{
-				_title = (Config.L2JMOD_CHAMP_TITLE); // On every subclass
+				_title = (Config.L2JMOD_CHAMP_TITLE);
 			}
 			else if (cha.getTemplate().isServerSideTitle())
 			{

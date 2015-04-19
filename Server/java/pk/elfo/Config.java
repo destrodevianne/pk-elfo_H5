@@ -210,9 +210,6 @@ public final class Config
 	// AIOx PROPERTIES
 	// ----------------------------------------------------------------------------------------------------//
 	public static boolean ALT_AIO_EFFECT_ESPECIAL;
-	public static boolean ANNOUNCE_AIOX_DESCONECT;
-	public static boolean ANNOUNCE_AIOX_CONECT;
-	public static boolean ENABLE_AIOX_MESSAGE;
 	// ----------------------------------------------------------------------------------------------------//
 	// Sistema de AIO Bufer
 	// ----------------------------------------------------------------------------------------------------//
@@ -1347,9 +1344,6 @@ public final class Config
 	// ----------------------------------------------------------------------------------------------------//
 	// VIP PROPERTIES
 	// ----------------------------------------------------------------------------------------------------//
-	public static boolean ENABLE_VIP_MESSAGE;
-	public static boolean ANNOUNCE_VIP_CONECT;
-	public static boolean ANNOUNCE_VIP_DESCONECT;
 	// System Day Create char Vip  
 	public static boolean ALLOW_CUSTOM_CHAR_VIP;
 	public static int CUSTOM_DAY_VIP;
@@ -1977,9 +1971,6 @@ public final class Config
 
 			// ############################ ANUNCIO DE LOGE E DESLOGE DE AIOX HERO e NEWBIE ######################//
 			ALT_AIO_EFFECT_ESPECIAL = Boolean.parseBoolean(AioSettings.getProperty("AllowAioEffectEspecial", "True"));
-			ANNOUNCE_AIOX_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxDesconect", "False"));
-			ANNOUNCE_AIOX_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceAioxConect", "False"));
-			ENABLE_AIOX_MESSAGE = Boolean.parseBoolean(AioSettings.getProperty("AioMensagem", "False"));
 			ANNOUNCE_HERO_DESCONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroDesconect", "False"));
 			ANNOUNCE_HERO_CONECT = Boolean.parseBoolean(AioSettings.getProperty("AnnounceHeroConect", "False"));
 			ENABLE_HERO_MESSAGE = Boolean.parseBoolean(AioSettings.getProperty("HeroMensagem", "False"));
@@ -3682,9 +3673,6 @@ public final class Config
 			}
 			
 			// ############################ Anuncio de VIP ###########################################################//
-			ANNOUNCE_VIP_DESCONECT = Boolean.parseBoolean(VipSettings.getProperty("AnnounceVipDesconect", "False"));
-			ANNOUNCE_VIP_CONECT = Boolean.parseBoolean(VipSettings.getProperty("AnnounceVipConect", "False"));
-			ENABLE_VIP_MESSAGE = Boolean.parseBoolean(VipSettings.getProperty("VipMensagem", "False"));
 			ALLOW_CUSTOM_CHAR_VIP = Boolean.parseBoolean(VipSettings.getProperty("AllowCustomStartVip", "false"));
 			CUSTOM_DAY_VIP = Integer.parseInt(VipSettings.getProperty("CustomStartDays", "1"));
 

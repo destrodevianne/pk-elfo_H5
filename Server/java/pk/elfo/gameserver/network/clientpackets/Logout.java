@@ -116,23 +116,7 @@ public final class Logout extends L2GameClientPacket
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		
-		if (Config.ANNOUNCE_AIOX_DESCONECT)
-		{
-			if (player.isAio())
-			{
-				Announcements.getInstance().announceToAll("O AIO " + player.getName() + " acabou de deslogar.");
-			}
-		}
-		
-		if (Config.ANNOUNCE_VIP_DESCONECT)
-		{
-			if (player.isVip())
-			{
-				Announcements.getInstance().announceToAll("O AIO " + player.getName() + " acabou de deslogar.");
-			}
-		}
-		
+
 		if (Config.ANNOUNCE_HERO_DESCONECT)
 		{
 			if (player.isHero())

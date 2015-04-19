@@ -682,7 +682,13 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="target" val="TARGET_ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="public_slot" />
+			<effect name="Debuff" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="public_slot" >
+				<mul order="0x30" stat="pAtk" val="0.95" />
+				<mul order="0x30" stat="mAtk" val="0.95" />
+				<mul order="0x30" stat="mCritPower" val="0.95" />
+				<mul order="0x30" stat="pAtkSpd" val="0.95" />
+				<mul order="0x30" stat="mAtkSpd" val="0.95" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6170" levels="1" name="Shyeed's Fury">

@@ -645,25 +645,6 @@ public class EnterWorld extends L2GameClientPacket
         }
         // fim teste de buffs para novos chars
 
-		if (Config.ENABLE_AIOX_MESSAGE)
-		{
-			if (activeChar.isAio())
-			{
-				activeChar.sendPacket(new ExShowScreenMessage("Voce possui Status de AIOx ", 10000));
-			}
-		}
-		
-		if (Config.ENABLE_VIP_MESSAGE)
-		{
-			;
-		}
-		{
-			if (activeChar.isVip())
-			{
-				activeChar.sendPacket(new ExShowScreenMessage("Seja bem vindo e obrigado por ajudar o Servidor PkElfo a crescer ", 10000));
-			}
-		}
-		
 		if (Config.ENABLE_HERO_MESSAGE)
 		{
 			if (activeChar.isHero())
@@ -703,23 +684,7 @@ public class EnterWorld extends L2GameClientPacket
 				}
 			}
 		}
-		
-		if (Config.ANNOUNCE_AIOX_CONECT)
-		{
-			if (activeChar.isAio())
-			{
-				sendPacket(new ExShowScreenMessage("O AIOx "+activeChar.getName()+" acabou de logar.", 5000));
-			}
-		}
-		
-		if (Config.ANNOUNCE_VIP_CONECT)
-		{
-			if (activeChar.isVip())
-			{
-				sendPacket(new ExShowScreenMessage("O jogador VIP " + activeChar.getName() + " acabou de logar.", 5000));
-			}
-		}
-		
+
 		if (Config.ANNOUNCE_HERO_CONECT)
 		{
 			if (activeChar.isHero())
