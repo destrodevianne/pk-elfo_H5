@@ -32,7 +32,7 @@ public class L2AdventurerInstance extends L2NpcInstance
 		
 		if (Config.PC_BANG_ENABLED)
 		{
-			return "data/html/adventurer_guildsman/" + pom + "-pcbangpoint.htm";
+			return "data/html/pcbang/" + pom + "-pcbangpoint.htm";
 		}
 		return "data/html/adventurer_guildsman/" + pom + ".htm";
 	}

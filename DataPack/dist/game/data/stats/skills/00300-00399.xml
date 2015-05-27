@@ -2335,21 +2335,27 @@
     <skill id="370" levels="3" name="Clan Body">
         <!-- Confirmed CT2.5 -->
         <table name="#maxHp"> 1.03 1.05 1.06 </table>
+        <set name="icon" val="icon.skill0370" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="2" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <mul order="0x30" stat="maxHp" val="#maxHp" />
         </for>
     </skill>
     <skill id="371" levels="3" name="Clan Spirituality">
         <!-- Confirmed CT2.5 -->
-        <table name="#maxCp"> 1.06 1.1 1.12 </table>
+        <table name="#maxCp"> 1.06 1.10 1.12 </table>
+        <set name="icon" val="icon.skill0371" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="5" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <mul order="0x30" stat="maxCp" val="#maxCp" />
         </for>
@@ -2357,10 +2363,13 @@
     <skill id="372" levels="3" name="Clan Soul">
         <!-- Confirmed CT2.5 -->
         <table name="#maxMp"> 1.03 1.05 1.06 </table>
+        <set name="icon" val="icon.skill0372" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="6" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <mul order="0x30" stat="maxMp" val="#maxMp" />
         </for>
@@ -2368,21 +2377,27 @@
     <skill id="373" levels="3" name="Clan Regeneration">
         <!-- Confirmed CT2.5 -->
         <table name="#regHp"> 1.03 1.05 1.06 </table>
+        <set name="icon" val="icon.skill0373" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="2" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <mul order="0x30" stat="regHp" val="#regHp" />
         </for>
     </skill>
     <skill id="374" levels="3" name="Clan Morale">
         <!-- Confirmed CT2.5 -->
-        <table name="#regCp"> 1.06 1.1 1.12 </table>
+        <table name="#regCp"> 1.06 1.10 1.12 </table>
+        <set name="icon" val="icon.skill0374" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="4" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <mul order="0x30" stat="regCp" val="#regCp" />
         </for>
@@ -2390,10 +2405,13 @@
     <skill id="375" levels="3" name="Clan Clarity">
         <!-- Confirmed CT2.5 -->
         <table name="#regMp"> 1.03 1.05 1.06 </table>
+        <set name="icon" val="icon.skill0375" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="6" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <mul order="0x30" stat="regMp" val="#regMp" />
         </for>
@@ -2401,10 +2419,13 @@
     <skill id="376" levels="3" name="Clan Might">
         <!-- Confirmed CT2.5 -->
         <table name="#pAtk"> 1.038 1.058 1.068 </table>
+        <set name="icon" val="icon.skill0376" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="3" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <mul order="0x30" stat="pAtk" val="#pAtk" />
         </for>
@@ -2412,32 +2433,41 @@
     <skill id="377" levels="3" name="Clan Shield">
         <!-- Confirmed CT2.5 -->
         <table name="#pDef"> 1.038 1.058 1.068 </table>
+        <set name="icon" val="icon.skill0377" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="3" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <mul order="0x30" stat="pDef" val="#pDef" />
         </for>
     </skill>
     <skill id="378" levels="3" name="Clan Empower">
         <!-- Confirmed CT2.5 -->
-        <table name="#mAtk"> 1.068 1.1 1.12 </table>
+        <table name="#mAtk"> 1.068 1.10 1.12 </table>
+        <set name="icon" val="icon.skill0378" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="6" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <mul order="0x30" stat="mAtk" val="#mAtk" />
         </for>
     </skill>
     <skill id="379" levels="3" name="Clan Magic Resistance">
         <!-- Confirmed CT2.5 -->
-        <table name="#mDef"> 1.068 1.1 1.12 </table>
+        <table name="#mDef"> 1.068 1.10 1.12 </table>
+        <set name="icon" val="icon.skill0379" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="2" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <mul order="0x30" stat="mDef" val="#mDef" />
         </for>
@@ -2445,10 +2475,13 @@
     <skill id="380" levels="3" name="Clan Guidance">
         <!-- Confirmed CT2.5 -->
         <table name="#accCombat"> 1 2 3 </table>
+        <set name="icon" val="icon.skill0380" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="5" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <add order="0x40" stat="accCombat" val="#accCombat" />
         </for>
@@ -2456,32 +2489,41 @@
     <skill id="381" levels="3" name="Clan Agility">
         <!-- Confirmed CT2.5 -->
         <table name="#rEvas"> 1 2 3 </table>
+        <set name="icon" val="icon.skill0381" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="5" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <add order="0x40" stat="rEvas" val="#rEvas" />
         </for>
     </skill>
     <skill id="382" levels="3" name="Clan Shield Defence">
         <!-- Confirmed CT2.5 -->
-        <table name="#rShld"> 1.12 1.2 1.24 </table>
+        <table name="#rShld"> 1.12 1.20 1.24 </table>
+        <set name="icon" val="icon.skill0382" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="6" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <mul order="0x30" stat="rShld" val="#rShld" />
         </for>
     </skill>
     <skill id="383" levels="3" name="Clan Shield Block">
         <!-- Confirmed CT2.5 -->
-        <table name="#sDef"> 1.24 1.4 1.48 </table>
+        <table name="#sDef"> 1.24 1.40 1.48 </table>
+        <set name="icon" val="icon.skill0383" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="5" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <mul order="0x30" stat="sDef" val="#sDef" />
         </for>
@@ -2489,10 +2531,13 @@
     <skill id="384" levels="3" name="Clan Cyclonic Resistance">
         <!-- Confirmed CT2.5 -->
         <table name="#res"> 3 5 6 </table>
+        <set name="icon" val="icon.skill0384" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="6" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <add order="0x40" stat="windRes" val="#res" />
             <add order="0x40" stat="waterRes" val="#res" />
@@ -2501,10 +2546,13 @@
     <skill id="385" levels="3" name="Clan Magmatic Resistance">
         <!-- Confirmed CT2.5 -->
         <table name="#res"> 3 5 6 </table>
+        <set name="icon" val="icon.skill0385" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="6" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <add order="0x40" stat="fireRes" val="#res" />
             <add order="0x40" stat="earthRes" val="#res" />
@@ -2513,10 +2561,13 @@
     <skill id="386" levels="3" name="Clan Resist Shock">
         <!-- Confirmed CT2.5 -->
         <table name="#vuln"> 12 20 24 </table>
+        <set name="icon" val="icon.skill0386" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="6" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <sub order="0x40" stat="stunVuln" val="#vuln" />
         </for>
@@ -2524,10 +2575,13 @@
     <skill id="387" levels="3" name="Clan Resist Hold">
         <!-- Confirmed CT2.5 -->
         <table name="#vuln"> 12 20 24 </table>
+        <set name="icon" val="icon.skill0387" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="6" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <sub order="0x40" stat="rootVuln" val="#vuln" />
         </for>
@@ -2535,10 +2589,13 @@
     <skill id="388" levels="3" name="Clan Resist Sleep">
         <!-- Confirmed CT2.5 -->
         <table name="#vuln"> 12 20 24 </table>
+        <set name="icon" val="icon.skill0388" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="6" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <sub order="0x40" stat="sleepVuln" val="#vuln" />
         </for>
@@ -2546,10 +2603,13 @@
     <skill id="389" levels="3" name="Clan Wind Walk">
         <!-- Confirmed CT2.5 -->
         <table name="#runSpd"> 3 5 6 </table>
+        <set name="icon" val="icon.skill0389" />
         <set name="isClanSkill" val="true" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="7" />
         <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <for>
             <add order="0x40" stat="runSpd" val="#runSpd" />
         </for>
@@ -2572,8 +2632,10 @@
     <skill id="391" levels="1" name="Clan Imperium">
         <!-- Confirmed CT2.5 -->
         <set name="isClanSkill" val="true" />
+        <set name="icon" val="icon.skill0391" />
         <set name="magicLvl" val="1" />
         <set name="operateType" val="P" />
+        <set name="minPledgeClass" val="4" />
         <set name="skillType" val="COREDONE" />
         <set name="target" val="TARGET_SELF" />
     </skill>

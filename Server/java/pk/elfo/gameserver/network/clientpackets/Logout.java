@@ -12,12 +12,6 @@ import pk.elfo.gameserver.model.L2Party;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.entity.L2Event;
 import pk.elfo.gameserver.model.zone.ZoneId;
-import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone;
-import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone1;
-import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone2;
-import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone3;
-import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone4;
-import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone5;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.ActionFailed;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
@@ -127,54 +121,10 @@ public final class Logout extends L2GameClientPacket
 		
 		if (player.isProcessingTransaction())
 		{
-			player.sendMessage("You may not restart while offer trade.");
+			player.sendMessage("Voce nao pode relogar estando em trade.");
 			return;
 		}
-		
-		// MultiFunction Zone inicio
-		if (player.isInsideZone(ZoneId.MULTI_FUNCTION) && !L2MultiFunctionZone.logout_zone)
-		{
-			player.sendMessage("Voce nao pode sair enquanto estiver dentro de uma Multifunction zone.");
-			player.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		if (player.isInsideZone(ZoneId.MULTI_FUNCTION1) && !L2MultiFunctionZone1.logout_zone1)
-        {
-            player.sendMessage("Voce nao pode sair enquanto estiver dentro de uma Multifunction zone.");
-            player.sendPacket(ActionFailed.STATIC_PACKET);
-            return;
-        }
 
-        if (player.isInsideZone(ZoneId.MULTI_FUNCTION2) && !L2MultiFunctionZone2.logout_zone2)
-        {
-            player.sendMessage("Voce nao pode sair enquanto estiver dentro de uma Multifunction zone.");
-            player.sendPacket(ActionFailed.STATIC_PACKET);
-            return;
-        }
-
-        if (player.isInsideZone(ZoneId.MULTI_FUNCTION3) && !L2MultiFunctionZone3.logout_zone3)
-        {
-            player.sendMessage("Voce nao pode sair enquanto estiver dentro de uma Multifunction zone.");
-            player.sendPacket(ActionFailed.STATIC_PACKET);
-            return;
-        }
-
-        if (player.isInsideZone(ZoneId.MULTI_FUNCTION4) && !L2MultiFunctionZone4.logout_zone4)
-        {
-            player.sendMessage("Voce nao pode sair enquanto estiver dentro de uma Multifunction zone.");
-            player.sendPacket(ActionFailed.STATIC_PACKET);
-            return;
-        }
-
-        if (player.isInsideZone(ZoneId.MULTI_FUNCTION5) && !L2MultiFunctionZone5.logout_zone5)
-        {
-            player.sendMessage("Voce nao pode sair enquanto estiver dentro de uma Multifunction zone.");
-            player.sendPacket(ActionFailed.STATIC_PACKET);
-            return;
-        }
-		// MultiFunction Zone fim
-		
 		// Prevent player from logging out if they are a festival participant
 		// and it is in progress, otherwise notify party members that the player
 		// is not longer a participant.

@@ -28,7 +28,7 @@ public abstract class ItemContainer
 {
 	protected static final Logger _log = Logger.getLogger(ItemContainer.class.getName());
 	
-	public final List<L2ItemInstance> _items;
+	protected final List<L2ItemInstance> _items;
 	
 	protected ItemContainer()
 	{
@@ -346,7 +346,7 @@ public abstract class ItemContainer
 			
 			// If possible, move entire item object
 			// Fix for DUP ITEM - PHX Bug Exploit
-			if ((sourceitem.getCount() == count) && (targetitem == null) && !sourceitem.isStackable())
+			if ((sourceitem.getCount() == count) && (targetitem == null) && (!sourceitem.isStackable()))
 			{
 				removeItem(sourceitem);
 				target.addItem(process, sourceitem, actor, reference);

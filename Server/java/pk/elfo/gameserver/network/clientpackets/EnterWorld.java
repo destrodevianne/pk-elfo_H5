@@ -7,7 +7,6 @@ import java.util.Date;
 import javolution.util.FastList;
 import pk.elfo.Config;
 import pk.elfo.gameserver.Announcements;
-import pk.elfo.gameserver.GameServerRestart;
 import pk.elfo.gameserver.LoginServerThread;
 import pk.elfo.gameserver.SevenSigns;
 import pk.elfo.gameserver.TaskPriority;
@@ -597,7 +596,7 @@ public class EnterWorld extends L2GameClientPacket
 		activeChar.sendPacket(SystemMessageId.WELCOME_TO_LINEAGE);
 		SevenSigns.getInstance().sendCurrentPeriodMsg(activeChar);
 		Announcements.getInstance().showAnnouncements(activeChar);
-		activeChar.sendMessage("Este servidor usa o projeto PkElfo");
+		activeChar.sendMessage("Este servidor usa o projeto da Team PkElfo");
 		// Information when character is logged
 		activeChar.sendMessage("Seja Bem vindo: " + activeChar.getName());
 		activeChar.sendMessage("Sua classe: " + activeChar.getClassId());
@@ -615,7 +614,7 @@ public class EnterWorld extends L2GameClientPacket
         // teste de buffs para novos chars
         if(Config.NEW_PLAYER_BUFFS)
         {
-            if (activeChar.getLevel() < 10)
+            if (activeChar.getLevel() < Config.MAX_LEVEL_BUFFS)
             {
                 if(activeChar.isMageClass())
                 {
@@ -914,13 +913,6 @@ public class EnterWorld extends L2GameClientPacket
 		{
 			RankPvpSystem.updateNickAndTitleColor(activeChar, null);
 		}
-		
-		CreatureSay msg;
-        if (Config.AUTO_RESTART_ENABLE)
-        {
-            msg = new CreatureSay(2, Say2.BOAT, "[Attention] ", "Server will be restarted at " + GameServerRestart.getInstance().getRestartNextTime() + " .");
-            activeChar.sendPacket(msg);
-        }
 	}
 	
 	/**

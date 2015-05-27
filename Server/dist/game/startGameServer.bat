@@ -5,8 +5,7 @@ color 02
 echo Iniciando PkElfo Game Server.
 echo.
 
-REM set PATH="C:\Program Files\Java\jre7\bin"
-java -server -Dfile.encoding=UTF-8 -Xmx1G -cp ./../libs/*;GameServer_PkElfo.jar pk.elfo.gameserver.GameServer
+java -version:1.7 -server -Dfile.encoding=UTF-8 -Xmx1G -cp ./../libs/*;GameServer_PkElfo.jar pk.elfo.gameserver.GameServer
 
 REM NOTE: If you have a powerful machine, you could modify/add some extra parameters for performance, like:
 REM -Xms1536m

@@ -7,6 +7,9 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
+
 import pk.elfo.L2DatabaseFactory;
 import pk.elfo.gameserver.ThreadPoolManager;
 import pk.elfo.gameserver.cache.HtmCache;
@@ -21,8 +24,6 @@ import pk.elfo.gameserver.model.quest.QuestState;
 import pk.elfo.gameserver.network.serverpackets.CreatureSay;
 import pk.elfo.gameserver.network.serverpackets.NpcHtmlMessage;
 import pk.elfo.gameserver.network.serverpackets.ShowBoard;
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 public class ClanSearcher extends Quest
 {
@@ -73,6 +74,7 @@ public class ClanSearcher extends Quest
 		{
 			saveClanPresentation(event, npc, player);
 			showMoreClanInfo("moreinfo_" + player.getClan().getClanId(), npc, player);
+			
 		}
 		else if (event.startsWith("moreinfo_"))
 		{
@@ -187,7 +189,7 @@ public class ClanSearcher extends Quest
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
 			L2Clan clan = null;
-			Map<L2Clan, String> clans = new FastMap<>();
+			Map<L2Clan, String> clans = new FastMap<L2Clan, String>();
 			final ResultSet set = con.prepareStatement("SELECT * FROM clan_search ORDER BY adenas DESC").executeQuery();
 			while (set.next())
 			{
@@ -271,9 +273,9 @@ public class ClanSearcher extends Quest
 				else
 				{
 					// Player isnt in a clan, give him invitation request button
-					sb.append("<tr><td align=center height=20><a action=\"bypass -h Quest ClanSearcher requestjoin_" + clan.getClanId() + "\">Enviar pedido de convite</a></td></tr>");
+					sb.append("<tr><td align=center height=20><a action=\"bypass -h Quest ClanSearcher requestjoin_" + clan.getClanId() + "\">Send invitation request</a></td></tr>");
 				}
-				sb.append("<tr><td align=center height=30><a action=\"bypass -h Quest ClanSearcher show_list\">Voltar</a></td></tr>");
+				sb.append("<tr><td align=center height=30><a action=\"bypass -h Quest ClanSearcher show_list\">Back</a></td></tr>");
 				sb.append("</table>");
 				sb.append("</center></body></html>");
 				sendCBHtml(player, sb.toString());
@@ -443,7 +445,7 @@ public class ClanSearcher extends Quest
 	private void fillMultiEditContent(L2PcInstance activeChar, String text)
 	{
 		text = text.replaceAll("<br>", "\n");
-		List<String> _arg = new FastList<>();
+		List<String> _arg = new FastList<String>();
 		_arg.add("0");
 		_arg.add("0");
 		_arg.add("0");
@@ -468,7 +470,7 @@ public class ClanSearcher extends Quest
 	{
 		try (Connection c = L2DatabaseFactory.getInstance().getConnection())
 		{
-			Map<L2Clan, Integer> clans = new FastMap<>();
+			Map<L2Clan, Integer> clans = new FastMap<L2Clan, Integer>();
 			ResultSet set = c.prepareStatement("SELECT * FROM clan_search").executeQuery();
 			while (set.next())
 			{

@@ -9,7 +9,6 @@ import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
 import pk.elfo.gameserver.model.effects.AbnormalEffect;
 import pk.elfo.gameserver.model.itemcontainer.Inventory;
-import pk.elfo.gameserver.model.zone.ZoneId;
 
 public class CharInfo extends L2GameServerPacket
 {
@@ -136,31 +135,11 @@ public class CharInfo extends L2GameServerPacket
                 writeC(_activeChar.isAlikeDead() ? 1 : 0);
                 writeC(!gmSeeInvis && _invisible ? 1 : 0); // invisible ?? 0=false 1=true 2=summoned (only works if model has a summon animation)
 
-                writeD(-1); // High Five NPCString ID
-                writeS(_activeChar.getAppearance().getVisibleName());
-                writeD(-1); // High Five NPCString ID
-                writeS(gmSeeInvis ? "Invisible" : _activeChar.getAppearance().getVisibleTitle());
+				writeD(_activeChar.getClanId()); // clan id
+                writeD(_activeChar.getClanCrestId()); // crest id
+                writeD(_activeChar.getAllyId()); // ally id
+                writeD(_activeChar.getAllyCrestId()); // all crest
 
-                writeD(_activeChar.getAppearance().getTitleColor()); // Title color 0=client default
-                writeD(_activeChar.getPvpFlag()); // pvp flag
-                writeD(_activeChar.getKarma()); // karma ??
-
-                writeD(gmSeeInvis ? (_activeChar.getAbnormalEffect() | AbnormalEffect.STEALTH.getMask()) : _activeChar.getAbnormalEffect()); // C2
-
-                if(_activeChar.isInsideZone(ZoneId.MULTI_FUNCTION))
-            {
-                writeD(0x00);
-                writeD(0x00);
-                writeD(0x00);
-                writeD(0x00);
-            }
-            else
-            {
-                writeD(_activeChar.getClanId());
-                writeD(_activeChar.getClanCrestId());
-                writeD(_activeChar.getAllyId());
-                writeD(_activeChar.getAllyCrestId());
-             }
                 writeC(_activeChar.isFlying() ? 2 : 0); // is Flying
                 writeC(_activeChar.getTeam()); // C3 team circle 1-blue, 2-red
 

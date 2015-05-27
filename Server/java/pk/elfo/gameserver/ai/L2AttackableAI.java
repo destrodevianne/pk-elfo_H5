@@ -2723,7 +2723,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 		}
 		
 		// Calculate the attack timeout
-		_attackTimeout = MAX_ATTACK_TIMEOUT + GameTimeController.getGameTicks();
+		_attackTimeout = (MAX_ATTACK_TIMEOUT + GameTimeController.getGameTicks());
 		
 		// Set the _globalAggro to 0 to permit attack even just after spawn
 		if (_globalAggro < 0)

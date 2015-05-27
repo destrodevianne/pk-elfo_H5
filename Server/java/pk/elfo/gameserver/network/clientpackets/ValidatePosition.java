@@ -89,18 +89,6 @@ public class ValidatePosition extends L2GameClientPacket
 		}
 		if (activeChar.isInAirShip())
 		{
-			// Zoey76: TODO: Implement or cleanup.
-			// if (Config.COORD_SYNCHRONIZE == 2)
-			// {
-			// dx = _x - activeChar.getInVehiclePosition().getX();
-			// dy = _y - activeChar.getInVehiclePosition().getY();
-			// dz = _z - activeChar.getInVehiclePosition().getZ();
-			// diffSq = ((dx * dx) + (dy * dy));
-			// if (diffSq > 250000)
-			// {
-			// sendPacket(new GetOnVehicle(activeChar.getObjectId(), _data, activeChar.getInBoatPosition()));
-			// }
-			// }
 			return;
 		}
 		

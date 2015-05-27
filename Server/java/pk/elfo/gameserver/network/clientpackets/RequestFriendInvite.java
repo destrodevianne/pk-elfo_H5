@@ -13,91 +13,89 @@ import pk.elfo.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestFriendInvite extends L2GameClientPacket
 {
-	private static final String _C__77_REQUESTFRIENDINVITE = "[C] 77 RequestFriendInvite";
-	
-	private String _name;
-	
-	@Override
-	protected void readImpl()
-	{
-		_name = readS();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		final L2PcInstance activeChar = getActiveChar();
-		
-		if (activeChar == null)
-		{
-			return;
-		}
-		
-		final L2PcInstance friend = L2World.getInstance().getPlayer(_name);
-		
-		// Target is not found in the game.
-		if ((friend == null) || !friend.isOnline() || friend.getAppearance().getInvisible())
-		{
-			// Target is not found in the game.
-			activeChar.sendPacket(SystemMessageId.THE_USER_YOU_REQUESTED_IS_NOT_IN_GAME);
-			return;
-		}
-		// You cannot add yourself to your own friend list.
-		if (friend == activeChar)
-		{
-			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_ADD_YOURSELF_TO_OWN_FRIEND_LIST);
-			return;
-		}
-		// Target is in olympiad.
-		if (activeChar.isInOlympiadMode() || friend.isInOlympiadMode())
-		{
-			activeChar.sendPacket(SystemMessageId.A_USER_CURRENTLY_PARTICIPATING_IN_THE_OLYMPIAD_CANNOT_SEND_PARTY_AND_FRIEND_INVITATIONS);
-			return;
-		}
-		// Target blocked active player.
-		if (BlockList.isBlocked(friend, activeChar))
-		{
-			activeChar.sendMessage("You are in target's block list.");
-			return;
-		}
-		SystemMessage sm;
-		// Target is blocked.
-		if (BlockList.isBlocked(activeChar, friend))
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.BLOCKED_C1);
-			sm.addCharName(friend);
-			activeChar.sendPacket(sm);
-			return;
-		}
-		
-		// Target already in friend list.
-		if (activeChar.getFriendList().contains(friend.getObjectId()))
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_ALREADY_IN_FRIENDS_LIST);
-			sm.addString(_name);
-			activeChar.sendPacket(sm);
-			return;
-		}
-		
-		// Target is busy.
-		if (friend.isProcessingRequest())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_BUSY_TRY_LATER);
-			sm.addString(_name);
-			activeChar.sendPacket(sm);
-			return;
-		}
-		// Friend request sent.
-		activeChar.onTransactionRequest(friend);
-		friend.sendPacket(new FriendAddRequest(activeChar.getName()));
-		sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_REQUESTED_C1_TO_BE_FRIEND);
-		sm.addString(_name);
-		activeChar.sendPacket(sm);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__77_REQUESTFRIENDINVITE;
-	}
+    private static final String _C__77_REQUESTFRIENDINVITE = "[C] 77 RequestFriendInvite";
+
+    private String _name;
+
+    @Override
+    protected void readImpl()
+    {
+        _name = readS();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        final L2PcInstance activeChar = getClient().getActiveChar();
+
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        final L2PcInstance friend = L2World.getInstance().getPlayer(_name);
+
+        SystemMessage sm;
+        // can't use friend invite for locating invisible characters
+        if ((friend == null) || !friend.isOnline() || friend.getAppearance().getInvisible())
+        {
+            // Target is not found in the game.
+            activeChar.sendPacket(SystemMessageId.THE_USER_YOU_REQUESTED_IS_NOT_IN_GAME);
+            return;
+        }
+        else if (friend == activeChar)
+        {
+            // You cannot add yourself to your own friend list.
+            activeChar.sendPacket(SystemMessageId.YOU_CANNOT_ADD_YOURSELF_TO_OWN_FRIEND_LIST);
+            return;
+        }
+        else if (BlockList.isBlocked(activeChar, friend))
+        {
+            sm = SystemMessage.getSystemMessage(SystemMessageId.BLOCKED_C1);
+            sm.addCharName(friend);
+            activeChar.sendPacket(sm);
+            return;
+        }
+        else if (BlockList.isBlocked(friend, activeChar))
+        {
+            activeChar.sendMessage("You are in target's block list.");
+            return;
+        }
+        else if (activeChar.isInOlympiadMode() || friend.isInOlympiadMode())
+        {
+            activeChar.sendPacket(SystemMessageId.A_USER_CURRENTLY_PARTICIPATING_IN_THE_OLYMPIAD_CANNOT_SEND_PARTY_AND_FRIEND_INVITATIONS);
+            return;
+        }
+
+        if (activeChar.getFriendList().contains(friend.getObjectId()))
+        {
+            // Player already is in your friendlist
+            sm = SystemMessage.getSystemMessage(SystemMessageId.S1_ALREADY_IN_FRIENDS_LIST);
+            sm.addString(_name);
+            activeChar.sendPacket(sm);
+            return;
+        }
+
+        if (!friend.isProcessingRequest())
+        {
+            // requets to become friend
+            activeChar.onTransactionRequest(friend);
+            sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_REQUESTED_C1_TO_BE_FRIEND);
+            sm.addString(_name);
+            FriendAddRequest ajf = new FriendAddRequest(activeChar.getName());
+            friend.sendPacket(ajf);
+        }
+        else
+        {
+            sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_BUSY_TRY_LATER);
+            sm.addString(_name);
+        }
+        activeChar.sendPacket(sm);
+    }
+
+    @Override
+    public String getType()
+    {
+        return _C__77_REQUESTFRIENDINVITE;
+    }
 }

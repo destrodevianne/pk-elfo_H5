@@ -24,4 +24,145 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 	</item>
+	<item id="23343" type="Armor" name="Draconic's Cloak"> 			 
+ 			<set name="icon" val="icon.amor_evilness_cloak" /> 			 
+ 			<set name="default_action" val="equip" /> 			 
+ 			<set name="bodypart" val="back" /> 			 
+ 			<set name="immediate_effect" val="1" /> 			 
+ 			<set name="crystal_type" val="s84" /> 			 
+ 			<set name="material" val="cloth" /> 			 
+ 			<set name="weight" val="220" /> 			 
+ 			<set name="price" val="28671000" /> 			 
+ 			<cond msgId="2453"> 			 
+ 				<player cloakStatus="1" /> 			 
+ 			</cond> 			 
+ 			<for> 			 
+ 				<add order="0x40" stat="darkRes" val="20" /> 			 
+ 				<add order="0x40" stat="earthRes" val="25" /> 			 
+ 				<add order="0x40" stat="fireRes" val="25" /> 			 
+ 				<add order="0x40" stat="holyRes" val="25" /> 			 
+ 				<add order="0x40" stat="waterRes" val="20" /> 			 
+ 				<add order="0x40" stat="windRes" val="20" /> 			 
+ 				<add order="0x10" stat="pDef" val="30" /> 			 
+ 			</for> 			 
+ 		</item>				 
+ 		<item id="23344" type="Armor" name="Vesper's Cloak"> 			 
+ 			<set name="icon" val="icon.amor_evilness_cloak" /> 			 
+ 			<set name="default_action" val="equip" /> 			 
+ 			<set name="bodypart" val="back" /> 			 
+ 			<set name="immediate_effect" val="1" /> 			 
+ 			<set name="crystal_type" val="s84" /> 			 
+ 			<set name="material" val="cloth" /> 			 
+ 			<set name="weight" val="220" /> 			 
+ 			<set name="price" val="28671000" /> 			 
+ 			<cond msgId="2453"> 			 
+ 				<player cloakStatus="1" /> 			 
+ 			</cond> 			 
+ 			<for> 			 
+ 				<add order="0x40" stat="darkRes" val="20" /> 			 
+ 				<add order="0x40" stat="earthRes" val="25" /> 			 
+ 				<add order="0x40" stat="fireRes" val="25" /> 			 
+ 				<add order="0x40" stat="holyRes" val="25" /> 			 
+ 				<add order="0x40" stat="waterRes" val="20" /> 			 
+ 				<add order="0x40" stat="windRes" val="20" /> 			 
+ 				<add order="0x10" stat="pDef" val="30" /> 			 
+ 			</for> 			 
+ 		</item>				 
+ 		<item id="23345" type="Armor" name="Elegia's Cloak"> 			 
+ 			<set name="icon" val="icon.amor_evilness_cloak" /> 			 
+ 			<set name="default_action" val="equip" /> 			 
+ 			<set name="bodypart" val="back" /> 			 
+ 			<set name="immediate_effect" val="1" /> 			 
+ 			<set name="crystal_type" val="s84" /> 			 
+ 			<set name="material" val="cloth" /> 			 
+ 			<set name="weight" val="220" /> 			 
+ 			<set name="price" val="28671000" /> 			 
+ 			<cond msgId="2453"> 			 
+ 				<player cloakStatus="1" /> 			 
+ 			</cond> 			 
+ 			<for> 			 
+ 				<add order="0x40" stat="darkRes" val="20" /> 			 
+ 				<add order="0x40" stat="earthRes" val="25" /> 			 
+ 				<add order="0x40" stat="fireRes" val="25" /> 			 
+ 				<add order="0x40" stat="holyRes" val="25" /> 			 
+ 				<add order="0x40" stat="waterRes" val="20" /> 			 
+ 				<add order="0x40" stat="windRes" val="20" /> 			 
+ 				<add order="0x10" stat="pDef" val="30" /> 			 
+ 			</for> 			 
+ 		</item>					 
+ 		<item id="23346" type="Armor" name="Vorpal's Cloak"> 			 
+ 			<set name="icon" val="icon.amor_evilness_cloak" /> 			 
+ 			<set name="default_action" val="equip" /> 			 
+ 			<set name="bodypart" val="back" /> 			 
+ 			<set name="immediate_effect" val="1" /> 			 
+			<set name="crystal_type" val="s84" /> 			 
+			<set name="material" val="cloth" /> 			 
+ 			<set name="weight" val="220" /> 			 
+ 			<set name="price" val="28671000" /> 			 
+ 			<cond msgId="2453"> 			 
+ 				<player cloakStatus="1" /> 			 
+ 			</cond> 			 
+ 			<for> 			 
+ 				<add order="0x40" stat="darkRes" val="20" /> 			 
+ 				<add order="0x40" stat="earthRes" val="25" /> 			 
+ 				<add order="0x40" stat="fireRes" val="25" /> 			 
+ 				<add order="0x40" stat="holyRes" val="25" /> 			 
+ 				<add order="0x40" stat="waterRes" val="20" /> 			 
+ 				<add order="0x40" stat="windRes" val="20" /> 			 
+ 				<add order="0x10" stat="pDef" val="30" /> 			 
+ 			</for> 			 
+ 		</item>					 
+ 		<item id="23347" type="Armor" name="Moirai's Cloak"> 			 
+ 			<set name="icon" val="icon.amor_evilness_cloak" /> 			 
+ 			<set name="default_action" val="equip" /> 			 
+ 			<set name="bodypart" val="back" /> 			 
+ 			<set name="immediate_effect" val="1" /> 			 
+ 			<set name="crystal_type" val="s84" /> 			 
+ 			<set name="material" val="cloth" /> 			 
+ 			<set name="weight" val="220" /> 			 
+ 			<set name="price" val="28671000" /> 			 
+ 			<cond msgId="2453"> 			 
+ 				<player cloakStatus="1" /> 			 
+ 			</cond> 			 
+ 			<for> 			 
+				<add order="0x40" stat="darkRes" val="20" /> 			 
+ 				<add order="0x40" stat="earthRes" val="25" /> 			 
+ 				<add order="0x40" stat="fireRes" val="25" /> 			 
+				<add order="0x40" stat="holyRes" val="25" /> 			 
+				<add order="0x40" stat="waterRes" val="20" /> 			 
+ 				<add order="0x40" stat="windRes" val="20" /> 			 
+ 				<add order="0x10" stat="pDef" val="30" /> 			 
+ 			</for> 			 
+ 		</item> 			 
+ 		<item id="23348" type="Weapon" name="AIon Bow XEON	ADMin"> 			 
+ 			<set name="default_action" val="equip" /> 			 
+ 			<set name="weapon_type" val="bow" /> 			 
+ 			<set name="bodypart" val="lrhand" /> 			 
+ 			<set name="random_damage" val="5" /> 			 
+ 			<set name="attack_range" val="500" /> 			 
+ 			<set name="damage_range" val="0;0;10;0" /> 			 
+			<set name="hit_modify" val="-3.75" /> 			 
+ 			<set name="immediate_effect" val="1" /> 			 
+ 			<set name="crystal_count" val="9872" /> 			 
+			<set name="crystal_type" val="s84" /> 			 
+ 			<set name="material" val="steel" /> 			 
+ 			<set name="weight" val="1520" /> 			 
+ 			<set name="price" val="205668000" /> 			 
+ 			<set name="change_weaponId" val="32013" /> 			 
+ 			<set name="soulshots" val="1" /> 			 
+ 			<set name="spiritshots" val="1" /> 			 
+ 			<set name="mp_consume" val="12" /> 			 
+ 			<set name="element_enabled" val="1" /> 			 
+			<set name="enchant_enabled" val="1" /> 			 
+ 			<set name="reuse_delay" val="1500" /> 			 
+			<for> 			 
+				<set order="0x08" stat="pAtk" val="824" /> 			 
+ 				<set order="0x08" stat="mAtk" val="204" /> 			 
+ 				<set order="0x08" stat="rCrit" val="12" /> 			 
+ 				<add order="0x10" stat="accCombat" val="-3.75" /> 			 
+ 				<set order="0x08" stat="pAtkSpd" val="293" /> 			 
+				<enchant val="0" order="0x0C" stat="pAtk" /> 			 
+				<enchant val="0" order="0x0C" stat="mAtk" /> 			 
+			</for> 			 
+		</item>
 </list>

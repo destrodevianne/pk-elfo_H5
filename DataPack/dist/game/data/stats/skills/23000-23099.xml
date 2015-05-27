@@ -1045,18 +1045,27 @@
 		</cond>
 	</skill>
 	<skill id="23080" levels="1" name="Chon-chon Agathion Special Skill - Great Warrior Soul Power">
-		<!-- For five minutes, the Great Spirit increases critical attack damage by 20%, P.Atk. by 10% and moving speed by 20%. Decreases the MP consumption of skills by 5%. -->
-		<set name="abnormalLvl" val="26" />
-		<set name="abnormalType" val="multi_buff" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="3600000" />
-		<cond msgId="2292">
-			<player agathionId="1529" />
-		</cond>
-	</skill>
+        <!-- For five minutes, the Great Spirit increases critical attack damage by 20%, P.Atk. by 10% and moving speed by 20%. Decreases the MP consumption of skills by 5%. -->
+        <set name="abnormalLvl" val="26" />
+        <set name="abnormalType" val="multi_buff" />
+        <set name="isMagic" val="2" /> <!-- Static Skill -->
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="A2" />
+        <set name="reuseDelay" val="3600000" />
+        <cond msgId="2292">
+            <player agathionId="1529" />
+        </cond>
+        <for>
+            <effect name="Buff" abnormalTime="300" val="0">
+                <add order="0x40" stat="rCrit" val="1.2" /> <!-- Critical rate 20% -->
+                <mul order="0x30" stat="pAtkSpd" val="1.1" /> <!-- P.Atk. by 10% -->
+                <mul order="0x30" stat="runSpd" val="1.2" /> <!-- Moving Spd. +20% -->
+                <mul order="0x30" stat="MagicalMpConsumeRate" val="0.95" /><!-- Decreases the MP consumption of skills by 5% -->
+                <mul order="0x30" stat="PhysicalMpConsumeRate" val="0.95" /><!-- Decreases the MP consumption of skills by 5% -->
+            </effect>
+        </for>
+    </skill>
 	<skill id="23081" levels="1" name="Tang-tang Agathion Cute Trick">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="target" val="TARGET_SELF" />

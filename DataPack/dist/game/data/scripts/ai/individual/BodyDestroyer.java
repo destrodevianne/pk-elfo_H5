@@ -1,9 +1,9 @@
 package ai.individual;
 
+import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.actor.L2Attackable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
-import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import ai.npc.AbstractNpcAI;
  
@@ -46,7 +46,7 @@ public class BodyDestroyer extends AbstractNpcAI
 				((L2Attackable) npc).addDamageHate(player, 0, 9999);
 				_isLocked = true;
 				npc.setTarget(player);
-			    npc.doCast(L2Skill.valueOf(5256, 1));
+			    npc.doCast(SkillTable.getInstance().getInfo(5256, 1));
 				npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getNpcId(),player.getName() + " u will Die."));
 				startQuestTimer("time_to_destroy", 30000, npc, player);
 			}

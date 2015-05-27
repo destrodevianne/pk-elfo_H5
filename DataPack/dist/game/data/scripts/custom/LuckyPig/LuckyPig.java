@@ -6,6 +6,8 @@ import java.util.logging.Level;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
+import ai.npc.AbstractNpcAI;
+
 import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.model.L2CharPosition;
 import pk.elfo.gameserver.model.L2Object;
@@ -17,10 +19,9 @@ import pk.elfo.gameserver.model.items.instance.L2ItemInstance;
 import pk.elfo.gameserver.network.serverpackets.NpcSay;
 import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.Rnd;
-import ai.npc.AbstractNpcAI;
 
 /**
- * PkElfo
+ * Projeto PkElfo
  */
 
 public class LuckyPig extends AbstractNpcAI
@@ -34,8 +35,7 @@ public class LuckyPig extends AbstractNpcAI
 	private final int[] _MOBS =
 	{
 		// TODO: Add Correct Monsters
-		22862,
-		22823
+		22862, 22823
 	};
 	
 	public LuckyPig(int questId, String name, String descr)
@@ -133,7 +133,7 @@ public class LuckyPig extends AbstractNpcAI
 		{
 			case LUCKY_PIG_NPC:
 			{
-				List<Long> _adena = new FastList<>();
+				List<Long> _adena = new FastList<Long>();
 				_ADENAS.put(npc.getObjectId(), _adena);
 				startQuestTimer("checkForAdena", 1000, npc, null, true);
 				npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getNpcId(), "I am hungry please give me some adenas!"));

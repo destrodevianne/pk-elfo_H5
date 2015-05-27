@@ -22,7 +22,8 @@ public final class UserInfo extends L2GameServerPacket
 	/**
 	 * Walking speed, swimming walking speed and flying walking speed
 	 */
-	private final int _runSpd, _walkSpd;
+	private final int _runSpd;
+	private final int _walkSpd;
 	private int _relation;
 	private final float _moveMultiplier;
 	// private int _territoryId;

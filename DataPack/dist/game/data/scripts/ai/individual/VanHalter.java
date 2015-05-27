@@ -11,6 +11,7 @@ import pk.elfo.gameserver.ai.CtrlIntention;
 import pk.elfo.gameserver.datatables.DoorTable;
 import pk.elfo.gameserver.datatables.NpcTable;
 import pk.elfo.gameserver.datatables.SpawnTable;
+import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.instancemanager.GrandBossManager;
 import pk.elfo.gameserver.model.L2CharPosition;
 import pk.elfo.gameserver.model.L2Spawn;
@@ -23,7 +24,6 @@ import pk.elfo.gameserver.model.actor.instance.L2MonsterInstance;
 import pk.elfo.gameserver.model.actor.instance.L2NpcInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
-import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.model.zone.type.L2BossZone;
 import pk.elfo.gameserver.network.serverpackets.CameraMode;
 import pk.elfo.gameserver.network.serverpackets.CreatureSay;
@@ -1546,7 +1546,7 @@ public class VanHalter extends AbstractNpcAI
 
             case 13:
                 // High Priestess van Halter uses the skill to kill Ritual Offering.
-                L2Skill skill = L2Skill.valueOf(1168, 7);
+                L2Skill skill = SkillTable.getInstance().getInfo(1168, 7);
                 _ritualOffering.setIsInvul(false);
                 _vanHalter.setTarget(_ritualOffering);
                 _vanHalter.setIsImmobilized(false);
@@ -1745,7 +1745,7 @@ public class VanHalter extends AbstractNpcAI
     @Override
     public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        L2Skill bleed = L2Skill.valueOf(4615, 12);
+        L2Skill bleed = SkillTable.getInstance().getInfo(4615, 12);
 
         if (Util.contains(triols,npc.getNpcId()))
         {

@@ -52,7 +52,7 @@ public class Enchant extends Quest
     
     public static void main(String[] args)
     {
-        new Enchant(-1, "Enchant", "custom/mondial");
+        new Enchant(-1, "Enchant", "custom/Enchant");
     }
     
     public String onFirstTalk(L2Npc npc, L2PcInstance player)

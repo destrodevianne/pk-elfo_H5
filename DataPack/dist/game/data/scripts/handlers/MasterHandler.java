@@ -18,21 +18,6 @@ import pk.elfo.gameserver.handler.TargetHandler;
 import pk.elfo.gameserver.handler.TelnetHandler;
 import pk.elfo.gameserver.handler.UserCommandHandler;
 import pk.elfo.gameserver.handler.VoicedCommandHandler;
-import pk.elfo.gameserver.handler.custom.BuyRec;
-import pk.elfo.gameserver.handler.custom.Cancelar;
-import pk.elfo.gameserver.handler.custom.ChangePassword;
-import pk.elfo.gameserver.handler.custom.ChatAdmin;
-import pk.elfo.gameserver.handler.custom.ClanMensagem;
-import pk.elfo.gameserver.handler.custom.Lider;
-import pk.elfo.gameserver.handler.custom.Logout;
-import pk.elfo.gameserver.handler.custom.Online;
-import pk.elfo.gameserver.handler.custom.Play;
-import pk.elfo.gameserver.handler.custom.RaidBoosStatus;
-import pk.elfo.gameserver.handler.custom.RefuseBuff;
-import pk.elfo.gameserver.handler.custom.Repair;
-import pk.elfo.gameserver.handler.custom.Res;
-import pk.elfo.gameserver.handler.custom.Teleport;
-import pk.elfo.gameserver.handler.custom.VipTeleport;
 import handlers.actionhandlers.L2ArtefactInstanceAction;
 import handlers.actionhandlers.L2DecoyAction;
 import handlers.actionhandlers.L2DoorInstanceAction;
@@ -88,7 +73,6 @@ import handlers.admincommandhandlers.AdminGeodata;
 import handlers.admincommandhandlers.AdminGm;
 import handlers.admincommandhandlers.AdminGmChat;
 import handlers.admincommandhandlers.AdminGraciaSeeds;
-import handlers.admincommandhandlers.AdminHappyHour;
 import handlers.admincommandhandlers.AdminHeal;
 import handlers.admincommandhandlers.AdminHellbound;
 import handlers.admincommandhandlers.AdminHelpPage;
@@ -345,22 +329,37 @@ import handlers.usercommandhandlers.Time;
 import handlers.usercommandhandlers.Unstuck;
 import handlers.voicedcommandhandlers.BadBuffShield;
 import handlers.voicedcommandhandlers.Banking;
+import handlers.voicedcommandhandlers.BuyRec;
+import handlers.voicedcommandhandlers.Cancelar;
+import handlers.voicedcommandhandlers.ChangePassword;
+import handlers.voicedcommandhandlers.ChatAdmin;
+import handlers.voicedcommandhandlers.ClanMensagem;
 //import handlers.voicedcommandhandlers.CastleVCmd; - Precisa de revisao e testes
 import handlers.voicedcommandhandlers.Debug;
 import handlers.voicedcommandhandlers.Hellbound;
 import handlers.voicedcommandhandlers.Lang;
+import handlers.voicedcommandhandlers.Lider;
+import handlers.voicedcommandhandlers.Logout;
+import handlers.voicedcommandhandlers.Online;
 import handlers.voicedcommandhandlers.OpenAtod;
+import handlers.voicedcommandhandlers.Play;
 import handlers.voicedcommandhandlers.Premium;
+import handlers.voicedcommandhandlers.RaidBoosStatus;
+import handlers.voicedcommandhandlers.RefuseBuff;
+import handlers.voicedcommandhandlers.Repair;
+import handlers.voicedcommandhandlers.Res;
 import handlers.voicedcommandhandlers.Siege;
 import handlers.voicedcommandhandlers.StatsVCmd;
+import handlers.voicedcommandhandlers.Teleport;
 import handlers.voicedcommandhandlers.TWGm;
 import handlers.voicedcommandhandlers.TvTRoundVoicedInfo;
 import handlers.voicedcommandhandlers.TvTVoiced;
 import handlers.voicedcommandhandlers.User;
 import handlers.voicedcommandhandlers.UserActions;
+import handlers.voicedcommandhandlers.VipTeleport;
 import handlers.voicedcommandhandlers.VoiceInfo;
 import handlers.voicedcommandhandlers.Wedding;
- 
+
 /**
  * Projeto PkElfo
  */
@@ -503,7 +502,6 @@ public class MasterHandler
 			AdminCrazy.class,
 			AdminVip.class,
 			AdminMensagem.class,
-			AdminHappyHour.class,
 		},
 		{
 			(AIOItem_Config.AIOITEM_ENABLEME ? AIOChatHandler.class : null),

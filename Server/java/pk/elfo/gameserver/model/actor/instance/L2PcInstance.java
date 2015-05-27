@@ -208,12 +208,6 @@ import pk.elfo.gameserver.model.stats.Stats;
 import pk.elfo.gameserver.model.zone.L2ZoneType;
 import pk.elfo.gameserver.model.zone.ZoneId;
 import pk.elfo.gameserver.model.zone.type.L2BossZone;
-import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone;
-import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone1;
-import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone2;
-import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone3;
-import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone4;
-import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone5;
 import pk.elfo.gameserver.model.zone.type.L2NoRestartZone;
 import pk.elfo.gameserver.network.DialogId;
 import pk.elfo.gameserver.network.L2GameClient;
@@ -498,7 +492,6 @@ public final class L2PcInstance extends L2Playable
 	private int _eventEffectId = 0;
 	private boolean _isInSiege;
 	private boolean _isInHideoutSiege = false;
-	public boolean win = false; //SlotMachine Event
 	
 	public enum PunishLevel
 	{
@@ -5402,7 +5395,24 @@ public final class L2PcInstance extends L2Playable
 	
 	public boolean canOpenPrivateStore()
 	{
+		if ((Config.SHOP_MIN_RANGE_FROM_NPC > 0) || (Config.SHOP_MIN_RANGE_FROM_PLAYER > 0))
+		{
+			for (L2Character cha : getKnownList().getKnownCharacters())
+			{
+				if (Util.checkIfInRange(cha.getMinShopDistance(), this, cha, true))
+				{
+					sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_PRIVATE_STORE_HERE));
+					return false;
+				}
+			}
+		}
 		return !isAlikeDead() && !isInOlympiadMode() && !isMounted() && !isInsideZone(ZoneId.NO_STORE) && !isCastingNow();
+	}
+	
+	@Override
+	public int getMinShopDistance()
+	{
+		return (isSitting()) ? Config.SHOP_MIN_RANGE_FROM_PLAYER : 0;
 	}
 	
 	public void tryOpenPrivateBuyStore()
@@ -6491,15 +6501,7 @@ public final class L2PcInstance extends L2Playable
 			{
 				// Add karma to attacker and increase its PK counter
 				setPvpKills(getPvpKills() + 1);
-				
-				// MultiFunction Zone
-				L2MultiFunctionZone.givereward(this);
-				L2MultiFunctionZone1.givereward(this);
-				L2MultiFunctionZone2.givereward(this);
-				L2MultiFunctionZone3.givereward(this);
-				L2MultiFunctionZone4.givereward(this);
-				L2MultiFunctionZone5.givereward(this);
-				
+
 				// pvp color
 				updatePvPColor(getPvpKills());
 				broadcastUserInfo();
@@ -6558,23 +6560,7 @@ public final class L2PcInstance extends L2Playable
 						playersOnline.sendPacket(cs);// envio del msj
 					}
 				}
-				
-				L2PcInstance targetPlayer = target.getActingPlayer();
-				if ((isInsideZone(ZoneId.CLANWAR) & targetPlayer.isInsideZone(ZoneId.CLANWAR)) && (getClanId() != targetPlayer.getClanId()) && (getClan() != null) && (targetPlayer.getClan() != null))
-				{
-					if (Config.ALLOW_CLANWAR_REP)
-					{
-						getClan().addReputationScore(Config.CLANWAR_ADD_REP, true);
-					}
-					sendMessage("Voce matou alguem de um clan inimigo. Seu clan sera recompensado com 50 pontos de reputacao!");
-					if (Config.ALLOW_CLANWAR_REWARD)
-					{
-						// Item Reward system
-						addItem("Loot", Config.CLANWAR_REWARD_ITEM, Config.CLANWAR_REWARD_COUNT, this, true);
-						sendMessage("Voce sera recompensado por matar um mebro de um clan inimigo!");
-					}
-				}
-				
+
 				KILL_STEAK++;
 				switch (KILL_STEAK)
 				{
@@ -15789,7 +15775,7 @@ public final class L2PcInstance extends L2Playable
 	
 	public void teleportBookmarkGo(int Id)
 	{
-		if (!teleportBookmarkCondition(0))
+		if (!teleportBookmarkCondition(0) || (this == null))
 		{
 			return;
 		}
@@ -15891,6 +15877,11 @@ public final class L2PcInstance extends L2Playable
 	
 	public void teleportBookmarkAdd(int x, int y, int z, int icon, String tag, String name)
 	{
+		if (this == null)
+		{
+			return;
+		}
+
 		if (!teleportBookmarkCondition(1))
 		{
 			return;
@@ -16613,13 +16604,13 @@ public final class L2PcInstance extends L2Playable
 	
 	public void setPcBangPoints(final int i)
 	{
-		if (i < 200000)
+		if (i < 2000000)
 		{
 			_pcBangPoints = i;
 		}
 		else
 		{
-			_pcBangPoints = 200000;
+			_pcBangPoints = 2000000;
 		}
 	}
 	
@@ -16983,6 +16974,11 @@ public final class L2PcInstance extends L2Playable
 		@Override
 		public void run()
 		{
+			if (L2PcInstance.this == null)
+			{
+				// stopRecoGiveTask(); why is this here? it will lead to NPE
+				return;
+			}
 			int reco_to_give;
 			// 10 recommendations to give out after 2 hours of being logged in
 			// 1 more recommendation to give out every hour after that.
@@ -17011,6 +17007,10 @@ public final class L2PcInstance extends L2Playable
 		@Override
 		public void run()
 		{
+			if (L2PcInstance.this == null)
+			{
+				return;
+			}
 			setRecoBonusActive(false);
 		}
 	}

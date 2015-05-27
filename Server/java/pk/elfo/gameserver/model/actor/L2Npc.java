@@ -1450,8 +1450,7 @@ public class L2Npc extends L2Character
 	{
 		return (int) (getTemplate().getRewardSp() * Config.RATE_SP);
 	}
-	// ate aqui a modificacao
-	
+
 	/**
 	 * Kill the L2NpcInstance (the corpse disappeared after 7 seconds).<br>
 	 * <B><U>Actions</U>:</B>
@@ -2044,4 +2043,9 @@ public class L2Npc extends L2Character
 	{
 		return _blocked;
 	}
+
+    public int getMinShopDistance()
+    {
+        return Config.SHOP_MIN_RANGE_FROM_NPC;
+    }
 }

@@ -13,7 +13,6 @@ public class ConsoleLogFormatter extends Formatter
 	public String format(LogRecord record)
 	{
 		final StringBuilder output = new StringBuilder(500);
-
 		StringUtil.append(output, record.getMessage(), Config.EOL);
 
 		if (record.getThrown() != null)

@@ -24,8 +24,6 @@ import pk.elfo.gameserver.taskmanager.tasks.TaskBirthday;
 import pk.elfo.gameserver.taskmanager.tasks.TaskCleanUp;
 import pk.elfo.gameserver.taskmanager.tasks.TaskDailySkillReuseClean;
 import pk.elfo.gameserver.taskmanager.tasks.TaskGlobalVariablesSave;
-import pk.elfo.gameserver.taskmanager.tasks.TaskHappyHourEnd;
-import pk.elfo.gameserver.taskmanager.tasks.TaskHappyHourStart;
 import pk.elfo.gameserver.taskmanager.tasks.TaskJython;
 import pk.elfo.gameserver.taskmanager.tasks.TaskOlympiadSave;
 import pk.elfo.gameserver.taskmanager.tasks.TaskRaidPointsReset;
@@ -177,8 +175,6 @@ public final class TaskManager
 		registerTask(new TaskScript());
 		registerTask(new TaskSevenSignsUpdate());
 		registerTask(new TaskShutdown());
-		registerTask(new TaskHappyHourStart());
-		registerTask(new TaskHappyHourEnd());
 	}
 	
 	public void registerTask(Task task)
@@ -236,38 +232,6 @@ public final class TaskManager
 				delay = Long.valueOf(task.getParams()[0]);
 				task.scheduled = scheduler.scheduleGeneral(task, delay);
 				return true;
-				//--------------------comeco do codigo do evento ------------------------------------------//
-            case TYPE_SCHEDULED_PER_DAY:
-                    String[] hour_spd = task.getParams()[1].split(":");
-                    if (hour_spd.length != 3)
-                    {
-                            _log.warning("Task " + task.getId() + " no esta correctamente formateado.");
-                            return false;
-                    }
-                   
-                    // Converte o tempo programado para um objeto de calendario
-                    Calendar scheduledTime = Calendar.getInstance();
-                    scheduledTime.set(Calendar.HOUR_OF_DAY, Integer.parseInt(hour_spd[0]));
-                    scheduledTime.set(Calendar.MINUTE, Integer.parseInt(hour_spd[1]));
-                    scheduledTime.set(Calendar.SECOND, Integer.parseInt(hour_spd[2]));
-                   
-                    long timeLeft = scheduledTime.getTimeInMillis() - System.currentTimeMillis();
-                   
-                    _log.info("Evento programado " + scheduledTime.get(Calendar.HOUR_OF_DAY) + ":" + scheduledTime.get(Calendar.MINUTE));
-                    if (timeLeft > 0)
-                    {
-                            task.scheduled = scheduler.scheduleGeneralAtFixedRate(task, timeLeft, 86400000L); // Executado uma vez por dia
-                            _log.info("Quedan " + (timeLeft / 1000) + " segundos.");
-                    }
-                    else
-                    {
-                            // Se o acontecimento termina no dia seguinte
-                            _log.info("Evento pasado al siguiente dia, ID: " + task.getId());
-                            task.scheduled = scheduler.scheduleGeneralAtFixedRate(task, timeLeft + 86400000L, 86400000L);
-                            _log.info("Quedan " + (timeLeft + (86400000L / 3600000)) + " horas.");
-                    }
-                    return true;
-                    //--------------------fim do codigo do evento ------------------------------------------//
 			case TYPE_FIXED_SHEDULED:
 				delay = Long.valueOf(task.getParams()[0]);
 				interval = Long.valueOf(task.getParams()[1]);

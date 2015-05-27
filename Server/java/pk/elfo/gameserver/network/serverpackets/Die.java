@@ -18,12 +18,6 @@ import pk.elfo.gameserver.model.entity.TvTEvent;
 import pk.elfo.gameserver.model.entity.TvTRoundEvent;
 import pk.elfo.gameserver.model.entity.clanhall.SiegableHall;
 import pk.elfo.gameserver.model.zone.ZoneId;
-import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone;
-import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone1;
-import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone2;
-import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone3;
-import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone4;
-import pk.elfo.gameserver.model.zone.type.L2MultiFunctionZone5;
 
 public class Die extends L2GameServerPacket
 {
@@ -50,8 +44,7 @@ public class Die extends L2GameServerPacket
 			
 		}
 		_charObjId = cha.getObjectId();
-		_canTeleport = !((cha.isPlayer() && ((TvTEvent.isStarted() && TvTEvent.isPlayerParticipant(_charObjId)) || (TvTRoundEvent.isStarted() && TvTRoundEvent.isPlayerParticipant(_charObjId)))) || cha.isPendingRevive()) || (cha.isInsideZone(ZoneId.MULTI_FUNCTION) && L2MultiFunctionZone.revive) || (cha.isInsideZone(ZoneId.MULTI_FUNCTION1) && L2MultiFunctionZone1.revive1) || (cha.isInsideZone(ZoneId.MULTI_FUNCTION2) && L2MultiFunctionZone2.revive2) || (cha.isInsideZone(ZoneId.MULTI_FUNCTION3) && L2MultiFunctionZone3.revive3) || (cha.isInsideZone(ZoneId.MULTI_FUNCTION4) && L2MultiFunctionZone4.revive4) || (cha.isInsideZone(ZoneId.MULTI_FUNCTION5) && L2MultiFunctionZone5.revive5);
-		
+		_canTeleport = (((!cha.isPlayer()) || (((!TvTEvent.isStarted()) || (!TvTEvent.isPlayerParticipant(_charObjId))) && ((!TvTRoundEvent.isStarted()) || (!TvTRoundEvent.isPlayerParticipant(_charObjId))))) && (!cha.isPendingRevive()));
 		if (cha instanceof L2PcInstance)
 		{
 			if (EventsInterface.isParticipating(cha.getObjectId()))
@@ -102,7 +95,7 @@ public class Die extends L2GameServerPacket
 			
 			writeD(_clan.getHideoutId() > 0 ? 0x01 : 0x00); // 6d 01 00 00 00 - to hide away
 			writeD((_clan.getCastleId() > 0) || isInCastleDefense ? 0x01 : 0x00); // 6d 02 00 00 00 - to castle
-			writeD((TerritoryWarManager.getInstance().getHQForClan(_clan) != null) || ((siegeClan != null) && !isInCastleDefense && !isInFortDefense && !siegeClan.getFlag().isEmpty()) || ((hall != null) && hall.getSiege().checkIsAttacker(_clan)) ? 0x01 : 0x00); // 6d 03 00 00 00 - to siege HQ
+			writeD((TerritoryWarManager.getInstance().getFlagForClan(_clan) != null) || ((siegeClan != null) && !isInCastleDefense && !isInFortDefense && !siegeClan.getFlag().isEmpty()) || ((hall != null) && hall.getSiege().checkIsAttacker(_clan)) ? 0x01 : 0x00); // 6d 03 00 00 00 - to siege HQ
 			writeD(_sweepable ? 0x01 : 0x00); // sweepable (blue glow)
 			writeD(_access.allowFixedRes() ? 0x01 : 0x00); // 6d 04 00 00 00 - to FIXED
 			writeD((_clan.getFortId() > 0) || isInFortDefense ? 0x01 : 0x00); // 6d 05 00 00 00 - to fortress

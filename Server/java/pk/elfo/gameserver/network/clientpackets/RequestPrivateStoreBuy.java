@@ -2,7 +2,6 @@ package pk.elfo.gameserver.network.clientpackets;
 
 import static pk.elfo.gameserver.model.actor.L2Npc.INTERACTION_DISTANCE;
 import pk.elfo.Config;
-import pk.elfo.gameserver.datatables.OfflineTradersTable;
 import pk.elfo.gameserver.model.ItemRequest;
 import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.L2World;
@@ -134,12 +133,6 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 			return;
 		}
 		
-		// Update offline trade record in realtime     
-		if (Config.OFFLINE_TRADE_ENABLE && Config.RESTORE_OFFLINERS && !(storeList.getItemCount() == 0) && (storePlayer.getClient() == null || storePlayer.getClient().isDetached()))
-		{
-			OfflineTradersTable.storeOffliners();
-		}
-
 		if (storeList.getItemCount() == 0)
 		{
 			storePlayer.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);

@@ -93,7 +93,6 @@ public final class Config
 	// ------------------------CLAN------------------------------------------------------------------------//
 	public static final String CLANCONFIG_FILE = "./config/Clan/ClanConfig.properties";
 	public static final String CLANFULLCOMANDO_FILE = "./config/Clan/ClanFullComando.properties";
-	public static final String CLANWAR_FILE = "./config/Clan/ClanWarZone.properties";
 	public static final String CLANLEADER_FILE = "./config/Clan/ClanLider.properties";
 	// ------------------------CUSTOM----------------------------------------------------------------------//
 	public static final String CUSTOM_MOD = "./config/Custom/Mods.properties";
@@ -204,6 +203,7 @@ public final class Config
 	// Sistema de Buffer para novos jogadores
 	// ----------------------------------------------------------------------------------------------------//
 	public static boolean NEW_PLAYER_BUFFS;
+	public static int MAX_LEVEL_BUFFS;
 	public static Map<Integer, Integer> FIGHTER_BUFF_LIST;
 	public static Map<Integer, Integer> MAGE_BUFF_LIST;
 	// ----------------------------------------------------------------------------------------------------//
@@ -225,20 +225,6 @@ public final class Config
 	public static boolean ANNOUNCE_HERO_CONECT;
 	public static boolean ANNOUNCE_HERO_DESCONECT;
 	public static boolean ENABLE_HERO_MESSAGE;
-	// ----------------------------------------------------------------------------------------------------//
-	// AUTORESTART PROPERTIES
-	// ----------------------------------------------------------------------------------------------------//
-	public static boolean AUTO_RESTART_ENABLE;
-	public static int AUTO_RESTART_TIME;
-	public static String[] AUTO_RESTART_INTERVAL;
-	// ----------------------------------------------------------------------------------------------------//
-	// CLANWARZONE PROPERTIES
-	// ----------------------------------------------------------------------------------------------------//
-	public static boolean ALLOW_CLANWAR_REWARD;
-	public static int CLANWAR_REWARD_ITEM;
-	public static int CLANWAR_REWARD_COUNT;
-	public static boolean ALLOW_CLANWAR_REP;
-	public static int CLANWAR_ADD_REP;
 	// ----------------------------------------------------------------------------------------------------//
 	// Mensagens automaticas de tempos em tempos
 	// ----------------------------------------------------------------------------------------------------//
@@ -399,7 +385,6 @@ public final class Config
 	public static int FAKE_PLAYERS;
 	public static boolean BOSS_STATS;
 	public static boolean ALT_ALLOW_REFINE_PVP_ITEM;
-	public static boolean ALT_ALLOW_REFINE_HERO_ITEM;
 	public static boolean ENABLE_UNSTUCK_PVP;
 	public static boolean USE_CR_ITEM;
 	public static int CR_ITEM_MIN_CLAN_LVL;
@@ -757,6 +742,9 @@ public final class Config
 	public static boolean STORE_UI_SETTINGS;
 	public static String[] FORBIDDEN_NAMES;
 	public static boolean SILENCE_MODE_EXCLUDE;
+	// distancia minima para abrir loja perto de NPC
+	public static int SHOP_MIN_RANGE_FROM_NPC;
+	public static int SHOP_MIN_RANGE_FROM_PLAYER;
 	// Define L2Class
 	public static boolean ALLOW_LIGHT_USE_HEAVY;
 	public static String NOTALLOWCLASS;
@@ -1763,7 +1751,6 @@ public final class Config
 	public static float PREMIUM_RATE_DROP_ITEMS;
 	public static float PREMIUM_RATE_DROP_ITEMS_BY_RAID;
 	public static Map<Integer, Float> PREMIUM_RATE_DROP_ITEMS_ID;
-	public static final boolean FIX_onSpawn_for_SpawnTable = true;
 	
 	/**
 	 * This class initializes all global variables for configuration.<br>
@@ -1899,7 +1886,7 @@ public final class Config
 			try (InputStream is = new FileInputStream(NewbieBuffs))
 			{
 				NewbieBuffsSettings.load(is);
-						
+				MAX_LEVEL_BUFFS = Integer.parseInt(NewbieBuffsSettings.getProperty("MaxLVbuffer", "21"));
 				NEW_PLAYER_BUFFS = Boolean.parseBoolean(NewbieBuffsSettings.getProperty("AltNewCharBuffs", "False"));
 				if(NEW_PLAYER_BUFFS)
 				{
@@ -2020,27 +2007,6 @@ public final class Config
 				_log.log(Level.SEVERE, "Error while loading AIO settings!", e);
 			}
 
-			
-			// ############################ AUTO RESTART PROPERTIES #################################################//
-			
-			// Load Auto restart L2Properties file (if exists)
-			final File auto_restart = new File(AUTO_RESTART);
-			try (InputStream is = new FileInputStream(auto_restart))
-			{
-				L2Properties autores = new L2Properties();
-				autores.load(is);
-				
-				AUTO_RESTART_ENABLE = Boolean.parseBoolean(autores.getProperty("EnableAutoRestart", "false"));
-				AUTO_RESTART_TIME = Integer.parseInt(autores.getProperty("RestartInSeconds", "360"));
-				AUTO_RESTART_INTERVAL = autores.getProperty("Intervalo", "00:00").split(",");
-			}
-			catch (Exception e)
-			{
-				_log.warning("Config: " + e.getMessage());
-				throw new Error("Falha ao carregar o arquivo " + AUTO_RESTART + " .");
-			}
-			
-			
 			// ############################ CLAN CONFIGS PROPERTIES ####################################################//
 			
 			L2Properties CLANCONFIG = new L2Properties();
@@ -2115,28 +2081,6 @@ public final class Config
 				_log.log(Level.SEVERE, "Error while loading CLAN FULL COMANDO settings!", e);
 			}
 
-			
-			// ############################ CLANWARZONE PROPERTIES ####################################################//
-	
-			final File clanwarzone = new File(CLANWAR_FILE);
-			try (InputStream is = new FileInputStream(clanwarzone))
-			{
-				L2Properties clanwar = new L2Properties();
-				clanwar.load(is);
-				
-				ALLOW_CLANWAR_REWARD = Boolean.parseBoolean(clanwar.getProperty("AllowClanwarSystem", "False"));
-				CLANWAR_REWARD_ITEM = Integer.parseInt(clanwar.getProperty("ClanRewardItem", "57"));
-				CLANWAR_REWARD_COUNT = Integer.parseInt(clanwar.getProperty("ClanRewardA-beep-t", "1"));
-				ALLOW_CLANWAR_REP = Boolean.parseBoolean(clanwar.getProperty("AllowClanwarRepSystem", "False"));
-				CLANWAR_ADD_REP = Integer.parseInt(clanwar.getProperty("ClanAddRepAm-beep-t", "1"));
-			}
-			catch (Exception e)
-			{
-				_log.warning("Config: " + e.getMessage());
-				throw new Error("Falha ao carregar o arquivo " + CLANWAR_FILE + " .");
-			}
-
-			
 			// ############################ CLANLEADER PROPERTIES ######################################################//
 
 			final File ClanLeader = new File(CLANLEADER_FILE);
@@ -3379,7 +3323,6 @@ public final class Config
 				DWARF_COLOR = Integer.decode("0x" + RACACONFIG.getProperty("DwarfNameColor", "FFFFFF"));
 				KAMAEL_COLOR = Integer.decode("0x" + RACACONFIG.getProperty("KamaelNameColor", "FFFFFF"));
 				ENABLE_RACE_MESSAGE = Boolean.parseBoolean(RACACONFIG.getProperty("EnableRaceMessage", "False"));	
-			
 			// #########################################################################################################//
 			
 
@@ -3969,6 +3912,8 @@ public final class Config
 			try (InputStream is = new FileInputStream(Restrictions))
 			{
 				RestrictionSettings.load(is);
+				SHOP_MIN_RANGE_FROM_PLAYER = Integer.parseInt(RestrictionSettings.getProperty("ShopMinRangeFromPlayer", "50"));
+				SHOP_MIN_RANGE_FROM_NPC = Integer.parseInt(RestrictionSettings.getProperty("ShopMinRangeFromNpc", "100"));
 				ALLOW_HEAVY_USE_LIGHT = Boolean.parseBoolean(RestrictionSettings.getProperty("AllowHeavyUseLight", "False"));
 				NOTALLOWCLASSE = RestrictionSettings.getProperty("NotAllowedUseLight", "");
 				NOTALLOWEDUSELIGHT = new ArrayList<>();
@@ -5176,7 +5121,6 @@ public final class Config
 			
 			// --------------------------------------------------------------------------------------------------------//
 			ALT_ALLOW_REFINE_PVP_ITEM = Boolean.parseBoolean(PvPpKSettings.getProperty("AltAllowRefinePVPItem", "False"));
-			ALT_ALLOW_REFINE_HERO_ITEM = Boolean.parseBoolean(PvPpKSettings.getProperty("AltAllowRefineHEROItem", "False"));
 			KARMA_MIN_KARMA = Integer.parseInt(PvPpKSettings.getProperty("MinKarma", "240"));
 			KARMA_MAX_KARMA = Integer.parseInt(PvPpKSettings.getProperty("MaxKarma", "10000"));
 			KARMA_XP_DIVIDER = Integer.parseInt(PvPpKSettings.getProperty("XPDivider", "260"));

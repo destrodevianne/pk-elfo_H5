@@ -33,7 +33,94 @@ public class CommunityBoard
         {
             return;
         }
-
+		
+		// comeco das restrincoes
+		// nao pode usar nas olimpiadas
+		if (activeChar.isInOlympiadMode())
+        {
+            activeChar.sendMessage("You cant use Community Board for now.");
+            return;
+        }
+		// nao pode usar em modo de observacao
+        if (activeChar.inObserverMode())
+        {
+            activeChar.sendMessage("You cant use Community Board for now.");
+            return;
+        }
+		// nao pode usar em modo de morte falsa
+        if (activeChar.isAlikeDead())
+        {
+            activeChar.sendMessage("You cant use Community Board for now.");
+            return;
+        }
+		// nao pode usar na siege
+        if (activeChar.isInSiege())
+        {
+            activeChar.sendMessage("You cant use Community Board for now.");
+            return;
+        }
+		// nao pode usar em modo de combate
+        if (activeChar.isInCombat())
+        {
+            activeChar.sendMessage("You cant use Community Board for now.");
+            return;
+        }
+		// nao pode usar estando morto
+        if (activeChar.isDead())
+        {
+            activeChar.sendMessage("You cant use Community Board for now.");
+            return;
+        }
+		// nao pode usar estando atacando com mago
+        if (activeChar.isCastingNow())
+        {
+            activeChar.sendMessage("You cant use Community Board for now.");
+            return;
+        }
+		// nao pode usar estando atacando com fighter
+        if (activeChar.isAttackingNow())
+        {
+            activeChar.sendMessage("You cant use Community Board for now.");
+            return;
+        }
+		// nao pode usar na prisao
+        if (activeChar.isInJail())
+        {
+            activeChar.sendMessage("You cant use Community Board for now.");
+            return;
+        }
+		// nao pode usar estando montado em um PET
+        if (activeChar.isFlying())
+        {
+            activeChar.sendMessage("You cant use Community Board for now.");
+            return;
+        }
+		// nao pode usar em duelo
+        if (activeChar.isInDuel())
+        {
+            activeChar.sendMessage("You cant use Community Board for now.");
+            return;
+        }
+		// nao pode usar na seven sign
+        if (activeChar.isIn7sDungeon())
+        {
+            activeChar.sendMessage("You cant use Community Board for now.");
+            return;
+        }
+		// nao pode usar no barco
+        if (activeChar.isInBoat())
+        {
+            activeChar.sendMessage("You cant use Community Board for now.");
+            return;
+        }
+		// nao pode usar estando no barco voador
+        if (activeChar.isInAirShip())
+        {
+            activeChar.sendMessage("You cant use Community Board for now.");
+            return;
+        }
+		// fim das restrincoes
+		
         switch (Config.COMMUNITY_TYPE)
         {
             default:
