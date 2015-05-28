@@ -621,7 +621,7 @@ public class EnterWorld extends L2GameClientPacket
                     for(Integer skillid : Config.MAGE_BUFF_LIST.keySet())
                     {
                         int skilllvl = Config.MAGE_BUFF_LIST.get(skillid);
-                        L2Skill skill = L2Skill.valueOf(skillid, skilllvl);
+                        L2Skill skill = SkillTable.getInstance().getInfo((skillid, skilllvl);
                         if(skill != null)
 						{
                             skill.getEffects(activeChar, activeChar);
@@ -633,7 +633,7 @@ public class EnterWorld extends L2GameClientPacket
                     for(Integer skillid : Config.FIGHTER_BUFF_LIST.keySet())
                     {
                         int skilllvl = Config.FIGHTER_BUFF_LIST.get(skillid);
-                        L2Skill skill = L2Skill.valueOf(skillid, skilllvl);
+                        L2Skill skill = SkillTable.getInstance().getInfo((skillid, skilllvl);
                         if(skill != null)
 						{
                             skill.getEffects(activeChar, activeChar);

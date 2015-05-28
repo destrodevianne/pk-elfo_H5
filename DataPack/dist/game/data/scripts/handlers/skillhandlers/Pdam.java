@@ -18,10 +18,6 @@ import pk.elfo.gameserver.model.stats.Env;
 import pk.elfo.gameserver.model.stats.Formulas;
 import pk.elfo.gameserver.network.SystemMessageId;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
- 
-/**
- * Projeto PkElfo
- */
 
 public class Pdam implements ISkillHandler
 {
@@ -148,6 +144,7 @@ public class Pdam implements ISkillHandler
 					
 					// Possibility of a lethal strike
 					Formulas.calcLethalHit(activeChar, target, skill);
+					
 					target.reduceCurrentHp(damage, activeChar, skill);
 					
 					// vengeance reflected damage

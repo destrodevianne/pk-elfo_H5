@@ -1,6 +1,7 @@
 package ai.group_template;
 
 import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.actor.L2Attackable;
 import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.L2Npc;
@@ -46,7 +47,7 @@ public class FairyTrees extends AbstractNpcAI
 				newNpc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, originalKiller);
 				if (Rnd.nextBoolean())
 				{
-					L2Skill skill = L2Skill.valueOf(4243, 1);
+					L2Skill skill = SkillTable.getInstance().getInfo(4243, 1);
 					if ((skill != null) && (originalKiller != null))
 					{
 						skill.getEffects(newNpc, originalKiller);

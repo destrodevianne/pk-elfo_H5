@@ -1,5 +1,6 @@
 package custom.IOPRace;
 
+import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.quest.Quest;
@@ -74,7 +75,7 @@ public class IOPRace extends Quest
 			st.set("3rd", "0");
 			st.set("4th", "0");
 			
-			L2Skill skill = L2Skill.valueOf(5239, 5);
+			L2Skill skill = SkillTable.getInstance().getInfo(5239, 5);
 			if (skill != null)
 			{
 				skill.getEffects(npc, player);

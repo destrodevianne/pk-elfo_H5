@@ -948,10 +948,4 @@
 		<node X="-113768" Y="-150965" />
 		<node X="-115424" Y="-150965" />
 	</zone>
-	<zone name="Custom" type="MultiFunctionZone" shape="NPoly" minZ="-15000" maxZ="-10000">
-		<node X="130000" Y="160000" />
-		<node X="130000" Y="130000" />
-		<node X="160000" Y="130000" />
-		<node X="160000" Y="160000" />
-	</zone>
 </list>

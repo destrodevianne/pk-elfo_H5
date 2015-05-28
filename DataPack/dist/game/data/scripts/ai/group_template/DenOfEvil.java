@@ -1,6 +1,7 @@
 package ai.group_template;
 
 import pk.elfo.gameserver.ThreadPoolManager;
+import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.instancemanager.ZoneManager;
 import pk.elfo.gameserver.model.Location;
 import pk.elfo.gameserver.model.actor.L2Character;
@@ -196,7 +197,7 @@ public class DenOfEvil extends AbstractNpcAI
 				}
 				if (character.isPlayable())
 				{
-					L2Skill skill = L2Skill.valueOf(6149, 1);
+					L2Skill skill = SkillTable.getInstance().getInfo(6149, 1);
 					skill.getEffects(character, character); // apply effect
 				}
 				else

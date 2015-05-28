@@ -16,6 +16,7 @@ import pk.elfo.gameserver.model.actor.L2Character;
 import pk.elfo.gameserver.model.actor.L2Npc;
 import pk.elfo.gameserver.model.actor.instance.L2GrandBossInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
+import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.model.zone.type.L2BossZone;
 import pk.elfo.gameserver.network.NpcStringId;
 import pk.elfo.gameserver.network.clientpackets.Say2;

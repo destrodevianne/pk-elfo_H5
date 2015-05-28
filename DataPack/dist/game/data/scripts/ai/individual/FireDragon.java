@@ -19,6 +19,7 @@ import pk.elfo.gameserver.model.actor.instance.L2GrandBossInstance;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 import pk.elfo.gameserver.model.effects.L2Effect;
 import pk.elfo.gameserver.model.quest.QuestTimer;
+import pk.elfo.gameserver.model.skills.L2Skill;
 import pk.elfo.gameserver.model.zone.type.L2BossZone;
 import pk.elfo.gameserver.network.serverpackets.PlaySound;
 import pk.elfo.gameserver.network.serverpackets.SocialAction;

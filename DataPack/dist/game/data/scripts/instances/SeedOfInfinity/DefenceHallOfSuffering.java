@@ -8,6 +8,7 @@ import javolution.util.FastMap;
 
 import pk.elfo.gameserver.ai.CtrlEvent;
 import pk.elfo.gameserver.ai.CtrlIntention;
+import pk.elfo.gameserver.datatables.SkillTable;
 import pk.elfo.gameserver.instancemanager.InstanceManager;
 import pk.elfo.gameserver.model.L2Object;
 import pk.elfo.gameserver.model.L2Party;
@@ -731,7 +732,7 @@ public class DefenceHallOfSuffering extends Quest
 			}
 			else if (event.equalsIgnoreCase("ressurectTwin"))
 			{
-				L2Skill skill = L2Skill.valueOf(5824, 1);
+				L2Skill skill = SkillTable.getInstance().getInfo(5824, 1);
 				L2Npc aliveTwin = (world.klanikus == npc ? world.klodekus : world.klanikus);
 				npc.doRevive();
 				npc.doCast(skill);
