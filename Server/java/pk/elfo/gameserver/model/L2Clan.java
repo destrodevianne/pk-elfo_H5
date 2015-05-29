@@ -10,6 +10,9 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
+
 import pk.elfo.Config;
 import pk.elfo.L2DatabaseFactory;
 import pk.elfo.gameserver.cache.CrestCache;
@@ -41,12 +44,12 @@ import pk.elfo.gameserver.network.serverpackets.PledgeShowMemberListAll;
 import pk.elfo.gameserver.network.serverpackets.PledgeShowMemberListDeleteAll;
 import pk.elfo.gameserver.network.serverpackets.PledgeShowMemberListUpdate;
 import pk.elfo.gameserver.network.serverpackets.PledgeSkillList;
+import pk.elfo.gameserver.network.serverpackets.PledgeSkillList.SubPledgeSkill;
 import pk.elfo.gameserver.network.serverpackets.PledgeSkillListAdd;
 import pk.elfo.gameserver.network.serverpackets.SkillCoolTime;
 import pk.elfo.gameserver.network.serverpackets.StatusUpdate;
 import pk.elfo.gameserver.network.serverpackets.SystemMessage;
 import pk.elfo.gameserver.network.serverpackets.UserInfo;
-import pk.elfo.gameserver.network.serverpackets.PledgeSkillList.SubPledgeSkill;
 import pk.elfo.gameserver.scripting.scriptengine.events.ClanCreationEvent;
 import pk.elfo.gameserver.scripting.scriptengine.events.ClanJoinEvent;
 import pk.elfo.gameserver.scripting.scriptengine.events.ClanLeaderChangeEvent;
@@ -55,8 +58,6 @@ import pk.elfo.gameserver.scripting.scriptengine.events.ClanLevelUpEvent;
 import pk.elfo.gameserver.scripting.scriptengine.listeners.clan.ClanCreationListener;
 import pk.elfo.gameserver.scripting.scriptengine.listeners.clan.ClanMembershipListener;
 import pk.elfo.gameserver.util.Util;
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 public class L2Clan
 {
@@ -2181,7 +2182,7 @@ public class L2Clan
 		setReputationScore(getReputationScore() - value, save);
 	}
 	
-	public void setReputationScore(int value, boolean save)
+	private void setReputationScore(int value, boolean save)
 	{
 		if ((_reputationScore >= 0) && (value < 0))
 		{

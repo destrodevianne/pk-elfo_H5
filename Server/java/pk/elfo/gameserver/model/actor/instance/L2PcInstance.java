@@ -17070,27 +17070,7 @@ public final class L2PcInstance extends L2Playable
 		}
 		return (isInTownWarEvent() || getAccessLevel().allowPeaceAttack());
 	}
-	
-	public void ClanSkills()
-	{
-		for (Iterator<?> i = Config.CLAN_SKILLS.keySet().iterator(); i.hasNext(); broadcastUserInfo())
-		{
-			Integer skillid = (Integer) i.next();
-			int skilllvl = Config.CLAN_SKILLS.get(skillid).intValue();
-			L2Skill skill = SkillTable.getInstance().getInfo(skillid.intValue(), skilllvl);
-			if (skill != null)
-			{
-				addSkill(skill, true);
-			}
-			getClan().addNewSkill(skill);
-			sendSkillList();
-		}
-		L2Clan clan = getClan();
-		clan.setReputationScore(clan.getReputationScore() + Config.REPUTATION_QUANTITY, true);
-		sendMessage((new StringBuilder()).append("Administrador te deu ").append(Config.REPUTATION_QUANTITY).append(" Pontos de Reputacao.").toString());
-		sendMessage("GM te deu todas as skills de clan");
-	}
-	
+
 	public boolean isUsingAIOItemWarehouse()
 	{
 		return _isAioWh;

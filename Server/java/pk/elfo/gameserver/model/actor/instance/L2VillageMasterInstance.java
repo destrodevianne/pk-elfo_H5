@@ -16,9 +16,9 @@ import pk.elfo.gameserver.instancemanager.FortManager;
 import pk.elfo.gameserver.instancemanager.FortSiegeManager;
 import pk.elfo.gameserver.instancemanager.SiegeManager;
 import pk.elfo.gameserver.model.L2Clan;
+import pk.elfo.gameserver.model.L2Clan.SubPledge;
 import pk.elfo.gameserver.model.L2ClanMember;
 import pk.elfo.gameserver.model.L2SkillLearn;
-import pk.elfo.gameserver.model.L2Clan.SubPledge;
 import pk.elfo.gameserver.model.actor.templates.L2NpcTemplate;
 import pk.elfo.gameserver.model.base.AcquireSkillType;
 import pk.elfo.gameserver.model.base.ClassId;
@@ -42,10 +42,6 @@ import pk.elfo.gameserver.network.serverpackets.UserInfo;
 import pk.elfo.gameserver.util.Util;
 import pk.elfo.util.StringUtil;
 
-/**
- * This class ...
- * @version $Revision: 1.4.2.3.2.8 $ $Date: 2005/03/29 23:15:15 $
- */
 public class L2VillageMasterInstance extends L2NpcInstance
 {
 	private static Logger _log = Logger.getLogger(L2VillageMasterInstance.class.getName());
@@ -212,6 +208,13 @@ public class L2VillageMasterInstance extends L2NpcInstance
 				player.sendPacket(SystemMessageId.SUBCLASS_NO_CHANGE_OR_CREATE_WHILE_SKILL_IN_USE);
 				return;
 			}
+
+			// Subclasses may not be changed if player is AIO
+			if (player.isAio())
+			{
+				player.sendMessage("An AIO has not the ability to change or add subclasses");
+				return;
+			}
 			
 			else if (player.isInCombat())
 			{
@@ -233,13 +236,13 @@ public class L2VillageMasterInstance extends L2NpcInstance
 			
 			if (player.isCursedWeaponEquipped())
 			{
-				player.sendMessage("Voce nao pode mudar de subclasse estando com as espadas demoniacas!");
+				player.sendMessage("You can`t change Subclass while Cursed weapon equiped!");
 				return;
 			}
 			
 			if (player.isFlyingMounted())
 			{
-				player.sendMessage("Voce nao pode mudar de subclasse estando montado em um Pet!");
+				player.sendMessage("You can`t change Subclass while Flying Monted!");
 				return;
 			}
 			

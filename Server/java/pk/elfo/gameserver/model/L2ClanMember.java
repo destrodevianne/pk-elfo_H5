@@ -11,9 +11,6 @@ import pk.elfo.L2DatabaseFactory;
 import pk.elfo.gameserver.instancemanager.SiegeManager;
 import pk.elfo.gameserver.model.actor.instance.L2PcInstance;
 
-/**
- * This class holds the clan members data.
- */
 public class L2ClanMember
 {
 	private static final Logger _log = Logger.getLogger(L2ClanMember.class.getName());

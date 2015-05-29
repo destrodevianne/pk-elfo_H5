@@ -92,7 +92,6 @@ public final class Config
 	public static final String ZAKEN_CONFIG = "./config/BigBosses/Zaken.properties";
 	// ------------------------CLAN------------------------------------------------------------------------//
 	public static final String CLANCONFIG_FILE = "./config/Clan/ClanConfig.properties";
-	public static final String CLANFULLCOMANDO_FILE = "./config/Clan/ClanFullComando.properties";
 	public static final String CLANLEADER_FILE = "./config/Clan/ClanLider.properties";
 	// ------------------------CUSTOM----------------------------------------------------------------------//
 	public static final String CUSTOM_MOD = "./config/Custom/Mods.properties";
@@ -284,12 +283,6 @@ public final class Config
 	public static int LocY;
 	public static int LocZ;
 	// ----------------------------------------------------------------------------------------------------//
-	// Clan Full
-	// ----------------------------------------------------------------------------------------------------//
-	public static boolean ENABLE_CLAN_SYSTEM;
-	public static Map<Integer, Integer> CLAN_SKILLS;
-	public static byte CLAN_LEVEL;
-	public static int REPUTATION_QUANTITY;
 	public static boolean ANNOUNCE_CASTLE_LORDS;
 	public static boolean ANNOUNCE_CLAN_LOGIN;
 	public static boolean ANNOUNCE_NOBLESSE_LOGIN = false;
@@ -2034,53 +2027,6 @@ public final class Config
 			}
 
 			
-			// ############################ CLAN FULL COMANDO PROPERTIES ###############################################//
-			
-			L2Properties CLANFULL = new L2Properties();
-			final File clanfull = new File(CLANFULLCOMANDO_FILE);
-			try (InputStream is = new FileInputStream(clanfull))
-			{
-				CLANFULL.load(is);
-				
-			// Clan Full
-				ENABLE_CLAN_SYSTEM = Boolean.parseBoolean(CLANFULL.getProperty("EnableClanSystem", "False"));
-				if (ENABLE_CLAN_SYSTEM)
-				{
-					String AioSkillsSplit[] = CLANFULL.getProperty("ClanSkills", "").split(";");
-					CLAN_SKILLS = new FastMap<>(AioSkillsSplit.length);
-					String arr[] = AioSkillsSplit;
-					int len = arr.length;
-					for (int i = 0; i < len; i++)
-					{
-						String skill = arr[i];
-						String skillSplit[] = skill.split(",");
-						if (skillSplit.length != 2)
-						{
-							System.out.println((new StringBuilder()).append("[Clan System]: invalid config property in Config/Clan/ClanFullComando.properties -> ClanSkills \"").append(skill).append("\"").toString());
-							continue;
-						}
-						try
-						{
-							CLAN_SKILLS.put(Integer.valueOf(Integer.parseInt(skillSplit[0])), Integer.valueOf(Integer.parseInt(skillSplit[1])));
-							continue;
-						}
-						catch (NumberFormatException nfe)
-						{
-						}
-						if (!skill.equals(""))
-						{
-							System.out.println((new StringBuilder()).append("[Clan System]: invalid config property in Config/Clan/ClanFullComando.properties -> ClanSkills \"").append(skillSplit[0]).append("\"").append(skillSplit[1]).toString());
-						}
-					}
-				}
-				CLAN_LEVEL = Byte.parseByte(CLANFULL.getProperty("ClanSetLevel", "8"));
-				REPUTATION_QUANTITY = Integer.parseInt(CLANFULL.getProperty("ReputationScore", "10000"));
-			}
-			catch (Exception e)
-			{
-				_log.log(Level.SEVERE, "Error while loading CLAN FULL COMANDO settings!", e);
-			}
-
 			// ############################ CLANLEADER PROPERTIES ######################################################//
 
 			final File ClanLeader = new File(CLANLEADER_FILE);
