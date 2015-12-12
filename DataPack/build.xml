@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <project name="pk.elfo_DP" default="build" basedir=".">
 <description>
-  Copyright (C) 2014-2014 L2PKElfo DataPack
+  Copyright (C) 2014-2016 L2PKElfo DataPack
  
   This file is part of L2PKElfo DataPack.
  
@@ -35,10 +35,10 @@
   <zip destfile="${build}/L2PKElfo_HighFive_DP.zip" basedir="${build.dist}" level="9" />
 </target>
 <target name="checkRequirements" description="Check Requirements.">
-  <fail message="Ant 1.9.4 is required. But your version is ${ant.version} and if you are using Eclipse probably is outdated.">
+  <fail message="Ant 1.8.2 is required. But your version is ${ant.version} and if you are using Eclipse probably is outdated.">
    <condition>
         <not>
-         <antversion atleast="1.9.4" />
+         <antversion atleast="1.8.2" />
         </not>
    </condition>
   </fail>
