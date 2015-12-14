@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/skills.xsd">
+	<skill id="22400" levels="1" name="Transformation Scroll - Zaken">
+		<!-- Desciption: Transformed into Zaken. -->
+		<set name="operateType" val="P" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="target" val="TARGET_NONE" />
+	</skill>
+	<skill id="22401" levels="1" name="Transformation Scroll - Ranku">
+		<!-- Desciption: Transformed into Ranku. -->
+		<set name="operateType" val="P" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="target" val="TARGET_NONE" />
+	</skill>
+	<skill id="22402" levels="1" name="Juju Agathion's Gift">
+		<!-- Desciption: There is no available description. -->
+		<set name="operateType" val="P" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="target" val="TARGET_NONE" />
+	</skill>
+	<skill id="22403" levels="1" name="Extra Entrance Pass - Kamaloka (Hall of the Abyss)">
+		<!-- Desciption: There is no available description. -->
+		<set name="operateType" val="P" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="target" val="TARGET_NONE" />
+	</skill>
+	<skill id="22404" levels="1" name="Pathfinder's Reward">
+		<!-- Desciption: There is no available description. -->
+		<set name="operateType" val="P" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="target" val="TARGET_NONE" />
+	</skill>
+	<skill id="22405" levels="1" name="S84 Top-Grade Weapon Box">
+		<!-- Desciption: There is no available description. -->
+		<table name="#extractableItems"> 15544,2000,20.55555;15545,1000,14.01515;15546,1,6.16666;15547,1,0.86999;15548,1,3.19444;15549,1,6.38888;15550,1,5.75;15551,2,5;15552,2,8.33333;15553,2,6.94444;21919,1,1;15554,1,1.66666;15555,1,1.38888;15556,5,12.77777;15557,1,1;15569,2,5
+		</table>
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="capsuled_items_skill" val="#extractableItems" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="operateType" val="A1" />
+		<set name="target" val="TARGET_SELF" />
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+		<for>
+			<effect name="RestorationRandom" noicon="1" val="0" />
+		</for>
+	</skill>
+	<skill id="22406" levels="1" name="Ellegia Armor Box">
+		<!-- Desciption: There is no available description. -->
+		<table name="#extractableItems"> 16168,1,35;16169,1,35;16170,1,30
+		</table>
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="capsuled_items_skill" val="#extractableItems" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="operateType" val="A1" />
+		<set name="target" val="TARGET_SELF" />
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+		<for>
+			<effect name="RestorationRandom" noicon="1" val="0" />
+		</for>
+	</skill>
+	<skill id="22407" levels="1" name="PC Cafe Energy">
+		<!-- Desciption: For 60 minutes, recovers Vitality when Exp. is acquired through hunting. -->
+		<set name="operateType" val="P" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="target" val="TARGET_NONE" />
+	</skill>
+	<skill id="22408" levels="1" name="Enchantment Tool Box">
+		<!-- Desciption: There is no available description. -->
+		<set name="operateType" val="P" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="target" val="TARGET_NONE" />
+	</skill>
+	<skill id="22409" levels="1" name="Rune of Fate">
+		<!-- Desciption: Increases acquired XP and SP by 200%. -->
+		<set name="operateType" val="P" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="target" val="TARGET_NONE" />
+	</skill>
+</list>

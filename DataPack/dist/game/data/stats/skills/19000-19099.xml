@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/skills.xsd">
+	<skill id="19004" levels="3" name="Clan De-Buff Control">
+		<!-- Confirmed CT2.5 -->
+		<table name="#vuln"> 3 5 7 </table>
+		<set name="isClanSkill" val="true" />
+		<set name="magicLvl" val="1" />
+		<set name="operateType" val="P" />
+		<set name="target" val="TARGET_SELF" />
+		<for>
+			<sub order="0x40" stat="cancelVuln" val="#vuln" />
+			<sub order="0x40" stat="debuffVuln" val="#vuln" />
+		</for>
+	</skill>
+	<skill id="19005" levels="3" name="Clan Muzzle Control">
+		<!-- Confirmed CT2.5 -->
+		<table name="#paralyzeVuln"> 12 14 16 </table>
+		<set name="isClanSkill" val="true" />
+		<set name="magicLvl" val="1" />
+		<set name="operateType" val="P" />
+		<set name="target" val="TARGET_SELF" />
+		<for>
+			<sub order="0x40" stat="paralyzeVuln" val="#paralyzeVuln" />
+		</for>
+	</skill>
+	<skill id="19006" levels="3" name="Clan Mental Control">
+		<!-- Confirmed CT2.5 -->
+		<table name="#vuln"> 12 14 16 </table>
+		<set name="isClanSkill" val="true" />
+		<set name="magicLvl" val="1" />
+		<set name="operateType" val="P" />
+		<set name="target" val="TARGET_SELF" />
+		<for>
+			<sub order="0x40" stat="derangementVuln" val="#vuln" />
+		</for>
+	</skill>
+</list>
