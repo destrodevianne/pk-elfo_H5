@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event name="Gift of Vitality" active="27 02 2008-28 02 2025" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/eventConfig.xsd">
+	<spawnlist>
+		<add npc="4306" x="116653" y="145402" z="-2563" heading="33865" />
+		<add npc="4306" x="82710" y="37455" z="-2290" heading="15250" />
+		<add npc="4306" x="-17840" y="109306" z="-2496" heading="44789" />
+		<add npc="4306" x="78227" y="-152970" z="-544" heading="40541" />
+		<add npc="4306" x="147771" y="5159" z="-340" heading="49151" />
+		<add npc="4306" x="147955" y="-48358" z="-2276" heading="31655" />
+		<add npc="4306" x="21789" y="160445" z="-2690" heading="18166" />
+		<add npc="4306" x="11581" y="-49638" z="-549" heading="800" />
+		<add npc="4306" x="115753" y="249193" z="-786" heading="18270" />
+	</spawnlist>
+	<messages>
+		<add type="onEnd" text="Gift of Vitality: Final do Evento!" />
+		<add type="onEnter" text="Gift of Vitality: Evento em andamento!" />
+	</messages>
+</event>
