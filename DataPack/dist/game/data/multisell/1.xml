@@ -1,0 +1,16 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+
+<!-- Accessory Special Hat/Cosplay -->
+<!-- © 2010 by mathuza -->
+
+<list maintainEnchantment="true">
+
+
+ <!-- Refined Carnival Circlet -->
+  <item id="1">
+    <ingredient id="57" count="100000"/>
+    <production id="13890" count="1"/>
+  </item>
+  
+
+</list>
